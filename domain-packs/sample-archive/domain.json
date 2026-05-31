@@ -1,0 +1,24 @@
+{
+  "id": "sample-archive",
+  "name": "Sample Archive Domain",
+  "summary": "A second neutral fixture domain with different labels, scope units, extraction fields, and review lanes.",
+  "default_scope_unit": "question",
+  "taxonomy_file": "taxonomy.v1.json",
+  "evidence_ladder_file": "evidence-ladder.v1.json",
+  "extraction_schema_file": "extraction-schema.v1.json",
+  "review_lanes_file": "review-lanes.v1.json",
+  "public_copy_file": "public-copy.v1.json",
+  "default_review_lanes": [
+    "source_fidelity",
+    "scope_fit",
+    "context_boundaries"
+  ],
+  "public_claim_language": {
+    "default_posture": "bounded_archive_summary",
+    "avoid": [
+      "claims outside archived source material",
+      "unstated context assumptions",
+      "treating archive coverage as completeness"
+    ]
+  }
+}

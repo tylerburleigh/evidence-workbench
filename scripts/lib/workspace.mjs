@@ -107,11 +107,19 @@ export async function loadWorkbenchConfig() {
   return readJson(configPath);
 }
 
-export async function loadActiveDomainPack() {
+export async function resolveActiveDomainId() {
+  const override = process.env.WORKBENCH_DOMAIN;
+  if (typeof override === "string" && override.trim().length > 0) {
+    return override.trim();
+  }
+
   const config = await loadWorkbenchConfig();
-  const domainId = config.active_domain;
+  return config.active_domain;
+}
+
+export async function loadDomainPack(domainId) {
   if (typeof domainId !== "string" || domainId.trim().length === 0) {
-    throw new Error("workbench.config.json must define active_domain.");
+    throw new Error("Domain id must be a non-empty string.");
   }
 
   const root = path.join(domainPacksRoot, domainId);
@@ -134,6 +142,10 @@ export async function loadActiveDomainPack() {
     reviewLaneIds: new Set((reviewLanes.lanes ?? []).map((lane) => lane.id)),
     taxonomyNodeIds: new Set((taxonomy.nodes ?? []).map((node) => node.id))
   };
+}
+
+export async function loadActiveDomainPack() {
+  return loadDomainPack(await resolveActiveDomainId());
 }
 
 export function normalizeDateTimeValue(value) {

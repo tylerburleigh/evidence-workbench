@@ -1,0 +1,30 @@
+{
+  "id": "sample-archive-public-copy",
+  "domain_id": "sample-archive",
+  "labels": {
+    "evidence_layer": "Archived Evidence",
+    "interpretation_layer": "Curator Summary",
+    "context_layer": "Context Boundaries",
+    "topic": "Question",
+    "claim": "Archive Claim",
+    "finding": "Observation",
+    "artifact": "Archive Artifact"
+  },
+  "stage_labels": {
+    "cataloged_source": "Cataloged source",
+    "observation_extracted": "Observation extracted",
+    "reviewed_archive_claim": "Reviewed archive claim"
+  },
+  "confidence_labels": {
+    "low": "Low confidence",
+    "moderate": "Moderate confidence",
+    "high": "High confidence"
+  },
+  "empty_states": {
+    "no_topic": "No question exists for this route.",
+    "no_baseline": "This question exists, but no archive baseline has been published yet.",
+    "no_recent_activity": "No recent archive activity has been recorded.",
+    "no_findings": "No observations have been published for this source yet.",
+    "missing_review": "This bundle is waiting for structured archive review."
+  }
+}

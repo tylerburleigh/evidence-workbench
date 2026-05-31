@@ -7,12 +7,20 @@ import {
   workspaceRoot
 } from "./workspace.mjs";
 
-function buildDefaultQuestion(topicName, mode, domainName) {
+function titleCaseFromIdentifier(value) {
+  return value
+    .split(/[-_.]/g)
+    .filter(Boolean)
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(" ");
+}
+
+function buildDefaultQuestion(scopeName, scopeUnitLabel, mode, domainName) {
   if (mode === "bootstrap") {
-    return `What is the current evidence landscape for ${topicName} in ${domainName}, and what belongs in the first public baseline?`;
+    return `What is the current evidence landscape for ${scopeName} in ${domainName}, and what belongs in the first public baseline for this ${scopeUnitLabel}?`;
   }
 
-  return `What changed for ${topicName} since the last meaningful review or publication, and does any change justify a public update?`;
+  return `What changed for ${scopeName} since the last meaningful review or publication, and does any change justify a public update?`;
 }
 
 function isTerminalBundleStatus(status) {
@@ -21,8 +29,10 @@ function isTerminalBundleStatus(status) {
 
 export async function syncResearchPlanning() {
   const domainPack = await loadActiveDomainPack();
+  const scopeUnit = domainPack.domain.default_scope_unit ?? "topic";
+  const scopeUnitLabel = titleCaseFromIdentifier(scopeUnit).toLowerCase();
   const topicNodes = (domainPack.taxonomy.nodes ?? [])
-    .filter((node) => node.node_type === domainPack.domain.default_scope_unit || node.node_type === "topic")
+    .filter((node) => node.node_type === scopeUnit || node.node_type === "topic")
     .sort((left, right) => (left.canonical_order ?? 0) - (right.canonical_order ?? 0) || left.id.localeCompare(right.id));
 
   const [claims, bundles, publicationEvents, sessions] = await Promise.all([
@@ -115,7 +125,7 @@ export async function syncResearchPlanning() {
       last_candidate_bundle_status: latestBundle?.lifecycle_status,
       last_publication_event_id: latestPublication?.id,
       last_published_at: latestPublication?.published_at,
-      default_research_question: buildDefaultQuestion(node.name, nextMode, domainPack.domain.name),
+      default_research_question: buildDefaultQuestion(node.name, scopeUnitLabel, nextMode, domainPack.domain.name),
       notes
     };
   });
@@ -160,14 +170,14 @@ export async function syncResearchPlanning() {
     taxonomy_version: domainPack.taxonomy.taxonomy_version,
     updated_at: timestamp,
     notes: [
-      "The default unit of research work is one taxonomy topic.",
+      `The default unit of research work is one taxonomy ${scopeUnitLabel}.`,
       "Coverage status is planning state, not a public claim about evidence maturity."
     ],
     selection_policy: {
-      default_unit: domainPack.domain.default_scope_unit,
-      max_topics_per_bootstrap_run: 1,
-      max_topics_per_surveillance_run: 1,
-      when_request_is_too_broad: "Decompose to one topic-level pass before creating records."
+      default_unit: scopeUnit,
+      max_scope_units_per_bootstrap_run: 1,
+      max_scope_units_per_surveillance_run: 1,
+      when_request_is_too_broad: `Decompose to one ${scopeUnitLabel}-level pass before creating records.`
     },
     nodes: coverageRows.map(pruneUndefined)
   };
@@ -179,13 +189,13 @@ export async function syncResearchPlanning() {
     taxonomy_version: domainPack.taxonomy.taxonomy_version,
     updated_at: timestamp,
     notes: [
-      "Bootstrap priority applies to uncovered topics.",
-      "Surveillance priority applies to topics with public baseline coverage and no active review bundle."
+      `Bootstrap priority applies to uncovered ${scopeUnitLabel}s.`,
+      `Surveillance priority applies to ${scopeUnitLabel}s with public baseline coverage and no active review bundle.`
     ],
     selection_policy: {
-      default_unit: domainPack.domain.default_scope_unit,
-      when_request_is_vague: "Choose the highest-priority ready topic from the queue matching the requested mode.",
-      when_request_is_too_broad: "Narrow the work to one topic before starting."
+      default_unit: scopeUnit,
+      when_request_is_vague: `Choose the highest-priority ready ${scopeUnitLabel} from the queue matching the requested mode.`,
+      when_request_is_too_broad: `Narrow the work to one ${scopeUnitLabel} before starting.`
     },
     bootstrap_queue: bootstrapQueue,
     surveillance_queue: surveillanceQueue

@@ -1,0 +1,30 @@
+{
+  "id": "sample-archive-extraction-fields",
+  "domain_id": "sample-archive",
+  "fields": [
+    {
+      "id": "archive_item",
+      "label": "Archive Item",
+      "required": true,
+      "description": "The archived item or material being summarized."
+    },
+    {
+      "id": "locator",
+      "label": "Locator",
+      "required": true,
+      "description": "A stable source locator or retrieval note."
+    },
+    {
+      "id": "observed_property",
+      "label": "Observed Property",
+      "required": true,
+      "description": "The property or observation extracted from the archived item."
+    },
+    {
+      "id": "context_boundary",
+      "label": "Context Boundary",
+      "required": true,
+      "description": "The context where the observation applies."
+    }
+  ]
+}

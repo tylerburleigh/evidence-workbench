@@ -1,0 +1,57 @@
+{
+  "taxonomy_id": "sample-archive-taxonomy",
+  "taxonomy_version": "1.0.0",
+  "domain_id": "sample-archive",
+  "nodes": [
+    {
+      "id": "archive-collection",
+      "name": "Archive Collection",
+      "node_type": "collection",
+      "canonical_order": 1,
+      "summary": "A neutral parent collection for archive-style fixture questions.",
+      "search_aliases": [
+        "fixture archive"
+      ],
+      "example_entities": [],
+      "scope_notes": [
+        "Use this collection only to test non-topic scope units."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "archive-question",
+      "name": "Archive Question",
+      "node_type": "question",
+      "parent_id": "archive-collection",
+      "canonical_order": 1,
+      "summary": "A neutral question-shaped scope unit used to verify the workflow does not depend on topic labels.",
+      "search_aliases": [
+        "archive fixture question"
+      ],
+      "example_entities": [
+        "example archive item"
+      ],
+      "scope_notes": [
+        "Claims must stay bounded to archived fixture material.",
+        "This fixture is not about a real archive."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "archive-gap-question",
+      "name": "Archive Gap Question",
+      "node_type": "question",
+      "parent_id": "archive-collection",
+      "canonical_order": 2,
+      "summary": "A second question-shaped scope unit that should remain uncovered in planning queues.",
+      "search_aliases": [
+        "archive uncovered fixture"
+      ],
+      "example_entities": [],
+      "scope_notes": [
+        "Use as an uncovered queue example for a non-topic scope unit."
+      ],
+      "retirement_status": "active"
+    }
+  ]
+}

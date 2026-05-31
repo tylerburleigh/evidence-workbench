@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "sample-archive-claim-baseline",
+  "name": "Archive Question Fixture Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "archive-question",
+  "current_stage": "reviewed_archive_claim",
+  "momentum": "fixture_only",
+  "confidence": "moderate",
+  "summary": "The archive question has a synthetic claim bounded to archive-style workflow validation.",
+  "main_blockers": [
+    "No real archive evidence is represented by this fixture."
+  ],
+  "best_current_signals": [
+    "The support map points to staged archive observation and source records by stable ID."
+  ],
+  "interpretive_note": "This claim should be used only to test generic multi-pack evidence graph mechanics.",
+  "limitations": [
+    "The archive domain is a neutral workflow fixture.",
+    "The claim does not describe a real archive or external evidence base."
+  ],
+  "update_notes": [
+    "Publish through the generic bundle workflow if this fixture is used for promotion checks."
+  ],
+  "supporting_finding_ids": [
+    "sample-archive-finding-context-2026"
+  ],
+  "supporting_source_ids": [
+    "sample-archive-source-2026"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Archive fixture support map",
+      "claim_field": "current_stage",
+      "conclusion": "The staged archive fixture records are linked well enough to exercise validation.",
+      "support_role": "supports",
+      "rationale": "The observation cites the archive source and artifact, and the claim cites the observation and source.",
+      "finding_ids": [
+        "sample-archive-finding-context-2026"
+      ],
+      "source_ids": [
+        "sample-archive-source-2026"
+      ],
+      "limitations": [
+        "Synthetic fixture only.",
+        "Not evidence for a real external claim."
+      ]
+    }
+  ],
+  "last_updated": "2026-05-31"
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "sample-archive-finding-context-2026",
+  "name": "Synthetic Archive Observation",
+  "source_id": "sample-archive-source-2026",
+  "artifact_id": "sample-archive-artifact-2026",
+  "taxonomy_node_ids": [
+    "archive-question"
+  ],
+  "endpoint_category": "archive_validation",
+  "direction": "supports_fixture_readiness",
+  "evidence_tier": "observation_extracted",
+  "confidence": "moderate",
+  "statement": "Within the synthetic archive fixture, staged records are linked under a question-shaped scope unit.",
+  "population_or_context": "Synthetic archive fixture context.",
+  "time_horizon": "not applicable",
+  "quantitative_note": "No quantitative estimate; this is a workflow fixture.",
+  "caveats": [
+    "This observation is not public evidence about a real archive.",
+    "It exists only to validate generic workflow mechanics."
+  ],
+  "domain_fields": {
+    "archive_item": "example archive item",
+    "locator": "fixture://sample-archive/archive-question",
+    "observed_property": "linked staged records are present",
+    "context_boundary": "synthetic archive fixture only"
+  }
+}

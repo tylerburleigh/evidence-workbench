@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "sample-archive-source-2026",
+  "name": "Synthetic Archive Source",
+  "source_type": "fixture_archive_entry",
+  "authors": [
+    "Evidence Workbench Fixture"
+  ],
+  "venue": "Local Archive Fixture",
+  "year": 2026,
+  "published_on": "2026-05-31",
+  "urls": [
+    "https://example.com/sample-archive/archive-question"
+  ],
+  "summary": "Synthetic archive source metadata used only to test multi-pack workflow mechanics."
+}

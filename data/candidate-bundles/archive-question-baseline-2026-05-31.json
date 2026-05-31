@@ -1,0 +1,95 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "archive-question-baseline-2026-05-31",
+  "name": "Archive Question Baseline Bootstrap",
+  "summary": "Second synthetic fixture bundle that stages an archive-style source, artifact, finding, and claim.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-05-31T13:00:00Z",
+  "submitted_by": "fixture-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "sample-archive",
+    "taxonomy_node_ids": [
+      "archive-question"
+    ],
+    "research_question": "Can the generic workflow validate a non-topic scope unit with different review lanes?"
+  },
+  "source_ids": [
+    "sample-archive-source-2026"
+  ],
+  "source_urls": [
+    "https://example.com/sample-archive/archive-question"
+  ],
+  "related_records": [],
+  "proposed_changes": [
+    {
+      "change_id": "create-archive-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "sample-archive-source-2026",
+      "file_path": "data/sources/sample-archive-source-2026.json",
+      "staged_file_path": "data/staged-records/archive-question-baseline-2026-05-31/sample-archive-source-2026.json",
+      "summary": "Add a synthetic archive source record.",
+      "rationale": "The second fixture needs a source to test cross-domain validation without changing core code."
+    },
+    {
+      "change_id": "create-archive-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "sample-archive-artifact-2026",
+      "file_path": "data/artifacts/sample-archive-artifact-2026.json",
+      "staged_file_path": "data/staged-records/archive-question-baseline-2026-05-31/sample-archive-artifact-2026.json",
+      "summary": "Add a synthetic archive artifact record.",
+      "rationale": "The second fixture needs a different artifact type to test pack-driven labels."
+    },
+    {
+      "change_id": "create-archive-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "sample-archive-finding-context-2026",
+      "file_path": "data/findings/sample-archive-finding-context-2026.json",
+      "staged_file_path": "data/staged-records/archive-question-baseline-2026-05-31/sample-archive-finding-context-2026.json",
+      "summary": "Add a synthetic archive finding record.",
+      "rationale": "The second fixture needs a finding to test source and artifact reference validation."
+    },
+    {
+      "change_id": "create-archive-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "sample-archive-claim-baseline",
+      "file_path": "data/claims/sample-archive-claim-baseline.json",
+      "staged_file_path": "data/staged-records/archive-question-baseline-2026-05-31/sample-archive-claim-baseline.json",
+      "summary": "Add a synthetic archive claim record.",
+      "rationale": "The second fixture needs a support map under a non-topic taxonomy unit."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "archive-question",
+      "note": "Creates a synthetic baseline claim for the archive question fixture."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "scope_fit",
+    "context_boundaries"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_review_ids": [
+    "evidence-review-archive-question-source-fidelity-r1",
+    "evidence-review-archive-question-scope-fit-r1",
+    "evidence-review-archive-question-context-boundaries-r1"
+  ],
+  "review_comment_ids": [],
+  "publication_event_ids": [],
+  "next_actions": [
+    "Use WORKBENCH_DOMAIN=sample-archive when validating this bundle."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "sample-archive-evidence-ladder",
+  "domain_id": "sample-archive",
+  "stages": [
+    {
+      "id": "cataloged_source",
+      "label": "Cataloged Source",
+      "description": "A source has enough metadata to be retrieved and reviewed.",
+      "minimum_support_expected": "A source record with a stable locator.",
+      "common_overclaim_risk": "Treating a catalog entry as a verified finding.",
+      "moves_to_next_stage": "Extract an observation from the source."
+    },
+    {
+      "id": "observation_extracted",
+      "label": "Observation Extracted",
+      "description": "A bounded observation has been extracted from an archived source.",
+      "minimum_support_expected": "A finding linked to source and artifact records.",
+      "common_overclaim_risk": "Assuming the observation applies beyond the fixture context.",
+      "moves_to_next_stage": "Map the observation into a reviewed claim."
+    },
+    {
+      "id": "reviewed_archive_claim",
+      "label": "Reviewed Archive Claim",
+      "description": "A claim has passed configured review lanes for source fidelity, scope fit, and context boundaries.",
+      "minimum_support_expected": "Complete non-blocking reviews for required lanes.",
+      "common_overclaim_risk": "Confusing reviewed fixture coverage with complete knowledge.",
+      "moves_to_next_stage": "Continue surveillance for new archived materials."
+    }
+  ]
+}

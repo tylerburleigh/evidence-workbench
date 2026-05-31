@@ -43,6 +43,14 @@ const schemaByDomainPackFile = {
   "public-copy.v1.json": "core/public-copy.schema.json"
 };
 
+const recordCollections = {
+  source: "sources",
+  artifact: "artifacts",
+  finding: "findings",
+  claim: "claims",
+  activity_item: "activity-items"
+};
+
 async function loadSchemas() {
   const schemaFiles = await walkJsonFiles(schemasRoot);
   return Promise.all(
@@ -77,6 +85,381 @@ function formatError(error) {
   return `${location} ${error.message}${property}`;
 }
 
+function nonEmptyString(value) {
+  return typeof value === "string" && value.trim().length > 0;
+}
+
+function getDomainPackDirectory(relativePath) {
+  const parts = relativePath.split("/");
+  return parts[0] === "domain-packs" ? parts[1] : undefined;
+}
+
+function addIssueForMissingReference(issues, relativePath, field, value, targetLabel) {
+  if (!nonEmptyString(value)) {
+    issues.push(`${relativePath}: ${field} must be a non-empty ${targetLabel} id.`);
+  }
+}
+
+function getExpectedTargetPath(recordType, recordId) {
+  const collection = recordCollections[recordType];
+  return collection && recordId ? `data/${collection}/${recordId}.json` : undefined;
+}
+
+function isPathUnder(prefix, relativePath) {
+  return relativePath === prefix || relativePath.startsWith(`${prefix}/`);
+}
+
+function addDomainNodeChecks({ issues, relativePath, domainId, nodeIds, domainIds, nodeDomainById }) {
+  if (!nonEmptyString(domainId)) {
+    issues.push(`${relativePath}: scope.domain_id is required for taxonomy-scoped records.`);
+    return;
+  }
+
+  if (!domainIds.has(domainId)) {
+    issues.push(`${relativePath}: references unknown domain_id: ${domainId}.`);
+    return;
+  }
+
+  if (!Array.isArray(nodeIds) || nodeIds.length === 0) {
+    issues.push(`${relativePath}: scope.taxonomy_node_ids must contain at least one taxonomy node id.`);
+    return;
+  }
+
+  for (const nodeId of nodeIds) {
+    const nodeDomainId = nodeDomainById.get(nodeId);
+    if (!nodeDomainId) {
+      issues.push(`${relativePath}: references unknown taxonomy_node_id: ${nodeId}.`);
+    } else if (nodeDomainId !== domainId) {
+      issues.push(`${relativePath}: taxonomy_node_id ${nodeId} belongs to ${nodeDomainId}, not ${domainId}.`);
+    }
+  }
+}
+
+function validateDomainPackContracts(entries, issues) {
+  const domainIds = new Set();
+  const reviewLaneIdsByDomain = new Map();
+  const nodeIdsByDomain = new Map();
+  const nodeDomainById = new Map();
+
+  for (const { relativePath, value } of entries) {
+    const directory = getDomainPackDirectory(relativePath);
+    if (!directory) {
+      continue;
+    }
+
+    const fileName = path.basename(relativePath);
+    if (fileName === "domain.json") {
+      if (value.id !== directory) {
+        issues.push(`${relativePath}: domain id must match directory name ${directory}.`);
+      }
+      domainIds.add(value.id);
+    } else if (nonEmptyString(value.domain_id) && value.domain_id !== directory) {
+      issues.push(`${relativePath}: domain_id must match directory name ${directory}.`);
+    }
+
+    if (fileName === "taxonomy.v1.json") {
+      const nodeIds = new Set();
+      for (const node of value.nodes ?? []) {
+        if (nodeDomainById.has(node.id)) {
+          issues.push(`${relativePath}: taxonomy node id is duplicated across domain packs: ${node.id}.`);
+        }
+        nodeIds.add(node.id);
+        nodeDomainById.set(node.id, directory);
+      }
+      nodeIdsByDomain.set(directory, nodeIds);
+    }
+
+    if (fileName === "review-lanes.v1.json") {
+      reviewLaneIdsByDomain.set(directory, new Set((value.lanes ?? []).map((lane) => lane.id)));
+    }
+  }
+
+  for (const { relativePath, value } of entries) {
+    if (!relativePath.endsWith("/domain.json")) {
+      continue;
+    }
+
+    const directory = getDomainPackDirectory(relativePath);
+    const nodeIds = nodeIdsByDomain.get(directory) ?? new Set();
+    const reviewLaneIds = reviewLaneIdsByDomain.get(directory) ?? new Set();
+
+    if (![...nodeIds].length) {
+      issues.push(`${relativePath}: domain pack must define at least one taxonomy node.`);
+    }
+
+    if (![...nodeIds].some((nodeId) => {
+      const taxonomy = entries.find((entry) => entry.relativePath === `domain-packs/${directory}/taxonomy.v1.json`)?.value;
+      return (taxonomy?.nodes ?? []).some((node) => node.id === nodeId && node.node_type === value.default_scope_unit);
+    })) {
+      issues.push(`${relativePath}: default_scope_unit has no matching taxonomy nodes: ${value.default_scope_unit}.`);
+    }
+
+    for (const laneId of value.default_review_lanes ?? []) {
+      if (!reviewLaneIds.has(laneId)) {
+        issues.push(`${relativePath}: default_review_lanes references unknown review lane: ${laneId}.`);
+      }
+    }
+  }
+
+  return { domainIds, reviewLaneIdsByDomain, nodeIdsByDomain, nodeDomainById };
+}
+
+function buildRecordIndexes(entries) {
+  const recordsByType = new Map();
+  const recordByTypeAndId = new Map();
+  const valueByRelativePath = new Map(entries.map((entry) => [entry.relativePath, entry.value]));
+
+  for (const entry of entries) {
+    const recordType = entry.value?.record_type;
+    if (!nonEmptyString(recordType)) {
+      continue;
+    }
+
+    if (!recordsByType.has(recordType)) {
+      recordsByType.set(recordType, []);
+      recordByTypeAndId.set(recordType, new Map());
+    }
+
+    recordsByType.get(recordType).push(entry);
+    if (nonEmptyString(entry.value.id)) {
+      recordByTypeAndId.get(recordType).set(entry.value.id, entry);
+    }
+  }
+
+  return { recordsByType, recordByTypeAndId, valueByRelativePath };
+}
+
+function hasRecord(recordByTypeAndId, recordType, recordId) {
+  return nonEmptyString(recordId) && Boolean(recordByTypeAndId.get(recordType)?.has(recordId));
+}
+
+function validateCandidateBundle(entry, context, issues) {
+  const { value: bundle, relativePath } = entry;
+  const domainId = bundle.scope?.domain_id;
+  addDomainNodeChecks({
+    issues,
+    relativePath,
+    domainId,
+    nodeIds: bundle.scope?.taxonomy_node_ids,
+    domainIds: context.domainIds,
+    nodeDomainById: context.nodeDomainById
+  });
+
+  const reviewLaneIds = context.reviewLaneIdsByDomain.get(domainId) ?? new Set();
+  for (const laneId of bundle.required_review_lanes ?? []) {
+    if (!reviewLaneIds.has(laneId)) {
+      issues.push(`${relativePath}: required_review_lanes references unknown lane for ${domainId}: ${laneId}.`);
+    }
+  }
+
+  const seenChangeIds = new Set();
+  for (const change of bundle.proposed_changes ?? []) {
+    if (seenChangeIds.has(change.change_id)) {
+      issues.push(`${relativePath}: duplicate proposed change id: ${change.change_id}.`);
+    }
+    seenChangeIds.add(change.change_id);
+
+    const expectedTargetPath = getExpectedTargetPath(change.target_record_type, change.target_record_id);
+    if (!expectedTargetPath) {
+      issues.push(`${relativePath}: change ${change.change_id} has unsupported target record type: ${change.target_record_type}.`);
+    } else if (change.file_path && change.file_path !== expectedTargetPath) {
+      issues.push(`${relativePath}: change ${change.change_id} file_path must be ${expectedTargetPath}.`);
+    }
+
+    if (!nonEmptyString(change.staged_file_path)) {
+      issues.push(`${relativePath}: change ${change.change_id} must define staged_file_path.`);
+      continue;
+    }
+
+    const stagedPrefix = `data/staged-records/${bundle.id}`;
+    if (!isPathUnder(stagedPrefix, change.staged_file_path)) {
+      issues.push(`${relativePath}: change ${change.change_id} staged_file_path must stay under ${stagedPrefix}/.`);
+    }
+
+    const stagedRecord = context.valueByRelativePath.get(change.staged_file_path);
+    if (!stagedRecord) {
+      issues.push(`${relativePath}: change ${change.change_id} staged file is missing: ${change.staged_file_path}.`);
+      continue;
+    }
+
+    if (stagedRecord.record_type !== change.target_record_type) {
+      issues.push(`${relativePath}: change ${change.change_id} staged record_type must be ${change.target_record_type}.`);
+    }
+
+    if (stagedRecord.id !== change.target_record_id) {
+      issues.push(`${relativePath}: change ${change.change_id} staged record id must be ${change.target_record_id}.`);
+    }
+  }
+}
+
+function validateArtifact(entry, context, issues) {
+  const { value: artifact, relativePath } = entry;
+  for (const sourceId of artifact.source_ids ?? []) {
+    if (!hasRecord(context.recordByTypeAndId, "source", sourceId)) {
+      issues.push(`${relativePath}: references missing source_id: ${sourceId}.`);
+    }
+  }
+
+  for (const nodeId of artifact.taxonomy_node_ids ?? []) {
+    if (!context.nodeDomainById.has(nodeId)) {
+      issues.push(`${relativePath}: references unknown taxonomy_node_id: ${nodeId}.`);
+    }
+  }
+}
+
+function validateFinding(entry, context, issues) {
+  const { value: finding, relativePath } = entry;
+  if (!hasRecord(context.recordByTypeAndId, "source", finding.source_id)) {
+    issues.push(`${relativePath}: references missing source_id: ${finding.source_id}.`);
+  }
+
+  if (finding.artifact_id && !hasRecord(context.recordByTypeAndId, "artifact", finding.artifact_id)) {
+    issues.push(`${relativePath}: references missing artifact_id: ${finding.artifact_id}.`);
+  }
+
+  for (const nodeId of finding.taxonomy_node_ids ?? []) {
+    if (!context.nodeDomainById.has(nodeId)) {
+      issues.push(`${relativePath}: references unknown taxonomy_node_id: ${nodeId}.`);
+    }
+  }
+}
+
+function validateClaim(entry, context, issues) {
+  const { value: claim, relativePath } = entry;
+  if (claim.subject_type === "taxonomy_node" && !context.nodeDomainById.has(claim.subject_id)) {
+    issues.push(`${relativePath}: references unknown subject taxonomy node: ${claim.subject_id}.`);
+  }
+
+  if (claim.subject_type === "taxonomy_node" && (!Array.isArray(claim.limitations) || claim.limitations.length === 0)) {
+    issues.push(`${relativePath}: taxonomy-node claims must include limitations[].`);
+  }
+
+  for (const findingId of claim.supporting_finding_ids ?? []) {
+    if (!hasRecord(context.recordByTypeAndId, "finding", findingId)) {
+      issues.push(`${relativePath}: references missing supporting_finding_id: ${findingId}.`);
+    }
+  }
+
+  for (const sourceId of claim.supporting_source_ids ?? []) {
+    if (!hasRecord(context.recordByTypeAndId, "source", sourceId)) {
+      issues.push(`${relativePath}: references missing supporting_source_id: ${sourceId}.`);
+    }
+  }
+
+  for (const [index, support] of (claim.supporting_evidence ?? []).entries()) {
+    for (const findingId of support.finding_ids ?? []) {
+      if (!hasRecord(context.recordByTypeAndId, "finding", findingId)) {
+        issues.push(`${relativePath}: supporting_evidence[${index}] references missing finding_id: ${findingId}.`);
+      }
+    }
+
+    for (const sourceId of support.source_ids ?? []) {
+      if (!hasRecord(context.recordByTypeAndId, "source", sourceId)) {
+        issues.push(`${relativePath}: supporting_evidence[${index}] references missing source_id: ${sourceId}.`);
+      }
+    }
+  }
+}
+
+function validateEvidenceReview(entry, context, issues) {
+  const { value: review, relativePath } = entry;
+  const bundleEntry = context.recordByTypeAndId.get("candidate_bundle")?.get(review.candidate_bundle_id);
+  if (!bundleEntry) {
+    issues.push(`${relativePath}: references missing candidate_bundle_id: ${review.candidate_bundle_id}.`);
+    return;
+  }
+
+  const bundle = bundleEntry.value;
+  const domainId = bundle.scope?.domain_id;
+  const reviewLaneIds = context.reviewLaneIdsByDomain.get(domainId) ?? new Set();
+  if (!reviewLaneIds.has(review.review_lane)) {
+    issues.push(`${relativePath}: review_lane ${review.review_lane} is not defined for domain ${domainId}.`);
+  }
+
+  if (review.bundle_revision_number !== (bundle.revision_number ?? 1)) {
+    issues.push(`${relativePath}: bundle_revision_number must match candidate bundle revision.`);
+  }
+
+  const validChangeIds = new Set((bundle.proposed_changes ?? []).map((change) => change.change_id));
+  for (const changeId of review.reviewed_change_ids ?? []) {
+    if (!validChangeIds.has(changeId)) {
+      issues.push(`${relativePath}: reviewed_change_ids references unknown change_id: ${changeId}.`);
+    }
+  }
+}
+
+function validateResearchSession(entry, context, issues) {
+  const { value: session, relativePath } = entry;
+  addDomainNodeChecks({
+    issues,
+    relativePath,
+    domainId: session.scope?.domain_id,
+    nodeIds: session.scope?.taxonomy_node_ids,
+    domainIds: context.domainIds,
+    nodeDomainById: context.nodeDomainById
+  });
+
+  if (session.candidate_bundle_id && !hasRecord(context.recordByTypeAndId, "candidate_bundle", session.candidate_bundle_id)) {
+    issues.push(`${relativePath}: references missing candidate_bundle_id: ${session.candidate_bundle_id}.`);
+  }
+}
+
+function validatePublicationEvent(entry, context, issues) {
+  const { value: event, relativePath } = entry;
+  if (!hasRecord(context.recordByTypeAndId, "candidate_bundle", event.candidate_bundle_id)) {
+    issues.push(`${relativePath}: references missing candidate_bundle_id: ${event.candidate_bundle_id}.`);
+  }
+
+  for (const reviewId of event.approving_evidence_review_ids ?? []) {
+    if (!hasRecord(context.recordByTypeAndId, "evidence_review", reviewId)) {
+      issues.push(`${relativePath}: references missing approving_evidence_review_id: ${reviewId}.`);
+    }
+  }
+
+  for (const target of event.published_targets ?? []) {
+    if (!hasRecord(context.recordByTypeAndId, target.record_type, target.record_id)) {
+      issues.push(`${relativePath}: published target is missing: ${target.record_type}:${target.record_id}.`);
+    }
+  }
+}
+
+function validateCrossReferences(entries) {
+  const issues = [];
+  const domainContext = validateDomainPackContracts(entries, issues);
+  const recordContext = buildRecordIndexes(entries);
+  const context = { ...domainContext, ...recordContext };
+
+  for (const entry of entries) {
+    switch (entry.value?.record_type) {
+      case "candidate_bundle":
+        validateCandidateBundle(entry, context, issues);
+        break;
+      case "artifact":
+        validateArtifact(entry, context, issues);
+        break;
+      case "finding":
+        validateFinding(entry, context, issues);
+        break;
+      case "claim":
+        validateClaim(entry, context, issues);
+        break;
+      case "evidence_review":
+        validateEvidenceReview(entry, context, issues);
+        break;
+      case "research_session":
+        validateResearchSession(entry, context, issues);
+        break;
+      case "publication_event":
+        validatePublicationEvent(entry, context, issues);
+        break;
+      default:
+        break;
+    }
+  }
+
+  return issues;
+}
+
 async function main() {
   const ajv = new Ajv2020({
     allErrors: true,
@@ -101,6 +484,7 @@ async function main() {
 
   const issues = [];
   const usedSchemaIds = new Set();
+  const parsedEntries = [];
 
   for (const filePath of files) {
     const relativePath = toPosixRelative(filePath);
@@ -126,12 +510,17 @@ async function main() {
     }
 
     usedSchemaIds.add(schemaId);
+    parsedEntries.push({ relativePath, value });
 
     if (!validate(value)) {
       for (const error of validate.errors ?? []) {
         issues.push(`${relativePath}: ${formatError(error)}`);
       }
     }
+  }
+
+  if (issues.length === 0) {
+    issues.push(...validateCrossReferences(parsedEntries));
   }
 
   if (issues.length > 0) {

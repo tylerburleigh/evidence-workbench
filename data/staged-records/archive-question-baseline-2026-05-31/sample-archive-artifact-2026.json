@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "sample-archive-artifact-2026",
+  "name": "Synthetic Archive Artifact",
+  "artifact_type": "archive_item_extract",
+  "status": "complete",
+  "source_ids": [
+    "sample-archive-source-2026"
+  ],
+  "taxonomy_node_ids": [
+    "archive-question"
+  ],
+  "population_or_context": "Synthetic archive fixture context.",
+  "sample_size": "not applicable",
+  "methods": "Fixture artifact used to validate a second domain pack with non-topic scope units.",
+  "endpoint_categories": [
+    "archive_validation"
+  ],
+  "domain_fields": {
+    "archive_item": "example archive item",
+    "locator": "fixture://sample-archive/archive-question",
+    "observed_property": "records can be linked under a question scope",
+    "context_boundary": "synthetic archive fixture only"
+  }
+}
