@@ -120,7 +120,7 @@ Core lanes worth preserving:
 - `source_fidelity`: do source metadata and extracted facts match the cited source?
 - `interpretation`: do findings support the public claim?
 - `limitations`: are caveats, context, uncertainty, and boundaries visible?
-- `taxonomy_mapping`: are records mapped to the right domain topics?
+- `taxonomy_mapping`: are records mapped to the right domain scope units?
 - optional domain-defined review lanes for pack-specific risks or limitations
 
 Domain-specific lanes can be added, but the core should treat lane IDs as configuration.

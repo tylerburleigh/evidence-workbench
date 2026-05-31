@@ -47,8 +47,8 @@ Build the inspectable public surface.
 
 Tasks:
 
-- Homepage with domain summary, topic coverage, recent changes, and trust notes.
-- Topic index and topic detail pages.
+- Homepage with domain summary, scope coverage, recent changes, and trust notes.
+- Scope index and scope detail pages.
 - Source, artifact, finding, and claim detail pages.
 - Activity feed.
 - Methods page generated partly from domain pack.
@@ -121,7 +121,7 @@ Acceptance criteria:
 
 - `npm run validate` catches schema and cross-reference issues.
 - `npm run build` passes with neutral fixture data.
-- Published public routes render expected topic labels and claim text.
+- Published public routes render expected scope labels and claim text.
 
 ## Phase 7: Optional Database Migration
 

@@ -15,8 +15,8 @@ Recommended top-level routes:
 
 ```text
 /
-/topics
-/topics/[topicId]
+/scope
+/scope/[nodeId]
 /sources/[sourceId]
 /artifacts/[artifactId]
 /findings/[findingId]
@@ -40,7 +40,7 @@ Job:
 Give a fast answer to:
 
 - What is the current state of this domain?
-- Which topics are covered?
+- Which configured scope units are covered?
 - What changed recently?
 - Why should the reader trust the claims?
 
@@ -52,11 +52,11 @@ Sections:
 4. Methods/trust notes
 5. Optional domain-defined context panel
 
-## Topic Detail Page
+## Scope Unit Detail Page
 
 Job:
 
-Explain one bounded topic with evidence, interpretation, and uncertainty visible.
+Explain one bounded scope unit with evidence, interpretation, and uncertainty visible.
 
 Sections:
 

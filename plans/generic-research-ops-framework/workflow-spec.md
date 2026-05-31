@@ -6,7 +6,7 @@ The default work unit should be one taxonomy topic per run.
 
 This prevents broad, diffuse research passes and makes review feasible.
 
-If a user asks for a whole field, the system should select or ask for one bounded topic.
+If a user asks for a whole field, the system should select or ask for one bounded scope unit.
 
 ## Workflow 1: Bootstrap Research
 

@@ -27,7 +27,7 @@ Responsibilities:
 Boundaries:
 
 - do not publish
-- do not cover multiple topics unless explicitly decomposed
+- do not cover multiple scope units unless explicitly decomposed
 - do not make claims without source-backed findings
 
 ### `surveillance-update`
