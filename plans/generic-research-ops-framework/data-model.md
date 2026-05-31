@@ -7,10 +7,10 @@ Claims are first-class records. They should not exist only as prose in a page or
 Every major public conclusion should be traceable:
 
 ```text
-claim/outlook
+claim
   -> support map
   -> findings
-  -> artifacts/studies
+  -> artifacts
   -> sources
   -> research session
   -> candidate bundle
@@ -39,11 +39,11 @@ Suggested fields:
 
 A stable scoping and navigation unit.
 
-In this repo, the closest analogue is a `track`. A generic framework should allow two or three levels:
+A generic framework should allow two or more taxonomy levels:
 
 - domain
 - category
-- topic or track
+- topic
 
 Suggested fields:
 
@@ -78,9 +78,9 @@ Suggested fields:
 
 ### Artifact
 
-A study, trial, paper, dataset, benchmark, conference abstract, report, or experiment.
+A domain-relevant object extracted from or described by sources.
 
-This generalizes the current `study` record.
+The domain pack defines artifact types. The core only requires stable IDs, source links, taxonomy links, and fields needed for validation.
 
 Suggested fields:
 
@@ -92,7 +92,7 @@ Suggested fields:
 - `population_or_context`
 - `sample_size`
 - `methods`
-- `intervention_or_system_ids`
+- `domain_entity_ids`
 - `endpoint_categories`
 - `taxonomy_node_ids`
 - `dates`
@@ -120,11 +120,9 @@ Suggested fields:
 - `caveats`
 - domain-specific fields
 
-### Claim Or Outlook
+### Claim
 
-A curator or agent-drafted judgment about a topic, intervention, question, or domain state.
-
-This generalizes the current `outlook` record.
+A curator or agent-drafted judgment about a taxonomy topic, subject, question, or domain state.
 
 Suggested fields:
 
@@ -139,8 +137,8 @@ Suggested fields:
 - `main_blockers`
 - `best_current_signals`
 - `interpretive_note`
-- `forecast_note`
-- `rating_change_criteria`
+- `interpretive_note`
+- `limitations`
 - `supporting_finding_ids`
 - `supporting_source_ids`
 - `supporting_evidence`
@@ -150,14 +148,14 @@ Suggested fields:
 
 ```json
 {
-  "label": "Human functional signal",
-  "outlook_field": "current_stage",
-  "conclusion": "The evidence supports a bounded human-functional signal.",
+  "label": "Primary support",
+  "claim_field": "current_stage",
+  "conclusion": "The evidence supports a bounded claim.",
   "support_role": "supports",
-  "rationale": "The finding uses a functional endpoint in the target population.",
+  "rationale": "The finding is directly linked to the claim scope.",
   "finding_ids": ["example-finding-id"],
   "source_ids": ["example-source-id"],
-  "limitations": ["Short duration", "Small sample", "Narrow population"]
+  "limitations": ["Limited context", "Single source"]
 }
 ```
 
@@ -312,4 +310,3 @@ Suggested fields:
 - `last_publication_event_id`
 - `default_research_question`
 - `notes`
-

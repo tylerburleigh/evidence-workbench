@@ -1,0 +1,25 @@
+{
+  "id": "sample-research",
+  "name": "Sample Research Domain",
+  "summary": "A neutral fixture domain used to exercise the generic research workflow without encoding a real subject area.",
+  "default_scope_unit": "topic",
+  "taxonomy_file": "taxonomy.v1.json",
+  "evidence_ladder_file": "evidence-ladder.v1.json",
+  "extraction_schema_file": "extraction-schema.v1.json",
+  "review_lanes_file": "review-lanes.v1.json",
+  "public_copy_file": "public-copy.v1.json",
+  "default_review_lanes": [
+    "source_fidelity",
+    "interpretation",
+    "limitations",
+    "taxonomy_mapping"
+  ],
+  "public_claim_language": {
+    "default_posture": "bounded_evidence_summary",
+    "avoid": [
+      "claims outside the cited evidence",
+      "unstated population or context assumptions",
+      "confidence labels unsupported by the support map"
+    ]
+  }
+}

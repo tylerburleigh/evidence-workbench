@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/public-copy.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["id", "domain_id", "labels", "empty_states"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "domain_id": { "type": "string", "minLength": 1 },
+    "labels": { "type": "object" },
+    "empty_states": { "type": "object" }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/activity-item.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "record_type", "id", "name", "summary", "activity_type", "activity_lane", "occurred_on"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "record_type": { "const": "activity_item" },
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 1 },
+    "activity_type": { "type": "string", "minLength": 1 },
+    "activity_lane": { "type": "string", "minLength": 1 },
+    "occurred_on": { "type": "string", "minLength": 1 },
+    "taxonomy_node_ids": { "type": "array", "items": { "type": "string" } },
+    "affects_claim": { "type": "boolean" },
+    "significance_note": { "type": "string" },
+    "source_ids": { "type": "array", "items": { "type": "string" } }
+  }
+}

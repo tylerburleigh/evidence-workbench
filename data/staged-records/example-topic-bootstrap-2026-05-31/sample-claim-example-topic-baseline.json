@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "sample-claim-example-topic-baseline",
+  "name": "Example Topic Fixture Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "example-topic",
+  "current_stage": "claim_supported",
+  "momentum": "fixture_only",
+  "confidence": "moderate",
+  "summary": "The sample topic has a synthetic baseline claim whose support map is intentionally limited to fixture validation.",
+  "main_blockers": [
+    "No real-world evidence is represented by this fixture."
+  ],
+  "best_current_signals": [
+    "The support map points to a staged finding and source by stable ID."
+  ],
+  "interpretive_note": "This claim should be used only to test generic evidence graph mechanics.",
+  "limitations": [
+    "The sample domain is a neutral workflow fixture.",
+    "Source-backed findings from real materials are required before drafting public claims in a real pack."
+  ],
+  "update_notes": [
+    "Replace the sample domain with a real domain pack before using this structure for live research."
+  ],
+  "supporting_finding_ids": [
+    "sample-finding-example-topic-context-2026"
+  ],
+  "supporting_source_ids": [
+    "sample-source-example-topic-2026"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Fixture support map",
+      "claim_field": "current_stage",
+      "conclusion": "The staged sample records are linked well enough to exercise publication.",
+      "support_role": "supports",
+      "rationale": "The finding cites the source and artifact, and the claim cites the finding and source.",
+      "finding_ids": [
+        "sample-finding-example-topic-context-2026"
+      ],
+      "source_ids": [
+        "sample-source-example-topic-2026"
+      ],
+      "limitations": [
+        "Synthetic fixture only.",
+        "Not evidence for a real external claim."
+      ]
+    }
+  ],
+  "last_updated": "2026-05-31"
+}

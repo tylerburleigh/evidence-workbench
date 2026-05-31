@@ -4,19 +4,19 @@
 
 Goal:
 
-Create a domain-neutral file-backed framework with one sample domain.
+Create a domain-neutral file-backed framework with one neutral fixture domain.
 
 Tasks:
 
 - Define core schemas for source, artifact, finding, claim, activity item, research session, candidate bundle, evidence review, review comment, publication event, coverage state, and priority queue.
-- Port bundle validation from the LEV repo into domain-neutral names.
+- Port bundle validation from the reference implementation into domain-neutral names.
 - Port evidence-review scaffold/apply workflow.
 - Port planning-state sync.
 - Keep JSON files as the storage layer.
 
 Acceptance criteria:
 
-- A sample domain can create a candidate bundle with staged records.
+- A neutral fixture domain can create a candidate bundle with staged records.
 - Bundle validation catches broken paths, wrong record IDs, missing references, and missing support maps.
 - Evidence-review records can be scaffolded and applied.
 - Publication promotes staged records and writes a publication event.
@@ -36,8 +36,8 @@ Tasks:
 
 Acceptance criteria:
 
-- The same app can run a supplement domain pack without editing core workflow code.
-- The same app can run an edtech synthetic-response domain pack without editing core workflow code.
+- The same app can run the neutral fixture pack without editing core workflow code.
+- The same app can run a second independently authored test pack without editing core workflow code.
 
 ## Phase 3: Public Evidence Browser
 
@@ -47,7 +47,7 @@ Build the inspectable public surface.
 
 Tasks:
 
-- Homepage with domain outlook, topic coverage, recent changes, trust notes.
+- Homepage with domain summary, topic coverage, recent changes, and trust notes.
 - Topic index and topic detail pages.
 - Source, artifact, finding, and claim detail pages.
 - Activity feed.
@@ -93,7 +93,7 @@ Tasks:
   - surveillance
   - evidence review
   - editorial review
-- Create domain adapters for supplements and edtech synthetic responses.
+- Create domain adapters for the neutral fixture pack and at least one second test pack.
 - Add read-first lists and bounded workflow rules.
 
 Acceptance criteria:
@@ -120,7 +120,7 @@ Tasks:
 Acceptance criteria:
 
 - `npm run validate` catches schema and cross-reference issues.
-- `npm run build` passes with sample domain data.
+- `npm run build` passes with neutral fixture data.
 - Published public routes render expected topic labels and claim text.
 
 ## Phase 7: Optional Database Migration
@@ -135,18 +135,17 @@ Only migrate to SQLite or Postgres after:
 
 Even after a database migration, keep exportable JSON snapshots for review and agent workflows.
 
-## First Build Recommendation
+## First Build Guidance
 
-Build the generic framework by porting from the current LEV repo, not by starting from scratch.
+Build the generic framework by porting durable workflow mechanics from the reference implementation, not by preserving its domain vocabulary.
 
 Suggested first target:
 
-1. Rename LEV-specific concepts to domain-neutral concepts.
+1. Rename reference-app-specific concepts to domain-neutral concepts.
 2. Keep the candidate bundle and evidence-review CLI logic.
 3. Keep the Next.js app structure.
 4. Add a domain-pack loader.
-5. Implement one small supplement pack as the first proof.
-6. Implement one small edtech synthetic-response pack as the second proof.
+5. Implement one neutral `sample-research` fixture pack as the first proof.
+6. Implement one second fixture pack with different labels, review lanes, and extraction fields as the second proof.
 
-If both packs work without changing core workflow code, the architecture is probably correctly separated.
-
+If both fixture packs work without changing core workflow code, the architecture is probably correctly separated. Real domain packs should be downstream examples, not prerequisites for the core.

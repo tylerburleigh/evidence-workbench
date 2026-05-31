@@ -1,0 +1,36 @@
+{
+  "id": "sample-extraction-fields",
+  "domain_id": "sample-research",
+  "fields": [
+    {
+      "id": "subject",
+      "label": "Subject",
+      "required": true,
+      "description": "The subject, method, object, or question under review."
+    },
+    {
+      "id": "context",
+      "label": "Context",
+      "required": true,
+      "description": "The population, setting, use case, or boundary where the finding applies."
+    },
+    {
+      "id": "endpoint",
+      "label": "Endpoint",
+      "required": true,
+      "description": "The measured or observed endpoint."
+    },
+    {
+      "id": "result",
+      "label": "Result",
+      "required": true,
+      "description": "The extracted result or observation."
+    },
+    {
+      "id": "limitations",
+      "label": "Limitations",
+      "required": true,
+      "description": "Constraints that prevent overgeneralization."
+    }
+  ]
+}

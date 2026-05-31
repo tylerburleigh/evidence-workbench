@@ -23,17 +23,14 @@ Recommended top-level routes:
 /claims/[claimId]
 /activity
 /methods
-/state-of-the-field
-/state-of-the-field/[editionSlug]
+/reports
+/reports/[reportSlug]
 ```
 
 If the domain has important entities, add routes:
 
 ```text
-/interventions/[interventionId]
-/models/[modelId]
-/datasets/[datasetId]
-/products/[productId]
+/<entity-type>/[entityId]
 ```
 
 ## Public Homepage
@@ -49,11 +46,11 @@ Give a fast answer to:
 
 Sections:
 
-1. Overall domain outlook or summary
+1. Overall domain summary
 2. Topic coverage grid
 3. Recent public changes
 4. Methods/trust notes
-5. Optional scenario or forecast panel
+5. Optional domain-defined context panel
 
 ## Topic Detail Page
 
@@ -64,14 +61,14 @@ Explain one bounded topic with evidence, interpretation, and uncertainty visible
 Sections:
 
 1. Topic summary
-2. Current claim or outlook
+2. Current claim
 3. Evidence ladder
 4. Support-map cards
 5. Findings inventory
-6. Related artifacts/studies
+6. Related artifacts
 7. Sources
 8. Recent activity
-9. Rating-change criteria
+9. Claim limitations and update notes
 
 Support-map cards should show:
 
@@ -92,7 +89,7 @@ Fields:
 
 - statement
 - source
-- artifact/study
+- artifact
 - endpoint
 - direction
 - evidence tier
@@ -110,7 +107,7 @@ Explain the trust model.
 
 Required content:
 
-- evidence vs interpretation vs forecast
+- source evidence vs curator interpretation vs configured domain context
 - source inclusion rules
 - review process
 - evidence ladder
@@ -173,7 +170,7 @@ Actions:
 
 - Make evidence inspectable before asking users to trust conclusions.
 - Keep activity visually separate from evidence.
-- Keep forecast or recommendation language visibly separate from source facts.
+- Keep interpretation and domain-context language visibly separate from source facts.
 - Show uncertainty near the claim it qualifies.
 - Prefer dense, scannable operational UI over marketing-style pages.
 - Do not hide staged/public distinction in admin views.
@@ -189,4 +186,3 @@ Empty states should distinguish:
 - bundle exists but evidence review is missing
 
 This matters because "not researched yet" is different from "researched and no signal found."
-

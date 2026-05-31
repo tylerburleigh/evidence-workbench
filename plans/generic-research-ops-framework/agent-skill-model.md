@@ -93,46 +93,28 @@ Adapters should add:
 - required extraction fields
 - common overclaim patterns
 - evidence hierarchy
-- safety or ethics caveats
+- limitations, safety, or ethics caveats when configured
 - domain-specific review lanes
 - public wording rules
 
 Adapters should not duplicate generic lifecycle instructions.
 
-## Supplement Adapter Example
+## Domain Adapter Example
 
 Bootstrap instructions:
 
-- Identify exact compound, form, route, and dose.
-- Extract population, comparator, duration, endpoint, quantitative result, adverse events, and funding.
-- Separate disease-treatment evidence from healthy-user benefit.
-- Separate biomarker movement from functional benefit.
-- Flag interaction risks and contraindication boundaries.
-- Do not infer longevity benefit unless the evidence directly supports aging-relevant outcomes or mechanisms, and label that boundary.
+- Identify the domain subject, context, endpoint or observation type, result, and limitations.
+- Extract required fields before drafting a claim.
+- Separate source facts from interpretation.
+- Flag common domain-specific overclaim patterns.
+- Keep boundaries visible near the public claim.
 
 Evidence review instructions:
 
-- Check whether dose and formulation in the public claim match the source.
-- Check whether benefit claims are population-specific.
-- Check whether safety statements include adverse events and plausible interactions.
-- Treat sponsored, small, short, or surrogate-endpoint studies as lower-confidence unless replicated.
-
-## Edtech Synthetic-Response Adapter Example
-
-Bootstrap instructions:
-
-- Identify the assessment domain, grade/learner population, construct, and intended inference.
-- Extract model family, prompt or tuning method, source data, generation controls, evaluation metrics, and human comparison method.
-- Separate response realism from validity evidence.
-- Flag fairness, privacy, and leakage concerns.
-- Do not generalize across tasks, grade bands, or operational scoring uses without direct evidence.
-
-Evidence review instructions:
-
-- Check whether generated responses preserve the construct or merely imitate surface features.
-- Check whether evaluation metrics support the stated research use.
-- Check whether demographic fairness and privacy risks are represented.
-- Distinguish research sandbox use from operational assessment use.
+- Check whether the public claim matches the source-backed finding.
+- Check whether claim scope matches the configured taxonomy unit.
+- Check whether limitations and uncertainty are represented.
+- Check whether domain-specific review lanes are complete before approval.
 
 ## Skill File Shape
 
@@ -154,8 +136,7 @@ The framework can use separate agents or skill passes:
 1. Research drafter creates bundle.
 2. Source-fidelity reviewer checks facts.
 3. Interpretation reviewer checks claims.
-4. Safety/ethics reviewer checks limitations.
+4. Limitations reviewer checks caveats, boundaries, or configured risk/ethics concerns.
 5. Editorial publisher approves and publishes.
 
 Do not let the same pass silently do every role unless the user explicitly accepts lower review independence.
-

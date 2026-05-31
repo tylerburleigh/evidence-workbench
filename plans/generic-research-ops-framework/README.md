@@ -1,8 +1,8 @@
 # Generic Research Ops Framework
 
-This directory describes a domain-configurable research operations framework derived from the current LEV Tracker repo.
+This directory describes a domain-configurable research operations framework derived from a prior reference app.
 
-The goal is not to clone the longevity app. The goal is to preserve the durable pattern:
+The goal is not to clone any particular research domain. The goal is to preserve the durable pattern:
 
 ```text
 domain taxonomy
@@ -19,11 +19,11 @@ domain taxonomy
 
 Build a file-backed research workbench for domains where claims must be traceable, reviewable, and updateable.
 
-Example domains:
+Possible downstream domains include any area where public claims need traceable evidence and controlled updates. These examples must not be encoded into the core:
 
-- supplements: benefits, risks, doses, populations, mechanisms, longevity relevance
-- education technology research: synthetic student responses, validity evidence, fairness, privacy, evaluation methods
-- policy or market research: source-backed claims, uncertainty, monitoring, and publication control
+- scientific or technical evidence curation
+- policy, market, or product research
+- internal knowledge-base curation
 
 The framework should support multiple domain packs, but the first implementation can run one active domain at a time.
 
@@ -39,16 +39,16 @@ The framework should support multiple domain packs, but the first implementation
 
 ## What To Preserve From This Repo
 
-The current repo has several design choices worth carrying forward:
+The reference implementation has several design choices worth carrying forward:
 
-- Research work is bounded by a stable taxonomy unit, currently a `track`.
+- Research work is bounded by a stable taxonomy unit.
 - Research output does not directly change public records.
 - Proposed changes are staged under a bundle-specific directory.
 - Candidate bundles are the reviewable unit.
 - Evidence reviews are structured records, not prose-only comments.
 - Publication writes an event record and promotes staged records through a controlled path.
 - Coverage state and priority queues are generated from source records, sessions, bundles, and publication history.
-- Public pages separate evidence, interpretation, and forecast.
+- Public pages separate source evidence from curator interpretation and domain-defined context.
 - Agent skills encode workflow discipline around scope, extraction, review, and publishing.
 
 ## Current Repo Analogue
@@ -57,7 +57,7 @@ Use these existing paths as implementation references:
 
 - `taxonomies/`: domain taxonomy
 - `schemas/`: JSON Schema contracts
-- `data/sources`, `data/studies`, `data/findings`, `data/outlooks`: public evidence graph
+- `data/sources`, `data/artifacts`, `data/findings`, `data/claims`: public evidence graph
 - `data/candidate-bundles`: reviewable staged changes
 - `data/staged-records/<bundle-id>/`: proposed records before publication
 - `data/evidence-reviews`: structured verification passes
@@ -65,9 +65,9 @@ Use these existing paths as implementation references:
 - `research/state` and `research/backlog`: generated planning state
 - `research/sessions`: bounded research pass logs
 - `.codex/skills`: agent operating procedures
-- `scripts/research-bundle.mjs`: bundle validation, approval, publish, and smoke checks
+- `scripts/bundle.mjs`: bundle validation, approval, publish, and smoke checks
 - `scripts/review-evidence.mjs`: evidence-review scaffold and apply flow
-- `src/lib/site-data.ts`: app-facing data access and mutation layer
+- `src/lib/`: app-facing data access and mutation layer
 
 ## Non-Goals For V0
 
@@ -76,4 +76,3 @@ Use these existing paths as implementation references:
 - Do not optimize first for a chat interface.
 - Do not require a database before the file-backed model proves out.
 - Do not make the domain ontology invisible; it is the backbone of scoping, review, and navigation.
-

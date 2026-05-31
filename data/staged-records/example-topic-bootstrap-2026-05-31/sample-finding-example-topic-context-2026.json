@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "sample-finding-example-topic-context-2026",
+  "name": "Synthetic Finding For Example Topic",
+  "source_id": "sample-source-example-topic-2026",
+  "artifact_id": "sample-artifact-example-topic-2026",
+  "taxonomy_node_ids": [
+    "example-topic"
+  ],
+  "endpoint_category": "workflow_validation",
+  "direction": "supports_fixture_readiness",
+  "evidence_tier": "finding_extracted",
+  "confidence": "moderate",
+  "statement": "Within the synthetic fixture, the staged source, artifact, finding, and claim records are linked through stable IDs.",
+  "population_or_context": "Synthetic workflow fixture context.",
+  "time_horizon": "not applicable",
+  "quantitative_note": "No quantitative estimate; this is a workflow fixture.",
+  "caveats": [
+    "This finding is not public evidence about a real research domain.",
+    "It exists only to validate generic workflow mechanics."
+  ],
+  "domain_fields": {
+    "subject": "example topic",
+    "context": "workflow fixture",
+    "endpoint": "validation readiness",
+    "result": "linked staged records are present",
+    "limitations": "synthetic data only"
+  }
+}

@@ -36,16 +36,19 @@ Suggested shape:
 
 ```json
 {
-  "id": "supplements",
-  "name": "Supplement Evidence Research",
-  "summary": "Evidence tracking for supplement benefits, risks, mechanisms, and longevity relevance.",
+  "id": "sample-research",
+  "name": "Sample Research Domain",
+  "summary": "Neutral fixture domain used to exercise the generic research workflow.",
   "default_scope_unit": "topic",
   "taxonomy_file": "taxonomy.v1.json",
   "evidence_ladder_file": "evidence-ladder.v1.json",
+  "extraction_schema_file": "extraction-schema.v1.json",
+  "review_lanes_file": "review-lanes.v1.json",
+  "public_copy_file": "public-copy.v1.json",
   "default_review_lanes": [
     "source_fidelity",
-    "benefit_interpretation",
-    "safety_limitations",
+    "interpretation",
+    "limitations",
     "taxonomy_mapping"
   ]
 }
@@ -55,30 +58,12 @@ Suggested shape:
 
 The taxonomy should define the stable units of work and navigation.
 
-For supplements:
+Neutral fixture example:
 
 ```text
-category: metabolic health
-  topic: berberine
-  topic: creatine
-  topic: omega-3
-category: sleep and recovery
-  topic: magnesium
-  topic: glycine
-```
-
-For edtech synthetic student responses:
-
-```text
-category: validity and measurement
-  topic: construct representation
-  topic: score comparability
-category: synthetic data generation
-  topic: prompt-based response generation
-  topic: fine-tuned response simulators
-category: fairness and privacy
-  topic: demographic fairness
-  topic: disclosure and data leakage
+category: example category
+  topic: example topic
+  topic: second example topic
 ```
 
 Each topic should include:
@@ -94,31 +79,15 @@ Each topic should include:
 
 ## Evidence Ladder
 
-The evidence ladder is domain-specific.
+The evidence ladder is domain-specific. The core framework should only load, display, and reference configured ladder stages; it should not hardcode stage names or progression rules.
 
-The core framework should not assume the LEV ladder.
-
-### Supplement Example
+Neutral fixture example:
 
 ```text
-mechanistic_plausibility
-preclinical_or_ex_vivo_signal
-human_biomarker_signal
-human_symptom_or_function_signal
-replicated_clinical_benefit
-durable_benefit_with_safety_margin
-```
-
-### Edtech Synthetic-Response Example
-
-```text
-conceptual_rationale
-prototype_generation
-human_similarity_evidence
-task_validity_evidence
-score_or_inference_validity_evidence
-multi-context_replication
-operational_use_with_governance
+source_identified
+finding_extracted
+claim_supported
+reviewed_baseline
 ```
 
 Each stage should define:
@@ -133,40 +102,14 @@ Each stage should define:
 
 Each domain pack should specify fields that agent skills must extract.
 
-### Supplement Fields
+Neutral fixture fields:
 
-- compound or product family
-- formulation
-- dose
-- route
-- duration
-- population
-- comparator
-- endpoint
-- quantitative result
-- adverse events
-- interaction risk
-- funding or conflicts
-- directness to user question
-- longevity relevance boundary
-
-### Edtech Synthetic-Response Fields
-
-- education domain
-- learner population
-- assessment type
-- construct being represented
-- model family
-- generation method
-- prompt or tuning strategy
-- source data
-- evaluation metric
-- human comparison method
-- validity evidence
-- fairness evidence
-- privacy or leakage concern
-- intended research use
-- boundary on operational use
+- subject
+- context
+- endpoint or observation type
+- result or extracted observation
+- limitations
+- source location or retrieval note
 
 ## Review Lanes
 
@@ -176,24 +119,11 @@ Core lanes worth preserving:
 
 - `source_fidelity`: do source metadata and extracted facts match the cited source?
 - `interpretation`: do findings support the public claim?
-- `safety_limitations`: are risks, populations, endpoints, and caveats visible?
+- `limitations`: are caveats, context, uncertainty, and boundaries visible?
 - `taxonomy_mapping`: are records mapped to the right domain topics?
-- `forecast_calibration`: does the outlook avoid false precision or overreach?
+- optional domain-defined review lanes for pack-specific risks or limitations
 
-Domain-specific lanes can be added.
-
-Supplement-specific examples:
-
-- `dose_formulation_boundary`
-- `interaction_and_contraindication_risk`
-- `human_relevance`
-
-Edtech-specific examples:
-
-- `validity_argument`
-- `fairness_and_bias`
-- `privacy_and_data_leakage`
-- `construct_boundary`
+Domain-specific lanes can be added, but the core should treat lane IDs as configuration.
 
 ## Public Copy
 
@@ -203,7 +133,7 @@ Examples:
 
 - evidence layer label
 - interpretation layer label
-- forecast or recommendation layer label
+- optional domain-specific context layer labels
 - empty-state language
 - stage labels
 - confidence labels
@@ -215,17 +145,10 @@ Avoid encoding this copy only in React components.
 
 Domain skills should not duplicate the core workflow. They should add domain discipline.
 
-For example, a supplement bootstrap skill should say:
+For example, a domain adapter can specify:
 
-- extract dose and formulation before drafting a claim
-- keep disease-treatment evidence separate from healthy-user benefit
-- do not imply longevity benefit from a biomarker alone
-- include interaction and adverse-event caveats near benefit claims
-
-An edtech synthetic-response skill should say:
-
-- identify the construct and intended inference before evaluating results
-- separate surface similarity from validity evidence
-- flag demographic fairness and data leakage risks
-- do not generalize across grade bands, tasks, or scoring uses without evidence
-
+- required fields that must be extracted before drafting a claim
+- common ways claims overreach beyond the extracted findings
+- boundaries that must appear near public conclusions
+- review lanes required before approval
+- terms, labels, and page copy that should replace generic UI language

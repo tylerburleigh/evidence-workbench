@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "state_type": "coverage_status",
+  "domain_id": "sample-research",
+  "taxonomy_version": "1.0.0",
+  "updated_at": "2026-05-31T22:52:32.462Z",
+  "notes": [
+    "The default unit of research work is one taxonomy topic.",
+    "Coverage status is planning state, not a public claim about evidence maturity."
+  ],
+  "selection_policy": {
+    "default_unit": "topic",
+    "max_topics_per_bootstrap_run": 1,
+    "max_topics_per_surveillance_run": 1,
+    "when_request_is_too_broad": "Decompose to one topic-level pass before creating records."
+  },
+  "nodes": [
+    {
+      "taxonomy_node_id": "example-topic",
+      "taxonomy_node_type": "topic",
+      "parent_id": "example-category",
+      "canonical_order": 1,
+      "name": "Example Topic",
+      "coverage_status": "baseline",
+      "next_mode": "surveillance",
+      "queue_state": "ready",
+      "last_session_id": "example-topic-bootstrap-2026-05-31",
+      "last_session_at": "2026-05-31T12:10:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle",
+      "last_candidate_bundle_id": "example-topic-bootstrap-2026-05-31",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-example-topic-bootstrap-2026-05-31-2026-05-31t22-52-32-459z",
+      "last_published_at": "2026-05-31T22:52:32.459Z",
+      "default_research_question": "What changed for Example Topic since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Latest publication event: publish-example-topic-bootstrap-2026-05-31-2026-05-31t22-52-32-459z."
+    },
+    {
+      "taxonomy_node_id": "second-example-topic",
+      "taxonomy_node_type": "topic",
+      "parent_id": "example-category",
+      "canonical_order": 2,
+      "name": "Second Example Topic",
+      "coverage_status": "not_started",
+      "next_mode": "bootstrap",
+      "queue_state": "ready",
+      "default_research_question": "What is the current evidence landscape for Second Example Topic in Sample Research Domain, and what belongs in the first public baseline?",
+      "notes": "No public baseline has been bootstrapped yet."
+    }
+  ]
+}

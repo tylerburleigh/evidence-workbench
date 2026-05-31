@@ -1,0 +1,30 @@
+{
+  "id": "sample-review-lanes",
+  "domain_id": "sample-research",
+  "lanes": [
+    {
+      "id": "source_fidelity",
+      "label": "Source Fidelity",
+      "description": "Checks whether source metadata and extracted facts match the cited material.",
+      "required_by_default": true
+    },
+    {
+      "id": "interpretation",
+      "label": "Interpretation",
+      "description": "Checks whether findings support the public claim without overreach.",
+      "required_by_default": true
+    },
+    {
+      "id": "limitations",
+      "label": "Limitations",
+      "description": "Checks whether caveats, context, and uncertainty are visible near the claim.",
+      "required_by_default": false
+    },
+    {
+      "id": "taxonomy_mapping",
+      "label": "Taxonomy Mapping",
+      "description": "Checks that staged records are mapped to the intended taxonomy topic.",
+      "required_by_default": false
+    }
+  ]
+}

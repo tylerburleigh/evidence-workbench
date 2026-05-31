@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/evidence-ladder.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["id", "domain_id", "stages"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "domain_id": { "type": "string", "minLength": 1 },
+    "stages": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "label", "description", "minimum_support_expected"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "label": { "type": "string", "minLength": 1 },
+          "description": { "type": "string", "minLength": 1 },
+          "minimum_support_expected": { "type": "string", "minLength": 1 },
+          "common_overclaim_risk": { "type": "string" },
+          "moves_to_next_stage": { "type": "string" }
+        }
+      }
+    }
+  }
+}

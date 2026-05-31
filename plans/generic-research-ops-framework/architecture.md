@@ -23,10 +23,7 @@ Responsibilities:
 - public labels and explanatory text
 - domain-specific agent instructions
 
-Examples:
-
-- supplement domain pack: compound, form, dose, population, endpoint, risk, interaction, mechanism, longevity relevance
-- edtech synthetic-response domain pack: construct, assessment context, model family, prompt method, validation method, fairness, privacy, evaluation use
+The core should treat every domain pack as data. A pack may model compounds, policies, products, methods, datasets, or any other research unit, but those concepts must not become core code paths.
 
 ### 2. Evidence Graph
 
@@ -35,11 +32,11 @@ Stores the public, published knowledge layer.
 Core collections:
 
 - `sources`
-- `artifacts` or `studies`
+- `artifacts`
 - `findings`
-- `claims` or `outlooks`
+- `claims`
 - `activity-items`
-- optional `interventions`, `methods`, `datasets`, or `models`, depending on domain
+- optional domain-owned entity collections, depending on the pack
 
 All public claims must be traceable to findings and sources.
 
@@ -90,9 +87,9 @@ The framework should support review lanes like:
 
 - `source_fidelity`
 - `interpretation`
-- `safety_limitations`
+- `limitations`
 - `taxonomy_mapping`
-- `forecast_calibration`
+- optional domain-defined review lanes
 
 Domain packs may rename or add lanes, but every review should produce machine-readable findings.
 
@@ -125,21 +122,27 @@ The admin UI manages:
 - approval
 - publication
 
-The first implementation can be a Next.js app, following the current repo.
+The first UI implementation can be a Next.js app, but the workflow core should not depend on the UI framework.
 
 ## Recommended File Layout
 
 ```text
 domain-packs/
-  supplements/
+  sample-research/
     domain.json
     taxonomy.v1.json
-    schemas/
-    rubrics/
+    evidence-ladder.v1.json
+    extraction-schema.v1.json
+    review-lanes.v1.json
+    public-copy.v1.json
     skills/
-  edtech-synthetic-responses/
+  <domain-id>/
     domain.json
     taxonomy.v1.json
+    evidence-ladder.v1.json
+    extraction-schema.v1.json
+    review-lanes.v1.json
+    public-copy.v1.json
     schemas/
     rubrics/
     skills/
@@ -209,4 +212,3 @@ Reasons:
 - low operational complexity
 
 The framework can later add SQLite or Postgres after the record model stabilizes.
-

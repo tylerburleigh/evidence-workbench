@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/publication-event.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "name",
+    "candidate_bundle_id",
+    "event_type",
+    "published_at",
+    "published_by",
+    "published_targets",
+    "change_note"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "record_type": { "const": "publication_event" },
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string" },
+    "candidate_bundle_id": { "type": "string", "minLength": 1 },
+    "event_type": { "enum": ["publish"] },
+    "published_at": { "type": "string", "minLength": 1 },
+    "published_by": { "type": "string", "minLength": 1 },
+    "published_targets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["record_type", "record_id", "action"],
+        "properties": {
+          "record_type": { "type": "string", "minLength": 1 },
+          "record_id": { "type": "string", "minLength": 1 },
+          "action": { "enum": ["created", "updated"] }
+        }
+      }
+    },
+    "affected_claim_ids": { "type": "array", "items": { "type": "string" } },
+    "approving_evidence_review_ids": { "type": "array", "items": { "type": "string" } },
+    "change_note": { "type": "string", "minLength": 1 }
+  }
+}

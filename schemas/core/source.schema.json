@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/source.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "record_type", "id", "name", "source_type"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "record_type": { "const": "source" },
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "source_type": { "type": "string", "minLength": 1 },
+    "authors": { "type": "array", "items": { "type": "string" } },
+    "venue": { "type": "string" },
+    "year": { "type": "integer" },
+    "published_on": { "type": "string" },
+    "doi": { "type": "string" },
+    "pmid": { "type": "string" },
+    "registry_ids": { "type": "array", "items": { "type": "string" } },
+    "urls": { "type": "array", "items": { "type": "string" } },
+    "summary": { "type": "string" }
+  }
+}

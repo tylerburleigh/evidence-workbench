@@ -4,7 +4,7 @@
 
 The default work unit should be one taxonomy topic per run.
 
-This mirrors the current repo's track-level discipline. It prevents broad, diffuse research passes and makes review feasible.
+This prevents broad, diffuse research passes and makes review feasible.
 
 If a user asks for a whole field, the system should select or ask for one bounded topic.
 
@@ -160,4 +160,3 @@ rejected -> terminal
 ```
 
 Approval may be allowed directly from `submitted` for small bundles, but only when validation and review gates are clean.
-

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/coverage-status.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "state_type", "domain_id", "taxonomy_version", "updated_at", "nodes"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "state_type": { "const": "coverage_status" },
+    "domain_id": { "type": "string", "minLength": 1 },
+    "taxonomy_version": { "type": "string", "minLength": 1 },
+    "updated_at": { "type": "string", "minLength": 1 },
+    "notes": { "type": "array", "items": { "type": "string" } },
+    "selection_policy": { "type": "object" },
+    "nodes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["taxonomy_node_id", "name", "coverage_status", "next_mode", "queue_state", "default_research_question"],
+        "properties": {
+          "taxonomy_node_id": { "type": "string", "minLength": 1 },
+          "name": { "type": "string", "minLength": 1 },
+          "coverage_status": { "enum": ["not_started", "in_review", "baseline"] },
+          "next_mode": { "enum": ["bootstrap", "surveillance", "manual"] },
+          "queue_state": { "enum": ["ready", "active_review", "deferred"] },
+          "default_research_question": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

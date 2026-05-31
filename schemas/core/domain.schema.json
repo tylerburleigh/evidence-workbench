@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/domain.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "name",
+    "summary",
+    "taxonomy_file",
+    "evidence_ladder_file",
+    "review_lanes_file",
+    "public_copy_file",
+    "default_scope_unit",
+    "default_review_lanes"
+  ],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 1 },
+    "taxonomy_file": { "type": "string", "minLength": 1 },
+    "evidence_ladder_file": { "type": "string", "minLength": 1 },
+    "review_lanes_file": { "type": "string", "minLength": 1 },
+    "public_copy_file": { "type": "string", "minLength": 1 },
+    "default_scope_unit": { "type": "string", "minLength": 1 },
+    "default_review_lanes": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    }
+  }
+}

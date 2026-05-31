@@ -1,0 +1,38 @@
+{
+  "id": "sample-evidence-ladder",
+  "domain_id": "sample-research",
+  "stages": [
+    {
+      "id": "source_identified",
+      "label": "Source Identified",
+      "description": "At least one potentially relevant source has been identified.",
+      "minimum_support_expected": "A source record with enough metadata to find the cited material again.",
+      "common_overclaim_risk": "Treating source existence as evidence of a conclusion.",
+      "moves_to_next_stage": "An extracted finding with a clear source link and context boundary."
+    },
+    {
+      "id": "finding_extracted",
+      "label": "Finding Extracted",
+      "description": "A source-backed atomic finding has been extracted.",
+      "minimum_support_expected": "A finding record linked to a source and scoped to one taxonomy topic.",
+      "common_overclaim_risk": "Overgeneralizing one finding into a broader public claim.",
+      "moves_to_next_stage": "A support map that explains how the finding does or does not support a claim."
+    },
+    {
+      "id": "claim_supported",
+      "label": "Claim Supported",
+      "description": "A public claim is backed by a support map that cites concrete findings and sources.",
+      "minimum_support_expected": "A claim record with supporting_evidence entries mapped to findings and sources.",
+      "common_overclaim_risk": "Letting the claim exceed the support map.",
+      "moves_to_next_stage": "Independent review accepts source fidelity and interpretation."
+    },
+    {
+      "id": "reviewed_baseline",
+      "label": "Reviewed Baseline",
+      "description": "Required review lanes have accepted the bundle and the claim can be published.",
+      "minimum_support_expected": "Complete non-blocking evidence reviews for required lanes.",
+      "common_overclaim_risk": "Mistaking editorial publication for permanent certainty.",
+      "moves_to_next_stage": "Surveillance identifies a material update or stale coverage."
+    }
+  ]
+}

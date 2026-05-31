@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/claim.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "name",
+    "subject_type",
+    "subject_id",
+    "current_stage",
+    "momentum",
+    "confidence",
+    "summary",
+    "supporting_finding_ids",
+    "supporting_source_ids",
+    "supporting_evidence",
+    "last_updated"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "record_type": { "const": "claim" },
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "subject_type": { "type": "string", "minLength": 1 },
+    "subject_id": { "type": "string", "minLength": 1 },
+    "current_stage": { "type": "string", "minLength": 1 },
+    "momentum": { "type": "string", "minLength": 1 },
+    "confidence": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string", "minLength": 1 },
+    "main_blockers": { "type": "array", "items": { "type": "string" } },
+    "best_current_signals": { "type": "array", "items": { "type": "string" } },
+    "interpretive_note": { "type": "string" },
+    "limitations": { "type": "array", "items": { "type": "string" } },
+    "update_notes": { "type": "array", "items": { "type": "string" } },
+    "supporting_finding_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "supporting_source_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "supporting_evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["label", "claim_field", "conclusion", "support_role", "rationale", "finding_ids", "source_ids"],
+        "properties": {
+          "label": { "type": "string", "minLength": 1 },
+          "claim_field": { "type": "string" },
+          "conclusion": { "type": "string", "minLength": 1 },
+          "support_role": { "type": "string", "minLength": 1 },
+          "rationale": { "type": "string", "minLength": 1 },
+          "finding_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "source_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+          "limitations": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "last_updated": { "type": "string", "minLength": 1 }
+  }
+}

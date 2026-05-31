@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/candidate-bundle.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "name",
+    "intake_mode",
+    "lifecycle_status",
+    "submitted_at",
+    "submitted_by",
+    "revision_number",
+    "scope",
+    "proposed_changes",
+    "required_review_lanes",
+    "review_requirement"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "record_type": { "const": "candidate_bundle" },
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "summary": { "type": "string" },
+    "intake_mode": { "enum": ["bootstrap", "surveillance", "manual"] },
+    "lifecycle_status": {
+      "enum": ["submitted", "in_review", "needs_revision", "revised", "approved", "published", "rejected"]
+    },
+    "submitted_at": { "type": "string", "minLength": 1 },
+    "submitted_by": { "type": "string", "minLength": 1 },
+    "revision_number": { "type": "integer", "minimum": 1 },
+    "scope": { "type": "object" },
+    "source_ids": { "type": "array", "items": { "type": "string" } },
+    "source_urls": { "type": "array", "items": { "type": "string" } },
+    "related_records": { "type": "array", "items": { "type": "object" } },
+    "proposed_changes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["change_id", "change_type", "target_record_type", "target_record_id", "summary", "rationale"],
+        "properties": {
+          "change_id": { "type": "string", "minLength": 1 },
+          "change_type": { "enum": ["create_record", "update_record"] },
+          "target_record_type": { "enum": ["source", "artifact", "finding", "claim", "activity_item"] },
+          "target_record_id": { "type": "string", "minLength": 1 },
+          "file_path": { "type": "string" },
+          "staged_file_path": { "type": "string" },
+          "summary": { "type": "string", "minLength": 1 },
+          "rationale": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "proposed_claim_implications": { "type": "array", "items": { "type": "object" } },
+    "required_review_lanes": { "type": "array", "items": { "type": "string" } },
+    "review_requirement": { "type": "object" },
+    "evidence_review_ids": { "type": "array", "items": { "type": "string" } },
+    "review_comment_ids": { "type": "array", "items": { "type": "string" } },
+    "publication_event_ids": { "type": "array", "items": { "type": "string" } },
+    "next_actions": { "type": "array", "items": { "type": "string" } }
+  }
+}

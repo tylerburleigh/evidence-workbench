@@ -1,0 +1,61 @@
+{
+  "taxonomy_id": "sample-research-taxonomy",
+  "taxonomy_version": "1.0.0",
+  "domain_id": "sample-research",
+  "nodes": [
+    {
+      "id": "example-category",
+      "name": "Example Category",
+      "node_type": "category",
+      "canonical_order": 1,
+      "summary": "A neutral parent category for fixture topics.",
+      "search_aliases": [
+        "demo category"
+      ],
+      "example_entities": [],
+      "scope_notes": [
+        "Use this category only for workflow fixtures and examples."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "example-topic",
+      "name": "Example Topic",
+      "node_type": "topic",
+      "parent_id": "example-category",
+      "canonical_order": 1,
+      "summary": "A neutral topic used to test candidate bundles, support maps, review gates, and publication.",
+      "search_aliases": [
+        "demo topic",
+        "fixture topic"
+      ],
+      "example_entities": [
+        "example subject",
+        "example method"
+      ],
+      "scope_notes": [
+        "Do not treat fixture records as public knowledge about a real domain.",
+        "Keep claims obviously synthetic and bounded to workflow validation."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "second-example-topic",
+      "name": "Second Example Topic",
+      "node_type": "topic",
+      "parent_id": "example-category",
+      "canonical_order": 2,
+      "summary": "A second neutral topic so planning queues can distinguish covered and uncovered topics.",
+      "search_aliases": [
+        "second fixture topic"
+      ],
+      "example_entities": [
+        "example comparator"
+      ],
+      "scope_notes": [
+        "Use as an uncovered queue example."
+      ],
+      "retirement_status": "active"
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "id": "sample-public-copy",
+  "domain_id": "sample-research",
+  "labels": {
+    "evidence_layer": "Evidence",
+    "interpretation_layer": "Interpretation",
+    "context_layer": "Context",
+    "topic": "Topic",
+    "claim": "Claim",
+    "finding": "Finding",
+    "artifact": "Artifact"
+  },
+  "stage_labels": {
+    "source_identified": "Source identified",
+    "finding_extracted": "Finding extracted",
+    "claim_supported": "Claim supported",
+    "reviewed_baseline": "Reviewed baseline"
+  },
+  "confidence_labels": {
+    "low": "Low confidence",
+    "moderate": "Moderate confidence",
+    "high": "High confidence"
+  },
+  "empty_states": {
+    "no_topic": "No taxonomy topic exists for this route.",
+    "no_baseline": "This topic exists, but no public baseline has been published yet.",
+    "no_recent_activity": "No recent activity has been recorded for this topic.",
+    "no_findings": "No extracted findings have been published for this source yet.",
+    "missing_review": "This bundle is waiting for structured evidence review."
+  }
+}

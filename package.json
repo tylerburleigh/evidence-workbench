@@ -1,0 +1,17 @@
+{
+  "name": "evidence-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate-records.mjs",
+    "sync:research-planning": "node scripts/sync-research-planning.mjs",
+    "research:bundle": "node scripts/bundle.mjs",
+    "research:review-evidence": "node scripts/review-evidence.mjs",
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1"
+  }
+}
