@@ -9,7 +9,7 @@ const routes = [
   ["/activity", ["Public Change Feed", "Activity Is Not Evidence", "Timeline"]],
   ["/methods", ["Trust Model", "Evidence Ladder", "Review Process"]],
   ["/admin/review", ["Candidate Bundle Queue", "Example Topic Baseline Bootstrap", "Promotion"]],
-  ["/admin/review/example-topic-bootstrap-2026-05-31", ["Admin Review", "Actions", "Proposed Changes", "Evidence Reviews"]]
+  ["/admin/review/example-topic-bootstrap-2026-05-31", ["Admin Review", "Actions", "Approval", "Publication", "Proposed Changes", "Evidence Reviews"]]
 ];
 
 async function assertRoute(path, expectedText) {
