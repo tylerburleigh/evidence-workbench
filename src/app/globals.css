@@ -234,6 +234,10 @@ h3 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.grid.four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .card {
   background: var(--panel);
   border: 1px solid var(--line);
@@ -339,6 +343,15 @@ h3 {
   border-color: #8fb9b2;
 }
 
+.admin-row {
+  grid-template-columns: minmax(0, 1fr) minmax(260px, auto);
+}
+
+.admin-row-meta {
+  justify-content: flex-end;
+  margin-top: 0;
+}
+
 .row-kicker {
   color: var(--muted);
   display: block;
@@ -370,10 +383,22 @@ h3 {
   padding: 4px 0 4px 12px;
 }
 
+.support-item.warn-item {
+  border-left-color: var(--amber);
+}
+
+.support-item.danger-item {
+  border-left-color: #8d302a;
+}
+
 .support-item p {
   color: var(--muted);
   line-height: 1.45;
   margin: 6px 0 0;
+}
+
+.compact-list {
+  margin-top: 12px;
 }
 
 .detail-table {
@@ -395,6 +420,17 @@ h3 {
   font-weight: 650;
   padding-right: 16px;
   width: 150px;
+}
+
+.compact-table {
+  margin-top: 10px;
+}
+
+.path-value {
+  color: var(--text);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 12px;
+  overflow-wrap: anywhere;
 }
 
 .link-list {
@@ -475,6 +511,7 @@ h3 {
   .metrics,
   .grid.two,
   .grid.three,
+  .grid.four,
   .split {
     grid-template-columns: 1fr;
   }
@@ -493,8 +530,13 @@ h3 {
 
   .row-link,
   .row,
+  .admin-row,
   .timeline-item {
     grid-template-columns: 1fr;
+  }
+
+  .admin-row-meta {
+    justify-content: flex-start;
   }
 
   .metric-value {

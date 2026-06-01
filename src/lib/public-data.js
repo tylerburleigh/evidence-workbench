@@ -95,6 +95,56 @@ export function getBundlesForNode(data, nodeId) {
     .sort((left, right) => right.record.submitted_at.localeCompare(left.record.submitted_at));
 }
 
+export function getBundleQueue(data) {
+  const reportById = new Map(data.bundleReports.map((report) => [report.bundle_id, report]));
+  return data.collections.candidateBundles
+    .map(({ record }) => ({
+      record,
+      report: reportById.get(record.id),
+      scopeNodes: getNodesForIds(data, record.scope?.taxonomy_node_ids ?? [])
+    }))
+    .sort((left, right) => {
+      const statusOrder = bundleStatusRank(left.record.lifecycle_status) - bundleStatusRank(right.record.lifecycle_status);
+      return statusOrder || String(right.record.submitted_at ?? "").localeCompare(String(left.record.submitted_at ?? ""));
+    });
+}
+
+export function getBundleById(data, bundleId) {
+  return data.collections.candidateBundles.map(({ record }) => record).find((bundle) => bundle.id === bundleId);
+}
+
+export function getBundleReport(data, bundleId) {
+  return data.bundleReports.find((report) => report.bundle_id === bundleId);
+}
+
+export function getEvidenceReviewsForBundle(data, bundleId) {
+  return data.collections.evidenceReviews
+    .map(({ record }) => record)
+    .filter((review) => review.candidate_bundle_id === bundleId)
+    .sort((left, right) => left.review_lane.localeCompare(right.review_lane) || left.id.localeCompare(right.id));
+}
+
+export function getReviewCommentsForBundle(data, bundleId) {
+  return data.collections.reviewComments
+    .map(({ record }) => record)
+    .filter((comment) => comment.candidate_bundle_id === bundleId)
+    .sort((left, right) => String(left.created_at ?? "").localeCompare(String(right.created_at ?? "")));
+}
+
+export function getPublicationEventsForBundle(data, bundleId) {
+  return data.collections.publicationEvents
+    .map(({ record }) => record)
+    .filter((event) => event.candidate_bundle_id === bundleId)
+    .sort((left, right) => String(right.published_at ?? "").localeCompare(String(left.published_at ?? "")));
+}
+
+export function getNodesForIds(data, nodeIds) {
+  const idSet = new Set(nodeIds);
+  return (data.domainPack.taxonomy.nodes ?? [])
+    .filter((node) => idSet.has(node.id))
+    .sort((left, right) => left.name.localeCompare(right.name));
+}
+
 export function getSourcesForIds(data, sourceIds) {
   const idSet = new Set(sourceIds);
   return data.collections.sources
@@ -181,4 +231,18 @@ export function titleCase(value) {
 
 export function statusLabel(value) {
   return titleCase(value ?? "unknown");
+}
+
+function bundleStatusRank(status) {
+  const rank = {
+    submitted: 0,
+    in_review: 1,
+    needs_revision: 2,
+    revised: 3,
+    approved: 4,
+    published: 5,
+    rejected: 6
+  };
+
+  return rank[status] ?? 10;
 }

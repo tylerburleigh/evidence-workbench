@@ -139,6 +139,9 @@ export default async function HomePage() {
           <Link className="nav-link" href="/methods">
             Methods
           </Link>
+          <Link className="nav-link" href="/admin/review">
+            Review
+          </Link>
         </div>
       </Section>
     </main>

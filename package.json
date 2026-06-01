@@ -12,6 +12,7 @@
     "research:bundle": "node scripts/bundle.mjs",
     "research:review-evidence": "node scripts/review-evidence.mjs",
     "smoke:public": "node scripts/smoke-public-routes.mjs",
+    "smoke:routes": "node scripts/smoke-public-routes.mjs",
     "test": "node --test"
   },
   "devDependencies": {

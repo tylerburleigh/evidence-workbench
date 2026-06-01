@@ -1,4 +1,4 @@
-import { Activity, Archive, Database, Home, Network, ShieldCheck } from "lucide-react";
+import { Activity, Archive, ClipboardList, Database, Home, Network, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { getScopePluralLabel, getWorkbenchData } from "../lib/public-data.js";
 import "./globals.css";
@@ -49,6 +49,10 @@ export default async function RootLayout({ children }) {
                 <Link className="nav-link" href="/methods">
                   <ShieldCheck size={15} />
                   Methods
+                </Link>
+                <Link className="nav-link" href="/admin/review">
+                  <ClipboardList size={15} />
+                  Review
                 </Link>
               </nav>
             </div>
