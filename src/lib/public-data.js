@@ -34,6 +34,20 @@ export function getScopePluralLabel(data) {
   return pluralize(getScopeLabel(data));
 }
 
+export function getStageLabel(data, stage) {
+  return data.domainPack.publicCopy.stage_labels?.[stage.id] ?? stage.label ?? titleCase(stage.id);
+}
+
+export function getConfidenceEntries(data) {
+  return Object.entries(data.domainPack.publicCopy.confidence_labels ?? {}).sort(([left], [right]) =>
+    left.localeCompare(right)
+  );
+}
+
+export function getDefaultReviewLaneIds(data) {
+  return new Set(data.domainPack.domain.default_review_lanes ?? []);
+}
+
 export function getScopeNodes(data) {
   const scopeUnit = getScopeUnit(data);
   return (data.domainPack.taxonomy.nodes ?? [])
@@ -113,6 +127,40 @@ export function getOpenBundleCount(data) {
   return data.collections.candidateBundles.filter(
     ({ record }) => !["published", "rejected"].includes(record.lifecycle_status)
   ).length;
+}
+
+export function getActivityFeed(data) {
+  const publicationEvents = data.collections.publicationEvents.map(({ record }) => {
+    const bundle = data.collections.candidateBundles
+      .map((entry) => entry.record)
+      .find((candidate) => candidate.id === record.candidate_bundle_id);
+
+    return {
+      id: record.id,
+      timestamp: record.published_at,
+      type: "publication",
+      title: record.name,
+      summary: record.change_note ?? record.summary,
+      status: record.event_type,
+      bundle,
+      targets: record.published_targets ?? []
+    };
+  });
+
+  const bundleEvents = data.collections.candidateBundles.map(({ record }) => ({
+    id: `${record.id}-submitted`,
+    timestamp: record.submitted_at,
+    type: "bundle",
+    title: record.name,
+    summary: record.summary,
+    status: record.lifecycle_status,
+    bundle: record,
+    targets: record.proposed_changes ?? []
+  }));
+
+  return [...publicationEvents, ...bundleEvents].sort((left, right) =>
+    String(right.timestamp ?? "").localeCompare(String(left.timestamp ?? ""))
+  );
 }
 
 export function formatDate(value) {

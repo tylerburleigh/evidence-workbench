@@ -11,6 +11,7 @@
     "sync:research-planning": "node scripts/sync-research-planning.mjs",
     "research:bundle": "node scripts/bundle.mjs",
     "research:review-evidence": "node scripts/review-evidence.mjs",
+    "smoke:public": "node scripts/smoke-public-routes.mjs",
     "test": "node --test"
   },
   "devDependencies": {

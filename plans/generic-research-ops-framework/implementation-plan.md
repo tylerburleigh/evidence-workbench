@@ -56,7 +56,7 @@ Tasks:
 Acceptance criteria:
 
 - A user can navigate from a public claim to findings, artifacts, and sources.
-- Topic pages show evidence basis and limitations.
+- Scope pages show evidence basis and limitations.
 - Activity is not presented as proof.
 
 ## Phase 4: Admin Review Workspace

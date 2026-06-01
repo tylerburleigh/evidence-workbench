@@ -133,6 +133,12 @@ export default async function HomePage() {
           <Link className="nav-link" href="/artifacts">
             Artifacts
           </Link>
+          <Link className="nav-link" href="/activity">
+            Activity
+          </Link>
+          <Link className="nav-link" href="/methods">
+            Methods
+          </Link>
         </div>
       </Section>
     </main>
