@@ -11,6 +11,32 @@ async function readFixtureJson(relativePath) {
   return JSON.parse(raw);
 }
 
+async function readFixtureText(relativePath) {
+  return readFile(path.join(workspaceRoot, relativePath), "utf8");
+}
+
+const coreSkillNames = [
+  "research-bootstrap",
+  "surveillance-update",
+  "evidence-review",
+  "editorial-review"
+];
+
+const domainSkillAdapters = {
+  "sample-research": {
+    "bootstrap.md": "research-bootstrap",
+    "surveillance.md": "surveillance-update",
+    "evidence-review.md": "evidence-review",
+    "editorial-review.md": "editorial-review"
+  },
+  "sample-archive": {
+    "bootstrap.md": "research-bootstrap",
+    "surveillance.md": "surveillance-update",
+    "evidence-review.md": "evidence-review",
+    "editorial-review.md": "editorial-review"
+  }
+};
+
 test("active domain pack is loaded from neutral sample fixture", async () => {
   const domainPack = await loadActiveDomainPack();
 
@@ -87,4 +113,42 @@ test("bundle reports are available as reusable workflow data", async () => {
     "scope_fit",
     "context_boundaries"
   ]);
+});
+
+test("core agent skills expose codex-style metadata and workflow sections", async () => {
+  for (const skillName of coreSkillNames) {
+    const text = await readFixtureText(`skills/${skillName}/SKILL.md`);
+
+    assert.match(text, /^---\n/);
+    assert.match(text, new RegExp(`name: ${skillName}`));
+    assert.match(text, /description: /);
+    assert.match(text, /## Read First/);
+    assert.match(text, /## Workflow/);
+    assert.match(text, /## Boundaries/);
+    assert.match(text, /## Expected Outputs/);
+  }
+});
+
+test("domain skill adapters map fixture packs to core workflows", async () => {
+  for (const [domainId, adapters] of Object.entries(domainSkillAdapters)) {
+    for (const [fileName, coreSkillName] of Object.entries(adapters)) {
+      const text = await readFixtureText(`domain-packs/${domainId}/skills/${fileName}`);
+
+      assert.match(text, /^---\n/);
+      assert.match(text, new RegExp(`domain_id: ${domainId}`));
+      assert.match(text, new RegExp(`adapter_for: ${coreSkillName}`));
+      assert.match(text, /## Read First/);
+      assert.match(text, /## Domain Rules/);
+      assert.match(text, /## Output Checks/);
+      assert.match(text, new RegExp(`Use with \`skills/${coreSkillName}/SKILL.md\``));
+    }
+  }
+
+  const sampleResearchBootstrap = await readFixtureText("domain-packs/sample-research/skills/bootstrap.md");
+  assert.match(sampleResearchBootstrap, /subject/);
+  assert.match(sampleResearchBootstrap, /limitations/);
+
+  const sampleArchiveBootstrap = await readFixtureText("domain-packs/sample-archive/skills/bootstrap.md");
+  assert.match(sampleArchiveBootstrap, /archive_item/);
+  assert.match(sampleArchiveBootstrap, /context_boundary/);
 });

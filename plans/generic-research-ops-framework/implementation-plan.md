@@ -10,6 +10,7 @@ Completed:
 - Phase 2: Domain pack loader.
 - Phase 3: Public evidence browser.
 - Phase 4: Admin review workspace, including guarded comment, request-changes, approve, reject, and publish actions.
+- Phase 5: Agent skills. Core workflow skills and fixture domain adapters exist with read-first lists, workflow rules, boundaries, and test coverage.
 
 In progress / partly complete:
 
@@ -17,7 +18,7 @@ In progress / partly complete:
 
 Next:
 
-- Phase 5: Agent skills. Start with core workflow skills, then add adapters for `sample-research` and `sample-archive`.
+- Phase 6: expand stale-coverage detection and route/action coverage.
 
 Recent implementation commits:
 
@@ -120,7 +121,7 @@ Acceptance criteria:
 
 ## Phase 5: Agent Skills
 
-Status: Next.
+Status: Complete.
 
 Goal:
 

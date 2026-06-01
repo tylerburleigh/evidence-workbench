@@ -5,7 +5,7 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import test from "node:test";
 import { promisify } from "node:util";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 
 const execFileAsync = promisify(execFile);
 const repoRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
@@ -40,26 +40,54 @@ async function writeWorkspaceJson(workspace, relativePath, value) {
   await writeFile(path.join(workspace, relativePath), `${JSON.stringify(value, null, 2)}\n`, "utf8");
 }
 
-async function runWorkflow(workspace, source, env = {}) {
-  const { stdout } = await execFileAsync(process.execPath, ["--input-type=module", "-e", source], {
+function createOutputCapturePrelude() {
+  return [
+    'import { appendFileSync } from "node:fs";',
+    'const __workflowStdoutPath = process.env.WORKFLOW_STDOUT_PATH;',
+    'function __workflowWrite(chunk) {',
+    '  appendFileSync(__workflowStdoutPath, typeof chunk === "string" ? chunk : String(chunk), "utf8");',
+    '}',
+    'console.log = (...args) => __workflowWrite(`${args.map(String).join(" ")}\\n`);',
+    'process.stdout.write = (chunk) => {',
+    '  __workflowWrite(Buffer.isBuffer(chunk) ? chunk.toString("utf8") : String(chunk));',
+    '  return true;',
+    '};'
+  ].join("\n");
+}
+
+async function runCapturedNode(workspace, source, env = {}) {
+  const outputPath = path.join(
+    workspace,
+    `.captured-stdout-${process.pid}-${Date.now()}-${Math.random().toString(16).slice(2)}.txt`
+  );
+  await writeFile(outputPath, "", "utf8");
+
+  await execFileAsync(process.execPath, ["--input-type=module", "-e", `${createOutputCapturePrelude()}\n${source}`], {
     cwd: workspace,
     env: {
       ...process.env,
       ...env,
-      WORKFLOW_MODULE_PATH: workflowModulePath
+      WORKFLOW_STDOUT_PATH: outputPath
     }
+  });
+
+  return readFile(outputPath, "utf8");
+}
+
+async function runWorkflow(workspace, source, env = {}) {
+  const stdout = await runCapturedNode(workspace, source, {
+    ...env,
+    WORKFLOW_MODULE_PATH: workflowModulePath
   });
   return stdout.trim() ? JSON.parse(stdout) : undefined;
 }
 
 async function runBundleCli(workspace, args, env = {}) {
-  const { stdout } = await execFileAsync(process.execPath, [bundleScriptPath, ...args], {
-    cwd: workspace,
-    env: {
-      ...process.env,
-      ...env
-    }
-  });
+  const source = [
+    `process.argv = ${JSON.stringify([process.execPath, bundleScriptPath, ...args])};`,
+    `await import(${JSON.stringify(pathToFileURL(bundleScriptPath).href)});`
+  ].join("\n");
+  const stdout = await runCapturedNode(workspace, source, env);
   return JSON.parse(stdout);
 }
 
