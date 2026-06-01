@@ -117,14 +117,15 @@ test("workbench data facade loads unpublished sample-archive review queue", asyn
   assert.equal(data.bundleReports[0].evidence_review_gate.ready, true);
 });
 
-test("workbench data facade loads downstream pack with empty public graph", async () => {
+test("workbench data facade loads published downstream supply-chain graph", async () => {
   const data = await loadDomainWorkbenchData({ domainId: "software-supply-chain" });
 
   assert.equal(data.domainPack.domain.name, "Software Supply Chain Review");
-  assert.equal(data.collections.claims.length, 0);
-  assert.equal(data.collections.sources.length, 0);
-  assert.equal(data.collections.candidateBundles.length, 0);
-  assert.equal(data.bundleReports.length, 0);
+  assert.equal(data.collections.claims.length, 1);
+  assert.equal(data.collections.sources.length, 1);
+  assert.equal(data.collections.candidateBundles.length, 1);
+  assert.equal(data.bundleReports[0].bundle_id, "release-provenance-control-baseline-2026-06-01");
+  assert.equal(data.bundleReports[0].validation.ready, true);
 });
 
 test("bundle reports are available as reusable workflow data", async () => {

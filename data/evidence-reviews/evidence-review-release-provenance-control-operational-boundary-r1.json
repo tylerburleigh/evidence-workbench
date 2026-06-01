@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-release-provenance-control-operational-boundary-r1",
+  "name": "Operational Boundary Review For Release Provenance Control Baseline",
+  "candidate_bundle_id": "release-provenance-control-baseline-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "operational_boundary",
+  "reviewer_kind": "agent",
+  "skill_name": "evidence-review",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged claim and finding clearly bound the baseline to the SLSA v1.2 specification and state that release-specific assurance requires later project evidence.",
+  "reviewed_change_ids": [
+    "create-slsa-provenance-source",
+    "create-slsa-provenance-artifact",
+    "create-slsa-provenance-finding",
+    "create-release-provenance-claim"
+  ],
+  "findings": [],
+  "created_at": "2026-06-01T19:37:00Z",
+  "updated_at": "2026-06-01T19:37:00Z"
+}

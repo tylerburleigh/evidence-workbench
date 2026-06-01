@@ -12,7 +12,7 @@ Completed:
 - Phase 4: Admin review workspace, including guarded comment, request-changes, approve, reject, and publish actions.
 - Phase 5: Agent skills. Core workflow skills and fixture domain adapters exist with read-first lists, workflow rules, boundaries, and test coverage.
 - Phase 6: Validation hardening, including schema/cross-reference checks, stale-coverage detection, data-driven route smoke checks, and admin action coverage.
-- First downstream domain-pack example: `software-supply-chain`, a configuration-only pack with a distinct control scope unit, extraction fields, review lanes, public copy, and agent adapters.
+- First downstream domain-pack rehearsal: `software-supply-chain` now has a published source-backed baseline for `release-provenance-control`.
 
 In progress / partly complete:
 
@@ -20,7 +20,7 @@ In progress / partly complete:
 
 Next:
 
-- Run an end-to-end workflow rehearsal against a downstream domain pack: bootstrap one control, complete evidence reviews, approve, publish, sync planning, and smoke routes.
+- Continue downstream rehearsal with another software supply-chain control or start an operator guide for creating and publishing domain packs.
 - Defer Phase 7 until record shapes and operational volume justify a database migration.
 
 Recent implementation commits:
@@ -190,7 +190,7 @@ Even after a database migration, keep exportable JSON snapshots for review and a
 
 ## Downstream Domain-Pack Rehearsal
 
-Status: Started.
+Status: Complete for the first control.
 
 Goal:
 
@@ -202,13 +202,13 @@ Completed:
 - Added a `control` scope unit with three configured controls.
 - Added domain-specific extraction fields, review lanes, evidence ladder, public copy, and skill adapters.
 - Added tests proving the pack loads through the domain loader and route smoke inventory with an empty graph.
+- Bootstrapped and published a source-backed baseline bundle for `release-provenance-control`.
+- Completed `source_fidelity`, `control_fit`, `risk_framing`, and `operational_boundary` evidence reviews.
+- Synced planning state for `software-supply-chain`; the remaining uncovered controls are in the bootstrap queue.
 
 Next:
 
-- Bootstrap one source-backed candidate bundle for `release-provenance-control`.
-- Scaffold and apply required evidence reviews.
-- Approve and publish through admin actions or workflow functions.
-- Sync planning state and smoke routes with `WORKBENCH_DOMAIN=software-supply-chain`.
+- Bootstrap `dependency-exposure-control` or `maintenance-signal-control`, or document the operator path for creating and publishing downstream packs.
 
 ## First Build Guidance
 

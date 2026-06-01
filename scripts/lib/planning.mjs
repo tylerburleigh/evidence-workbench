@@ -317,7 +317,7 @@ export async function syncResearchPlanning(options = {}) {
       taxonomy_node_id: row.taxonomy_node_id,
       priority_tier: index < 3 ? "now" : index < 8 ? "soon" : "later",
       default_mode: "bootstrap",
-      rationale: "This topic lacks a public baseline and is ready for a bounded bootstrap pass.",
+      rationale: `This ${scopeUnitLabel} lacks a public baseline and is ready for a bounded bootstrap pass.`,
       default_question: row.default_research_question
     }));
 

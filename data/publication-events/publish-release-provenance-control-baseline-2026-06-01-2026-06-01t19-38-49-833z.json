@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-release-provenance-control-baseline-2026-06-01-2026-06-01t19-38-49-833z",
+  "name": "Published Release Provenance Control Baseline",
+  "summary": "Downstream rehearsal bundle that stages a source-backed baseline for the software supply-chain release provenance control.",
+  "candidate_bundle_id": "release-provenance-control-baseline-2026-06-01",
+  "event_type": "publish",
+  "published_at": "2026-06-01T19:38:49.833Z",
+  "published_by": "codex-agent",
+  "published_targets": [
+    {
+      "record_type": "source",
+      "record_id": "slsa-build-provenance-v1-2-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "slsa-build-provenance-v1-2-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "slsa-build-provenance-control-model-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "release-provenance-control-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "affected_claim_ids": [
+    "release-provenance-control-baseline-claim"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-release-provenance-control-control-fit-r1",
+    "evidence-review-release-provenance-control-operational-boundary-r1",
+    "evidence-review-release-provenance-control-risk-framing-r1",
+    "evidence-review-release-provenance-control-source-fidelity-r1"
+  ],
+  "change_note": "Creates the first source-backed baseline for the release provenance control."
+}

@@ -1,27 +1,35 @@
 {
   "schema_version": "1.0.0",
   "queue_type": "research_priority_queue",
-  "domain_id": "sample-research",
+  "domain_id": "software-supply-chain",
   "taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-01T12:20:50.072Z",
+  "updated_at": "2026-06-01T19:42:05.923Z",
   "notes": [
-    "Bootstrap priority applies to uncovered topics.",
-    "Surveillance priority applies to stale topics with public baseline coverage and no active review bundle."
+    "Bootstrap priority applies to uncovered controls.",
+    "Surveillance priority applies to stale controls with public baseline coverage and no active review bundle."
   ],
   "selection_policy": {
-    "default_unit": "topic",
-    "stale_after_days": 90,
-    "when_request_is_vague": "Choose the highest-priority ready topic from the queue matching the requested mode.",
-    "when_request_is_too_broad": "Narrow the work to one topic before starting."
+    "default_unit": "control",
+    "stale_after_days": 60,
+    "when_request_is_vague": "Choose the highest-priority ready control from the queue matching the requested mode.",
+    "when_request_is_too_broad": "Narrow the work to one control before starting."
   },
   "bootstrap_queue": [
     {
       "rank": 1,
-      "taxonomy_node_id": "second-example-topic",
+      "taxonomy_node_id": "dependency-exposure-control",
       "priority_tier": "now",
       "default_mode": "bootstrap",
-      "rationale": "This topic lacks a public baseline and is ready for a bounded bootstrap pass.",
-      "default_question": "What is the current evidence landscape for Second Example Topic in Sample Research Domain, and what belongs in the first public baseline for this topic?"
+      "rationale": "This control lacks a public baseline and is ready for a bounded bootstrap pass.",
+      "default_question": "What is the current evidence landscape for Dependency Exposure Control in Software Supply Chain Review, and what belongs in the first public baseline for this control?"
+    },
+    {
+      "rank": 2,
+      "taxonomy_node_id": "maintenance-signal-control",
+      "priority_tier": "now",
+      "default_mode": "bootstrap",
+      "rationale": "This control lacks a public baseline and is ready for a bounded bootstrap pass.",
+      "default_question": "What is the current evidence landscape for Maintenance Signal Control in Software Supply Chain Review, and what belongs in the first public baseline for this control?"
     }
   ],
   "surveillance_queue": []

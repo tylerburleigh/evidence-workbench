@@ -63,7 +63,7 @@ test("sample-archive route smoke inventory still covers unpublished review works
   ]);
 });
 
-test("software supply-chain route smoke inventory covers downstream scope units without records", async () => {
+test("software supply-chain route smoke inventory covers downstream published graph", async () => {
   const data = await loadDomainWorkbenchData({ domainId: "software-supply-chain" });
   const routes = buildRouteChecks(data);
   const paths = routePaths(routes);
@@ -80,7 +80,12 @@ test("software supply-chain route smoke inventory covers downstream scope units 
     "/admin/review",
     "/scope/release-provenance-control",
     "/scope/dependency-exposure-control",
-    "/scope/maintenance-signal-control"
+    "/scope/maintenance-signal-control",
+    "/claims/release-provenance-control-baseline-claim",
+    "/findings/slsa-build-provenance-control-model-finding-2026",
+    "/artifacts/slsa-build-provenance-v1-2-artifact",
+    "/sources/slsa-build-provenance-v1-2-source",
+    "/admin/review/release-provenance-control-baseline-2026-06-01"
   ]) {
     assert.ok(paths.has(path), `Missing route check for ${path}`);
   }
@@ -89,6 +94,13 @@ test("software supply-chain route smoke inventory covers downstream scope units 
     "Release Provenance Control",
     "Claims",
     "Bundle State"
+  ]);
+  assertRouteHasText(routes, "/claims/release-provenance-control-baseline-claim", ["Support Map", "Claim Details"]);
+  assertRouteHasText(routes, "/findings/slsa-build-provenance-control-model-finding-2026", ["Details", "Links"]);
+  assertRouteHasText(routes, "/artifacts/slsa-build-provenance-v1-2-artifact", ["Scope", "Sources"]);
+  assertRouteHasText(routes, "/admin/review/release-provenance-control-baseline-2026-06-01", [
+    "Actions",
+    "Evidence Reviews"
   ]);
   assertRouteHasText(routes, "/methods", ["Trust Model", "Evidence Ladder", "Review Process"]);
 });

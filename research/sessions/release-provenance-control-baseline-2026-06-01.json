@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "release-provenance-control-baseline-2026-06-01",
+  "mode": "bootstrap",
+  "started_at": "2026-06-01T19:20:00Z",
+  "completed_at": "2026-06-01T19:30:00Z",
+  "scope": {
+    "domain_id": "software-supply-chain",
+    "taxonomy_node_ids": [
+      "release-provenance-control"
+    ],
+    "research_question": "What source-backed baseline should define release provenance evidence before reviewing a specific software release?"
+  },
+  "selected_via": "downstream-domain-rehearsal",
+  "outcome": "candidate_bundle",
+  "summary": "Created a source-backed baseline bundle for the software supply-chain release provenance control using the SLSA Build Provenance v1.2 specification.",
+  "candidate_bundle_id": "release-provenance-control-baseline-2026-06-01",
+  "source_ids": [
+    "slsa-build-provenance-v1-2-source"
+  ],
+  "source_urls": [
+    "https://slsa.dev/spec/v1.2/build-provenance"
+  ],
+  "next_recommended_mode": "surveillance",
+  "next_actions": [
+    "Complete source fidelity, control fit, risk framing, and operational boundary reviews.",
+    "Approve and publish after the evidence gate passes.",
+    "Use a release-specific bundle before making claims about an actual project release."
+  ]
+}

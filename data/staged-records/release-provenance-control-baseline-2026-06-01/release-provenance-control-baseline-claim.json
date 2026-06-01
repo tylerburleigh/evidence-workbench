@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "release-provenance-control-baseline-claim",
+  "name": "Release Provenance Control Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "release-provenance-control",
+  "current_stage": "claim_supported",
+  "momentum": "baseline_established",
+  "confidence": "high",
+  "summary": "The release provenance control has a source-backed baseline: SLSA Build Provenance v1.2 defines the kinds of build-production evidence a provenance record should preserve, while leaving release-specific assurance to later project evidence.",
+  "main_blockers": [
+    "No project-specific release, builder, or attestation has been reviewed in this baseline."
+  ],
+  "best_current_signals": [
+    "The SLSA Build Provenance v1.2 specification describes a predicate for how artifacts were produced.",
+    "The specification includes build definition, run details, builder identity, and dependency-related fields relevant to release provenance review."
+  ],
+  "interpretive_note": "This baseline establishes the control model for release provenance review. It should not be read as evidence that any specific software release satisfies that model.",
+  "limitations": [
+    "This claim is bounded to the SLSA Build Provenance v1.2 specification.",
+    "It does not verify a release artifact, build platform, repository, dependency set, or signed attestation.",
+    "Operational assurance requires a later bundle with release-specific source material."
+  ],
+  "update_notes": [
+    "Use surveillance or a release-specific bootstrap bundle when reviewing a concrete project release."
+  ],
+  "supporting_finding_ids": [
+    "slsa-build-provenance-control-model-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "slsa-build-provenance-v1-2-source"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "SLSA provenance control model",
+      "claim_field": "summary",
+      "conclusion": "SLSA Build Provenance v1.2 is an appropriate source-backed baseline for what release provenance evidence should describe.",
+      "support_role": "supports",
+      "rationale": "The extracted finding identifies the provenance predicate and fields used to describe how artifacts were produced and the builder context.",
+      "finding_ids": [
+        "slsa-build-provenance-control-model-finding-2026"
+      ],
+      "source_ids": [
+        "slsa-build-provenance-v1-2-source"
+      ],
+      "limitations": [
+        "The support is specification-level, not project-specific.",
+        "It does not prove that any given release has complete or trustworthy provenance."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-01"
+}

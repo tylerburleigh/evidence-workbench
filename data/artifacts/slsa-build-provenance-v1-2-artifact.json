@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "slsa-build-provenance-v1-2-artifact",
+  "name": "SLSA Build Provenance v1.2 Control Extract",
+  "artifact_type": "specification_extract",
+  "status": "complete",
+  "source_ids": [
+    "slsa-build-provenance-v1-2-source"
+  ],
+  "taxonomy_node_ids": [
+    "release-provenance-control"
+  ],
+  "population_or_context": "Release provenance control baseline for software supply-chain review.",
+  "sample_size": "one official specification page",
+  "methods": "Extracted the SLSA Build Provenance v1.2 purpose, model, required predicate fields, and boundary language from the official SLSA specification.",
+  "endpoint_categories": [
+    "release_provenance"
+  ],
+  "domain_fields": {
+    "component": "SLSA Build Provenance v1.2 predicate",
+    "control_signal": "Provenance predicate structure for describing how artifacts were produced",
+    "source_locator": "https://slsa.dev/spec/v1.2/build-provenance",
+    "review_boundary": "Specification-level control model, not a project-specific attestation",
+    "risk_interpretation": "Provides a baseline for what provenance evidence should capture before a release-specific assessment can be made",
+    "limitations": "Does not verify any specific software release, builder, repository, or dependency set"
+  }
+}
