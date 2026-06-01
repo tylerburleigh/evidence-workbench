@@ -1,4 +1,4 @@
-import { CheckCircle2, FileJson, GitPullRequest, MessageSquare, ShieldCheck } from "lucide-react";
+import { CheckCircle2, CircleAlert, FileJson, GitPullRequest, MessageSquare, ShieldCheck } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import {
@@ -21,6 +21,13 @@ import {
   getWorkbenchData,
   statusLabel
 } from "../../../../lib/public-data.js";
+import {
+  addCommentAction,
+  approveBundleAction,
+  publishBundleAction,
+  rejectBundleAction,
+  requestChangesAction
+} from "../actions.js";
 
 function ReadinessCard({ icon: Icon, title, ready, children }) {
   return (
@@ -63,8 +70,25 @@ function FilePath({ children }) {
   return <code className="path-value">{children}</code>;
 }
 
-export default async function AdminBundleDetailPage({ params }) {
+function ActionNotice({ notice, error }) {
+  if (!notice && !error) {
+    return null;
+  }
+
+  return <div className={error ? "action-notice error" : "action-notice"}>{error ?? notice}</div>;
+}
+
+function HiddenBundleId({ bundleId }) {
+  return <input name="bundleId" type="hidden" value={bundleId} />;
+}
+
+function queryValue(value) {
+  return Array.isArray(value) ? value[0] : value;
+}
+
+export default async function AdminBundleDetailPage({ params, searchParams }) {
   const { bundleId } = await params;
+  const query = searchParams ? await searchParams : {};
   const data = await getWorkbenchData();
   const bundle = getBundleById(data, bundleId);
   if (!bundle) {
@@ -80,6 +104,11 @@ export default async function AdminBundleDetailPage({ params }) {
   const promotion = report?.promotion;
   const publication = report?.publication;
   const validation = report?.validation;
+  const reviewGateReady = !evidenceGate?.eligible || Boolean(evidenceGate?.ready);
+  const canRequestChanges = !["published", "rejected"].includes(bundle.lifecycle_status);
+  const canReject = !["published", "rejected"].includes(bundle.lifecycle_status);
+  const canApprove = ["submitted", "in_review", "revised"].includes(bundle.lifecycle_status) && Boolean(validation?.ready) && reviewGateReady;
+  const canPublish = bundle.lifecycle_status === "approved" && Boolean(validation?.ready) && reviewGateReady;
 
   return (
     <main className="page">
@@ -102,6 +131,8 @@ export default async function AdminBundleDetailPage({ params }) {
         <Badge>{formatDate(bundle.submitted_at)}</Badge>
       </div>
 
+      <ActionNotice notice={queryValue(query.notice)} error={queryValue(query.error)} />
+
       <div className="grid four">
         <ReadinessCard icon={CheckCircle2} title="Validation" ready={Boolean(validation?.ready)}>
           {validation?.ready ? "Bundle shape, references, and publication state are valid." : validation?.issues?.join(" ")}
@@ -116,6 +147,78 @@ export default async function AdminBundleDetailPage({ params }) {
           {publication?.eligible ? publication.issues?.join(" ") || "Publication event state is valid." : "Not published yet."}
         </ReadinessCard>
       </div>
+
+      <Section title="Actions">
+        <div className="grid two">
+          <form action={addCommentAction} className="action-form">
+            <HiddenBundleId bundleId={bundle.id} />
+            <label className="form-label" htmlFor="comment-body">
+              Review Comment
+            </label>
+            <textarea
+              className="text-area"
+              id="comment-body"
+              name="body"
+              placeholder="Add a note for the review history."
+              rows={4}
+            />
+            <button className="action-button" type="submit">
+              <MessageSquare size={15} /> Add Comment
+            </button>
+          </form>
+
+          <div className="action-stack">
+            <form action={requestChangesAction} className="action-form">
+              <HiddenBundleId bundleId={bundle.id} />
+              <label className="form-label" htmlFor="request-reason">
+                Revision Request
+              </label>
+              <textarea
+                className="text-area"
+                id="request-reason"
+                name="reason"
+                placeholder="State what must change before approval."
+                rows={3}
+              />
+              <button className="action-button secondary" disabled={!canRequestChanges} type="submit">
+                <CircleAlert size={15} /> Request Changes
+              </button>
+            </form>
+
+            <div className="action-button-row">
+              <form action={approveBundleAction}>
+                <HiddenBundleId bundleId={bundle.id} />
+                <button className="action-button" disabled={!canApprove} type="submit">
+                  <CheckCircle2 size={15} /> Approve
+                </button>
+              </form>
+              <form action={publishBundleAction}>
+                <HiddenBundleId bundleId={bundle.id} />
+                <button className="action-button" disabled={!canPublish} type="submit">
+                  <GitPullRequest size={15} /> Publish
+                </button>
+              </form>
+            </div>
+
+            <form action={rejectBundleAction} className="action-form compact-action-form">
+              <HiddenBundleId bundleId={bundle.id} />
+              <label className="form-label" htmlFor="reject-reason">
+                Rejection Reason
+              </label>
+              <textarea
+                className="text-area"
+                id="reject-reason"
+                name="reason"
+                placeholder="Record why this bundle should not proceed."
+                rows={3}
+              />
+              <button className="action-button danger" disabled={!canReject} type="submit">
+                <CircleAlert size={15} /> Reject
+              </button>
+            </form>
+          </div>
+        </div>
+      </Section>
 
       <div className="split">
         <Section title="Scope">

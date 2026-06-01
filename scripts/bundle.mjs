@@ -3,7 +3,10 @@
 import { parseArgs } from "node:util";
 import {
   commandApprove,
+  commandComment,
   commandPublish,
+  commandReject,
+  commandRequestChanges,
   commandSmoke,
   commandStatus,
   commandValidate
@@ -14,6 +17,9 @@ function usage(exitCode = 0) {
 Usage:
   npm run research:bundle -- status --bundle <bundle-id>
   npm run research:bundle -- validate --bundle <bundle-id>
+  npm run research:bundle -- comment --bundle <bundle-id> --comment <text>
+  npm run research:bundle -- request-changes --bundle <bundle-id> [--reason <text>]
+  npm run research:bundle -- reject --bundle <bundle-id> [--reason <text>]
   npm run research:bundle -- approve --bundle <bundle-id>
   npm run research:bundle -- publish --bundle <bundle-id>
   npm run research:bundle -- smoke --bundle <bundle-id> [--base-url <url>]
@@ -40,6 +46,9 @@ async function main() {
     options: {
       bundle: { type: "string" },
       "base-url": { type: "string" },
+      comment: { type: "string" },
+      reason: { type: "string" },
+      "author-id": { type: "string" },
       "published-by": { type: "string" }
     },
     allowPositionals: false
@@ -51,6 +60,15 @@ async function main() {
       break;
     case "validate":
       await commandValidate(values);
+      break;
+    case "comment":
+      await commandComment(values);
+      break;
+    case "request-changes":
+      await commandRequestChanges(values);
+      break;
+    case "reject":
+      await commandReject(values);
       break;
     case "approve":
       await commandApprove(values);

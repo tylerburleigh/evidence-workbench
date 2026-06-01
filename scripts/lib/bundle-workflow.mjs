@@ -19,6 +19,7 @@ import { syncResearchPlanning } from "./planning.mjs";
 const candidateBundlesRoot = path.join(dataRoot, "candidate-bundles");
 const evidenceReviewsRoot = path.join(dataRoot, "evidence-reviews");
 const publicationEventsRoot = path.join(dataRoot, "publication-events");
+const reviewCommentsRoot = path.join(dataRoot, "review-comments");
 const stagedRecordsRoot = path.join(dataRoot, "staged-records");
 
 const recordCollections = {
@@ -44,6 +45,9 @@ function usage(exitCode = 0) {
 Usage:
   npm run research:bundle -- status --bundle <bundle-id>
   npm run research:bundle -- validate --bundle <bundle-id>
+  npm run research:bundle -- comment --bundle <bundle-id> --comment <text>
+  npm run research:bundle -- request-changes --bundle <bundle-id> [--reason <text>]
+  npm run research:bundle -- reject --bundle <bundle-id> [--reason <text>]
   npm run research:bundle -- approve --bundle <bundle-id>
   npm run research:bundle -- publish --bundle <bundle-id>
   npm run research:bundle -- smoke --bundle <bundle-id> [--base-url <url>]
@@ -121,6 +125,10 @@ function getCurrentRevision(bundle) {
 
 function canTransitionCandidateBundleStatus(current, next) {
   return current === next || Boolean(candidateStatusTransitions[current]?.includes(next));
+}
+
+function slugTimestamp(timestamp) {
+  return timestamp.toLowerCase().replace(/[^0-9a-z]+/g, "-").replace(/^-|-$/g, "");
 }
 
 function addUniqueRecord(recordMaps, recordType, record, filePath, origin) {
@@ -775,12 +783,8 @@ async function commandValidate(options) {
   }
 }
 
-async function commandApprove(options) {
-  if (!options.bundle) {
-    fail("approve requires --bundle <bundle-id>.");
-  }
-
-  const { filePath, record: bundle } = await loadCandidateBundle(options.bundle);
+async function approveCandidateBundle(bundleId) {
+  const { filePath, record: bundle } = await loadCandidateBundle(bundleId);
   const result = await withFileLock(`${filePath}.lock`, async () => {
     const latestBundle = await readJson(filePath);
     const report = await buildBundleReport(latestBundle);
@@ -813,11 +817,144 @@ async function commandApprove(options) {
     };
   });
 
-  printJson({
+  return {
     ...result,
     bundle_path: toPosixRelative(filePath),
     requested_bundle_id: bundle.id
+  };
+}
+
+async function updateCandidateBundleStatus(bundleId, nextStatus, options = {}) {
+  if (!nonEmptyString(nextStatus)) {
+    throw new Error("Next status must be a non-empty string.");
+  }
+
+  const { filePath, record: bundle } = await loadCandidateBundle(bundleId);
+  const result = await withFileLock(`${filePath}.lock`, async () => {
+    const latestBundle = await readJson(filePath);
+
+    if (!canTransitionCandidateBundleStatus(latestBundle.lifecycle_status, nextStatus)) {
+      throw new Error(`Invalid candidate bundle status transition: ${latestBundle.lifecycle_status} -> ${nextStatus}.`);
+    }
+
+    const reason = typeof options.reason === "string" ? options.reason.trim() : "";
+    const nextActions =
+      reason.length > 0
+        ? [reason]
+        : nextStatus === "needs_revision"
+          ? ["Address requested changes before resubmitting this bundle."]
+          : latestBundle.next_actions ?? [];
+
+    const updatedBundle = {
+      ...latestBundle,
+      lifecycle_status: nextStatus,
+      next_actions: nextActions
+    };
+    await writeJson(filePath, updatedBundle);
+
+    return {
+      action: nextStatus,
+      bundle_id: updatedBundle.id,
+      previous_lifecycle_status: latestBundle.lifecycle_status,
+      lifecycle_status: updatedBundle.lifecycle_status
+    };
   });
+
+  return {
+    ...result,
+    bundle_path: toPosixRelative(filePath),
+    requested_bundle_id: bundle.id
+  };
+}
+
+async function addReviewComment(bundleId, options = {}) {
+  const body = typeof options.body === "string" ? options.body.trim() : "";
+  if (body.length === 0) {
+    throw new Error("Review comment body is required.");
+  }
+
+  const { filePath, record: bundle } = await loadCandidateBundle(bundleId);
+  const result = await withFileLock(`${filePath}.lock`, async () => {
+    const latestBundle = await readJson(filePath);
+    const timestamp = new Date().toISOString();
+    const commentId = `review-comment-${latestBundle.id}-${slugTimestamp(timestamp)}`;
+    const comment = {
+      schema_version: "1.0.0",
+      record_type: "review_comment",
+      id: commentId,
+      candidate_bundle_id: latestBundle.id,
+      author_kind: options.authorKind ?? "human",
+      author_id: options.authorId ?? "local-curator",
+      body,
+      created_at: timestamp
+    };
+
+    const commentPath = path.join(reviewCommentsRoot, `${commentId}.json`);
+    await writeJson(commentPath, comment);
+
+    const updatedBundle = {
+      ...latestBundle,
+      review_comment_ids: Array.from(new Set([...(latestBundle.review_comment_ids ?? []), commentId]))
+    };
+    await writeJson(filePath, updatedBundle);
+
+    return {
+      action: "commented",
+      bundle_id: latestBundle.id,
+      comment_id: commentId,
+      comment_path: toPosixRelative(commentPath)
+    };
+  });
+
+  return {
+    ...result,
+    bundle_path: toPosixRelative(filePath),
+    requested_bundle_id: bundle.id
+  };
+}
+
+async function commandApprove(options) {
+  if (!options.bundle) {
+    fail("approve requires --bundle <bundle-id>.");
+  }
+
+  const result = await approveCandidateBundle(options.bundle);
+  printJson(result);
+}
+
+async function commandComment(options) {
+  if (!options.bundle) {
+    fail("comment requires --bundle <bundle-id>.");
+  }
+
+  const result = await addReviewComment(options.bundle, {
+    body: options.comment,
+    authorKind: "human",
+    authorId: options["author-id"] ?? "local-curator"
+  });
+  printJson(result);
+}
+
+async function commandRequestChanges(options) {
+  if (!options.bundle) {
+    fail("request-changes requires --bundle <bundle-id>.");
+  }
+
+  const result = await updateCandidateBundleStatus(options.bundle, "needs_revision", {
+    reason: options.reason
+  });
+  printJson(result);
+}
+
+async function commandReject(options) {
+  if (!options.bundle) {
+    fail("reject requires --bundle <bundle-id>.");
+  }
+
+  const result = await updateCandidateBundleStatus(options.bundle, "rejected", {
+    reason: options.reason
+  });
+  printJson(result);
 }
 
 async function getClaimIdForSubject(subjectType, subjectId) {
@@ -825,13 +962,9 @@ async function getClaimIdForSubject(subjectType, subjectId) {
   return claims.find(({ record }) => record.subject_type === subjectType && record.subject_id === subjectId)?.record.id;
 }
 
-async function commandPublish(options) {
-  if (!options.bundle) {
-    fail("publish requires --bundle <bundle-id>.");
-  }
-
-  const { filePath } = await loadCandidateBundle(options.bundle);
-  const result = await withFileLock(`${filePath}.lock`, async () => {
+async function publishCandidateBundle(bundleId, options = {}) {
+  const { filePath } = await loadCandidateBundle(bundleId);
+  return withFileLock(`${filePath}.lock`, async () => {
     const bundle = await readJson(filePath);
     const report = await buildBundleReport(bundle);
 
@@ -862,7 +995,7 @@ async function commandPublish(options) {
     }
 
     const timestamp = new Date().toISOString();
-    const publicationEventId = `publish-${bundle.id}-${timestamp.toLowerCase().replace(/[^0-9a-z]+/g, "-")}`;
+    const publicationEventId = `publish-${bundle.id}-${slugTimestamp(timestamp)}`;
     const claimIdsFromChanges = bundle.proposed_changes
       .filter((change) => change.target_record_type === "claim" && nonEmptyString(change.target_record_id))
       .map((change) => change.target_record_id);
@@ -883,7 +1016,7 @@ async function commandPublish(options) {
       candidate_bundle_id: bundle.id,
       event_type: "publish",
       published_at: timestamp,
-      published_by: options["published-by"] ?? "local-curator",
+      published_by: options.publishedBy ?? options["published-by"] ?? "local-curator",
       published_targets: bundle.proposed_changes.map((change) => ({
         record_type: change.target_record_type,
         record_id: change.target_record_id ?? change.change_id,
@@ -921,7 +1054,14 @@ async function commandPublish(options) {
       planning
     };
   });
+}
 
+async function commandPublish(options) {
+  if (!options.bundle) {
+    fail("publish requires --bundle <bundle-id>.");
+  }
+
+  const result = await publishCandidateBundle(options.bundle, options);
   printJson(result);
 }
 
@@ -955,9 +1095,14 @@ async function commandSmoke(options) {
 }
 
 export {
+  addReviewComment,
+  approveCandidateBundle,
   buildBundleReport,
   commandApprove,
+  commandComment,
   commandPublish,
+  commandReject,
+  commandRequestChanges,
   commandSmoke,
   commandStatus,
   commandValidate,
@@ -966,5 +1111,7 @@ export {
   getCurrentRevision,
   loadCandidateBundle,
   loadEvidenceReviews,
-  toPublicReport
+  publishCandidateBundle,
+  toPublicReport,
+  updateCandidateBundleStatus
 };
