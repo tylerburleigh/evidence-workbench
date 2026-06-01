@@ -14,11 +14,11 @@ Completed:
 
 In progress / partly complete:
 
-- Phase 6: Validation hardening. Schema validation, cross-reference checks, route smoke checks, dual-fixture builds, isolated admin mutation tests, and stale-coverage detection exist. Broader route/action coverage still needs expansion.
+- Phase 6: Validation hardening. Schema validation, cross-reference checks, dual-fixture builds, isolated admin mutation tests, stale-coverage detection, and data-driven route smoke checks exist. Broader admin action coverage still needs expansion.
 
 Next:
 
-- Phase 6: expand route/action coverage.
+- Phase 6: expand admin action coverage.
 
 Recent implementation commits:
 
@@ -31,6 +31,7 @@ Recent implementation commits:
 - `c0888fe`: admin review actions.
 - `7002597`: admin review action hardening.
 - `7ed9d07`: agent workflow skills.
+- `d14fa96`: stale coverage planning.
 
 ## Phase 1: Extract The Core Workflow
 
@@ -160,12 +161,14 @@ Tasks:
 - Add taxonomy-reference validation.
 - Add stale-coverage detection.
 - Add smoke checks for affected routes.
+- Add broader admin action coverage.
 
 Acceptance criteria:
 
 - `npm run validate` catches schema and cross-reference issues.
 - `npm run build` passes with neutral fixture data.
 - Published public routes render expected scope labels and claim text.
+- Route smoke checks cover collection pages, public detail pages, admin review pages, and both fixture domains.
 
 ## Phase 7: Optional Database Migration
 
