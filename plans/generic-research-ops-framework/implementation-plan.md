@@ -1,6 +1,38 @@
 # Implementation Plan
 
+## Status Snapshot
+
+Last updated: 2026-06-01.
+
+Completed:
+
+- Phase 1: Extract the core workflow.
+- Phase 2: Domain pack loader.
+- Phase 3: Public evidence browser.
+- Phase 4: Admin review workspace, including guarded comment, request-changes, approve, reject, and publish actions.
+
+In progress / partly complete:
+
+- Phase 6: Validation hardening. Schema validation, cross-reference checks, route smoke checks, dual-fixture builds, and isolated admin mutation tests exist. Stale-coverage detection and broader route/action coverage still need expansion.
+
+Next:
+
+- Phase 5: Agent skills. Start with core workflow skills, then add adapters for `sample-research` and `sample-archive`.
+
+Recent implementation commits:
+
+- `efda341`: generic research workflow core.
+- `21cdee6`: second fixture pack validation.
+- `e413bf7`: shared workbench data layer.
+- `543712c`: public evidence browser.
+- `01ff786`: methods and activity pages.
+- `1e6a84d`: admin review workspace.
+- `c0888fe`: admin review actions.
+- `7002597`: admin review action hardening.
+
 ## Phase 1: Extract The Core Workflow
+
+Status: Complete.
 
 Goal:
 
@@ -23,6 +55,8 @@ Acceptance criteria:
 
 ## Phase 2: Domain Pack Loader
 
+Status: Complete.
+
 Goal:
 
 Make the framework configurable through a domain pack.
@@ -40,6 +74,8 @@ Acceptance criteria:
 - The same app can run a second independently authored test pack without editing core workflow code.
 
 ## Phase 3: Public Evidence Browser
+
+Status: Complete.
 
 Goal:
 
@@ -60,6 +96,8 @@ Acceptance criteria:
 - Activity is not presented as proof.
 
 ## Phase 4: Admin Review Workspace
+
+Status: Complete.
 
 Goal:
 
@@ -82,6 +120,8 @@ Acceptance criteria:
 
 ## Phase 5: Agent Skills
 
+Status: Next.
+
 Goal:
 
 Provide agent-operable workflows.
@@ -98,12 +138,14 @@ Tasks:
 
 Acceptance criteria:
 
-- An agent can bootstrap one topic into a candidate bundle.
+- An agent can bootstrap one scope unit into a candidate bundle.
 - A second pass can review source fidelity.
 - A third pass can review interpretation.
 - A curator or editorial agent can publish after gates pass.
 
 ## Phase 6: Validation Hardening
+
+Status: Partly complete.
 
 Goal:
 
