@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "openssf-scorecard-maintenance-checks-source",
+  "name": "OpenSSF Scorecard Maintenance Check Documentation",
+  "source_type": "technical_documentation",
+  "authors": [
+    "OpenSSF Scorecard"
+  ],
+  "venue": "OpenSSF Scorecard",
+  "urls": [
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#maintained",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#contributors",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#code-review",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#ci-tests",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#security-policy"
+  ],
+  "summary": "Official OpenSSF Scorecard documentation describing automated checks for active maintenance, contributor diversity, code review, CI tests, and security policy signals.",
+  "retrieved_on": "2026-06-01"
+}

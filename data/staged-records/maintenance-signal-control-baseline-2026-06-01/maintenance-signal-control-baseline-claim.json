@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "maintenance-signal-control-baseline-claim",
+  "name": "Maintenance Signal Control Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "maintenance-signal-control",
+  "current_stage": "claim_supported",
+  "momentum": "baseline_established",
+  "confidence": "high",
+  "summary": "The maintenance signal control has a source-backed baseline: OpenSSF Scorecard documentation identifies recent maintenance activity, collaborator issue activity, contributor context, human code review, CI test execution, and security policy publication as distinct evidence signals for maintenance review, while leaving repository-specific maintenance posture to later project evidence.",
+  "main_blockers": [
+    "No project-specific release history, maintainer roster, issue response record, security policy, or Scorecard run has been reviewed in this baseline."
+  ],
+  "best_current_signals": [
+    "OpenSSF Scorecard documents a Maintained check using archived status, recent commit activity, and collaborator issue activity.",
+    "Scorecard documents a Contributors check that inspects recent contributor organization signals.",
+    "Scorecard documents a Code-Review check for recent human review or equivalent merge-review signals.",
+    "Scorecard documents CI-Tests and Security-Policy checks as operational signals relevant to maintenance context."
+  ],
+  "interpretive_note": "This baseline establishes the control model for maintenance signal review. It should not be read as evidence that any specific repository is actively maintained, well governed, responsive, or secure.",
+  "limitations": [
+    "This claim is bounded to OpenSSF Scorecard check documentation.",
+    "It does not evaluate a repository, package, release cadence, issue queue, vulnerability disclosure process, maintainer identity, or support commitment.",
+    "Activity signals are not direct evidence of code quality or future maintenance reliability."
+  ],
+  "update_notes": [
+    "Use surveillance or a project-specific bootstrap bundle when reviewing a concrete repository, release history, security policy, issue response pattern, or maintainer signal."
+  ],
+  "supporting_finding_ids": [
+    "openssf-scorecard-maintenance-signal-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "openssf-scorecard-maintenance-checks-source"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "OpenSSF Scorecard maintenance signal model",
+      "claim_field": "summary",
+      "conclusion": "OpenSSF Scorecard check documentation is an appropriate source-backed baseline for maintenance signal evidence categories.",
+      "support_role": "supports",
+      "rationale": "The extracted finding identifies Scorecard checks that separately address maintenance activity, contributor context, review practices, CI test signals, and security-policy publication, with documented limits on automated interpretation.",
+      "finding_ids": [
+        "openssf-scorecard-maintenance-signal-finding-2026"
+      ],
+      "source_ids": [
+        "openssf-scorecard-maintenance-checks-source"
+      ],
+      "limitations": [
+        "The support is documentation-level, not project-specific.",
+        "It does not prove that any given repository has active maintenance, adequate review coverage, or responsive support."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-01"
+}

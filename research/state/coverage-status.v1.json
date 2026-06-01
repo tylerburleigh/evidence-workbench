@@ -3,7 +3,7 @@
   "state_type": "coverage_status",
   "domain_id": "software-supply-chain",
   "taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-01T20:21:48.194Z",
+  "updated_at": "2026-06-01T21:12:36.808Z",
   "notes": [
     "The default unit of research work is one taxonomy control.",
     "Coverage status is planning state, not a public claim about evidence maturity.",
@@ -77,14 +77,26 @@
       "parent_id": "software-release-integrity",
       "canonical_order": 3,
       "name": "Maintenance Signal Control",
-      "coverage_status": "not_started",
-      "next_mode": "bootstrap",
-      "queue_state": "ready",
-      "freshness_status": "uncovered",
+      "coverage_status": "baseline",
+      "next_mode": "surveillance",
+      "queue_state": "deferred",
+      "freshness_status": "fresh",
+      "last_checked_at": "2026-06-01T21:12:32.526Z",
+      "last_checked_source": "publication",
+      "days_since_last_check": 0,
       "stale_after_days": 60,
-      "stale_reason": "No baseline coverage exists yet.",
-      "default_research_question": "What is the current evidence landscape for Maintenance Signal Control in Software Supply Chain Review, and what belongs in the first public baseline for this control?",
-      "notes": "No public baseline has been bootstrapped yet."
+      "stale_at": "2026-07-31T21:12:32.526Z",
+      "stale_reason": "Latest publication check is 0 days old; stale after 60 days.",
+      "last_session_id": "maintenance-signal-control-baseline-2026-06-01",
+      "last_session_at": "2026-06-01T21:07:00Z",
+      "last_session_mode": "bootstrap",
+      "last_session_outcome": "candidate_bundle",
+      "last_candidate_bundle_id": "maintenance-signal-control-baseline-2026-06-01",
+      "last_candidate_bundle_status": "published",
+      "last_publication_event_id": "publish-maintenance-signal-control-baseline-2026-06-01-2026-06-01t21-12-32-526z",
+      "last_published_at": "2026-06-01T21:12:32.526Z",
+      "default_research_question": "What changed for Maintenance Signal Control since the last meaningful review or publication, and does any change justify a public update?",
+      "notes": "Latest publication check is 0 days old; stale after 60 days. Next surveillance is due at 2026-07-31T21:12:32.526Z."
     }
   ]
 }

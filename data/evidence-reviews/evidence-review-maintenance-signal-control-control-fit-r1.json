@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-maintenance-signal-control-control-fit-r1",
+  "name": "Control Fit Review for Maintenance Signal Control Bundle",
+  "candidate_bundle_id": "maintenance-signal-control-baseline-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "control_fit",
+  "reviewer_kind": "agent",
+  "reviewer_id": "codex-agent",
+  "skill_name": "evidence-review",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged records are scoped to maintenance signals and do not drift into release provenance or dependency exposure controls.",
+  "reviewed_change_ids": [
+    "create-scorecard-maintenance-source",
+    "create-scorecard-maintenance-artifact",
+    "create-scorecard-maintenance-finding",
+    "create-maintenance-signal-claim"
+  ],
+  "findings": [],
+  "created_at": "2026-06-01T21:09:20Z",
+  "updated_at": "2026-06-01T21:09:20Z"
+}

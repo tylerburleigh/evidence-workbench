@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "maintenance-signal-control-baseline-2026-06-01",
+  "mode": "bootstrap",
+  "started_at": "2026-06-01T21:02:00Z",
+  "completed_at": "2026-06-01T21:07:00Z",
+  "scope": {
+    "domain_id": "software-supply-chain",
+    "taxonomy_node_ids": [
+      "maintenance-signal-control"
+    ],
+    "research_question": "What source-backed baseline should define maintenance signal evidence before reviewing a specific software repository or release?"
+  },
+  "selected_via": "downstream-domain-rehearsal",
+  "outcome": "candidate_bundle",
+  "summary": "Created a source-backed baseline bundle for maintenance signal review using OpenSSF Scorecard maintenance-related check documentation.",
+  "candidate_bundle_id": "maintenance-signal-control-baseline-2026-06-01",
+  "source_ids": [
+    "openssf-scorecard-maintenance-checks-source"
+  ],
+  "source_urls": [
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#maintained",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#contributors",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#code-review",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#ci-tests",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#security-policy"
+  ],
+  "next_recommended_mode": "surveillance",
+  "next_actions": [
+    "Complete source fidelity, control fit, risk framing, and operational boundary reviews.",
+    "Approve and publish after the evidence gate passes.",
+    "Use a project-specific bundle before making claims about an actual repository, release history, maintainer signal, issue response pattern, or support commitment."
+  ]
+}

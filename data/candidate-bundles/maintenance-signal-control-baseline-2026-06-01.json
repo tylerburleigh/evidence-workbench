@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "maintenance-signal-control-baseline-2026-06-01",
+  "name": "Maintenance Signal Control Baseline",
+  "summary": "Downstream rehearsal bundle that stages a source-backed baseline for the software supply-chain maintenance signal control.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-01T21:08:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "software-supply-chain",
+    "taxonomy_node_ids": [
+      "maintenance-signal-control"
+    ],
+    "research_question": "What source-backed baseline should define maintenance signal evidence before reviewing a specific software repository or release?"
+  },
+  "source_ids": [
+    "openssf-scorecard-maintenance-checks-source"
+  ],
+  "source_urls": [
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#maintained",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#contributors",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#code-review",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#ci-tests",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#security-policy"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "release-provenance-control-baseline-claim",
+      "relationship": "same_downstream_rehearsal_domain"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "dependency-exposure-control-baseline-claim",
+      "relationship": "same_downstream_rehearsal_domain"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-scorecard-maintenance-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "openssf-scorecard-maintenance-checks-source",
+      "file_path": "data/sources/openssf-scorecard-maintenance-checks-source.json",
+      "staged_file_path": "data/staged-records/maintenance-signal-control-baseline-2026-06-01/openssf-scorecard-maintenance-checks-source.json",
+      "summary": "Add the OpenSSF Scorecard maintenance check documentation source.",
+      "rationale": "The downstream maintenance signal control needs a stable source for maintenance activity, ownership, review, test, and security-policy evidence categories."
+    },
+    {
+      "change_id": "create-scorecard-maintenance-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "openssf-scorecard-maintenance-signal-artifact",
+      "file_path": "data/artifacts/openssf-scorecard-maintenance-signal-artifact.json",
+      "staged_file_path": "data/staged-records/maintenance-signal-control-baseline-2026-06-01/openssf-scorecard-maintenance-signal-artifact.json",
+      "summary": "Add a reviewed artifact extract for the maintenance signal control model.",
+      "rationale": "The baseline needs an inspectable extraction artifact before a public claim can be supported."
+    },
+    {
+      "change_id": "create-scorecard-maintenance-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "openssf-scorecard-maintenance-signal-finding-2026",
+      "file_path": "data/findings/openssf-scorecard-maintenance-signal-finding-2026.json",
+      "staged_file_path": "data/staged-records/maintenance-signal-control-baseline-2026-06-01/openssf-scorecard-maintenance-signal-finding-2026.json",
+      "summary": "Add a source-backed finding describing the Scorecard maintenance signal model.",
+      "rationale": "The claim must be grounded in a concrete finding about the source material."
+    },
+    {
+      "change_id": "create-maintenance-signal-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "maintenance-signal-control-baseline-claim",
+      "file_path": "data/claims/maintenance-signal-control-baseline-claim.json",
+      "staged_file_path": "data/staged-records/maintenance-signal-control-baseline-2026-06-01/maintenance-signal-control-baseline-claim.json",
+      "summary": "Add a bounded baseline claim for the maintenance signal control.",
+      "rationale": "The downstream domain needs a third public claim to complete the control rehearsal across support maps, review gates, publication, planning, and routes."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "maintenance-signal-control",
+      "note": "Creates the first source-backed baseline for the maintenance signal control."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "control_fit",
+    "risk_framing",
+    "operational_boundary"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_review_ids": [
+    "evidence-review-maintenance-signal-control-source-fidelity-r1",
+    "evidence-review-maintenance-signal-control-control-fit-r1",
+    "evidence-review-maintenance-signal-control-risk-framing-r1",
+    "evidence-review-maintenance-signal-control-operational-boundary-r1"
+  ],
+  "review_comment_ids": [],
+  "publication_event_ids": [
+    "publish-maintenance-signal-control-baseline-2026-06-01-2026-06-01t21-12-32-526z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ]
+}

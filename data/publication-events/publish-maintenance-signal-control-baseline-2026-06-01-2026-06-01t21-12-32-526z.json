@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-maintenance-signal-control-baseline-2026-06-01-2026-06-01t21-12-32-526z",
+  "name": "Published Maintenance Signal Control Baseline",
+  "summary": "Downstream rehearsal bundle that stages a source-backed baseline for the software supply-chain maintenance signal control.",
+  "candidate_bundle_id": "maintenance-signal-control-baseline-2026-06-01",
+  "event_type": "publish",
+  "published_at": "2026-06-01T21:12:32.526Z",
+  "published_by": "codex-agent",
+  "published_targets": [
+    {
+      "record_type": "source",
+      "record_id": "openssf-scorecard-maintenance-checks-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "openssf-scorecard-maintenance-signal-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "openssf-scorecard-maintenance-signal-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "maintenance-signal-control-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "affected_claim_ids": [
+    "maintenance-signal-control-baseline-claim"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-maintenance-signal-control-control-fit-r1",
+    "evidence-review-maintenance-signal-control-operational-boundary-r1",
+    "evidence-review-maintenance-signal-control-risk-framing-r1",
+    "evidence-review-maintenance-signal-control-source-fidelity-r1"
+  ],
+  "change_note": "Creates the first source-backed baseline for the maintenance signal control."
+}

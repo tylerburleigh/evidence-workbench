@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "openssf-scorecard-maintenance-signal-finding-2026",
+  "name": "OpenSSF Scorecard Defines Maintenance Signal Review Inputs",
+  "source_id": "openssf-scorecard-maintenance-checks-source",
+  "artifact_id": "openssf-scorecard-maintenance-signal-artifact",
+  "taxonomy_node_ids": [
+    "maintenance-signal-control"
+  ],
+  "endpoint_category": "maintenance_signal",
+  "direction": "defines_control_evidence",
+  "evidence_tier": "observation_extracted",
+  "confidence": "high",
+  "statement": "The OpenSSF Scorecard check documentation defines maintenance signal inputs across recent maintenance activity, collaborator issue activity, recent contributor organization signals, human code review, CI test detection, and security policy publication, while cautioning that automated checks and activity signals require project-specific interpretation.",
+  "population_or_context": "Specification-level maintenance signal control model.",
+  "time_horizon": "OpenSSF Scorecard check documentation retrieved on 2026-06-01.",
+  "quantitative_note": "No quantitative estimate; this is a technical documentation extraction.",
+  "caveats": [
+    "This finding describes Scorecard check semantics and does not evaluate a specific repository.",
+    "Maintenance activity is not direct evidence of code quality, security posture, or future support.",
+    "Some healthy projects may have low activity or detection gaps, so Scorecard maintenance-related signals must be interpreted in context."
+  ],
+  "domain_fields": {
+    "component": "OpenSSF Scorecard maintenance-related checks",
+    "control_signal": "Activity, contributor, review, test, and security-policy evidence signals",
+    "source_locator": "https://github.com/ossf/scorecard/blob/main/docs/checks.md",
+    "review_boundary": "Documentation-level model only",
+    "risk_interpretation": "Supports a bounded baseline claim that maintenance review should separate observable activity and governance signals from stronger claims about reliability or support quality",
+    "limitations": "Does not verify maintainership, ownership continuity, response timeliness, or operational execution for any concrete project"
+  }
+}

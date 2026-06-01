@@ -83,14 +83,19 @@ test("software supply-chain route smoke inventory covers downstream published gr
     "/scope/maintenance-signal-control",
     "/claims/release-provenance-control-baseline-claim",
     "/claims/dependency-exposure-control-baseline-claim",
+    "/claims/maintenance-signal-control-baseline-claim",
     "/findings/slsa-build-provenance-control-model-finding-2026",
     "/findings/openssf-scorecard-dependency-exposure-finding-2026",
+    "/findings/openssf-scorecard-maintenance-signal-finding-2026",
     "/artifacts/slsa-build-provenance-v1-2-artifact",
     "/artifacts/openssf-scorecard-dependency-exposure-artifact",
+    "/artifacts/openssf-scorecard-maintenance-signal-artifact",
     "/sources/slsa-build-provenance-v1-2-source",
     "/sources/openssf-scorecard-checks-source",
+    "/sources/openssf-scorecard-maintenance-checks-source",
     "/admin/review/release-provenance-control-baseline-2026-06-01",
-    "/admin/review/dependency-exposure-control-baseline-2026-06-01"
+    "/admin/review/dependency-exposure-control-baseline-2026-06-01",
+    "/admin/review/maintenance-signal-control-baseline-2026-06-01"
   ]) {
     assert.ok(paths.has(path), `Missing route check for ${path}`);
   }
@@ -112,11 +117,24 @@ test("software supply-chain route smoke inventory covers downstream published gr
   assertRouteHasText(routes, "/findings/openssf-scorecard-dependency-exposure-finding-2026", ["Details", "Links"]);
   assertRouteHasText(routes, "/artifacts/openssf-scorecard-dependency-exposure-artifact", ["Scope", "Sources"]);
   assertRouteHasText(routes, "/sources/openssf-scorecard-checks-source", ["Metadata", "Artifacts"]);
+  assertRouteHasText(routes, "/scope/maintenance-signal-control", [
+    "Maintenance Signal Control",
+    "Claims",
+    "Bundle State"
+  ]);
+  assertRouteHasText(routes, "/claims/maintenance-signal-control-baseline-claim", ["Support Map", "Claim Details"]);
+  assertRouteHasText(routes, "/findings/openssf-scorecard-maintenance-signal-finding-2026", ["Details", "Links"]);
+  assertRouteHasText(routes, "/artifacts/openssf-scorecard-maintenance-signal-artifact", ["Scope", "Sources"]);
+  assertRouteHasText(routes, "/sources/openssf-scorecard-maintenance-checks-source", ["Metadata", "Artifacts"]);
   assertRouteHasText(routes, "/admin/review/release-provenance-control-baseline-2026-06-01", [
     "Actions",
     "Evidence Reviews"
   ]);
   assertRouteHasText(routes, "/admin/review/dependency-exposure-control-baseline-2026-06-01", [
+    "Actions",
+    "Evidence Reviews"
+  ]);
+  assertRouteHasText(routes, "/admin/review/maintenance-signal-control-baseline-2026-06-01", [
     "Actions",
     "Evidence Reviews"
   ]);

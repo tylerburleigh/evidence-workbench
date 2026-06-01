@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-maintenance-signal-control-source-fidelity-r1",
+  "name": "Source Fidelity Review for Maintenance Signal Control Bundle",
+  "candidate_bundle_id": "maintenance-signal-control-baseline-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "reviewer_id": "codex-agent",
+  "skill_name": "evidence-review",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, artifact, finding, and claim stay anchored to the official OpenSSF Scorecard check documentation and avoid repository-specific maintenance assertions.",
+  "reviewed_change_ids": [
+    "create-scorecard-maintenance-source",
+    "create-scorecard-maintenance-artifact",
+    "create-scorecard-maintenance-finding",
+    "create-maintenance-signal-claim"
+  ],
+  "findings": [],
+  "created_at": "2026-06-01T21:09:00Z",
+  "updated_at": "2026-06-01T21:09:00Z"
+}

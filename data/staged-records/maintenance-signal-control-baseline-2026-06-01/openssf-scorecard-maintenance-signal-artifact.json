@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "openssf-scorecard-maintenance-signal-artifact",
+  "name": "OpenSSF Scorecard Maintenance Signal Control Extract",
+  "artifact_type": "documentation_extract",
+  "status": "complete",
+  "source_ids": [
+    "openssf-scorecard-maintenance-checks-source"
+  ],
+  "taxonomy_node_ids": [
+    "maintenance-signal-control"
+  ],
+  "population_or_context": "Maintenance signal control baseline for software supply-chain review.",
+  "sample_size": "one official Scorecard check documentation page covering five maintenance-related checks",
+  "methods": "Extracted the Scorecard Maintained, Contributors, Code-Review, CI-Tests, and Security-Policy check descriptions, risk framing, detection windows, remediation notes, and documented limitations from the official OpenSSF Scorecard check documentation.",
+  "endpoint_categories": [
+    "maintenance_signal"
+  ],
+  "domain_fields": {
+    "component": "OpenSSF Scorecard maintenance-related checks",
+    "control_signal": "Recent maintenance activity, contributor context, human review, CI test execution, and vulnerability reporting policy",
+    "source_locator": "https://github.com/ossf/scorecard/blob/main/docs/checks.md",
+    "review_boundary": "Specification-level check documentation, not a repository-specific Scorecard run",
+    "risk_interpretation": "Provides a baseline for distinguishing observable maintenance signals from conclusions about code quality or long-term support",
+    "limitations": "Does not establish that a specific repository is actively maintained, responsive, well governed, or secure"
+  }
+}
