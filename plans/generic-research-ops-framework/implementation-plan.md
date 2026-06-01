@@ -13,6 +13,7 @@ Completed:
 - Phase 5: Agent skills. Core workflow skills and fixture domain adapters exist with read-first lists, workflow rules, boundaries, and test coverage.
 - Phase 6: Validation hardening, including schema/cross-reference checks, stale-coverage detection, data-driven route smoke checks, and admin action coverage.
 - Downstream domain-pack rehearsal: `software-supply-chain` now has published source-backed baselines for all three configured controls.
+- Operator guide: documented the concrete downstream domain-pack setup, bootstrap, evidence review, publish, verification, and commit workflow.
 
 In progress / partly complete:
 
@@ -20,7 +21,7 @@ In progress / partly complete:
 
 Next:
 
-- Start an operator guide for creating and publishing downstream domain packs.
+- Exercise the operator guide with another downstream domain when a new domain is selected.
 - Defer Phase 7 until record shapes and operational volume justify a database migration.
 
 Recent implementation commits:
@@ -39,6 +40,7 @@ Recent implementation commits:
 - `ff0f410`: admin action coverage.
 - `068a17d`: supply-chain provenance baseline.
 - `c88d8b9`: dependency exposure baseline.
+- `04d5de1`: maintenance signal baseline.
 
 ## Phase 1: Extract The Core Workflow
 
@@ -210,7 +212,7 @@ Completed:
 
 Next:
 
-- Document the operator path for creating and publishing downstream packs.
+- Exercise the operator guide with another downstream domain, or defer Phase 7 until record shapes and operational volume justify a database migration.
 
 ## First Build Guidance
 

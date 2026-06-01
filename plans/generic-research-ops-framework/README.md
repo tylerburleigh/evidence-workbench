@@ -35,6 +35,7 @@ The framework should support multiple domain packs, but the first implementation
 - [workflow-spec.md](workflow-spec.md): bootstrap, surveillance, evidence review, and publish workflows
 - [agent-skill-model.md](agent-skill-model.md): reusable agent skills and domain-specific adapters
 - [ui-spec.md](ui-spec.md): public and admin app surfaces
+- [operator-guide.md](operator-guide.md): concrete downstream domain-pack setup, publish, verify, and commit workflow
 - [implementation-plan.md](implementation-plan.md): pragmatic build phases and acceptance criteria
 
 ## What To Preserve From This Repo
