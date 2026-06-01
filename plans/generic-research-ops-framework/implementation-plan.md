@@ -11,14 +11,15 @@ Completed:
 - Phase 3: Public evidence browser.
 - Phase 4: Admin review workspace, including guarded comment, request-changes, approve, reject, and publish actions.
 - Phase 5: Agent skills. Core workflow skills and fixture domain adapters exist with read-first lists, workflow rules, boundaries, and test coverage.
+- Phase 6: Validation hardening, including schema/cross-reference checks, stale-coverage detection, data-driven route smoke checks, and admin action coverage.
 
 In progress / partly complete:
 
-- Phase 6: Validation hardening. Schema validation, cross-reference checks, dual-fixture builds, isolated admin mutation tests, stale-coverage detection, and data-driven route smoke checks exist. Broader admin action coverage still needs expansion.
+- No required implementation phase is currently in progress.
 
 Next:
 
-- Phase 6: expand admin action coverage.
+- Keep the file-backed workflow in use, add real downstream domain packs as needed, and defer Phase 7 until record shapes and operational volume justify a database migration.
 
 Recent implementation commits:
 
@@ -32,6 +33,7 @@ Recent implementation commits:
 - `7002597`: admin review action hardening.
 - `7ed9d07`: agent workflow skills.
 - `d14fa96`: stale coverage planning.
+- `04d464f`: data-driven route smoke coverage.
 
 ## Phase 1: Extract The Core Workflow
 
@@ -148,7 +150,7 @@ Acceptance criteria:
 
 ## Phase 6: Validation Hardening
 
-Status: Partly complete.
+Status: Complete.
 
 Goal:
 
@@ -169,6 +171,7 @@ Acceptance criteria:
 - `npm run build` passes with neutral fixture data.
 - Published public routes render expected scope labels and claim text.
 - Route smoke checks cover collection pages, public detail pages, admin review pages, and both fixture domains.
+- Admin action tests cover success and error paths for comments, request changes, rejection, approval, and publication.
 
 ## Phase 7: Optional Database Migration
 
