@@ -14,6 +14,9 @@
     "limitations",
     "taxonomy_mapping"
   ],
+  "planning": {
+    "stale_after_days": 90
+  },
   "public_claim_language": {
     "default_posture": "bounded_evidence_summary",
     "avoid": [

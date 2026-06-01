@@ -27,6 +27,13 @@
       "type": "array",
       "items": { "type": "string", "minLength": 1 },
       "uniqueItems": true
+    },
+    "planning": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "stale_after_days": { "type": "integer", "minimum": 1 }
+      }
     }
   }
 }

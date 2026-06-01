@@ -14,11 +14,11 @@ Completed:
 
 In progress / partly complete:
 
-- Phase 6: Validation hardening. Schema validation, cross-reference checks, route smoke checks, dual-fixture builds, and isolated admin mutation tests exist. Stale-coverage detection and broader route/action coverage still need expansion.
+- Phase 6: Validation hardening. Schema validation, cross-reference checks, route smoke checks, dual-fixture builds, isolated admin mutation tests, and stale-coverage detection exist. Broader route/action coverage still needs expansion.
 
 Next:
 
-- Phase 6: expand stale-coverage detection and route/action coverage.
+- Phase 6: expand route/action coverage.
 
 Recent implementation commits:
 
@@ -30,6 +30,7 @@ Recent implementation commits:
 - `1e6a84d`: admin review workspace.
 - `c0888fe`: admin review actions.
 - `7002597`: admin review action hardening.
+- `7ed9d07`: agent workflow skills.
 
 ## Phase 1: Extract The Core Workflow
 

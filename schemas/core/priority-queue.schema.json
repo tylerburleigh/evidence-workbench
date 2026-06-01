@@ -40,6 +40,11 @@
           "priority_tier": { "enum": ["now", "soon", "later"] },
           "default_mode": { "enum": ["surveillance"] },
           "rationale": { "type": "string", "minLength": 1 },
+          "freshness_status": { "enum": ["stale", "unknown"] },
+          "last_checked_at": { "type": "string", "minLength": 1 },
+          "days_since_last_check": { "type": "integer", "minimum": 0 },
+          "stale_after_days": { "type": "integer", "minimum": 1 },
+          "stale_at": { "type": "string", "minLength": 1 },
           "default_question": { "type": "string", "minLength": 1 }
         }
       }

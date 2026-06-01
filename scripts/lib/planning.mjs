@@ -7,6 +7,9 @@ import {
   workspaceRoot
 } from "./workspace.mjs";
 
+const DEFAULT_STALE_AFTER_DAYS = 90;
+const MS_PER_DAY = 24 * 60 * 60 * 1000;
+
 function titleCaseFromIdentifier(value) {
   return value
     .split(/[-_.]/g)
@@ -27,8 +30,155 @@ function isTerminalBundleStatus(status) {
   return status === "published" || status === "rejected";
 }
 
-export async function syncResearchPlanning() {
+function getStaleAfterDays(domainPack) {
+  const configured = domainPack.domain.planning?.stale_after_days;
+  return Number.isInteger(configured) && configured > 0 ? configured : DEFAULT_STALE_AFTER_DAYS;
+}
+
+function parseTimestamp(value) {
+  if (typeof value !== "string" || value.trim().length === 0) {
+    return undefined;
+  }
+
+  const timestamp = Date.parse(value);
+  return Number.isNaN(timestamp) ? undefined : timestamp;
+}
+
+function resolveNow(options) {
+  const now = options.now ? new Date(options.now) : new Date();
+  if (Number.isNaN(now.getTime())) {
+    throw new Error("Planning sync now option must be a valid date or timestamp.");
+  }
+
+  return now;
+}
+
+function getLatestCheck(candidates) {
+  return candidates
+    .filter((candidate) => parseTimestamp(candidate.at) !== undefined)
+    .sort((left, right) => parseTimestamp(right.at) - parseTimestamp(left.at))[0];
+}
+
+function addDays(timestamp, days) {
+  const parsed = parseTimestamp(timestamp);
+  return parsed === undefined ? undefined : new Date(parsed + days * MS_PER_DAY).toISOString();
+}
+
+function getDaysSince(timestamp, now) {
+  const parsed = parseTimestamp(timestamp);
+  if (parsed === undefined) {
+    return undefined;
+  }
+
+  return Math.max(0, Math.floor((now.getTime() - parsed) / MS_PER_DAY));
+}
+
+function getFreshness({
+  activeReview,
+  claim,
+  hasBaseline,
+  latestBundle,
+  latestPublication,
+  latestSession,
+  now,
+  staleAfterDays
+}) {
+  if (activeReview) {
+    return {
+      freshness_status: "in_review",
+      stale_after_days: staleAfterDays,
+      stale_reason: `Candidate bundle ${latestBundle.id} is still ${latestBundle.lifecycle_status}.`
+    };
+  }
+
+  if (!hasBaseline) {
+    return {
+      freshness_status: "uncovered",
+      stale_after_days: staleAfterDays,
+      stale_reason: "No baseline coverage exists yet."
+    };
+  }
+
+  const latestCheck = getLatestCheck([
+    { at: latestPublication?.published_at, source: "publication" },
+    { at: latestSession?.completed_at, source: latestSession ? `${latestSession.mode}_session` : undefined },
+    { at: claim?.last_updated, source: "claim" },
+    {
+      at: latestBundle?.lifecycle_status === "published" ? latestBundle.submitted_at : undefined,
+      source: "published_bundle"
+    }
+  ]);
+
+  if (!latestCheck) {
+    return {
+      freshness_status: "unknown",
+      stale_after_days: staleAfterDays,
+      stale_reason: "Baseline coverage has no dated publication, session, or claim check."
+    };
+  }
+
+  const daysSinceLastCheck = getDaysSince(latestCheck.at, now);
+  const staleAt = addDays(latestCheck.at, staleAfterDays);
+  const isStale = daysSinceLastCheck >= staleAfterDays;
+
+  return {
+    freshness_status: isStale ? "stale" : "fresh",
+    last_checked_at: latestCheck.at,
+    last_checked_source: latestCheck.source,
+    days_since_last_check: daysSinceLastCheck,
+    stale_after_days: staleAfterDays,
+    stale_at: staleAt,
+    stale_reason: isStale
+      ? `Latest ${latestCheck.source} check is ${daysSinceLastCheck} days old; stale after ${staleAfterDays} days.`
+      : `Latest ${latestCheck.source} check is ${daysSinceLastCheck} days old; stale after ${staleAfterDays} days.`
+  };
+}
+
+function getQueueState({ activeReview, freshnessStatus, hasBaseline, latestSession }) {
+  if (activeReview) {
+    return "active_review";
+  }
+
+  if (latestSession?.outcome === "blocked") {
+    return "deferred";
+  }
+
+  if (!hasBaseline) {
+    return "ready";
+  }
+
+  return freshnessStatus === "stale" || freshnessStatus === "unknown" ? "ready" : "deferred";
+}
+
+function getSurveillanceRationale(row) {
+  if (row.freshness_status === "unknown") {
+    return "A public baseline exists, but planning cannot find a reliable dated check; run surveillance to refresh coverage state.";
+  }
+
+  if (row.freshness_status === "stale") {
+    return `Baseline coverage is stale: latest check was ${row.days_since_last_check} days ago, with a ${row.stale_after_days}-day stale threshold.`;
+  }
+
+  return "A public baseline exists, so this scope unit should be monitored for material changes.";
+}
+
+function compareSurveillancePriority(left, right) {
+  const statusRank = { unknown: 0, stale: 1 };
+  const leftRank = statusRank[left.freshness_status] ?? 9;
+  const rightRank = statusRank[right.freshness_status] ?? 9;
+
+  return (
+    leftRank - rightRank ||
+    (right.days_since_last_check ?? -1) - (left.days_since_last_check ?? -1) ||
+    (left.canonical_order ?? 0) - (right.canonical_order ?? 0) ||
+    left.taxonomy_node_id.localeCompare(right.taxonomy_node_id)
+  );
+}
+
+export async function syncResearchPlanning(options = {}) {
   const domainPack = await loadActiveDomainPack();
+  const now = resolveNow(options);
+  const staleAfterDays = getStaleAfterDays(domainPack);
   const scopeUnit = domainPack.domain.default_scope_unit ?? "topic";
   const scopeUnitLabel = titleCaseFromIdentifier(scopeUnit).toLowerCase();
   const topicNodes = (domainPack.taxonomy.nodes ?? [])
@@ -93,11 +243,30 @@ export async function syncResearchPlanning() {
     const hasBaseline = Boolean(claim || latestPublication || latestBundle?.lifecycle_status === "published");
     const coverageStatus = hasBaseline ? "baseline" : activeReview ? "in_review" : "not_started";
     const nextMode = latestSession?.next_recommended_mode ?? (hasBaseline ? "surveillance" : "bootstrap");
-    const queueState = activeReview ? "active_review" : latestSession?.outcome === "blocked" ? "deferred" : "ready";
+    const freshness = getFreshness({
+      activeReview,
+      claim,
+      hasBaseline,
+      latestBundle,
+      latestPublication,
+      latestSession,
+      now,
+      staleAfterDays
+    });
+    const queueState = getQueueState({
+      activeReview,
+      freshnessStatus: freshness.freshness_status,
+      hasBaseline,
+      latestSession
+    });
 
     let notes;
     if (activeReview) {
       notes = `Candidate bundle ${latestBundle.id} is still ${latestBundle.lifecycle_status}.`;
+    } else if (freshness.freshness_status === "stale" || freshness.freshness_status === "unknown") {
+      notes = freshness.stale_reason;
+    } else if (freshness.freshness_status === "fresh") {
+      notes = `${freshness.stale_reason} Next surveillance is due at ${freshness.stale_at}.`;
     } else if (latestPublication) {
       notes = `Latest publication event: ${latestPublication.id}.`;
     } else if (latestSession) {
@@ -117,6 +286,7 @@ export async function syncResearchPlanning() {
       coverage_status: coverageStatus,
       next_mode: nextMode,
       queue_state: queueState,
+      ...freshness,
       last_session_id: latestSession?.id,
       last_session_at: latestSession?.completed_at,
       last_session_mode: latestSession?.mode,
@@ -153,16 +323,22 @@ export async function syncResearchPlanning() {
 
   const surveillanceQueue = coverageRows
     .filter((row) => row.next_mode === "surveillance" && row.queue_state === "ready")
+    .sort(compareSurveillancePriority)
     .map((row, index) => ({
       rank: index + 1,
       taxonomy_node_id: row.taxonomy_node_id,
       priority_tier: index < 3 ? "now" : index < 8 ? "soon" : "later",
       default_mode: "surveillance",
-      rationale: "A public baseline exists, so this topic should be monitored for material changes.",
-      default_question: row.default_research_question
+      rationale: getSurveillanceRationale(row),
+      default_question: row.default_research_question,
+      freshness_status: row.freshness_status,
+      last_checked_at: row.last_checked_at,
+      days_since_last_check: row.days_since_last_check,
+      stale_after_days: row.stale_after_days,
+      stale_at: row.stale_at
     }));
 
-  const timestamp = new Date().toISOString();
+  const timestamp = now.toISOString();
   const coverageStatus = {
     schema_version: "1.0.0",
     state_type: "coverage_status",
@@ -171,10 +347,12 @@ export async function syncResearchPlanning() {
     updated_at: timestamp,
     notes: [
       `The default unit of research work is one taxonomy ${scopeUnitLabel}.`,
-      "Coverage status is planning state, not a public claim about evidence maturity."
+      "Coverage status is planning state, not a public claim about evidence maturity.",
+      `Baseline coverage is stale when the latest dated publication, session, or claim check is at least ${staleAfterDays} days old.`
     ],
     selection_policy: {
       default_unit: scopeUnit,
+      stale_after_days: staleAfterDays,
       max_scope_units_per_bootstrap_run: 1,
       max_scope_units_per_surveillance_run: 1,
       when_request_is_too_broad: `Decompose to one ${scopeUnitLabel}-level pass before creating records.`
@@ -190,10 +368,11 @@ export async function syncResearchPlanning() {
     updated_at: timestamp,
     notes: [
       `Bootstrap priority applies to uncovered ${scopeUnitLabel}s.`,
-      `Surveillance priority applies to ${scopeUnitLabel}s with public baseline coverage and no active review bundle.`
+      `Surveillance priority applies to stale ${scopeUnitLabel}s with public baseline coverage and no active review bundle.`
     ],
     selection_policy: {
       default_unit: scopeUnit,
+      stale_after_days: staleAfterDays,
       when_request_is_vague: `Choose the highest-priority ready ${scopeUnitLabel} from the queue matching the requested mode.`,
       when_request_is_too_broad: `Narrow the work to one ${scopeUnitLabel} before starting.`
     },

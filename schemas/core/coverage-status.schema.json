@@ -24,6 +24,13 @@
           "coverage_status": { "enum": ["not_started", "in_review", "baseline"] },
           "next_mode": { "enum": ["bootstrap", "surveillance", "manual"] },
           "queue_state": { "enum": ["ready", "active_review", "deferred"] },
+          "freshness_status": { "enum": ["uncovered", "in_review", "fresh", "stale", "unknown"] },
+          "last_checked_at": { "type": "string", "minLength": 1 },
+          "last_checked_source": { "type": "string", "minLength": 1 },
+          "days_since_last_check": { "type": "integer", "minimum": 0 },
+          "stale_after_days": { "type": "integer", "minimum": 1 },
+          "stale_at": { "type": "string", "minLength": 1 },
+          "stale_reason": { "type": "string", "minLength": 1 },
           "default_research_question": { "type": "string", "minLength": 1 }
         }
       }

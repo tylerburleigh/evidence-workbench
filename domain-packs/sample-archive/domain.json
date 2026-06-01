@@ -13,6 +13,9 @@
     "scope_fit",
     "context_boundaries"
   ],
+  "planning": {
+    "stale_after_days": 90
+  },
   "public_claim_language": {
     "default_posture": "bounded_archive_summary",
     "avoid": [

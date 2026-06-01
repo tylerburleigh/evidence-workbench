@@ -3,15 +3,17 @@
   "state_type": "coverage_status",
   "domain_id": "sample-research",
   "taxonomy_version": "1.0.0",
-  "updated_at": "2026-05-31T22:52:32.462Z",
+  "updated_at": "2026-06-01T12:20:50.072Z",
   "notes": [
     "The default unit of research work is one taxonomy topic.",
-    "Coverage status is planning state, not a public claim about evidence maturity."
+    "Coverage status is planning state, not a public claim about evidence maturity.",
+    "Baseline coverage is stale when the latest dated publication, session, or claim check is at least 90 days old."
   ],
   "selection_policy": {
     "default_unit": "topic",
-    "max_topics_per_bootstrap_run": 1,
-    "max_topics_per_surveillance_run": 1,
+    "stale_after_days": 90,
+    "max_scope_units_per_bootstrap_run": 1,
+    "max_scope_units_per_surveillance_run": 1,
     "when_request_is_too_broad": "Decompose to one topic-level pass before creating records."
   },
   "nodes": [
@@ -23,7 +25,14 @@
       "name": "Example Topic",
       "coverage_status": "baseline",
       "next_mode": "surveillance",
-      "queue_state": "ready",
+      "queue_state": "deferred",
+      "freshness_status": "fresh",
+      "last_checked_at": "2026-05-31T22:52:32.459Z",
+      "last_checked_source": "publication",
+      "days_since_last_check": 0,
+      "stale_after_days": 90,
+      "stale_at": "2026-08-29T22:52:32.459Z",
+      "stale_reason": "Latest publication check is 0 days old; stale after 90 days.",
       "last_session_id": "example-topic-bootstrap-2026-05-31",
       "last_session_at": "2026-05-31T12:10:00Z",
       "last_session_mode": "bootstrap",
@@ -33,7 +42,7 @@
       "last_publication_event_id": "publish-example-topic-bootstrap-2026-05-31-2026-05-31t22-52-32-459z",
       "last_published_at": "2026-05-31T22:52:32.459Z",
       "default_research_question": "What changed for Example Topic since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest publication event: publish-example-topic-bootstrap-2026-05-31-2026-05-31t22-52-32-459z."
+      "notes": "Latest publication check is 0 days old; stale after 90 days. Next surveillance is due at 2026-08-29T22:52:32.459Z."
     },
     {
       "taxonomy_node_id": "second-example-topic",
@@ -44,7 +53,10 @@
       "coverage_status": "not_started",
       "next_mode": "bootstrap",
       "queue_state": "ready",
-      "default_research_question": "What is the current evidence landscape for Second Example Topic in Sample Research Domain, and what belongs in the first public baseline?",
+      "freshness_status": "uncovered",
+      "stale_after_days": 90,
+      "stale_reason": "No baseline coverage exists yet.",
+      "default_research_question": "What is the current evidence landscape for Second Example Topic in Sample Research Domain, and what belongs in the first public baseline for this topic?",
       "notes": "No public baseline has been bootstrapped yet."
     }
   ]
