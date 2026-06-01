@@ -62,3 +62,33 @@ test("sample-archive route smoke inventory still covers unpublished review works
     "Proposed Changes"
   ]);
 });
+
+test("software supply-chain route smoke inventory covers downstream scope units without records", async () => {
+  const data = await loadDomainWorkbenchData({ domainId: "software-supply-chain" });
+  const routes = buildRouteChecks(data);
+  const paths = routePaths(routes);
+
+  for (const path of [
+    "/",
+    "/scope",
+    "/claims",
+    "/findings",
+    "/artifacts",
+    "/sources",
+    "/activity",
+    "/methods",
+    "/admin/review",
+    "/scope/release-provenance-control",
+    "/scope/dependency-exposure-control",
+    "/scope/maintenance-signal-control"
+  ]) {
+    assert.ok(paths.has(path), `Missing route check for ${path}`);
+  }
+
+  assertRouteHasText(routes, "/scope/release-provenance-control", [
+    "Release Provenance Control",
+    "Claims",
+    "Bundle State"
+  ]);
+  assertRouteHasText(routes, "/methods", ["Trust Model", "Evidence Ladder", "Review Process"]);
+});

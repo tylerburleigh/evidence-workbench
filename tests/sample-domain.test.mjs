@@ -34,6 +34,12 @@ const domainSkillAdapters = {
     "surveillance.md": "surveillance-update",
     "evidence-review.md": "evidence-review",
     "editorial-review.md": "editorial-review"
+  },
+  "software-supply-chain": {
+    "bootstrap.md": "research-bootstrap",
+    "surveillance.md": "surveillance-update",
+    "evidence-review.md": "evidence-review",
+    "editorial-review.md": "editorial-review"
   }
 };
 
@@ -53,6 +59,17 @@ test("second fixture pack uses different scope units and review lanes", async ()
   assert.ok(domainPack.taxonomyNodeIds.has("archive-question"));
   assert.ok(domainPack.reviewLaneIds.has("scope_fit"));
   assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "archive_item"));
+});
+
+test("downstream software supply-chain pack loads without core code changes", async () => {
+  const domainPack = await loadDomainPack("software-supply-chain");
+
+  assert.equal(domainPack.domain.default_scope_unit, "control");
+  assert.equal(domainPack.domain.planning.stale_after_days, 60);
+  assert.ok(domainPack.taxonomyNodeIds.has("release-provenance-control"));
+  assert.ok(domainPack.reviewLaneIds.has("control_fit"));
+  assert.ok(domainPack.reviewLaneIds.has("risk_framing"));
+  assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "risk_interpretation"));
 });
 
 test("active domain can be overridden without editing config", async () => {
@@ -98,6 +115,16 @@ test("workbench data facade loads unpublished sample-archive review queue", asyn
   assert.equal(data.collections.candidateBundles.length, 1);
   assert.equal(data.collections.evidenceReviews.length, 3);
   assert.equal(data.bundleReports[0].evidence_review_gate.ready, true);
+});
+
+test("workbench data facade loads downstream pack with empty public graph", async () => {
+  const data = await loadDomainWorkbenchData({ domainId: "software-supply-chain" });
+
+  assert.equal(data.domainPack.domain.name, "Software Supply Chain Review");
+  assert.equal(data.collections.claims.length, 0);
+  assert.equal(data.collections.sources.length, 0);
+  assert.equal(data.collections.candidateBundles.length, 0);
+  assert.equal(data.bundleReports.length, 0);
 });
 
 test("bundle reports are available as reusable workflow data", async () => {
@@ -151,4 +178,8 @@ test("domain skill adapters map fixture packs to core workflows", async () => {
   const sampleArchiveBootstrap = await readFixtureText("domain-packs/sample-archive/skills/bootstrap.md");
   assert.match(sampleArchiveBootstrap, /archive_item/);
   assert.match(sampleArchiveBootstrap, /context_boundary/);
+
+  const softwareBootstrap = await readFixtureText("domain-packs/software-supply-chain/skills/bootstrap.md");
+  assert.match(softwareBootstrap, /control_signal/);
+  assert.match(softwareBootstrap, /risk_interpretation/);
 });

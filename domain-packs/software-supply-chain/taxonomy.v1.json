@@ -1,0 +1,93 @@
+{
+  "taxonomy_id": "software-supply-chain-taxonomy",
+  "taxonomy_version": "1.0.0",
+  "domain_id": "software-supply-chain",
+  "nodes": [
+    {
+      "id": "software-release-integrity",
+      "name": "Software Release Integrity",
+      "node_type": "program",
+      "canonical_order": 1,
+      "summary": "Parent program for review units that inspect how software releases are built, signed, documented, and monitored.",
+      "search_aliases": [
+        "release governance",
+        "build provenance"
+      ],
+      "example_entities": [],
+      "scope_notes": [
+        "Use child control nodes for evidence work.",
+        "Do not publish claims about a project unless a source-backed finding supports that control."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "release-provenance-control",
+      "name": "Release Provenance Control",
+      "node_type": "control",
+      "parent_id": "software-release-integrity",
+      "canonical_order": 1,
+      "summary": "Reviews whether a release has inspectable provenance, build metadata, attestations, or reproducibility evidence.",
+      "search_aliases": [
+        "release provenance",
+        "build attestation",
+        "signed release"
+      ],
+      "example_entities": [
+        "release artifact",
+        "build workflow",
+        "attestation"
+      ],
+      "scope_notes": [
+        "Claims must name the reviewed release or repository boundary.",
+        "A signed artifact alone does not prove the build process was secure."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "dependency-exposure-control",
+      "name": "Dependency Exposure Control",
+      "node_type": "control",
+      "parent_id": "software-release-integrity",
+      "canonical_order": 2,
+      "summary": "Reviews source-backed evidence about direct dependency inventory, vulnerability exposure, and update posture.",
+      "search_aliases": [
+        "dependency risk",
+        "vulnerability exposure",
+        "software bill of materials"
+      ],
+      "example_entities": [
+        "dependency manifest",
+        "SBOM",
+        "advisory record"
+      ],
+      "scope_notes": [
+        "Separate observed dependency inventory from risk interpretation.",
+        "Do not imply exploitability without source-backed context."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "maintenance-signal-control",
+      "name": "Maintenance Signal Control",
+      "node_type": "control",
+      "parent_id": "software-release-integrity",
+      "canonical_order": 3,
+      "summary": "Reviews evidence about update cadence, ownership signals, issue response, and operational maintenance context.",
+      "search_aliases": [
+        "maintenance posture",
+        "release cadence",
+        "ownership signal"
+      ],
+      "example_entities": [
+        "release history",
+        "maintainer note",
+        "support policy"
+      ],
+      "scope_notes": [
+        "Activity signals are not direct evidence of code quality.",
+        "Maintenance claims must stay bounded to the observed window."
+      ],
+      "retirement_status": "active"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "software-supply-chain-public-copy",
+  "domain_id": "software-supply-chain",
+  "labels": {
+    "evidence_layer": "Source Material",
+    "interpretation_layer": "Control Interpretation",
+    "context_layer": "Operational Boundary",
+    "program": "Program",
+    "control": "Control",
+    "claim": "Control Claim",
+    "finding": "Observation",
+    "artifact": "Reviewed Artifact"
+  },
+  "stage_labels": {
+    "source_identified": "Source identified",
+    "observation_extracted": "Observation extracted",
+    "claim_supported": "Claim supported",
+    "reviewed_control_baseline": "Reviewed control baseline"
+  },
+  "confidence_labels": {
+    "low": "Low confidence",
+    "moderate": "Moderate confidence",
+    "high": "High confidence"
+  },
+  "empty_states": {
+    "no_control": "No software supply-chain control exists for this route.",
+    "no_baseline": "This control exists, but no public baseline has been published yet.",
+    "no_recent_activity": "No review activity has been recorded for this control.",
+    "no_findings": "No source-backed observations have been published for this source yet.",
+    "missing_review": "This bundle is waiting for structured supply-chain review."
+  }
+}

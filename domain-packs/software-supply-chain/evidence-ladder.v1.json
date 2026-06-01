@@ -1,0 +1,38 @@
+{
+  "id": "software-supply-chain-evidence-ladder",
+  "domain_id": "software-supply-chain",
+  "stages": [
+    {
+      "id": "source_identified",
+      "label": "Source Identified",
+      "description": "A source relevant to a software supply-chain control has been identified.",
+      "minimum_support_expected": "A source record with a stable locator such as a repository URL, release page, advisory, policy page, build log, or attestation.",
+      "common_overclaim_risk": "Treating the existence of a source as evidence that the control is operating effectively.",
+      "moves_to_next_stage": "Extract a bounded finding tied to one control and one reviewed artifact or observation."
+    },
+    {
+      "id": "observation_extracted",
+      "label": "Observation Extracted",
+      "description": "A control-relevant observation has been extracted from a source.",
+      "minimum_support_expected": "A finding that records the reviewed component, source locator, observed control signal, and boundary.",
+      "common_overclaim_risk": "Converting one observation into a broad assurance claim.",
+      "moves_to_next_stage": "Map the observation into a support map that explains what it does and does not support."
+    },
+    {
+      "id": "claim_supported",
+      "label": "Claim Supported",
+      "description": "A public control claim is backed by linked findings and sources.",
+      "minimum_support_expected": "A claim with supporting evidence entries, cited findings, cited sources, and explicit limitations.",
+      "common_overclaim_risk": "Implying security assurance beyond the reviewed release, dependency, or time window.",
+      "moves_to_next_stage": "Independent review accepts source fidelity, control fit, risk framing, and operational boundary."
+    },
+    {
+      "id": "reviewed_control_baseline",
+      "label": "Reviewed Control Baseline",
+      "description": "Required review lanes have accepted the control baseline for publication.",
+      "minimum_support_expected": "Complete non-blocking evidence reviews for all default lanes.",
+      "common_overclaim_risk": "Treating a reviewed baseline as permanent assurance rather than a time-bounded assessment.",
+      "moves_to_next_stage": "Surveillance refreshes stale control coverage or stages a material update."
+    }
+  ]
+}

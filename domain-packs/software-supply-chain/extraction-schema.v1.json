@@ -1,0 +1,42 @@
+{
+  "id": "software-supply-chain-extraction-fields",
+  "domain_id": "software-supply-chain",
+  "fields": [
+    {
+      "id": "component",
+      "label": "Component",
+      "required": true,
+      "description": "The repository, package, release, dependency, or operational control being reviewed."
+    },
+    {
+      "id": "control_signal",
+      "label": "Control Signal",
+      "required": true,
+      "description": "The observed signal, such as an attestation, release signature, manifest, advisory, policy, or maintenance event."
+    },
+    {
+      "id": "source_locator",
+      "label": "Source Locator",
+      "required": true,
+      "description": "A stable retrieval note, URL, release identifier, commit, advisory ID, or artifact locator."
+    },
+    {
+      "id": "review_boundary",
+      "label": "Review Boundary",
+      "required": true,
+      "description": "The exact version, release, time window, dependency set, or repository scope where the observation applies."
+    },
+    {
+      "id": "risk_interpretation",
+      "label": "Risk Interpretation",
+      "required": true,
+      "description": "A bounded explanation of what risk or assurance the observation does and does not support."
+    },
+    {
+      "id": "limitations",
+      "label": "Limitations",
+      "required": true,
+      "description": "Constraints that prevent overclaiming operational assurance or security posture."
+    }
+  ]
+}

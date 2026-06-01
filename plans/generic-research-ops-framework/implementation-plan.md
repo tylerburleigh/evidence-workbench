@@ -12,6 +12,7 @@ Completed:
 - Phase 4: Admin review workspace, including guarded comment, request-changes, approve, reject, and publish actions.
 - Phase 5: Agent skills. Core workflow skills and fixture domain adapters exist with read-first lists, workflow rules, boundaries, and test coverage.
 - Phase 6: Validation hardening, including schema/cross-reference checks, stale-coverage detection, data-driven route smoke checks, and admin action coverage.
+- First downstream domain-pack example: `software-supply-chain`, a configuration-only pack with a distinct control scope unit, extraction fields, review lanes, public copy, and agent adapters.
 
 In progress / partly complete:
 
@@ -19,7 +20,8 @@ In progress / partly complete:
 
 Next:
 
-- Keep the file-backed workflow in use, add real downstream domain packs as needed, and defer Phase 7 until record shapes and operational volume justify a database migration.
+- Run an end-to-end workflow rehearsal against a downstream domain pack: bootstrap one control, complete evidence reviews, approve, publish, sync planning, and smoke routes.
+- Defer Phase 7 until record shapes and operational volume justify a database migration.
 
 Recent implementation commits:
 
@@ -34,6 +36,7 @@ Recent implementation commits:
 - `7ed9d07`: agent workflow skills.
 - `d14fa96`: stale coverage planning.
 - `04d464f`: data-driven route smoke coverage.
+- `ff0f410`: admin action coverage.
 
 ## Phase 1: Extract The Core Workflow
 
@@ -184,6 +187,28 @@ Only migrate to SQLite or Postgres after:
 - multiple domains or many records make file-backed operation painful
 
 Even after a database migration, keep exportable JSON snapshots for review and agent workflows.
+
+## Downstream Domain-Pack Rehearsal
+
+Status: Started.
+
+Goal:
+
+Prove the framework can support a non-fixture domain without changing core workflow code.
+
+Completed:
+
+- Added `software-supply-chain` domain pack.
+- Added a `control` scope unit with three configured controls.
+- Added domain-specific extraction fields, review lanes, evidence ladder, public copy, and skill adapters.
+- Added tests proving the pack loads through the domain loader and route smoke inventory with an empty graph.
+
+Next:
+
+- Bootstrap one source-backed candidate bundle for `release-provenance-control`.
+- Scaffold and apply required evidence reviews.
+- Approve and publish through admin actions or workflow functions.
+- Sync planning state and smoke routes with `WORKBENCH_DOMAIN=software-supply-chain`.
 
 ## First Build Guidance
 

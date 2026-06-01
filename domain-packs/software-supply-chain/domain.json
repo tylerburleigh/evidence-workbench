@@ -1,0 +1,28 @@
+{
+  "id": "software-supply-chain",
+  "name": "Software Supply Chain Review",
+  "summary": "A downstream domain pack for reviewing source-backed evidence about software release integrity, dependency risk, and operational controls.",
+  "default_scope_unit": "control",
+  "taxonomy_file": "taxonomy.v1.json",
+  "evidence_ladder_file": "evidence-ladder.v1.json",
+  "extraction_schema_file": "extraction-schema.v1.json",
+  "review_lanes_file": "review-lanes.v1.json",
+  "public_copy_file": "public-copy.v1.json",
+  "default_review_lanes": [
+    "source_fidelity",
+    "control_fit",
+    "risk_framing",
+    "operational_boundary"
+  ],
+  "planning": {
+    "stale_after_days": 60
+  },
+  "public_claim_language": {
+    "default_posture": "bounded_control_summary",
+    "avoid": [
+      "guarantees of security",
+      "claims outside the reviewed release or dependency scope",
+      "treating policy presence as proof of operational execution"
+    ]
+  }
+}
