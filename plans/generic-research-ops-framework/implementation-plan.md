@@ -12,7 +12,7 @@ Completed:
 - Phase 4: Admin review workspace, including guarded comment, request-changes, approve, reject, and publish actions.
 - Phase 5: Agent skills. Core workflow skills and fixture domain adapters exist with read-first lists, workflow rules, boundaries, and test coverage.
 - Phase 6: Validation hardening, including schema/cross-reference checks, stale-coverage detection, data-driven route smoke checks, and admin action coverage.
-- First downstream domain-pack rehearsal: `software-supply-chain` now has a published source-backed baseline for `release-provenance-control`.
+- Downstream domain-pack rehearsal: `software-supply-chain` now has published source-backed baselines for `release-provenance-control` and `dependency-exposure-control`.
 
 In progress / partly complete:
 
@@ -20,7 +20,7 @@ In progress / partly complete:
 
 Next:
 
-- Continue downstream rehearsal with another software supply-chain control or start an operator guide for creating and publishing domain packs.
+- Finish the downstream rehearsal with `maintenance-signal-control` or start an operator guide for creating and publishing domain packs.
 - Defer Phase 7 until record shapes and operational volume justify a database migration.
 
 Recent implementation commits:
@@ -37,6 +37,7 @@ Recent implementation commits:
 - `d14fa96`: stale coverage planning.
 - `04d464f`: data-driven route smoke coverage.
 - `ff0f410`: admin action coverage.
+- `068a17d`: supply-chain provenance baseline.
 
 ## Phase 1: Extract The Core Workflow
 
@@ -190,7 +191,7 @@ Even after a database migration, keep exportable JSON snapshots for review and a
 
 ## Downstream Domain-Pack Rehearsal
 
-Status: Complete for the first control.
+Status: Complete for two of three controls.
 
 Goal:
 
@@ -202,13 +203,13 @@ Completed:
 - Added a `control` scope unit with three configured controls.
 - Added domain-specific extraction fields, review lanes, evidence ladder, public copy, and skill adapters.
 - Added tests proving the pack loads through the domain loader and route smoke inventory with an empty graph.
-- Bootstrapped and published a source-backed baseline bundle for `release-provenance-control`.
-- Completed `source_fidelity`, `control_fit`, `risk_framing`, and `operational_boundary` evidence reviews.
-- Synced planning state for `software-supply-chain`; the remaining uncovered controls are in the bootstrap queue.
+- Bootstrapped and published source-backed baseline bundles for `release-provenance-control` and `dependency-exposure-control`.
+- Completed `source_fidelity`, `control_fit`, `risk_framing`, and `operational_boundary` evidence reviews for both published downstream bundles.
+- Synced planning state for `software-supply-chain`; `maintenance-signal-control` is the remaining uncovered control in the bootstrap queue.
 
 Next:
 
-- Bootstrap `dependency-exposure-control` or `maintenance-signal-control`, or document the operator path for creating and publishing downstream packs.
+- Bootstrap `maintenance-signal-control`, or document the operator path for creating and publishing downstream packs.
 
 ## First Build Guidance
 

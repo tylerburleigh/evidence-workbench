@@ -3,7 +3,7 @@
   "queue_type": "research_priority_queue",
   "domain_id": "software-supply-chain",
   "taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-01T19:42:05.923Z",
+  "updated_at": "2026-06-01T20:21:48.194Z",
   "notes": [
     "Bootstrap priority applies to uncovered controls.",
     "Surveillance priority applies to stale controls with public baseline coverage and no active review bundle."
@@ -17,14 +17,6 @@
   "bootstrap_queue": [
     {
       "rank": 1,
-      "taxonomy_node_id": "dependency-exposure-control",
-      "priority_tier": "now",
-      "default_mode": "bootstrap",
-      "rationale": "This control lacks a public baseline and is ready for a bounded bootstrap pass.",
-      "default_question": "What is the current evidence landscape for Dependency Exposure Control in Software Supply Chain Review, and what belongs in the first public baseline for this control?"
-    },
-    {
-      "rank": 2,
       "taxonomy_node_id": "maintenance-signal-control",
       "priority_tier": "now",
       "default_mode": "bootstrap",

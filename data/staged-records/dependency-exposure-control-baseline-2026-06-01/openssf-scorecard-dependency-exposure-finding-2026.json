@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "openssf-scorecard-dependency-exposure-finding-2026",
+  "name": "OpenSSF Scorecard Defines Dependency Exposure Review Signals",
+  "source_id": "openssf-scorecard-checks-source",
+  "artifact_id": "openssf-scorecard-dependency-exposure-artifact",
+  "taxonomy_node_ids": [
+    "dependency-exposure-control"
+  ],
+  "endpoint_category": "dependency_exposure",
+  "direction": "defines_control_evidence",
+  "evidence_tier": "observation_extracted",
+  "confidence": "high",
+  "statement": "The OpenSSF Scorecard check documentation defines dependency exposure signals across dependency update tooling, pinned build and release dependencies, SBOM availability, and known open vulnerabilities checked through OSV-backed data, while also noting that automated detection does not prove operational execution or project-specific risk.",
+  "population_or_context": "Specification-level dependency exposure control model.",
+  "time_horizon": "OpenSSF Scorecard check documentation retrieved on 2026-06-01.",
+  "quantitative_note": "No quantitative estimate; this is a technical documentation extraction.",
+  "caveats": [
+    "This finding describes Scorecard check semantics and does not evaluate a specific repository.",
+    "A detected tool, SBOM, lockfile, or vulnerability signal still needs repository-specific context before making assurance or exploitability claims.",
+    "The source itself documents that some checks have detection limits and that low scores are not always definitive proof of project risk."
+  ],
+  "domain_fields": {
+    "component": "OpenSSF Scorecard dependency-related checks",
+    "control_signal": "Update automation, pinning, SBOM, and known vulnerability evidence signals",
+    "source_locator": "https://github.com/ossf/scorecard/blob/main/docs/checks.md",
+    "review_boundary": "Documentation-level model only",
+    "risk_interpretation": "Supports a bounded baseline claim that dependency exposure review should separate inventory, vulnerability, and update-posture evidence from final risk interpretation",
+    "limitations": "Does not verify dependency completeness, exploitability, or remediation status for any concrete project"
+  }
+}

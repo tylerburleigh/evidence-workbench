@@ -82,10 +82,15 @@ test("software supply-chain route smoke inventory covers downstream published gr
     "/scope/dependency-exposure-control",
     "/scope/maintenance-signal-control",
     "/claims/release-provenance-control-baseline-claim",
+    "/claims/dependency-exposure-control-baseline-claim",
     "/findings/slsa-build-provenance-control-model-finding-2026",
+    "/findings/openssf-scorecard-dependency-exposure-finding-2026",
     "/artifacts/slsa-build-provenance-v1-2-artifact",
+    "/artifacts/openssf-scorecard-dependency-exposure-artifact",
     "/sources/slsa-build-provenance-v1-2-source",
-    "/admin/review/release-provenance-control-baseline-2026-06-01"
+    "/sources/openssf-scorecard-checks-source",
+    "/admin/review/release-provenance-control-baseline-2026-06-01",
+    "/admin/review/dependency-exposure-control-baseline-2026-06-01"
   ]) {
     assert.ok(paths.has(path), `Missing route check for ${path}`);
   }
@@ -98,7 +103,20 @@ test("software supply-chain route smoke inventory covers downstream published gr
   assertRouteHasText(routes, "/claims/release-provenance-control-baseline-claim", ["Support Map", "Claim Details"]);
   assertRouteHasText(routes, "/findings/slsa-build-provenance-control-model-finding-2026", ["Details", "Links"]);
   assertRouteHasText(routes, "/artifacts/slsa-build-provenance-v1-2-artifact", ["Scope", "Sources"]);
+  assertRouteHasText(routes, "/scope/dependency-exposure-control", [
+    "Dependency Exposure Control",
+    "Claims",
+    "Bundle State"
+  ]);
+  assertRouteHasText(routes, "/claims/dependency-exposure-control-baseline-claim", ["Support Map", "Claim Details"]);
+  assertRouteHasText(routes, "/findings/openssf-scorecard-dependency-exposure-finding-2026", ["Details", "Links"]);
+  assertRouteHasText(routes, "/artifacts/openssf-scorecard-dependency-exposure-artifact", ["Scope", "Sources"]);
+  assertRouteHasText(routes, "/sources/openssf-scorecard-checks-source", ["Metadata", "Artifacts"]);
   assertRouteHasText(routes, "/admin/review/release-provenance-control-baseline-2026-06-01", [
+    "Actions",
+    "Evidence Reviews"
+  ]);
+  assertRouteHasText(routes, "/admin/review/dependency-exposure-control-baseline-2026-06-01", [
     "Actions",
     "Evidence Reviews"
   ]);

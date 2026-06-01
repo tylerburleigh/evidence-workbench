@@ -121,11 +121,13 @@ test("workbench data facade loads published downstream supply-chain graph", asyn
   const data = await loadDomainWorkbenchData({ domainId: "software-supply-chain" });
 
   assert.equal(data.domainPack.domain.name, "Software Supply Chain Review");
-  assert.equal(data.collections.claims.length, 1);
-  assert.equal(data.collections.sources.length, 1);
-  assert.equal(data.collections.candidateBundles.length, 1);
-  assert.equal(data.bundleReports[0].bundle_id, "release-provenance-control-baseline-2026-06-01");
-  assert.equal(data.bundleReports[0].validation.ready, true);
+  assert.equal(data.collections.claims.length, 2);
+  assert.equal(data.collections.sources.length, 2);
+  assert.equal(data.collections.candidateBundles.length, 2);
+
+  const bundleReports = new Map(data.bundleReports.map((report) => [report.bundle_id, report]));
+  assert.equal(bundleReports.get("release-provenance-control-baseline-2026-06-01")?.validation.ready, true);
+  assert.equal(bundleReports.get("dependency-exposure-control-baseline-2026-06-01")?.validation.ready, true);
 });
 
 test("bundle reports are available as reusable workflow data", async () => {

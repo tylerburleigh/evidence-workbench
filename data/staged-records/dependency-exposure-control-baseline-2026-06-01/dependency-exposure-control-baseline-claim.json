@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "dependency-exposure-control-baseline-claim",
+  "name": "Dependency Exposure Control Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "dependency-exposure-control",
+  "current_stage": "claim_supported",
+  "momentum": "baseline_established",
+  "confidence": "high",
+  "summary": "The dependency exposure control has a source-backed baseline: OpenSSF Scorecard documentation identifies dependency update tooling, pinned build and release dependencies, SBOM presence, and known open vulnerability checks as distinct evidence signals for dependency exposure review, while reserving repository-specific assurance for later project evidence.",
+  "main_blockers": [
+    "No project-specific dependency manifest, SBOM, vulnerability scan, or update workflow has been reviewed in this baseline."
+  ],
+  "best_current_signals": [
+    "OpenSSF Scorecard documents a dependency update tool check that looks for tools such as Dependabot or Renovate.",
+    "Scorecard documents pinned dependency and lockfile-related evidence for build and release process dependencies.",
+    "Scorecard documents SBOM presence as a signal that can help users identify dependency and vulnerability exposure.",
+    "Scorecard documents a vulnerabilities check that uses OSV-backed data for known open vulnerabilities."
+  ],
+  "interpretive_note": "This baseline establishes the control model for dependency exposure review. It should not be read as evidence that any specific repository has complete dependency inventory, active update automation, or no exploitable dependency vulnerabilities.",
+  "limitations": [
+    "This claim is bounded to OpenSSF Scorecard check documentation.",
+    "It does not evaluate a repository, package version, dependency graph, vulnerability record, exploitability condition, or remediation workflow.",
+    "Operational assurance requires a later bundle with project-specific dependency inventory and vulnerability context."
+  ],
+  "update_notes": [
+    "Use surveillance or a project-specific bootstrap bundle when reviewing a concrete repository, package release, SBOM, or vulnerability scan."
+  ],
+  "supporting_finding_ids": [
+    "openssf-scorecard-dependency-exposure-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "openssf-scorecard-checks-source"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "OpenSSF Scorecard dependency exposure model",
+      "claim_field": "summary",
+      "conclusion": "OpenSSF Scorecard check documentation is an appropriate source-backed baseline for dependency exposure evidence categories.",
+      "support_role": "supports",
+      "rationale": "The extracted finding identifies Scorecard checks that separately address update automation, pinning, SBOM inventory, and known vulnerability exposure, with documented limitations for automated detection.",
+      "finding_ids": [
+        "openssf-scorecard-dependency-exposure-finding-2026"
+      ],
+      "source_ids": [
+        "openssf-scorecard-checks-source"
+      ],
+      "limitations": [
+        "The support is documentation-level, not project-specific.",
+        "It does not prove that any given repository has complete dependency controls or acceptable vulnerability exposure."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-01"
+}

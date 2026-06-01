@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-dependency-exposure-control-control-fit-r1",
+  "name": "Control Fit Review for Dependency Exposure Control Bundle",
+  "candidate_bundle_id": "dependency-exposure-control-baseline-2026-06-01",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "control_fit",
+  "reviewer_kind": "agent",
+  "reviewer_id": "codex-agent",
+  "skill_name": "evidence-review",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged records are scoped to dependency exposure and do not drift into release provenance or maintenance-signal controls.",
+  "reviewed_change_ids": [
+    "create-scorecard-checks-source",
+    "create-scorecard-dependency-exposure-artifact",
+    "create-scorecard-dependency-exposure-finding",
+    "create-dependency-exposure-claim"
+  ],
+  "findings": [],
+  "created_at": "2026-06-01T20:19:00Z",
+  "updated_at": "2026-06-01T20:19:00Z"
+}

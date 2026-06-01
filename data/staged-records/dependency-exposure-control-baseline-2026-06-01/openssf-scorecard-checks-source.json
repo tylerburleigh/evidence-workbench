@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "openssf-scorecard-checks-source",
+  "name": "OpenSSF Scorecard Check Documentation",
+  "source_type": "technical_documentation",
+  "authors": [
+    "OpenSSF Scorecard"
+  ],
+  "venue": "OpenSSF Scorecard",
+  "urls": [
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#dependency-update-tool",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#pinned-dependencies",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#sbom",
+    "https://github.com/ossf/scorecard/blob/main/docs/checks.md#vulnerabilities"
+  ],
+  "summary": "Official OpenSSF Scorecard documentation describing automated checks for dependency update tooling, pinned build and release dependencies, SBOM presence, and known open vulnerabilities.",
+  "retrieved_on": "2026-06-01"
+}

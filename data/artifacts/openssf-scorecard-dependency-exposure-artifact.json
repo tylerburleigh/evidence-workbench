@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "openssf-scorecard-dependency-exposure-artifact",
+  "name": "OpenSSF Scorecard Dependency Exposure Control Extract",
+  "artifact_type": "documentation_extract",
+  "status": "complete",
+  "source_ids": [
+    "openssf-scorecard-checks-source"
+  ],
+  "taxonomy_node_ids": [
+    "dependency-exposure-control"
+  ],
+  "population_or_context": "Dependency exposure control baseline for software supply-chain review.",
+  "sample_size": "one official Scorecard check documentation page covering four relevant checks",
+  "methods": "Extracted the Scorecard Dependency-Update-Tool, Pinned-Dependencies, SBOM, and Vulnerabilities check descriptions, risk labels, remediation notes, and documented limitations from the official OpenSSF Scorecard check documentation.",
+  "endpoint_categories": [
+    "dependency_exposure"
+  ],
+  "domain_fields": {
+    "component": "OpenSSF Scorecard dependency-related checks",
+    "control_signal": "Dependency update automation, pinned build and release dependencies, SBOM presence, and known vulnerability detection",
+    "source_locator": "https://github.com/ossf/scorecard/blob/main/docs/checks.md",
+    "review_boundary": "Specification-level check documentation, not a repository-specific Scorecard run",
+    "risk_interpretation": "Provides a baseline for identifying source-backed dependency exposure signals before reviewing a concrete project dependency set",
+    "limitations": "Does not establish that a specific repository has complete dependency inventory, timely updates, or no exploitable vulnerabilities"
+  }
+}
