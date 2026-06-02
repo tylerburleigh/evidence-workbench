@@ -23,6 +23,7 @@ Use with `skills/evidence-review/SKILL.md`.
 - `method_classification`: verify generation model, prompt strategy, generation workflow, response type, evaluation method, and reported metrics.
 - `scorer_validation_relevance`: distinguish automated scorer validation, calibration, benchmarking, or stress testing from unrelated synthetic-data generation.
 - `synthesis_overreach`: reject claims that generalize beyond the item type, subject, grade band, rubric, model, prompt, comparator, or metric studied.
+- `search_protocol`: verify queries, databases, dates, inclusion/exclusion criteria, screening decisions, deduplication notes, and included source links when a protocol record is present.
 - Use categories such as `source_mismatch`, `construct_conflation`, `method_misclassification`, `missing_comparator`, `scorer_relevance_gap`, `metric_overreach`, or `claim_overreach`.
 
 ## Output Checks

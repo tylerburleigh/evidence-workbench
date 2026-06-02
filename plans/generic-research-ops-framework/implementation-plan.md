@@ -227,16 +227,17 @@ Completed:
 
 - Added `synthetic-student-responses` domain pack.
 - Added `review_question` scope units for scorer-validation use, generation methods, quality evaluation, model effects, prompt-engineering effects, real-response comparison, and human/AI scoring agreement.
-- Added extraction fields that separate response origin, rubric label space, label source, generation method, prompt strategy, evaluation method, scorer use, real-response comparator, reported metrics, limitations, and source locator.
+- Added enforced extraction fields that separate response origin, rubric label space, label source, generation method, prompt strategy, evaluation method, scorer use, real-response comparator, reported metrics, limitations, and source locator.
 - Added review lanes for source fidelity, construct mapping, method classification, scorer-validation relevance, synthesis overreach, and optional search-protocol review.
+- Added `search_protocol` record support for search query, screening, inclusion, exclusion, deduplication, and included-source tracking.
 - Added domain skill adapters for bootstrap, surveillance, evidence review, and editorial review.
-- Added a config-driven `/reports` synthesis matrix surface for paper-oriented literature comparison.
+- Added a config-driven `/reports` synthesis matrix surface with CSV and Markdown export for paper-oriented literature comparison.
 
 Next:
 
 - Bootstrap one review question at a time, starting with `ssr-scoring-validation-use`.
 - Stage each paper as a source, each study design or synthetic-response pipeline as an artifact, extracted results as findings, and background-section conclusions as synthesis claims.
-- Decide whether a formal screening/protocol record type is needed after the first search pass.
+- Exercise the `search_protocol` shape during the first search pass and refine fields if screening decisions need more structure.
 
 ## First Build Guidance
 

@@ -23,6 +23,7 @@ const schemaByRecordType = {
   publication_event: "core/publication-event.schema.json",
   research_session: "core/research-session.schema.json",
   review_comment: "core/review-comment.schema.json",
+  search_protocol: "core/search-protocol.schema.json",
   source: "core/source.schema.json"
 };
 
@@ -48,8 +49,11 @@ const recordCollections = {
   artifact: "artifacts",
   finding: "findings",
   claim: "claims",
-  activity_item: "activity-items"
+  activity_item: "activity-items",
+  search_protocol: "search-protocols"
 };
+
+const extractionRecordTypes = new Set(["artifact", "finding", "claim", "search_protocol"]);
 
 async function loadSchemas() {
   const schemaFiles = await walkJsonFiles(schemasRoot);
@@ -100,6 +104,14 @@ function addIssueForMissingReference(issues, relativePath, field, value, targetL
   }
 }
 
+function hasRequiredValue(value) {
+  if (Array.isArray(value)) {
+    return value.length > 0;
+  }
+
+  return value !== undefined && value !== null && !(typeof value === "string" && value.trim().length === 0);
+}
+
 function getExpectedTargetPath(recordType, recordId) {
   const collection = recordCollections[recordType];
   return collection && recordId ? `data/${collection}/${recordId}.json` : undefined;
@@ -140,6 +152,7 @@ function validateDomainPackContracts(entries, issues) {
   const reviewLaneIdsByDomain = new Map();
   const nodeIdsByDomain = new Map();
   const nodeDomainById = new Map();
+  const requiredExtractionFieldsByDomain = new Map();
 
   for (const { relativePath, value } of entries) {
     const directory = getDomainPackDirectory(relativePath);
@@ -172,6 +185,33 @@ function validateDomainPackContracts(entries, issues) {
     if (fileName === "review-lanes.v1.json") {
       reviewLaneIdsByDomain.set(directory, new Set((value.lanes ?? []).map((lane) => lane.id)));
     }
+
+    if (fileName === "extraction-schema.v1.json" && value.validation?.enforce_required_fields) {
+      const requiredFields = [];
+      for (const field of value.fields ?? []) {
+        if (!field.required) {
+          continue;
+        }
+
+        const appliesTo = Array.isArray(field.applies_to) ? field.applies_to : [];
+        if (appliesTo.length === 0) {
+          issues.push(`${relativePath}: required field ${field.id} must declare applies_to[] when required-field validation is enforced.`);
+        }
+
+        for (const recordType of appliesTo) {
+          if (!extractionRecordTypes.has(recordType)) {
+            issues.push(`${relativePath}: field ${field.id} applies_to unsupported record type: ${recordType}.`);
+          }
+        }
+
+        requiredFields.push({
+          id: field.id,
+          label: field.label ?? field.id,
+          appliesTo: new Set(appliesTo)
+        });
+      }
+      requiredExtractionFieldsByDomain.set(directory, requiredFields);
+    }
   }
 
   for (const { relativePath, value } of entries) {
@@ -201,7 +241,7 @@ function validateDomainPackContracts(entries, issues) {
     }
   }
 
-  return { domainIds, reviewLaneIdsByDomain, nodeIdsByDomain, nodeDomainById };
+  return { domainIds, reviewLaneIdsByDomain, nodeIdsByDomain, nodeDomainById, requiredExtractionFieldsByDomain };
 }
 
 function buildRecordIndexes(entries) {
@@ -305,6 +345,8 @@ function validateArtifact(entry, context, issues) {
       issues.push(`${relativePath}: references unknown taxonomy_node_id: ${nodeId}.`);
     }
   }
+
+  validateRequiredExtractionFields(entry, context, issues);
 }
 
 function validateFinding(entry, context, issues) {
@@ -322,6 +364,8 @@ function validateFinding(entry, context, issues) {
       issues.push(`${relativePath}: references unknown taxonomy_node_id: ${nodeId}.`);
     }
   }
+
+  validateRequiredExtractionFields(entry, context, issues);
 }
 
 function validateClaim(entry, context, issues) {
@@ -359,6 +403,75 @@ function validateClaim(entry, context, issues) {
       }
     }
   }
+
+  validateRequiredExtractionFields(entry, context, issues);
+}
+
+function getRecordDomainIds(record, context) {
+  const domainIds = new Set();
+
+  if (record.record_type === "search_protocol" && nonEmptyString(record.domain_id)) {
+    domainIds.add(record.domain_id);
+  }
+
+  for (const nodeId of record.taxonomy_node_ids ?? []) {
+    const domainId = context.nodeDomainById.get(nodeId);
+    if (domainId) {
+      domainIds.add(domainId);
+    }
+  }
+
+  if (record.subject_type === "taxonomy_node") {
+    const domainId = context.nodeDomainById.get(record.subject_id);
+    if (domainId) {
+      domainIds.add(domainId);
+    }
+  }
+
+  return domainIds;
+}
+
+function validateRequiredExtractionFields(entry, context, issues) {
+  const { value: record, relativePath } = entry;
+  const recordType = record.record_type;
+  if (!extractionRecordTypes.has(recordType)) {
+    return;
+  }
+
+  for (const domainId of getRecordDomainIds(record, context)) {
+    const requiredFields = context.requiredExtractionFieldsByDomain.get(domainId) ?? [];
+    for (const field of requiredFields) {
+      if (field.appliesTo.has(recordType) && !hasRequiredValue(record[field.id])) {
+        issues.push(`${relativePath}: ${recordType} for ${domainId} is missing required extraction field ${field.id} (${field.label}).`);
+      }
+    }
+  }
+}
+
+function validateSearchProtocol(entry, context, issues) {
+  const { value: protocol, relativePath } = entry;
+  addDomainNodeChecks({
+    issues,
+    relativePath,
+    domainId: protocol.domain_id,
+    nodeIds: protocol.taxonomy_node_ids,
+    domainIds: context.domainIds,
+    nodeDomainById: context.nodeDomainById
+  });
+
+  for (const sourceId of protocol.source_ids ?? []) {
+    if (!hasRecord(context.recordByTypeAndId, "source", sourceId)) {
+      issues.push(`${relativePath}: references missing source_id: ${sourceId}.`);
+    }
+  }
+
+  for (const [index, decision] of (protocol.screening_decisions ?? []).entries()) {
+    if (decision.source_id && !hasRecord(context.recordByTypeAndId, "source", decision.source_id)) {
+      issues.push(`${relativePath}: screening_decisions[${index}] references missing source_id: ${decision.source_id}.`);
+    }
+  }
+
+  validateRequiredExtractionFields(entry, context, issues);
 }
 
 function validateEvidenceReview(entry, context, issues) {
@@ -451,6 +564,9 @@ function validateCrossReferences(entries) {
         break;
       case "publication_event":
         validatePublicationEvent(entry, context, issues);
+        break;
+      case "search_protocol":
+        validateSearchProtocol(entry, context, issues);
         break;
       default:
         break;

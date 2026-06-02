@@ -1,83 +1,99 @@
 {
   "id": "synthetic-student-responses-extraction-fields",
   "domain_id": "synthetic-student-responses",
+  "validation": {
+    "enforce_required_fields": true
+  },
   "fields": [
     {
       "id": "education_context",
       "label": "Education Context",
       "required": true,
+      "applies_to": ["artifact"],
       "description": "The subject area, grade band, assessment setting, item type, response format, and rubric structure when reported."
     },
     {
       "id": "response_origin",
       "label": "Response Origin",
       "required": true,
+      "applies_to": ["artifact"],
       "description": "Whether analyzed responses are real, synthetic, hybrid, or comparator sets, and how each origin is used."
     },
     {
       "id": "rubric_label_space",
       "label": "Rubric Label Space",
       "required": true,
+      "applies_to": ["artifact"],
       "description": "The scoring labels used in the study, such as correct/incorrect, partial credit, ordinal score, category, or free-text rationale."
     },
     {
       "id": "label_source",
       "label": "Label Source",
       "required": true,
+      "applies_to": ["artifact"],
       "description": "Whether correctness or score labels come from humans, generated targets, model labels, adjudication, or source datasets."
     },
     {
       "id": "generation_model",
       "label": "Generation Model",
       "required": false,
+      "applies_to": ["artifact"],
       "description": "The model family, version, provider, fine-tuning status, or unavailable-model note for generated responses."
     },
     {
       "id": "generation_method",
       "label": "Generation Method",
       "required": true,
+      "applies_to": ["artifact"],
       "description": "The synthetic response generation workflow, such as template generation, zero-shot LLM prompting, few-shot prompting, fine-tuning, filtering, or hybrid generation."
     },
     {
       "id": "prompt_strategy",
       "label": "Prompt Strategy",
       "required": false,
+      "applies_to": ["artifact"],
       "description": "Prompt ingredients including rubric text, examples, target labels, error types, persona framing, self-revision, or iterative refinement."
     },
     {
       "id": "evaluation_method",
       "label": "Evaluation Method",
       "required": true,
+      "applies_to": ["artifact", "finding"],
       "description": "How synthetic response quality or scoring impact is evaluated, including human judgment, distributional similarity, label fidelity, scorer agreement, downstream scorer performance, or qualitative error analysis."
     },
     {
       "id": "scorer_use",
       "label": "Scorer Use",
       "required": true,
+      "applies_to": ["artifact"],
       "description": "Whether synthetic responses are used for scorer training, augmentation, validation, calibration, benchmarking, stress testing, or not used with a scorer."
     },
     {
       "id": "real_response_comparator",
       "label": "Real Response Comparator",
       "required": true,
+      "applies_to": ["artifact"],
       "description": "Whether the study compares synthetic responses to real student responses and whether those responses share items, rubrics, grade band, domain, and label source."
     },
     {
       "id": "reported_metrics",
       "label": "Reported Metrics",
       "required": false,
+      "applies_to": ["artifact", "finding"],
       "description": "Reported quantitative or qualitative metrics such as accuracy, F1, kappa, agreement rate, calibration, distributional distance, diversity, realism ratings, or expert themes."
     },
     {
       "id": "limitations",
       "label": "Limitations",
       "required": true,
+      "applies_to": ["artifact", "finding", "claim"],
       "description": "Study limitations and synthesis constraints that prevent overgeneralization."
     },
     {
       "id": "source_locator",
       "label": "Source Locator",
       "required": true,
+      "applies_to": ["finding"],
       "description": "The section, table, appendix, page, or other locator used to verify the extracted fact."
     }
   ]

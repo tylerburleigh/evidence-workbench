@@ -213,6 +213,12 @@ export function getActivityFeed(data) {
   );
 }
 
+export function getSearchProtocols(data) {
+  return data.collections.searchProtocols
+    .map(({ record }) => record)
+    .sort((left, right) => String(right.search_completed_at ?? "").localeCompare(String(left.search_completed_at ?? "")));
+}
+
 export function getSynthesisMatrixConfig(data) {
   const config = data.domainPack.domain.synthesis_matrix ?? data.domainPack.publicCopy.synthesis_matrix;
   if (!config || !Array.isArray(config.columns) || config.columns.length === 0) {
@@ -223,6 +229,44 @@ export function getSynthesisMatrixConfig(data) {
     row_source: "artifacts",
     ...config
   };
+}
+
+export function getSynthesisMatrixCsv(data) {
+  const config = getSynthesisMatrixConfig(data);
+  if (!config) {
+    return "";
+  }
+
+  const rows = getSynthesisMatrixRows(data);
+  return [
+    config.columns.map((column) => csvCell(column.label)).join(","),
+    ...rows.map((row) => config.columns.map((column) => csvCell(row.cells[column.id])).join(","))
+  ].join("\n");
+}
+
+export function getSynthesisMatrixMarkdown(data) {
+  const config = getSynthesisMatrixConfig(data);
+  if (!config) {
+    return "";
+  }
+
+  const rows = getSynthesisMatrixRows(data);
+  const header = `| ${config.columns.map((column) => markdownCell(column.label)).join(" | ")} |`;
+  const separator = `| ${config.columns.map(() => "---").join(" | ")} |`;
+  const body = rows.map((row) => `| ${config.columns.map((column) => markdownCell(row.cells[column.id])).join(" | ")} |`);
+  return [header, separator, ...body].join("\n");
+}
+
+function csvCell(value) {
+  const text = String(value ?? "");
+  return /[",\n\r]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
+}
+
+function markdownCell(value) {
+  return String(value ?? "")
+    .replaceAll("|", "\\|")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 export function getSynthesisMatrixRows(data) {

@@ -176,6 +176,30 @@ Suggested fields:
 - `significance_note`
 - `source_ids`
 
+### Search Protocol
+
+A literature-search or source-discovery protocol for domains that need auditable search, screening, inclusion, exclusion, and deduplication decisions.
+
+Suggested fields:
+
+- `id`
+- `name`
+- `domain_id`
+- `taxonomy_node_ids`
+- `status`
+- `search_started_at`
+- `search_completed_at`
+- `databases`
+- `search_queries`
+- `inclusion_criteria`
+- `exclusion_criteria`
+- `dedupe_method`
+- `screening_counts`
+- `screening_decisions`
+- `source_ids`
+- `screening_summary`
+- `limitations`
+
 ### Research Session
 
 One bounded research pass.

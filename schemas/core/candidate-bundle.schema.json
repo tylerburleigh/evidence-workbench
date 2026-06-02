@@ -45,7 +45,7 @@
         "properties": {
           "change_id": { "type": "string", "minLength": 1 },
           "change_type": { "enum": ["create_record", "update_record"] },
-          "target_record_type": { "enum": ["source", "artifact", "finding", "claim", "activity_item"] },
+          "target_record_type": { "enum": ["source", "artifact", "finding", "claim", "activity_item", "search_protocol"] },
           "target_record_id": { "type": "string", "minLength": 1 },
           "file_path": { "type": "string" },
           "staged_file_path": { "type": "string" },

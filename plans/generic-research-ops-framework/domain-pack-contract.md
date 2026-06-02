@@ -12,6 +12,7 @@ The domain pack should answer:
 - What review lanes are required?
 - How should public claims be worded and bounded?
 - What should agents read before acting?
+- Whether the domain enforces required extraction fields or search/screening protocol records.
 
 ## Required Files
 
@@ -110,6 +111,18 @@ Neutral fixture fields:
 - result or extracted observation
 - limitations
 - source location or retrieval note
+
+Domains can opt into required-field validation by adding:
+
+```json
+{
+  "validation": {
+    "enforce_required_fields": true
+  }
+}
+```
+
+When enabled, required fields should declare `applies_to`, for example `["artifact"]`, `["finding"]`, or `["claim"]`.
 
 ## Review Lanes
 

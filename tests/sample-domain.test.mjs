@@ -5,7 +5,13 @@ import assert from "node:assert/strict";
 import { loadActiveDomainPack, loadDomainPack, workspaceRoot } from "../scripts/lib/workspace.mjs";
 import { buildBundleReport, toPublicReport } from "../scripts/lib/bundle-workflow.mjs";
 import { loadDomainWorkbenchData } from "../scripts/lib/workbench-data.mjs";
-import { getSynthesisMatrixConfig, getSynthesisMatrixRows } from "../src/lib/public-data.js";
+import {
+  getSearchProtocols,
+  getSynthesisMatrixConfig,
+  getSynthesisMatrixCsv,
+  getSynthesisMatrixMarkdown,
+  getSynthesisMatrixRows
+} from "../src/lib/public-data.js";
 
 async function readFixtureJson(relativePath) {
   const raw = await readFile(path.join(workspaceRoot, relativePath), "utf8");
@@ -90,6 +96,11 @@ test("synthetic student response literature pack loads review questions and synt
   assert.ok(domainPack.reviewLaneIds.has("scorer_validation_relevance"));
   assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "response_origin"));
   assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "label_source"));
+  assert.equal(domainPack.extractionSchema.validation.enforce_required_fields, true);
+  assert.deepEqual(
+    domainPack.extractionSchema.fields.find((field) => field.id === "source_locator")?.applies_to,
+    ["finding"]
+  );
   assert.ok(domainPack.domain.synthesis_matrix.columns.some((column) => column.id === "prompt_strategy"));
 });
 
@@ -159,9 +170,13 @@ test("synthetic student response workbench data exposes configured synthesis mat
   assert.equal(data.domainPack.domain.name, "Synthetic Student Response Literature Review");
   assert.equal(data.collections.claims.length, 0);
   assert.equal(data.collections.artifacts.length, 0);
+  assert.equal(data.collections.searchProtocols.length, 0);
   assert.equal(config.title, "Literature Synthesis Matrix");
   assert.equal(config.row_source, "artifacts");
   assert.equal(getSynthesisMatrixRows(data).length, 0);
+  assert.equal(getSearchProtocols(data).length, 0);
+  assert.match(getSynthesisMatrixCsv(data), /^Study,Year,Review Question/);
+  assert.match(getSynthesisMatrixMarkdown(data), /^\| Study \| Year \| Review Question \|/);
 });
 
 test("bundle reports are available as reusable workflow data", async () => {

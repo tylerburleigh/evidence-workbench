@@ -27,7 +27,8 @@ const recordCollections = {
   artifact: "artifacts",
   finding: "findings",
   claim: "claims",
-  activity_item: "activity-items"
+  activity_item: "activity-items",
+  search_protocol: "search-protocols"
 };
 
 const candidateStatusTransitions = {
@@ -76,6 +77,14 @@ function addIssueForMissingString(record, field, issues, label) {
   if (!nonEmptyString(record[field])) {
     issues.push(`${label} is missing required field ${field}.`);
   }
+}
+
+function hasRequiredValue(value) {
+  if (Array.isArray(value)) {
+    return value.length > 0;
+  }
+
+  return value !== undefined && value !== null && !(typeof value === "string" && value.trim().length === 0);
 }
 
 function resolveDataPath(relativePath, label, issues) {
@@ -465,6 +474,8 @@ function validateArtifactRecord(record, recordMaps, issues, warnings, label, dom
       }
     }
   }
+
+  validateDomainExtractionFields(record, "artifact", domainPack, issues, label);
 }
 
 function validateFindingRecord(record, recordMaps, issues, warnings, label, domainPack, options = {}) {
@@ -489,6 +500,8 @@ function validateFindingRecord(record, recordMaps, issues, warnings, label, doma
   if (record.artifact_id && !recordExists(recordMaps, "artifact", record.artifact_id)) {
     addReferenceMessage(`${label} references missing artifact_id: ${record.artifact_id}.`, issues, warnings, options);
   }
+
+  validateDomainExtractionFields(record, "finding", domainPack, issues, label);
 }
 
 function validateClaimSupportIds(record, recordMaps, issues, warnings, label, options = {}) {
@@ -567,6 +580,54 @@ function validateClaimRecord(record, recordMaps, issues, warnings, label, domain
       addSupportMapMessage(`${label} is a taxonomy-node claim and must include limitations[].`, issues, warnings, options);
     }
   }
+
+  validateDomainExtractionFields(record, "claim", domainPack, issues, label);
+}
+
+function validateSearchProtocolRecord(record, recordMaps, issues, warnings, label, domainPack, options = {}) {
+  for (const field of ["domain_id", "status", "search_started_at", "search_completed_at", "screening_summary"]) {
+    addIssueForMissingString(record, field, issues, label);
+  }
+
+  if (record.domain_id !== domainPack.domain.id) {
+    issues.push(`${label} domain_id must match active domain ${domainPack.domain.id}.`);
+  }
+
+  validateTaxonomyNodes(record, "taxonomy_node_ids", domainPack, issues, label);
+
+  if (!Array.isArray(record.search_queries) || record.search_queries.length === 0) {
+    issues.push(`${label} must include at least one search_queries[] entry.`);
+  }
+
+  for (const sourceId of record.source_ids ?? []) {
+    if (!recordExists(recordMaps, "source", sourceId)) {
+      addReferenceMessage(`${label} references missing source_id: ${sourceId}.`, issues, warnings, options);
+    }
+  }
+
+  for (const [index, decision] of (record.screening_decisions ?? []).entries()) {
+    if (decision.source_id && !recordExists(recordMaps, "source", decision.source_id)) {
+      addReferenceMessage(`${label} screening_decisions[${index}] references missing source_id: ${decision.source_id}.`, issues, warnings, options);
+    }
+  }
+
+  validateDomainExtractionFields(record, "search_protocol", domainPack, issues, label);
+}
+
+function validateDomainExtractionFields(record, recordType, domainPack, issues, label) {
+  if (!domainPack.extractionSchema.validation?.enforce_required_fields) {
+    return;
+  }
+
+  const requiredFields = (domainPack.extractionSchema.fields ?? []).filter(
+    (field) => field.required && (field.applies_to ?? []).includes(recordType)
+  );
+
+  for (const field of requiredFields) {
+    if (!hasRequiredValue(record[field.id])) {
+      issues.push(`${label} is missing required domain extraction field ${field.id}.`);
+    }
+  }
 }
 
 function validateStagedRecordSemantics(promotionChanges, recordMaps, bundleStatus, domainPack) {
@@ -605,6 +666,9 @@ function validateStagedRecordSemantics(promotionChanges, recordMaps, bundleStatu
         for (const field of ["summary", "activity_type", "activity_lane", "occurred_on"]) {
           addIssueForMissingString(record, field, issues, label);
         }
+        break;
+      case "search_protocol":
+        validateSearchProtocolRecord(record, recordMaps, issues, warnings, label, domainPack, semanticOptions);
         break;
       default:
         break;

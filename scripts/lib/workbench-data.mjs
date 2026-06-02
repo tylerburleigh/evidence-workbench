@@ -19,7 +19,8 @@ const collectionPaths = {
   evidenceReviews: "data/evidence-reviews",
   reviewComments: "data/review-comments",
   publicationEvents: "data/publication-events",
-  researchSessions: "research/sessions"
+  researchSessions: "research/sessions",
+  searchProtocols: "data/search-protocols"
 };
 
 function hasAnyTaxonomyNode(record, taxonomyNodeIds) {
@@ -34,7 +35,7 @@ function claimBelongsToDomain(claim, taxonomyNodeIds) {
   return hasAnyTaxonomyNode(claim, taxonomyNodeIds);
 }
 
-function collectDomainSourceIds({ artifacts, findings, claims, candidateBundles }) {
+function collectDomainSourceIds({ artifacts, findings, claims, candidateBundles, searchProtocols }) {
   const sourceIds = new Set();
 
   for (const artifact of artifacts) {
@@ -63,6 +64,17 @@ function collectDomainSourceIds({ artifacts, findings, claims, candidateBundles 
   for (const bundle of candidateBundles) {
     for (const sourceId of bundle.record.source_ids ?? []) {
       sourceIds.add(sourceId);
+    }
+  }
+
+  for (const protocol of searchProtocols) {
+    for (const sourceId of protocol.record.source_ids ?? []) {
+      sourceIds.add(sourceId);
+    }
+    for (const decision of protocol.record.screening_decisions ?? []) {
+      if (decision.source_id) {
+        sourceIds.add(decision.source_id);
+      }
     }
   }
 
@@ -117,6 +129,9 @@ export async function loadDomainWorkbenchData(options = {}) {
   const findings = collections.findings.filter(({ record }) => hasAnyTaxonomyNode(record, taxonomyNodeIds));
   const claims = collections.claims.filter(({ record }) => claimBelongsToDomain(record, taxonomyNodeIds));
   const activityItems = collections.activityItems.filter(({ record }) => hasAnyTaxonomyNode(record, taxonomyNodeIds));
+  const searchProtocols = collections.searchProtocols.filter(
+    ({ record }) => record.domain_id === domainPack.domain.id || hasAnyTaxonomyNode(record, taxonomyNodeIds)
+  );
   const candidateBundles = collections.candidateBundles.filter(
     ({ record }) => record.scope?.domain_id === domainPack.domain.id
   );
@@ -124,7 +139,7 @@ export async function loadDomainWorkbenchData(options = {}) {
     ({ record }) => record.scope?.domain_id === domainPack.domain.id
   );
 
-  const domainSourceIds = collectDomainSourceIds({ artifacts, findings, claims, candidateBundles });
+  const domainSourceIds = collectDomainSourceIds({ artifacts, findings, claims, candidateBundles, searchProtocols });
   const sources = collections.sources.filter(({ record }) => domainSourceIds.has(record.id));
 
   const bundleIds = new Set(candidateBundles.map(({ record }) => record.id));
@@ -149,7 +164,8 @@ export async function loadDomainWorkbenchData(options = {}) {
       evidenceReviews,
       reviewComments,
       publicationEvents,
-      researchSessions
+      researchSessions,
+      searchProtocols
     },
     bundleReports,
     planning

@@ -22,10 +22,12 @@ Use with `skills/surveillance-update/SKILL.md`.
 - Treat preprints and new model announcements as sources only when they contain inspectable study details relevant to the review question.
 - Activity about LLM releases does not update a synthesis claim unless a source applies the model to synthetic student response generation or evaluation.
 - Preserve negative, mixed, null, or low-quality evidence if it changes the synthesis boundary.
+- Record surveillance search queries, databases, screening decisions, and included or excluded sources in a `search_protocol` record when the pass involves source discovery.
 
 ## Output Checks
 
 - New sources are screened against the active review question before extraction.
+- Search protocol records link included `source_ids` and document exclusion reasons for screened-but-excluded candidates.
 - Existing claims are updated only when the support map changes.
 - No-op sessions explain the search window and why no material update was staged.
 - Planning sync is run with `WORKBENCH_DOMAIN=synthetic-student-responses` after the session.
