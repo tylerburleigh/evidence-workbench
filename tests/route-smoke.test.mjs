@@ -29,6 +29,7 @@ test("sample-research route smoke inventory covers public collections, detail ro
     "/artifacts",
     "/sources",
     "/activity",
+    "/reports",
     "/methods",
     "/admin/review",
     "/scope/example-topic",
@@ -55,6 +56,7 @@ test("sample-archive route smoke inventory still covers unpublished review works
 
   assert.ok(paths.has("/scope/archive-question"));
   assert.ok(paths.has("/scope/archive-gap-question"));
+  assert.ok(paths.has("/reports"));
   assert.ok(paths.has("/admin/review/archive-question-baseline-2026-05-31"));
   assertRouteHasText(routes, "/admin/review/archive-question-baseline-2026-05-31", [
     "Actions",
@@ -76,6 +78,7 @@ test("software supply-chain route smoke inventory covers downstream published gr
     "/artifacts",
     "/sources",
     "/activity",
+    "/reports",
     "/methods",
     "/admin/review",
     "/scope/release-provenance-control",
@@ -139,4 +142,40 @@ test("software supply-chain route smoke inventory covers downstream published gr
     "Evidence Reviews"
   ]);
   assertRouteHasText(routes, "/methods", ["Trust Model", "Evidence Ladder", "Review Process"]);
+  assertRouteHasText(routes, "/reports", ["Reports", "Synthesis Matrix", "Synthesis Inputs"]);
+});
+
+test("synthetic student response route smoke inventory covers configured review questions and reports", async () => {
+  const data = await loadDomainWorkbenchData({ domainId: "synthetic-student-responses" });
+  const routes = buildRouteChecks(data);
+  const paths = routePaths(routes);
+
+  for (const path of [
+    "/",
+    "/scope",
+    "/claims",
+    "/findings",
+    "/artifacts",
+    "/sources",
+    "/activity",
+    "/reports",
+    "/methods",
+    "/admin/review",
+    "/scope/ssr-scoring-validation-use",
+    "/scope/ssr-generation-methods",
+    "/scope/ssr-quality-evaluation",
+    "/scope/ssr-model-generation-effects",
+    "/scope/ssr-prompt-engineering-effects",
+    "/scope/ssr-real-response-comparison",
+    "/scope/ssr-human-ai-scoring-agreement"
+  ]) {
+    assert.ok(paths.has(path), `Missing route check for ${path}`);
+  }
+
+  assertRouteHasText(routes, "/reports", ["Reports", "Synthesis Matrix", "Synthesis Inputs"]);
+  assertRouteHasText(routes, "/scope/ssr-scoring-validation-use", [
+    "Use in Automated Scorer Validation",
+    "Claims",
+    "Bundle State"
+  ]);
 });

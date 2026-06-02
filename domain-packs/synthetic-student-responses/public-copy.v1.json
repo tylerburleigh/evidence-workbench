@@ -1,0 +1,35 @@
+{
+  "id": "synthetic-student-responses-public-copy",
+  "domain_id": "synthetic-student-responses",
+  "labels": {
+    "evidence_layer": "Source Literature",
+    "interpretation_layer": "Literature Synthesis",
+    "context_layer": "Construct Boundaries",
+    "category": "Review Area",
+    "review_question": "Review Question",
+    "claim": "Synthesis Claim",
+    "finding": "Extracted Result",
+    "artifact": "Study Setup"
+  },
+  "stage_labels": {
+    "source_identified": "Source identified",
+    "study_extracted": "Study extracted",
+    "evaluation_characterized": "Evaluation characterized",
+    "synthesis_claim_supported": "Synthesis claim supported",
+    "reviewed_literature_baseline": "Reviewed literature baseline"
+  },
+  "confidence_labels": {
+    "low": "Low confidence",
+    "moderate": "Moderate confidence",
+    "high": "High confidence",
+    "mixed": "Mixed evidence"
+  },
+  "empty_states": {
+    "no_review_question": "No review question exists for this route.",
+    "no_baseline": "This review question exists, but no literature baseline has been published yet.",
+    "no_recent_activity": "No review activity has been recorded for this review question.",
+    "no_findings": "No extracted study results have been published for this source yet.",
+    "missing_review": "This bundle is waiting for structured literature-review gates.",
+    "no_synthesis_rows": "No study artifacts have been published for the synthesis matrix yet."
+  }
+}

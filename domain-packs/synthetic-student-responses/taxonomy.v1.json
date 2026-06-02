@@ -1,0 +1,187 @@
+{
+  "taxonomy_id": "synthetic-student-responses-taxonomy",
+  "taxonomy_version": "1.0.0",
+  "domain_id": "synthetic-student-responses",
+  "nodes": [
+    {
+      "id": "ssr-literature-review",
+      "name": "Literature Review",
+      "node_type": "category",
+      "canonical_order": 1,
+      "summary": "Parent category for review questions about synthetic student responses in education and automated scoring research.",
+      "search_aliases": [
+        "synthetic student responses",
+        "synthetic learner responses",
+        "LLM generated student answers"
+      ],
+      "example_entities": [],
+      "scope_notes": [
+        "Use child review questions as the default work unit.",
+        "Keep source extraction separate from synthesis claims."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "ssr-scoring-validation-use",
+      "name": "Use in Automated Scorer Validation",
+      "node_type": "review_question",
+      "parent_id": "ssr-literature-review",
+      "canonical_order": 1,
+      "summary": "Whether synthetic student responses have been used to validate, benchmark, calibrate, or stress-test automated scoring systems.",
+      "search_aliases": [
+        "automated essay scoring synthetic responses validation",
+        "AI scorer validation synthetic student answers",
+        "automated short answer scoring generated responses"
+      ],
+      "example_entities": [
+        "AI scorer validation",
+        "automated short-answer scoring",
+        "rubric-based classifier evaluation"
+      ],
+      "scope_notes": [
+        "Separate scorer validation use from scorer training or augmentation use.",
+        "Record whether correctness labels come from humans, models, generated targets, or adjudication."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "ssr-generation-methods",
+      "name": "Synthetic Response Generation Methods",
+      "node_type": "review_question",
+      "parent_id": "ssr-literature-review",
+      "canonical_order": 2,
+      "summary": "Methods used to generate synthetic student responses, including templates, LLM prompting, fine-tuning, error conditioning, and hybrid workflows.",
+      "search_aliases": [
+        "generate synthetic student responses LLM",
+        "student answer generation prompt rubric",
+        "synthetic educational response generation"
+      ],
+      "example_entities": [
+        "zero-shot prompting",
+        "few-shot prompting",
+        "rubric-conditioned generation",
+        "error-type-conditioned generation"
+      ],
+      "scope_notes": [
+        "Capture the generation target, model, prompt structure, sampling strategy, and any filtering or revision loop."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "ssr-quality-evaluation",
+      "name": "Synthetic Response Quality Evaluation",
+      "node_type": "review_question",
+      "parent_id": "ssr-literature-review",
+      "canonical_order": 3,
+      "summary": "How studies evaluate whether synthetic responses are plausible, label-faithful, diverse, realistic, or useful for downstream scoring work.",
+      "search_aliases": [
+        "evaluate synthetic student answers",
+        "synthetic response quality education LLM",
+        "human evaluation generated student responses"
+      ],
+      "example_entities": [
+        "human realism ratings",
+        "label fidelity",
+        "distributional similarity",
+        "downstream scorer performance"
+      ],
+      "scope_notes": [
+        "Distinguish quality judgments about realism from correctness judgments against a rubric."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "ssr-model-generation-effects",
+      "name": "Model and Generation Effects",
+      "node_type": "review_question",
+      "parent_id": "ssr-literature-review",
+      "canonical_order": 4,
+      "summary": "Evidence about how synthetic response quality varies across LLM families, model generations, decoding settings, and generation workflows.",
+      "search_aliases": [
+        "LLM model comparison synthetic student responses",
+        "GPT generated student answers quality comparison",
+        "model generation effects education synthetic data"
+      ],
+      "example_entities": [
+        "model family comparison",
+        "model version comparison",
+        "temperature or sampling effects",
+        "fine-tuned versus prompted generation"
+      ],
+      "scope_notes": [
+        "Avoid cross-model ranking claims unless the compared models, prompts, tasks, and evaluation metrics are aligned."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "ssr-prompt-engineering-effects",
+      "name": "Prompt Engineering Effects",
+      "node_type": "review_question",
+      "parent_id": "ssr-literature-review",
+      "canonical_order": 5,
+      "summary": "Evidence about the role of prompt design, examples, rubric conditioning, target-label conditioning, and iterative prompting in synthetic response generation.",
+      "search_aliases": [
+        "prompt engineering synthetic student responses",
+        "rubric conditioned student answer generation",
+        "few-shot generated student responses"
+      ],
+      "example_entities": [
+        "few-shot examples",
+        "rubric-only prompts",
+        "target correctness prompts",
+        "chain-of-thought or self-revision prompts"
+      ],
+      "scope_notes": [
+        "Track prompt ingredients as method variables, not as universal best practices unless replicated evidence supports that claim."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "ssr-real-response-comparison",
+      "name": "Comparison With Real Student Responses",
+      "node_type": "review_question",
+      "parent_id": "ssr-literature-review",
+      "canonical_order": 6,
+      "summary": "How studies compare synthetic responses against real student responses using human labels, automated metrics, distributions, error patterns, or scorer agreement.",
+      "search_aliases": [
+        "synthetic versus real student responses",
+        "generated student answers compared to real",
+        "LLM generated responses real student data comparison"
+      ],
+      "example_entities": [
+        "real-response baseline",
+        "distributional comparison",
+        "error-pattern comparison",
+        "human indistinguishability"
+      ],
+      "scope_notes": [
+        "Record comparator dataset details and whether real responses share the same items, grade band, domain, and rubric."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "ssr-human-ai-scoring-agreement",
+      "name": "Human and AI Scoring Agreement",
+      "node_type": "review_question",
+      "parent_id": "ssr-literature-review",
+      "canonical_order": 7,
+      "summary": "How studies measure agreement between human scoring and automated scoring on real or synthetic student responses.",
+      "search_aliases": [
+        "human AI agreement synthetic student responses",
+        "automated scoring agreement generated responses",
+        "rubric scoring agreement LLM student answers"
+      ],
+      "example_entities": [
+        "accuracy",
+        "Cohen kappa",
+        "quadratic weighted kappa",
+        "F1",
+        "calibration"
+      ],
+      "scope_notes": [
+        "Keep agreement metrics tied to the response origin and label source used in the study."
+      ],
+      "retirement_status": "active"
+    }
+  ]
+}

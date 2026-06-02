@@ -69,6 +69,7 @@ export function buildRouteChecks(data) {
   addRoute(routes, "/artifacts", ["Public Records", "Artifacts"]);
   addRoute(routes, "/sources", ["Public Records", "Sources"]);
   addRoute(routes, "/activity", ["Public Change Feed", "Activity Is Not Evidence", "Timeline"]);
+  addRoute(routes, "/reports", ["Reports", "Synthesis Matrix", "Synthesis Inputs"]);
   addRoute(routes, "/methods", ["Trust Model", "Evidence Ladder", "Review Process"]);
   addRoute(routes, "/admin/review", ["Candidate Bundle Queue", "Review Queue", "Review Surface"]);
 

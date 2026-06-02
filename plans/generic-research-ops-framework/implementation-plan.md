@@ -2,7 +2,7 @@
 
 ## Status Snapshot
 
-Last updated: 2026-06-01.
+Last updated: 2026-06-02.
 
 Completed:
 
@@ -13,6 +13,7 @@ Completed:
 - Phase 5: Agent skills. Core workflow skills and fixture domain adapters exist with read-first lists, workflow rules, boundaries, and test coverage.
 - Phase 6: Validation hardening, including schema/cross-reference checks, stale-coverage detection, data-driven route smoke checks, and admin action coverage.
 - Downstream domain-pack rehearsal: `software-supply-chain` now has published source-backed baselines for all three configured controls.
+- Literature-review domain scaffold: `synthetic-student-responses` now has review-question taxonomy, extraction fields, review lanes, evidence ladder, skill adapters, and a config-driven synthesis matrix report surface.
 - Operator guide: documented the concrete downstream domain-pack setup, bootstrap, evidence review, publish, verification, and commit workflow.
 
 In progress / partly complete:
@@ -21,7 +22,7 @@ In progress / partly complete:
 
 Next:
 
-- Exercise the operator guide with another downstream domain when a new domain is selected.
+- Bootstrap the first `synthetic-student-responses` review question with source-backed literature records.
 - Defer Phase 7 until record shapes and operational volume justify a database migration.
 
 Recent implementation commits:
@@ -213,6 +214,29 @@ Completed:
 Next:
 
 - Exercise the operator guide with another downstream domain, or defer Phase 7 until record shapes and operational volume justify a database migration.
+
+## Synthetic Student Response Literature Review
+
+Status: Scaffolded.
+
+Goal:
+
+Support a real literature-review workflow for a paper on LLM-generated synthetic student responses used in automated scorer validation.
+
+Completed:
+
+- Added `synthetic-student-responses` domain pack.
+- Added `review_question` scope units for scorer-validation use, generation methods, quality evaluation, model effects, prompt-engineering effects, real-response comparison, and human/AI scoring agreement.
+- Added extraction fields that separate response origin, rubric label space, label source, generation method, prompt strategy, evaluation method, scorer use, real-response comparator, reported metrics, limitations, and source locator.
+- Added review lanes for source fidelity, construct mapping, method classification, scorer-validation relevance, synthesis overreach, and optional search-protocol review.
+- Added domain skill adapters for bootstrap, surveillance, evidence review, and editorial review.
+- Added a config-driven `/reports` synthesis matrix surface for paper-oriented literature comparison.
+
+Next:
+
+- Bootstrap one review question at a time, starting with `ssr-scoring-validation-use`.
+- Stage each paper as a source, each study design or synthetic-response pipeline as an artifact, extracted results as findings, and background-section conclusions as synthesis claims.
+- Decide whether a formal screening/protocol record type is needed after the first search pass.
 
 ## First Build Guidance
 

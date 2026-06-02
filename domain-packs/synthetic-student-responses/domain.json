@@ -1,0 +1,49 @@
+{
+  "id": "synthetic-student-responses",
+  "name": "Synthetic Student Response Literature Review",
+  "summary": "A domain pack for reviewing literature on LLM-generated synthetic student responses, their evaluation, and their use in automated scorer validation research.",
+  "default_scope_unit": "review_question",
+  "taxonomy_file": "taxonomy.v1.json",
+  "evidence_ladder_file": "evidence-ladder.v1.json",
+  "extraction_schema_file": "extraction-schema.v1.json",
+  "review_lanes_file": "review-lanes.v1.json",
+  "public_copy_file": "public-copy.v1.json",
+  "default_review_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "synthesis_overreach"
+  ],
+  "planning": {
+    "stale_after_days": 120
+  },
+  "public_claim_language": {
+    "default_posture": "bounded_literature_synthesis",
+    "avoid": [
+      "conflating synthetic versus real response origin with correct versus incorrect rubric labels",
+      "treating generated target labels as independently validated correctness labels",
+      "generalizing across item types, grade levels, domains, or model generations without support",
+      "claiming automated scorer validity from synthetic-response realism alone"
+    ]
+  },
+  "synthesis_matrix": {
+    "title": "Literature Synthesis Matrix",
+    "description": "Compare studies by generation setup, response origin, evaluation method, real-response comparator, scorer use, and reported metrics.",
+    "row_source": "artifacts",
+    "empty_state": "No study artifacts have been published for this literature review yet.",
+    "columns": [
+      { "id": "study", "label": "Study", "path": "source.name" },
+      { "id": "year", "label": "Year", "path": "source.year" },
+      { "id": "scope", "label": "Review Question", "path": "scope_nodes.name" },
+      { "id": "setup", "label": "Study Setup", "path": "artifact.name" },
+      { "id": "response_origin", "label": "Response Origin", "path": "artifact.response_origin" },
+      { "id": "generation_model", "label": "Generation Model", "path": "artifact.generation_model" },
+      { "id": "prompt_strategy", "label": "Prompt Strategy", "path": "artifact.prompt_strategy" },
+      { "id": "evaluation_method", "label": "Evaluation Method", "path": "artifact.evaluation_method" },
+      { "id": "scorer_use", "label": "Scorer Use", "path": "artifact.scorer_use" },
+      { "id": "real_comparator", "label": "Real Comparator", "path": "artifact.real_response_comparator" },
+      { "id": "metrics", "label": "Reported Metrics", "path": "artifact.reported_metrics" }
+    ]
+  }
+}

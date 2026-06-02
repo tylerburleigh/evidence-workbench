@@ -213,6 +213,139 @@ export function getActivityFeed(data) {
   );
 }
 
+export function getSynthesisMatrixConfig(data) {
+  const config = data.domainPack.domain.synthesis_matrix ?? data.domainPack.publicCopy.synthesis_matrix;
+  if (!config || !Array.isArray(config.columns) || config.columns.length === 0) {
+    return undefined;
+  }
+
+  return {
+    row_source: "artifacts",
+    ...config
+  };
+}
+
+export function getSynthesisMatrixRows(data) {
+  const config = getSynthesisMatrixConfig(data);
+  if (!config) {
+    return [];
+  }
+
+  const records = getSynthesisRowRecords(data, config.row_source);
+  return records.map((record) => {
+    const context = buildSynthesisContext(data, record, config.row_source);
+    return {
+      id: record.id,
+      href: getSynthesisRowHref(config.row_source, record),
+      record,
+      artifact: context.artifact,
+      source: context.source,
+      findings: context.findings,
+      scopeNodes: context.scope_nodes,
+      cells: Object.fromEntries(
+        config.columns.map((column) => [
+          column.id,
+          formatSynthesisValue(resolveSynthesisPath(context, column.path), column.empty)
+        ])
+      )
+    };
+  });
+}
+
+function getSynthesisRowRecords(data, rowSource) {
+  const collectionKey = rowSource === "sources" ? "sources" : "artifacts";
+  return data.collections[collectionKey]
+    .map(({ record }) => record)
+    .sort((left, right) => left.name.localeCompare(right.name));
+}
+
+function getSynthesisRowHref(rowSource, record) {
+  return rowSource === "sources" ? `/sources/${record.id}` : `/artifacts/${record.id}`;
+}
+
+function buildSynthesisContext(data, record, rowSource) {
+  const artifact = rowSource === "sources" ? undefined : record;
+  const source =
+    rowSource === "sources"
+      ? record
+      : (artifact.source_ids ?? []).map((sourceId) => getSourceById(data, sourceId)).find(Boolean);
+  const sources = rowSource === "sources" ? [record] : (artifact.source_ids ?? []).map((sourceId) => getSourceById(data, sourceId)).filter(Boolean);
+  const findings = data.collections.findings
+    .map(({ record: finding }) => finding)
+    .filter((finding) => {
+      if (artifact) {
+        return finding.artifact_id === artifact.id;
+      }
+
+      return finding.source_id === record.id;
+    })
+    .sort((left, right) => left.name.localeCompare(right.name));
+  const nodeIds = artifact?.taxonomy_node_ids ?? findings.flatMap((finding) => finding.taxonomy_node_ids ?? []);
+  const scopeNodes = [...new Set(nodeIds)].map((nodeId) => getNodeById(data, nodeId)).filter(Boolean);
+
+  return {
+    artifact,
+    source,
+    sources,
+    findings,
+    scope_nodes: scopeNodes,
+    record
+  };
+}
+
+function resolveSynthesisPath(context, pathValue) {
+  if (typeof pathValue !== "string" || pathValue.trim().length === 0) {
+    return undefined;
+  }
+
+  const [rootKey, ...parts] = pathValue.split(".");
+  let current = context[rootKey];
+
+  for (const part of parts) {
+    if (Array.isArray(current)) {
+      current = current.flatMap((item) => valueToArray(item?.[part]));
+    } else {
+      current = current?.[part];
+    }
+  }
+
+  return current;
+}
+
+function valueToArray(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  return value === undefined || value === null || value === "" ? [] : [value];
+}
+
+function formatSynthesisValue(value, empty = "Unspecified") {
+  if (Array.isArray(value)) {
+    const values = [...new Set(value.flatMap(valueToArray).map(formatPrimitiveValue).filter(Boolean))];
+    return values.length ? values.join("; ") : empty;
+  }
+
+  const formatted = formatPrimitiveValue(value);
+  return formatted || empty;
+}
+
+function formatPrimitiveValue(value) {
+  if (value === undefined || value === null || value === "") {
+    return "";
+  }
+
+  if (typeof value === "boolean") {
+    return value ? "Yes" : "No";
+  }
+
+  if (typeof value === "object") {
+    return JSON.stringify(value);
+  }
+
+  return String(value);
+}
+
 export function formatDate(value) {
   if (!value) {
     return "Unspecified";

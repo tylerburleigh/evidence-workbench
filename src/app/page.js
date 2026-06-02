@@ -136,6 +136,9 @@ export default async function HomePage() {
           <Link className="nav-link" href="/activity">
             Activity
           </Link>
+          <Link className="nav-link" href="/reports">
+            Reports
+          </Link>
           <Link className="nav-link" href="/methods">
             Methods
           </Link>

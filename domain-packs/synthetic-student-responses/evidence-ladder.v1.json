@@ -1,0 +1,46 @@
+{
+  "id": "synthetic-student-responses-evidence-ladder",
+  "domain_id": "synthetic-student-responses",
+  "stages": [
+    {
+      "id": "source_identified",
+      "label": "Source Identified",
+      "description": "A potentially relevant literature source has been identified with enough metadata to retrieve it again.",
+      "minimum_support_expected": "Source metadata includes title, authors where available, publication venue or outlet, year, DOI or stable URL when available, and a short relevance summary.",
+      "common_overclaim_risk": "Treating the existence of a related paper as evidence that synthetic responses were evaluated or used in scorer validation.",
+      "moves_to_next_stage": "Extract the study setup, generation method, response origin, label source, and evaluation details into artifact and finding records."
+    },
+    {
+      "id": "study_extracted",
+      "label": "Study Extracted",
+      "description": "The study design or synthetic-response pipeline has been captured as a domain artifact linked to a source.",
+      "minimum_support_expected": "Artifact fields identify the educational context, item or response type, model or generation workflow, prompt strategy, label source, and scorer use when reported.",
+      "common_overclaim_risk": "Leaving response-origin, label-source, and scorer-use distinctions implicit.",
+      "moves_to_next_stage": "Extract atomic findings about generation, evaluation, comparison, or scorer-validation use."
+    },
+    {
+      "id": "evaluation_characterized",
+      "label": "Evaluation Characterized",
+      "description": "At least one source-backed finding describes how synthetic response quality or scorer agreement was evaluated.",
+      "minimum_support_expected": "Findings specify the evaluation method, reported metric or qualitative judgment, real-response comparator if present, and limitations.",
+      "common_overclaim_risk": "Equating realism, label fidelity, diversity, and downstream scorer validity as if they were the same construct.",
+      "moves_to_next_stage": "Draft a synthesis claim that maps the finding to one review question and exposes caveats."
+    },
+    {
+      "id": "synthesis_claim_supported",
+      "label": "Synthesis Claim Supported",
+      "description": "A literature-review claim is backed by a support map citing concrete findings and sources.",
+      "minimum_support_expected": "The claim names the review question, cites supporting findings and sources, and separates evidence about generation, evaluation, and scorer-validation use.",
+      "common_overclaim_risk": "Generalizing across tasks, rubrics, grade bands, models, or prompt regimes that were not jointly studied.",
+      "moves_to_next_stage": "Complete required evidence-review lanes for source fidelity, construct mapping, method classification, relevance, and synthesis overreach."
+    },
+    {
+      "id": "reviewed_literature_baseline",
+      "label": "Reviewed Literature Baseline",
+      "description": "The synthesis claim and supporting records have passed required literature-review gates and can be published.",
+      "minimum_support_expected": "All required review lanes accept the bundle with no blocking findings.",
+      "common_overclaim_risk": "Treating a reviewed baseline as complete or permanently current in a fast-moving LLM literature.",
+      "moves_to_next_stage": "Run surveillance after the configured stale window or when material new work appears."
+    }
+  ]
+}

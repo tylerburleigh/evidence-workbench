@@ -426,6 +426,52 @@ h3 {
   margin-top: 10px;
 }
 
+.table-scroll {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.matrix-table {
+  background: var(--panel);
+  border-collapse: collapse;
+  min-width: 980px;
+  width: 100%;
+}
+
+.matrix-table th,
+.matrix-table td {
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  line-height: 1.4;
+  padding: 10px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.matrix-table th {
+  background: var(--panel-subtle);
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 750;
+  position: sticky;
+  top: 0;
+  white-space: nowrap;
+}
+
+.matrix-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.matrix-link {
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.matrix-link:hover {
+  text-decoration: underline;
+}
+
 .path-value {
   color: var(--text);
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
