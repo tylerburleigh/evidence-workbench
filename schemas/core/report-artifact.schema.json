@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/report-artifact.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "schema_version",
+    "record_type",
+    "id",
+    "name",
+    "artifact_type",
+    "domain_id",
+    "scope_ids",
+    "path",
+    "created_at",
+    "summary"
+  ],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "record_type": { "const": "report_artifact" },
+    "id": { "type": "string", "minLength": 1 },
+    "name": { "type": "string", "minLength": 1 },
+    "artifact_type": {
+      "enum": ["synthesis_report", "literature_review", "background_review", "methods_note", "other"]
+    },
+    "status": {
+      "enum": ["draft", "current", "archived", "superseded"]
+    },
+    "domain_id": { "type": "string", "minLength": 1 },
+    "scope_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "path": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "minLength": 1 },
+    "updated_at": { "type": "string" },
+    "summary": { "type": "string", "minLength": 1 },
+    "source_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "claim_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "finding_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "publication_event_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+    "citation_audit": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "status": { "enum": ["not_checked", "traceable", "needs_review"] },
+        "checked_at": { "type": "string" },
+        "method": { "type": "string" },
+        "notes": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  }
+}

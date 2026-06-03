@@ -33,6 +33,15 @@
     "main_blockers": { "type": "array", "items": { "type": "string" } },
     "best_current_signals": { "type": "array", "items": { "type": "string" } },
     "interpretive_note": { "type": "string" },
+    "applicability": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "applies_when": { "type": "array", "items": { "type": "string" } },
+        "does_not_apply_when": { "type": "array", "items": { "type": "string" } },
+        "unknown_or_unreviewed_contexts": { "type": "array", "items": { "type": "string" } }
+      }
+    },
     "limitations": { "type": "array", "items": { "type": "string" } },
     "update_notes": { "type": "array", "items": { "type": "string" } },
     "supporting_finding_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
@@ -47,7 +56,17 @@
           "label": { "type": "string", "minLength": 1 },
           "claim_field": { "type": "string" },
           "conclusion": { "type": "string", "minLength": 1 },
-          "support_role": { "type": "string", "minLength": 1 },
+          "support_role": {
+            "enum": [
+              "supports",
+              "qualifies",
+              "direct_support",
+              "boundary_condition",
+              "adjacent_evidence",
+              "counterexample",
+              "background"
+            ]
+          },
           "rationale": { "type": "string", "minLength": 1 },
           "finding_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
           "source_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },

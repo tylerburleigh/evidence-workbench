@@ -8,6 +8,7 @@ import {
   RecordCard,
   ReviewGateBadge,
   Section,
+  SourceAccessBadge,
   StatusBadge,
   SupportMap
 } from "../../components.js";
@@ -172,7 +173,12 @@ export default async function TopicDetailPage({ params }) {
                 icon={Archive}
                 title={source.name}
                 body={source.summary}
-                meta={<Badge>{source.source_type}</Badge>}
+                meta={
+                  <>
+                    <Badge>{source.source_type}</Badge>
+                    <SourceAccessBadge source={source} />
+                  </>
+                }
               />
             ))}
           </div>

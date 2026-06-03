@@ -121,6 +121,8 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
   const promotion = report?.promotion;
   const publication = report?.publication;
   const validation = report?.validation;
+  const workflowAudit = report?.workflow_audit;
+  const projectedDeltaRows = Object.entries(workflowAudit?.projected_publication_delta?.by_record_type ?? {});
   const reviewGateReady = !evidenceGate?.eligible || Boolean(evidenceGate?.ready);
   const canRequestChanges = ["submitted", "in_review", "needs_revision"].includes(bundle.lifecycle_status);
   const canReject = !["published", "rejected"].includes(bundle.lifecycle_status);
@@ -163,6 +165,8 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
       </div>
 
       <ActionNotice notice={queryValue(query.notice)} error={queryValue(query.error)} />
+
+      {report?.readiness?.message ? <p className="section-note">{report.readiness.message}</p> : null}
 
       <div className="grid four">
         <ReadinessCard icon={CheckCircle2} title="Validation" ready={Boolean(validation?.ready)}>
@@ -310,6 +314,44 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
           )}
         </Section>
       </div>
+
+      <Section title="Workflow Audit">
+        {workflowAudit ? (
+          <>
+            <div className="meta-row">
+              <Badge tone={workflowAudit.ready ? "good" : "warn"}>{workflowAudit.ready ? "Ready" : "Blocked"}</Badge>
+              <Badge>{workflowAudit.source_depth?.checks?.length ?? 0} source-depth check(s)</Badge>
+              <Badge>{workflowAudit.source_access?.checks?.length ?? 0} source-access check(s)</Badge>
+              <Badge>{workflowAudit.search_linkage?.checks?.length ?? 0} search-linkage check(s)</Badge>
+            </div>
+            <IssueList issues={workflowAudit.issues} warnings={workflowAudit.warnings} />
+            {projectedDeltaRows.length ? (
+              <table className="detail-table compact-table">
+                <thead>
+                  <tr>
+                    <th>Record Type</th>
+                    <th>Created</th>
+                    <th>Updated</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {projectedDeltaRows.map(([recordType, delta]) => (
+                    <tr key={recordType}>
+                      <td>{recordType}</td>
+                      <td>{delta.created ?? 0}</td>
+                      <td>{delta.updated ?? 0}</td>
+                      <td>{delta.total ?? 0}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            ) : null}
+          </>
+        ) : (
+          <EmptyState>No workflow audit is available.</EmptyState>
+        )}
+      </Section>
 
       <Section title="Proposed Changes" note={`${bundle.proposed_changes?.length ?? 0} change(s)`}>
         {promotion?.changes?.length ? (

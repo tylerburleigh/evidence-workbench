@@ -43,6 +43,7 @@ domain-packs/<domain-id>/
     surveillance.md
     evidence-review.md
     editorial-review.md
+    synthesis.md
 ```
 
 Use `domain-packs/sample-research/`, `domain-packs/sample-archive/`, and `domain-packs/software-supply-chain/` as implementation references.
@@ -88,11 +89,38 @@ For a baseline bootstrap, prefer stable primary or official sources:
 - public datasets or registries
 - project records when reviewing a concrete project
 
+When the run involves source discovery, scaffold a search protocol before drafting findings:
+
+```bash
+WORKBENCH_DOMAIN=<domain-id> npm run research:search -- scaffold \
+  --bundle <bundle-id> \
+  --id <search-protocol-id> \
+  --name "<search protocol name>" \
+  --taxonomy-node <taxonomy-node-id> \
+  --query "<search query>" \
+  --database "<database or search surface>"
+```
+
+Record screening decisions as sources are included, deferred, or excluded:
+
+```bash
+WORKBENCH_DOMAIN=<domain-id> npm run research:search -- screen \
+  --bundle <bundle-id> \
+  --id <search-protocol-id> \
+  --title "<candidate title>" \
+  --decision include \
+  --source-id <source-id> \
+  --reason "<short inclusion reason>"
+```
+
+Use `--decision maybe`, `exclude`, `duplicate`, `not_relevant`, or `no_full_text` for deferred or rejected candidates. The search protocol should stay staged with the bundle and be published only after review.
+
 Avoid using a source to support claims outside its boundary. A specification can support a control model; it does not prove that a project executes that control.
 
 Before drafting claims, extract:
 
 - source identity and locator
+- structured source locator when possible: section, page or table, URL, verification status, and a short paraphrase note
 - reviewed boundary
 - observed control signal or factual observation
 - limitations and detection gaps
@@ -123,6 +151,14 @@ Record boundaries:
 - `claim`: the public interpretation, with support map and limitations
 
 The claim support map must reference concrete finding IDs and source IDs. Keep the public summary bounded to what the finding actually supports.
+
+Use evidence roles deliberately:
+
+- `direct_support` for findings that directly support the claim conclusion
+- `boundary_condition` for findings that constrain or limit the claim
+- `adjacent_evidence` for nearby evidence that should not be overread
+- `counterexample` for evidence against the claim
+- `background` for context that is not proof
 
 ## 5. Create The Candidate Bundle And Session
 
@@ -219,7 +255,26 @@ Publication should:
 
 If manual timestamps are later than the generated publication timestamp, normalize the manual session, submission, or review timestamps and run planning sync again.
 
-## 8. Sync Planning
+## 8. Integrate Reports
+
+After publication, inspect report artifacts that cover the affected domain and scope:
+
+```bash
+rg -n "\"record_type\": \"report_artifact\"|\"artifact_type\":|\"status\":|\"domain_id\":|\"scope_ids\":" data/report-artifacts
+```
+
+Decide whether the published evidence should:
+
+- update an existing current literature review
+- update an existing current synthesis report
+- supersede an older report with a new current version
+- remain only in an unindexed or draft sidecar memo
+
+For app-visible reports, update the report Markdown and `data/report-artifacts/<report-id>.json` together. Keep `source_ids`, `claim_ids`, `finding_ids`, `publication_event_ids`, `scope_ids`, and citation-audit status aligned with the evidence graph.
+
+Do not leave parallel current literature reviews for the same paper-facing scope unless the audience or section boundary is intentionally different and documented in the report summary. Sidecars based on submitted or staged records should name their target canonical report and integration trigger.
+
+## 9. Sync Planning
 
 Run:
 
@@ -242,7 +297,7 @@ Expected bootstrap completion state:
 - uncovered scope units remain in `bootstrap_queue`
 - stale covered scope units appear in `surveillance_queue`
 
-## 9. Update Tests And Docs
+## 10. Update Tests And Docs
 
 When a new domain pack or published graph changes expected behavior, update focused tests:
 
@@ -255,7 +310,7 @@ Update docs:
 - `plans/generic-research-ops-framework/implementation-plan.md`
 - domain-specific notes if the new pack establishes a reusable pattern
 
-## 10. Verify Locally
+## 11. Verify Locally
 
 Run the standard local checks:
 
@@ -281,7 +336,7 @@ lsof -i :3002
 
 For documentation-only changes, `git diff --check` is the minimum relevant check.
 
-## 11. Commit Handoff
+## 12. Commit Handoff
 
 Before commit:
 
@@ -300,6 +355,14 @@ Commit the domain pack or bundle as one coherent unit. A good commit contains:
 - research session
 - planning state
 - focused test/doc updates
+
+If the branch contains both reusable platform changes and domain-specific research records, do not merge it wholesale to `main`. Audit the split first:
+
+```bash
+npm run branch:audit -- --base main --head HEAD
+```
+
+Use `plans/generic-research-ops-framework/branching-strategy.md` to decide what belongs in a short-lived `core/<feature>` branch versus a long-lived `research/<domain-or-question>` branch.
 
 Use the next planning queue item as the handoff:
 

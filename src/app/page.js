@@ -1,4 +1,4 @@
-import { Archive, CheckCircle2, FileText, Layers, Network } from "lucide-react";
+import { Archive, BookOpen, CheckCircle2, FileText, FlaskConical, Layers, Network } from "lucide-react";
 import Link from "next/link";
 import {
   Badge,
@@ -14,6 +14,7 @@ import {
   formatDate,
   getOpenBundleCount,
   getPublishedCount,
+  getReportArtifacts,
   getScopeNodes,
   getScopePluralLabel,
   getWorkbenchData
@@ -23,6 +24,9 @@ export default async function HomePage() {
   const data = await getWorkbenchData();
   const scopeNodes = getScopeNodes(data);
   const scopePlural = getScopePluralLabel(data);
+  const reportArtifacts = getReportArtifacts(data);
+  const literatureReview = reportArtifacts.find((report) => report.artifact_type === "literature_review");
+  const supportingReports = reportArtifacts.filter((report) => report.id !== literatureReview?.id).slice(0, 3);
   const latestBundles = data.collections.candidateBundles
     .map(({ record }) => record)
     .sort((left, right) => right.submitted_at.localeCompare(left.submitted_at))
@@ -43,6 +47,54 @@ export default async function HomePage() {
         <Metric icon={FileText} label="Published claims" value={data.collections.claims.length} />
         <Metric icon={Archive} label="Sources" value={data.collections.sources.length} />
         <Metric icon={CheckCircle2} label="Published bundles" value={getPublishedCount(data)} />
+      </div>
+
+      <div className="split">
+        <Section title="Current Literature Review" note={literatureReview ? "Manuscript-facing synthesis" : "Not indexed"}>
+          {literatureReview ? (
+            <RecordCard
+              href={`/reports/${literatureReview.id}`}
+              icon={BookOpen}
+              title={literatureReview.name}
+              body={literatureReview.summary}
+              meta={
+                <>
+                  <Badge>{literatureReview.artifact_type}</Badge>
+                  <Badge>{literatureReview.citation_audit?.status ?? "not_checked"}</Badge>
+                </>
+              }
+            />
+          ) : (
+            <EmptyState>No current literature review is indexed for this domain.</EmptyState>
+          )}
+        </Section>
+
+        <Section title="Related Outputs">
+          <div className="list">
+            {supportingReports.map((report) => (
+              <Link className="row-link" href={`/reports/${report.id}`} key={report.id}>
+                <span>
+                  <strong>{report.name}</strong>
+                  <span className="row-kicker">{report.summary}</span>
+                </span>
+                <span className="meta-row">
+                  <Badge>{report.artifact_type}</Badge>
+                </span>
+              </Link>
+            ))}
+            <Link className="row-link" href="/artifacts">
+              <span>
+                <strong>Study Artifacts</strong>
+                <span className="row-kicker">Extracted study, framework, and technical-report records.</span>
+              </span>
+              <span className="meta-row">
+                <Badge>
+                  <FlaskConical size={13} /> {data.collections.artifacts.length}
+                </Badge>
+              </span>
+            </Link>
+          </div>
+        </Section>
       </div>
 
       <div className="split">

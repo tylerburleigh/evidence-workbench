@@ -6,6 +6,7 @@ import { loadActiveDomainPack, loadDomainPack, workspaceRoot } from "../scripts/
 import { buildBundleReport, toPublicReport } from "../scripts/lib/bundle-workflow.mjs";
 import { loadDomainWorkbenchData } from "../scripts/lib/workbench-data.mjs";
 import {
+  getReportArtifacts,
   getSearchProtocols,
   getSynthesisMatrixConfig,
   getSynthesisMatrixCsv,
@@ -26,7 +27,9 @@ const coreSkillNames = [
   "research-bootstrap",
   "surveillance-update",
   "evidence-review",
-  "editorial-review"
+  "editorial-review",
+  "synthesis-review",
+  "literature-review"
 ];
 
 const domainSkillAdapters = {
@@ -34,19 +37,22 @@ const domainSkillAdapters = {
     "bootstrap.md": "research-bootstrap",
     "surveillance.md": "surveillance-update",
     "evidence-review.md": "evidence-review",
-    "editorial-review.md": "editorial-review"
+    "editorial-review.md": "editorial-review",
+    "synthesis.md": "synthesis-review"
   },
   "sample-archive": {
     "bootstrap.md": "research-bootstrap",
     "surveillance.md": "surveillance-update",
     "evidence-review.md": "evidence-review",
-    "editorial-review.md": "editorial-review"
+    "editorial-review.md": "editorial-review",
+    "synthesis.md": "synthesis-review"
   },
   "software-supply-chain": {
     "bootstrap.md": "research-bootstrap",
     "surveillance.md": "surveillance-update",
     "evidence-review.md": "evidence-review",
-    "editorial-review.md": "editorial-review"
+    "editorial-review.md": "editorial-review",
+    "synthesis.md": "synthesis-review"
   },
   "synthetic-student-responses": {
     "bootstrap.md": "research-bootstrap",
@@ -85,15 +91,18 @@ test("downstream software supply-chain pack loads without core code changes", as
   assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "risk_interpretation"));
 });
 
-test("synthetic student response literature pack loads review questions and synthesis config", async () => {
+test("synthetic student response scaffold loads review questions and synthesis config", async () => {
   const domainPack = await loadDomainPack("synthetic-student-responses");
 
   assert.equal(domainPack.domain.default_scope_unit, "review_question");
   assert.equal(domainPack.domain.planning.stale_after_days, 120);
   assert.ok(domainPack.taxonomyNodeIds.has("ssr-scoring-validation-use"));
   assert.ok(domainPack.taxonomyNodeIds.has("ssr-prompt-engineering-effects"));
+  assert.ok(domainPack.taxonomyNodeIds.has("ssr-real-response-comparison"));
+  assert.ok(domainPack.taxonomyNodeIds.has("ssr-human-ai-scoring-agreement"));
   assert.ok(domainPack.reviewLaneIds.has("construct_mapping"));
   assert.ok(domainPack.reviewLaneIds.has("scorer_validation_relevance"));
+  assert.ok(domainPack.reviewLaneIds.has("synthesis_overreach"));
   assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "response_origin"));
   assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "label_source"));
   assert.equal(domainPack.extractionSchema.validation.enforce_required_fields, true);
@@ -163,16 +172,18 @@ test("workbench data facade loads published downstream supply-chain graph", asyn
   assert.equal(bundleReports.get("maintenance-signal-control-baseline-2026-06-01")?.validation.ready, true);
 });
 
-test("synthetic student response workbench data exposes configured synthesis matrix before records exist", async () => {
+test("synthetic student response scaffold exposes an empty synthesis matrix", async () => {
   const data = await loadDomainWorkbenchData({ domainId: "synthetic-student-responses" });
   const config = getSynthesisMatrixConfig(data);
 
   assert.equal(data.domainPack.domain.name, "Synthetic Student Response Literature Review");
   assert.equal(data.collections.claims.length, 0);
   assert.equal(data.collections.artifacts.length, 0);
-  assert.equal(data.collections.searchProtocols.length, 0);
+  assert.equal(getReportArtifacts(data).length, 0);
   assert.equal(config.title, "Literature Synthesis Matrix");
   assert.equal(config.row_source, "artifacts");
+  assert.ok(config.columns.some((column) => column.id === "response_origin"));
+  assert.ok(config.columns.some((column) => column.id === "prompt_strategy"));
   assert.equal(getSynthesisMatrixRows(data).length, 0);
   assert.equal(getSearchProtocols(data).length, 0);
   assert.match(getSynthesisMatrixCsv(data), /^Study,Year,Review Question/);
@@ -238,4 +249,5 @@ test("domain skill adapters map fixture packs to core workflows", async () => {
   const syntheticBootstrap = await readFixtureText("domain-packs/synthetic-student-responses/skills/bootstrap.md");
   assert.match(syntheticBootstrap, /response_origin/);
   assert.match(syntheticBootstrap, /label_source/);
+  assert.match(syntheticBootstrap, /response origin/);
 });

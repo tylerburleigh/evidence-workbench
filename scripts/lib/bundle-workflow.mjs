@@ -14,7 +14,7 @@ import {
   workspaceRoot,
   writeJson
 } from "./workspace.mjs";
-import { syncResearchPlanning } from "./planning.mjs";
+import { readPlanningStatus, syncResearchPlanning } from "./planning.mjs";
 
 const candidateBundlesRoot = path.join(dataRoot, "candidate-bundles");
 const evidenceReviewsRoot = path.join(dataRoot, "evidence-reviews");
@@ -31,6 +31,64 @@ const recordCollections = {
   search_protocol: "search-protocols"
 };
 
+const supportRoles = new Set([
+  "supports",
+  "qualifies",
+  "direct_support",
+  "boundary_condition",
+  "adjacent_evidence",
+  "counterexample",
+  "background"
+]);
+const directSupportRoles = new Set(["supports", "direct_support"]);
+const nonBlockingFollowUpSeverities = new Set(["minor", "note"]);
+const shallowLocatorTerms = ["abstract", "metadata", "summary", "snippet", "source page", "repository page"];
+const fullTextLocatorTerms = [
+  "method",
+  "methods",
+  "result",
+  "results",
+  "section",
+  "table",
+  "appendix",
+  "html",
+  "pdf",
+  "full text",
+  "details",
+  "dataset",
+  "composition",
+  "experimental",
+  "setup"
+];
+const sourceAccessDepthRank = {
+  unavailable: 0,
+  not_checked: 0,
+  metadata_only: 1,
+  source_page_or_metadata: 1,
+  abstract_only: 2,
+  full_text: 3,
+  full_text_available: 3,
+  full_text_verified: 3
+};
+const sourceAccessStatusDepth = {
+  full_text_verified: "full_text",
+  full_text_available: "full_text",
+  abstract_only_paywalled: "abstract_only",
+  abstract_only_available: "abstract_only",
+  metadata_only: "metadata_only",
+  not_yet_checked: "not_checked",
+  unavailable: "unavailable"
+};
+const sourceAccessStatusLabels = {
+  full_text_verified: "full text verified",
+  full_text_available: "full text available",
+  abstract_only_paywalled: "abstract only/paywalled",
+  abstract_only_available: "abstract only",
+  metadata_only: "metadata only",
+  not_yet_checked: "not yet checked",
+  unavailable: "unavailable"
+};
+
 const candidateStatusTransitions = {
   submitted: ["in_review", "needs_revision", "approved", "rejected"],
   in_review: ["needs_revision", "approved", "rejected"],
@@ -45,12 +103,14 @@ function usage(exitCode = 0) {
   const message = `
 Usage:
   npm run research:bundle -- status --bundle <bundle-id>
+  npm run research:bundle -- audit --bundle <bundle-id>
   npm run research:bundle -- validate --bundle <bundle-id>
   npm run research:bundle -- comment --bundle <bundle-id> --comment <text>
   npm run research:bundle -- request-changes --bundle <bundle-id> [--reason <text>]
   npm run research:bundle -- reject --bundle <bundle-id> [--reason <text>]
   npm run research:bundle -- approve --bundle <bundle-id>
   npm run research:bundle -- publish --bundle <bundle-id>
+  npm run research:bundle -- precommit --bundle <bundle-id>
   npm run research:bundle -- smoke --bundle <bundle-id> [--base-url <url>]
 
 Notes:
@@ -85,6 +145,14 @@ function hasRequiredValue(value) {
   }
 
   return value !== undefined && value !== null && !(typeof value === "string" && value.trim().length === 0);
+}
+
+function valueList(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  return value === undefined || value === null || value === "" ? [] : [value];
 }
 
 function resolveDataPath(relativePath, label, issues) {
@@ -138,6 +206,64 @@ function canTransitionCandidateBundleStatus(current, next) {
 
 function slugTimestamp(timestamp) {
   return timestamp.toLowerCase().replace(/[^0-9a-z]+/g, "-").replace(/^-|-$/g, "");
+}
+
+function countTargetsByRecordType(targets = []) {
+  const byRecordType = {};
+
+  for (const target of targets) {
+    const recordType = target.record_type ?? target.target_record_type;
+    if (!nonEmptyString(recordType)) {
+      continue;
+    }
+
+    const action = target.action ?? (target.change_type === "update_record" ? "updated" : "created");
+    if (!byRecordType[recordType]) {
+      byRecordType[recordType] = { created: 0, updated: 0, total: 0 };
+    }
+
+    if (action === "updated") {
+      byRecordType[recordType].updated += 1;
+    } else {
+      byRecordType[recordType].created += 1;
+    }
+    byRecordType[recordType].total += 1;
+  }
+
+  return {
+    total_targets: targets.length,
+    by_record_type: byRecordType
+  };
+}
+
+function parseDateTimeMillis(value) {
+  if (!nonEmptyString(value)) {
+    return undefined;
+  }
+
+  const millis = Date.parse(value);
+  return Number.isNaN(millis) ? undefined : millis;
+}
+
+function addTimestampWarning(warnings, checks, check) {
+  checks.push(check);
+
+  if (check.left_at_millis === undefined || check.right_at_millis === undefined) {
+    return;
+  }
+
+  if (check.left_at_millis > check.right_at_millis) {
+    warnings.push(`${check.left_label} (${check.left_at}) is after ${check.right_label} (${check.right_at}).`);
+  }
+}
+
+function buildPublicationDeltaFromChanges(changes = []) {
+  return countTargetsByRecordType(
+    changes.map((change) => ({
+      record_type: change.target_record_type,
+      action: change.change_type === "update_record" ? "updated" : "created"
+    }))
+  );
 }
 
 function addUniqueRecord(recordMaps, recordType, record, filePath, origin) {
@@ -402,9 +528,11 @@ async function evaluatePromotionFiles(bundle) {
       changeIssues.push(`Published bundle target file is missing: ${targetFilePath}.`);
     }
 
+    let liveMatchesStaged;
     if (bundle.lifecycle_status === "published" && targetExists && targetResolvedPath) {
       liveRecord = await readJson(targetResolvedPath);
-      if (stagedRecord && JSON.stringify(liveRecord) !== JSON.stringify(stagedRecord)) {
+      liveMatchesStaged = stagedRecord ? JSON.stringify(liveRecord) === JSON.stringify(stagedRecord) : undefined;
+      if (stagedRecord && !liveMatchesStaged) {
         changeWarnings.push(`Published live record differs from staged record: ${targetFilePath}.`);
       }
     }
@@ -416,6 +544,9 @@ async function evaluatePromotionFiles(bundle) {
       target_record_id: change.target_record_id,
       target_file_path: targetFilePath,
       staged_file_path: stagedFilePath,
+      target_exists: targetExists,
+      staged_exists: Boolean(stagedRecord),
+      live_matches_staged: liveMatchesStaged,
       ready: changeIssues.length === 0,
       issues: changeIssues,
       warnings: changeWarnings
@@ -427,7 +558,9 @@ async function evaluatePromotionFiles(bundle) {
       targetRecordId: change.target_record_id,
       targetResolvedPath,
       stagedResolvedPath,
+      targetExists,
       stagedRecord,
+      liveMatchesStaged,
       validationRecord: bundle.lifecycle_status === "published" ? liveRecord ?? stagedRecord : stagedRecord
     });
     issues.push(...changeIssues.map((issue) => `${change.change_id}: ${issue}`));
@@ -529,6 +662,10 @@ function validateClaimEvidenceLinks(record, recordMaps, issues, warnings, label,
       addIssueForMissingString(support, field, issues, supportLabel);
     }
 
+    if (support.support_role && !supportRoles.has(support.support_role)) {
+      issues.push(`${supportLabel} has unsupported support_role: ${support.support_role}.`);
+    }
+
     if (!Array.isArray(support.finding_ids) || support.finding_ids.length === 0) {
       issues.push(`${supportLabel} must include at least one finding_id.`);
     } else {
@@ -581,6 +718,14 @@ function validateClaimRecord(record, recordMaps, issues, warnings, label, domain
     }
   }
 
+  const supportRoleValues = (record.supporting_evidence ?? [])
+    .map((support) => support.support_role)
+    .filter(nonEmptyString);
+  const hasDirectSupport = supportRoleValues.some((role) => directSupportRoles.has(role));
+  if (record.confidence === "high" && supportRoleValues.length > 0 && !hasDirectSupport) {
+    warnings.push(`${label} is high confidence but has no direct support role in supporting_evidence[].`);
+  }
+
   validateDomainExtractionFields(record, "claim", domainPack, issues, label);
 }
 
@@ -616,6 +761,7 @@ function validateSearchProtocolRecord(record, recordMaps, issues, warnings, labe
 
 function validateDomainExtractionFields(record, recordType, domainPack, issues, label) {
   if (!domainPack.extractionSchema.validation?.enforce_required_fields) {
+    validateApplicabilityFacets(record, recordType, domainPack, issues, label);
     return;
   }
 
@@ -627,6 +773,49 @@ function validateDomainExtractionFields(record, recordType, domainPack, issues, 
     if (!hasRequiredValue(record[field.id])) {
       issues.push(`${label} is missing required domain extraction field ${field.id}.`);
     }
+  }
+
+  validateApplicabilityFacets(record, recordType, domainPack, issues, label);
+}
+
+function validateApplicabilityFacets(record, recordType, domainPack, issues, label) {
+  for (const facet of domainPack.domain.applicability_facets ?? []) {
+    if (!(facet.applies_to ?? []).includes(recordType)) {
+      continue;
+    }
+
+    const allowedValues = new Set((facet.values ?? []).map((option) => option.id));
+    if (allowedValues.size === 0) {
+      continue;
+    }
+
+    for (const value of valueList(record[facet.id])) {
+      if (!allowedValues.has(value)) {
+        issues.push(`${label} has unsupported applicability facet ${facet.id} value: ${value}.`);
+      }
+    }
+  }
+}
+
+function validateSourceAccessMetadata(record, warnings, label) {
+  const access = getExplicitSourceAccess(record);
+  if (!access.status && !access.depth) {
+    return;
+  }
+
+  if (access.status && !Object.prototype.hasOwnProperty.call(sourceAccessStatusDepth, access.status)) {
+    warnings.push(`${label} has unrecognized access_status: ${access.status}.`);
+  }
+
+  if (access.depth && !Object.prototype.hasOwnProperty.call(sourceAccessDepthRank, access.depth)) {
+    warnings.push(`${label} has unrecognized access_depth: ${access.depth}.`);
+  }
+
+  if (
+    ["abstract_only_paywalled", "unavailable", "not_yet_checked"].includes(access.status) &&
+    access.attempts.length === 0
+  ) {
+    warnings.push(`${label} uses access_status ${access.status} but has no access_attempts[].`);
   }
 }
 
@@ -652,6 +841,7 @@ function validateStagedRecordSemantics(promotionChanges, recordMaps, bundleStatu
         if (!record.doi && !record.pmid && !record.urls?.length && !record.registry_ids?.length) {
           warnings.push(`${label} has no DOI, PMID, URL, or registry ID.`);
         }
+        validateSourceAccessMetadata(record, warnings, label);
         break;
       case "artifact":
         validateArtifactRecord(record, recordMaps, issues, warnings, label, domainPack, semanticOptions);
@@ -678,6 +868,773 @@ function validateStagedRecordSemantics(promotionChanges, recordMaps, bundleStatu
   return { ready: issues.length === 0, issues, warnings };
 }
 
+function getRecordMapEntry(recordMaps, recordType, recordId) {
+  return nonEmptyString(recordId) ? recordMaps[recordType]?.get(recordId) : undefined;
+}
+
+function getRecordUrls(record) {
+  return [
+    ...(Array.isArray(record?.urls) ? record.urls : []),
+    ...(nonEmptyString(record?.url) ? [record.url] : [])
+  ];
+}
+
+function normalizeSourceAccessDepth(value) {
+  if (!nonEmptyString(value)) {
+    return undefined;
+  }
+
+  const normalized = value.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
+  if (normalized === "abstract" || normalized === "abstract_or_metadata") {
+    return "abstract_only";
+  }
+  if (normalized === "metadata" || normalized === "source_page") {
+    return "metadata_only";
+  }
+  if (normalized === "fulltext" || normalized === "full_text_available" || normalized === "full_text_verified") {
+    return "full_text";
+  }
+  if (Object.prototype.hasOwnProperty.call(sourceAccessDepthRank, normalized)) {
+    return normalized;
+  }
+
+  return undefined;
+}
+
+function normalizeSourceAccessStatus(value) {
+  if (!nonEmptyString(value)) {
+    return undefined;
+  }
+
+  const normalized = value.toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_|_$/g, "");
+  return Object.prototype.hasOwnProperty.call(sourceAccessStatusDepth, normalized) ? normalized : normalized;
+}
+
+function getExplicitSourceAccess(source) {
+  const status = normalizeSourceAccessStatus(source?.access_status ?? source?.source_access?.access_status);
+  const explicitDepth = normalizeSourceAccessDepth(source?.access_depth ?? source?.source_access?.access_depth);
+  const statusDepth = status ? sourceAccessStatusDepth[status] : undefined;
+  const depth = explicitDepth ?? statusDepth;
+
+  return {
+    status,
+    depth,
+    attempts: Array.isArray(source?.access_attempts)
+      ? source.access_attempts
+      : Array.isArray(source?.source_access?.access_attempts)
+        ? source.source_access.access_attempts
+        : []
+  };
+}
+
+function inferSourceAvailability(source) {
+  const urls = getRecordUrls(source);
+  const explicitAccess = getExplicitSourceAccess(source);
+  const fullTextUrls = urls.filter((url) => {
+    const normalized = String(url).toLowerCase();
+    return (
+      normalized.includes("arxiv.org/pdf/") ||
+      normalized.includes("arxiv.org/html/") ||
+      normalized.includes("arxiv.org/abs/") ||
+      normalized.endsWith(".pdf") ||
+      normalized.includes(".pdf?") ||
+      normalized.includes("/pdf/") ||
+      normalized.includes("mdpi.com/")
+    );
+  });
+  const heuristicDepth = fullTextUrls.length > 0 ? "full_text_available" : "source_page_or_metadata";
+
+  return {
+    depth: explicitAccess.depth ?? heuristicDepth,
+    inferred_depth: heuristicDepth,
+    access_status: explicitAccess.status,
+    access_status_label: explicitAccess.status
+      ? (sourceAccessStatusLabels[explicitAccess.status] ?? explicitAccess.status)
+      : undefined,
+    access_attempts: explicitAccess.attempts,
+    access_metadata_present: Boolean(explicitAccess.depth || explicitAccess.status),
+    urls,
+    full_text_urls: fullTextUrls
+  };
+}
+
+function getLocatorText(locator) {
+  if (!locator) {
+    return "";
+  }
+
+  if (typeof locator === "string") {
+    return locator;
+  }
+
+  if (typeof locator === "object") {
+    return Object.values(locator)
+      .filter((value) => ["string", "number", "boolean"].includes(typeof value))
+      .map(String)
+      .join(" ");
+  }
+
+  return String(locator);
+}
+
+function inferLocatorDepth(locator) {
+  const text = getLocatorText(locator).toLowerCase();
+  if (!text.trim()) {
+    return "missing";
+  }
+
+  if (fullTextLocatorTerms.some((term) => text.includes(term))) {
+    return "section_or_full_text";
+  }
+
+  if (shallowLocatorTerms.some((term) => text.includes(term))) {
+    return "abstract_or_metadata";
+  }
+
+  return "unspecified";
+}
+
+function auditSourceDepth(promotionChanges, recordMaps) {
+  const warnings = [];
+  const checks = [];
+
+  for (const change of promotionChanges) {
+    if (change.targetRecordType !== "finding" || !change.validationRecord) {
+      continue;
+    }
+
+    const finding = change.validationRecord;
+    const sourceEntry = getRecordMapEntry(recordMaps, "source", finding.source_id);
+    if (!sourceEntry) {
+      continue;
+    }
+
+    const sourceAvailability = inferSourceAvailability(sourceEntry.record);
+    const locatorDepth = inferLocatorDepth(finding.source_locator);
+    const check = {
+      finding_id: finding.id,
+      source_id: finding.source_id,
+      source_depth: sourceAvailability.depth,
+      source_access_status: sourceAvailability.access_status,
+      access_metadata_present: sourceAvailability.access_metadata_present,
+      locator_depth: locatorDepth,
+      locator_url: finding.source_locator?.url
+    };
+    checks.push(check);
+
+    if (sourceAvailability.depth === "full_text_available" && locatorDepth === "missing") {
+      warnings.push(
+        `${change.change_id}: finding ${finding.id} has no source_locator even though ${finding.source_id} appears to have full text available.`
+      );
+    }
+
+    if (sourceAvailability.depth === "full_text_available" && locatorDepth === "abstract_or_metadata") {
+      warnings.push(
+        `${change.change_id}: finding ${finding.id} uses an abstract/metadata locator while ${finding.source_id} appears to have full text available.`
+      );
+    }
+  }
+
+  return {
+    ready: true,
+    warnings,
+    checks
+  };
+}
+
+function getSourceAccessPolicy(domainPack) {
+  return domainPack?.domain?.source_access_policy ?? {};
+}
+
+function getPolicyMinimumFindingDepth(policy) {
+  return normalizeSourceAccessDepth(policy.minimum_finding_access_depth);
+}
+
+function isAccessDepthAtLeast(actualDepth, requiredDepth) {
+  if (!requiredDepth) {
+    return true;
+  }
+
+  const actualRank = sourceAccessDepthRank[normalizeSourceAccessDepth(actualDepth) ?? actualDepth] ?? -1;
+  const requiredRank = sourceAccessDepthRank[requiredDepth] ?? -1;
+  return actualRank >= requiredRank;
+}
+
+function buildSourceAccessFollowUp({ change, finding, source, sourceAvailability, locatorDepth, requiredDepth, priority }) {
+  const sourceName = source?.name ?? finding.source_id;
+  const readableStatus =
+    sourceAvailability.access_status_label ??
+    sourceAvailability.access_status ??
+    sourceAvailability.depth ??
+    "unspecified access depth";
+
+  return {
+    action_id: `resolve-source-access-${finding.id}`,
+    action_type: "source_access_resolution",
+    status: "open",
+    priority,
+    target_record_type: "finding",
+    target_record_id: finding.id,
+    source_ids: [finding.source_id],
+    taxonomy_node_ids: finding.taxonomy_node_ids ?? [],
+    access_status: sourceAvailability.access_status ?? "inferred",
+    access_depth: sourceAvailability.depth,
+    locator_depth: locatorDepth,
+    required_access_depth: requiredDepth,
+    reason: `${change.change_id}: finding ${finding.id} relies on ${sourceName} with ${readableStatus}, below the domain minimum of ${requiredDepth}.`,
+    recommended_action: `Retrieve full text for ${sourceName}, replace or downgrade the finding, or mark the source as screening-only before synthesis use.`,
+    finding_id: finding.id,
+    artifact_id: finding.artifact_id
+  };
+}
+
+function auditSourceAccess(promotionChanges, recordMaps, domainPack) {
+  const policy = getSourceAccessPolicy(domainPack);
+  const requiredDepth = getPolicyMinimumFindingDepth(policy);
+  const action = policy.insufficient_finding_access_action ?? "warn";
+  const priority = policy.follow_up_priority ?? "high";
+  const issues = [];
+  const warnings = [];
+  const checks = [];
+  const actions = [];
+
+  if (!requiredDepth || action === "ignore") {
+    return {
+      ready: true,
+      policy_active: false,
+      required_finding_access_depth: requiredDepth,
+      issues,
+      warnings,
+      checks,
+      follow_ups: {
+        open_count: 0,
+        actions: []
+      }
+    };
+  }
+
+  for (const change of promotionChanges) {
+    if (change.targetRecordType !== "finding" || !change.validationRecord) {
+      continue;
+    }
+
+    const finding = change.validationRecord;
+    const sourceEntry = getRecordMapEntry(recordMaps, "source", finding.source_id);
+    if (!sourceEntry) {
+      continue;
+    }
+
+    const sourceAvailability = inferSourceAvailability(sourceEntry.record);
+    const locatorDepth = inferLocatorDepth(finding.source_locator);
+    const enforceInferredAccessDepth = policy.enforce_inferred_access_depth === true;
+    const hasExplicitAccessMetadata = sourceAvailability.access_metadata_present;
+    const policyEnforced = hasExplicitAccessMetadata || enforceInferredAccessDepth;
+    const depthMeetsMinimum = isAccessDepthAtLeast(sourceAvailability.depth, requiredDepth);
+    const check = {
+      finding_id: finding.id,
+      source_id: finding.source_id,
+      source_access_status: sourceAvailability.access_status,
+      source_access_depth: sourceAvailability.depth,
+      source_access_inferred_depth: sourceAvailability.inferred_depth,
+      access_metadata_present: sourceAvailability.access_metadata_present,
+      locator_depth: locatorDepth,
+      locator_url: finding.source_locator?.url,
+      required_access_depth: requiredDepth,
+      policy_enforced: policyEnforced,
+      source_access_depth_meets_minimum: depthMeetsMinimum,
+      sufficient_for_finding_support: !policyEnforced || depthMeetsMinimum
+    };
+    checks.push(check);
+
+    if (!policyEnforced) {
+      continue;
+    }
+
+    if (depthMeetsMinimum) {
+      continue;
+    }
+
+    const followUp = buildSourceAccessFollowUp({
+      change,
+      finding,
+      source: sourceEntry.record,
+      sourceAvailability,
+      locatorDepth,
+      requiredDepth,
+      priority
+    });
+    actions.push(followUp);
+
+    if (action === "block_publication") {
+      issues.push(followUp.reason);
+    } else {
+      warnings.push(followUp.reason);
+    }
+  }
+
+  return {
+    ready: issues.length === 0 && warnings.length === 0,
+    policy_active: true,
+    required_finding_access_depth: requiredDepth,
+    issues,
+    warnings,
+    checks,
+    follow_ups: {
+      open_count: actions.length,
+      actions
+    }
+  };
+}
+
+function isIncludedScreeningDecision(decision) {
+  return String(decision?.decision ?? "").toLowerCase() === "include" && nonEmptyString(decision.source_id);
+}
+
+function auditSearchLinkage(bundle, promotionChanges, recordMaps) {
+  const warnings = [];
+  const checks = [];
+  const bundleSourceIds = new Set(bundle.source_ids ?? []);
+  const sourceChangeIds = new Set(
+    promotionChanges
+      .filter((change) => change.targetRecordType === "source" && nonEmptyString(change.targetRecordId))
+      .map((change) => change.targetRecordId)
+  );
+
+  for (const sourceId of sourceChangeIds) {
+    if (bundleSourceIds.size > 0 && !bundleSourceIds.has(sourceId)) {
+      warnings.push(`Bundle source_ids does not include proposed source record ${sourceId}.`);
+    }
+  }
+
+  for (const change of promotionChanges) {
+    if (change.targetRecordType !== "search_protocol" || !change.validationRecord) {
+      continue;
+    }
+
+    const protocol = change.validationRecord;
+    const protocolSourceIds = new Set(protocol.source_ids ?? []);
+    const includedDecisionSourceIds = new Set(
+      (protocol.screening_decisions ?? []).filter(isIncludedScreeningDecision).map((decision) => decision.source_id)
+    );
+
+    for (const sourceId of includedDecisionSourceIds) {
+      if (!protocolSourceIds.has(sourceId)) {
+        warnings.push(`${change.change_id}: included screening source ${sourceId} is missing from search_protocol.source_ids.`);
+      }
+
+      if (bundleSourceIds.size > 0 && !bundleSourceIds.has(sourceId)) {
+        warnings.push(`${change.change_id}: included screening source ${sourceId} is missing from bundle.source_ids.`);
+      }
+
+      if (!recordExists(recordMaps, "source", sourceId)) {
+        warnings.push(`${change.change_id}: included screening source ${sourceId} has no staged or live source record.`);
+      }
+    }
+
+    if ((protocol.screening_decisions ?? []).length > 0) {
+      for (const sourceId of protocolSourceIds) {
+        if (!includedDecisionSourceIds.has(sourceId)) {
+          warnings.push(`${change.change_id}: search_protocol.source_ids includes ${sourceId} without an include screening decision.`);
+        }
+      }
+    }
+
+    checks.push({
+      search_protocol_id: protocol.id,
+      included_decision_source_ids: Array.from(includedDecisionSourceIds).sort(),
+      protocol_source_ids: Array.from(protocolSourceIds).sort(),
+      bundle_source_ids: Array.from(bundleSourceIds).sort()
+    });
+  }
+
+  return {
+    ready: true,
+    warnings,
+    checks
+  };
+}
+
+function getPublicationEventTargetKey(target) {
+  return `${target.record_type}:${target.record_id}`;
+}
+
+function getPromotionChangeTargetKey(change) {
+  return `${change.targetRecordType}:${change.targetRecordId}`;
+}
+
+function auditPublicationCompleteness(bundle, promotion, publication) {
+  const warnings = [];
+  const checks = [];
+  const changes = promotion.changes ?? [];
+
+  if (bundle.lifecycle_status !== "published") {
+    return {
+      eligible: false,
+      ready: true,
+      warnings,
+      checks,
+      summary: "Publication completeness is checked after a bundle is published."
+    };
+  }
+
+  const publicationTargetKeys = new Set(
+    (publication.publication_event_records ?? []).flatMap((event) =>
+      (event.published_targets ?? []).map(getPublicationEventTargetKey)
+    )
+  );
+  const changeTargetKeys = new Set(changes.map(getPromotionChangeTargetKey));
+
+  for (const change of changes) {
+    const targetKey = getPromotionChangeTargetKey(change);
+    const check = {
+      change_id: change.change_id,
+      target_record_type: change.targetRecordType,
+      target_record_id: change.targetRecordId,
+      target_file_path: change.target_file_path,
+      staged_file_path: change.staged_file_path,
+      live_target_exists: Boolean(change.targetExists),
+      staged_record_exists: Boolean(change.stagedRecord),
+      live_matches_staged: change.liveMatchesStaged,
+      publication_event_target_exists: publicationTargetKeys.has(targetKey)
+    };
+    checks.push(check);
+
+    if (!check.live_target_exists) {
+      warnings.push(`${change.change_id}: published live target is missing: ${change.target_file_path}.`);
+    }
+
+    if (!check.staged_record_exists) {
+      warnings.push(`${change.change_id}: staged record is missing: ${change.staged_file_path}.`);
+    }
+
+    if (check.live_matches_staged === false) {
+      warnings.push(`${change.change_id}: published live record differs from staged record.`);
+    }
+
+    if (!check.publication_event_target_exists) {
+      warnings.push(`${change.change_id}: target ${targetKey} is missing from publication events.`);
+    }
+  }
+
+  for (const targetKey of publicationTargetKeys) {
+    if (!changeTargetKeys.has(targetKey)) {
+      warnings.push(`Publication event target ${targetKey} is not present in bundle proposed_changes.`);
+    }
+  }
+
+  for (const event of publication.publication_event_records ?? []) {
+    const expectedDelta = buildPublicationDeltaFromChanges(changes);
+    const eventDelta = event.public_graph_delta ?? countTargetsByRecordType(event.published_targets ?? []);
+    if (JSON.stringify(eventDelta) !== JSON.stringify(expectedDelta)) {
+      warnings.push(`Publication event ${event.id} public_graph_delta does not match proposed_changes.`);
+    }
+  }
+
+  return {
+    eligible: true,
+    ready: warnings.length === 0,
+    warnings,
+    checks,
+    summary: {
+      proposed_change_count: changes.length,
+      live_target_count: checks.filter((check) => check.live_target_exists).length,
+      staged_record_count: checks.filter((check) => check.staged_record_exists).length,
+      matched_live_staged_count: checks.filter((check) => check.live_matches_staged === true).length,
+      publication_event_target_count: publicationTargetKeys.size
+    }
+  };
+}
+
+async function loadBundleResearchSessions(bundleId) {
+  return (await readJsonCollection("research/sessions"))
+    .map(({ record }) => record)
+    .filter((session) => session.candidate_bundle_id === bundleId);
+}
+
+async function auditTimestampOrder(bundle, promotion, evidenceReviewGate, publication) {
+  const warnings = [];
+  const checks = [];
+  const bundleSubmittedAtMillis = parseDateTimeMillis(bundle.submitted_at);
+  const publicationEvents = publication.publication_event_records ?? [];
+  const publicationEventMillis = publicationEvents
+    .map((event) => parseDateTimeMillis(event.published_at))
+    .filter((millis) => millis !== undefined);
+  const earliestPublicationMillis = publicationEventMillis.length > 0 ? Math.min(...publicationEventMillis) : undefined;
+  const earliestPublicationAt = publicationEvents
+    .map((event) => event.published_at)
+    .filter(nonEmptyString)
+    .sort()[0];
+
+  for (const event of publicationEvents) {
+    addTimestampWarning(warnings, checks, {
+      check_type: "bundle_submitted_before_publication",
+      left_label: "bundle submitted_at",
+      left_at: bundle.submitted_at,
+      left_at_millis: bundleSubmittedAtMillis,
+      right_label: `publication ${event.id} published_at`,
+      right_at: event.published_at,
+      right_at_millis: parseDateTimeMillis(event.published_at)
+    });
+  }
+
+  for (const change of promotion.changes ?? []) {
+    const record = change.validationRecord;
+    if (change.targetRecordType !== "search_protocol" || !record) {
+      continue;
+    }
+
+    addTimestampWarning(warnings, checks, {
+      check_type: "search_started_before_completed",
+      left_label: `search protocol ${record.id} search_started_at`,
+      left_at: record.search_started_at,
+      left_at_millis: parseDateTimeMillis(record.search_started_at),
+      right_label: `search protocol ${record.id} search_completed_at`,
+      right_at: record.search_completed_at,
+      right_at_millis: parseDateTimeMillis(record.search_completed_at)
+    });
+
+    if (earliestPublicationMillis !== undefined) {
+      addTimestampWarning(warnings, checks, {
+        check_type: "search_completed_before_publication",
+        left_label: `search protocol ${record.id} search_completed_at`,
+        left_at: record.search_completed_at,
+        left_at_millis: parseDateTimeMillis(record.search_completed_at),
+        right_label: "earliest publication published_at",
+        right_at: earliestPublicationAt,
+        right_at_millis: earliestPublicationMillis
+      });
+    }
+  }
+
+  for (const review of evidenceReviewGate.reviews ?? []) {
+    addTimestampWarning(warnings, checks, {
+      check_type: "bundle_submitted_before_review_created",
+      left_label: "bundle submitted_at",
+      left_at: bundle.submitted_at,
+      left_at_millis: bundleSubmittedAtMillis,
+      right_label: `review ${review.id} created_at`,
+      right_at: review.created_at,
+      right_at_millis: parseDateTimeMillis(review.created_at)
+    });
+
+    if (earliestPublicationMillis !== undefined) {
+      addTimestampWarning(warnings, checks, {
+        check_type: "review_created_before_publication",
+        left_label: `review ${review.id} created_at`,
+        left_at: review.created_at,
+        left_at_millis: parseDateTimeMillis(review.created_at),
+        right_label: "earliest publication published_at",
+        right_at: earliestPublicationAt,
+        right_at_millis: earliestPublicationMillis
+      });
+    }
+  }
+
+  for (const session of await loadBundleResearchSessions(bundle.id)) {
+    addTimestampWarning(warnings, checks, {
+      check_type: "session_started_before_completed",
+      left_label: `research session ${session.id} started_at`,
+      left_at: session.started_at,
+      left_at_millis: parseDateTimeMillis(session.started_at),
+      right_label: `research session ${session.id} completed_at`,
+      right_at: session.completed_at,
+      right_at_millis: parseDateTimeMillis(session.completed_at)
+    });
+
+    if (earliestPublicationMillis !== undefined) {
+      addTimestampWarning(warnings, checks, {
+        check_type: "session_completed_before_publication",
+        left_label: `research session ${session.id} completed_at`,
+        left_at: session.completed_at,
+        left_at_millis: parseDateTimeMillis(session.completed_at),
+        right_label: "earliest publication published_at",
+        right_at: earliestPublicationAt,
+        right_at_millis: earliestPublicationMillis
+      });
+    }
+  }
+
+  return {
+    ready: warnings.length === 0,
+    warnings,
+    checks
+  };
+}
+
+function getNumericMetricFields(record) {
+  return ["reported_metrics", "quantitative_note"].filter((field) => hasRequiredValue(record[field]));
+}
+
+function isValidNumericExtractionStatus(value) {
+  return value === true || value === false || value === "not_applicable";
+}
+
+function auditNumericExtraction(promotionChanges) {
+  const warnings = [];
+  const checks = [];
+
+  for (const change of promotionChanges) {
+    if (!["artifact", "finding"].includes(change.targetRecordType) || !change.validationRecord) {
+      continue;
+    }
+
+    const record = change.validationRecord;
+    const metricFields = getNumericMetricFields(record);
+    if (metricFields.length === 0 && record.numeric_results_extracted === undefined) {
+      continue;
+    }
+
+    const check = {
+      change_id: change.change_id,
+      target_record_type: change.targetRecordType,
+      target_record_id: change.targetRecordId,
+      metric_fields_present: metricFields,
+      numeric_results_extracted: record.numeric_results_extracted ?? "missing",
+      valid_status: isValidNumericExtractionStatus(record.numeric_results_extracted)
+    };
+    checks.push(check);
+
+    if (metricFields.length > 0 && !check.valid_status) {
+      warnings.push(
+        `${change.change_id}: ${change.targetRecordType} ${change.targetRecordId} has metric fields (${metricFields.join(
+          ", "
+        )}) but no numeric_results_extracted status.`
+      );
+    }
+
+    if (record.numeric_results_extracted !== undefined && !check.valid_status) {
+      warnings.push(
+        `${change.change_id}: numeric_results_extracted must be true, false, or "not_applicable".`
+      );
+    }
+  }
+
+  return {
+    ready: warnings.length === 0,
+    warnings,
+    checks
+  };
+}
+
+function getFollowUpSourceIds(record, recordType) {
+  if (recordType === "finding") {
+    return Array.from(new Set([record.source_id, ...(record.source_ids ?? [])].filter(nonEmptyString)));
+  }
+
+  return Array.from(new Set((record.source_ids ?? []).filter(nonEmptyString)));
+}
+
+function buildExtractionFollowUpAction(change, record, metricFields) {
+  const sourceIds = getFollowUpSourceIds(record, change.targetRecordType);
+  const action = {
+    action_id: `extract-numeric-results-${change.targetRecordId}`,
+    action_type: "numeric_results_extraction",
+    status: "open",
+    priority: "medium",
+    target_record_type: change.targetRecordType,
+    target_record_id: change.targetRecordId,
+    source_ids: sourceIds,
+    taxonomy_node_ids: record.taxonomy_node_ids ?? [],
+    metric_fields_present: metricFields,
+    reason: `${change.targetRecordType} ${change.targetRecordId} reports metric text but numeric_results_extracted is false.`,
+    recommended_action: `Extract table-level numeric results for ${record.name ?? change.targetRecordId} before quantitative synthesis.`
+  };
+
+  if (change.targetRecordType === "artifact") {
+    action.artifact_id = record.id;
+  }
+
+  if (change.targetRecordType === "finding") {
+    action.finding_id = record.id;
+    if (nonEmptyString(record.artifact_id)) {
+      action.artifact_id = record.artifact_id;
+    }
+  }
+
+  return action;
+}
+
+function buildExtractionFollowUps(promotionChanges) {
+  const findingChanges = promotionChanges.filter(
+    (change) => change.targetRecordType === "finding" && change.validationRecord?.numeric_results_extracted === false
+  );
+  const artifactIdsCoveredByFindings = new Set(
+    findingChanges.map((change) => change.validationRecord.artifact_id).filter(nonEmptyString)
+  );
+  const actions = [];
+
+  for (const change of [...findingChanges, ...promotionChanges]) {
+    if (!["artifact", "finding"].includes(change.targetRecordType) || !change.validationRecord) {
+      continue;
+    }
+
+    if (change.validationRecord.numeric_results_extracted !== false) {
+      continue;
+    }
+
+    if (change.targetRecordType === "artifact" && artifactIdsCoveredByFindings.has(change.targetRecordId)) {
+      continue;
+    }
+
+    const metricFields = getNumericMetricFields(change.validationRecord);
+    if (metricFields.length === 0) {
+      continue;
+    }
+
+    actions.push(buildExtractionFollowUpAction(change, change.validationRecord, metricFields));
+  }
+
+  const seen = new Set();
+  const uniqueActions = actions.filter((action) => {
+    if (seen.has(action.action_id)) {
+      return false;
+    }
+    seen.add(action.action_id);
+    return true;
+  });
+
+  return {
+    ready: true,
+    open_count: uniqueActions.length,
+    actions: uniqueActions
+  };
+}
+
+async function buildWorkflowAudit(bundle, promotion, recordMaps, evidenceReviewGate, publication, domainPack) {
+  const sourceDepth = auditSourceDepth(promotion.changes, recordMaps);
+  const sourceAccess = auditSourceAccess(promotion.changes, recordMaps, domainPack);
+  const searchLinkage = auditSearchLinkage(bundle, promotion.changes, recordMaps);
+  const publicationCompleteness = auditPublicationCompleteness(bundle, promotion, publication);
+  const timestampOrder = await auditTimestampOrder(bundle, promotion, evidenceReviewGate, publication);
+  const numericExtraction = auditNumericExtraction(promotion.changes);
+  const extractionFollowUps = buildExtractionFollowUps(promotion.changes);
+  const issues = [
+    ...sourceAccess.issues
+  ];
+  const warnings = [
+    ...sourceDepth.warnings,
+    ...sourceAccess.warnings,
+    ...searchLinkage.warnings,
+    ...publicationCompleteness.warnings,
+    ...timestampOrder.warnings,
+    ...numericExtraction.warnings
+  ];
+
+  return {
+    ready: issues.length === 0 && warnings.length === 0,
+    issues,
+    warnings,
+    source_depth: sourceDepth,
+    source_access: sourceAccess,
+    search_linkage: searchLinkage,
+    publication_completeness: publicationCompleteness,
+    timestamp_order: timestampOrder,
+    numeric_extraction: numericExtraction,
+    extraction_follow_ups: extractionFollowUps,
+    projected_publication_delta: buildPublicationDeltaFromChanges(bundle.proposed_changes ?? [])
+  };
+}
+
 async function evaluatePublication(bundle, promotion) {
   const issues = [];
   const warnings = [];
@@ -692,6 +1649,7 @@ async function evaluatePublication(bundle, promotion) {
       eligible: false,
       ready: true,
       publication_event_ids: publicationEventIds,
+      publication_event_records: [],
       issues,
       warnings
     };
@@ -724,11 +1682,16 @@ async function evaluatePublication(bundle, promotion) {
     eligible: true,
     ready: issues.length === 0 && promotion.ready,
     publication_event_ids: publicationEventIds,
+    publication_event_records: publicationEvents,
     publication_events: publicationEvents.map((event) => ({
       id: event.id,
       published_at: event.published_at,
       published_targets: event.published_targets?.length ?? 0,
-      affected_claim_ids: event.affected_claim_ids ?? []
+      public_graph_delta: event.public_graph_delta ?? countTargetsByRecordType(event.published_targets ?? []),
+      affected_claim_ids: event.affected_claim_ids ?? [],
+      review_follow_up_actions: event.review_follow_up_actions ?? [],
+      source_access_follow_up_actions: event.source_access_follow_up_actions ?? [],
+      extraction_follow_up_actions: event.extraction_follow_up_actions ?? []
     })),
     issues,
     warnings
@@ -761,9 +1724,10 @@ async function buildBundleReport(bundleIdOrRecord, options = {}) {
   );
   const evidenceReviewGate = await evaluateEvidenceReviewGate(bundle, domainPack);
   const publication = await evaluatePublication(bundle, promotion);
+  const workflowAudit = await buildWorkflowAudit(bundle, promotion, recordMaps, evidenceReviewGate, publication, domainPack);
 
-  issues.push(...promotion.issues, ...stagedSemantics.issues, ...publication.issues);
-  warnings.push(...promotion.warnings, ...stagedSemantics.warnings, ...publication.warnings);
+  issues.push(...promotion.issues, ...stagedSemantics.issues, ...workflowAudit.issues, ...publication.issues);
+  warnings.push(...promotion.warnings, ...stagedSemantics.warnings, ...workflowAudit.warnings, ...publication.warnings);
 
   if (["approved", "published"].includes(bundle.lifecycle_status) && evidenceReviewGate.eligible && !evidenceReviewGate.ready) {
     issues.push(...evidenceReviewGate.issues);
@@ -779,16 +1743,19 @@ async function buildBundleReport(bundleIdOrRecord, options = {}) {
     },
     promotion,
     staged_semantics: stagedSemantics,
+    workflow_audit: workflowAudit,
     evidence_review_gate: evidenceReviewGate,
     publication
   };
 }
 
 function toPublicReport(report) {
+  const { publication_event_records: _publicationEventRecords, ...publication } = report.publication;
   return {
     bundle_id: report.bundle.id,
     lifecycle_status: report.bundle.lifecycle_status,
     revision_number: getCurrentRevision(report.bundle),
+    readiness: buildReadinessSummary(report),
     validation: report.validation,
     evidence_review_gate: {
       eligible: report.evidence_review_gate.eligible,
@@ -814,12 +1781,65 @@ function toPublicReport(report) {
         target_record_id: change.target_record_id,
         target_file_path: change.target_file_path,
         staged_file_path: change.staged_file_path,
+        target_exists: change.target_exists,
+        staged_exists: change.staged_exists,
+        live_matches_staged: change.live_matches_staged,
         ready: change.ready,
         issues: change.issues,
         warnings: change.warnings
       }))
     },
-    publication: report.publication
+    workflow_audit: report.workflow_audit,
+    publication
+  };
+}
+
+function buildReadinessSummary(report) {
+  const validationIssueCount = report.validation.issues.length;
+  const validationWarningCount = report.validation.warnings.length;
+  const promotionIssueCount = report.promotion.issues.length;
+  const promotionWarningCount = report.promotion.warnings.length;
+  const workflowAuditWarningCount = report.workflow_audit?.warnings?.length ?? 0;
+  const missingReviewLanes = report.evidence_review_gate.missing_lanes ?? [];
+  const reviewIssueCount = report.evidence_review_gate.issues.length;
+
+  const readyForApproval =
+    ["submitted", "in_review", "revised"].includes(report.bundle.lifecycle_status) &&
+    report.validation.ready &&
+    (!report.evidence_review_gate.eligible || report.evidence_review_gate.ready);
+  const readyForPublication =
+    report.bundle.lifecycle_status === "approved" &&
+    report.validation.ready &&
+    (!report.evidence_review_gate.eligible || report.evidence_review_gate.ready);
+
+  let message;
+  if (report.bundle.lifecycle_status === "published") {
+    message = "Published. Promotion files and publication events are available for audit.";
+  } else if (!report.validation.ready) {
+    message = `Validation has ${validationIssueCount} issue(s). Resolve structural and reference problems before review or publication.`;
+  } else if (!report.promotion.ready) {
+    message = `Structurally valid, but promotion has ${promotionIssueCount} issue(s). Check staged and target files.`;
+  } else if (report.evidence_review_gate.eligible && !report.evidence_review_gate.ready) {
+    message = `Structurally valid. Waiting on ${missingReviewLanes.length} evidence review lane(s): ${missingReviewLanes.join(", ")}.`;
+  } else if (readyForPublication) {
+    message = "Approved, structurally valid, and review-ready. Ready to publish.";
+  } else if (readyForApproval) {
+    message = "Structurally valid and review-ready. Ready for approval.";
+  } else {
+    message = "Structurally valid. Lifecycle status determines the next action.";
+  }
+
+  return {
+    message,
+    ready_for_approval: readyForApproval,
+    ready_for_publication: readyForPublication,
+    validation_issue_count: validationIssueCount,
+    validation_warning_count: validationWarningCount,
+    promotion_issue_count: promotionIssueCount,
+    promotion_warning_count: promotionWarningCount,
+    workflow_audit_warning_count: workflowAuditWarningCount,
+    review_issue_count: reviewIssueCount,
+    missing_review_lanes: missingReviewLanes
   };
 }
 
@@ -835,6 +1855,14 @@ async function commandStatus(options) {
   printJson(toPublicReport(await buildBundleReport(options.bundle)));
 }
 
+async function commandAudit(options) {
+  if (!options.bundle) {
+    fail("audit requires --bundle <bundle-id>.");
+  }
+
+  printJson(toPublicReport(await buildBundleReport(options.bundle)));
+}
+
 async function commandValidate(options) {
   if (!options.bundle) {
     fail("validate requires --bundle <bundle-id>.");
@@ -845,6 +1873,80 @@ async function commandValidate(options) {
   if (!report.validation.ready) {
     process.exit(1);
   }
+}
+
+async function buildPrecommitSummary(bundleIdOrRecord, options = {}) {
+  const report = await buildBundleReport(bundleIdOrRecord, options);
+  const publicReport = toPublicReport(report);
+  const planningStatus = await readPlanningStatus();
+  const domainId = report.bundle.scope?.domain_id ?? planningStatus.domain_id;
+  const workflowAudit = report.workflow_audit ?? {};
+
+  return {
+    action: "precommit_summary",
+    bundle_id: report.bundle.id,
+    lifecycle_status: report.bundle.lifecycle_status,
+    revision_number: getCurrentRevision(report.bundle),
+    public_graph_delta: workflowAudit.projected_publication_delta,
+    promotion: {
+      ready: report.promotion.ready,
+      issue_count: report.promotion.issues.length,
+      warning_count: report.promotion.warnings.length
+    },
+    evidence_reviews: {
+      ready: report.evidence_review_gate.ready,
+      required_lanes: report.evidence_review_gate.required_lanes,
+      completed_lanes: report.evidence_review_gate.completed_lanes,
+      missing_lanes: report.evidence_review_gate.missing_lanes,
+      blocking_review_ids: report.evidence_review_gate.blocking_review_ids,
+      open_blocking_findings: report.evidence_review_gate.open_blocking_findings
+    },
+    workflow_audit: {
+      ready: workflowAudit.ready,
+      warning_count: workflowAudit.warnings?.length ?? 0,
+      source_depth_warning_count: workflowAudit.source_depth?.warnings?.length ?? 0,
+      source_access_warning_count: workflowAudit.source_access?.warnings?.length ?? 0,
+      search_linkage_warning_count: workflowAudit.search_linkage?.warnings?.length ?? 0,
+      publication_completeness_warning_count: workflowAudit.publication_completeness?.warnings?.length ?? 0,
+      timestamp_order_warning_count: workflowAudit.timestamp_order?.warnings?.length ?? 0,
+      numeric_extraction_warning_count: workflowAudit.numeric_extraction?.warnings?.length ?? 0,
+      source_access_follow_up_count: workflowAudit.source_access?.follow_ups?.open_count ?? 0,
+      extraction_follow_up_count: workflowAudit.extraction_follow_ups?.open_count ?? 0
+    },
+    source_access_follow_ups: {
+      open_count: workflowAudit.source_access?.follow_ups?.open_count ?? 0,
+      actions: workflowAudit.source_access?.follow_ups?.actions ?? []
+    },
+    extraction_follow_ups: {
+      open_count: workflowAudit.extraction_follow_ups?.open_count ?? 0,
+      actions: workflowAudit.extraction_follow_ups?.actions ?? []
+    },
+    publication: {
+      eligible: report.publication.eligible,
+      ready: report.publication.ready,
+      publication_event_ids: report.publication.publication_event_ids
+    },
+    planning: {
+      domain_matches: planningStatus.domain_matches,
+      warning: planningStatus.warning,
+      next_queue_item: planningStatus.domain_matches ? planningStatus.next.recommended : null
+    },
+    verification_commands: [
+      "npm run validate",
+      `WORKBENCH_DOMAIN=${domainId} npm run research:bundle -- validate --bundle ${report.bundle.id}`,
+      "npm test",
+      `WORKBENCH_DOMAIN=${domainId} npm run build`
+    ],
+    readiness: publicReport.readiness
+  };
+}
+
+async function commandPrecommit(options) {
+  if (!options.bundle) {
+    fail("precommit requires --bundle <bundle-id>.");
+  }
+
+  printJson(await buildPrecommitSummary(options.bundle));
 }
 
 async function approveCandidateBundle(bundleId) {
@@ -1026,6 +2128,26 @@ async function getClaimIdForSubject(subjectType, subjectId) {
   return claims.find(({ record }) => record.subject_type === subjectType && record.subject_id === subjectId)?.record.id;
 }
 
+function getReviewFollowUpActions(evidenceReviewGate) {
+  const actions = [];
+
+  for (const review of evidenceReviewGate.reviews ?? []) {
+    for (const finding of review.findings ?? []) {
+      if (!nonBlockingFollowUpSeverities.has(finding.severity)) {
+        continue;
+      }
+
+      if (!nonEmptyString(finding.recommended_action)) {
+        continue;
+      }
+
+      actions.push(`${review.review_lane}: ${finding.recommended_action.trim()}`);
+    }
+  }
+
+  return Array.from(new Set(actions));
+}
+
 async function publishCandidateBundle(bundleId, options = {}) {
   const { filePath } = await loadCandidateBundle(bundleId);
   return withFileLock(`${filePath}.lock`, async () => {
@@ -1071,6 +2193,17 @@ async function publishCandidateBundle(bundleId, options = {}) {
       )
     ).filter(Boolean);
     const affectedClaimIds = Array.from(new Set([...claimIdsFromChanges, ...claimIdsFromImplications]));
+    const reviewFollowUpActions = getReviewFollowUpActions(report.evidence_review_gate);
+    const extractionFollowUpActions = report.workflow_audit.extraction_follow_ups?.actions ?? [];
+    const sourceAccessFollowUpActions = report.workflow_audit.source_access?.follow_ups?.actions ?? [];
+    const extractionFollowUpSummary =
+      extractionFollowUpActions.length > 0
+        ? [`Resolve ${extractionFollowUpActions.length} structured extraction follow-up action(s) before quantitative synthesis.`]
+        : [];
+    const sourceAccessFollowUpSummary =
+      sourceAccessFollowUpActions.length > 0
+        ? [`Resolve ${sourceAccessFollowUpActions.length} structured source-access follow-up action(s) before synthesis use.`]
+        : [];
     const publicationEvent = {
       schema_version: "1.0.0",
       record_type: "publication_event",
@@ -1086,10 +2219,17 @@ async function publishCandidateBundle(bundleId, options = {}) {
         record_id: change.target_record_id ?? change.change_id,
         action: change.change_type === "create_record" ? "created" : "updated"
       })),
+      public_graph_delta: buildPublicationDeltaFromChanges(bundle.proposed_changes ?? []),
       affected_claim_ids: affectedClaimIds,
       approving_evidence_review_ids: report.evidence_review_gate.eligible
         ? report.evidence_review_gate.reviews.map((review) => review.id)
         : undefined,
+      review_corrections_applied: report.evidence_review_gate.reviews.flatMap((review) =>
+        Array.isArray(review.corrections_applied) ? review.corrections_applied : []
+      ),
+      review_follow_up_actions: reviewFollowUpActions,
+      source_access_follow_up_actions: sourceAccessFollowUpActions,
+      extraction_follow_up_actions: extractionFollowUpActions,
       change_note:
         bundle.proposed_claim_implications?.[0]?.note ??
         "A reviewed candidate bundle was published to the public evidence graph."
@@ -1101,7 +2241,16 @@ async function publishCandidateBundle(bundleId, options = {}) {
     const updatedBundle = {
       ...bundle,
       lifecycle_status: "published",
-      next_actions: ["Publication complete. Review downstream pages if this change affects shared surfaces."],
+      next_actions: Array.from(
+        new Set([
+          "Publication complete. Review downstream pages if this change affects shared surfaces.",
+          ...reviewFollowUpActions,
+          ...sourceAccessFollowUpSummary,
+          ...extractionFollowUpSummary
+        ])
+      ),
+      source_access_follow_up_actions: sourceAccessFollowUpActions,
+      extraction_follow_up_actions: extractionFollowUpActions,
       publication_event_ids: Array.from(new Set([...(bundle.publication_event_ids ?? []), publicationEventId]))
     };
     await writeJson(filePath, updatedBundle);
@@ -1114,7 +2263,12 @@ async function publishCandidateBundle(bundleId, options = {}) {
       publication_event_id: publicationEventId,
       publication_event_path: toPosixRelative(publicationEventPath),
       published_targets: publicationEvent.published_targets,
+      public_graph_delta: publicationEvent.public_graph_delta,
       affected_claim_ids: affectedClaimIds,
+      review_corrections_applied: publicationEvent.review_corrections_applied,
+      review_follow_up_actions: reviewFollowUpActions,
+      source_access_follow_up_actions: sourceAccessFollowUpActions,
+      extraction_follow_up_actions: extractionFollowUpActions,
       planning
     };
   });
@@ -1161,15 +2315,19 @@ async function commandSmoke(options) {
 export {
   addReviewComment,
   approveCandidateBundle,
+  buildReadinessSummary,
   buildBundleReport,
+  commandAudit,
   commandApprove,
   commandComment,
+  commandPrecommit,
   commandPublish,
   commandReject,
   commandRequestChanges,
   commandSmoke,
   commandStatus,
   commandValidate,
+  buildPrecommitSummary,
   evaluateEvidenceReviewGate,
   evaluatePromotionFiles,
   getCurrentRevision,

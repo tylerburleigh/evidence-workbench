@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Badge, EmptyState, PageHeader, Section } from "../../components.js";
+import { Badge, EmptyState, PageHeader, Section, SourceAccessBadge } from "../../components.js";
 import { getArtifactById, getFindingById, getNodeById, getSourceById, getWorkbenchData } from "../../../lib/public-data.js";
 
 export default async function FindingDetailPage({ params }) {
@@ -24,6 +24,7 @@ export default async function FindingDetailPage({ params }) {
           <>
             <Badge>{finding.evidence_tier}</Badge>
             <Badge>{finding.confidence}</Badge>
+            {source ? <SourceAccessBadge source={source} /> : null}
           </>
         }
       >
@@ -66,7 +67,10 @@ export default async function FindingDetailPage({ params }) {
                   <strong>{source.name}</strong>
                   <span className="row-kicker">Source</span>
                 </span>
-                <Badge>{source.source_type}</Badge>
+                <span className="meta-row">
+                  <Badge>{source.source_type}</Badge>
+                  <SourceAccessBadge source={source} />
+                </span>
               </Link>
             ) : null}
             {artifact ? (

@@ -35,6 +35,11 @@ const findingCategories = new Set([
   "claim_overreach",
   "uncertainty",
   "support_map_gap",
+  "construct_conflation",
+  "method_misclassification",
+  "missing_comparator",
+  "scorer_relevance_gap",
+  "metric_overreach",
   "other"
 ]);
 const findingResolutionStates = new Set(["open", "addressed", "closed"]);
@@ -151,6 +156,44 @@ function deriveReviewName(bundle, lane) {
   return `${laneName} review for ${scopeName} bundle`;
 }
 
+function getLaneChecklist(lane) {
+  const shared = [
+    "Record any corrections made during review in corrections_applied[].",
+    "Keep reviewed_change_ids aligned with the bundle changes actually covered by this pass."
+  ];
+  const laneSpecific = {
+    source_fidelity: [
+      "Verify bibliographic metadata against the cited source.",
+      "Check study details, sample counts, model versions, metrics, and dates.",
+      "Record source access_status/access_depth and access_attempts[] when only abstract, metadata, or a paywalled page is available.",
+      "Prefer the deepest available locator: full text, method/result section, table, appendix, then abstract or metadata.",
+      "Flag abstract-only extraction when full text, PDF, or HTML is available."
+    ],
+    construct_mapping: [
+      "Check that response origin, rubric label space, label source, human scoring, and AI scoring are not conflated.",
+      "Verify that real-response comparators and generated labels are described separately."
+    ],
+    method_classification: [
+      "Verify generation model, prompt strategy, generation workflow, response type, and evaluation method.",
+      "Do not infer unreported model versions, prompt templates, or filtering steps."
+    ],
+    scorer_validation_relevance: [
+      "Separate scorer validation, calibration, benchmarking, and stress testing from training augmentation or prototype testing.",
+      "Flag adjacent synthetic-data use when the bundle treats it as direct scorer-validation evidence."
+    ],
+    synthesis_overreach: [
+      "Check that confidence, support roles, limitations, and support-map rationale match the evidence.",
+      "Reject field-wide claims from one task, rubric, model, prompt pattern, dataset, or metric."
+    ],
+    search_protocol: [
+      "Verify queries, databases, dates, inclusion/exclusion criteria, deduplication notes, and screening decisions.",
+      "Check that included screening source_ids match search_protocol.source_ids, bundle.source_ids, and staged or live source records."
+    ]
+  };
+
+  return [...(laneSpecific[lane] ?? ["Check lane-specific review requirements from the active domain pack."]), ...shared];
+}
+
 function buildDraftReview({
   bundle,
   lane,
@@ -171,8 +214,9 @@ function buildDraftReview({
         .map(({ record }) => record.id),
       instructions: [
         "Replace placeholder summary, verdict, blocking flag, and findings after completing the review.",
-        "Keep reviewed_change_ids aligned with the bundle changes actually covered by this pass."
-      ]
+        "Set corrections_applied[] when the review changes staged records before acceptance."
+      ],
+      lane_checklist: getLaneChecklist(lane)
     },
     schema_version: "1.0.0",
     record_type: "evidence_review",
@@ -188,6 +232,7 @@ function buildDraftReview({
     blocking: true,
     summary: "TODO: replace with a bounded evidence-review summary.",
     reviewed_change_ids: bundle.proposed_changes.map((change) => change.change_id),
+    corrections_applied: [],
     findings: []
   };
 
@@ -285,6 +330,30 @@ async function validateReviewShape(review, bundle, domainPack) {
     if (!validChangeIds.has(changeId)) {
       fail(`Review references unknown change_id: ${changeId}`);
     }
+  }
+
+  if (review.corrections_applied !== undefined) {
+    if (!Array.isArray(review.corrections_applied)) {
+      fail("Review corrections_applied must be an array when present.");
+    }
+
+    review.corrections_applied.forEach((correction, index) => {
+      if (!nonEmptyString(correction.change_id)) {
+        fail(`Correction ${index + 1} is missing change_id.`);
+      }
+
+      if (!validChangeIds.has(correction.change_id)) {
+        fail(`Correction ${index + 1} references unknown change_id: ${correction.change_id}`);
+      }
+
+      if (!nonEmptyString(correction.summary)) {
+        fail(`Correction ${index + 1} is missing summary.`);
+      }
+
+      if (isPlaceholderText(correction.summary)) {
+        fail(`Correction ${index + 1} still contains a TODO placeholder in summary.`);
+      }
+    });
   }
 
   if (!Array.isArray(review.findings)) {

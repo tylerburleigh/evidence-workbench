@@ -61,15 +61,26 @@ export function buildRouteChecks(data) {
   const artifacts = records(data.collections.artifacts);
   const sources = records(data.collections.sources);
   const bundles = records(data.collections.candidateBundles);
+  const reportArtifacts = records(data.collections.reportArtifacts);
 
   addRoute(routes, "/", ["Evidence Workbench", data.domainPack.domain.name, "Record Index", "Published Claims"]);
   addRoute(routes, "/scope", ["Scope Index", scopePlural]);
   addRoute(routes, "/claims", ["Public Records", "Claims"]);
   addRoute(routes, "/findings", ["Public Records", "Findings"]);
   addRoute(routes, "/artifacts", ["Public Records", "Artifacts"]);
-  addRoute(routes, "/sources", ["Public Records", "Sources"]);
+  addRoute(routes, "/sources", ["Public Records", "Sources", "Full text", "Abstract only", "No full text"]);
   addRoute(routes, "/activity", ["Public Change Feed", "Activity Is Not Evidence", "Timeline"]);
-  addRoute(routes, "/reports", ["Reports", "Synthesis Matrix", "Synthesis Inputs", "CSV", "Markdown", "Search Protocols"]);
+  addRoute(routes, "/reports", [
+    "Reports",
+    "Source Access Audit",
+    "Synthesis Matrix",
+    "Synthesis Inputs",
+    "Report Artifacts",
+    "CSV",
+    "Markdown",
+    "Search Protocols",
+    "Access-Limited Screened Sources"
+  ]);
   addRoute(routes, "/methods", ["Trust Model", "Evidence Ladder", "Review Process"]);
   addRoute(routes, "/admin/review", ["Candidate Bundle Queue", "Review Queue", "Review Surface"]);
 
@@ -90,7 +101,11 @@ export function buildRouteChecks(data) {
   }
 
   for (const source of sources) {
-    addRoute(routes, `/sources/${source.id}`, [source.name, "Metadata", "Artifacts", "Findings"]);
+    addRoute(routes, `/sources/${source.id}`, [source.name, "Metadata", "Access Status", "Artifacts", "Findings"]);
+  }
+
+  for (const report of reportArtifacts) {
+    addRoute(routes, `/reports/${report.id}`, [report.name, "Report", "Traceability", "Linked Sources", "Linked Claims"]);
   }
 
   for (const bundle of bundles) {

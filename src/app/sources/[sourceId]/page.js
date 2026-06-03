@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Badge, EmptyState, ExternalSourceLink, PageHeader, Section } from "../../components.js";
+import { Badge, EmptyState, ExternalSourceLink, PageHeader, Section, SourceAccessBadge } from "../../components.js";
 import { getSourceById, getWorkbenchData } from "../../../lib/public-data.js";
 
 export default async function SourceDetailPage({ params }) {
@@ -25,6 +25,7 @@ export default async function SourceDetailPage({ params }) {
           <>
             <Badge>{source.source_type}</Badge>
             {source.year ? <Badge>{source.year}</Badge> : null}
+            <SourceAccessBadge source={source} />
           </>
         }
       >
@@ -51,6 +52,31 @@ export default async function SourceDetailPage({ params }) {
                 <th>Access</th>
                 <td><ExternalSourceLink source={source} /></td>
               </tr>
+              <tr>
+                <th>Access Status</th>
+                <td>
+                  <span className="meta-row">
+                    <SourceAccessBadge source={source} />
+                    {source.access_status ? <Badge>{source.access_status.replaceAll("_", " ")}</Badge> : null}
+                    {source.access_depth ? <Badge>{source.access_depth.replaceAll("_", " ")}</Badge> : null}
+                  </span>
+                </td>
+              </tr>
+              {source.access_attempts?.length ? (
+                <tr>
+                  <th>Access Attempts</th>
+                  <td>
+                    <div className="list">
+                      {source.access_attempts.map((attempt, index) => (
+                        <span key={`${attempt.url ?? "attempt"}-${index}`}>
+                          {attempt.attempted_at?.slice(0, 10) ?? "Undated"}: {attempt.result}
+                          {attempt.notes ? ` - ${attempt.notes}` : ""}
+                        </span>
+                      ))}
+                    </div>
+                  </td>
+                </tr>
+              ) : null}
             </tbody>
           </table>
         </Section>

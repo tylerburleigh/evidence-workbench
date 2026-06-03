@@ -1,6 +1,6 @@
-import { Activity, Archive, ClipboardList, Database, FileText, Home, Network, ShieldCheck } from "lucide-react";
+import { Activity, Archive, BookOpen, ClipboardList, Database, FileText, Home, Network, ShieldCheck } from "lucide-react";
 import Link from "next/link";
-import { getScopePluralLabel, getWorkbenchData } from "../lib/public-data.js";
+import { getReportArtifacts, getScopePluralLabel, getWorkbenchData } from "../lib/public-data.js";
 import "./globals.css";
 
 export const dynamic = "force-dynamic";
@@ -13,6 +13,7 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   const data = await getWorkbenchData();
   const scopeLabel = getScopePluralLabel(data);
+  const literatureReview = getReportArtifacts(data).find((report) => report.artifact_type === "literature_review");
 
   return (
     <html lang="en">
@@ -46,6 +47,12 @@ export default async function RootLayout({ children }) {
                   <Activity size={15} />
                   Activity
                 </Link>
+                {literatureReview ? (
+                  <Link className="nav-link" href={`/reports/${literatureReview.id}`}>
+                    <BookOpen size={15} />
+                    Literature Review
+                  </Link>
+                ) : null}
                 <Link className="nav-link" href="/reports">
                   <FileText size={15} />
                   Reports

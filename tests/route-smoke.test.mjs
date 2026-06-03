@@ -119,7 +119,7 @@ test("software supply-chain route smoke inventory covers downstream published gr
   assertRouteHasText(routes, "/claims/dependency-exposure-control-baseline-claim", ["Support Map", "Claim Details"]);
   assertRouteHasText(routes, "/findings/openssf-scorecard-dependency-exposure-finding-2026", ["Details", "Links"]);
   assertRouteHasText(routes, "/artifacts/openssf-scorecard-dependency-exposure-artifact", ["Scope", "Sources"]);
-  assertRouteHasText(routes, "/sources/openssf-scorecard-checks-source", ["Metadata", "Artifacts"]);
+  assertRouteHasText(routes, "/sources/openssf-scorecard-checks-source", ["Metadata", "Access Status", "Artifacts"]);
   assertRouteHasText(routes, "/scope/maintenance-signal-control", [
     "Maintenance Signal Control",
     "Claims",
@@ -128,7 +128,11 @@ test("software supply-chain route smoke inventory covers downstream published gr
   assertRouteHasText(routes, "/claims/maintenance-signal-control-baseline-claim", ["Support Map", "Claim Details"]);
   assertRouteHasText(routes, "/findings/openssf-scorecard-maintenance-signal-finding-2026", ["Details", "Links"]);
   assertRouteHasText(routes, "/artifacts/openssf-scorecard-maintenance-signal-artifact", ["Scope", "Sources"]);
-  assertRouteHasText(routes, "/sources/openssf-scorecard-maintenance-checks-source", ["Metadata", "Artifacts"]);
+  assertRouteHasText(routes, "/sources/openssf-scorecard-maintenance-checks-source", [
+    "Metadata",
+    "Access Status",
+    "Artifacts"
+  ]);
   assertRouteHasText(routes, "/admin/review/release-provenance-control-baseline-2026-06-01", [
     "Actions",
     "Evidence Reviews"
@@ -142,10 +146,10 @@ test("software supply-chain route smoke inventory covers downstream published gr
     "Evidence Reviews"
   ]);
   assertRouteHasText(routes, "/methods", ["Trust Model", "Evidence Ladder", "Review Process"]);
-  assertRouteHasText(routes, "/reports", ["Reports", "Synthesis Matrix", "Synthesis Inputs"]);
+  assertRouteHasText(routes, "/reports", ["Reports", "Source Access Audit", "Synthesis Matrix", "Report Artifacts"]);
 });
 
-test("synthetic student response route smoke inventory covers configured review questions and reports", async () => {
+test("synthetic student response route smoke inventory covers configured review questions", async () => {
   const data = await loadDomainWorkbenchData({ domainId: "synthetic-student-responses" });
   const routes = buildRouteChecks(data);
   const paths = routePaths(routes);
@@ -172,9 +176,19 @@ test("synthetic student response route smoke inventory covers configured review 
     assert.ok(paths.has(path), `Missing route check for ${path}`);
   }
 
-  assertRouteHasText(routes, "/reports", ["Reports", "Synthesis Matrix", "Synthesis Inputs"]);
+  assertRouteHasText(routes, "/reports", ["Reports", "Source Access Audit", "Synthesis Matrix", "Report Artifacts"]);
   assertRouteHasText(routes, "/scope/ssr-scoring-validation-use", [
     "Use in Automated Scorer Validation",
+    "Claims",
+    "Bundle State"
+  ]);
+  assertRouteHasText(routes, "/scope/ssr-real-response-comparison", [
+    "Comparison With Real Student Responses",
+    "Claims",
+    "Bundle State"
+  ]);
+  assertRouteHasText(routes, "/scope/ssr-human-ai-scoring-agreement", [
+    "Human and AI Scoring Agreement",
     "Claims",
     "Bundle State"
   ]);

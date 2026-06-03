@@ -84,6 +84,30 @@ Boundaries:
 - do not bypass publish workflow
 - do not approve unsupported claims
 
+### `synthesis-review`
+
+Use when summarizing already-published evidence across one domain or a bounded group of scope units.
+
+Responsibilities:
+
+- resolve synthesis scope
+- inspect current report artifacts and decide update, supersede, or sidecar disposition
+- inventory published claims, findings, sources, reviews, publication events, and planning state
+- classify question status and claim strength
+- identify cross-cutting conclusions
+- separate evidence-supported conclusions from workflow gaps
+- draft a traceable Markdown synthesis report
+- update report-artifact metadata when a visible report changes
+- recommend next bootstrap, surveillance, review, or publication actions
+
+Boundaries:
+
+- do not create new evidence claims unless a separate candidate bundle is requested
+- do not upgrade targeted baseline evidence into systematic-review language
+- do not let planning state act as evidence
+- do not generalize across scope units without explaining the support
+- do not create parallel current reports for the same domain, artifact type, and scope unless the audience or section boundary is explicit
+
 ## Domain Adapter Skills
 
 Each domain pack should provide short adapter instructions for the core skills.

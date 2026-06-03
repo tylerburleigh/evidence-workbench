@@ -60,6 +60,79 @@
     "evidence_review_ids": { "type": "array", "items": { "type": "string" } },
     "review_comment_ids": { "type": "array", "items": { "type": "string" } },
     "publication_event_ids": { "type": "array", "items": { "type": "string" } },
-    "next_actions": { "type": "array", "items": { "type": "string" } }
+    "next_actions": { "type": "array", "items": { "type": "string" } },
+    "source_access_follow_up_actions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/source_access_follow_up_action" }
+    },
+    "extraction_follow_up_actions": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/extraction_follow_up_action" }
+    }
+  },
+  "$defs": {
+    "extraction_follow_up_action": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "action_id",
+        "action_type",
+        "status",
+        "priority",
+        "target_record_type",
+        "target_record_id",
+        "source_ids",
+        "reason",
+        "recommended_action"
+      ],
+      "properties": {
+        "action_id": { "type": "string", "minLength": 1 },
+        "action_type": { "const": "numeric_results_extraction" },
+        "status": { "enum": ["open", "addressed", "closed"] },
+        "priority": { "enum": ["low", "medium", "high"] },
+        "target_record_type": { "enum": ["artifact", "finding"] },
+        "target_record_id": { "type": "string", "minLength": 1 },
+        "source_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "taxonomy_node_ids": { "type": "array", "items": { "type": "string" } },
+        "metric_fields_present": { "type": "array", "items": { "type": "string" } },
+        "artifact_id": { "type": "string" },
+        "finding_id": { "type": "string" },
+        "reason": { "type": "string", "minLength": 1 },
+        "recommended_action": { "type": "string", "minLength": 1 }
+      }
+    },
+    "source_access_follow_up_action": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "action_id",
+        "action_type",
+        "status",
+        "priority",
+        "target_record_type",
+        "target_record_id",
+        "source_ids",
+        "reason",
+        "recommended_action"
+      ],
+      "properties": {
+        "action_id": { "type": "string", "minLength": 1 },
+        "action_type": { "const": "source_access_resolution" },
+        "status": { "enum": ["open", "addressed", "closed"] },
+        "priority": { "enum": ["low", "medium", "high"] },
+        "target_record_type": { "enum": ["source", "finding", "claim"] },
+        "target_record_id": { "type": "string", "minLength": 1 },
+        "source_ids": { "type": "array", "items": { "type": "string", "minLength": 1 } },
+        "taxonomy_node_ids": { "type": "array", "items": { "type": "string" } },
+        "access_status": { "type": "string" },
+        "access_depth": { "type": "string" },
+        "locator_depth": { "type": "string" },
+        "required_access_depth": { "type": "string" },
+        "finding_id": { "type": "string" },
+        "artifact_id": { "type": "string" },
+        "reason": { "type": "string", "minLength": 1 },
+        "recommended_action": { "type": "string", "minLength": 1 }
+      }
+    }
   }
 }

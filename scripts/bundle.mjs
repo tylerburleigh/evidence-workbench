@@ -2,8 +2,10 @@
 
 import { parseArgs } from "node:util";
 import {
+  commandAudit,
   commandApprove,
   commandComment,
+  commandPrecommit,
   commandPublish,
   commandReject,
   commandRequestChanges,
@@ -16,12 +18,14 @@ function usage(exitCode = 0) {
   const message = `
 Usage:
   npm run research:bundle -- status --bundle <bundle-id>
+  npm run research:bundle -- audit --bundle <bundle-id>
   npm run research:bundle -- validate --bundle <bundle-id>
   npm run research:bundle -- comment --bundle <bundle-id> --comment <text>
   npm run research:bundle -- request-changes --bundle <bundle-id> [--reason <text>]
   npm run research:bundle -- reject --bundle <bundle-id> [--reason <text>]
   npm run research:bundle -- approve --bundle <bundle-id>
   npm run research:bundle -- publish --bundle <bundle-id>
+  npm run research:bundle -- precommit --bundle <bundle-id>
   npm run research:bundle -- smoke --bundle <bundle-id> [--base-url <url>]
 
 Notes:
@@ -58,6 +62,9 @@ async function main() {
     case "status":
       await commandStatus(values);
       break;
+    case "audit":
+      await commandAudit(values);
+      break;
     case "validate":
       await commandValidate(values);
       break;
@@ -75,6 +82,9 @@ async function main() {
       break;
     case "publish":
       await commandPublish(values);
+      break;
+    case "precommit":
+      await commandPrecommit(values);
       break;
     case "smoke":
       await commandSmoke(values);

@@ -1,7 +1,14 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Badge, EmptyState, PageHeader, Section, SupportMap } from "../../components.js";
-import { getClaimById, getFindingById, getNodeById, getSourceById, getWorkbenchData } from "../../../lib/public-data.js";
+import { Badge, EmptyState, PageHeader, Section, SourceAccessBadge, SupportMap } from "../../components.js";
+import {
+  getApplicabilityFacetEntries,
+  getClaimById,
+  getFindingById,
+  getNodeById,
+  getSourceById,
+  getWorkbenchData
+} from "../../../lib/public-data.js";
 
 export default async function ClaimDetailPage({ params }) {
   const { claimId } = await params;
@@ -14,6 +21,7 @@ export default async function ClaimDetailPage({ params }) {
   const subject = claim.subject_type === "taxonomy_node" ? getNodeById(data, claim.subject_id) : undefined;
   const findings = (claim.supporting_finding_ids ?? []).map((id) => getFindingById(data, id)).filter(Boolean);
   const sources = (claim.supporting_source_ids ?? []).map((id) => getSourceById(data, id)).filter(Boolean);
+  const applicabilityFacets = getApplicabilityFacetEntries(data, claim, "claim");
 
   return (
     <main className="page">
@@ -62,10 +70,37 @@ export default async function ClaimDetailPage({ params }) {
                 <th>Limitations</th>
                 <td>{claim.limitations?.join("; ") || "Unspecified"}</td>
               </tr>
+              {applicabilityFacets.map((facet) => (
+                <tr key={facet.id}>
+                  <th>{facet.label}</th>
+                  <td>{facet.value}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </Section>
       </div>
+
+      {claim.applicability ? (
+        <Section title="Applicability">
+          <table className="detail-table">
+            <tbody>
+              <tr>
+                <th>Applies When</th>
+                <td>{claim.applicability.applies_when?.join("; ") || "Unspecified"}</td>
+              </tr>
+              <tr>
+                <th>Does Not Apply When</th>
+                <td>{claim.applicability.does_not_apply_when?.join("; ") || "Unspecified"}</td>
+              </tr>
+              <tr>
+                <th>Unreviewed Contexts</th>
+                <td>{claim.applicability.unknown_or_unreviewed_contexts?.join("; ") || "Unspecified"}</td>
+              </tr>
+            </tbody>
+          </table>
+        </Section>
+      ) : null}
 
       <Section title="Findings">
         {findings.length ? (
@@ -94,7 +129,10 @@ export default async function ClaimDetailPage({ params }) {
                   <strong>{source.name}</strong>
                   <span className="row-kicker">{source.summary}</span>
                 </span>
-                <Badge>{source.source_type}</Badge>
+                <span className="meta-row">
+                  <Badge>{source.source_type}</Badge>
+                  <SourceAccessBadge source={source} />
+                </span>
               </Link>
             ))}
           </div>

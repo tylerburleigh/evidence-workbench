@@ -32,6 +32,30 @@
     "population_or_context": { "type": "string" },
     "time_horizon": { "type": "string" },
     "quantitative_note": { "type": "string" },
-    "caveats": { "type": "array", "items": { "type": "string" } }
+    "source_locator": {
+      "anyOf": [
+        { "type": "string", "minLength": 1 },
+        {
+          "type": "object",
+          "additionalProperties": true,
+          "required": ["verification_status"],
+          "properties": {
+            "section": { "type": "string" },
+            "page": { "type": ["string", "integer"] },
+            "table": { "type": "string" },
+            "appendix": { "type": "string" },
+            "url": { "type": "string" },
+            "quote_or_paraphrase_note": { "type": "string" },
+            "verification_status": {
+              "enum": ["unverified", "located", "verified"]
+            }
+          }
+        }
+      ]
+    },
+    "caveats": { "type": "array", "items": { "type": "string" } },
+    "numeric_results_extracted": {
+      "anyOf": [{ "type": "boolean" }, { "const": "not_applicable" }]
+    }
   }
 }

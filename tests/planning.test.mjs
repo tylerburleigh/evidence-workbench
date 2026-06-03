@@ -10,6 +10,7 @@ import { fileURLToPath } from "node:url";
 const execFileAsync = promisify(execFile);
 const repoRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const planningModulePath = path.join(repoRoot, "scripts/lib/planning.mjs");
+const planningScriptPath = path.join(repoRoot, "scripts/research-planning.mjs");
 
 async function createWorkspace() {
   const workspace = await mkdtemp(path.join(tmpdir(), "evidence-workbench-planning-"));
@@ -135,5 +136,42 @@ test("planning moves stale baseline coverage into the surveillance queue", async
     assert.equal(queueItem.freshness_status, "stale");
     assert.equal(queueItem.days_since_last_check, 151);
     assert.ok(queueItem.rationale.includes("Baseline coverage is stale"));
+  });
+});
+
+test("planning CLI exposes normalized queue paths and bootstrap next state", async () => {
+  await withWorkspace(async (workspace) => {
+    await runPlanningSync(workspace, { WORKBENCH_DOMAIN: "sample-research" });
+
+    const { stdout: statusStdout } = await execFileAsync(process.execPath, [planningScriptPath, "status"], {
+      cwd: workspace,
+      env: {
+        ...process.env,
+        WORKBENCH_DOMAIN: "sample-research"
+      }
+    });
+    const status = JSON.parse(statusStdout);
+
+    assert.equal(status.domain_id, "sample-research");
+    assert.equal(status.domain_matches, true);
+    assert.ok(Array.isArray(status.queues.bootstrap));
+    assert.ok(Array.isArray(status.queues.surveillance));
+    assert.equal(status.queue_counts.bootstrap, status.queues.bootstrap.length);
+
+    const { stdout: nextStdout } = await execFileAsync(process.execPath, [planningScriptPath, "next", "--mode", "bootstrap"], {
+      cwd: workspace,
+      env: {
+        ...process.env,
+        WORKBENCH_DOMAIN: "sample-research"
+      }
+    });
+    const next = JSON.parse(nextStdout);
+
+    assert.equal(next.mode, "bootstrap");
+    if (status.next.bootstrap) {
+      assert.equal(next.item.taxonomy_node_id, status.next.bootstrap.taxonomy_node_id);
+    } else {
+      assert.equal(next.item, null);
+    }
   });
 });

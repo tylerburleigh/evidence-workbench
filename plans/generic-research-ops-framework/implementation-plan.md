@@ -15,6 +15,7 @@ Completed:
 - Downstream domain-pack rehearsal: `software-supply-chain` now has published source-backed baselines for all three configured controls.
 - Literature-review domain scaffold: `synthetic-student-responses` now has review-question taxonomy, extraction fields, review lanes, evidence ladder, skill adapters, and a config-driven synthesis matrix report surface.
 - Operator guide: documented the concrete downstream domain-pack setup, bootstrap, evidence review, publish, verification, and commit workflow.
+- Research tooling improvement pass: added a search-pass CLI, bundle readiness summaries, structured source locators, and typed support-map evidence roles.
 
 In progress / partly complete:
 
