@@ -186,25 +186,27 @@ npm run branch:audit -- --base main --head HEAD
 
 ## Documentation Map
 
-The detailed framework documentation lives under `plans/generic-research-ops-framework/`:
+The durable framework documentation lives under `docs/`:
 
-- [Framework overview](plans/generic-research-ops-framework/README.md)
-- [Architecture](plans/generic-research-ops-framework/architecture.md)
-- [Data model](plans/generic-research-ops-framework/data-model.md)
-- [Domain pack contract](plans/generic-research-ops-framework/domain-pack-contract.md)
-- [Workflow spec](plans/generic-research-ops-framework/workflow-spec.md)
-- [Agent skill model](plans/generic-research-ops-framework/agent-skill-model.md)
-- [Operator guide](plans/generic-research-ops-framework/operator-guide.md)
-- [Branching strategy](plans/generic-research-ops-framework/branching-strategy.md)
-- [Implementation plan](plans/generic-research-ops-framework/implementation-plan.md)
+- [Framework overview](docs/overview.md)
+- [Architecture](docs/architecture.md)
+- [Data model](docs/data-model.md)
+- [Domain packs](docs/domain-packs.md)
+- [Workflows](docs/workflows.md)
+- [Agent skills](docs/agent-skills.md)
+- [Operator guide](docs/operator-guide.md)
+- [Branching strategy](docs/branching-strategy.md)
+- [Synthetic student responses case study](docs/case-studies/synthetic-student-responses.md)
+
+Planning and historical build notes remain under `plans/`, including the [implementation plan](plans/generic-research-ops-framework/implementation-plan.md) and [UI spec](plans/generic-research-ops-framework/ui-spec.md).
 
 ## Repository Layout
 
 ```text
 data/                         Published and staged evidence records
+docs/                         Durable framework and operator documentation
 domain-packs/                 Domain taxonomies, review lanes, copy, and skill adapters
-plans/generic-research-ops-framework/
-                              Framework design and operating docs
+plans/                        Planning notes and historical build specs
 research/                     Research sessions, planning state, and syntheses
 schemas/                      JSON Schema contracts
 scripts/                      Validation, planning, search, bundle, and audit CLIs
@@ -222,4 +224,4 @@ Use branches to keep platform improvements separate from research output:
 - `core/<feature>`: short-lived branches for reusable workbench improvements
 - `research/<domain-or-question>`: long-lived branches for domain corpora, syntheses, sessions, and generated planning state
 
-When a research branch produces a reusable improvement, harvest it into a `core/*` branch from `main`, validate it, merge it back to `main`, then merge `main` back into the research branch. See the [branching strategy](plans/generic-research-ops-framework/branching-strategy.md) for the full process.
+When a research branch produces a reusable improvement, harvest it into a `core/*` branch from `main`, validate it, merge it back to `main`, then merge `main` back into the research branch. See the [branching strategy](docs/branching-strategy.md) for the full process.
