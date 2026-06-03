@@ -1,7 +1,9 @@
 import path from "node:path";
 import {
   compareDateTimesDescending,
+  fileExists,
   loadActiveDomainPack,
+  readJson,
   readJsonCollection,
   writeJson,
   workspaceRoot
@@ -161,6 +163,63 @@ function getSurveillanceRationale(row) {
 
   return "A public baseline exists, so this scope unit should be monitored for material changes.";
 }
+
+function getNextQueueItem(status, mode) {
+  if (mode === "bootstrap") {
+    return status.queues.bootstrap[0] ?? null;
+  }
+
+  if (mode === "surveillance") {
+    return status.queues.surveillance[0] ?? null;
+  }
+
+  return status.queues.bootstrap[0] ?? status.queues.surveillance[0] ?? null;
+}
+
+export async function readPlanningStatus() {
+  const domainPack = await loadActiveDomainPack();
+  const coveragePath = path.join(workspaceRoot, "research", "state", "coverage-status.v1.json");
+  const priorityQueuePath = path.join(workspaceRoot, "research", "backlog", "priority-queue.v1.json");
+  const coverage = (await fileExists(coveragePath)) ? await readJson(coveragePath) : undefined;
+  const priorityQueue = (await fileExists(priorityQueuePath)) ? await readJson(priorityQueuePath) : undefined;
+  const bootstrapQueue = priorityQueue?.bootstrap_queue ?? [];
+  const surveillanceQueue = priorityQueue?.surveillance_queue ?? [];
+  const status = {
+    domain_id: domainPack.domain.id,
+    coverage_path: "research/state/coverage-status.v1.json",
+    priority_queue_path: "research/backlog/priority-queue.v1.json",
+    coverage_domain_id: coverage?.domain_id,
+    priority_queue_domain_id: priorityQueue?.domain_id,
+    domain_matches:
+      coverage?.domain_id === domainPack.domain.id &&
+      priorityQueue?.domain_id === domainPack.domain.id,
+    updated_at: priorityQueue?.updated_at ?? coverage?.updated_at,
+    selection_policy: priorityQueue?.selection_policy ?? coverage?.selection_policy,
+    queue_counts: {
+      bootstrap: bootstrapQueue.length,
+      surveillance: surveillanceQueue.length
+    },
+    queues: {
+      bootstrap: bootstrapQueue,
+      surveillance: surveillanceQueue
+    },
+    next: {
+      bootstrap: getNextQueueItem({ queues: { bootstrap: bootstrapQueue, surveillance: surveillanceQueue } }, "bootstrap"),
+      surveillance: getNextQueueItem({ queues: { bootstrap: bootstrapQueue, surveillance: surveillanceQueue } }, "surveillance"),
+      recommended: getNextQueueItem({ queues: { bootstrap: bootstrapQueue, surveillance: surveillanceQueue } })
+    }
+  };
+
+  if (!coverage || !priorityQueue) {
+    status.warning = "Planning files are missing; run sync before relying on queue status.";
+  } else if (!status.domain_matches) {
+    status.warning = "Planning files were generated for a different active domain; run sync for the current domain.";
+  }
+
+  return status;
+}
+
+export { getNextQueueItem };
 
 function compareSurveillancePriority(left, right) {
   const statusRank = { unknown: 0, stale: 1 };

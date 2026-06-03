@@ -2,6 +2,9 @@ import { Archive, Download, FileText, FlaskConical, Layers, SearchCheck } from "
 import Link from "next/link";
 import { Badge, EmptyState, Metric, PageHeader, Section } from "../components.js";
 import {
+  getScreenedAccessLimitedCandidates,
+  getReportArtifacts,
+  getSourceAccessSummary,
   getSynthesisMatrixConfig,
   getSynthesisMatrixRows,
   getSearchProtocols,
@@ -13,6 +16,9 @@ export default async function ReportsPage() {
   const config = getSynthesisMatrixConfig(data);
   const rows = getSynthesisMatrixRows(data);
   const protocols = getSearchProtocols(data);
+  const accessSummary = getSourceAccessSummary(data);
+  const screenedAccessLimitedCandidates = getScreenedAccessLimitedCandidates(data);
+  const reportArtifacts = getReportArtifacts(data);
 
   return (
     <main className="page">
@@ -44,8 +50,25 @@ export default async function ReportsPage() {
         <Metric icon={FileText} label="Artifacts" value={data.collections.artifacts.length} />
         <Metric icon={FlaskConical} label="Findings" value={data.collections.findings.length} />
         <Metric icon={Layers} label="Claims" value={data.collections.claims.length} />
+        <Metric icon={FileText} label="Reports" value={reportArtifacts.length} />
         <Metric icon={SearchCheck} label="Protocols" value={protocols.length} />
       </div>
+
+      <Section title="Source Access Audit" note={`${accessSummary.total_sources} linked source(s)`}>
+        <div className="metrics">
+          <Metric icon={Archive} label="Full text" value={accessSummary.categories.full_text} />
+          <Metric icon={Archive} label="Abstract only" value={accessSummary.categories.abstract_only} />
+          <Metric icon={Archive} label="No full text" value={accessSummary.categories.no_full_text} />
+          <Metric icon={Archive} label="Metadata only" value={accessSummary.categories.metadata_only} />
+          <Metric icon={Archive} label="Not checked" value={accessSummary.categories.not_checked} />
+          <Metric
+            icon={FlaskConical}
+            label="Direct full text"
+            value={`${accessSummary.direct_finding_sources.full_text}/${accessSummary.direct_finding_sources.total}`}
+          />
+          <Metric icon={SearchCheck} label="Screened no full text" value={accessSummary.screened_access_limited} />
+        </div>
+      </Section>
 
       <Section title="Synthesis Matrix" note={config ? `${rows.length} row(s)` : "Not configured"}>
         {!config ? (
@@ -83,6 +106,28 @@ export default async function ReportsPage() {
           <EmptyState>
             {config.empty_state ?? data.domainPack.publicCopy.empty_states?.no_synthesis_rows ?? "No report rows yet."}
           </EmptyState>
+        )}
+      </Section>
+
+      <Section title="Report Artifacts" note={`${reportArtifacts.length} indexed`}>
+        {reportArtifacts.length ? (
+          <div className="list">
+            {reportArtifacts.map((report) => (
+              <Link className="row-link" href={`/reports/${report.id}`} key={report.id}>
+                <span>
+                  <strong>{report.name}</strong>
+                  <span className="row-kicker">{report.summary}</span>
+                </span>
+                <span className="meta-row">
+                  <Badge>{report.artifact_type}</Badge>
+                  <Badge>{report.created_at}</Badge>
+                  <Badge>{report.citation_audit?.status ?? "not_checked"}</Badge>
+                </span>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <EmptyState>No report artifacts are indexed for this domain.</EmptyState>
         )}
       </Section>
 
@@ -142,6 +187,32 @@ export default async function ReportsPage() {
           </div>
         ) : (
           <EmptyState>No search protocol records have been published for this domain.</EmptyState>
+        )}
+      </Section>
+
+      <Section title="Access-Limited Screened Sources" note={`${screenedAccessLimitedCandidates.length} record(s)`}>
+        {screenedAccessLimitedCandidates.length ? (
+          <div className="list">
+            {screenedAccessLimitedCandidates.map((decision) => (
+              <div className="row" key={`${decision.protocol_id}-${decision.candidate_id}`}>
+                <span>
+                  <strong>{decision.title}</strong>
+                  <span className="row-kicker">{decision.reason}</span>
+                </span>
+                <span className="meta-row">
+                  <Badge tone="danger">No full text</Badge>
+                  <Badge>{decision.protocol_name}</Badge>
+                  {decision.url ? (
+                    <a className="text-link" href={decision.url}>
+                      Source
+                    </a>
+                  ) : null}
+                </span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <EmptyState>No access-limited screened sources.</EmptyState>
         )}
       </Section>
     </main>

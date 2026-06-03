@@ -472,6 +472,69 @@ h3 {
   text-decoration: underline;
 }
 
+.report-prose {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  line-height: 1.6;
+  padding: 18px;
+}
+
+.report-prose h1,
+.report-prose h2,
+.report-prose h3,
+.report-prose h4 {
+  margin-top: 22px;
+}
+
+.report-prose h1:first-child,
+.report-prose h2:first-child,
+.report-prose h3:first-child,
+.report-prose h4:first-child {
+  margin-top: 0;
+}
+
+.report-prose h1 {
+  font-size: 25px;
+}
+
+.report-prose h2 {
+  font-size: 19px;
+}
+
+.report-prose h3,
+.report-prose h4 {
+  font-size: 15px;
+}
+
+.report-prose p,
+.report-prose ul,
+.report-prose ol,
+.report-prose pre {
+  margin: 10px 0 0;
+}
+
+.report-prose li + li {
+  margin-top: 5px;
+}
+
+.report-prose pre {
+  background: var(--panel-subtle);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow-x: auto;
+  padding: 12px;
+}
+
+.report-table-scroll {
+  margin-top: 12px;
+}
+
+.report-table {
+  min-width: 720px;
+}
+
 .path-value {
   color: var(--text);
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;

@@ -16,6 +16,9 @@
     "population_or_context": { "type": "string" },
     "sample_size": { "type": ["integer", "string"] },
     "methods": { "type": "string" },
-    "endpoint_categories": { "type": "array", "items": { "type": "string" } }
+    "endpoint_categories": { "type": "array", "items": { "type": "string" } },
+    "numeric_results_extracted": {
+      "anyOf": [{ "type": "boolean" }, { "const": "not_applicable" }]
+    }
   }
 }

@@ -9,8 +9,11 @@
     "start": "next start",
     "validate": "node scripts/validate-records.mjs",
     "sync:research-planning": "node scripts/sync-research-planning.mjs",
+    "research:planning": "node scripts/research-planning.mjs",
     "research:bundle": "node scripts/bundle.mjs",
+    "research:search": "node scripts/search-pass.mjs",
     "research:review-evidence": "node scripts/review-evidence.mjs",
+    "branch:audit": "node scripts/branch-audit.mjs",
     "smoke:public": "node scripts/smoke-public-routes.mjs",
     "smoke:routes": "node scripts/smoke-public-routes.mjs",
     "test": "node --test"

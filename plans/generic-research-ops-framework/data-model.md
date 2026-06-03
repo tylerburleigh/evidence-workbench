@@ -34,6 +34,7 @@ Suggested fields:
 - `evidence_ladder_id`
 - `default_review_lanes`
 - `public_claim_language`
+- `applicability_facets`
 
 ### Taxonomy Node
 
@@ -97,6 +98,7 @@ Suggested fields:
 - `taxonomy_node_ids`
 - `dates`
 - domain-specific extraction fields
+- configured applicability facet fields when the domain uses context-of-use boundaries
 
 ### Finding
 
@@ -138,11 +140,23 @@ Suggested fields:
 - `best_current_signals`
 - `interpretive_note`
 - `interpretive_note`
+- `applicability`
 - `limitations`
 - `supporting_finding_ids`
 - `supporting_source_ids`
 - `supporting_evidence`
 - `last_updated`
+- configured applicability facet fields when the domain uses context-of-use boundaries
+
+`applicability` can describe where a claim should and should not travel:
+
+```json
+{
+  "applies_when": ["The evidence is used in the same setting and workflow role."],
+  "does_not_apply_when": ["The claim is transferred to higher-consequence use without direct evidence."],
+  "unknown_or_unreviewed_contexts": ["Populations or settings not represented in the source set."]
+}
+```
 
 `supporting_evidence[]` should map each rationale to concrete findings and limitations:
 

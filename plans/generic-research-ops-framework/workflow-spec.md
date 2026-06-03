@@ -127,6 +127,29 @@ The sync should compute:
 - bootstrap queue
 - surveillance queue
 
+## Workflow 6: Report Integration
+
+Use after a bundle is published, or after a sidecar synthesis answers a bounded question that should affect a visible report.
+
+Steps:
+
+1. Identify current `report_artifact` records for the affected domain, artifact type, and scope.
+2. Decide the disposition:
+   - update the current report in place
+   - create a new report version and mark the replaced artifact `superseded` or `archived`
+   - keep the new synthesis as an unindexed or draft sidecar
+   - intentionally keep a separate current report because its audience, section, or scope differs
+3. Merge newly published sources, findings, claims, reviews, and publication events into the target report metadata.
+4. Update the Markdown report prose or traceability sections so the visible synthesis reflects the published graph.
+5. Run validation and citation-audit checks when report indexes changed.
+
+Rules:
+
+- There should be at most one accidental current report for the same domain, artifact type, and scope.
+- Paper-facing `literature_review` artifacts are canonical by default; additive synthesis should revise or supersede them rather than create parallel current reviews.
+- Sidecars based on staged or submitted records must clearly state their unpublished status and define an integration trigger.
+- Report integration does not publish new evidence claims. If the report needs unsupported evidence, create or revise a candidate bundle first.
+
 ## Candidate Bundle Validation
 
 The validator should check:

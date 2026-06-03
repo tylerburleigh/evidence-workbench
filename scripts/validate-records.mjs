@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import fs from "node:fs";
 import path from "node:path";
 import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
@@ -21,6 +22,7 @@ const schemaByRecordType = {
   evidence_review: "core/evidence-review.schema.json",
   finding: "core/finding.schema.json",
   publication_event: "core/publication-event.schema.json",
+  report_artifact: "core/report-artifact.schema.json",
   research_session: "core/research-session.schema.json",
   review_comment: "core/review-comment.schema.json",
   search_protocol: "core/search-protocol.schema.json",
@@ -50,6 +52,7 @@ const recordCollections = {
   finding: "findings",
   claim: "claims",
   activity_item: "activity-items",
+  report_artifact: "report-artifacts",
   search_protocol: "search-protocols"
 };
 
@@ -112,6 +115,14 @@ function hasRequiredValue(value) {
   return value !== undefined && value !== null && !(typeof value === "string" && value.trim().length === 0);
 }
 
+function valueList(value) {
+  if (Array.isArray(value)) {
+    return value;
+  }
+
+  return value === undefined || value === null || value === "" ? [] : [value];
+}
+
 function getExpectedTargetPath(recordType, recordId) {
   const collection = recordCollections[recordType];
   return collection && recordId ? `data/${collection}/${recordId}.json` : undefined;
@@ -153,6 +164,7 @@ function validateDomainPackContracts(entries, issues) {
   const nodeIdsByDomain = new Map();
   const nodeDomainById = new Map();
   const requiredExtractionFieldsByDomain = new Map();
+  const applicabilityFacetsByDomain = new Map();
 
   for (const { relativePath, value } of entries) {
     const directory = getDomainPackDirectory(relativePath);
@@ -184,6 +196,30 @@ function validateDomainPackContracts(entries, issues) {
 
     if (fileName === "review-lanes.v1.json") {
       reviewLaneIdsByDomain.set(directory, new Set((value.lanes ?? []).map((lane) => lane.id)));
+    }
+
+    if (fileName === "domain.json") {
+      const facets = [];
+      for (const facet of value.applicability_facets ?? []) {
+        const appliesTo = Array.isArray(facet.applies_to) ? facet.applies_to : [];
+        if (appliesTo.length === 0) {
+          issues.push(`${relativePath}: applicability facet ${facet.id} must declare applies_to[].`);
+        }
+
+        for (const recordType of appliesTo) {
+          if (!extractionRecordTypes.has(recordType)) {
+            issues.push(`${relativePath}: applicability facet ${facet.id} applies_to unsupported record type: ${recordType}.`);
+          }
+        }
+
+        facets.push({
+          id: facet.id,
+          label: facet.label ?? facet.id,
+          appliesTo: new Set(appliesTo),
+          allowedValues: new Set((facet.values ?? []).map((option) => option.id))
+        });
+      }
+      applicabilityFacetsByDomain.set(directory, facets);
     }
 
     if (fileName === "extraction-schema.v1.json" && value.validation?.enforce_required_fields) {
@@ -241,7 +277,14 @@ function validateDomainPackContracts(entries, issues) {
     }
   }
 
-  return { domainIds, reviewLaneIdsByDomain, nodeIdsByDomain, nodeDomainById, requiredExtractionFieldsByDomain };
+  return {
+    domainIds,
+    reviewLaneIdsByDomain,
+    nodeIdsByDomain,
+    nodeDomainById,
+    requiredExtractionFieldsByDomain,
+    applicabilityFacetsByDomain
+  };
 }
 
 function buildRecordIndexes(entries) {
@@ -271,6 +314,39 @@ function buildRecordIndexes(entries) {
 
 function hasRecord(recordByTypeAndId, recordType, recordId) {
   return nonEmptyString(recordId) && Boolean(recordByTypeAndId.get(recordType)?.has(recordId));
+}
+
+function validateExtractionFollowUpActions(actions, context, issues, relativePath) {
+  for (const [index, action] of (actions ?? []).entries()) {
+    const label = `extraction_follow_up_actions[${index}]`;
+    if (action.target_record_type && action.target_record_id) {
+      if (!hasRecord(context.recordByTypeAndId, action.target_record_type, action.target_record_id)) {
+        issues.push(
+          `${relativePath}: ${label} references missing target ${action.target_record_type}:${action.target_record_id}.`
+        );
+      }
+    }
+
+    for (const sourceId of action.source_ids ?? []) {
+      if (!hasRecord(context.recordByTypeAndId, "source", sourceId)) {
+        issues.push(`${relativePath}: ${label} references missing source_id: ${sourceId}.`);
+      }
+    }
+
+    if (action.artifact_id && !hasRecord(context.recordByTypeAndId, "artifact", action.artifact_id)) {
+      issues.push(`${relativePath}: ${label} references missing artifact_id: ${action.artifact_id}.`);
+    }
+
+    if (action.finding_id && !hasRecord(context.recordByTypeAndId, "finding", action.finding_id)) {
+      issues.push(`${relativePath}: ${label} references missing finding_id: ${action.finding_id}.`);
+    }
+
+    for (const nodeId of action.taxonomy_node_ids ?? []) {
+      if (!context.nodeDomainById.has(nodeId)) {
+        issues.push(`${relativePath}: ${label} references unknown taxonomy_node_id: ${nodeId}.`);
+      }
+    }
+  }
 }
 
 function validateCandidateBundle(entry, context, issues) {
@@ -330,6 +406,8 @@ function validateCandidateBundle(entry, context, issues) {
       issues.push(`${relativePath}: change ${change.change_id} staged record id must be ${change.target_record_id}.`);
     }
   }
+
+  validateExtractionFollowUpActions(bundle.extraction_follow_up_actions, context, issues, relativePath);
 }
 
 function validateArtifact(entry, context, issues) {
@@ -446,6 +524,33 @@ function validateRequiredExtractionFields(entry, context, issues) {
       }
     }
   }
+
+  validateApplicabilityFacets(entry, context, issues);
+}
+
+function validateApplicabilityFacets(entry, context, issues) {
+  const { value: record, relativePath } = entry;
+  const recordType = record.record_type;
+  if (!extractionRecordTypes.has(recordType)) {
+    return;
+  }
+
+  for (const domainId of getRecordDomainIds(record, context)) {
+    const facets = context.applicabilityFacetsByDomain.get(domainId) ?? [];
+    for (const facet of facets) {
+      if (!facet.appliesTo.has(recordType) || facet.allowedValues.size === 0) {
+        continue;
+      }
+
+      for (const value of valueList(record[facet.id])) {
+        if (!facet.allowedValues.has(value)) {
+          issues.push(
+            `${relativePath}: ${recordType} for ${domainId} has unsupported applicability facet ${facet.id} value: ${value}.`
+          );
+        }
+      }
+    }
+  }
 }
 
 function validateSearchProtocol(entry, context, issues) {
@@ -472,6 +577,102 @@ function validateSearchProtocol(entry, context, issues) {
   }
 
   validateRequiredExtractionFields(entry, context, issues);
+}
+
+function validateReportArtifact(entry, context, issues) {
+  const { value: report, relativePath } = entry;
+  addDomainNodeChecks({
+    issues,
+    relativePath,
+    domainId: report.domain_id,
+    nodeIds: report.scope_ids,
+    domainIds: context.domainIds,
+    nodeDomainById: context.nodeDomainById
+  });
+
+  if (!isPathUnder("research/syntheses", report.path) || !report.path.endsWith(".md")) {
+    issues.push(`${relativePath}: path must point to a Markdown file under research/syntheses/.`);
+    return;
+  }
+
+  const markdownPath = path.join(workspaceRoot, report.path);
+  if (!fs.existsSync(markdownPath)) {
+    issues.push(`${relativePath}: path does not exist: ${report.path}.`);
+    return;
+  }
+
+  const markdown = fs.readFileSync(markdownPath, "utf8");
+
+  for (const sourceId of report.source_ids ?? []) {
+    if (!hasRecord(context.recordByTypeAndId, "source", sourceId)) {
+      issues.push(`${relativePath}: references missing source_id: ${sourceId}.`);
+    } else if (!markdown.includes(sourceId)) {
+      issues.push(`${relativePath}: source_id is not traceable in Markdown content: ${sourceId}.`);
+    }
+  }
+
+  for (const claimId of report.claim_ids ?? []) {
+    if (!hasRecord(context.recordByTypeAndId, "claim", claimId)) {
+      issues.push(`${relativePath}: references missing claim_id: ${claimId}.`);
+    } else if (!markdown.includes(claimId)) {
+      issues.push(`${relativePath}: claim_id is not traceable in Markdown content: ${claimId}.`);
+    }
+  }
+
+  for (const findingId of report.finding_ids ?? []) {
+    if (!hasRecord(context.recordByTypeAndId, "finding", findingId)) {
+      issues.push(`${relativePath}: references missing finding_id: ${findingId}.`);
+    } else if (!markdown.includes(findingId)) {
+      issues.push(`${relativePath}: finding_id is not traceable in Markdown content: ${findingId}.`);
+    }
+  }
+
+  for (const eventId of report.publication_event_ids ?? []) {
+    if (!hasRecord(context.recordByTypeAndId, "publication_event", eventId)) {
+      issues.push(`${relativePath}: references missing publication_event_id: ${eventId}.`);
+    } else if (!markdown.includes(eventId)) {
+      issues.push(`${relativePath}: publication_event_id is not traceable in Markdown content: ${eventId}.`);
+    }
+  }
+}
+
+function normalizeScopeIds(scopeIds) {
+  return [...new Set(scopeIds ?? [])].sort((left, right) => left.localeCompare(right));
+}
+
+function getCurrentReportKey(report) {
+  const scopeKey = normalizeScopeIds(report.scope_ids).join(",");
+  return `${report.domain_id}|${report.artifact_type}|${scopeKey}`;
+}
+
+function formatCurrentReportKey(report) {
+  const scopeKey = normalizeScopeIds(report.scope_ids).join(", ");
+  return `${report.domain_id}/${report.artifact_type}/[${scopeKey}]`;
+}
+
+function validateCurrentReportArtifactUniqueness(entries, issues) {
+  const currentReportsByKey = new Map();
+
+  for (const entry of entries) {
+    const { value: report, relativePath } = entry;
+    if (
+      report?.record_type !== "report_artifact" ||
+      report.status !== "current" ||
+      !isPathUnder("data/report-artifacts", relativePath)
+    ) {
+      continue;
+    }
+
+    const key = getCurrentReportKey(report);
+    const existing = currentReportsByKey.get(key);
+    if (existing) {
+      issues.push(
+        `${relativePath}: duplicate current report_artifact for ${formatCurrentReportKey(report)}; already defined by ${existing.relativePath}.`
+      );
+    } else {
+      currentReportsByKey.set(key, entry);
+    }
+  }
 }
 
 function validateEvidenceReview(entry, context, issues) {
@@ -534,6 +735,8 @@ function validatePublicationEvent(entry, context, issues) {
       issues.push(`${relativePath}: published target is missing: ${target.record_type}:${target.record_id}.`);
     }
   }
+
+  validateExtractionFollowUpActions(event.extraction_follow_up_actions, context, issues, relativePath);
 }
 
 function validateCrossReferences(entries) {
@@ -568,10 +771,15 @@ function validateCrossReferences(entries) {
       case "search_protocol":
         validateSearchProtocol(entry, context, issues);
         break;
+      case "report_artifact":
+        validateReportArtifact(entry, context, issues);
+        break;
       default:
         break;
     }
   }
+
+  validateCurrentReportArtifactUniqueness(entries, issues);
 
   return issues;
 }

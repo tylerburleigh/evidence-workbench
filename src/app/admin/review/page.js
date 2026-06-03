@@ -46,6 +46,7 @@ export default async function AdminReviewPage() {
                   <span className="row-kicker">
                     {scopeNodes.map((node) => node.name).join(", ") || "Unscoped"} - {formatDate(record.submitted_at)}
                   </span>
+                  {report?.readiness?.message ? <span className="row-kicker">{report.readiness.message}</span> : null}
                 </span>
                 <span className="meta-row admin-row-meta">
                   <StatusBadge status={record.lifecycle_status} />

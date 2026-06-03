@@ -20,7 +20,8 @@ const collectionPaths = {
   reviewComments: "data/review-comments",
   publicationEvents: "data/publication-events",
   researchSessions: "research/sessions",
-  searchProtocols: "data/search-protocols"
+  searchProtocols: "data/search-protocols",
+  reportArtifacts: "data/report-artifacts"
 };
 
 function hasAnyTaxonomyNode(record, taxonomyNodeIds) {
@@ -35,7 +36,7 @@ function claimBelongsToDomain(claim, taxonomyNodeIds) {
   return hasAnyTaxonomyNode(claim, taxonomyNodeIds);
 }
 
-function collectDomainSourceIds({ artifacts, findings, claims, candidateBundles, searchProtocols }) {
+function collectDomainSourceIds({ artifacts, findings, claims, candidateBundles, searchProtocols, reportArtifacts }) {
   const sourceIds = new Set();
 
   for (const artifact of artifacts) {
@@ -75,6 +76,12 @@ function collectDomainSourceIds({ artifacts, findings, claims, candidateBundles,
       if (decision.source_id) {
         sourceIds.add(decision.source_id);
       }
+    }
+  }
+
+  for (const report of reportArtifacts) {
+    for (const sourceId of report.record.source_ids ?? []) {
+      sourceIds.add(sourceId);
     }
   }
 
@@ -132,6 +139,9 @@ export async function loadDomainWorkbenchData(options = {}) {
   const searchProtocols = collections.searchProtocols.filter(
     ({ record }) => record.domain_id === domainPack.domain.id || hasAnyTaxonomyNode(record, taxonomyNodeIds)
   );
+  const reportArtifacts = collections.reportArtifacts.filter(
+    ({ record }) => record.domain_id === domainPack.domain.id || (record.scope_ids ?? []).some((nodeId) => taxonomyNodeIds.has(nodeId))
+  );
   const candidateBundles = collections.candidateBundles.filter(
     ({ record }) => record.scope?.domain_id === domainPack.domain.id
   );
@@ -139,7 +149,7 @@ export async function loadDomainWorkbenchData(options = {}) {
     ({ record }) => record.scope?.domain_id === domainPack.domain.id
   );
 
-  const domainSourceIds = collectDomainSourceIds({ artifacts, findings, claims, candidateBundles, searchProtocols });
+  const domainSourceIds = collectDomainSourceIds({ artifacts, findings, claims, candidateBundles, searchProtocols, reportArtifacts });
   const sources = collections.sources.filter(({ record }) => domainSourceIds.has(record.id));
 
   const bundleIds = new Set(candidateBundles.map(({ record }) => record.id));
@@ -165,7 +175,8 @@ export async function loadDomainWorkbenchData(options = {}) {
       reviewComments,
       publicationEvents,
       researchSessions,
-      searchProtocols
+      searchProtocols,
+      reportArtifacts
     },
     bundleReports,
     planning

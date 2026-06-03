@@ -168,6 +168,7 @@ research/
   state/
   backlog/
   drafts/
+  syntheses/
 
 scripts/
   bundle.mjs

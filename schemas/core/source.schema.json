@@ -18,6 +18,39 @@
     "pmid": { "type": "string" },
     "registry_ids": { "type": "array", "items": { "type": "string" } },
     "urls": { "type": "array", "items": { "type": "string" } },
-    "summary": { "type": "string" }
+    "summary": { "type": "string" },
+    "access_status": {
+      "enum": [
+        "full_text_verified",
+        "full_text_available",
+        "abstract_only_paywalled",
+        "abstract_only_available",
+        "metadata_only",
+        "not_yet_checked",
+        "unavailable"
+      ]
+    },
+    "access_depth": {
+      "enum": [
+        "full_text",
+        "abstract_only",
+        "metadata_only",
+        "not_checked",
+        "unavailable"
+      ]
+    },
+    "access_attempts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "attempted_at": { "type": "string" },
+          "url": { "type": "string" },
+          "result": { "type": "string", "minLength": 1 },
+          "notes": { "type": "string" }
+        }
+      }
+    }
   }
 }

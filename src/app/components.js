@@ -8,7 +8,7 @@ import {
   Link as LinkIcon
 } from "lucide-react";
 import Link from "next/link";
-import { statusLabel } from "../lib/public-data.js";
+import { getSourceAccessInfo, statusLabel } from "../lib/public-data.js";
 
 export function Badge({ children, tone = "neutral" }) {
   const className = tone === "neutral" ? "badge" : `badge ${tone}`;
@@ -28,6 +28,11 @@ export function StatusBadge({ status }) {
             : "neutral";
 
   return <Badge tone={tone}>{statusLabel(status)}</Badge>;
+}
+
+export function SourceAccessBadge({ source }) {
+  const access = getSourceAccessInfo(source);
+  return <Badge tone={access.tone}>{access.label}</Badge>;
 }
 
 export function EmptyState({ children }) {

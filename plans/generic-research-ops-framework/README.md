@@ -12,6 +12,7 @@ domain taxonomy
   -> evidence review gates
   -> editorial approval
   -> published evidence browser
+  -> canonical report integration
   -> surveillance queue
 ```
 
@@ -32,10 +33,11 @@ The framework should support multiple domain packs, but the first implementation
 - [architecture.md](architecture.md): system layers, repo layout, and module boundaries
 - [data-model.md](data-model.md): core records and relationships
 - [domain-pack-contract.md](domain-pack-contract.md): how a new research domain customizes the framework
-- [workflow-spec.md](workflow-spec.md): bootstrap, surveillance, evidence review, and publish workflows
+- [workflow-spec.md](workflow-spec.md): bootstrap, surveillance, evidence review, publish, planning sync, and report-integration workflows
 - [agent-skill-model.md](agent-skill-model.md): reusable agent skills and domain-specific adapters
 - [ui-spec.md](ui-spec.md): public and admin app surfaces
 - [operator-guide.md](operator-guide.md): concrete downstream domain-pack setup, publish, verify, and commit workflow
+- [branching-strategy.md](branching-strategy.md): how to keep reusable platform changes separate from domain-specific research branches
 - [implementation-plan.md](implementation-plan.md): pragmatic build phases and acceptance criteria
 
 ## What To Preserve From This Repo
@@ -48,6 +50,7 @@ The reference implementation has several design choices worth carrying forward:
 - Candidate bundles are the reviewable unit.
 - Evidence reviews are structured records, not prose-only comments.
 - Publication writes an event record and promotes staged records through a controlled path.
+- Current report artifacts stay canonical for their domain, type, and scope; additive synthesis updates, supersedes, or remains a labeled sidecar.
 - Coverage state and priority queues are generated from source records, sessions, bundles, and publication history.
 - Public pages separate source evidence from curator interpretation and domain-defined context.
 - Agent skills encode workflow discipline around scope, extraction, review, and publishing.
@@ -65,6 +68,7 @@ Use these existing paths as implementation references:
 - `data/publication-events`: publish audit trail
 - `research/state` and `research/backlog`: generated planning state
 - `research/sessions`: bounded research pass logs
+- `research/syntheses`: traceable Markdown synthesis reports
 - `.codex/skills`: agent operating procedures
 - `scripts/bundle.mjs`: bundle validation, approval, publish, and smoke checks
 - `scripts/review-evidence.mjs`: evidence-review scaffold and apply flow

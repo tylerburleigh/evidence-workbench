@@ -1,7 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Badge, EmptyState, PageHeader, Section } from "../../components.js";
-import { getArtifactById, getNodeById, getSourceById, getWorkbenchData } from "../../../lib/public-data.js";
+import {
+  getApplicabilityFacetEntries,
+  getArtifactById,
+  getNodeById,
+  getSourceById,
+  getWorkbenchData
+} from "../../../lib/public-data.js";
 
 export default async function ArtifactDetailPage({ params }) {
   const { artifactId } = await params;
@@ -16,6 +22,7 @@ export default async function ArtifactDetailPage({ params }) {
   const findings = data.collections.findings
     .map(({ record }) => record)
     .filter((finding) => finding.artifact_id === artifact.id);
+  const applicabilityFacets = getApplicabilityFacetEntries(data, artifact, "artifact");
 
   return (
     <main className="page">
@@ -48,6 +55,12 @@ export default async function ArtifactDetailPage({ params }) {
                 <th>Endpoints</th>
                 <td>{artifact.endpoint_categories?.join(", ") || "Unspecified"}</td>
               </tr>
+              {applicabilityFacets.map((facet) => (
+                <tr key={facet.id}>
+                  <th>{facet.label}</th>
+                  <td>{facet.value}</td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </Section>

@@ -1,4 +1,7 @@
+import { promises as fs } from "node:fs";
+import path from "node:path";
 import { loadDomainWorkbenchData } from "../../scripts/lib/workbench-data.mjs";
+import { isUnderPath, workspaceRoot } from "../../scripts/lib/workspace.mjs";
 
 export async function getWorkbenchData() {
   return loadDomainWorkbenchData();
@@ -169,6 +172,42 @@ export function getSourceById(data, sourceId) {
   return data.collections.sources.map(({ record }) => record).find((source) => source.id === sourceId);
 }
 
+export function getReportArtifacts(data) {
+  return data.collections.reportArtifacts
+    .map(({ record }) => record)
+    .sort((left, right) => String(right.created_at ?? "").localeCompare(String(left.created_at ?? "")) || left.name.localeCompare(right.name));
+}
+
+export function getReportArtifactById(data, reportId) {
+  return getReportArtifacts(data).find((report) => report.id === reportId);
+}
+
+export async function getReportArtifactMarkdown(report) {
+  const reportPath = path.join(workspaceRoot, report.path);
+  const synthesesRoot = path.join(workspaceRoot, "research", "syntheses");
+
+  if (!isUnderPath(synthesesRoot, reportPath) || !reportPath.endsWith(".md")) {
+    throw new Error(`Report artifact path is outside research/syntheses: ${report.path}`);
+  }
+
+  return fs.readFile(reportPath, "utf8");
+}
+
+export function getApplicabilityFacetEntries(data, record, recordType) {
+  return (data.domainPack.domain.applicability_facets ?? [])
+    .filter((facet) => (facet.applies_to ?? []).includes(recordType))
+    .map((facet) => {
+      const optionLabelById = new Map((facet.values ?? []).map((option) => [option.id, option.label]));
+      const values = valueToArray(record?.[facet.id]).map((value) => optionLabelById.get(value) ?? value);
+      return {
+        id: facet.id,
+        label: facet.label,
+        description: facet.description,
+        value: values.length ? values.join(", ") : "Unspecified"
+      };
+    });
+}
+
 export function getPublishedCount(data) {
   return data.collections.candidateBundles.filter(({ record }) => record.lifecycle_status === "published").length;
 }
@@ -217,6 +256,102 @@ export function getSearchProtocols(data) {
   return data.collections.searchProtocols
     .map(({ record }) => record)
     .sort((left, right) => String(right.search_completed_at ?? "").localeCompare(String(left.search_completed_at ?? "")));
+}
+
+export function getSourceAccessInfo(source) {
+  const status = source?.access_status;
+  const depth = source?.access_depth;
+
+  if (depth === "full_text" || status === "full_text_verified" || status === "full_text_available") {
+    return {
+      category: "full_text",
+      label: "Full text",
+      tone: "good"
+    };
+  }
+
+  if (status === "abstract_only_paywalled" || status === "unavailable" || depth === "unavailable") {
+    return {
+      category: "no_full_text",
+      label: status === "unavailable" || depth === "unavailable" ? "Unavailable" : "No full text",
+      tone: "danger"
+    };
+  }
+
+  if (depth === "abstract_only" || status === "abstract_only_available") {
+    return {
+      category: "abstract_only",
+      label: "Abstract only",
+      tone: "warn"
+    };
+  }
+
+  if (depth === "metadata_only" || status === "metadata_only") {
+    return {
+      category: "metadata_only",
+      label: "Metadata only",
+      tone: "warn"
+    };
+  }
+
+  return {
+    category: "not_checked",
+    label: "Not checked",
+    tone: "neutral"
+  };
+}
+
+export function getSourceAccessLabel(source) {
+  const access = getSourceAccessInfo(source);
+  return access.label;
+}
+
+export function getScreenedAccessLimitedCandidates(data) {
+  return getSearchProtocols(data).flatMap((protocol) =>
+    (protocol.screening_decisions ?? [])
+      .filter((decision) => decision.decision === "no_full_text")
+      .map((decision) => ({
+        ...decision,
+        protocol_id: protocol.id,
+        protocol_name: protocol.name
+      }))
+  );
+}
+
+export function getSourceAccessSummary(data) {
+  const sources = data.collections.sources.map(({ record }) => record);
+  const sourceById = new Map(sources.map((source) => [source.id, source]));
+  const categories = {
+    full_text: 0,
+    abstract_only: 0,
+    no_full_text: 0,
+    metadata_only: 0,
+    not_checked: 0
+  };
+
+  for (const source of sources) {
+    const category = getSourceAccessInfo(source).category;
+    categories[category] = (categories[category] ?? 0) + 1;
+  }
+
+  const directFindingSourceIds = new Set(
+    data.collections.findings.map(({ record }) => record.source_id).filter((sourceId) => sourceById.has(sourceId))
+  );
+  const directFindingSources = [...directFindingSourceIds].map((sourceId) => sourceById.get(sourceId)).filter(Boolean);
+  const directFindingFullTextCount = directFindingSources.filter(
+    (source) => getSourceAccessInfo(source).category === "full_text"
+  ).length;
+
+  return {
+    total_sources: sources.length,
+    categories,
+    direct_finding_sources: {
+      total: directFindingSources.length,
+      full_text: directFindingFullTextCount,
+      access_limited: directFindingSources.length - directFindingFullTextCount
+    },
+    screened_access_limited: getScreenedAccessLimitedCandidates(data).length
+  };
 }
 
 export function getSynthesisMatrixConfig(data) {

@@ -10,6 +10,7 @@ The domain pack should answer:
 - What counts as evidence?
 - What fields must be extracted?
 - What review lanes are required?
+- What context-of-use or applicability facets bound claims?
 - How should public claims be worded and bounded?
 - What should agents read before acting?
 - Whether the domain enforces required extraction fields or search/screening protocol records.
@@ -29,6 +30,7 @@ domain-packs/<domain-id>/
     surveillance.md
     evidence-review.md
     editorial-review.md
+    synthesis.md
 ```
 
 ## `domain.json`
@@ -124,6 +126,41 @@ Domains can opt into required-field validation by adding:
 
 When enabled, required fields should declare `applies_to`, for example `["artifact"]`, `["finding"]`, or `["claim"]`.
 
+## Applicability Facets
+
+Domains may define `applicability_facets` in `domain.json` when claims depend on reusable context-of-use dimensions.
+
+The core framework treats these as generic configured facets. Domain packs define the vocabulary.
+
+Examples:
+
+- assessment purpose or decision consequence in education
+- deployment environment or criticality in software operations
+- population, severity, or care setting in clinical evidence reviews
+- jurisdiction or enforcement setting in policy reviews
+
+Suggested shape:
+
+```json
+{
+  "applicability_facets": [
+    {
+      "id": "consequence_level",
+      "label": "Consequence Level",
+      "applies_to": ["artifact", "claim"],
+      "description": "The consequence level for interpreting evidence transfer.",
+      "values": [
+        { "id": "low", "label": "Low" },
+        { "id": "medium", "label": "Medium" },
+        { "id": "high", "label": "High" }
+      ]
+    }
+  ]
+}
+```
+
+When configured with `values`, validation should reject unsupported facet values. Domains can also make facet fields required through `extraction-schema.v1.json`.
+
 ## Review Lanes
 
 Review lanes should be explicit and domain-configurable.
@@ -134,6 +171,7 @@ Core lanes worth preserving:
 - `interpretation`: do findings support the public claim?
 - `limitations`: are caveats, context, uncertainty, and boundaries visible?
 - `taxonomy_mapping`: are records mapped to the right domain scope units?
+- `applicability_boundary`: do conclusions stay within the contexts, populations, settings, use cases, or consequence levels represented by the evidence?
 - optional domain-defined review lanes for pack-specific risks or limitations
 
 Domain-specific lanes can be added, but the core should treat lane IDs as configuration.
