@@ -1,14 +1,18 @@
 # Evidence Workbench
 
-Evidence Workbench helps people organize research when the answer needs to be traceable.
+Evidence Workbench is a framework for agent-assisted research.
 
-It is designed for work where a team cannot just write a summary and move on. The team needs to know which sources support each claim, what evidence was reviewed, what still needs checking, who approved a change, and when a topic should be revisited.
+It is designed for situations where a user wants an AI agent to help research a topic, but does not want the result to be a black-box answer, a long chat transcript, or a loose pile of notes. The workbench gives agentic research a durable shape: sources, extracted findings, supported claims, review steps, synthesis reports, planning queues, and a browsable web interface.
 
-The current implementation stores the work as plain repository files: JSON records for evidence and review state, plus Markdown for synthesis reports. A local web app turns those records into a browsable evidence workspace.
+The point is not to let an agent decide what is true on its own. The point is to make the agent's research work decomposed, observable, reviewable, and easy for a person to inspect.
 
 ## Why It Exists
 
-Research projects often become hard to trust over time. Sources live in one place, notes in another, claims in a document, review comments in chat, and updates in someone's memory. After a few rounds of work, it can be hard to answer basic questions:
+LLM-assisted research can be useful, but it is often hard to audit. A model can produce a polished answer without making the work behind it easy to inspect: which sources were considered, what was extracted from each source, what was excluded, what claims are actually supported, and what still needs review.
+
+Traditional notes and wiki pages have a related problem. They can be readable, but they often hide how the page was produced and how it should be updated later.
+
+Evidence Workbench sits between those modes. It lets an agent help with research, while turning the work into structured records and readable pages. After a few rounds of work, a user should still be able to answer:
 
 - What claim are we making?
 - Which sources support it?
@@ -18,7 +22,18 @@ Research projects often become hard to trust over time. Sources live in one plac
 - What changed since the last review?
 - Is this topic fresh, stale, or still uncovered?
 
-Evidence Workbench gives that work a repeatable structure. It separates source-backed observations from interpretation, keeps proposed changes staged until review, and records publication history so later updates have context.
+That structure matters because research is rarely finished after one answer. It needs review, correction, synthesis, follow-up, and later surveillance.
+
+## What The Framework Provides
+
+Evidence Workbench combines four parts:
+
+- **Data models** for sources, artifacts, findings, claims, reviews, bundles, reports, and planning state.
+- **Workflows** for search, extraction, review, publication, synthesis, and surveillance.
+- **Agent skills** that guide an AI assistant through bounded research tasks.
+- **A web UI** for browsing the resulting evidence graph, reports, methods, and review state.
+
+Those parts are meant to work together. The agent has a workflow to follow. The output has a schema. Reviewers have specific checks to perform. Readers have pages they can browse instead of reconstructing the work from a transcript.
 
 ## What It Can Help With
 
@@ -31,14 +46,14 @@ Evidence Workbench is useful for research and knowledge work where accuracy, tra
 - standards or compliance evidence review
 - domain-specific evidence maps
 
-It is not meant to decide what is true automatically. It is meant to make the research process inspectable, reviewable, and easier to update.
+It can be thought of as a variant of an LLM wiki or an agentic research workspace: the agent can help build the knowledge base, but the result is structured enough for people to inspect and maintain.
 
 ## How It Works
 
-A project starts with a domain: the subject area being researched. Each domain has a taxonomy, which breaks the work into smaller topics or questions. Research then moves through a controlled path:
+A project starts with a domain: the subject area being researched. Each domain has a taxonomy, which breaks the work into smaller topics or questions. The agent works on one bounded question at a time, and the work moves through a controlled path:
 
 1. Choose one bounded topic or question.
-2. Gather sources.
+2. Search for and gather sources.
 3. Extract source-backed findings.
 4. Draft claims or report sections that stay within the evidence.
 5. Stage the proposed changes in a candidate bundle.
@@ -46,7 +61,7 @@ A project starts with a domain: the subject area being researched. Each domain h
 7. Publish approved records to the evidence graph.
 8. Track what is covered, what is stale, and what should be researched next.
 
-The public side of the app lets people browse claims, findings, sources, reports, and methods. The admin side supports review and publication workflows.
+The public side of the app lets people browse claims, findings, sources, reports, and methods. The admin side supports review and publication workflows. The repository stores the underlying records as plain files so the work can be versioned, audited, branched, and reviewed.
 
 ## Key Ideas
 
@@ -70,8 +85,8 @@ It contains:
 - schemas for evidence records
 - command-line tools for validation, planning, search, review, publication, and branch audits
 - reusable agent skills
+- workflow documentation
 - fixture and example domain packs
-- framework documentation
 
 The default domain is `sample-research`, a neutral fixture used to exercise the workflow. `sample-archive` provides a second fixture shape. `software-supply-chain` is currently present as a maintained example domain. The synthetic student responses domain on `main` is a scaffold; the populated literature-review corpus lives on a research branch.
 
@@ -172,4 +187,3 @@ Use branches to keep platform improvements separate from research output:
 - `research/<domain-or-question>`: long-lived branches for domain corpora, syntheses, sessions, and generated planning state
 
 When a research branch produces a reusable improvement, harvest it into a `core/*` branch from `main`, validate it, merge it back to `main`, then merge `main` back into the research branch. See the [branching strategy](plans/generic-research-ops-framework/branching-strategy.md) for the full process.
-
