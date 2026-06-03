@@ -92,6 +92,42 @@ The default domain is `sample-research`, a neutral fixture used to exercise the 
 
 Active research corpora should usually live on `research/*` branches. Reusable improvements discovered during research should be harvested into `core/*` branches and then merged back to `main`.
 
+## Getting Started With Your Own Use Case
+
+Most users should not start by editing JSON files by hand. Start by using the existing samples to understand the shape of the system, then work with an agent to adapt the framework to your own research domain.
+
+A practical first path looks like this:
+
+1. **Clone or fork the repo.**
+   Run the app with the default `sample-research` domain so you can see how sources, findings, claims, reports, review state, and planning queues appear in the UI.
+
+2. **Describe the research job in ordinary language.**
+   Tell the agent what kind of research you want the workbench to support, who the audience is, what kinds of sources matter, what questions you expect to answer, and what would make a claim trustworthy.
+
+3. **Create a domain pack before doing research.**
+   The domain pack is the foundation for a new use case. It defines the topic taxonomy, evidence ladder, extraction fields, review lanes, public labels, and domain-specific agent instructions. This is where the workbench becomes specific to a literature review, policy area, product research workflow, or other domain.
+
+4. **Keep the first version small.**
+   Start with a few scope units in the taxonomy and one bounded research question. The goal is to prove that the structure fits the domain before building a large corpus.
+
+5. **Run one complete research pass.**
+   Have the agent gather sources, extract findings, stage records in a candidate bundle, complete evidence reviews, publish approved records, and sync planning state. This first pass tests the full loop.
+
+6. **Use the UI to inspect the result.**
+   Browse the claim pages, source pages, report pages, methods page, and admin review state. The UI is part of the research process: it shows whether the agent's work is understandable and whether the evidence can be audited.
+
+7. **Adjust the domain pack and workflows.**
+   If the first pass exposes missing extraction fields, unclear review lanes, awkward labels, or unsupported source types, update the domain pack and tests before scaling up.
+
+8. **Separate reusable improvements from research output.**
+   If adapting the workbench requires a feature that would help every domain, put that work on a `core/*` branch. Keep domain-specific records, reports, and planning state on a `research/*` branch.
+
+A useful prompt for the agent is:
+
+```text
+I want to adapt Evidence Workbench for <research domain>. Read the README, domain pack contract, operator guide, and branching strategy. Help me design a small first domain pack, choose one bounded research question, and run one complete research pass. Keep reusable platform changes separate from domain-specific research records.
+```
+
 ## Quick Start For Operators
 
 Install dependencies:
