@@ -2,6 +2,7 @@ import { Archive, FileText, FlaskConical, Layers } from "lucide-react";
 import { notFound } from "next/navigation";
 import {
   Badge,
+  Breadcrumbs,
   BreadcrumbLink,
   EmptyState,
   PageHeader,
@@ -20,6 +21,7 @@ import {
   getNodeById,
   getParentNode,
   getScopeLabel,
+  getScopePluralLabel,
   getSourcesForIds,
   getWorkbenchData
 } from "../../../lib/public-data.js";
@@ -34,6 +36,7 @@ export default async function TopicDetailPage({ params }) {
 
   const parent = getParentNode(data, node);
   const scopeLabel = getScopeLabel(data);
+  const scopePluralLabel = getScopePluralLabel(data);
   const claims = getClaimsForNode(data, node.id);
   const findings = getFindingsForNode(data, node.id);
   const artifacts = getArtifactsForNode(data, node.id);
@@ -48,6 +51,14 @@ export default async function TopicDetailPage({ params }) {
 
   return (
     <main className="page">
+      <Breadcrumbs
+        items={[
+          { href: "/scope", label: scopePluralLabel },
+          ...(parent ? [{ href: `/scope/${parent.id}`, label: parent.name }] : []),
+          { label: node.name }
+        ]}
+      />
+
       <PageHeader
         eyebrow={scopeLabel}
         title={node.name}
@@ -85,7 +96,7 @@ export default async function TopicDetailPage({ params }) {
                       <h3>Support Map</h3>
                       <div className="support-list">
                         {claim.supporting_evidence.map((support) => (
-                          <SupportMap key={support.label} support={support} />
+                          <SupportMap findings={findings} key={support.label} sources={sources} support={support} />
                         ))}
                       </div>
                     </div>

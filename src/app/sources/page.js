@@ -1,11 +1,50 @@
-import { Archive } from "lucide-react";
-import { Badge, EmptyState, PageHeader, RecordCard, Section, SourceAccessBadge } from "../components.js";
-import { getSourceAccessSummary, getWorkbenchData } from "../../lib/public-data.js";
+import { PageHeader, Section } from "../components.js";
+import { optionList } from "../index-options.js";
+import { RecordIndex } from "../record-index.js";
+import { getSourceAccessInfo, getSourceAccessSummary, getWorkbenchData } from "../../lib/public-data.js";
 
 export default async function SourcesPage() {
   const data = await getWorkbenchData();
   const sources = data.collections.sources.map(({ record }) => record).sort((left, right) => left.name.localeCompare(right.name));
   const accessSummary = getSourceAccessSummary(data);
+  const items = sources.map((source) => {
+    const access = getSourceAccessInfo(source);
+    return {
+      id: source.id,
+      href: `/sources/${source.id}`,
+      icon: "Archive",
+      title: source.name,
+      body: source.summary,
+      badges: [
+        { label: source.source_type },
+        ...(source.year ? [{ label: String(source.year) }] : []),
+        { label: access.label, tone: access.tone }
+      ],
+      filterValues: {
+        type: source.source_type,
+        access: access.category,
+        year: source.year ? String(source.year) : "undated"
+      },
+      searchText: [
+        source.name,
+        source.id,
+        source.summary,
+        source.source_type,
+        source.year,
+        source.published_on,
+        source.venue,
+        source.doi,
+        access.label,
+        ...(source.authors ?? [])
+      ].join(" "),
+      sortValues: {
+        name: source.name,
+        year: source.year ?? 0,
+        type: source.source_type,
+        access: access.label
+      }
+    };
+  });
 
   return (
     <main className="page">
@@ -33,28 +72,32 @@ export default async function SourcesPage() {
         </div>
       </div>
       <Section title="Sources" note={`${sources.length} linked`}>
-        {sources.length ? (
-          <div className="grid two">
-            {sources.map((source) => (
-              <RecordCard
-                key={source.id}
-                href={`/sources/${source.id}`}
-                icon={Archive}
-                title={source.name}
-                body={source.summary}
-                meta={
-                  <>
-                    <Badge>{source.source_type}</Badge>
-                    {source.year ? <Badge>{source.year}</Badge> : null}
-                    <SourceAccessBadge source={source} />
-                  </>
+        <RecordIndex
+          emptyMessage="No linked public sources match the current filters."
+          filters={[
+            { id: "type", label: "Type", options: optionList(sources, (source) => source.source_type) },
+            {
+              id: "access",
+              label: "Access",
+              options: optionList(
+                sources,
+                (source) => getSourceAccessInfo(source).category,
+                (value) => {
+                  const match = sources.find((source) => getSourceAccessInfo(source).category === value);
+                  return getSourceAccessInfo(match).label;
                 }
-              />
-            ))}
-          </div>
-        ) : (
-          <EmptyState>No linked public sources for this domain.</EmptyState>
-        )}
+              )
+            },
+            { id: "year", label: "Year", options: optionList(sources, (source) => (source.year ? String(source.year) : "undated")) }
+          ]}
+          items={items}
+          sortOptions={[
+            { id: "name", label: "Name" },
+            { id: "year", label: "Newest", direction: "desc" },
+            { id: "type", label: "Type" },
+            { id: "access", label: "Access" }
+          ]}
+        />
       </Section>
     </main>
   );

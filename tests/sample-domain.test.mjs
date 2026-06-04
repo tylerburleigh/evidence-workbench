@@ -29,7 +29,8 @@ const coreSkillNames = [
   "evidence-review",
   "editorial-review",
   "synthesis-review",
-  "literature-review"
+  "literature-review",
+  "attention-triage"
 ];
 
 const domainSkillAdapters = {

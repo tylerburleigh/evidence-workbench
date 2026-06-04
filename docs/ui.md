@@ -37,12 +37,17 @@ The homepage gives the reader a compact state-of-the-domain view:
 
 - domain summary from the active domain pack
 - coverage metrics for configured scope units
+- attention signals for open bundles, stale or uncovered scope, source-access gaps, source-summary gaps, and thin claim support
+- coverage snapshot grouped by status
+- evidence health metrics for direct full-text coverage, access-limited sources, summary gaps, and thin claims
 - current literature review, when one is indexed as a report artifact
 - related report outputs
 - topic coverage cards
 - recent candidate bundle activity
 - published claim cards
 - record index links for scope units, claims, findings, sources, artifacts, activity, reports, methods, and review
+
+Collection pages use searchable and filterable record indexes when the record type has enough metadata to support useful filtering.
 
 ## Scope Pages
 
@@ -64,7 +69,7 @@ The page is meant to answer what is covered for this topic, what evidence suppor
 
 The record detail pages expose the evidence graph one record at a time.
 
-Source pages show source identity, access status, linked artifacts, linked findings, and external source URLs when available.
+Source pages show source identity, access status, linked artifacts, linked findings, linked claims, linked reports, source-to-finding-to-claim chains, and external source URLs when available.
 
 Artifact pages show extracted study, framework, dataset, method, or report records and their linked findings.
 

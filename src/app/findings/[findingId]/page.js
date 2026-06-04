@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Badge, EmptyState, PageHeader, Section, SourceAccessBadge } from "../../components.js";
+import { Badge, Breadcrumbs, EmptyState, PageHeader, Section, SourceAccessBadge } from "../../components.js";
 import { getArtifactById, getFindingById, getNodeById, getSourceById, getWorkbenchData } from "../../../lib/public-data.js";
 
 export default async function FindingDetailPage({ params }) {
@@ -17,6 +17,14 @@ export default async function FindingDetailPage({ params }) {
 
   return (
     <main className="page">
+      <Breadcrumbs
+        items={[
+          { href: "/findings", label: "Findings" },
+          ...(source ? [{ href: `/sources/${source.id}`, label: source.name }] : []),
+          { label: finding.name }
+        ]}
+      />
+
       <PageHeader
         eyebrow="Finding"
         title={finding.name}

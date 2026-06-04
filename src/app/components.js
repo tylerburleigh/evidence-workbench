@@ -1,10 +1,13 @@
 import {
   ArrowRight,
+  Archive,
   BookOpen,
   CheckCircle2,
+  ChevronRight,
   CircleAlert,
   CircleDashed,
   FileText,
+  FlaskConical,
   Link as LinkIcon
 } from "lucide-react";
 import Link from "next/link";
@@ -64,9 +67,32 @@ export function PageHeader({ eyebrow, title, children, aside }) {
   );
 }
 
-export function Section({ title, note, children }) {
+export function Breadcrumbs({ items = [] }) {
+  if (!items.length) {
+    return null;
+  }
+
   return (
-    <section className="section">
+    <nav aria-label="Breadcrumb" className="breadcrumbs">
+      {items.map((item, index) => (
+        <span className="breadcrumb-item" key={`${item.href ?? item.label}-${index}`}>
+          {index > 0 ? <ChevronRight size={13} /> : null}
+          {item.href ? (
+            <Link className="text-link" href={item.href}>
+              {item.label}
+            </Link>
+          ) : (
+            <span>{item.label}</span>
+          )}
+        </span>
+      ))}
+    </nav>
+  );
+}
+
+export function Section({ id, title, note, children }) {
+  return (
+    <section className="section" id={id}>
       <div className="section-head">
         <h2>{title}</h2>
         {note ? <div className="section-note">{note}</div> : null}
@@ -113,15 +139,78 @@ export function RowLink({ href, title, kicker, status }) {
   );
 }
 
-export function SupportMap({ support }) {
+function supportRoleTone(role) {
+  if (role === "supports" || role === "direct_support") {
+    return "good";
+  }
+
+  if (role === "counterexample") {
+    return "danger";
+  }
+
+  if (role === "qualifies" || role === "boundary_condition" || role === "adjacent_evidence") {
+    return "warn";
+  }
+
+  return "neutral";
+}
+
+export function SupportMap({ findings = [], sources = [], support }) {
+  const findingById = new Map(findings.map((finding) => [finding.id, finding]));
+  const sourceById = new Map(sources.map((source) => [source.id, source]));
+  const supportFindings = (support.finding_ids ?? []).map((id) => findingById.get(id) ?? { id, name: id });
+  const supportSources = (support.source_ids ?? []).map((id) => sourceById.get(id) ?? { id, name: id });
+
   return (
     <div className="support-item">
-      <h3>{support.label}</h3>
+      <div className="support-title-row">
+        <h3>{support.label}</h3>
+        <span className="meta-row no-top-margin">
+          {support.support_role ? <Badge tone={supportRoleTone(support.support_role)}>{statusLabel(support.support_role)}</Badge> : null}
+          {support.claim_field ? <Badge>{statusLabel(support.claim_field)}</Badge> : null}
+        </span>
+      </div>
       <p>{support.conclusion}</p>
+      {support.rationale ? <p className="support-rationale">{support.rationale}</p> : null}
+      {supportFindings.length || supportSources.length ? (
+        <div className="support-trace">
+          {supportFindings.length ? (
+            <div>
+              <div className="trace-label">
+                <FlaskConical size={13} /> Findings
+              </div>
+              <div className="link-list">
+                {supportFindings.map((finding) => (
+                  <Link className="text-link" href={`/findings/${finding.id}`} key={finding.id}>
+                    {finding.name}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          ) : null}
+          {supportSources.length ? (
+            <div>
+              <div className="trace-label">
+                <Archive size={13} /> Sources
+              </div>
+              <div className="link-list">
+                {supportSources.map((source) => (
+                  <span className="support-source-link" key={source.id}>
+                    <Link className="text-link" href={`/sources/${source.id}`}>
+                      {source.name}
+                    </Link>
+                    {source.source_type ? <SourceAccessBadge source={source} /> : null}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ) : null}
+        </div>
+      ) : null}
       {support.limitations?.length ? (
         <div className="meta-row">
-          {support.limitations.map((limitation) => (
-            <Badge key={limitation}>{limitation}</Badge>
+          {support.limitations.map((limitation, index) => (
+            <Badge key={`${limitation}-${index}`}>{limitation}</Badge>
           ))}
         </div>
       ) : null}

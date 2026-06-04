@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Badge, EmptyState, PageHeader, Section } from "../../components.js";
+import { Badge, Breadcrumbs, EmptyState, PageHeader, Section } from "../../components.js";
 import {
   getApplicabilityFacetEntries,
   getArtifactById,
@@ -26,6 +26,14 @@ export default async function ArtifactDetailPage({ params }) {
 
   return (
     <main className="page">
+      <Breadcrumbs
+        items={[
+          { href: "/artifacts", label: "Artifacts" },
+          ...(sources[0] ? [{ href: `/sources/${sources[0].id}`, label: sources[0].name }] : []),
+          { label: artifact.name }
+        ]}
+      />
+
       <PageHeader
         eyebrow="Artifact"
         title={artifact.name}

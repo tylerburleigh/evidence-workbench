@@ -163,6 +163,20 @@ function validationSource() {
   };
 }
 
+function sampleResearchSource(overrides = {}) {
+  return {
+    schema_version: "1.0.0",
+    record_type: "source",
+    id: "sample-source-example-topic-2026",
+    name: "Synthetic Sample Source For Example Topic",
+    source_type: "fixture_report",
+    authors: ["Fixture Author"],
+    year: 2026,
+    summary: "Synthetic source metadata used only to test file-backed workflow mechanics.",
+    ...overrides
+  };
+}
+
 function validationArtifact(overrides = {}) {
   return {
     schema_version: "1.0.0",
@@ -262,6 +276,24 @@ test("domain-required extraction fields are enforced for configured artifacts", 
       "data/search-protocols/validation-fixture-search-protocol.json",
       validationSearchProtocol()
     );
+
+    const result = await runValidation(workspace);
+    assert.match(result.stdout, /Validated/);
+  });
+});
+
+test("sources linked to findings or claims must carry descriptive summaries", async () => {
+  await withWorkspace(async (workspace) => {
+    const { summary, ...sourceWithoutSummary } = sampleResearchSource();
+    await writeWorkspaceJson(workspace, "data/sources/sample-source-example-topic-2026.json", sourceWithoutSummary);
+
+    await assert.rejects(runValidation(workspace), (error) => {
+      assert.match(error.stderr, /evidence-linked source must include a descriptive summary/);
+      assert.match(error.stderr, /sample-finding-example-topic-context-2026/);
+      return true;
+    });
+
+    await writeWorkspaceJson(workspace, "data/sources/sample-source-example-topic-2026.json", sampleResearchSource());
 
     const result = await runValidation(workspace);
     assert.match(result.stdout, /Validated/);
