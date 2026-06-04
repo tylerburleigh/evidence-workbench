@@ -34,12 +34,11 @@ The framework supports multiple domain packs, but the current implementation run
 - [data-model.md](data-model.md): core records and relationships
 - [domain-packs.md](domain-packs.md): how a new research domain customizes the framework
 - [workflows.md](workflows.md): bootstrap, surveillance, evidence review, publish, planning sync, and report-integration workflows
+- [ui.md](ui.md): current public evidence browser and admin review workspace
 - [agent-skills.md](agent-skills.md): reusable agent skills and domain-specific adapters
 - [operator-guide.md](operator-guide.md): concrete downstream domain-pack setup, publish, verify, and commit workflow
 - [branching-strategy.md](branching-strategy.md): how to keep reusable platform changes separate from domain-specific research branches
 - [case-studies/synthetic-student-responses.md](case-studies/synthetic-student-responses.md): lessons from the first real literature-review branch
-- [../plans/generic-research-ops-framework/implementation-plan.md](../plans/generic-research-ops-framework/implementation-plan.md): build history and remaining implementation notes
-- [../plans/generic-research-ops-framework/ui-spec.md](../plans/generic-research-ops-framework/ui-spec.md): UI design notes
 
 ## What To Preserve From This Repo
 

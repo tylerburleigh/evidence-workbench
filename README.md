@@ -193,12 +193,11 @@ The durable framework documentation lives under `docs/`:
 - [Data model](docs/data-model.md)
 - [Domain packs](docs/domain-packs.md)
 - [Workflows](docs/workflows.md)
+- [UI guide](docs/ui.md)
 - [Agent skills](docs/agent-skills.md)
 - [Operator guide](docs/operator-guide.md)
 - [Branching strategy](docs/branching-strategy.md)
 - [Synthetic student responses case study](docs/case-studies/synthetic-student-responses.md)
-
-Planning and historical build notes remain under `plans/`, including the [implementation plan](plans/generic-research-ops-framework/implementation-plan.md) and [UI spec](plans/generic-research-ops-framework/ui-spec.md).
 
 ## Repository Layout
 
@@ -206,7 +205,6 @@ Planning and historical build notes remain under `plans/`, including the [implem
 data/                         Published and staged evidence records
 docs/                         Durable framework and operator documentation
 domain-packs/                 Domain taxonomies, review lanes, copy, and skill adapters
-plans/                        Planning notes and historical build specs
 research/                     Research sessions, planning state, and syntheses
 schemas/                      JSON Schema contracts
 scripts/                      Validation, planning, search, bundle, and audit CLIs

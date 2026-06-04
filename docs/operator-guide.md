@@ -307,7 +307,9 @@ When a new domain pack or published graph changes expected behavior, update focu
 
 Update docs:
 
-- `../plans/generic-research-ops-framework/implementation-plan.md`
+- `docs/domain-packs.md`, if the domain-pack contract changes
+- `docs/ui.md`, if routes or UI behavior change
+- `docs/workflows.md`, if the publish or review workflow changes
 - domain-specific notes if the new pack establishes a reusable pattern
 
 ## 11. Verify Locally

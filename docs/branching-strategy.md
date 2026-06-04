@@ -110,7 +110,6 @@ Usually core/platform:
 - `README.md`
 - `package.json`
 - `package-lock.json`
-- `plans/generic-research-ops-framework/**`
 
 Usually domain configuration:
 

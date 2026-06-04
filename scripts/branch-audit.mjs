@@ -18,7 +18,6 @@ const categories = [
       /^skills\//,
       /^tests\//,
       /^docs\//,
-      /^plans\/generic-research-ops-framework\//,
       /^README\.md$/,
       /^package\.json$/,
       /^package-lock\.json$/,
