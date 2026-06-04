@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "nebhi-adaptive-writing-aig-scoring-2025-source",
+  "name": "End-to-End Automated Item Generation and Scoring for Adaptive English Writing Assessment with Large Language Models",
+  "source_type": "conference_paper",
+  "authors": [
+    "Kamel Nebhi",
+    "Amrita Panesar",
+    "Hans Bantilan"
+  ],
+  "venue": "Proceedings of the 20th Workshop on Innovative Use of NLP for Building Educational Applications",
+  "year": 2025,
+  "published_on": "2025-07",
+  "doi": "10.18653/v1/2025.bea-1.73",
+  "urls": [
+    "https://aclanthology.org/2025.bea-1.73/",
+    "https://aclanthology.org/2025.bea-1.73.pdf"
+  ],
+  "summary": "BEA 2025 paper describing automated generation, annotation, and integration of adaptive English writing items, including synthetic response datasets annotated by a majority-vote LLM ensemble benchmarked against expert human ratings.",
+  "retrieved_on": "2026-06-02",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-02T19:10:00Z",
+      "url": "https://aclanthology.org/2025.bea-1.73.pdf",
+      "result": "full_text_verified",
+      "notes": "ACL Anthology PDF is available and was used for majority-vote annotation and Cohen kappa extraction."
+    }
+  ]
+}

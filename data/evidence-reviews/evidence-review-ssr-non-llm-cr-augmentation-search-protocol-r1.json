@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-non-llm-cr-augmentation-search-protocol-r1",
+  "name": "Search Protocol Review for Non-LLM CR Augmentation Update",
+  "candidate_bundle_id": "ssr-non-llm-constructed-response-augmentation-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "search_protocol",
+  "reviewer_kind": "agent",
+  "reviewer_id": "codex-agent",
+  "skill_name": "synthetic-student-responses-evidence-review-adapter",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged search protocol is sufficient for a targeted bootstrap update. It records the core queries, inclusion/exclusion criteria, four included sources, and key exclusions such as reference-answer paraphrase and essay-only SMOTE. It does not claim systematic coverage.",
+  "reviewed_change_ids": [
+    "create-search-protocol",
+    "create-source-lun",
+    "create-source-bonthu",
+    "create-source-krisnawati",
+    "create-source-li",
+    "create-artifact-lun",
+    "create-artifact-bonthu",
+    "create-artifact-krisnawati",
+    "create-artifact-li",
+    "create-finding-lun",
+    "create-finding-bonthu",
+    "create-finding-krisnawati",
+    "create-finding-li",
+    "update-claim-sparse-supplementation"
+  ],
+  "findings": [
+    {
+      "finding_id": "search-protocol-targeted-bootstrap",
+      "severity": "note",
+      "category": "search_scope",
+      "applies_to_change_id": "create-search-protocol",
+      "claim_or_issue": "The search protocol is targeted and manually screened, not database-systematic.",
+      "why_it_matters": "This is acceptable for the current additive literature review update but should be visible to later tool users.",
+      "recommended_action": "Leave systematicity_level as targeted_bootstrap and keep screening counts non-exhaustive.",
+      "resolution_status": "addressed"
+    }
+  ],
+  "created_at": "2026-06-03T16:35:30Z",
+  "updated_at": "2026-06-03T16:35:30Z"
+}

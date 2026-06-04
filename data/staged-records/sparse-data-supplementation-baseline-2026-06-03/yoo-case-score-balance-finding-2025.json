@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "yoo-case-score-balance-finding-2025",
+  "name": "CASE Generated Balanced Synthetic EFL Essay Samples Across Score Ranges",
+  "source_id": "yoo-dress-rubric-essay-scoring-2025",
+  "artifact_id": "yoo-case-efl-essay-augmentation-2025",
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "endpoint_category": "score_distribution_balancing",
+  "direction": "supports",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Yoo and colleagues introduced CASE, a corruption-based augmentation strategy that generated 40,185 synthetic EFL essay samples with balanced score ranges for rubric-based automated essay scoring.",
+  "population_or_context": "EFL undergraduate writing scored on content, organization, and language dimensions.",
+  "quantitative_note": "DREsS_CASE has the same number of samples per score, and adding standardized plus CASE data improved the reported baseline by 45.44%.",
+  "evaluation_method": "Rubric-based AES QWK on real DREsS_New validation/test essays and synthetic quality checks comparing CASE with gpt-4o generated essays.",
+  "sparsity_or_imbalance_motivation": "The paper reports scarce low-score samples and lack of usable rubric-based AES datasets.",
+  "synthetic_data_research_role": "Synthetic essays served as training augmentation and score-distribution balancing for rubric-based scorer development.",
+  "reported_metrics": "40.1K CASE samples; 45.44% baseline improvement; CASE synthetic-label QWK 0.661 versus gpt-4o average 0.225.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "CASE relies on corruption of well-written essays.",
+    "The method may not cover all authentic EFL learner writing patterns."
+  ],
+  "source_locator": "Abstract; Sections 3.3-3.4; Tables 3, 5, and 6; Conclusion."
+}

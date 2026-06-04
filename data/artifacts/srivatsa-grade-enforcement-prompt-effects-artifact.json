@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "srivatsa-grade-enforcement-prompt-effects-artifact",
+  "name": "Srivatsa et al. Grade-Enforcement Prompt Effects Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "srivatsa-llm-student-ability-simulation-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-prompt-engineering-effects"
+  ],
+  "population_or_context": "LLM proxy students answering NAEP mathematics and reading comprehension items compared with real student populations.",
+  "sample_size": "The ACL paper reports 489 NAEP multiple-choice items and 11 LLMs evaluated across subjects, grades, and prompt settings.",
+  "methods": "Extracted the grade-enforcement prompt effects from the published model-prompt IRT evaluation.",
+  "endpoint_categories": [
+    "prompt_enforcement_effect",
+    "chain_of_thought_prompt_family",
+    "irt_ability_alignment"
+  ],
+  "education_context": "NAEP mathematics and reading comprehension multiple-choice items across grades 4, 8, and 12.",
+  "response_origin": "LLM-generated proxy-student item answers are compared with real NAEP student response patterns.",
+  "rubric_label_space": "Correct/incorrect multiple-choice item outcomes mapped to an IRT ability scale.",
+  "label_source": "NAEP correct answers and aggregate real student response patterns provide the comparator; LLM responses are generated under unenforced and grade-enforced prompt settings.",
+  "generation_model": "Eleven LLMs spanning open/closed, general-purpose, and pedagogically tuned models, including GPT-3.5-Turbo, o3-Mini, SocraticLM, and LearnLM-1.5-Pro.",
+  "generation_method": "Models answer NAEP items under standard and grade-enforced zero-shot prompting strategies.",
+  "prompt_strategy": "Prompt Unenforced (PU) is compared with grade-enforced prompts, including minimal, basic chain-of-thought, and full chain-of-thought prompt families.",
+  "evaluation_method": "Model response patterns are compared with real student populations on a shared Rasch/IRT ability scale and by grade-alignment deviation.",
+  "scorer_use": "Proxy-student reliability evaluation for assessment and tutoring contexts, not automated scorer validation.",
+  "real_response_comparator": "Real NAEP student response distributions provide the population comparator.",
+  "reported_metrics": "Table 2 reports percentile ranks under unenforced and best grade-enforced prompting. Average absolute deviation improves from 40.5 to 27.5 for mathematics grade 4, 35.0 to 30.2 for mathematics grade 8, 32.9 to 28.8 for mathematics grade 12, 41.9 to 30.6 for reading grade 4, 37.8 to 27.5 for reading grade 8, and 25.4 to 15.2 for reading grade 12.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "table_2_average_absolute_deviation": {
+      "columns": [
+        "subject_grade",
+        "prompt_unenforced_average_deviation",
+        "best_grade_enforced_average_deviation",
+        "reported_delta"
+      ],
+      "rows": [
+        {
+          "subject_grade": "math_grade_4",
+          "prompt_unenforced_average_deviation": 40.5,
+          "best_grade_enforced_average_deviation": 27.5,
+          "reported_delta": -13
+        },
+        {
+          "subject_grade": "math_grade_8",
+          "prompt_unenforced_average_deviation": 35,
+          "best_grade_enforced_average_deviation": 30.2,
+          "reported_delta": -4.8
+        },
+        {
+          "subject_grade": "math_grade_12",
+          "prompt_unenforced_average_deviation": 32.9,
+          "best_grade_enforced_average_deviation": 28.8,
+          "reported_delta": -4.2
+        },
+        {
+          "subject_grade": "reading_grade_4",
+          "prompt_unenforced_average_deviation": 41.9,
+          "best_grade_enforced_average_deviation": 30.6,
+          "reported_delta": -11.3
+        },
+        {
+          "subject_grade": "reading_grade_8",
+          "prompt_unenforced_average_deviation": 37.8,
+          "best_grade_enforced_average_deviation": 27.5,
+          "reported_delta": -10.3
+        },
+        {
+          "subject_grade": "reading_grade_12",
+          "prompt_unenforced_average_deviation": 25.4,
+          "best_grade_enforced_average_deviation": 15.2,
+          "reported_delta": -10.2
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "The evidence is multiple-choice ability alignment, not open-response realism.",
+    "Prompt families are evaluated across models and subjects, so a universal best prompt cannot be inferred.",
+    "Grade-enforced prompting improves average deviation in Table 2 but does not make the proxy students reliably match real student populations across all settings."
+  ],
+  "assessment_purpose": "summative_assessment",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "quality_evaluation"
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "morris-coedit-high-score-math-finding-2025",
+  "name": "Coedit-XL Supplemented Underrepresented High-Scoring NAEP Math Responses",
+  "source_id": "morris-naep-math-constructed-response-2025",
+  "artifact_id": "morris-coedit-naep-math-high-score-augmentation-2025",
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "endpoint_category": "high_score_balancing",
+  "direction": "supports",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Morris and colleagues report that several NAEP math items had excess low scores and too few higher-score responses, so they used Coedit-XL to generate paraphrases of higher-scoring student responses as training data.",
+  "population_or_context": "NAEP grade 4 and grade 8 math constructed-response items.",
+  "quantitative_note": "The final approach achieved human-like agreement on nine of ten held-out items using QWK criteria.",
+  "evaluation_method": "Quadratic weighted kappa against withheld human scores, plus demographic standardized mean difference bias checks.",
+  "sparsity_or_imbalance_motivation": "High-scoring responses, especially score 2 and score 3 responses on some items, were underrepresented relative to low-scoring responses.",
+  "synthetic_data_research_role": "Generated high-scoring paraphrases balanced training data before fine-tuning item-specific scorer models.",
+  "reported_metrics": "QWK within 0.05 of human-human agreement on nine of ten items.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The pipeline was heavily item-specific.",
+    "At least one item remained difficult because of imbalance and missing or variable contextual information."
+  ],
+  "source_locator": "Abstract; Data Set Concerns; Data-Preprocessing: Dealing with Data Imbalances; Data Augmentation; Discussion."
+}

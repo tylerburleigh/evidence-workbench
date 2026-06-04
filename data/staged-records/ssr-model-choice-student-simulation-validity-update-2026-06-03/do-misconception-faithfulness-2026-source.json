@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "do-misconception-faithfulness-2026-source",
+  "name": "Simulating Students or Sycophantic Problem Solving? On Misconception Faithfulness of LLM Simulators",
+  "source_type": "preprint",
+  "authors": [
+    "Heejin Do",
+    "Shashank Sonkar",
+    "Mrinmaya Sachan"
+  ],
+  "venue": "arXiv",
+  "year": 2026,
+  "published_on": "2026-05-12",
+  "doi": "10.48550/arXiv.2605.12748",
+  "urls": [
+    "https://arxiv.org/abs/2605.12748",
+    "https://arxiv.org/pdf/2605.12748",
+    "https://arxiv.org/html/2605.12748"
+  ],
+  "summary": "arXiv preprint evaluating misconception faithfulness in LLM simulated students across seven instruction-tuned LLMs, multiple datasets, and prompting strategies.",
+  "retrieved_on": "2026-06-03",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03T20:13:00Z",
+      "url": "https://arxiv.org/pdf/2605.12748",
+      "result": "full_text_verified",
+      "notes": "arXiv PDF was downloaded and text-extracted for model list, SFS metric, Table 3 flip-rate results, SFT/DPO/GRPO results, and limitations."
+    }
+  ]
+}

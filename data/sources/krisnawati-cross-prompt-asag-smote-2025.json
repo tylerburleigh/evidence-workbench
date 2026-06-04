@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "krisnawati-cross-prompt-asag-smote-2025",
+  "name": "Cross-Prompt Based Automatic Short Answer Grading System",
+  "source_type": "journal_article",
+  "authors": [
+    "Lucia Dwi Krisnawati",
+    "Aditya Wikan Mahastama",
+    "Su Cheng Haw"
+  ],
+  "venue": "CommIT (Communication and Information Technology) Journal",
+  "year": 2025,
+  "published_on": "2025-10-13",
+  "doi": "10.21512/commit.v19i2.13423",
+  "urls": [
+    "https://doi.org/10.21512/commit.v19i2.13423",
+    "https://journal.binus.ac.id/index.php/commit/article/view/13423",
+    "https://journal.binus.ac.id/index.php/commit/article/download/13423/5542"
+  ],
+  "summary": "Cross-prompt automatic short-answer grading study using manual response augmentation and SMOTE feature-space oversampling to address imbalanced Indonesian short-answer score distributions.",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03",
+      "url": "https://journal.binus.ac.id/index.php/commit/article/download/13423/5542",
+      "result": "Full-text PDF downloaded and text extracted.",
+      "notes": "Sections reviewed: Abstract, Introduction, Research Method/Data Acquisition, Scoring Module, Results and Discussion, Tables II-V, Data Availability."
+    },
+    {
+      "attempted_at": "2026-06-03",
+      "url": "https://api.crossref.org/works/10.21512%2Fcommit.v19i2.13423",
+      "result": "Crossref metadata verified DOI, authors, venue, issue, pages, and publication date."
+    }
+  ]
+}

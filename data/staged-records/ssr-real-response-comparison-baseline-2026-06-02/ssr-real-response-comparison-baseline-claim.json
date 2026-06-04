@@ -1,0 +1,202 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "ssr-real-response-comparison-baseline-claim",
+  "name": "Real Response Comparison Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "ssr-real-response-comparison",
+  "current_stage": "synthesis_claim_supported",
+  "momentum": "baseline_staged",
+  "confidence": "medium",
+  "summary": "The first staged real-response-comparison baseline finds that synthetic student response studies increasingly compare generated outputs with real student data, but comparators and metrics differ enough that results must remain task-bound. Current direct evidence includes generated learner records compared with human learning histories, simulated essays compared with their real source essays, GPT-4 simulated MCQ profiles compared with real item responses, LLM proxy students compared with real NAEP response patterns, LLM respondents compared with undergraduate College Algebra responses, and simulated tutoring dialogue turns compared with real ground-truth dialogue turns.",
+  "main_blockers": [
+    "The first pass is targeted rather than systematic.",
+    "Comparator designs differ: source-conditioned real essays, same-item human response distributions, aggregate NAEP response patterns, and real dialogue turns are not interchangeable.",
+    "Several studies show useful correlations or metric improvements while still reporting narrowed variance, remaining error gaps, or method-package confounding.",
+    "Some newly surfaced relevant work was screened as abstract-only and is not used as direct support."
+  ],
+  "best_current_signals": [
+    "Agent4Edu shows a same-dataset learner-record comparison using ACC, F1-score, and ROUGE-3 against human response records.",
+    "Wolfe and Barber show that simulated essays can be compared against real source essays, but score agreement, average-score alignment, and human detection can disagree.",
+    "Lu and Wang show preliminary same-item real-response comparison for GPT-4 simulated MCQ students, with profile-rule alignment varying by mastered, confused, and unknown rules.",
+    "Srivatsa et al. show that real NAEP response patterns expose persistent proxy-student ability misalignment even when grade-enforced prompts reduce average deviation.",
+    "Liu et al. show item-calibration correlations between LLM respondents and human respondents, while also showing that LLM proficiency distributions are narrower than human distributions.",
+    "Scarlatos et al. and Duan et al. show real tutoring dialogue turns as a strong comparator for simulated-student fidelity, but both sources preserve important caveats about error prediction, private datasets, and method-package effects."
+  ],
+  "interpretive_note": "Real-response comparison should record exactly what is shared between synthetic and real data: same item, same source essay, same student history, same aggregate population, or same dialogue turn. A positive correlation or metric gain is not equivalent to interchangeability with real student responses.",
+  "limitations": [
+    "The staged source set is a compact bootstrap baseline, not an exhaustive review.",
+    "Evidence spans learner response logs, essays, multiple-choice items, IRT item calibration, NAEP response patterns, and tutoring dialogue turns.",
+    "The claim does not establish that synthetic responses can replace real student responses for validation, item calibration, or scorer benchmarking.",
+    "Abstract-only candidates should not support synthesis claims until full text is obtained or the abstract-only limitation is made explicit."
+  ],
+  "update_notes": [
+    "A later pass should classify comparators by independence from the generated response: source-conditioned, same-item held-out, aggregate-population, and future-turn ground truth.",
+    "Future synthesis should distinguish distributional similarity, item-calibration similarity, score agreement, human indistinguishability, and error-pattern fidelity.",
+    "Revisit the OSF/Sciety educational-assessment emulation source after full-text access is verified."
+  ],
+  "supporting_finding_ids": [
+    "agent4edu-real-response-comparison-finding-2026",
+    "wolfe-real-essay-comparison-finding-2026",
+    "lu-real-student-mcq-comparison-finding-2026",
+    "srivatsa-naep-real-response-comparison-finding-2026",
+    "liu-human-respondent-irt-comparison-finding-2026",
+    "scarlatos-real-dialogue-comparison-finding-2026",
+    "duan-history-real-turn-comparison-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "agent4edu-learner-response-generation-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "lu-generative-students-item-evaluation-2024-source",
+    "srivatsa-llm-student-ability-simulation-2025-source",
+    "liu-llm-respondents-item-evaluation-2025-source",
+    "scarlatos-simulated-students-dialogue-2026-source",
+    "duan-history-aware-profiles-student-simulation-2026-source"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Learner response record comparator",
+      "claim_field": "best_current_signals",
+      "conclusion": "Generated learner response records can be evaluated against real learner response histories, but this remains simulator fidelity evidence.",
+      "support_role": "direct_support",
+      "rationale": "Agent4Edu compares generated responses with EduData human response records using ACC, F1-score, and ROUGE-3.",
+      "finding_ids": [
+        "agent4edu-real-response-comparison-finding-2026"
+      ],
+      "source_ids": [
+        "agent4edu-learner-response-generation-2025-source"
+      ],
+      "limitations": [
+        "The response logs initialize and evaluate the simulator.",
+        "The setting is personalized learning practice rather than rubric-scored open responses."
+      ]
+    },
+    {
+      "label": "Real source essay comparator",
+      "claim_field": "best_current_signals",
+      "conclusion": "Real source essays support score-preservation and realism comparisons, but the target signals can conflict.",
+      "support_role": "direct_support",
+      "rationale": "Wolfe and Barber compare simulated essays with the original real essays on score agreement, kappa, average score, and human detection.",
+      "finding_ids": [
+        "wolfe-real-essay-comparison-finding-2026"
+      ],
+      "source_ids": [
+        "wolfe-calibrating-realistic-essays-2026-source"
+      ],
+      "limitations": [
+        "The source is a preprint.",
+        "The real essay is also used to condition generation."
+      ]
+    },
+    {
+      "label": "Same-item MCQ comparator",
+      "claim_field": "best_current_signals",
+      "conclusion": "Same-item MCQ comparisons can show profile-rule alignment, but simulated behavior varies by rule type.",
+      "support_role": "direct_support",
+      "rationale": "Lu and Wang compare GPT-4 simulated profiles with real student item behavior and report actual-versus-simulated profile-rule values.",
+      "finding_ids": [
+        "lu-real-student-mcq-comparison-finding-2026"
+      ],
+      "source_ids": [
+        "lu-generative-students-item-evaluation-2024-source"
+      ],
+      "limitations": [
+        "The evidence is preliminary item-evaluation support.",
+        "The response format and domain are narrow."
+      ]
+    },
+    {
+      "label": "Aggregate NAEP response-pattern comparator",
+      "claim_field": "best_current_signals",
+      "conclusion": "Real population response patterns can expose proxy-student misalignment even after prompt improvements.",
+      "support_role": "direct_support",
+      "rationale": "Srivatsa et al. compare LLM response patterns with real NAEP response behavior using IRT ability alignment.",
+      "finding_ids": [
+        "srivatsa-naep-real-response-comparison-finding-2026"
+      ],
+      "source_ids": [
+        "srivatsa-llm-student-ability-simulation-2025-source"
+      ],
+      "limitations": [
+        "The comparator is aggregate multiple-choice behavior.",
+        "The result does not measure open-response realism."
+      ]
+    },
+    {
+      "label": "Human respondent item-calibration comparator",
+      "claim_field": "best_current_signals",
+      "conclusion": "LLM respondents can correlate with human item calibrations while still underrepresenting human variability.",
+      "support_role": "direct_support",
+      "rationale": "Liu et al. compare LLM respondent distributions and item-parameter correlations against undergraduate human responses.",
+      "finding_ids": [
+        "liu-human-respondent-irt-comparison-finding-2026"
+      ],
+      "source_ids": [
+        "liu-llm-respondents-item-evaluation-2025-source"
+      ],
+      "limitations": [
+        "The item set is one College Algebra lesson.",
+        "The evidence does not justify replacing human respondents."
+      ]
+    },
+    {
+      "label": "Real tutoring dialogue turn comparator",
+      "claim_field": "best_current_signals",
+      "conclusion": "Real dialogue turns provide high-resolution comparator signals for simulated students, including remaining error and behavior gaps.",
+      "support_role": "direct_support",
+      "rationale": "Scarlatos et al. benchmark simulated turns against ground-truth real tutoring dialogue turns across fidelity metrics.",
+      "finding_ids": [
+        "scarlatos-real-dialogue-comparison-finding-2026"
+      ],
+      "source_ids": [
+        "scarlatos-simulated-students-dialogue-2026-source"
+      ],
+      "limitations": [
+        "The evidence is dialogue-specific.",
+        "Method packages differ by workflow and model family."
+      ]
+    },
+    {
+      "label": "History-conditioned future-turn comparator",
+      "claim_field": "best_current_signals",
+      "conclusion": "Ground-truth future turns can evaluate history-aware simulation, but current evidence is private-dataset preprint evidence.",
+      "support_role": "direct_support",
+      "rationale": "Duan et al. compare ProfileRL and baselines against ground-truth real student future dialogue turns.",
+      "finding_ids": [
+        "duan-history-real-turn-comparison-finding-2026"
+      ],
+      "source_ids": [
+        "duan-history-aware-profiles-student-simulation-2026-source"
+      ],
+      "limitations": [
+        "The source is a current arXiv preprint.",
+        "The evaluated math dataset is private."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-02",
+  "assessment_purpose": [
+    "research_or_development",
+    "formative_feedback",
+    "summative_assessment"
+  ],
+  "decision_consequence": [
+    "no_direct_learner_consequence",
+    "feedback_or_instructional_support"
+  ],
+  "operational_use": [
+    "validation_or_benchmarking",
+    "quality_evaluation"
+  ],
+  "applicability": {
+    "applies_when": [
+      "Synthetic and real responses share an interpretable comparator such as item, source essay, aggregate population, or dialogue turn."
+    ],
+    "does_not_apply_when": [
+      "A positive metric is treated as interchangeability with real student responses."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Independent held-out operational validation with real scored responses."
+    ]
+  }
+}

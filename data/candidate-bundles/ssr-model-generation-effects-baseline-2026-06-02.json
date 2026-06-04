@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-model-generation-effects-baseline-2026-06-02",
+  "name": "Model and Generation Effects Baseline",
+  "summary": "Staged first literature-review baseline for how synthetic student response quality varies across model choice, post-training, history conditioning, and generation workflows.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T16:55:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-model-generation-effects"
+    ],
+    "research_question": "What is the current evidence landscape for Model and Generation Effects in Synthetic Student Response Literature Review, and what belongs in the first public baseline for this review question?"
+  },
+  "source_ids": [
+    "agent4edu-learner-response-generation-2025-source",
+    "srivatsa-llm-student-ability-simulation-2025-source",
+    "scarlatos-simulated-students-dialogue-2026-source",
+    "liu-llm-respondents-item-evaluation-2025-source",
+    "duan-history-aware-profiles-student-simulation-2026-source"
+  ],
+  "source_urls": [
+    "https://arxiv.org/abs/2501.10332",
+    "https://aclanthology.org/2025.bea-1.75/",
+    "https://arxiv.org/abs/2601.04025",
+    "https://arxiv.org/abs/2407.10899",
+    "https://arxiv.org/abs/2605.30051"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "ssr-generation-methods-baseline-claim",
+      "relationship": "same_literature_review_domain"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-quality-evaluation-baseline-claim",
+      "relationship": "same_literature_review_domain"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-ssr-model-generation-effects-search-2026-06-02",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "ssr-model-generation-effects-search-2026-06-02",
+      "file_path": "data/search-protocols/ssr-model-generation-effects-search-2026-06-02.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-baseline-2026-06-02/ssr-model-generation-effects-search-2026-06-02.json",
+      "summary": "Stage search protocol ssr-model-generation-effects-search-2026-06-02.",
+      "rationale": "The bundle needs an auditable search and screening record for model and generation workflow effects."
+    },
+    {
+      "change_id": "create-liu-llm-respondents-item-evaluation-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "liu-llm-respondents-item-evaluation-2025-source",
+      "file_path": "data/sources/liu-llm-respondents-item-evaluation-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-baseline-2026-06-02/liu-llm-respondents-item-evaluation-2025-source.json",
+      "summary": "Stage Liu, Bhandari, and Pardos source metadata for LLM respondent item evaluation.",
+      "rationale": "The model-effects baseline needs direct evidence comparing multiple LLM respondent generators and ensemble strategies."
+    },
+    {
+      "change_id": "create-duan-history-aware-profiles-student-simulation-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "duan-history-aware-profiles-student-simulation-2026-source",
+      "file_path": "data/sources/duan-history-aware-profiles-student-simulation-2026-source.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-baseline-2026-06-02/duan-history-aware-profiles-student-simulation-2026-source.json",
+      "summary": "Stage Duan et al. source metadata for history-aware profile-conditioned student simulation.",
+      "rationale": "The model-effects baseline needs current evidence on history conditioning, profile generation, and RL training as generation workflow effects."
+    },
+    {
+      "change_id": "create-agent4edu-model-generation-effects-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "agent4edu-model-generation-effects-artifact",
+      "file_path": "data/artifacts/agent4edu-model-generation-effects-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-baseline-2026-06-02/agent4edu-model-generation-effects-artifact.json",
+      "summary": "Stage Agent4Edu model and workflow effects extract.",
+      "rationale": "The bundle needs evidence for LLM version and agent-workflow effects in learner response simulation."
+    },
+    {
+      "change_id": "create-srivatsa-model-prompt-irt-effects-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "srivatsa-model-prompt-irt-effects-artifact",
+      "file_path": "data/artifacts/srivatsa-model-prompt-irt-effects-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-baseline-2026-06-02/srivatsa-model-prompt-irt-effects-artifact.json",
+      "summary": "Stage Srivatsa et al. model-prompt IRT effects extract.",
+      "rationale": "The bundle needs evidence that proxy-student alignment varies by model and prompt and does not support a universal proxy claim."
+    },
+    {
+      "change_id": "create-scarlatos-post-training-effects-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "scarlatos-post-training-effects-artifact",
+      "file_path": "data/artifacts/scarlatos-post-training-effects-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-baseline-2026-06-02/scarlatos-post-training-effects-artifact.json",
+      "summary": "Stage Scarlatos et al. prompt-vs-post-training effects extract.",
+      "rationale": "The bundle needs evidence comparing prompted LLM simulation with SFT and DPO student simulators."
+    },
+    {
+      "change_id": "create-liu-llm-respondents-model-ensemble-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "liu-llm-respondents-model-ensemble-artifact",
+      "file_path": "data/artifacts/liu-llm-respondents-model-ensemble-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-baseline-2026-06-02/liu-llm-respondents-model-ensemble-artifact.json",
+      "summary": "Stage Liu et al. model and ensemble effects extract.",
+      "rationale": "The bundle needs evidence on multi-model respondent distributions and resampling/augmentation effects."
+    },
+    {
+      "change_id": "create-duan-history-profile-rl-effects-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "duan-history-profile-rl-effects-artifact",
+      "file_path": "data/artifacts/duan-history-profile-rl-effects-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-baseline-2026-06-02/duan-history-profile-rl-effects-artifact.json",
+      "summary": "Stage Duan et al. history-profile RL effects extract.",
+      "rationale": "The bundle needs evidence on history-conditioned profile generation, DPO, and GRPO as generation workflow effects."
+    },
+    {
+      "change_id": "create-agent4edu-model-generation-effects-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "agent4edu-model-generation-effects-finding-2026",
+      "file_path": "data/findings/agent4edu-model-generation-effects-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-baseline-2026-06-02/agent4edu-model-generation-effects-finding-2026.json",
+      "summary": "Stage finding on Agent4Edu LLM version and agent-workflow effects.",
+      "rationale": "The synthesis needs a bounded finding about model version sensitivity and workflow modularity in Agent4Edu."
+    },
+    {
+      "change_id": "create-srivatsa-model-prompt-irt-effects-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "srivatsa-model-prompt-irt-effects-finding-2026",
+      "file_path": "data/findings/srivatsa-model-prompt-irt-effects-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-baseline-2026-06-02/srivatsa-model-prompt-irt-effects-finding-2026.json",
+      "summary": "Stage finding on model- and prompt-specific proxy-student alignment.",
+      "rationale": "The synthesis needs direct evidence that model choice and prompt enforcement change ability alignment without producing a reliable universal proxy."
+    },
+    {
+      "change_id": "create-scarlatos-post-training-effects-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "scarlatos-post-training-effects-finding-2026",
+      "file_path": "data/findings/scarlatos-post-training-effects-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-baseline-2026-06-02/scarlatos-post-training-effects-finding-2026.json",
+      "summary": "Stage finding on prompted versus post-trained dialogue simulator effects.",
+      "rationale": "The synthesis needs concrete support for post-training improving several dialogue-fidelity metrics while leaving gaps."
+    },
+    {
+      "change_id": "create-liu-llm-respondents-model-ensemble-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "liu-llm-respondents-model-ensemble-finding-2026",
+      "file_path": "data/findings/liu-llm-respondents-model-ensemble-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-baseline-2026-06-02/liu-llm-respondents-model-ensemble-finding-2026.json",
+      "summary": "Stage finding on LLM respondent model and ensemble effects.",
+      "rationale": "The synthesis needs evidence that model selection and ensemble/resampling change psychometric similarity to human respondents."
+    },
+    {
+      "change_id": "create-duan-history-profile-rl-effects-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "duan-history-profile-rl-effects-finding-2026",
+      "file_path": "data/findings/duan-history-profile-rl-effects-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-baseline-2026-06-02/duan-history-profile-rl-effects-finding-2026.json",
+      "summary": "Stage finding on history-conditioned profile and RL workflow effects.",
+      "rationale": "The synthesis needs current evidence that history, profiles, DPO, and GRPO alter simulated-student fidelity."
+    },
+    {
+      "change_id": "create-ssr-model-generation-effects-baseline-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-model-generation-effects-baseline-claim",
+      "file_path": "data/claims/ssr-model-generation-effects-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-baseline-2026-06-02/ssr-model-generation-effects-baseline-claim.json",
+      "summary": "Stage synthesis claim for model and generation effects baseline.",
+      "rationale": "The review question needs one bounded claim tying model choice, prompting, post-training, and workflow effects to the taxonomy node."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-model-generation-effects",
+      "note": "Creates the first staged literature-review baseline for model and generation workflow effects in synthetic student response generation."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "synthesis_overreach"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_review_ids": [
+    "evidence-review-ssr-model-generation-effects-source-fidelity-r1",
+    "evidence-review-ssr-model-generation-effects-construct-mapping-r1",
+    "evidence-review-ssr-model-generation-effects-method-classification-r1",
+    "evidence-review-ssr-model-generation-effects-scorer-validation-relevance-r1",
+    "evidence-review-ssr-model-generation-effects-synthesis-overreach-r1"
+  ],
+  "review_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-model-generation-effects-baseline-2026-06-02-2026-06-02t17-08-56-355z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ]
+}

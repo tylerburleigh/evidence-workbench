@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "lu-generative-students-quality-evaluation-finding-2026",
+  "name": "Generative Students Are Evaluated with Profile Alignment and Real-response Item Signals",
+  "source_id": "lu-generative-students-item-evaluation-2024-source",
+  "artifact_id": "lu-generative-students-quality-evaluation-artifact",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation"
+  ],
+  "endpoint_category": "profile_alignment",
+  "direction": "defines_quality_evaluation_method",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Lu and Wang evaluate GPT-4-simulated students for question item evaluation through logical and believable response inspection, profile-response alignment, correlations with real student responses, and overlap in difficult questions.",
+  "population_or_context": "Cambridge International AS and A Level Psychology multiple-choice question item evaluation.",
+  "time_horizon": "arXiv page submitted 2024-05-19, revised 2024-05-24, retrieved on 2026-06-02.",
+  "quantitative_note": "The arXiv abstract reports 45 GPT-4-simulated student profiles answering 20 multiple-choice questions.",
+  "caveats": [
+    "The staged pass records the abstract and evaluation-summary signals, not the exact numeric correlation table.",
+    "Multiple-choice item evaluation differs from constructed-response scoring."
+  ],
+  "evaluation_method": "Profile-response alignment, qualitative believability checks, correlation with real student responses, and overlap in difficult items.",
+  "reported_metrics": "The source reports correlations with real student responses and overlap in difficult questions; exact numeric values are not extracted in this staged baseline.",
+  "limitations": [
+    "Profile-aligned multiple-choice responses are preliminary item-evaluation support, not substitutes for real student testing.",
+    "The staged pass does not extract full numeric results.",
+    "The response format and domain are narrow."
+  ],
+  "source_locator": {
+    "section": "arXiv HTML method and evaluation sections",
+    "url": "https://arxiv.org/html/2405.11591",
+    "quote_or_paraphrase_note": "The staged finding paraphrases the source's profile-simulation setup, response-evaluation summary, real-response correlation, and difficult-question overlap claims.",
+    "verification_status": "verified"
+  }
+}

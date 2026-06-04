@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-acceptable-scoring-uses-operational-augmentation-update-source-fidelity-r1",
+  "name": "Source Fidelity review for Acceptable Use Operational Training Augmentation Update bundle",
+  "candidate_bundle_id": "ssr-acceptable-scoring-uses-operational-augmentation-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "skill_name": "evidence-review",
+  "reviewer_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The update reuses four already published full-text sources and does not introduce new extraction claims. The staged claim keeps the New Mexico evidence limited to documented training augmentation, keeps Rezayi and Djagba tied to real-response evaluation boundaries, and keeps Wang as adjacent constructed off-topic detection evidence.",
+  "reviewed_change_ids": [
+    "update-acceptable-scoring-uses-claim"
+  ],
+  "findings": [
+    {
+      "finding_id": "new-mexico-operational-use-kept-to-reported-workflow",
+      "severity": "note",
+      "category": "source_scope",
+      "claim_or_issue": "The New Mexico technical report supports operational training augmentation after review and approval, but does not provide enough extracted detail for synthetic-only validation, subgroup fairness, cut-score, or deployment-readiness claims.",
+      "why_it_matters": "Acceptable-use language should not overstate what one technical report demonstrates.",
+      "recommended_action": "Keep the staged summary and limitations that restrict the direct claim to controlled operational training augmentation.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "update-acceptable-scoring-uses-claim"
+    }
+  ],
+  "created_at": "2026-06-03T12:06:30Z",
+  "updated_at": "2026-06-03T12:06:30Z"
+}

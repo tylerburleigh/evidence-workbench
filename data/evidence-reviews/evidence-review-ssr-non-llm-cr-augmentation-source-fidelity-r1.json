@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-non-llm-cr-augmentation-source-fidelity-r1",
+  "name": "Source Fidelity Review for Non-LLM CR Augmentation Update",
+  "candidate_bundle_id": "ssr-non-llm-constructed-response-augmentation-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "reviewer_id": "codex-agent",
+  "skill_name": "synthetic-student-responses-evidence-review-adapter",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The four included sources are represented with bounded access metadata. Lun, Krisnawati, and Li/Haudek/Krajcik are full-text extractions with source locators matching the staged claims; Bonthu is correctly limited to official abstract/search-indexed publisher text with lower confidence and follow-up actions. No source-fidelity issue blocks publication.",
+  "reviewed_change_ids": [
+    "create-search-protocol",
+    "create-source-lun",
+    "create-source-bonthu",
+    "create-source-krisnawati",
+    "create-source-li",
+    "create-artifact-lun",
+    "create-artifact-bonthu",
+    "create-artifact-krisnawati",
+    "create-artifact-li",
+    "create-finding-lun",
+    "create-finding-bonthu",
+    "create-finding-krisnawati",
+    "create-finding-li",
+    "update-claim-sparse-supplementation"
+  ],
+  "findings": [
+    {
+      "finding_id": "source-fidelity-bonthu-full-text-follow-up",
+      "severity": "minor",
+      "category": "access_depth",
+      "applies_to_change_id": "create-finding-bonthu",
+      "claim_or_issue": "Bonthu et al. is included from official abstract/search-indexed ScienceDirect text rather than full-text extraction.",
+      "why_it_matters": "The source can support a bounded existence claim for ASAG text augmentation, but exact sample sizes, split design, and table-level metrics should not be synthesized until full text is retrieved.",
+      "recommended_action": "Retrieve full text before using Bonthu et al. for detailed method comparison or quantitative synthesis.",
+      "resolution_status": "open"
+    },
+    {
+      "finding_id": "source-fidelity-li-authorship-corrected",
+      "severity": "note",
+      "category": "metadata",
+      "applies_to_change_id": "create-source-li",
+      "claim_or_issue": "Initial search shorthand misidentified the scientific-model paper as He et al.; Crossref and Springer metadata show Tingting Li, Kevin Haudek, and Joseph Krajcik.",
+      "why_it_matters": "Correct authorship is necessary for citation fidelity.",
+      "recommended_action": "Use Li, Haudek, and Krajcik in all source, finding, and synthesis text.",
+      "resolution_status": "addressed"
+    }
+  ],
+  "created_at": "2026-06-03T16:35:00Z",
+  "updated_at": "2026-06-03T16:35:00Z"
+}

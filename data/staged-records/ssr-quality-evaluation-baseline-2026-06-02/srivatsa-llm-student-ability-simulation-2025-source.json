@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "srivatsa-llm-student-ability-simulation-2025-source",
+  "name": "Can LLMs Reliably Simulate Real Students' Abilities in Mathematics and Reading Comprehension?",
+  "source_type": "conference_paper",
+  "authors": [
+    "KV Aditya Srivatsa",
+    "Kaushal Maurya",
+    "Ekaterina Kochmar"
+  ],
+  "venue": "Proceedings of the 20th Workshop on Innovative Use of NLP for Building Educational Applications",
+  "year": 2025,
+  "published_on": "2025-07",
+  "doi": "10.18653/v1/2025.bea-1.75",
+  "urls": [
+    "https://aclanthology.org/2025.bea-1.75/",
+    "https://aclanthology.org/2025.bea-1.75.pdf"
+  ],
+  "summary": "BEA 2025 paper evaluating whether LLM proxy students can reproduce real student ability patterns in mathematics and reading comprehension using NAEP items and IRT-scale comparison.",
+  "retrieved_on": "2026-06-02"
+}

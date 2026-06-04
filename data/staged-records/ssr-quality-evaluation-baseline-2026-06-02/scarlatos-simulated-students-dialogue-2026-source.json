@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "scarlatos-simulated-students-dialogue-2026-source",
+  "name": "Simulated Students in Tutoring Dialogues: Substance or Illusion?",
+  "source_type": "conference_paper",
+  "authors": [
+    "Alexander Scarlatos",
+    "Jaewook Lee",
+    "Simon Woodhead",
+    "Andrew Lan"
+  ],
+  "venue": "ACL 2026",
+  "year": 2026,
+  "published_on": "2026-05-05",
+  "doi": "10.48550/arXiv.2601.04025",
+  "urls": [
+    "https://arxiv.org/abs/2601.04025",
+    "https://arxiv.org/pdf/2601.04025",
+    "https://arxiv.org/html/2601.04025"
+  ],
+  "summary": "ACL 2026 paper proposing and validating evaluation metrics for simulated students in tutoring dialogues, spanning linguistic, behavioral, and cognitive fidelity.",
+  "retrieved_on": "2026-06-02",
+  "version_note": "arXiv page reviewed at version 2, revised 2026-05-05; arXiv comments report publication at ACL 2026."
+}

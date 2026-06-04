@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "ssr-acceptable-scoring-uses-baseline-2026-06-02",
+  "mode": "bootstrap",
+  "started_at": "2026-06-02T20:05:00Z",
+  "completed_at": "2026-06-02T20:19:29Z",
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-acceptable-scoring-uses"
+    ],
+    "research_question": "Within automated scoring research, development, and validation, which uses of synthetic student responses are treated as appropriate, limited, or inappropriate, and what belongs in the first public baseline for this review question?"
+  },
+  "selected_via": "priority_queue_rank_1",
+  "outcome": "candidate_bundle",
+  "summary": "Created a staged first literature-review baseline for acceptable and limited uses of synthetic student responses in automated scoring research, development, validation, calibration, benchmarking, and stress testing.",
+  "candidate_bundle_id": "ssr-acceptable-scoring-uses-baseline-2026-06-02",
+  "source_ids": [
+    "frohn-llm-cr-live-scoring-2025-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "bexte-zesch-synthetic-content-scoring-2025-source",
+    "nebhi-adaptive-writing-aig-scoring-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "walsh-sjt-automated-scoring-2026-source"
+  ],
+  "source_urls": [
+    "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs",
+    "https://aclanthology.org/2025.acl-long.659/",
+    "https://aclanthology.org/2025.bea-1.11/",
+    "https://aclanthology.org/2025.bea-1.73/",
+    "https://arxiv.org/abs/2602.06772",
+    "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1756673/full"
+  ],
+  "next_recommended_mode": "manual",
+  "next_actions": [
+    "Review access-limited candidates if full text becomes available, especially Ipci et al. and AIME program-only candidates.",
+    "Keep later updates focused on use boundaries rather than generic human-AI scoring agreement unless synthetic responses are part of the scored corpus."
+  ]
+}

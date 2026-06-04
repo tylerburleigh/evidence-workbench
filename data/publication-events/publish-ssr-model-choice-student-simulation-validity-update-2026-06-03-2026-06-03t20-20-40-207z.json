@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-model-choice-student-simulation-validity-update-2026-06-03-2026-06-03t20-20-40-207z",
+  "name": "Published Model Choice and Student-Simulation Validity Update",
+  "summary": "Targeted literature-only update promoting newer model-choice and student-simulation validity sources into the SSR evidence graph, with fine-tuning evidence treated as a boundary rather than an action recommendation.",
+  "candidate_bundle_id": "ssr-model-choice-student-simulation-validity-update-2026-06-03",
+  "event_type": "publish",
+  "published_at": "2026-06-03T20:20:40.207Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "source",
+      "record_id": "do-misconception-faithfulness-2026-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "do-misconception-faithfulness-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "do-misconception-faithfulness-off-the-shelf-limit-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "yuan-valid-student-simulation-framework-2026-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "yuan-epistemic-state-specification-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "yuan-epistemic-fidelity-model-choice-boundary-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "martynova-human-learners-teacher-insights-2025-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "martynova-teacher-insights-authenticity-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "martynova-teacher-authenticity-failure-finding-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "search_protocol",
+      "record_id": "ssr-model-choice-student-simulation-validity-search-2026-06-03",
+      "action": "created"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 10,
+    "by_record_type": {
+      "source": {
+        "created": 3,
+        "updated": 0,
+        "total": 3
+      },
+      "artifact": {
+        "created": 3,
+        "updated": 0,
+        "total": 3
+      },
+      "finding": {
+        "created": 3,
+        "updated": 0,
+        "total": 3
+      },
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "ssr-model-generation-effects-baseline-claim",
+    "ssr-quality-evaluation-baseline-claim",
+    "ssr-prompt-engineering-effects-baseline-claim"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-ssr-model-choice-student-simulation-validity-update-applicability-boundary-r1",
+    "evidence-review-ssr-model-choice-student-simulation-validity-update-construct-mapping-r1",
+    "evidence-review-ssr-model-choice-student-simulation-validity-update-method-classification-r1",
+    "evidence-review-ssr-model-choice-student-simulation-validity-update-scorer-validation-relevance-r1",
+    "evidence-review-ssr-model-choice-student-simulation-validity-update-source-fidelity-r1",
+    "evidence-review-ssr-model-choice-student-simulation-validity-update-synthesis-overreach-r1"
+  ],
+  "review_corrections_applied": [],
+  "review_follow_up_actions": [
+    "applicability_boundary: Retain the limitation that the evidence supports authenticity dimensions rather than model superiority.",
+    "construct_mapping: Preserve the artifact fields that label scorer_use as not automated scorer validation.",
+    "method_classification: Keep the fine-tuning scope caveat in the finding and memo update.",
+    "scorer_validation_relevance: Use the new records to refine model-choice and reporting criteria while preserving held-out real-response validation as the scorer evidence standard.",
+    "source_fidelity: Keep the full-text access metadata and source locators as staged.",
+    "synthesis_overreach: Update the application memo to emphasize desk-based selection criteria, ESS-style reporting, and off-the-shelf prompt-only limitations."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "change_note": "Strengthens the task-bound conclusion: stronger or more capable models are not automatically better simulated students because they may re-solve from latent expertise rather than preserve learner misconceptions."
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "li-scientific-models-smote-augmentation-2025",
+  "name": "Scientific Model Scoring SMOTE and Image Augmentation",
+  "artifact_type": "study_extract",
+  "status": "staged",
+  "source_ids": [
+    "li-scientific-models-smote-2025"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "population_or_context": "High-school students' computer-based electroscope scientific models, including drawn/model components and written explanations, scored with a 13-category analytic rubric.",
+  "sample_size": "Each category dataset consisted of 1121 student model images with binary rubric labels; the article describes two model collections and a separate independent testing phase.",
+  "methods": "CNN-based automated scoring models were trained and evaluated under no augmentation, general image augmentation, and SMOTE strategies. SMOTE generated feature-space samples for imbalanced rubric categories and was applied only to training data.",
+  "endpoint_categories": [
+    "constructed_scientific_model_scoring",
+    "feature_space_oversampling",
+    "image_data_augmentation",
+    "minority_label_fairness"
+  ],
+  "education_context": "Physical science/electroscope modeling task asking students to construct and explain scientific models.",
+  "response_origin": "Real student scientific models plus image augmentation and SMOTE-generated feature-space samples; not synthetic prose student answers.",
+  "rubric_label_space": "Thirteen binary analytic rubric categories capturing components, relationships, explanations, and inaccuracies in student scientific models.",
+  "label_source": "Human scoring by trained raters with discrepancies resolved through team discussion and Krippendorff's alpha of at least 0.8 before formal scoring.",
+  "generation_model": "No text-generation model; CNN scorers used image data augmentation and imbalanced-learn SMOTE feature-space interpolation.",
+  "generation_method": "General image transformations and SMOTE interpolation among minority-class feature representations for each rubric category.",
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "training_augmentation",
+  "evaluation_method": "Tenfold cross-validation during training and independent testing, reporting accuracy, precision, recall, and F1 across rubric categories.",
+  "scorer_use": "Training balancing and robustness analysis for automated scoring of multimodal constructed responses.",
+  "real_response_comparator": "Yes. Independent testing used real student model responses, with SMOTE confined to the training set.",
+  "sparsity_or_imbalance_motivation": "The article reports highly imbalanced rubric categories, including categories with positive cases below 10%, and notes that complex assessment tasks often lack high-performance responses.",
+  "synthetic_data_research_role": "SMOTE and image augmentation supplement imbalanced training data to reduce majority-class bias and improve automated scoring of underrepresented response categories.",
+  "reported_metrics": "For severe imbalance categories, average recall reportedly increased from 0.52 before SMOTE to 0.89 after SMOTE; Category 11 F1 increased from 0.47 to 0.86; Category 8 recall increased from 0.70 to 0.86 after SMOTE.",
+  "numeric_results_extracted": true,
+  "limitations": "This is adjacent evidence for constructed-response augmentation because the synthetic samples are image/feature-space training examples, not generated textual student responses. The authors note SMOTE does not inherently address conceptual differences in synthetic samples."
+}

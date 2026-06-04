@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "new-mexico-mssa-technical-report-2025-source",
+  "name": "2025 New Mexico MSSA Technical Report",
+  "source_type": "technical_report",
+  "authors": [
+    "Cognia"
+  ],
+  "venue": "New Mexico Help & Support",
+  "year": 2025,
+  "urls": [
+    "https://newmexico.onlinehelp.cognia.org/resources-nm-mssa/",
+    "https://newmexico.onlinehelp.cognia.org/wp-content/uploads/sites/10/2024/10/2024-2025_New_Mexico_MSSA_Technical_Report_ADA.pdf"
+  ],
+  "summary": "Official New Mexico MSSA technical report describing automated scoring model training and validation for the 2024-2025 state summative assessment. The report states that some English non-accommodated operational forms used field-test and operational responses supplemented with LLM-generated synthetic responses for Writing items with sparse high-score examples.",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03T11:05:00Z",
+      "url": "https://newmexico.onlinehelp.cognia.org/resources-nm-mssa/",
+      "result": "verified",
+      "notes": "Official NM-MSSA resources page lists the 2024-2025 NM-MSSA Technical Report."
+    },
+    {
+      "attempted_at": "2026-06-03T11:06:00Z",
+      "url": "https://newmexico.onlinehelp.cognia.org/wp-content/uploads/sites/10/2024/10/2024-2025_New_Mexico_MSSA_Technical_Report_ADA.pdf",
+      "result": "verified",
+      "notes": "PDF downloaded and text extracted locally; relevant passages located in Section 6.2.2.2, pages 48-50."
+    }
+  ]
+}

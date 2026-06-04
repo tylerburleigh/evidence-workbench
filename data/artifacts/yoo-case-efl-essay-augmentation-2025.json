@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "yoo-case-efl-essay-augmentation-2025",
+  "name": "DREsS CASE Corruption-Based EFL Essay Augmentation",
+  "artifact_type": "study_extract",
+  "status": "staged",
+  "source_ids": [
+    "yoo-dress-rubric-essay-scoring-2025"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "population_or_context": "English-as-a-foreign-language undergraduate essay writing scored on content, organization, and language rubrics.",
+  "sample_size": "DREsS includes 48.9K samples total, including 2,279 real classroom essays, 6,515 standardized samples, and 40,185 CASE synthetic samples.",
+  "methods": "CASE begins with well-written essays and corrupts content, organization, or language at sentence level to generate synthetic essays across score ranges.",
+  "endpoint_categories": [
+    "rubric_based_essay_scoring",
+    "score_distribution_balancing",
+    "synthetic_training_data"
+  ],
+  "education_context": "Rubric-based automated essay scoring for EFL writing education.",
+  "response_origin": "Hybrid: real classroom essays, standardized existing essay data, and CASE-generated synthetic essays.",
+  "rubric_label_space": "Three rubric dimensions: content, organization, and language; scores from 0 to 5.",
+  "label_source": "Real classroom essays were scored by English education experts; CASE synthetic scores are constructed through controlled corruption from high-scoring essays.",
+  "generation_model": "CASE corruption algorithm; gpt-4o used as a comparator in quality checks, not as the main DREsS_CASE generator.",
+  "generation_method": "Rule-based corruption of high-scoring essays through sentence substitution, sentence swaps, and ungrammatical sentence substitution.",
+  "prompt_strategy": "Not applicable to CASE; gpt-4o comparison used persona and example-prompted generation.",
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "training_augmentation",
+  "evaluation_method": "Rubric-based AES baselines were trained with DREsS variants and evaluated with QWK on real classroom validation and test sets; synthetic quality was compared with gpt-4o generation.",
+  "scorer_use": "Training augmentation and score-distribution balancing for rubric-based AES.",
+  "real_response_comparator": "Yes. Synthetic or standardized training data were evaluated through model performance on DREsS_New real classroom essays.",
+  "sparsity_or_imbalance_motivation": "The paper reports scarce low-score samples and a need for usable rubric-based AES datasets.",
+  "synthetic_data_research_role": "CASE generated balanced synthetic training samples across score ranges to improve rubric-based scorer training.",
+  "reported_metrics": "DREsS_CASE contains 40.1K synthetic samples; adding standardized and CASE data improved baseline results by 45.44%; CASE synthetic-label QWK reached 0.661 versus 0.225 average for gpt-4o generation.",
+  "numeric_results_extracted": true,
+  "limitations": "CASE starts from well-written essays and may not represent all EFL learner patterns; the authors identify further optimization of corruption thresholds as future work."
+}

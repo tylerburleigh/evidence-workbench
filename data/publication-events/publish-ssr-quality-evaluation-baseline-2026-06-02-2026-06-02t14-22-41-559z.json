@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-quality-evaluation-baseline-2026-06-02-2026-06-02t14-22-41-559z",
+  "name": "Published Synthetic Response Quality Evaluation Baseline",
+  "summary": "Staged first literature-review baseline for how synthetic student or learner responses are evaluated for realism, fidelity, alignment, and downstream utility.",
+  "candidate_bundle_id": "ssr-quality-evaluation-baseline-2026-06-02",
+  "event_type": "publish",
+  "published_at": "2026-06-02T14:22:41.559Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "search_protocol",
+      "record_id": "ssr-quality-evaluation-search-2026-06-02",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "lu-generative-students-item-evaluation-2024-source",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "srivatsa-llm-student-ability-simulation-2025-source",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "scarlatos-simulated-students-dialogue-2026-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "ipci-quality-evaluation-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "agent4edu-quality-evaluation-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "wolfe-quality-evaluation-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "lu-generative-students-quality-evaluation-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "srivatsa-proxy-student-irt-evaluation-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "scarlatos-dialogue-simulation-quality-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ipci-quality-evaluation-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "agent4edu-quality-evaluation-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "wolfe-quality-evaluation-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "lu-generative-students-quality-evaluation-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "srivatsa-proxy-student-irt-evaluation-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "scarlatos-dialogue-simulation-quality-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-quality-evaluation-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 17,
+    "by_record_type": {
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "source": {
+        "created": 3,
+        "updated": 0,
+        "total": 3
+      },
+      "artifact": {
+        "created": 6,
+        "updated": 0,
+        "total": 6
+      },
+      "finding": {
+        "created": 6,
+        "updated": 0,
+        "total": 6
+      },
+      "claim": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "ssr-quality-evaluation-baseline-claim"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-ssr-quality-evaluation-construct-mapping-r1",
+    "evidence-review-ssr-quality-evaluation-method-classification-r1",
+    "evidence-review-ssr-quality-evaluation-scorer-validation-relevance-r1",
+    "evidence-review-ssr-quality-evaluation-source-fidelity-r1",
+    "evidence-review-ssr-quality-evaluation-synthesis-overreach-r1"
+  ],
+  "review_corrections_applied": [],
+  "change_note": "Creates the first staged literature-review baseline for quality evaluation of synthetic student responses."
+}

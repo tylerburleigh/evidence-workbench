@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "nguyen-cao-science-thinking-realism-model-effects-finding-2026",
+  "name": "Science Thinking Simulation Shows Model- and Grade-Dependent Realism",
+  "source_id": "nguyen-cao-science-thinking-simulation-2026-source",
+  "artifact_id": "nguyen-cao-science-thinking-realism-model-comparison-artifact",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-model-generation-effects",
+    "ssr-real-response-comparison"
+  ],
+  "endpoint_category": "response_realism",
+  "direction": "model_choice_and_context_affect_realism",
+  "evidence_tier": "peer_reviewed_full_text",
+  "confidence": "moderate",
+  "statement": "Nguyen and Cao provide direct evidence that synthetic open-ended student ideas can look realistic under task-specific comparator metrics, but realism varies by model and grade context and remains evidence for instructional planning rather than automated scorer validation.",
+  "population_or_context": "K-12 science lesson ideas across 49 OpenSciEd lessons and six LLMs.",
+  "time_horizon": "2026",
+  "quantitative_note": "The paper reports 8,820 generated ideas and mean semantic similarity of 0.52 (SD = 0.07), with all listed non-Mistral models outperforming Mistral-7B on semantic similarity.",
+  "source_locator": {
+    "section": "Abstract; Methods: Overall Procedures & Data Sources; Results: RQ1a Semantic Similarity",
+    "url": "https://link.springer.com/article/10.1007/s10956-026-10333-5",
+    "quote_or_paraphrase_note": "Extraction uses the article's model list, sample construction, five-step evaluation pipeline, and reported semantic-similarity results.",
+    "verification_status": "verified"
+  },
+  "caveats": [
+    "The article uses lesson ideas and teacher perceptions as comparators, not operational human-scored response sets.",
+    "No automated scoring model is validated.",
+    "The model ranking is task- and prompt-specific."
+  ],
+  "numeric_results_extracted": true,
+  "evaluation_method": "Semantic similarity, language appropriateness, knowledge-scope evaluation, qualitative divergence analysis, and teacher interviews.",
+  "limitations": [
+    "Instructional-planning context only.",
+    "Realism metrics are validity-relevant but insufficient for scorer validation."
+  ]
+}

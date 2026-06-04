@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-model-choice-student-simulation-validity-update-source-fidelity-r1",
+  "name": "Source Fidelity review for Model Choice and Student-Simulation Validity Update bundle",
+  "candidate_bundle_id": "ssr-model-choice-student-simulation-validity-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "skill_name": "evidence-review",
+  "reviewer_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The three sources are primary arXiv or ACL Anthology records with full-text PDFs verified and section-level locators. The staged numeric summaries for Do et al. and Martynova et al. are traceable to extracted full text, while Yuan et al. is correctly marked not_applicable for numeric extraction.",
+  "reviewed_change_ids": [
+    "create-do-source",
+    "create-do-artifact",
+    "create-do-finding",
+    "create-yuan-source",
+    "create-yuan-artifact",
+    "create-yuan-finding",
+    "create-martynova-source",
+    "create-martynova-artifact",
+    "create-martynova-finding",
+    "create-model-choice-search-protocol"
+  ],
+  "findings": [
+    {
+      "finding_id": "model-choice-source-full-text-verified",
+      "severity": "note",
+      "category": "source_mismatch",
+      "claim_or_issue": "The staged source records use primary landing pages and PDFs from arXiv and ACL Anthology.",
+      "why_it_matters": "The model-choice update should not depend on secondary paper pages or search snippets.",
+      "recommended_action": "Keep the full-text access metadata and source locators as staged.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-model-choice-search-protocol"
+    }
+  ],
+  "created_at": "2026-06-03T20:14:00Z",
+  "updated_at": "2026-06-03T20:14:00Z"
+}

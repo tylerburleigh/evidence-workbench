@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "wolfe-barber-realism-validation-finding-2026",
+  "name": "Generated Essays Were Human-Validated for Score Comparability and Realism",
+  "source_id": "wolfe-barber-realistic-essay-augmentation-2026",
+  "artifact_id": "wolfe-barber-essay-realism-calibration-2026",
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "endpoint_category": "synthetic_quality_validation",
+  "direction": "supports",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Wolfe and Barber generated simulated essays from same-score real essays and used expert raters to score them and judge realism, positioning the work as calibration for future automated scoring engine data augmentation.",
+  "population_or_context": "Grade 9 statewide informative-explanatory essays.",
+  "quantitative_note": "Predict Next simulations had score agreement comparable to real essays; expert raters identified only 25% of Predict Next simulations and 18% of 25 Examples simulations as simulated.",
+  "evaluation_method": "Human score agreement, QWK, average score comparisons, and real/simulated classification accuracy.",
+  "sparsity_or_imbalance_motivation": "Limited training data and sparse observations at some score points can impede automated scoring engine development.",
+  "synthetic_data_research_role": "Synthetic responses were used to validate generation methods, not directly to validate a deployed scorer.",
+  "reported_metrics": "Agreement proportions, QWK, average score comparisons, real/simulated classification accuracy.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The study did not train a downstream automated scoring engine with the generated essays.",
+    "It is bounded to one writing prompt, grade level, rubric, and state context."
+  ],
+  "source_locator": {
+    "section": "Abstract; Process; Scoring and Realism Rating; Analyses; Discussion and Implications",
+    "url": "https://arxiv.org/abs/2602.06772",
+    "quote_or_paraphrase_note": "The finding paraphrases the full-text sections describing simulated essay generation, expert scoring, realism ratings, agreement analyses, and data-augmentation positioning.",
+    "verification_status": "located"
+  }
+}

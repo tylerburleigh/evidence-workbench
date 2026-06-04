@@ -1,0 +1,271 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-validity-conditions-controlled-comparisons-update-2026-06-03",
+  "name": "Validity Conditions and Controlled Comparison Update",
+  "summary": "Targeted surveillance update for the cross-cutting question of when synthetic student responses provide validity-relevant evidence for automated scoring workflows, emphasizing realism metrics, model/workflow choice, and real-response comparators.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-03T18:45:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-quality-evaluation",
+      "ssr-model-generation-effects",
+      "ssr-prompt-engineering-effects",
+      "ssr-real-response-comparison",
+      "ssr-scoring-validation-use",
+      "ssr-acceptable-scoring-uses"
+    ],
+    "research_question": "Under what conditions do synthetic student responses provide validity-relevant evidence for automated scoring workflows, and how do realism metrics, model choice, and real-response comparators affect that claim?"
+  },
+  "source_ids": [
+    "nguyen-cao-science-thinking-simulation-2026-source",
+    "cao-nguyen-math-simulated-learners-2026-source",
+    "scarlatos-smart-irt-simulated-students-2025-source",
+    "wu-embracing-imperfection-student-agents-2025-source"
+  ],
+  "source_urls": [
+    "https://link.springer.com/article/10.1007/s10956-026-10333-5",
+    "https://arxiv.org/abs/2604.04361",
+    "https://arxiv.org/pdf/2604.04361",
+    "https://aclanthology.org/2025.emnlp-main.1274/",
+    "https://aclanthology.org/2025.emnlp-main.1274.pdf",
+    "https://aclanthology.org/2025.acl-long.488/",
+    "https://aclanthology.org/2025.acl-long.488.pdf"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "ssr-quality-evaluation-baseline-claim",
+      "relationship": "candidate_support_update"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-model-generation-effects-baseline-claim",
+      "relationship": "candidate_support_update"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-prompt-engineering-effects-baseline-claim",
+      "relationship": "candidate_support_update"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-real-response-comparison-baseline-claim",
+      "relationship": "candidate_support_update"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-scoring-validation-use-baseline-claim",
+      "relationship": "candidate_boundary_update"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-acceptable-scoring-uses-baseline-claim",
+      "relationship": "candidate_boundary_update"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-nguyen-cao-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nguyen-cao-science-thinking-simulation-2026-source",
+      "file_path": "data/sources/nguyen-cao-science-thinking-simulation-2026-source.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-controlled-comparisons-update-2026-06-03/nguyen-cao-science-thinking-simulation-2026-source.json",
+      "summary": "Add Nguyen and Cao's open-access science-thinking simulation article.",
+      "rationale": "The article directly compares six LLMs on open-ended student-idea realism using semantic, grade-level, knowledge-scope, and teacher-perception evidence."
+    },
+    {
+      "change_id": "create-nguyen-cao-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "nguyen-cao-science-thinking-realism-model-comparison-artifact",
+      "file_path": "data/artifacts/nguyen-cao-science-thinking-realism-model-comparison-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-controlled-comparisons-update-2026-06-03/nguyen-cao-science-thinking-realism-model-comparison-artifact.json",
+      "summary": "Extract Nguyen and Cao's multi-model realism evaluation workflow.",
+      "rationale": "The artifact maps model choice, realism metrics, and lesson/student idea comparators while preserving the non-scoring instructional-planning context."
+    },
+    {
+      "change_id": "create-nguyen-cao-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nguyen-cao-science-thinking-realism-model-effects-finding-2026",
+      "file_path": "data/findings/nguyen-cao-science-thinking-realism-model-effects-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-controlled-comparisons-update-2026-06-03/nguyen-cao-science-thinking-realism-model-effects-finding-2026.json",
+      "summary": "Add a finding that realism varies by model and grade context under explicit comparator metrics.",
+      "rationale": "The finding strengthens the realism/model-effect answer and shows that higher semantic similarity is not interchangeable with scorer validation."
+    },
+    {
+      "change_id": "create-cao-nguyen-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "cao-nguyen-math-simulated-learners-2026-source",
+      "file_path": "data/sources/cao-nguyen-math-simulated-learners-2026-source.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-controlled-comparisons-update-2026-06-03/cao-nguyen-math-simulated-learners-2026-source.json",
+      "summary": "Add Cao and Nguyen et al.'s AIED 2026 simulated-learner comparison preprint.",
+      "rationale": "The paper compares few-shot, fine-tuned, multi-agent, and DPO approaches for authentic fifth-grade mathematics simulated learners."
+    },
+    {
+      "change_id": "create-cao-nguyen-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "cao-nguyen-math-simulated-learner-authenticity-artifact",
+      "file_path": "data/artifacts/cao-nguyen-math-simulated-learner-authenticity-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-controlled-comparisons-update-2026-06-03/cao-nguyen-math-simulated-learner-authenticity-artifact.json",
+      "summary": "Extract the mathematics simulated-learner authenticity comparison workflow.",
+      "rationale": "The artifact records workflow effects, scarce-authenticity-data mitigation, human coding, and the teacher-learning rather than scoring context."
+    },
+    {
+      "change_id": "create-cao-nguyen-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "cao-nguyen-authenticity-workflow-comparison-finding-2026",
+      "file_path": "data/findings/cao-nguyen-authenticity-workflow-comparison-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-controlled-comparisons-update-2026-06-03/cao-nguyen-authenticity-workflow-comparison-finding-2026.json",
+      "summary": "Add a finding that post-prompt workflows improve authenticity but create different instructional affordances and limits.",
+      "rationale": "The finding supports the model/workflow condition and the limitation that authenticity evidence is purpose-specific."
+    },
+    {
+      "change_id": "create-smart-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "scarlatos-smart-irt-simulated-students-2025-source",
+      "file_path": "data/sources/scarlatos-smart-irt-simulated-students-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-controlled-comparisons-update-2026-06-03/scarlatos-smart-irt-simulated-students-2025-source.json",
+      "summary": "Add the EMNLP 2025 SMART paper.",
+      "rationale": "The paper is directly relevant to validity-relevant synthetic open-ended responses because it uses simulated responses, an LLM scoring model, and IRT to estimate item difficulty against real student-response datasets."
+    },
+    {
+      "change_id": "create-smart-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "scarlatos-smart-irt-open-ended-difficulty-artifact",
+      "file_path": "data/artifacts/scarlatos-smart-irt-open-ended-difficulty-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-controlled-comparisons-update-2026-06-03/scarlatos-smart-irt-open-ended-difficulty-artifact.json",
+      "summary": "Extract SMART's simulated-response, scoring-model, and item-difficulty pipeline.",
+      "rationale": "The artifact captures how synthetic responses can provide assessment-development evidence only when tied to real human-scored data, ability alignment, scoring, and IRT comparators."
+    },
+    {
+      "change_id": "create-smart-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "scarlatos-smart-irt-validity-boundary-finding-2026",
+      "file_path": "data/findings/scarlatos-smart-irt-validity-boundary-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-controlled-comparisons-update-2026-06-03/scarlatos-smart-irt-validity-boundary-finding-2026.json",
+      "summary": "Add a finding that IRT-aligned synthetic open-ended responses can support item-difficulty prediction, with realism and dataset limitations.",
+      "rationale": "The finding is the strongest bridge from realism/model comparisons to an automated scoring workflow, while preserving the real-response and scorer limits."
+    },
+    {
+      "change_id": "create-wu-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "wu-embracing-imperfection-student-agents-2025-source",
+      "file_path": "data/sources/wu-embracing-imperfection-student-agents-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-controlled-comparisons-update-2026-06-03/wu-embracing-imperfection-student-agents-2025-source.json",
+      "summary": "Add Wu et al.'s ACL 2025 cognitive-level simulated-student agent paper.",
+      "rationale": "The paper directly addresses realism of imperfect, lower-ability, and error-bearing synthetic student solutions in a constructed-response programming context."
+    },
+    {
+      "change_id": "create-wu-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "wu-student100-cognitive-level-realism-artifact",
+      "file_path": "data/artifacts/wu-student100-cognitive-level-realism-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-controlled-comparisons-update-2026-06-03/wu-student100-cognitive-level-realism-artifact.json",
+      "summary": "Extract Wu et al.'s cognitive-prototype and beam-search realism workflow.",
+      "rationale": "The artifact separates the error-pattern realism contribution from automated scorer-validation claims."
+    },
+    {
+      "change_id": "create-wu-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "wu-cognitive-level-imperfection-realism-finding-2026",
+      "file_path": "data/findings/wu-cognitive-level-imperfection-realism-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-controlled-comparisons-update-2026-06-03/wu-cognitive-level-imperfection-realism-finding-2026.json",
+      "summary": "Add a finding that realism requires modeling plausible mistakes and cognitive-level variation, not just correct or fluent responses.",
+      "rationale": "The finding addresses the user's realism gap and extends the constructed-response evidence beyond essay scoring."
+    },
+    {
+      "change_id": "create-validity-conditions-search-protocol",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "ssr-validity-conditions-controlled-comparisons-search-2026-06-03",
+      "file_path": "data/search-protocols/ssr-validity-conditions-controlled-comparisons-search-2026-06-03.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-controlled-comparisons-update-2026-06-03/ssr-validity-conditions-controlled-comparisons-search-2026-06-03.json",
+      "summary": "Add the targeted search protocol for validity conditions, realism, model/workflow comparison, and real-response comparators.",
+      "rationale": "The protocol documents why the update is cross-node surveillance rather than a new taxonomy question."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-quality-evaluation",
+      "note": "Strengthens the claim that realism is multidimensional: semantic overlap, grade-level language, cognitive authenticity, error-pattern plausibility, ability alignment, teacher/user judgments, and downstream utility are not interchangeable."
+    },
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-model-generation-effects",
+      "note": "Adds direct evidence that model and workflow choices matter, including multi-model science-response comparisons and few-shot versus fine-tuned, multi-agent, DPO, and cognitive-prototype workflows."
+    },
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-prompt-engineering-effects",
+      "note": "Clarifies that prompt-only baselines are useful comparators but often underperform workflows that add real-response training data, preference data, evaluator/refiner agents, or cognitive prototypes."
+    },
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-real-response-comparison",
+      "note": "Strengthens the requirement that validity-relevant realism claims identify the comparator: same-task lesson ideas, real classroom/tutor utterances, human-scored open-ended responses, IRT item difficulty, or past learning records."
+    },
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-scoring-validation-use",
+      "note": "Adds a boundary condition: SMART uses synthetic responses inside an item-difficulty pipeline with an LLM scoring model, but it does not validate an operational scorer using synthetic data alone."
+    },
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-acceptable-scoring-uses",
+      "note": "Supports a conditional acceptable-use claim for research/development, item-development, stress-test, and augmentation contexts when synthetic responses are externally checked against real student-response evidence."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "applicability_boundary",
+    "synthesis_overreach"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_review_ids": [
+    "evidence-review-ssr-validity-conditions-controlled-comparisons-update-source-fidelity-r1",
+    "evidence-review-ssr-validity-conditions-controlled-comparisons-update-construct-mapping-r1",
+    "evidence-review-ssr-validity-conditions-controlled-comparisons-update-method-classification-r1",
+    "evidence-review-ssr-validity-conditions-controlled-comparisons-update-scorer-validation-relevance-r1",
+    "evidence-review-ssr-validity-conditions-controlled-comparisons-update-applicability-boundary-r1",
+    "evidence-review-ssr-validity-conditions-controlled-comparisons-update-synthesis-overreach-r1"
+  ],
+  "review_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-validity-conditions-controlled-comparisons-update-2026-06-03-2026-06-03t19-28-50-265z"
+  ],
+  "next_actions": [
+    "Publication complete. Downstream synthesis and background literature-review artifacts have been updated.",
+    "applicability_boundary: Keep the current assessment_purpose, decision_consequence, operational_use, and limitations fields.",
+    "construct_mapping: Retain the explicit scorer_use, real_response_comparator, and limitations fields in each staged artifact.",
+    "method_classification: Keep the model/workflow wording in future literature-review revisions.",
+    "scorer_validation_relevance: Retain the SMART caveat in the finding and carry it into the unified literature review.",
+    "source_fidelity: Keep the source URLs, DOI/arXiv/ACL metadata, and section-level locators in the staged records.",
+    "synthesis_overreach: Preserve the short conditional claim and the explicit remaining gap around direct scorer-validation studies."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": []
+}

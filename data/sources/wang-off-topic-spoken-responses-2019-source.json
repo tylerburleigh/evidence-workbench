@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "wang-off-topic-spoken-responses-2019-source",
+  "name": "Automatic Detection of Off-Topic Spoken Responses Using Very Deep Convolutional Neural Networks",
+  "source_type": "conference_paper",
+  "authors": [
+    "Xinhao Wang",
+    "Su-Youn Yoon",
+    "Keelan Evanini",
+    "Klaus Zechner",
+    "Yao Qian"
+  ],
+  "venue": "Interspeech 2019",
+  "year": 2019,
+  "doi": "10.21437/Interspeech.2019-1848",
+  "urls": [
+    "https://www.isca-archive.org/interspeech_2019/wang19p_interspeech.html",
+    "https://www.isca-archive.org/interspeech_2019/wang19p_interspeech.pdf"
+  ],
+  "summary": "Conference paper on detecting off-topic spoken responses in a large-scale high-stakes English speaking assessment. The study uses operational spoken responses and creates synthetic off-topic examples by mismatching responses from other prompts, so it is adjacent evidence for validity-protection stress testing rather than generated-response scoring validation.",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03T10:58:00Z",
+      "url": "https://www.isca-archive.org/interspeech_2019/wang19p_interspeech.html",
+      "result": "verified",
+      "notes": "ISCA metadata, abstract, DOI, and PDF link verified."
+    },
+    {
+      "attempted_at": "2026-06-03T10:59:00Z",
+      "url": "https://www.isca-archive.org/interspeech_2019/wang19p_interspeech.pdf",
+      "result": "verified",
+      "notes": "PDF downloaded and text extracted locally."
+    }
+  ]
+}

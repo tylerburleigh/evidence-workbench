@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-assessment-stakes-boundaries-search-2026-06-02",
+  "name": "Assessment Stakes and Use Boundaries Search Pass",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "status": "included_sources_staged",
+  "systematicity_level": "targeted_bootstrap",
+  "search_started_at": "2026-06-02T21:58:00Z",
+  "search_completed_at": "2026-06-02T22:23:21Z",
+  "databases": [
+    "Web search",
+    "Official testing standards pages",
+    "ETS official PDF",
+    "U.S. Department of Education LINCS",
+    "Existing synthetic-student-responses public graph"
+  ],
+  "search_queries": [
+    {
+      "database": "Web search",
+      "query": "\"synthetic student responses\" \"assessment stakes\" automated scoring",
+      "searched_at": "2026-06-02T21:58:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"synthetic responses\" formative summative automated scoring validation",
+      "searched_at": "2026-06-02T22:00:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"synthetic student responses\" \"high stakes\" assessment validation",
+      "searched_at": "2026-06-02T22:01:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Official testing standards pages",
+      "query": "Standards for Educational and Psychological Testing intended use validity stakes official PDF",
+      "searched_at": "2026-06-02T22:05:00Z",
+      "result_count": "official open-access standards PDF verified"
+    },
+    {
+      "database": "ETS official PDF",
+      "query": "ETS AI assessment guidelines validity fairness transparency monitoring official PDF",
+      "searched_at": "2026-06-02T22:08:00Z",
+      "result_count": "official ETS executive summary PDF verified"
+    },
+    {
+      "database": "U.S. Department of Education LINCS",
+      "query": "U.S. Department of Education formative assessment feedback instruction official",
+      "searched_at": "2026-06-02T22:12:00Z",
+      "result_count": "official LINCS formative-assessment page verified"
+    },
+    {
+      "database": "Existing synthetic-student-responses public graph",
+      "query": "assessment_purpose decision_consequence operational_use artifacts",
+      "searched_at": "2026-06-02T22:16:00Z",
+      "result_count": "audited 43 published synthetic-student-response artifacts"
+    }
+  ],
+  "inclusion_criteria": [
+    "Direct synthetic-response evidence must involve synthetic, simulated, generated, corrupted, or analogous student, learner, essay, short-answer, constructed-response, chatbot-input, or open-response assessment data.",
+    "Direct evidence must connect synthetic responses to assessment purpose, decision consequence, or workflow role such as formative feedback, training augmentation, pre-pilot validation, stress testing, or scorer validation.",
+    "Contextual guidance may be included when it defines assessment-stakes, formative/summative, validity, fairness, or AI-assessment guardrails needed to interpret synthetic-response use boundaries.",
+    "Direct findings require full text, full-text HTML, official guidance, or previously verified full-text source records."
+  ],
+  "exclusion_criteria": [
+    "Exclude generic automated scoring studies that do not include synthetic responses in the response corpus or development workflow.",
+    "Exclude generic synthetic data policy sources unless they directly inform educational assessment validity, stakes, formative feedback, or AI assessment controls.",
+    "Exclude sources that support only technical realism or model performance without a clear assessment-use boundary.",
+    "Do not treat contextual standards guidance as direct empirical evidence about synthetic-response performance."
+  ],
+  "dedupe_method": "Deduplicated by title, DOI, canonical source page, official PDF URL, and existing public graph source_id.",
+  "screening_counts": {
+    "records_identified": "at least 20 records across targeted web, official guidance, and existing-graph screening",
+    "records_screened": 11,
+    "full_text_reviewed": 8,
+    "sources_included": 8,
+    "sources_deferred_for_access_or_scope": 3
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "candidate-standards-2014",
+      "title": "Standards for Educational and Psychological Testing",
+      "decision": "include",
+      "reason": "Official professional standards provide the intended-use and stakes-sensitive validity frame needed to bound acceptable synthetic-response uses.",
+      "source_id": "standards-educational-psychological-testing-2014-source",
+      "url": "https://www.testingstandards.net/uploads/7/6/6/4/76643089/standards_2014edition.pdf"
+    },
+    {
+      "candidate_id": "candidate-ets-ai-assessment-2024",
+      "title": "Responsible Use of AI in Assessment",
+      "decision": "include",
+      "reason": "Official ETS guidance supplies AI-assessment guardrails around validity, fairness, transparency, human oversight, and monitoring.",
+      "source_id": "ets-responsible-ai-assessment-principles-2024-source",
+      "url": "https://www.ets.org/Rebrand/pdf/ETS_Convening_executive_summary_for_the_AI_Guidelines.pdf"
+    },
+    {
+      "candidate_id": "candidate-usdoe-teal-formative-assessment",
+      "title": "TEAL Center Fact Sheet No. 9: Formative Assessment",
+      "decision": "include",
+      "reason": "LINCS/TEAL practice guidance distinguishes formative feedback and instructional-support contexts from more consequential assessment uses.",
+      "source_id": "usdoe-teal-formative-assessment-source",
+      "url": "https://lincs.ed.gov/federal-initiatives/teal/guide/formativeassessment"
+    },
+    {
+      "candidate_id": "candidate-frohn-2025",
+      "title": "A Framework for Live Scoring Constructed Response Items with Commercial LLMs",
+      "decision": "include",
+      "reason": "Previously verified full text directly distinguishes synthetic pre-pilot checks from real-response pilot validation in a constructed-response scoring workflow.",
+      "source_id": "frohn-llm-cr-live-scoring-2025-source",
+      "url": "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs"
+    },
+    {
+      "candidate_id": "candidate-yoo-2025",
+      "title": "DREsS: Dataset for Rubric-based Essay Scoring on EFL Writing",
+      "decision": "include",
+      "reason": "Previously verified full text directly supports a lower-consequence training-augmentation boundary where real essays carry validation and test evidence.",
+      "source_id": "yoo-dress-rubric-aes-2025-source",
+      "doi": "10.18653/v1/2025.acl-long.659",
+      "url": "https://aclanthology.org/2025.acl-long.659/"
+    },
+    {
+      "candidate_id": "candidate-bexte-zesch-2025",
+      "title": "Is Lunch Free Yet? Overcoming the Cold-Start Problem in Supervised Content Scoring using Zero-Shot LLM-Generated Training Data",
+      "decision": "include",
+      "reason": "Previously verified full text supplies a label-audit boundary for lower-consequence classroom scorer-development use.",
+      "source_id": "bexte-zesch-synthetic-content-scoring-2025-source",
+      "doi": "10.18653/v1/2025.bea-1.11",
+      "url": "https://aclanthology.org/2025.bea-1.11/"
+    },
+    {
+      "candidate_id": "candidate-watts-2025",
+      "title": "A Framework for Designing an AI Chatbot to Support Scientific Argumentation",
+      "decision": "include",
+      "reason": "Previously verified full text provides lower-stakes formative feedback/prototype evidence using synthetic student inputs.",
+      "source_id": "watts-scientific-argumentation-chatbot-2025-source",
+      "doi": "10.3390/educsci15111507",
+      "url": "https://www.mdpi.com/2227-7102/15/11/1507"
+    },
+    {
+      "candidate_id": "candidate-walsh-2026",
+      "title": "Best of both worlds: combining LLMs and traditional ML for automated scoring of an open-response situational judgment test",
+      "decision": "include",
+      "reason": "Previously verified full text provides adjacent high-stakes admissions evidence for synthetic demographic analogs as fairness stress-test material.",
+      "source_id": "walsh-sjt-automated-scoring-2026-source",
+      "doi": "10.3389/feduc.2026.1756673",
+      "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1756673/full"
+    },
+    {
+      "candidate_id": "candidate-mendonca-2025-formative-scoring",
+      "title": "Evaluating LLMs for Automated Scoring in Formative Assessments",
+      "decision": "exclude",
+      "reason": "Relevant to lower-stakes LLM automated scoring but does not use synthetic student responses as the scored or development corpus.",
+      "url": "https://www.mdpi.com/2076-3417/15/5/2787"
+    },
+    {
+      "candidate_id": "candidate-jorgpt-dataset-2026",
+      "title": "A Multilingual Dataset of Student Answers, Human Grading, and Multi-LLM Evaluations for Automated Assessment Research Using JorGPT",
+      "decision": "exclude",
+      "reason": "Relevant to automated assessment benchmarking but reports authentic student answers rather than synthetic student responses.",
+      "url": "https://www.mdpi.com/2306-5729/11/3/59"
+    },
+    {
+      "candidate_id": "candidate-ipci-2025",
+      "title": "Leveraging Knowledge Profiles and Generative AI for Realistic Student Response Generation",
+      "decision": "no_full_text",
+      "reason": "Potentially relevant to in-term synthetic response generation for automated grading, but direct full-text access was not established in this pass.",
+      "source_id": "ipci-knowledge-profiles-response-generation-2025-source",
+      "doi": "10.1007/978-3-031-99264-3_18",
+      "url": "https://infoscience.epfl.ch/entities/publication/c186f403-251d-44b0-8b03-55bd9037d352"
+    }
+  ],
+  "source_ids": [
+    "standards-educational-psychological-testing-2014-source",
+    "ets-responsible-ai-assessment-principles-2024-source",
+    "usdoe-teal-formative-assessment-source",
+    "frohn-llm-cr-live-scoring-2025-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "bexte-zesch-synthetic-content-scoring-2025-source",
+    "watts-scientific-argumentation-chatbot-2025-source",
+    "walsh-sjt-automated-scoring-2026-source"
+  ],
+  "screening_summary": "Targeted bootstrap screening combined general assessment-stakes guidance with direct synthetic-response evidence from the existing public graph. The resulting baseline treats standards and formative-assessment guidance as boundary context, and treats synthetic-response studies as direct evidence only where they actually connect response origin to purpose, consequence, and operational use.",
+  "limitations": [
+    "This was a targeted bootstrap pass, not a systematic review.",
+    "Contextual guidance sources are not synthetic-response-specific and should not be used as direct evidence of synthetic-response scoring validity.",
+    "Direct high-stakes synthetic-response evidence remains sparse and mostly diagnostic.",
+    "The pass did not establish full-text access to all potentially relevant in-term or automated-grading generation studies."
+  ]
+}

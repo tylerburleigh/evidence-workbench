@@ -1,0 +1,164 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-sparse-data-supplementation-search-2026-06-03",
+  "name": "Sparse and Imbalanced Synthetic Student Response Search",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "status": "included_sources_staged",
+  "search_started_at": "2026-06-03T13:55:00Z",
+  "search_completed_at": "2026-06-03T14:25:00Z",
+  "databases": [
+    "web search",
+    "arXiv",
+    "SpringerLink",
+    "ScienceDirect",
+    "NSF Public Access Repository",
+    "Journal of Writing Research"
+  ],
+  "search_queries": [
+    {
+      "database": "web search",
+      "query": "\"synthetic student responses\" \"automated essay scoring\"",
+      "searched_at": "2026-06-03T13:55:00Z",
+      "result_count": "screened first results page"
+    },
+    {
+      "database": "web search",
+      "query": "\"GPT-4\" \"augment unbalanced data\" \"automatic scoring\" \"student responses\"",
+      "searched_at": "2026-06-03T13:58:00Z",
+      "result_count": "screened first results page"
+    },
+    {
+      "database": "web search",
+      "query": "\"high-scoring constructed responses\" \"Coedit\"",
+      "searched_at": "2026-06-03T14:02:00Z",
+      "result_count": "screened first results page"
+    },
+    {
+      "database": "web search",
+      "query": "\"GPT-3.5\" \"student responses\" \"data augmentation\" \"automated evaluation\"",
+      "searched_at": "2026-06-03T14:05:00Z",
+      "result_count": "screened first results page"
+    },
+    {
+      "database": "web search",
+      "query": "\"DREsS\" \"synthetic\" essays data augmentation automated essay scoring",
+      "searched_at": "2026-06-03T14:08:00Z",
+      "result_count": "screened first results page"
+    },
+    {
+      "database": "web search",
+      "query": "\"Calibrating Generative AI to Produce Realistic Essays for Data Augmentation\"",
+      "searched_at": "2026-06-03T14:10:00Z",
+      "result_count": "screened first results page"
+    }
+  ],
+  "inclusion_criteria": [
+    "Study uses synthetic, generated, paraphrased, corrupted, or model-created student response data.",
+    "Synthetic data is motivated by limited data, imbalanced score or rubric classes, underrepresented subgroups, or sparse examples at some response level.",
+    "Study reports the role of synthetic data in training, balancing, validation, benchmarking, scorer evaluation, or synthetic-quality assessment.",
+    "Prefer primary papers, official abstracts, full-text articles, or open PDFs."
+  ],
+  "exclusion_criteria": [
+    "General automated scoring studies with no synthetic response augmentation.",
+    "Studies using LLMs only as scorers with no generated response dataset.",
+    "General synthetic data methods outside educational response scoring unless they directly involve student response artifacts."
+  ],
+  "dedupe_method": "Deduplicated by title, DOI, arXiv identifier, and overlap between preprint and version-of-record metadata.",
+  "screening_counts": {
+    "records_identified": "about 25 visible search results",
+    "records_screened": 16,
+    "full_text_reviewed": 7,
+    "sources_included": 7
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "fang-2025",
+      "title": "Using GPT-4 to Augment Imbalanced Data for Automatic Scoring",
+      "decision": "include",
+      "reason": "Directly uses GPT-4 to generate minority-class science responses for automatic scoring.",
+      "source_id": "fang-gpt4-imbalanced-automatic-scoring-2025",
+      "doi": "10.1111/jedm.70020",
+      "url": "https://arxiv.org/abs/2310.18365"
+    },
+    {
+      "candidate_id": "morris-2025",
+      "title": "Automated Scoring of Constructed Response Items in Math Assessment Using Large Language Models",
+      "decision": "include",
+      "reason": "Directly uses Coedit-XL to augment underrepresented high-scoring constructed math responses.",
+      "source_id": "morris-naep-math-constructed-response-2025",
+      "doi": "10.1007/s40593-024-00418-w",
+      "url": "https://link.springer.com/article/10.1007/s40593-024-00418-w"
+    },
+    {
+      "candidate_id": "martin-graulich-2024",
+      "title": "Navigating the Data Frontier in Science Assessment",
+      "decision": "include",
+      "reason": "Compares real-data collection, chatbot paraphrase, and chatbot-generated responses for chemistry reasoning scorer development.",
+      "source_id": "martin-graulich-science-assessment-2024",
+      "doi": "10.1016/j.caeai.2024.100265",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2666920X24000687"
+    },
+    {
+      "candidate_id": "cochran-2023",
+      "title": "Improving Automated Evaluation of Student Text Responses Using GPT-3.5 for Text Data Augmentation",
+      "decision": "include",
+      "reason": "Directly addresses scarcity of student-generated text by supplementing small datasets with GPT-3.5 completions.",
+      "source_id": "cochran-gpt35-student-text-augmentation-2023",
+      "doi": "10.1007/978-3-031-36272-9_18",
+      "url": "https://par.nsf.gov/biblio/10468770-improving-automated-evaluation-student-text-responses-using-gpt-text-data-augmentation"
+    },
+    {
+      "candidate_id": "zhang-2026",
+      "title": "Augmenting AI Scoring of Essays with GPT-Generated Responses",
+      "decision": "include",
+      "reason": "Essay-scoring augmentation study focused on sample size, score-level scarcity, and subgroup fairness.",
+      "source_id": "zhang-gpt-generated-essay-augmentation-2026",
+      "doi": "10.17239/jowr-2026.17.03.06",
+      "url": "https://www.jowr.org/jowr/article/view/1777"
+    },
+    {
+      "candidate_id": "yoo-2025",
+      "title": "DREsS: Dataset for Rubric-Based Essay Scoring on EFL Writing",
+      "decision": "include",
+      "reason": "Essay dataset paper introduces CASE synthetic data to handle score imbalance and improve rubric-based AES training.",
+      "source_id": "yoo-dress-rubric-essay-scoring-2025",
+      "doi": "10.48550/arXiv.2402.16733",
+      "url": "https://arxiv.org/abs/2402.16733"
+    },
+    {
+      "candidate_id": "wolfe-barber-2026",
+      "title": "Calibrating Generative AI to Produce Realistic Essays for Data Augmentation",
+      "decision": "include",
+      "reason": "Essay augmentation study evaluates human score agreement and realism before using simulated essays in scorer training.",
+      "source_id": "wolfe-barber-realistic-essay-augmentation-2026",
+      "doi": "10.48550/arXiv.2602.06772",
+      "url": "https://arxiv.org/abs/2602.06772"
+    },
+    {
+      "candidate_id": "wiredwhite-2026",
+      "title": "Automated Essay Scoring in MATLAB",
+      "decision": "not_relevant",
+      "reason": "Appears to be a demonstration article with a synthetic corpus rather than a peer-reviewed education measurement study.",
+      "url": "https://wiredwhite.com/automated-essay-scoring-matlab/"
+    }
+  ],
+  "source_ids": [
+    "fang-gpt4-imbalanced-automatic-scoring-2025",
+    "morris-naep-math-constructed-response-2025",
+    "martin-graulich-science-assessment-2024",
+    "cochran-gpt35-student-text-augmentation-2023",
+    "zhang-gpt-generated-essay-augmentation-2026",
+    "yoo-dress-rubric-essay-scoring-2025",
+    "wolfe-barber-realistic-essay-augmentation-2026"
+  ],
+  "screening_summary": "The search found multiple direct examples where synthetic student responses supplement sparse, imbalanced, or subgroup-limited datasets. Included studies span essay scoring, EFL rubric-based essay scoring, science short constructed response, chemistry reasoning, and NAEP math constructed-response scoring.",
+  "limitations": [
+    "This was a targeted exploratory pass, not a systematic review.",
+    "Citation chaining was limited to papers surfaced by search results and reference lists in the included full texts.",
+    "Some included sources are preprints or recent articles whose peer-review status differs by source."
+  ]
+}

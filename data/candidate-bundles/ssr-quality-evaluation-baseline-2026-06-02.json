@@ -1,0 +1,252 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-quality-evaluation-baseline-2026-06-02",
+  "name": "Synthetic Response Quality Evaluation Baseline",
+  "summary": "Staged first literature-review baseline for how synthetic student or learner responses are evaluated for realism, fidelity, alignment, and downstream utility.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T14:08:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-quality-evaluation"
+    ],
+    "research_question": "What is the current evidence landscape for Synthetic Response Quality Evaluation in Synthetic Student Response Literature Review, and what belongs in the first public baseline for this review question?"
+  },
+  "source_ids": [
+    "ipci-knowledge-profiles-response-generation-2025-source",
+    "agent4edu-learner-response-generation-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "lu-generative-students-item-evaluation-2024-source",
+    "srivatsa-llm-student-ability-simulation-2025-source",
+    "scarlatos-simulated-students-dialogue-2026-source"
+  ],
+  "source_urls": [
+    "https://infoscience.epfl.ch/entities/publication/c186f403-251d-44b0-8b03-55bd9037d352",
+    "https://arxiv.org/abs/2501.10332",
+    "https://arxiv.org/abs/2602.06772",
+    "https://arxiv.org/abs/2405.11591",
+    "https://aclanthology.org/2025.bea-1.75/",
+    "https://arxiv.org/abs/2601.04025"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "ssr-generation-methods-baseline-claim",
+      "relationship": "same_literature_review_domain"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-scoring-validation-use-baseline-claim",
+      "relationship": "same_literature_review_domain"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-ssr-quality-evaluation-search-2026-06-02",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "ssr-quality-evaluation-search-2026-06-02",
+      "file_path": "data/search-protocols/ssr-quality-evaluation-search-2026-06-02.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/ssr-quality-evaluation-search-2026-06-02.json",
+      "summary": "Stage search protocol ssr-quality-evaluation-search-2026-06-02.",
+      "rationale": "The bundle needs an auditable search and screening record."
+    },
+    {
+      "change_id": "create-lu-generative-students-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "lu-generative-students-item-evaluation-2024-source",
+      "file_path": "data/sources/lu-generative-students-item-evaluation-2024-source.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/lu-generative-students-item-evaluation-2024-source.json",
+      "summary": "Stage Lu and Wang source metadata for generative-student item evaluation.",
+      "rationale": "The quality-evaluation bundle needs this source as evidence for profile alignment and real-response item-evaluation comparison."
+    },
+    {
+      "change_id": "create-srivatsa-llm-student-ability-simulation-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "srivatsa-llm-student-ability-simulation-2025-source",
+      "file_path": "data/sources/srivatsa-llm-student-ability-simulation-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/srivatsa-llm-student-ability-simulation-2025-source.json",
+      "summary": "Stage Srivatsa et al. source metadata for LLM proxy-student IRT evaluation.",
+      "rationale": "The quality-evaluation bundle needs psychometric evidence on proxy-student reliability."
+    },
+    {
+      "change_id": "create-scarlatos-simulated-students-dialogue-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "scarlatos-simulated-students-dialogue-2026-source",
+      "file_path": "data/sources/scarlatos-simulated-students-dialogue-2026-source.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/scarlatos-simulated-students-dialogue-2026-source.json",
+      "summary": "Stage Scarlatos et al. source metadata for tutoring-dialogue simulated-student quality metrics.",
+      "rationale": "The quality-evaluation bundle needs dialogue-fidelity evidence beyond item-response and essay settings."
+    },
+    {
+      "change_id": "create-ipci-quality-evaluation-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "ipci-quality-evaluation-artifact",
+      "file_path": "data/artifacts/ipci-quality-evaluation-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/ipci-quality-evaluation-artifact.json",
+      "summary": "Stage Ipci et al. quality-evaluation extract.",
+      "rationale": "The bundle needs evidence for realism, diversity, embedding similarity, and training-utility evaluation."
+    },
+    {
+      "change_id": "create-agent4edu-quality-evaluation-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "agent4edu-quality-evaluation-artifact",
+      "file_path": "data/artifacts/agent4edu-quality-evaluation-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/agent4edu-quality-evaluation-artifact.json",
+      "summary": "Stage Agent4Edu quality-evaluation extract.",
+      "rationale": "The bundle needs evidence for generated learner-response consistency against human learner responses."
+    },
+    {
+      "change_id": "create-wolfe-quality-evaluation-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "wolfe-quality-evaluation-artifact",
+      "file_path": "data/artifacts/wolfe-quality-evaluation-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/wolfe-quality-evaluation-artifact.json",
+      "summary": "Stage Wolfe and Barber quality-evaluation extract.",
+      "rationale": "The bundle needs evidence for expert scoring, score-distribution preservation, and realism ratings."
+    },
+    {
+      "change_id": "create-lu-generative-students-quality-evaluation-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "lu-generative-students-quality-evaluation-artifact",
+      "file_path": "data/artifacts/lu-generative-students-quality-evaluation-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/lu-generative-students-quality-evaluation-artifact.json",
+      "summary": "Stage Lu and Wang quality-evaluation extract.",
+      "rationale": "The bundle needs evidence for profile alignment, real-response correlation, and difficult-item overlap."
+    },
+    {
+      "change_id": "create-srivatsa-proxy-student-irt-evaluation-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "srivatsa-proxy-student-irt-evaluation-artifact",
+      "file_path": "data/artifacts/srivatsa-proxy-student-irt-evaluation-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/srivatsa-proxy-student-irt-evaluation-artifact.json",
+      "summary": "Stage Srivatsa et al. IRT quality-evaluation extract.",
+      "rationale": "The bundle needs evidence for psychometric ability-scale alignment between proxy and real students."
+    },
+    {
+      "change_id": "create-scarlatos-dialogue-simulation-quality-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "scarlatos-dialogue-simulation-quality-artifact",
+      "file_path": "data/artifacts/scarlatos-dialogue-simulation-quality-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/scarlatos-dialogue-simulation-quality-artifact.json",
+      "summary": "Stage Scarlatos et al. dialogue-simulation quality extract.",
+      "rationale": "The bundle needs evidence for linguistic, behavioral, and cognitive fidelity metrics."
+    },
+    {
+      "change_id": "create-ipci-quality-evaluation-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ipci-quality-evaluation-finding-2026",
+      "file_path": "data/findings/ipci-quality-evaluation-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/ipci-quality-evaluation-finding-2026.json",
+      "summary": "Stage finding on Ipci et al. quality-evaluation methods.",
+      "rationale": "The bundle needs a claim-supporting finding for realism, diversity, embedding, and utility checks."
+    },
+    {
+      "change_id": "create-agent4edu-quality-evaluation-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "agent4edu-quality-evaluation-finding-2026",
+      "file_path": "data/findings/agent4edu-quality-evaluation-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/agent4edu-quality-evaluation-finding-2026.json",
+      "summary": "Stage finding on Agent4Edu learner-response consistency evaluation.",
+      "rationale": "The bundle needs a claim-supporting finding for human-response consistency metrics."
+    },
+    {
+      "change_id": "create-wolfe-quality-evaluation-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "wolfe-quality-evaluation-finding-2026",
+      "file_path": "data/findings/wolfe-quality-evaluation-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/wolfe-quality-evaluation-finding-2026.json",
+      "summary": "Stage finding on Wolfe and Barber simulated essay evaluation.",
+      "rationale": "The bundle needs a claim-supporting finding for expert scores, agreement, distributions, and realism ratings."
+    },
+    {
+      "change_id": "create-lu-generative-students-quality-evaluation-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "lu-generative-students-quality-evaluation-finding-2026",
+      "file_path": "data/findings/lu-generative-students-quality-evaluation-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/lu-generative-students-quality-evaluation-finding-2026.json",
+      "summary": "Stage finding on Lu and Wang generative-student item evaluation.",
+      "rationale": "The bundle needs a claim-supporting finding for profile-response alignment and real-response item signals."
+    },
+    {
+      "change_id": "create-srivatsa-proxy-student-irt-evaluation-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "srivatsa-proxy-student-irt-evaluation-finding-2026",
+      "file_path": "data/findings/srivatsa-proxy-student-irt-evaluation-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/srivatsa-proxy-student-irt-evaluation-finding-2026.json",
+      "summary": "Stage finding on Srivatsa et al. IRT proxy-student reliability evaluation.",
+      "rationale": "The bundle needs a claim-supporting finding for psychometric ability-scale alignment and its reliability limits."
+    },
+    {
+      "change_id": "create-scarlatos-dialogue-simulation-quality-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "scarlatos-dialogue-simulation-quality-finding-2026",
+      "file_path": "data/findings/scarlatos-dialogue-simulation-quality-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/scarlatos-dialogue-simulation-quality-finding-2026.json",
+      "summary": "Stage finding on Scarlatos et al. tutoring-dialogue fidelity metrics.",
+      "rationale": "The bundle needs a claim-supporting finding for linguistic, behavioral, and cognitive simulated-student quality metrics."
+    },
+    {
+      "change_id": "create-ssr-quality-evaluation-baseline-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-quality-evaluation-baseline-claim",
+      "file_path": "data/claims/ssr-quality-evaluation-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-quality-evaluation-baseline-2026-06-02/ssr-quality-evaluation-baseline-claim.json",
+      "summary": "Stage synthesis claim for synthetic response quality-evaluation baseline.",
+      "rationale": "The bundle needs one bounded claim tying the quality-evaluation findings to the taxonomy node."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-quality-evaluation",
+      "note": "Creates the first staged literature-review baseline for quality evaluation of synthetic student responses."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "synthesis_overreach"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_review_ids": [
+    "evidence-review-ssr-quality-evaluation-source-fidelity-r1",
+    "evidence-review-ssr-quality-evaluation-construct-mapping-r1",
+    "evidence-review-ssr-quality-evaluation-method-classification-r1",
+    "evidence-review-ssr-quality-evaluation-scorer-validation-relevance-r1",
+    "evidence-review-ssr-quality-evaluation-synthesis-overreach-r1"
+  ],
+  "review_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-quality-evaluation-baseline-2026-06-02-2026-06-02t14-22-41-559z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ]
+}

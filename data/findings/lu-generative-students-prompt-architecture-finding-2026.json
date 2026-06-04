@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "lu-generative-students-prompt-architecture-finding-2026",
+  "name": "Profile, Example, and Role Prompting Shape Simulated Student Item Responses",
+  "source_id": "lu-generative-students-item-evaluation-2024-source",
+  "artifact_id": "lu-generative-students-prompt-architecture-artifact",
+  "taxonomy_node_ids": [
+    "ssr-prompt-engineering-effects"
+  ],
+  "endpoint_category": "profile_prompt_architecture",
+  "direction": "reports_prompt_architecture_sensitivity",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Lu and Wang's prompt-engineering process indicates that examples, instructor-role framing, and one-question-at-a-time profile prompts affect GPT-4 simulated student response alignment in multiple-choice item evaluation.",
+  "population_or_context": "Cambridge International AS and A Level Psychology multiple-choice question item evaluation.",
+  "time_horizon": "arXiv HTML full text retrieved and reviewed on 2026-06-02.",
+  "quantitative_note": "Table 3 shows simulated students matched mastered rules better than unknown rules: for mastered rules, simulated percent correct is 60 and confusion matching is 0; for confused rules, simulated percent correct is 20 and confusion matching is 80; for unknown rules, simulated percent correct is 0 and confusion matching is 40, with the most common simulated answer categorized as irrelevant.",
+  "caveats": [
+    "The prompt architecture is described as an iterative method package rather than a fully crossed prompt ablation.",
+    "The task is multiple-choice item evaluation and profile-rule consistency, not constructed-response generation.",
+    "The evidence supports careful prompt-ingredient tracking but not universal prompt prescriptions."
+  ],
+  "evaluation_method": "Profile-response alignment, real-response comparison, item difficulty overlap, and qualitative checks of simulated student behavior.",
+  "reported_metrics": "Table 3 reports percent correct, percent matching confusion, and most common answer category by profile rule for actual and simulated responses.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The source is useful for prompt-architecture evidence but cannot isolate each prompt ingredient causally.",
+    "GPT-4 profile-conditioned MCQ behavior may not transfer to open-response or dialogue settings."
+  ],
+  "source_locator": {
+    "section": "arXiv HTML method and Table 3",
+    "url": "https://arxiv.org/html/2405.11591",
+    "quote_or_paraphrase_note": "The finding paraphrases the prompt-architecture description and Table 3 profile-rule alignment values.",
+    "verification_status": "verified"
+  }
+}

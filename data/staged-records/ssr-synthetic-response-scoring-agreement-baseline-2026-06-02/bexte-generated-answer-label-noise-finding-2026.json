@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "bexte-generated-answer-label-noise-finding-2026",
+  "name": "Prompt-requested Labels on Generated Short Answers Are Noisy Without Manual Relabeling",
+  "source_id": "bexte-zesch-synthetic-content-scoring-2025-source",
+  "artifact_id": "bexte-generated-answer-relabeling-artifact",
+  "taxonomy_node_ids": [
+    "ssr-synthetic-response-scoring-agreement"
+  ],
+  "endpoint_category": "generated_label_noise",
+  "direction": "cautionary",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Bexte and Zesch show that generated short answers often fail to conform to the requested target labels; models trained on as-generated labels underperform models trained on original SRA data, while manually relabeled generated data can support competitive content-scoring models.",
+  "population_or_context": "Short-answer supervised content scoring on the Student Response Analysis dataset.",
+  "time_horizon": "BEA 2025 paper retrieved on 2026-06-02.",
+  "quantitative_note": "The paper reports macro-averaged F1 comparisons; its conclusion states that up to 75% of generated answers requested for a specific label did not conform to that label.",
+  "caveats": [
+    "The finding is bounded to one SRA setup, five-way labels, DeepSeek-v2, and the tested zero-shot generation prompt.",
+    "Manual relabeling improves utility but adds human labor, so the result is not evidence of free synthetic scoring labels.",
+    "Generated answer language differed from student-authored answer language."
+  ],
+  "evaluation_method": "Label-conformance analysis, macro-averaged F1 on original student answers, and comparison between as-generated and manually cleaned labels.",
+  "reported_metrics": "Macro-averaged F1 and label-conformance findings, including the reported up-to-75% nonconformance for requested labels.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "reported_max_label_nonconformance_share": 0.75,
+    "table_4_macro_averaged_f1": {
+      "majority_baseline": {
+        "sra": 0.21,
+        "sra_gen": 0.21
+      },
+      "llm_scoring": {
+        "sra": 0.21,
+        "sra_gen": 0.21
+      },
+      "sbert_pre": {
+        "sra": 0.44,
+        "sra_gen": 0.3
+      },
+      "lr": {
+        "sra": 0.46,
+        "sra_gen": 0.25
+      },
+      "bert": {
+        "sra": 0.4,
+        "sra_gen": 0.25
+      },
+      "sbert_fine": {
+        "sra": 0.55,
+        "sra_gen": 0.28
+      }
+    }
+  },
+  "limitations": [
+    "Does not generalize across all LLMs or score scales.",
+    "The study evaluates content-scoring training utility, not human-AI agreement on final operational scoring."
+  ],
+  "source_locator": {
+    "section": "Sections 4, 6, and conclusion",
+    "url": "https://aclanthology.org/2025.bea-1.11/",
+    "quote_or_paraphrase_note": "The finding paraphrases the generated-label setup, macro-F1 comparison, and conclusion about label nonconformance and manual relabeling.",
+    "verification_status": "located"
+  }
+}

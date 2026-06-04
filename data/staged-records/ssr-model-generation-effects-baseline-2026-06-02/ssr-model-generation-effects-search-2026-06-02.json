@@ -1,0 +1,161 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-model-generation-effects-search-2026-06-02",
+  "name": "Model and Generation Effects Search Pass",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-model-generation-effects"
+  ],
+  "status": "included_sources_staged",
+  "systematicity_level": "targeted_bootstrap",
+  "search_started_at": "2026-06-02T16:38:00Z",
+  "search_completed_at": "2026-06-02T16:54:00Z",
+  "databases": [
+    "Web search",
+    "ACL Anthology",
+    "arXiv",
+    "ERIC"
+  ],
+  "search_queries": [
+    {
+      "database": "Web search",
+      "query": "\"synthetic student responses\" \"GPT-4\" \"GPT-3.5\" learner responses",
+      "searched_at": "2026-06-02T16:38:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"LLM\" \"simulate real students\" \"11\" \"NAEP\" \"IRT\"",
+      "searched_at": "2026-06-02T16:38:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"simulated students\" \"SFT\" \"DPO\" \"tutoring dialogues\"",
+      "searched_at": "2026-06-02T16:38:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"synthetic student response\" \"model comparison\" education LLM",
+      "searched_at": "2026-06-02T16:38:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"Who Am I?\" \"History-Aware Profiles\" \"Student Simulation\"",
+      "searched_at": "2026-06-02T16:45:00Z",
+      "result_count": "screened first result page for recent source query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"Leveraging LLM Respondents for Item Evaluation\" \"GPT-3.5\" \"GPT-4\"",
+      "searched_at": "2026-06-02T16:45:00Z",
+      "result_count": "screened first result page for targeted query"
+    }
+  ],
+  "inclusion_criteria": [
+    "The source compares synthetic or simulated student response behavior across LLM families, model versions, post-training methods, ensemble choices, or generation workflows.",
+    "The source reports model- or workflow-specific quality, fidelity, psychometric, or downstream utility effects for generated learner/student responses.",
+    "The source has a primary source page, proceedings page, DOI metadata, arXiv page, or full-text PDF available for verification."
+  ],
+  "exclusion_criteria": [
+    "Exclude sources whose only variation is prompt wording unless the source also compares model, post-training, ensemble, decoding, or broader generation workflow effects.",
+    "Exclude generic LLM tutoring or feedback studies that do not generate or evaluate synthetic student responses.",
+    "Exclude summary pages when a primary proceedings, DOI, or arXiv source is available."
+  ],
+  "dedupe_method": "Deduplicated by title, DOI, arXiv identifier, venue metadata, and canonical source page.",
+  "screening_counts": {
+    "records_identified": "at least 35 web and primary-source records across targeted queries",
+    "records_screened": 8,
+    "full_text_reviewed": 7,
+    "sources_included": 5
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "candidate-agent4edu-2025",
+      "title": "Agent4Edu: Generating Learner Response Data by Generative Agents for Intelligent Education Systems",
+      "decision": "include",
+      "reason": "Reports Agent4Edu workflow modules and a bounded GPT-3.5-turbo versus GPT-4 exploratory comparison for generated learner response performance.",
+      "source_id": "agent4edu-learner-response-generation-2025-source",
+      "doi": "10.48550/arXiv.2501.10332",
+      "url": "https://arxiv.org/abs/2501.10332"
+    },
+    {
+      "candidate_id": "candidate-srivatsa-2025",
+      "title": "Can LLMs Reliably Simulate Real Students' Abilities in Mathematics and Reading Comprehension?",
+      "decision": "include",
+      "reason": "Directly compares 11 LLMs and prompt settings against real NAEP response patterns on a shared IRT ability scale.",
+      "source_id": "srivatsa-llm-student-ability-simulation-2025-source",
+      "doi": "10.18653/v1/2025.bea-1.75",
+      "url": "https://aclanthology.org/2025.bea-1.75/"
+    },
+    {
+      "candidate_id": "candidate-scarlatos-2026",
+      "title": "Simulated Students in Tutoring Dialogues: Substance or Illusion?",
+      "decision": "include",
+      "reason": "Compares prompt-based simulated students with SFT and DPO post-training workflows across dialogue fidelity metrics.",
+      "source_id": "scarlatos-simulated-students-dialogue-2026-source",
+      "doi": "10.48550/arXiv.2601.04025",
+      "url": "https://arxiv.org/abs/2601.04025"
+    },
+    {
+      "candidate_id": "candidate-liu-2025",
+      "title": "Leveraging LLM Respondents for Item Evaluation: A Psychometric Analysis",
+      "decision": "include",
+      "reason": "Compares six LLM respondent generators and ensemble/resampling strategies against human College Algebra response distributions and item calibration.",
+      "source_id": "liu-llm-respondents-item-evaluation-2025-source",
+      "doi": "10.1111/bjet.13570",
+      "url": "https://arxiv.org/abs/2407.10899"
+    },
+    {
+      "candidate_id": "candidate-duan-2026",
+      "title": "Who Am I? History-Aware Profiles for Student Simulation in Tutoring Dialogues",
+      "decision": "include",
+      "reason": "Recent arXiv source comparing prompting, fine-tuning, history conditioning, profile conditioning, DPO, and GRPO workflow variants for simulated student turns.",
+      "source_id": "duan-history-aware-profiles-student-simulation-2026-source",
+      "doi": "10.48550/arXiv.2605.30051",
+      "url": "https://arxiv.org/abs/2605.30051"
+    },
+    {
+      "candidate_id": "candidate-wolfe-2026",
+      "title": "Calibrating Generative AI to Produce Realistic Essays for Data Augmentation",
+      "decision": "exclude",
+      "reason": "Relevant to prompt-strategy effects and already staged under generation methods and quality evaluation, but this pass reserved prompt-only variation for the prompt-engineering node unless it bridges to model or workflow comparisons.",
+      "source_id": "wolfe-calibrating-realistic-essays-2026-source",
+      "doi": "10.48550/arXiv.2602.06772",
+      "url": "https://arxiv.org/abs/2602.06772"
+    },
+    {
+      "candidate_id": "candidate-lu-2024",
+      "title": "Generative Students: Using LLM-Simulated Student Profiles to Support Question Item Evaluation",
+      "decision": "exclude",
+      "reason": "Important profile-based generation evidence already covered in quality evaluation, but the staged baseline did not identify a model-family, post-training, or aligned workflow comparison strong enough for this node.",
+      "source_id": "lu-generative-students-item-evaluation-2024-source",
+      "doi": "10.1145/3657604.3662031",
+      "url": "https://arxiv.org/abs/2405.11591"
+    },
+    {
+      "candidate_id": "candidate-scarlatos-summary-pages",
+      "title": "Simulated Students in Tutoring Dialogues summary and mirror pages",
+      "decision": "duplicate",
+      "reason": "Duplicate secondary summaries of the arXiv/author PDF source already included as candidate-scarlatos-2026.",
+      "url": "https://app.argminai.com/arxiv-dashboard/papers/2601.04025v1"
+    }
+  ],
+  "source_ids": [
+    "agent4edu-learner-response-generation-2025-source",
+    "srivatsa-llm-student-ability-simulation-2025-source",
+    "scarlatos-simulated-students-dialogue-2026-source",
+    "liu-llm-respondents-item-evaluation-2025-source",
+    "duan-history-aware-profiles-student-simulation-2026-source"
+  ],
+  "screening_summary": "Targeted bootstrap screening included five sources with direct evidence on model/version sensitivity, model-prompt specificity, prompt-based versus post-trained dialogue simulators, multi-model LLM respondent ensembles, and history/profile/RL workflow effects. Prompt-only sources were treated as boundary evidence for the adjacent prompt-engineering node.",
+  "limitations": [
+    "This was a targeted bootstrap pass, not a systematic review.",
+    "Included studies span learner-response prediction, multiple-choice item response, College Algebra item evaluation, NAEP ability simulation, and tutoring dialogue; model-effect claims must remain task- and metric-bound.",
+    "The Duan et al. source was submitted to arXiv on 2026-05-28 and should be treated as current preprint evidence, not peer-reviewed consensus.",
+    "The pass prioritized sources with accessible primary full text and may miss non-indexed or paywalled studies."
+  ]
+}

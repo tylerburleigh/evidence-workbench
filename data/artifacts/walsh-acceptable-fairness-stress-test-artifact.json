@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "walsh-acceptable-fairness-stress-test-artifact",
+  "name": "Walsh et al. Acceptable Fairness Stress-test Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "walsh-sjt-automated-scoring-2026-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses"
+  ],
+  "population_or_context": "Open-response situational judgment test responses from Casper, an admissions assessment context.",
+  "sample_size": "100 original responses and 100 analogous synthetic responses for the fairness pilot; broader automated-scoring experiments used larger Casper response samples.",
+  "methods": "Extracted LLM feature extraction, traditional ML scoring, human-score comparison, and synthetic demographic-response fairness pilot.",
+  "endpoint_categories": [
+    "fairness_stress_test",
+    "open_response_scoring",
+    "adjacent_assessment_context"
+  ],
+  "education_context": "Open-response SJT for academic admissions; responses reflect personal and professional attributes rather than classroom correctness tasks.",
+  "response_origin": "Real Casper responses are used for scoring-system development and evaluation; analogous synthetic responses inject demographic information into real-response analogs for a fairness pilot.",
+  "rubric_label_space": "Casper open-response scoring on a 1-9 scale, with LLM-derived features mapped to human-rated constructs.",
+  "label_source": "Human evaluator ratings provide the real-response ground truth; the synthetic fairness comparison uses model score deltas rather than newly human-adjudicated synthetic labels.",
+  "generation_model": "Not specified for the demographic-injected synthetic analogs.",
+  "generation_method": "Analogous synthetic responses with injected demographic information were constructed from 100 original responses for an early fairness experiment.",
+  "prompt_strategy": "Not reported for synthetic analog generation in the extracted fairness pilot.",
+  "evaluation_method": "Compared automated LLM evaluations of original responses against analogous synthetic demographic-injected responses; broader scoring work assesses automated scoring against human ratings.",
+  "scorer_use": "Acceptable as a diagnostic fairness stress test or sensitivity probe, with a strong boundary against treating it as subgroup validation.",
+  "real_response_comparator": "Direct paired comparison between 100 original Casper responses and 100 analogous synthetic demographic-injected responses.",
+  "reported_metrics": "Fairness pilot reports average score deltas near zero for inspected demographic comparisons; broader scoring sections report agreement and prediction metrics against human evaluations.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "original_responses_for_fairness_pilot": 100,
+    "synthetic_analog_responses_for_fairness_pilot": 100
+  },
+  "limitations": [
+    "The fairness experiment is described as an early pilot.",
+    "Small sample size limits between-group effect-size interpretation.",
+    "Casper SJT admissions responses are not equivalent to ordinary classroom student answers or rubric correctness labels."
+  ],
+  "assessment_purpose": "admissions_or_selection",
+  "decision_consequence": "high_stakes_individual_decision",
+  "operational_use": "stress_testing"
+}

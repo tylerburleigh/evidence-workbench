@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "morris-coedit-naep-math-high-score-augmentation-2025",
+  "name": "Coedit-XL High-Scoring NAEP Math Response Augmentation",
+  "artifact_type": "study_extract",
+  "status": "staged",
+  "source_ids": [
+    "morris-naep-math-constructed-response-2025"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "population_or_context": "Ten NAEP 2023 math scoring challenge constructed-response items from grade 4 and grade 8 students.",
+  "sample_size": "Training dataset of 251,370 responses across ten items; held-out test dataset of 27,930 responses.",
+  "methods": "The team filtered overrepresented low-scoring responses, generated paraphrases of high-scoring responses with Coedit-XL, modified multi-step inputs, and fine-tuned item-specific transformer scorers.",
+  "endpoint_categories": [
+    "high_score_balancing",
+    "constructed_response_scoring",
+    "bias_screening"
+  ],
+  "education_context": "Mathematics constructed-response assessment, including short constructed responses and extended constructed responses in multi-step NAEP items.",
+  "response_origin": "Hybrid: authentic NAEP responses plus Coedit-XL paraphrases of authentic higher-scoring target responses.",
+  "rubric_label_space": "Item-specific score scales with target response scores ranging from 1 to item maxima between 2 and 5.",
+  "label_source": "NAEP human-scored training data; augmented paraphrases were generated from authentic responses with scores 2 or 3 for underrepresented higher-score classes.",
+  "generation_model": "Grammarly Coedit-XL",
+  "generation_method": "Large-language-model paraphrase augmentation of existing higher-scoring student responses, with added spelling/lowercase perturbations to resemble student submissions.",
+  "prompt_strategy": "Coedit-XL paraphrasing with beam search and diversity penalty; up to eight augmented responses per authentic response.",
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "training_augmentation",
+  "evaluation_method": "Submitted and internally evaluated fine-tuned models against human-scored held-out responses using quadratic weighted kappa and demographic bias analyses.",
+  "scorer_use": "Training augmentation, label balancing, scorer benchmarking, and bias screening in a scoring challenge.",
+  "real_response_comparator": "Yes. Final predictions were evaluated against withheld NAEP human scores and compared with human-human agreement thresholds.",
+  "sparsity_or_imbalance_motivation": "Several target items had excess low-scoring responses and too few higher-scoring responses, especially scores 2 and 3.",
+  "synthetic_data_research_role": "Generated additional high-scoring constructed responses as training data to balance labels before scorer fine-tuning.",
+  "reported_metrics": "Human-like agreement within QWK 0.05 of human-human agreement on nine of ten held-out items; standardized mean difference checks for bias.",
+  "numeric_results_extracted": true,
+  "limitations": "The pipeline was item-specific, competition-oriented, and still had weaker performance on at least one item where imbalance and missing contextual information were problematic."
+}

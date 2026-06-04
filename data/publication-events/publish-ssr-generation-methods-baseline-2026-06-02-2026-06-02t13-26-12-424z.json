@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-generation-methods-baseline-2026-06-02-2026-06-02t13-26-12-424z",
+  "name": "Published Synthetic Response Generation Methods Baseline",
+  "summary": "Staged first literature-review baseline for methods used to generate synthetic student or learner responses.",
+  "candidate_bundle_id": "ssr-generation-methods-baseline-2026-06-02",
+  "event_type": "publish",
+  "published_at": "2026-06-02T13:26:12.424Z",
+  "published_by": "codex-agent",
+  "published_targets": [
+    {
+      "record_type": "search_protocol",
+      "record_id": "ssr-generation-methods-search-2026-06-02",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "ipci-knowledge-profiles-response-generation-2025-source",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "agent4edu-learner-response-generation-2025-source",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "watts-scientific-argumentation-chatbot-2025-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "ipci-profile-based-generation-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "agent4edu-generative-agent-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "watts-copilot-synthetic-inputs-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "yoo-case-corruption-generation-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "wolfe-prompt-strategy-generation-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ipci-profile-based-generation-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "agent4edu-generative-agent-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "watts-copilot-synthetic-inputs-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "yoo-case-corruption-generation-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "wolfe-prompt-strategy-generation-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-generation-methods-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "affected_claim_ids": [
+    "ssr-generation-methods-baseline-claim"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-ssr-generation-methods-construct-mapping-r1",
+    "evidence-review-ssr-generation-methods-method-classification-r1",
+    "evidence-review-ssr-generation-methods-scorer-validation-relevance-r1",
+    "evidence-review-ssr-generation-methods-source-fidelity-r1",
+    "evidence-review-ssr-generation-methods-synthesis-overreach-r1"
+  ],
+  "change_note": "Creates the first staged literature-review baseline for synthetic response generation methods."
+}

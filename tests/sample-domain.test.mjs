@@ -6,6 +6,7 @@ import { loadActiveDomainPack, loadDomainPack, workspaceRoot } from "../scripts/
 import { buildBundleReport, toPublicReport } from "../scripts/lib/bundle-workflow.mjs";
 import { loadDomainWorkbenchData } from "../scripts/lib/workbench-data.mjs";
 import {
+  getReportArtifactById,
   getReportArtifacts,
   getSearchProtocols,
   getSynthesisMatrixConfig,
@@ -59,7 +60,9 @@ const domainSkillAdapters = {
     "bootstrap.md": "research-bootstrap",
     "surveillance.md": "surveillance-update",
     "evidence-review.md": "evidence-review",
-    "editorial-review.md": "editorial-review"
+    "editorial-review.md": "editorial-review",
+    "synthesis.md": "synthesis-review",
+    "literature-review.md": "literature-review"
   }
 };
 
@@ -92,7 +95,7 @@ test("downstream software supply-chain pack loads without core code changes", as
   assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "risk_interpretation"));
 });
 
-test("synthetic student response scaffold loads review questions and synthesis config", async () => {
+test("synthetic student response literature pack loads review questions and synthesis config", async () => {
   const domainPack = await loadDomainPack("synthetic-student-responses");
 
   assert.equal(domainPack.domain.default_scope_unit, "review_question");
@@ -100,18 +103,24 @@ test("synthetic student response scaffold loads review questions and synthesis c
   assert.ok(domainPack.taxonomyNodeIds.has("ssr-scoring-validation-use"));
   assert.ok(domainPack.taxonomyNodeIds.has("ssr-prompt-engineering-effects"));
   assert.ok(domainPack.taxonomyNodeIds.has("ssr-real-response-comparison"));
-  assert.ok(domainPack.taxonomyNodeIds.has("ssr-human-ai-scoring-agreement"));
+  assert.ok(domainPack.taxonomyNodeIds.has("ssr-synthetic-response-scoring-agreement"));
+  assert.ok(domainPack.taxonomyNodeIds.has("ssr-assessment-stakes-boundaries"));
+  assert.ok(domainPack.taxonomyNodeIds.has("ssr-sparse-data-supplementation"));
   assert.ok(domainPack.reviewLaneIds.has("construct_mapping"));
   assert.ok(domainPack.reviewLaneIds.has("scorer_validation_relevance"));
+  assert.ok(domainPack.reviewLaneIds.has("applicability_boundary"));
   assert.ok(domainPack.reviewLaneIds.has("synthesis_overreach"));
   assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "response_origin"));
   assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "label_source"));
+  assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "assessment_purpose"));
+  assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "synthetic_data_research_role"));
+  assert.ok(domainPack.domain.applicability_facets.some((facet) => facet.id === "decision_consequence"));
   assert.equal(domainPack.extractionSchema.validation.enforce_required_fields, true);
   assert.deepEqual(
     domainPack.extractionSchema.fields.find((field) => field.id === "source_locator")?.applies_to,
     ["finding"]
   );
-  assert.ok(domainPack.domain.synthesis_matrix.columns.some((column) => column.id === "prompt_strategy"));
+  assert.ok(domainPack.domain.synthesis_matrix.columns.some((column) => column.id === "assessment_purpose"));
 });
 
 test("active domain can be overridden without editing config", async () => {
@@ -173,20 +182,36 @@ test("workbench data facade loads published downstream supply-chain graph", asyn
   assert.equal(bundleReports.get("maintenance-signal-control-baseline-2026-06-01")?.validation.ready, true);
 });
 
-test("synthetic student response scaffold exposes an empty synthesis matrix", async () => {
+test("synthetic student response workbench data exposes published synthesis matrix rows", async () => {
   const data = await loadDomainWorkbenchData({ domainId: "synthetic-student-responses" });
   const config = getSynthesisMatrixConfig(data);
+  const claimIds = new Set(data.collections.claims.map(({ record }) => record.id));
+  const artifactIds = new Set(data.collections.artifacts.map(({ record }) => record.id));
+  const searchProtocolIds = new Set(data.collections.searchProtocols.map(({ record }) => record.id));
+  const reportArtifactIds = new Set(data.collections.reportArtifacts.map(({ record }) => record.id));
 
   assert.equal(data.domainPack.domain.name, "Synthetic Student Response Literature Review");
-  assert.equal(data.collections.claims.length, 0);
-  assert.equal(data.collections.artifacts.length, 0);
-  assert.equal(getReportArtifacts(data).length, 0);
+  assert.ok(claimIds.has("ssr-scoring-validation-use-baseline-claim"));
+  assert.ok(claimIds.has("ssr-generation-methods-baseline-claim"));
+  assert.ok(artifactIds.has("frohn-llm-cr-validation-framework-artifact"));
+  assert.ok(artifactIds.has("agent4edu-generative-agent-artifact"));
+  assert.ok(searchProtocolIds.has("ssr-scoring-validation-use-search-2026-06-02"));
+  assert.ok(searchProtocolIds.has("ssr-generation-methods-search-2026-06-02"));
+  assert.ok(reportArtifactIds.has("ssr-synthesis-2026-06-03"));
+  assert.ok(reportArtifactIds.has("ssr-background-lit-review-2026-06-03"));
+  assert.ok(reportArtifactIds.has("ssr-application-memo-2026-06-03"));
+  assert.ok(data.collections.claims.length >= 2);
+  assert.ok(data.collections.artifacts.length >= 9);
+  assert.ok(data.collections.searchProtocols.length >= 2);
+  assert.equal(getReportArtifacts(data).length, 3);
+  assert.equal(getReportArtifactById(data, "ssr-background-lit-review-2026-06-03")?.artifact_type, "literature_review");
+  assert.equal(getReportArtifactById(data, "ssr-application-memo-2026-06-03")?.artifact_type, "methods_note");
   assert.equal(config.title, "Literature Synthesis Matrix");
   assert.equal(config.row_source, "artifacts");
-  assert.ok(config.columns.some((column) => column.id === "response_origin"));
-  assert.ok(config.columns.some((column) => column.id === "prompt_strategy"));
-  assert.equal(getSynthesisMatrixRows(data).length, 0);
-  assert.equal(getSearchProtocols(data).length, 0);
+  assert.ok(config.columns.some((column) => column.id === "assessment_purpose"));
+  assert.ok(config.columns.some((column) => column.id === "decision_consequence"));
+  assert.ok(getSynthesisMatrixRows(data).length >= 9);
+  assert.ok(getSearchProtocols(data).length >= 2);
   assert.match(getSynthesisMatrixCsv(data), /^Study,Year,Review Question/);
   assert.match(getSynthesisMatrixMarkdown(data), /^\| Study \| Year \| Review Question \|/);
 });
@@ -250,5 +275,17 @@ test("domain skill adapters map fixture packs to core workflows", async () => {
   const syntheticBootstrap = await readFixtureText("domain-packs/synthetic-student-responses/skills/bootstrap.md");
   assert.match(syntheticBootstrap, /response_origin/);
   assert.match(syntheticBootstrap, /label_source/);
-  assert.match(syntheticBootstrap, /response origin/);
+  assert.match(syntheticBootstrap, /decision_consequence/);
+
+  const syntheticSynthesis = await readFixtureText("domain-packs/synthetic-student-responses/skills/synthesis.md");
+  assert.match(syntheticSynthesis, /review_question/);
+  assert.match(syntheticSynthesis, /real-response comparator/);
+  assert.match(syntheticSynthesis, /high-stakes/);
+
+  const syntheticLiteratureReview = await readFixtureText(
+    "domain-packs/synthetic-student-responses/skills/literature-review.md"
+  );
+  assert.match(syntheticLiteratureReview, /author-year/);
+  assert.match(syntheticLiteratureReview, /label source/);
+  assert.match(syntheticLiteratureReview, /operational high-stakes validation/);
 });

@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-validity-conditions-controlled-comparisons-update-construct-mapping-r1",
+  "name": "Construct Mapping review for Validity Conditions and Controlled Comparison Update bundle",
+  "candidate_bundle_id": "ssr-validity-conditions-controlled-comparisons-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "construct_mapping",
+  "reviewer_kind": "agent",
+  "skill_name": "evidence-review",
+  "reviewer_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The staged artifacts keep response origin, label source, comparator, evaluation method, and scorer role separate. The SMART record distinguishes generated responses, human-scored real responses, an LLM scoring model, and IRT item-difficulty estimates; the other records remain realism/authenticity evidence rather than scorer-validation evidence.",
+  "reviewed_change_ids": [
+    "create-nguyen-cao-source",
+    "create-nguyen-cao-artifact",
+    "create-nguyen-cao-finding",
+    "create-cao-nguyen-source",
+    "create-cao-nguyen-artifact",
+    "create-cao-nguyen-finding",
+    "create-smart-source",
+    "create-smart-artifact",
+    "create-smart-finding",
+    "create-wu-source",
+    "create-wu-artifact",
+    "create-wu-finding",
+    "create-validity-conditions-search-protocol"
+  ],
+  "findings": [
+    {
+      "finding_id": "realism-comparator-and-scorer-role-separated",
+      "severity": "note",
+      "category": "construct_conflation",
+      "claim_or_issue": "The staged records do not conflate synthetic-response realism with scorer validity or real-response interchangeability.",
+      "why_it_matters": "This is the central risk in the research question: plausible responses can be validity-relevant without being sufficient validation evidence.",
+      "recommended_action": "Retain the explicit scorer_use, real_response_comparator, and limitations fields in each staged artifact.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-smart-artifact"
+    }
+  ],
+  "created_at": "2026-06-03T19:06:00Z",
+  "updated_at": "2026-06-03T19:06:00Z"
+}

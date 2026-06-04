@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "benedetto-simulated-exam-responses-2024-source",
+  "name": "Using LLMs to simulate students' responses to exam questions",
+  "source_type": "conference_paper",
+  "authors": [
+    "Luca Benedetto",
+    "Giovanni Aradelli",
+    "Antonia Donvito",
+    "Alberto Lucchetti",
+    "Andrea Cappelli",
+    "Paula Buttery"
+  ],
+  "venue": "Findings of the Association for Computational Linguistics: EMNLP 2024",
+  "year": 2024,
+  "published_on": "2024-11",
+  "doi": "10.18653/v1/2024.findings-emnlp.663",
+  "urls": [
+    "https://aclanthology.org/2024.findings-emnlp.663/",
+    "https://aclanthology.org/2024.findings-emnlp.663.pdf"
+  ],
+  "summary": "Findings 2024 paper evaluating prompts that make LLMs answer exam questions as students at different skill levels across science and reading-comprehension datasets.",
+  "retrieved_on": "2026-06-02",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-02T19:14:00Z",
+      "url": "https://aclanthology.org/2024.findings-emnlp.663.pdf",
+      "result": "full_text_verified",
+      "notes": "ACL Anthology PDF is available and was used for skill-level simulation and accuracy extraction."
+    }
+  ]
+}

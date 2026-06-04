@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "wolfe-real-essay-comparison-finding-2026",
+  "name": "Real Essay Comparisons Reveal Tradeoffs Across Score Agreement and Realism Detection",
+  "source_id": "wolfe-calibrating-realistic-essays-2026-source",
+  "artifact_id": "wolfe-real-essay-comparison-artifact",
+  "taxonomy_node_ids": [
+    "ssr-real-response-comparison"
+  ],
+  "endpoint_category": "same_essay_score_preservation",
+  "direction": "reports_real_response_comparison",
+  "evidence_tier": "preprint_extracted",
+  "confidence": "high",
+  "statement": "Wolfe and Barber compare simulated essays against the original real student essays and show that agreement, average-score alignment, and human detection produce different judgments about synthetic quality.",
+  "population_or_context": "Student essay responses generated for automated-scoring data augmentation.",
+  "time_horizon": "arXiv preprint submitted 2026-02-06 and reviewed on 2026-06-02.",
+  "quantitative_note": "Table 2 reports Predict Next at 0.72 exact agreement and 0.74 quadratic weighted kappa, Sentence at an average score of 1.97 versus 1.53 for original essays, and simulation-detection accuracy of 0.18 for 25 Examples, 0.25 for Predict Next, and 0.74 for Sentence.",
+  "caveats": [
+    "The source is a preprint.",
+    "The real essay comparator is also the source essay used to condition generation.",
+    "Realism and score preservation can diverge."
+  ],
+  "evaluation_method": "Expert scoring, score-distribution comparison, exact agreement, quadratic weighted kappa, and simulation-detection judgments.",
+  "reported_metrics": "Average score, agreement with original student score, quadratic weighted kappa, and simulation-detection accuracy by prompt strategy.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The result is essay-specific.",
+    "The study does not validate automated scorers solely on synthetic essays."
+  ],
+  "source_locator": {
+    "section": "Results, Table 2",
+    "url": "https://arxiv.org/pdf/2602.06772",
+    "quote_or_paraphrase_note": "The finding paraphrases the Table 2 simulated-versus-real essay comparison.",
+    "verification_status": "verified"
+  }
+}

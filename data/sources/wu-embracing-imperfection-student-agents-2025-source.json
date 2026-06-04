@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "wu-embracing-imperfection-student-agents-2025-source",
+  "name": "Embracing Imperfection: Simulating Students with Diverse Cognitive Levels Using LLM-based Agents",
+  "source_type": "conference_paper",
+  "authors": [
+    "Tao Wu",
+    "Jingyuan Chen",
+    "Wang Lin",
+    "Mengze Li",
+    "Yumeng Zhu",
+    "Ang Li",
+    "Kun Kuang",
+    "Fei Wu"
+  ],
+  "venue": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+  "year": 2025,
+  "published_on": "2025-07",
+  "doi": "10.18653/v1/2025.acl-long.488",
+  "urls": [
+    "https://aclanthology.org/2025.acl-long.488/",
+    "https://aclanthology.org/2025.acl-long.488.pdf"
+  ],
+  "summary": "ACL 2025 paper proposing a training-free LLM-based student simulation framework that builds cognitive prototypes from past learning records and uses beam-search self-refinement to simulate imperfect Python programming solutions across diverse cognitive levels.",
+  "access_status": "full_text_available",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03",
+      "url": "https://aclanthology.org/2025.acl-long.488.pdf",
+      "result": "PDF full text retrieved.",
+      "notes": "Used abstract, methodology, experimental analysis, conclusion, limitations, and ethics sections for extraction."
+    }
+  ]
+}

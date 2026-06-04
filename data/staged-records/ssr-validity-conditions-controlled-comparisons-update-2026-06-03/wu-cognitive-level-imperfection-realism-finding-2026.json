@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "wu-cognitive-level-imperfection-realism-finding-2026",
+  "name": "Constructed-Response Realism Requires Plausible Imperfection and Cognitive-Level Variation",
+  "source_id": "wu-embracing-imperfection-student-agents-2025-source",
+  "artifact_id": "wu-student100-cognitive-level-realism-artifact",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-model-generation-effects",
+    "ssr-real-response-comparison"
+  ],
+  "endpoint_category": "error_pattern_realism",
+  "direction": "cognitive_prototypes_improve_imperfect_response_realism",
+  "evidence_tier": "peer_reviewed_full_text",
+  "confidence": "moderate",
+  "statement": "Wu et al. provide constructed-response evidence that realism depends on simulating plausible mistakes and cognitive-level variation, because baseline helpful-assistant-style LLMs tend to overproduce advanced or correct responses.",
+  "population_or_context": "Python programming simulation with the Student_100 dataset.",
+  "time_horizon": "2025",
+  "quantitative_note": "The paper reports a Student_100 dataset of 100 students and 5,000 learning records and claims 100% improvement in simulation accuracy and realism over baseline models.",
+  "source_locator": {
+    "section": "Abstract; Experiments; In-Depth Analysis; Conclusion; Limitations; Ethics Statement",
+    "url": "https://aclanthology.org/2025.acl-long.488.pdf",
+    "quote_or_paraphrase_note": "Extraction uses the abstract's problem framing and dataset, the component-ablation discussion, and the controlled-setting limitations.",
+    "verification_status": "verified"
+  },
+  "caveats": [
+    "The study is not an automated scoring validation study.",
+    "The domain is programming and may not transfer directly to essay or other constructed-response assessments.",
+    "The authors explicitly characterize the work as early-stage controlled experimentation."
+  ],
+  "numeric_results_extracted": true,
+  "evaluation_method": "Simulation accuracy/realism metrics, ablations, difficulty-by-student analysis, and human evaluation.",
+  "limitations": [
+    "Programming-only validation.",
+    "No operational assessment or scorer-validation context."
+  ]
+}

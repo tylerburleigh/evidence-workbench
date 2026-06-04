@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "scarlatos-smart-irt-validity-boundary-finding-2026",
+  "name": "IRT-Aligned Synthetic Responses Support Item Difficulty Prediction With Real-Response Anchors",
+  "source_id": "scarlatos-smart-irt-simulated-students-2025-source",
+  "artifact_id": "scarlatos-smart-irt-open-ended-difficulty-artifact",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-real-response-comparison",
+    "ssr-scoring-validation-use",
+    "ssr-acceptable-scoring-uses"
+  ],
+  "endpoint_category": "item_difficulty_prediction",
+  "direction": "validity_relevant_when_real_response_and_irt_anchored",
+  "evidence_tier": "peer_reviewed_full_text",
+  "confidence": "moderate",
+  "statement": "SMART provides a concrete example of synthetic open-ended responses playing a validity-relevant role in an automated scoring-adjacent workflow: generated responses are useful for item difficulty prediction when trained, aligned, scored, and evaluated against human-scored real-response IRT evidence.",
+  "population_or_context": "Short-answer reading-comprehension and Java coding items.",
+  "time_horizon": "2025",
+  "quantitative_note": "The paper evaluates 49 Smarter Balanced short-answer items and 50 CodeWorkout Java coding items. Table 1 reports SMART PCC/SCC/RMSE of 0.6490/0.4861/0.6699 with Llama-3.2-1B and 0.6737/0.5661/0.6197 with Llama-3.2-3B on Smarter Balanced; on CodeWorkout it reports 0.3082/0.3188/0.6225 with 1B and 0.3929/0.4230/0.5890 with 3B.",
+  "source_locator": {
+    "section": "Abstract; Methodology; Experiments; Table 1; Qualitative Evaluation; Limitations",
+    "url": "https://aclanthology.org/2025.emnlp-main.1274.pdf",
+    "quote_or_paraphrase_note": "Extraction uses the three-stage pipeline, human-scored real-response input, DPO/IRT alignment method, and limitations discussion.",
+    "verification_status": "verified"
+  },
+  "caveats": [
+    "The finding supports item-development and difficulty-estimation evidence, not synthetic-only final scorer validation.",
+    "The pipeline relies on human-scored real responses and an LLM-based scoring model whose own operational validity is not established by the synthetic response set alone.",
+    "The authors report realism limitations in generated textual distributions."
+  ],
+  "numeric_results_extracted": true,
+  "evaluation_method": "Comparison of predicted item difficulties with real-response IRT estimates, plus ability alignment, feature-distribution checks, qualitative response comparisons, and failure-pattern analysis.",
+  "limitations": [
+    "Small item counts and private dataset constraints limit generalization.",
+    "Synthetic response realism and scoring-model validity remain separate evidentiary questions."
+  ]
+}

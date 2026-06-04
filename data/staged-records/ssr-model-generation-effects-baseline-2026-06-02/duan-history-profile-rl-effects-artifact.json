@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "duan-history-profile-rl-effects-artifact",
+  "name": "Duan et al. History-Profile RL Effects Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "duan-history-aware-profiles-student-simulation-2026-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-model-generation-effects"
+  ],
+  "population_or_context": "History-conditioned student simulation in math tutoring dialogues using prior question-answering and dialogue histories.",
+  "sample_size": "The arXiv PDF reports 1,775 dialogues and 66,705 question-answering records from 670 students after data processing.",
+  "methods": "Extracted workflow effects for prompting-only baselines, SFT, DPO, history SFT, ProfileRL, and ablations removing DPO, GRPO, behavior profiles, and knowledge profiles.",
+  "endpoint_categories": [
+    "history_conditioning_effect",
+    "profile_conditioning_effect",
+    "dpo_effect",
+    "grpo_effect",
+    "prompting_vs_fine_tuning"
+  ],
+  "education_context": "Math tutoring dialogue simulation with historical question-answering records and tutoring dialogue interactions.",
+  "response_origin": "Simulated student turns are generated from model workflows and compared with ground-truth future student dialogue turns.",
+  "rubric_label_space": "Turn-level Acts, Correctness, Errors, Cosine Similarity, and ROUGE-L metrics.",
+  "label_source": "Ground-truth student turns, dialogue-act/correctness annotations, and model-based metrics provide evaluation labels.",
+  "generation_model": "Prompting baselines use GPT-5.4; fine-tuned methods use Llama-3.1-8B-Instruct, with GPT-4.1, GPT-5 mini, and embedding models used in support roles.",
+  "generation_method": "Prompt-only student profiles, SFT, DPO, history SFT, profile-conditioned simulation, and ProfileRL with DPO for the simulator and GRPO for the profile generator.",
+  "prompt_strategy": "Structured profiles summarize knowledge state, knowledge acquisition, misconceptions, dialogue behavior, and linguistic style from recent histories.",
+  "evaluation_method": "Five-fold cross-validation compares simulated turns with ground truth across Acts, Correctness, Errors, Cosine Similarity, and ROUGE-L; ablations isolate profile sections and RL stages.",
+  "scorer_use": "Dialogue simulator benchmarking; not automated scorer validation.",
+  "real_response_comparator": "Ground-truth math tutoring dialogue turns from real students provide the comparator.",
+  "reported_metrics": "Table 1 reports ProfileRL at Acts 0.644, Corr. 0.516, Errors 0.149, Cos. Sim. 0.700, ROUGE-L 0.296 versus History SFT at 0.602, 0.479, 0.111, 0.694, 0.287 and prompting baselines such as History ICL at 0.495, 0.466, 0.094, 0.531, 0.176. Table 2 reports ProfileRL at Acts 0.605, Corr. 0.466, Errors 0.150, Cos. Sim. 0.689, ROUGE-L 0.271 versus Prompting Only at 0.502, 0.446, 0.109, 0.488, 0.145.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The source is a May 2026 arXiv preprint and should not be treated as peer-reviewed consensus.",
+    "The evaluation is on a single private math dataset, which limits generalization.",
+    "Prompting baselines and fine-tuned methods differ by base model and training workflow, so the evidence supports workflow-package effects rather than isolated model-family causality."
+  ],
+  "assessment_purpose": "formative_feedback",
+  "decision_consequence": "feedback_or_instructional_support",
+  "operational_use": "quality_evaluation"
+}

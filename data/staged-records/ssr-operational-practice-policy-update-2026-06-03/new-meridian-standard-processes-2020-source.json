@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "new-meridian-standard-processes-2020-source",
+  "name": "Standard Processes",
+  "source_type": "technical_guidance",
+  "authors": [
+    "New Meridian Corporation"
+  ],
+  "venue": "ERIC / New Meridian Corporation",
+  "year": 2020,
+  "published_on": "2020-06-17",
+  "urls": [
+    "https://files.eric.ed.gov/fulltext/ED606682.pdf"
+  ],
+  "summary": "New Meridian process guidance for states using New Meridian operational test forms and item bank content. The scoring section defines a machine-scoring test suite as test cases used to validate scoring and scanning rules and states that New Meridian bank assets should include simulated responses for ELA/literacy and mathematics items.",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03T13:09:00Z",
+      "url": "https://files.eric.ed.gov/fulltext/ED606682.pdf",
+      "result": "verified",
+      "notes": "PDF retrieved from ERIC and text extracted locally. Relevant passages are in the Scoring > Machine Scoring section on page 13 of the document."
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "srivatsa-naep-real-response-comparison-finding-2026",
+  "name": "NAEP Real Response Patterns Expose Proxy-Student Ability Misalignment",
+  "source_id": "srivatsa-llm-student-ability-simulation-2025-source",
+  "artifact_id": "srivatsa-naep-real-response-comparison-artifact",
+  "taxonomy_node_ids": [
+    "ssr-real-response-comparison"
+  ],
+  "endpoint_category": "real_population_irt_alignment",
+  "direction": "reports_real_response_comparison",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Srivatsa et al. compare LLM proxy-student answers with real NAEP response patterns and find that grade-enforced prompts reduce average deviation but do not make proxy students reliably align with real populations.",
+  "population_or_context": "NAEP mathematics and reading comprehension items for grades 4, 8, and 12.",
+  "time_horizon": "BEA 2025 paper reviewed on 2026-06-02.",
+  "quantitative_note": "Extracted Table 2 shows average absolute deviation from the target 50th percentile drops under best grade-enforced prompting from 40.5 to 27.5 for mathematics grade 4, 35.0 to 30.2 for mathematics grade 8, 32.9 to 28.8 for mathematics grade 12, 41.9 to 30.6 for reading grade 4, 37.8 to 27.5 for reading grade 8, and 25.4 to 15.2 for reading grade 12.",
+  "caveats": [
+    "The comparator is aggregate NAEP response behavior and IRT alignment, not open-response text.",
+    "Lower average deviation does not mean all model-prompt pairs are aligned."
+  ],
+  "evaluation_method": "Rasch/IRT ability-scale comparison of LLM and real student response patterns under unenforced and grade-enforced prompt settings.",
+  "reported_metrics": "Table 2 reports per-model percentile ranks and average absolute deviations for prompt-unenforced and best grade-enforced settings.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "Multiple-choice ability alignment does not directly measure open-response realism, dialogue fidelity, or scorer-validation utility.",
+    "The finding should be interpreted as real-population comparison evidence, not a substitute-for-real-students claim."
+  ],
+  "source_locator": {
+    "section": "PDF Sections 4.2, 5.2, 6, and Table 2",
+    "url": "https://aclanthology.org/2025.bea-1.75.pdf",
+    "quote_or_paraphrase_note": "The finding reuses verified Table 2 extraction and focuses on comparison to real NAEP response patterns.",
+    "verification_status": "verified"
+  }
+}

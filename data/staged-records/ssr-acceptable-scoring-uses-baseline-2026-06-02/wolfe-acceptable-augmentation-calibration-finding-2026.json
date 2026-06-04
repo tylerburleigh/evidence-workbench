@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "wolfe-acceptable-augmentation-calibration-finding-2026",
+  "name": "Human Calibration Makes Simulated Essays Candidate Augmentation, Not Validation Replacement",
+  "source_id": "wolfe-calibrating-realistic-essays-2026-source",
+  "artifact_id": "wolfe-acceptable-augmentation-calibration-artifact",
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses"
+  ],
+  "endpoint_category": "augmentation_calibration",
+  "direction": "supports_with_boundary",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Wolfe and Barber use expert scores, score-agreement metrics, score-distribution comparisons, and realism ratings to calibrate simulated essays for automated-scoring augmentation, but the evidence remains weaker than direct scorer validation on real or independently human-scored responses.",
+  "population_or_context": "Student essay responses for automated scoring data augmentation.",
+  "time_horizon": "arXiv preprint version retrieved on 2026-06-02.",
+  "quantitative_note": "The study reports 96 real essays and 288 simulated essays, with exact agreement, weighted kappa, score-distribution differences, and realism ratings.",
+  "caveats": [
+    "Preprint evidence.",
+    "The source evaluates generated-data quality and score preservation rather than one deployed scorer.",
+    "Downstream scorer validity still requires real or independently human-scored validation data."
+  ],
+  "evaluation_method": "Expert scoring of simulated essays, comparison with original essay scores, score-distribution analysis, and realism ratings.",
+  "reported_metrics": "Exact agreement, adjacent agreement, weighted kappa, score-distribution differences, and realism ratings.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "real_essays": 96,
+    "simulated_essays": 288,
+    "prompt_strategies": 3
+  },
+  "limitations": [
+    "Does not establish that synthetic essays should replace real validation sets.",
+    "Findings are bounded to the compared prompt strategies and response setting."
+  ],
+  "source_locator": {
+    "section": "Abstract, methods, and results",
+    "url": "https://arxiv.org/abs/2602.06772",
+    "quote_or_paraphrase_note": "The finding paraphrases simulated essay generation, expert scoring, agreement metrics, and realism-rating evaluation.",
+    "verification_status": "located"
+  }
+}

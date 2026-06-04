@@ -1,0 +1,275 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-non-llm-constructed-response-augmentation-update-2026-06-03",
+  "name": "Non-LLM Constructed-Response Augmentation Update",
+  "summary": "Stages older and non-LLM examples where synthetic, transformed, manual, feature-space, or image-augmented constructed-response data supplement sparse or imbalanced automated-scoring datasets.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-03T16:30:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-sparse-data-supplementation"
+    ],
+    "research_question": "Are there older or non-LLM examples where generated, transformed, manually simulated, feature-space, or image-augmented constructed-response data supplement sparse or imbalanced automated-scoring datasets, and what role did that synthetic data play in the research process?"
+  },
+  "source_ids": [
+    "lun-mda-asas-short-answer-augmentation-2020",
+    "bonthu-transfer-augmentation-asag-2023",
+    "krisnawati-cross-prompt-asag-smote-2025",
+    "li-scientific-models-smote-2025"
+  ],
+  "source_urls": [
+    "https://doi.org/10.1609/aaai.v34i09.7062",
+    "https://doi.org/10.1016/j.engappai.2023.106292",
+    "https://doi.org/10.21512/commit.v19i2.13423",
+    "https://doi.org/10.1007/s10956-025-10217-0"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "ssr-sparse-data-supplementation-baseline-claim",
+      "relationship": "updates"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-search-protocol",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "ssr-non-llm-constructed-response-augmentation-search-2026-06-03",
+      "file_path": "data/search-protocols/ssr-non-llm-constructed-response-augmentation-search-2026-06-03.json",
+      "staged_file_path": "data/staged-records/ssr-non-llm-constructed-response-augmentation-update-2026-06-03/ssr-non-llm-constructed-response-augmentation-search-2026-06-03.json",
+      "summary": "Add the targeted search protocol for non-LLM constructed-response augmentation.",
+      "rationale": "The update is based on a targeted search pass and screening decisions should be reviewable."
+    },
+    {
+      "change_id": "create-source-lun",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "lun-mda-asas-short-answer-augmentation-2020",
+      "file_path": "data/sources/lun-mda-asas-short-answer-augmentation-2020.json",
+      "staged_file_path": "data/staged-records/ssr-non-llm-constructed-response-augmentation-update-2026-06-03/lun-mda-asas-short-answer-augmentation-2020.json",
+      "summary": "Add Lun et al. source metadata.",
+      "rationale": "This is a direct older/non-LLM short-answer scoring augmentation example."
+    },
+    {
+      "change_id": "create-source-bonthu",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "bonthu-transfer-augmentation-asag-2023",
+      "file_path": "data/sources/bonthu-transfer-augmentation-asag-2023.json",
+      "staged_file_path": "data/staged-records/ssr-non-llm-constructed-response-augmentation-update-2026-06-03/bonthu-transfer-augmentation-asag-2023.json",
+      "summary": "Add Bonthu et al. source metadata.",
+      "rationale": "This is a direct programming ASAG text-augmentation example, currently abstract-level."
+    },
+    {
+      "change_id": "create-source-krisnawati",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "krisnawati-cross-prompt-asag-smote-2025",
+      "file_path": "data/sources/krisnawati-cross-prompt-asag-smote-2025.json",
+      "staged_file_path": "data/staged-records/ssr-non-llm-constructed-response-augmentation-update-2026-06-03/krisnawati-cross-prompt-asag-smote-2025.json",
+      "summary": "Add Krisnawati et al. source metadata.",
+      "rationale": "This is a direct short-answer grading example using manual response simulation and SMOTE."
+    },
+    {
+      "change_id": "create-source-li",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "li-scientific-models-smote-2025",
+      "file_path": "data/sources/li-scientific-models-smote-2025.json",
+      "staged_file_path": "data/staged-records/ssr-non-llm-constructed-response-augmentation-update-2026-06-03/li-scientific-models-smote-2025.json",
+      "summary": "Add Li, Haudek, and Krajcik source metadata.",
+      "rationale": "This is adjacent constructed-response evidence involving scientific-model scoring, SMOTE, and image augmentation."
+    },
+    {
+      "change_id": "create-artifact-lun",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "lun-mda-asas-scientsbank-augmentation-2020",
+      "file_path": "data/artifacts/lun-mda-asas-scientsbank-augmentation-2020.json",
+      "staged_file_path": "data/staged-records/ssr-non-llm-constructed-response-augmentation-update-2026-06-03/lun-mda-asas-scientsbank-augmentation-2020.json",
+      "summary": "Add Lun et al. study artifact.",
+      "rationale": "The artifact captures the pre-GPT augmentation strategy, sample, labels, and scorer-training role."
+    },
+    {
+      "change_id": "create-artifact-bonthu",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "bonthu-transfer-asag-augmentation-2023",
+      "file_path": "data/artifacts/bonthu-transfer-asag-augmentation-2023.json",
+      "staged_file_path": "data/staged-records/ssr-non-llm-constructed-response-augmentation-update-2026-06-03/bonthu-transfer-asag-augmentation-2023.json",
+      "summary": "Add Bonthu et al. study artifact.",
+      "rationale": "The artifact records programming ASAG augmentation role while preserving abstract-only limitations."
+    },
+    {
+      "change_id": "create-artifact-krisnawati",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "krisnawati-cross-prompt-asag-smote-augmentation-2025",
+      "file_path": "data/artifacts/krisnawati-cross-prompt-asag-smote-augmentation-2025.json",
+      "staged_file_path": "data/staged-records/ssr-non-llm-constructed-response-augmentation-update-2026-06-03/krisnawati-cross-prompt-asag-smote-augmentation-2025.json",
+      "summary": "Add Krisnawati et al. study artifact.",
+      "rationale": "The artifact records manual response augmentation, SMOTE, and cross-prompt ASAG evaluation."
+    },
+    {
+      "change_id": "create-artifact-li",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "li-scientific-models-smote-augmentation-2025",
+      "file_path": "data/artifacts/li-scientific-models-smote-augmentation-2025.json",
+      "staged_file_path": "data/staged-records/ssr-non-llm-constructed-response-augmentation-update-2026-06-03/li-scientific-models-smote-augmentation-2025.json",
+      "summary": "Add Li et al. study artifact.",
+      "rationale": "The artifact records scientific-model scoring, SMOTE/image augmentation, and feature-space boundary conditions."
+    },
+    {
+      "change_id": "create-finding-lun",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "lun-mda-asas-non-llm-short-answer-augmentation-finding-2020",
+      "file_path": "data/findings/lun-mda-asas-non-llm-short-answer-augmentation-finding-2020.json",
+      "staged_file_path": "data/staged-records/ssr-non-llm-constructed-response-augmentation-update-2026-06-03/lun-mda-asas-non-llm-short-answer-augmentation-finding-2020.json",
+      "summary": "Add finding on older/non-LLM short-answer augmentation.",
+      "rationale": "The finding verifies that sparse-data supplementation predates recent LLM work."
+    },
+    {
+      "change_id": "create-finding-bonthu",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "bonthu-non-llm-asag-augmentation-finding-2023",
+      "file_path": "data/findings/bonthu-non-llm-asag-augmentation-finding-2023.json",
+      "staged_file_path": "data/staged-records/ssr-non-llm-constructed-response-augmentation-update-2026-06-03/bonthu-non-llm-asag-augmentation-finding-2023.json",
+      "summary": "Add finding on programming ASAG text augmentation.",
+      "rationale": "The finding adds a direct ASAG augmentation example with abstract-only caveats."
+    },
+    {
+      "change_id": "create-finding-krisnawati",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "krisnawati-smote-cross-prompt-asag-finding-2025",
+      "file_path": "data/findings/krisnawati-smote-cross-prompt-asag-finding-2025.json",
+      "staged_file_path": "data/staged-records/ssr-non-llm-constructed-response-augmentation-update-2026-06-03/krisnawati-smote-cross-prompt-asag-finding-2025.json",
+      "summary": "Add finding on manual and SMOTE ASAG augmentation.",
+      "rationale": "The finding verifies class-balancing use in a short-answer grading context."
+    },
+    {
+      "change_id": "create-finding-li",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "li-smote-scientific-models-imbalance-finding-2025",
+      "file_path": "data/findings/li-smote-scientific-models-imbalance-finding-2025.json",
+      "staged_file_path": "data/staged-records/ssr-non-llm-constructed-response-augmentation-update-2026-06-03/li-smote-scientific-models-imbalance-finding-2025.json",
+      "summary": "Add finding on SMOTE/image augmentation for scientific-model scoring.",
+      "rationale": "The finding adds adjacent non-text constructed-response evidence while preserving its boundary."
+    },
+    {
+      "change_id": "update-claim-sparse-supplementation",
+      "change_type": "update_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-sparse-data-supplementation-baseline-claim",
+      "file_path": "data/claims/ssr-sparse-data-supplementation-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-non-llm-constructed-response-augmentation-update-2026-06-03/ssr-sparse-data-supplementation-baseline-claim.json",
+      "summary": "Update sparse-data supplementation claim with older/non-LLM constructed-response examples.",
+      "rationale": "The new evidence broadens the baseline beyond recent LLM and essay-oriented examples."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-sparse-data-supplementation",
+      "note": "Expands the existing sparse-data supplementation claim with non-LLM and non-essay examples."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "applicability_boundary",
+    "synthesis_overreach",
+    "search_protocol"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_review_ids": [
+    "evidence-review-ssr-non-llm-cr-augmentation-source-fidelity-r1",
+    "evidence-review-ssr-non-llm-cr-augmentation-construct-mapping-r1",
+    "evidence-review-ssr-non-llm-cr-augmentation-method-classification-r1",
+    "evidence-review-ssr-non-llm-cr-augmentation-scorer-validation-relevance-r1",
+    "evidence-review-ssr-non-llm-cr-augmentation-applicability-boundary-r1",
+    "evidence-review-ssr-non-llm-cr-augmentation-synthesis-overreach-r1",
+    "evidence-review-ssr-non-llm-cr-augmentation-search-protocol-r1"
+  ],
+  "review_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-non-llm-constructed-response-augmentation-update-2026-06-03-2026-06-03t16-43-08-294z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces.",
+    "applicability_boundary: Keep operational-use claims in separate policy/practice nodes.",
+    "construct_mapping: Maintain the response-origin and synthetic-data-form distinction in downstream synthesis text.",
+    "method_classification: Keep generation_model and scorer_use fields separate in synthesis exports.",
+    "scorer_validation_relevance: Retain the distinction between training augmentation and scorer validation in the literature review.",
+    "search_protocol: Leave systematicity_level as targeted_bootstrap and keep screening counts non-exhaustive.",
+    "source_fidelity: Retrieve full text before using Bonthu et al. for detailed method comparison or quantitative synthesis.",
+    "source_fidelity: Use Li, Haudek, and Krajcik in all source, finding, and synthesis text.",
+    "synthesis_overreach: Use language such as targeted pass, examples, or pattern rather than systematic prevalence claims.",
+    "Resolve 1 structured source-access follow-up action(s) before synthesis use.",
+    "Resolve 1 structured extraction follow-up action(s) before quantitative synthesis."
+  ],
+  "source_access_follow_up_actions": [
+    {
+      "action_id": "resolve-source-access-bonthu-non-llm-asag-augmentation-finding-2023",
+      "action_type": "source_access_resolution",
+      "status": "open",
+      "priority": "high",
+      "target_record_type": "finding",
+      "target_record_id": "bonthu-non-llm-asag-augmentation-finding-2023",
+      "source_ids": [
+        "bonthu-transfer-augmentation-asag-2023"
+      ],
+      "taxonomy_node_ids": [
+        "ssr-sparse-data-supplementation"
+      ],
+      "access_status": "abstract_only_available",
+      "access_depth": "abstract_only",
+      "locator_depth": "abstract_or_metadata",
+      "required_access_depth": "full_text",
+      "reason": "create-finding-bonthu: finding bonthu-non-llm-asag-augmentation-finding-2023 relies on Improving the Performance of Automatic Short Answer Grading Using Transfer Learning and Augmentation with abstract only, below the domain minimum of full_text.",
+      "recommended_action": "Retrieve full text for Improving the Performance of Automatic Short Answer Grading Using Transfer Learning and Augmentation, replace or downgrade the finding, or mark the source as screening-only before synthesis use.",
+      "finding_id": "bonthu-non-llm-asag-augmentation-finding-2023",
+      "artifact_id": "bonthu-transfer-asag-augmentation-2023"
+    }
+  ],
+  "extraction_follow_up_actions": [
+    {
+      "action_id": "extract-numeric-results-bonthu-non-llm-asag-augmentation-finding-2023",
+      "action_type": "numeric_results_extraction",
+      "status": "open",
+      "priority": "medium",
+      "target_record_type": "finding",
+      "target_record_id": "bonthu-non-llm-asag-augmentation-finding-2023",
+      "source_ids": [
+        "bonthu-transfer-augmentation-asag-2023"
+      ],
+      "taxonomy_node_ids": [
+        "ssr-sparse-data-supplementation"
+      ],
+      "metric_fields_present": [
+        "reported_metrics",
+        "quantitative_note"
+      ],
+      "reason": "finding bonthu-non-llm-asag-augmentation-finding-2023 reports metric text but numeric_results_extracted is false.",
+      "recommended_action": "Extract table-level numeric results for Non-LLM Text Augmentation for Programming ASAG before quantitative synthesis.",
+      "finding_id": "bonthu-non-llm-asag-augmentation-finding-2023",
+      "artifact_id": "bonthu-transfer-asag-augmentation-2023"
+    }
+  ]
+}

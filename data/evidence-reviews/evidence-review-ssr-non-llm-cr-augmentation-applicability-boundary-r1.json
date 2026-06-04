@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-non-llm-cr-augmentation-applicability-boundary-r1",
+  "name": "Applicability Boundary Review for Non-LLM CR Augmentation Update",
+  "candidate_bundle_id": "ssr-non-llm-constructed-response-augmentation-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "applicability_boundary",
+  "reviewer_kind": "agent",
+  "reviewer_id": "codex-agent",
+  "skill_name": "synthetic-student-responses-evidence-review-adapter",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Applicability boundaries are explicit. All four staged examples are research/development uses with no direct learner consequence, and the claim update does not generalize them to operational scoring policy or high-stakes use. The bundle appropriately flags heterogeneity across short text, programming answers, manual response simulation, feature vectors, and scientific-model images.",
+  "reviewed_change_ids": [
+    "create-search-protocol",
+    "create-source-lun",
+    "create-source-bonthu",
+    "create-source-krisnawati",
+    "create-source-li",
+    "create-artifact-lun",
+    "create-artifact-bonthu",
+    "create-artifact-krisnawati",
+    "create-artifact-li",
+    "create-finding-lun",
+    "create-finding-bonthu",
+    "create-finding-krisnawati",
+    "create-finding-li",
+    "update-claim-sparse-supplementation"
+  ],
+  "findings": [
+    {
+      "finding_id": "applicability-no-operational-transfer",
+      "severity": "note",
+      "category": "applicability",
+      "applies_to_change_id": "update-claim-sparse-supplementation",
+      "claim_or_issue": "The evidence supports research-process examples, not direct approval for operational synthetic-response use.",
+      "why_it_matters": "Operational or consequential scoring claims require different evidence than model-development augmentation studies.",
+      "recommended_action": "Keep operational-use claims in separate policy/practice nodes.",
+      "resolution_status": "addressed"
+    }
+  ],
+  "created_at": "2026-06-03T16:35:20Z",
+  "updated_at": "2026-06-03T16:35:20Z"
+}

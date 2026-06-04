@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "lun-mda-asas-short-answer-augmentation-2020",
+  "name": "Multiple Data Augmentation Strategies for Improving Performance on Automatic Short Answer Scoring",
+  "source_type": "conference_paper",
+  "authors": [
+    "Jiaqi Lun",
+    "Jia Zhu",
+    "Yong Tang",
+    "Min Yang"
+  ],
+  "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+  "year": 2020,
+  "published_on": "2020-04-03",
+  "doi": "10.1609/aaai.v34i09.7062",
+  "urls": [
+    "https://doi.org/10.1609/aaai.v34i09.7062",
+    "https://ojs.aaai.org/index.php/AAAI/article/view/7062",
+    "https://ojs.aaai.org/index.php/AAAI/article/download/7062/6916"
+  ],
+  "summary": "Pre-GPT automatic short-answer scoring study using multiple augmentation strategies, including back-translation, correct student answers as additional references, and column-swapping variants, to supplement limited SciEntsBank/SemEval training data.",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/download/7062/6916",
+      "result": "Full-text PDF downloaded and text extracted.",
+      "notes": "Sections reviewed: abstract, Multiple Data Augmentation Strategies, Experiments/Dataset, Tables 2-4, Conclusion and Future Work."
+    },
+    {
+      "attempted_at": "2026-06-03",
+      "url": "https://api.crossref.org/works/10.1609%2Faaai.v34i09.7062",
+      "result": "Crossref metadata verified DOI, authors, venue, and publication date."
+    }
+  ]
+}

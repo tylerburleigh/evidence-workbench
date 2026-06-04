@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "fang-gpt4-minority-science-response-augmentation-2025",
+  "name": "GPT-4 Minority-Class Science Response Augmentation",
+  "artifact_type": "study_extract",
+  "status": "staged",
+  "source_ids": [
+    "fang-gpt4-imbalanced-automatic-scoring-2025"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "population_or_context": "Student-written short open-ended responses to four science items, including binary and four-category scoring tasks.",
+  "sample_size": "Original datasets of 266 or 374 responses per task; GPT-4 generated 120 or 160 minority-class augmentations per task in the reported setup.",
+  "methods": "Structured GPT-4 prompts generated minority-class science responses; DistilBERT scorers were fine-tuned on original and augmented datasets and compared with models trained with additional authentic student responses.",
+  "endpoint_categories": [
+    "minority_class_balancing",
+    "automatic_scoring_training",
+    "scorer_performance_comparison"
+  ],
+  "education_context": "Middle-school science assessment items asking students to write one to five sentence explanations of science phenomena.",
+  "response_origin": "Hybrid: real student responses plus GPT-4-generated responses for underrepresented scoring classes.",
+  "rubric_label_space": "Binary labels for two tasks and four-category holistic labels based on NGSS-oriented DCI and SEP/CCC criteria for two tasks.",
+  "label_source": "Original responses were scored by subject matter experts with reported interrater reliability; generated responses inherited the target minority-class condition from the prompt and were compared against additional authentic minority-class responses.",
+  "generation_model": "GPT-4",
+  "generation_method": "Prompt-based generation of new responses conditioned on item statement, scoring rubric, examples, grouping rules, and a minority-class response to augment.",
+  "prompt_strategy": "Structured WRVRT-reviewed prompts; role prompting as a data augmenting machine; temperature 0 and top_p 0.01 to preserve scientific semantics.",
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "training_augmentation",
+  "evaluation_method": "Fine-tuned DistilBERT scoring models were evaluated with accuracy, precision, recall, and F1 under varying proportions of augmented data and against a gold-standard additional-student-response condition.",
+  "scorer_use": "Training augmentation and class balancing for automatic scoring model development.",
+  "real_response_comparator": "Yes. GPT-4 augmentation was compared with additional authentic student-written minority-class responses matched in sample size.",
+  "sparsity_or_imbalance_motivation": "Student responses were imbalanced across scoring categories, with insufficient minority-class cases for scorer training.",
+  "synthetic_data_research_role": "Generated minority-class responses supplemented sparse score categories to train and benchmark automatic scorers.",
+  "reported_metrics": "Accuracy, precision, recall, F1; stable improvement generally required about 20% to 40% augmented data in the abstracted version.",
+  "numeric_results_extracted": true,
+  "limitations": "Effects varied by task; the authors note that augmented data may not fully capture the complexity and variability of true minority-class responses."
+}

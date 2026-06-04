@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "ssr-assessment-stakes-boundaries-baseline-2026-06-02",
+  "mode": "bootstrap",
+  "started_at": "2026-06-02T21:58:00Z",
+  "completed_at": "2026-06-02T22:23:21Z",
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-assessment-stakes-boundaries"
+    ],
+    "research_question": "How do acceptable uses of synthetic student responses vary across formative, in-term, summative, high-stakes, and lower-stakes assessment contexts?"
+  },
+  "selected_via": "user_requested_follow_up",
+  "outcome": "candidate_bundle",
+  "summary": "Created a staged first baseline for assessment-stakes and use-boundary interpretation, combining contextual assessment guidance with direct synthetic-response studies already extracted in the public graph.",
+  "candidate_bundle_id": "ssr-assessment-stakes-boundaries-baseline-2026-06-02",
+  "source_ids": [
+    "standards-educational-psychological-testing-2014-source",
+    "ets-responsible-ai-assessment-principles-2024-source",
+    "usdoe-teal-formative-assessment-source",
+    "frohn-llm-cr-live-scoring-2025-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "bexte-zesch-synthetic-content-scoring-2025-source",
+    "watts-scientific-argumentation-chatbot-2025-source",
+    "walsh-sjt-automated-scoring-2026-source"
+  ],
+  "source_urls": [
+    "https://www.testingstandards.net/uploads/7/6/6/4/76643089/standards_2014edition.pdf",
+    "https://www.ets.org/Rebrand/pdf/ETS_Convening_executive_summary_for_the_AI_Guidelines.pdf",
+    "https://lincs.ed.gov/federal-initiatives/teal/guide/formativeassessment",
+    "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs",
+    "https://aclanthology.org/2025.acl-long.659/",
+    "https://aclanthology.org/2025.bea-1.11/",
+    "https://www.mdpi.com/2227-7102/15/11/1507",
+    "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1756673/full"
+  ],
+  "next_recommended_mode": "manual",
+  "next_actions": [
+    "Run applicability_boundary and synthesis_overreach reviews before publication.",
+    "Search specifically for operational high-stakes, grade-bearing, and accountability uses of synthetic responses before strengthening the claim.",
+    "Keep contextual standards guidance separate from direct synthetic-response empirical evidence."
+  ]
+}

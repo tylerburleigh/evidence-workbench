@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-model-generation-effects-srivatsa-numeric-update-method-classification-r1",
+  "name": "Method Classification review for Srivatsa Numeric Extraction Update",
+  "candidate_bundle_id": "ssr-model-generation-effects-srivatsa-numeric-update-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "method_classification",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The update only extracts reported Srivatsa model and prompt tables; it does not reclassify the evidence as open-response realism, scorer validation, or prompt-engineering-only evidence.",
+  "reviewed_change_ids": [
+    "update-srivatsa-model-prompt-irt-effects-artifact",
+    "update-srivatsa-model-prompt-irt-effects-finding",
+    "update-ssr-model-generation-effects-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [],
+  "skill_name": "evidence-review",
+  "reviewer_id": "codex-agent",
+  "created_at": "2026-06-02T17:57:00.000Z",
+  "updated_at": "2026-06-02T17:57:00.000Z"
+}

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "li-scientific-models-smote-2025",
+  "name": "Utilizing Deep Learning AI to Analyze Scientific Models: Overcoming Challenges",
+  "source_type": "journal_article",
+  "authors": [
+    "Tingting Li",
+    "Kevin Haudek",
+    "Joseph Krajcik"
+  ],
+  "venue": "Journal of Science Education and Technology",
+  "year": 2025,
+  "published_on": "2025-04-01",
+  "doi": "10.1007/s10956-025-10217-0",
+  "urls": [
+    "https://doi.org/10.1007/s10956-025-10217-0",
+    "https://link.springer.com/article/10.1007/s10956-025-10217-0"
+  ],
+  "summary": "Study of CNN-based automated analysis of student scientific models that used general data augmentation and SMOTE to address imbalanced rubric categories in complex constructed scientific-model responses.",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03",
+      "url": "https://link.springer.com/article/10.1007/s10956-025-10217-0",
+      "result": "Full-text HTML retrieved and converted to text.",
+      "notes": "Sections reviewed: Abstract, Methods, Data Preparation, SMOTE implementations, Results, Conclusions and Discussions."
+    },
+    {
+      "attempted_at": "2026-06-03",
+      "url": "https://api.crossref.org/works/10.1007%2Fs10956-025-10217-0",
+      "result": "Crossref metadata verified DOI, authors, venue, volume, issue, pages, and publication date."
+    }
+  ]
+}

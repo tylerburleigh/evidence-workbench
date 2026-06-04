@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-model-choice-student-simulation-validity-update-construct-mapping-r1",
+  "name": "Construct Mapping review for Model Choice and Student-Simulation Validity Update bundle",
+  "candidate_bundle_id": "ssr-model-choice-student-simulation-validity-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "construct_mapping",
+  "reviewer_kind": "agent",
+  "skill_name": "evidence-review",
+  "reviewer_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The staged records separate misconception faithfulness, epistemic fidelity, and teacher-observed authenticity from scoring labels and scorer validation. Yuan et al. is correctly classified as framework evidence, not empirical model-comparison evidence.",
+  "reviewed_change_ids": [
+    "create-do-source",
+    "create-do-artifact",
+    "create-do-finding",
+    "create-yuan-source",
+    "create-yuan-artifact",
+    "create-yuan-finding",
+    "create-martynova-source",
+    "create-martynova-artifact",
+    "create-martynova-finding",
+    "create-model-choice-search-protocol"
+  ],
+  "findings": [
+    {
+      "finding_id": "model-choice-constructs-not-scoring-labels",
+      "severity": "note",
+      "category": "construct_conflation",
+      "claim_or_issue": "The bundle does not conflate simulated-student fidelity constructs with rubric scoring or automated scorer agreement.",
+      "why_it_matters": "The user's model-choice question is adjacent to scorer development, but these papers mostly evaluate student simulation validity.",
+      "recommended_action": "Preserve the artifact fields that label scorer_use as not automated scorer validation.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-do-artifact"
+    }
+  ],
+  "created_at": "2026-06-03T20:15:00Z",
+  "updated_at": "2026-06-03T20:15:00Z"
+}

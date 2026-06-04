@@ -13,10 +13,65 @@
     "construct_mapping",
     "method_classification",
     "scorer_validation_relevance",
+    "applicability_boundary",
     "synthesis_overreach"
+  ],
+  "applicability_facets": [
+    {
+      "id": "assessment_purpose",
+      "label": "Assessment Purpose",
+      "applies_to": ["artifact", "claim"],
+      "description": "The assessment purpose or setting where the synthetic responses are studied or proposed.",
+      "values": [
+        { "id": "research_or_development", "label": "Research or development" },
+        { "id": "formative_feedback", "label": "Formative feedback" },
+        { "id": "in_term_or_classroom_assessment", "label": "In-term or classroom assessment" },
+        { "id": "summative_assessment", "label": "Summative assessment" },
+        { "id": "admissions_or_selection", "label": "Admissions or selection" },
+        { "id": "not_reported", "label": "Not reported" }
+      ]
+    },
+    {
+      "id": "decision_consequence",
+      "label": "Decision Consequence",
+      "applies_to": ["artifact", "claim"],
+      "description": "The consequence level attached to the assessment use, when reported or inferable from the study design.",
+      "values": [
+        { "id": "no_direct_learner_consequence", "label": "No direct learner consequence" },
+        { "id": "feedback_or_instructional_support", "label": "Feedback or instructional support" },
+        { "id": "grade_or_classroom_decision", "label": "Grade or classroom decision" },
+        { "id": "high_stakes_individual_decision", "label": "High-stakes individual decision" },
+        { "id": "institutional_or_accountability_decision", "label": "Institutional or accountability decision" },
+        { "id": "not_reported", "label": "Not reported" }
+      ]
+    },
+    {
+      "id": "operational_use",
+      "label": "Operational Use",
+      "applies_to": ["artifact", "claim"],
+      "description": "The workflow role for the synthetic responses or the claim being made about them.",
+      "values": [
+        { "id": "generation_method_mapping", "label": "Generation-method mapping" },
+        { "id": "quality_evaluation", "label": "Quality evaluation" },
+        { "id": "training_augmentation", "label": "Training augmentation" },
+        { "id": "calibration_or_development", "label": "Calibration or development" },
+        { "id": "pre_pilot_validation", "label": "Pre-pilot validation" },
+        { "id": "stress_testing", "label": "Stress testing" },
+        { "id": "validation_or_benchmarking", "label": "Validation or benchmarking" },
+        { "id": "live_scoring_or_monitoring", "label": "Live scoring or monitoring" },
+        { "id": "not_scorer_facing", "label": "Not scorer-facing" }
+      ]
+    }
   ],
   "planning": {
     "stale_after_days": 120
+  },
+  "source_access_policy": {
+    "minimum_finding_access_depth": "full_text",
+    "insufficient_finding_access_action": "warn",
+    "follow_up_priority": "high",
+    "enforce_inferred_access_depth": false,
+    "notes": "Published literature-review findings should be grounded in full text when possible. Abstract-only or paywalled sources may be retained for discovery, screening, or explicitly limited follow-up, but should not silently support synthesis claims."
   },
   "public_claim_language": {
     "default_posture": "bounded_literature_synthesis",
@@ -40,6 +95,9 @@
       { "id": "response_origin", "label": "Response Origin", "path": "artifact.response_origin" },
       { "id": "generation_model", "label": "Generation Model", "path": "artifact.generation_model" },
       { "id": "prompt_strategy", "label": "Prompt Strategy", "path": "artifact.prompt_strategy" },
+      { "id": "assessment_purpose", "label": "Assessment Purpose", "path": "artifact.assessment_purpose" },
+      { "id": "decision_consequence", "label": "Decision Consequence", "path": "artifact.decision_consequence" },
+      { "id": "operational_use", "label": "Operational Use", "path": "artifact.operational_use" },
       { "id": "evaluation_method", "label": "Evaluation Method", "path": "artifact.evaluation_method" },
       { "id": "scorer_use", "label": "Scorer Use", "path": "artifact.scorer_use" },
       { "id": "real_comparator", "label": "Real Comparator", "path": "artifact.real_response_comparator" },

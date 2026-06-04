@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "agent4edu-model-generation-effects-artifact",
+  "name": "Agent4Edu Model and Workflow Effects Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "agent4edu-learner-response-generation-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-model-generation-effects"
+  ],
+  "population_or_context": "Learner response generation in personalized learning and computerized adaptive testing contexts.",
+  "sample_size": "The existing source record reports EduData with 18,045 response records from 500 Chinese high-school students; the model-version comparison in arXiv HTML Table 1 is marked as a 100-learner exploratory condition for the GPT-4 row.",
+  "methods": "Extracted the model-version and agent-workflow evidence from Agent4Edu, focusing on GPT-3.5-turbo and GPT-4 conditions plus profile, memory, learning-status reflection, and action-module prompting.",
+  "endpoint_categories": [
+    "model_version_effect",
+    "agent_workflow_effect",
+    "learner_response_prediction",
+    "downstream_cat_augmentation"
+  ],
+  "education_context": "High-school online learning platform response records and computerized adaptive testing service evaluation.",
+  "response_origin": "LLM-powered generative agents simulate learner responses and are compared with real learner response records.",
+  "rubric_label_space": "Exercise response correctness and knowledge prediction outcomes rather than open-ended rubric scoring.",
+  "label_source": "Reference exercise answers, learner response records, and cognitive-diagnosis tools provide comparison signals.",
+  "generation_model": "GPT-3.5-turbo is the main reported Agent4Edu condition; GPT-4 appears in a 100-learner exploratory comparison.",
+  "generation_method": "Generative-agent workflow with learner profile, factual memory, short-term memory, long-term memory, learning-status reflection, knowledge-proficiency tools, and action prompts.",
+  "prompt_strategy": "Profile-, memory-, proficiency-, and action-conditioned prompts with corrective reflection when a generated action requires correction.",
+  "evaluation_method": "Prediction scores are reported for learner simulation, and downstream CAT models are retrained with generated learner data to test service improvement.",
+  "scorer_use": "Generated data are used for learner simulation and CAT/personalized learning algorithm augmentation, not automated scorer validation.",
+  "real_response_comparator": "Real EduData learner records provide the comparator for simulated response behavior.",
+  "reported_metrics": "The arXiv HTML reports Agent4Edu (GPT-3.5-turbo) at 73.88 ACC, Agent4Edu (GPT-3.5-turbo)100 at 74.57 ACC, and Agent4Edu (GPT-4)100 at 82.43 ACC in Table 1; Table 4 reports CAT F1-score improvements after augmentation.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The GPT-4 result is explicitly tied to a 100-learner exploratory condition and should not be generalized as a full-scale model ranking.",
+    "The comparison changes model version and sample condition together, so the staged finding treats it as model-version sensitivity rather than a clean controlled model benchmark.",
+    "The evidence is learner-response and CAT specific, not open-response scoring or essay-generation evidence."
+  ],
+  "assessment_purpose": "formative_feedback",
+  "decision_consequence": "feedback_or_instructional_support",
+  "operational_use": "quality_evaluation"
+}

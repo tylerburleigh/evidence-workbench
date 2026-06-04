@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "ssr-generation-methods-baseline-claim",
+  "name": "Synthetic Response Generation Methods Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "ssr-generation-methods",
+  "current_stage": "synthesis_claim_supported",
+  "momentum": "baseline_staged",
+  "confidence": "medium",
+  "summary": "The first staged generation-methods baseline finds at least five distinct synthetic response generation families: rubric- and profile-conditioned LLM generation, generative-agent learner simulation, example- and error-conditioned prompt generation, non-LLM corruption-based generation, and prompt-strategy-based simulated essay generation.",
+  "main_blockers": [
+    "The pass is targeted rather than systematic.",
+    "Some method details remain at repository or abstract level rather than full prompt-template level.",
+    "Included sources span mathematics proofs, personalized learning, scientific argumentation chatbot inputs, and essay scoring, so task-level generalization is limited."
+  ],
+  "best_current_signals": [
+    "Ipci et al. define knowledge-profile and representative-example LLM generation strategies for rubric-aligned responses.",
+    "Agent4Edu defines a learner-profile, memory, reflection, and action-module architecture for response generation by generative agents.",
+    "Watts et al. generate synthetic student inputs through Copilot prompts conditioned on high-quality, low-quality, and typo examples.",
+    "Yoo et al. provide a non-LLM CASE corruption strategy for rubric-aligned essay training samples.",
+    "Wolfe et al. compare prompt strategies for simulated essay generation from real essays."
+  ],
+  "interpretive_note": "This baseline maps generation mechanisms, not universal best practices. Generation methods differ in what they condition on: profiles, examples, target quality, errors, memory state, real essay continuations, or procedural corruption.",
+  "limitations": [
+    "The staged sources are a compact bootstrap set, not an exhaustive methods review.",
+    "The included methods use different tasks, response formats, and evaluation goals.",
+    "Generation model versions and exact prompt templates are not consistently reported across sources.",
+    "This claim does not establish that any generation method produces valid replacement data for scorer validation or classroom inference."
+  ],
+  "update_notes": [
+    "Run a broader database search before treating this as a complete methods section.",
+    "Separate prompt-engineering effects, model-generation effects, quality evaluation, and real-response-comparison claims in later bundles."
+  ],
+  "supporting_finding_ids": [
+    "ipci-profile-based-generation-finding-2026",
+    "agent4edu-generative-agent-finding-2026",
+    "watts-copilot-synthetic-inputs-finding-2026",
+    "yoo-case-corruption-generation-finding-2026",
+    "wolfe-prompt-strategy-generation-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "ipci-knowledge-profiles-response-generation-2025-source",
+    "agent4edu-learner-response-generation-2025-source",
+    "watts-scientific-argumentation-chatbot-2025-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Profile- and rubric-conditioned LLM generation",
+      "claim_field": "summary",
+      "conclusion": "Knowledge profiles and representative examples are one direct family of synthetic student response generation methods.",
+      "support_role": "direct_support",
+      "rationale": "Ipci et al. describe LLM generation guided by knowledge profiles and representative examples, including straightforward and error-informed strategies.",
+      "finding_ids": [
+        "ipci-profile-based-generation-finding-2026"
+      ],
+      "source_ids": [
+        "ipci-knowledge-profiles-response-generation-2025-source"
+      ],
+      "limitations": [
+        "The staged extraction does not include full prompt templates.",
+        "The source is bounded to discrete mathematics logical-proof responses."
+      ]
+    },
+    {
+      "label": "Generative-agent learner simulation",
+      "claim_field": "summary",
+      "conclusion": "Learner-profile, memory, reflection, and action-module agents are a distinct response-generation architecture.",
+      "support_role": "direct_support",
+      "rationale": "Agent4Edu describes LLM-powered generative agents equipped with learner profile, memory, and action modules for response generation.",
+      "finding_ids": [
+        "agent4edu-generative-agent-finding-2026"
+      ],
+      "source_ids": [
+        "agent4edu-learner-response-generation-2025-source"
+      ],
+      "limitations": [
+        "The finding is architecture-level unless full implementation details are reviewed.",
+        "Simulator responses are not necessarily rubric-labeled assessment answers."
+      ]
+    },
+    {
+      "label": "Example-, quality-, and error-conditioned prompting",
+      "claim_field": "best_current_signals",
+      "conclusion": "Synthetic inputs can be generated by conditioning prompts on high-quality, low-quality, and error-injected examples.",
+      "support_role": "direct_support",
+      "rationale": "Watts et al. report Copilot prompt sets that use high-quality examples, low-quality examples, and typographical-error conditioning.",
+      "finding_ids": [
+        "watts-copilot-synthetic-inputs-finding-2026"
+      ],
+      "source_ids": [
+        "watts-scientific-argumentation-chatbot-2025-source"
+      ],
+      "limitations": [
+        "The generated responses are chatbot inputs for prototype evaluation.",
+        "The method is not an automated scorer validation dataset."
+      ]
+    },
+    {
+      "label": "Corruption and prompt-strategy boundaries",
+      "claim_field": "interpretive_note",
+      "conclusion": "Generation methods are not all LLM prompt generation; corruption-based and prompt-strategy methods should be classified separately.",
+      "support_role": "boundary_condition",
+      "rationale": "Yoo et al. use non-LLM CASE corruption, while Wolfe et al. compare multiple prompt strategies for simulated essay generation.",
+      "finding_ids": [
+        "yoo-case-corruption-generation-finding-2026",
+        "wolfe-prompt-strategy-generation-finding-2026"
+      ],
+      "source_ids": [
+        "yoo-dress-rubric-aes-2025-source",
+        "wolfe-calibrating-realistic-essays-2026-source"
+      ],
+      "limitations": [
+        "DREsS is EFL essay-scoring specific.",
+        "Wolfe et al. is a preprint and model-version details are not staged."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-02",
+  "assessment_purpose": [
+    "research_or_development",
+    "formative_feedback",
+    "in_term_or_classroom_assessment"
+  ],
+  "decision_consequence": [
+    "no_direct_learner_consequence",
+    "feedback_or_instructional_support"
+  ],
+  "operational_use": "generation_method_mapping",
+  "applicability": {
+    "applies_when": [
+      "The question is which generation mechanisms have appeared in the reviewed literature."
+    ],
+    "does_not_apply_when": [
+      "The question is whether those mechanisms are valid replacements for real scored responses."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Full prompt-template coverage and paywalled or non-indexed generation studies."
+    ]
+  }
+}

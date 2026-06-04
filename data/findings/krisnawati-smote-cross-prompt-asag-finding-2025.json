@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "krisnawati-smote-cross-prompt-asag-finding-2025",
+  "name": "Manual and SMOTE Augmentation for Cross-Prompt ASAG",
+  "source_id": "krisnawati-cross-prompt-asag-smote-2025",
+  "artifact_id": "krisnawati-cross-prompt-asag-smote-augmentation-2025",
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "endpoint_category": "short_answer_score_imbalance",
+  "direction": "supports",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Krisnawati, Mahastama, and Haw used manual response generation and SMOTE feature-space oversampling to supplement imbalanced short-answer grading data in a cross-prompt ASAG system.",
+  "population_or_context": "Indonesian closed and semi-open short-answer grading with five grade categories and distinct training/testing prompts.",
+  "time_horizon": "2025 publication; non-LLM/manual and feature-space augmentation.",
+  "quantitative_note": "Table V shows SMOTE improved some classifiers, including logistic regression MAF/WAF from 0.18/0.18 to 0.50/0.58 and kNN from 0.25/0.24 to 0.57/0.61, but did not improve linear regression.",
+  "evaluation_method": "Cross-prompt evaluation using weighted average F1, macro average F1, and RMSE.",
+  "sparsity_or_imbalance_motivation": "The study explicitly identifies multiclass imbalance in real-world ASAG data as a classifier challenge.",
+  "synthetic_data_research_role": "Class-balancing and training-data supplementation for ASAG model development.",
+  "reported_metrics": "Before and after SMOTE training sizes by prompt in Table III; classifier-level MAF/WAF/RMSE comparisons in Table V.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "SMOTE samples are feature vectors rather than text responses.",
+    "Manual augmentation was produced by teaching assistants, not actual students.",
+    "Effects varied by classifier."
+  ],
+  "source_locator": "Full-text PDF; Abstract; Introduction; Research Method/Data Acquisition; Scoring Module; Results and Discussion; Tables II-V."
+}

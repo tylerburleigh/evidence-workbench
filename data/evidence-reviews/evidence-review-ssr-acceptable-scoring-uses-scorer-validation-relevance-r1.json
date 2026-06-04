@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-acceptable-scoring-uses-scorer-validation-relevance-r1",
+  "name": "Scorer Validation Relevance review for Ssr Acceptable Scoring Uses bundle",
+  "candidate_bundle_id": "ssr-acceptable-scoring-uses-baseline-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "scorer_validation_relevance",
+  "reviewer_kind": "agent",
+  "skill_name": "evidence-review",
+  "reviewer_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The bundle explicitly separates scorer development, training augmentation, annotation benchmarking, calibration, and stress testing from final validation or deployment-readiness claims, and it treats Walsh et al. as bounded adjacent stress-test evidence.",
+  "reviewed_change_ids": [
+    "create-ssr-acceptable-scoring-uses-search",
+    "create-frohn-acceptable-prepilot-use-artifact",
+    "create-yoo-acceptable-training-boundary-artifact",
+    "create-bexte-acceptable-cold-start-relabeling-artifact",
+    "create-nebhi-acceptable-llm-annotation-benchmark-artifact",
+    "create-wolfe-acceptable-augmentation-calibration-artifact",
+    "create-walsh-acceptable-fairness-stress-test-artifact",
+    "create-frohn-acceptable-prepilot-use-finding",
+    "create-yoo-acceptable-training-boundary-finding",
+    "create-bexte-acceptable-cold-start-relabeling-finding",
+    "create-nebhi-acceptable-llm-annotation-benchmark-finding",
+    "create-wolfe-acceptable-augmentation-calibration-finding",
+    "create-walsh-acceptable-fairness-stress-test-finding",
+    "create-ssr-acceptable-scoring-uses-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "synthetic-only-validation-not-supported",
+      "severity": "note",
+      "category": "scorer_relevance_gap",
+      "claim_or_issue": "None of the direct-support sources establishes synthetic-only response sets as final validation or deployment-readiness evidence.",
+      "why_it_matters": "This review question asks for acceptable uses, so the synthesis must name inappropriate or unsupported uses as clearly as it names developmental uses.",
+      "recommended_action": "Keep the claim's replacement-validation limitation and support roles unchanged.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-ssr-acceptable-scoring-uses-baseline-claim"
+    }
+  ],
+  "created_at": "2026-06-02T20:22:15Z",
+  "updated_at": "2026-06-02T20:22:15Z"
+}

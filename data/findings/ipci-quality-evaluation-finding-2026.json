@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "ipci-quality-evaluation-finding-2026",
+  "name": "Profile-based Synthetic Responses Are Evaluated with Realism, Diversity, and Utility Checks",
+  "source_id": "ipci-knowledge-profiles-response-generation-2025-source",
+  "artifact_id": "ipci-quality-evaluation-artifact",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation"
+  ],
+  "endpoint_category": "embedding_realism",
+  "direction": "defines_quality_evaluation_method",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Ipci et al. evaluate profile-based synthetic logical-proof responses with diversity and realism evidence, embedding/PCA comparison to authentic responses, and utility for automated grading model training.",
+  "population_or_context": "Discrete mathematics logical-proof responses.",
+  "time_horizon": "AIED 2025 paper retrieved on 2026-06-02.",
+  "quantitative_note": "Repository metadata reports N = 585 authentic open-ended logical-proof responses as the comparator dataset.",
+  "caveats": [
+    "The staged extraction is based on the Infoscience metadata and details page rather than prompt-level full text.",
+    "Training utility is a downstream quality signal, not proof that synthetic responses can replace real responses."
+  ],
+  "evaluation_method": "Diversity and realism analysis with embedding-based distance metrics and PCA, plus automated-grading model-training utility.",
+  "reported_metrics": "N = 585 authentic responses; diversity, realism, and training-utility comparisons are summarized on the source page.",
+  "limitations": [
+    "Synthetic-only training is not established as equivalent to real data.",
+    "Fine-grained prompt and metric parameters require full-text review.",
+    "The finding is bounded to logical-proof response generation and augmentation."
+  ],
+  "source_locator": {
+    "section": "Infoscience details page, evaluation summary, and results summary",
+    "url": "https://infoscience.epfl.ch/entities/publication/c186f403-251d-44b0-8b03-55bd9037d352",
+    "quote_or_paraphrase_note": "The staged finding paraphrases the source page's diversity, realism, embedding, PCA, and training-utility evaluation description.",
+    "verification_status": "verified"
+  }
+}

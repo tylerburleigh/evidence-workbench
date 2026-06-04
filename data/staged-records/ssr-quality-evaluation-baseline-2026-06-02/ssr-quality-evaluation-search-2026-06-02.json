@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-quality-evaluation-search-2026-06-02",
+  "name": "Synthetic Response Quality Evaluation Search Pass",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation"
+  ],
+  "status": "complete",
+  "systematicity_level": "targeted_bootstrap",
+  "search_started_at": "2026-06-02T14:09:00Z",
+  "search_completed_at": "2026-06-02T14:20:00Z",
+  "databases": [
+    "Web search"
+  ],
+  "search_queries": [
+    {
+      "database": "Web search",
+      "query": "\"synthetic student responses\" quality evaluation LLM",
+      "searched_at": "2026-06-02T14:09:00Z",
+      "result_count": "screened first result page for each targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"simulated students\" evaluation metrics education LLM",
+      "searched_at": "2026-06-02T14:09:00Z",
+      "result_count": "screened first result page for each targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"LLM\" proxy students real student responses IRT",
+      "searched_at": "2026-06-02T14:09:00Z",
+      "result_count": "screened first result page for each targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"synthetic student response generation\" realism diversity evaluation",
+      "searched_at": "2026-06-02T14:09:00Z",
+      "result_count": "screened first result page for each targeted query"
+    }
+  ],
+  "inclusion_criteria": [
+    "The source evaluates the quality, realism, fidelity, alignment, or downstream utility of synthetic or simulated student/learner responses.",
+    "The source reports quality evidence such as human ratings, psychometric alignment, real-response comparison, embedding/statistical metrics, profile consistency, dialogue metrics, or downstream model utility."
+  ],
+  "exclusion_criteria": [
+    "Exclude sources that only describe generation without a recoverable quality-evaluation method.",
+    "Exclude chatbot-feedback evaluations when the synthetic student response itself is not evaluated."
+  ],
+  "dedupe_method": "Deduplicated by title, DOI, arXiv identifier, ACL Anthology ID, and canonical source page.",
+  "screening_counts": {
+    "records_identified": "at least 30 web results across targeted queries",
+    "records_screened": 7,
+    "full_text_reviewed": 7,
+    "sources_included": 6
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "candidate-ipci-quality-2025",
+      "title": "Leveraging Knowledge Profiles and Generative AI for Realistic Student Response Generation",
+      "decision": "include",
+      "reason": "Evaluates generated responses with diversity, realism, embedding/PCA comparisons, and training utility against authentic responses.",
+      "source_id": "ipci-knowledge-profiles-response-generation-2025-source",
+      "doi": "10.1007/978-3-031-99264-3_18",
+      "url": "https://infoscience.epfl.ch/entities/publication/c186f403-251d-44b0-8b03-55bd9037d352"
+    },
+    {
+      "candidate_id": "candidate-agent4edu-quality-2025",
+      "title": "Agent4Edu: Generating Learner Response Data by Generative Agents for Intelligent Education Systems",
+      "decision": "include",
+      "reason": "Evaluates generated learner responses against human learner responses with consistency and discrepancy metrics.",
+      "source_id": "agent4edu-learner-response-generation-2025-source",
+      "doi": "10.48550/arXiv.2501.10332",
+      "url": "https://arxiv.org/abs/2501.10332"
+    },
+    {
+      "candidate_id": "candidate-wolfe-quality-2026",
+      "title": "Calibrating Generative AI to Produce Realistic Essays for Data Augmentation",
+      "decision": "include",
+      "reason": "Evaluates simulated essays with expert scoring, agreement metrics, score-distribution comparisons, and realism ratings.",
+      "source_id": "wolfe-calibrating-realistic-essays-2026-source",
+      "doi": "10.48550/arXiv.2602.06772",
+      "url": "https://arxiv.org/abs/2602.06772"
+    },
+    {
+      "candidate_id": "candidate-lu-generative-students-2024",
+      "title": "Generative Students: Using LLM-Simulated Student Profiles to Support Question Item Evaluation",
+      "decision": "include",
+      "reason": "Evaluates simulated student MCQ responses through profile alignment, real-student correlation, and overlap in difficult items.",
+      "source_id": "lu-generative-students-item-evaluation-2024-source",
+      "doi": "10.1145/3657604.3662031",
+      "url": "https://arxiv.org/abs/2405.11591"
+    },
+    {
+      "candidate_id": "candidate-srivatsa-llm-abilities-2025",
+      "title": "Can LLMs Reliably Simulate Real Students' Abilities in Mathematics and Reading Comprehension?",
+      "decision": "include",
+      "reason": "Evaluates LLM proxy-student alignment by mapping 11 model responses onto the same IRT ability scale as real NAEP populations.",
+      "source_id": "srivatsa-llm-student-ability-simulation-2025-source",
+      "doi": "10.18653/v1/2025.bea-1.75",
+      "url": "https://aclanthology.org/2025.bea-1.75/"
+    },
+    {
+      "candidate_id": "candidate-scarlatos-dialogue-2026",
+      "title": "Simulated Students in Tutoring Dialogues: Substance or Illusion?",
+      "decision": "include",
+      "reason": "Defines and benchmarks simulated-student quality metrics spanning linguistic, behavioral, and cognitive aspects with automated and human evaluation.",
+      "source_id": "scarlatos-simulated-students-dialogue-2026-source",
+      "doi": "10.48550/arXiv.2601.04025",
+      "url": "https://arxiv.org/abs/2601.04025"
+    },
+    {
+      "candidate_id": "candidate-watts-chatbot-output-quality-2025",
+      "title": "A Framework for Designing an AI Chatbot to Support Scientific Argumentation",
+      "decision": "exclude",
+      "reason": "The paper uses synthetic student inputs to evaluate chatbot feedback quality, but it does not primarily evaluate the quality or realism of the synthetic student inputs themselves.",
+      "source_id": "watts-scientific-argumentation-chatbot-2025-source",
+      "doi": "10.3390/educsci15111507",
+      "url": "https://www.mdpi.com/2227-7102/15/11/1507"
+    }
+  ],
+  "source_ids": [
+    "ipci-knowledge-profiles-response-generation-2025-source",
+    "agent4edu-learner-response-generation-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "lu-generative-students-item-evaluation-2024-source",
+    "srivatsa-llm-student-ability-simulation-2025-source",
+    "scarlatos-simulated-students-dialogue-2026-source"
+  ],
+  "screening_summary": "Targeted bootstrap screening included six sources covering embedding/statistical realism checks, downstream training utility, learner-response consistency metrics, expert essay realism and score preservation, profile-alignment comparisons to real MCQ responses, IRT ability-scale alignment with real NAEP populations, and dialogue-simulation metrics spanning linguistic, behavioral, and cognitive fidelity.",
+  "limitations": []
+}

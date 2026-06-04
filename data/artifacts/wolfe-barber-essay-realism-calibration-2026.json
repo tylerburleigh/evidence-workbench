@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "wolfe-barber-essay-realism-calibration-2026",
+  "name": "Prompt Calibration for Realistic Essay Data Augmentation",
+  "artifact_type": "study_extract",
+  "status": "staged",
+  "source_ids": [
+    "wolfe-barber-realistic-essay-augmentation-2026"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "population_or_context": "Ninth-grade informative-explanatory writing assessment essays from a Midwestern U.S. state.",
+  "sample_size": "6,145 real essays sampled from about 40,000 examinees; 96 real essays selected across four score points; 288 simulated essays generated with three strategies.",
+  "methods": "Three prompt engineering methods generated simulated essays from real same-score essays; expert raters blindly scored real and simulated essays and judged realism.",
+  "endpoint_categories": [
+    "essay_generation_quality",
+    "data_augmentation_calibration",
+    "human_rater_validation"
+  ],
+  "education_context": "Statewide grade 9 writing assessment with a four-point scoring rubric focused on idea development and organization.",
+  "response_origin": "Hybrid for evaluation: original student essays plus simulated essays generated from same-score student essays.",
+  "rubric_label_space": "Four-point writing rubric.",
+  "label_source": "Operational professional rater scores for real essays; expert raters scored simulated essays and assigned real/simulated labels.",
+  "generation_model": "Large language model; exact model version not extracted in this baseline pass.",
+  "generation_method": "Prompt-engineered simulation using 25 Examples, Predict Next, and Sentence strategies.",
+  "prompt_strategy": "25 Examples contrasted real and prior GPT-generated examples; Predict Next inferred notes from one real essay to generate a second-like essay; Sentence rewrote each sentence while preserving error patterns.",
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "quality_evaluation",
+  "evaluation_method": "Compared expert-professional score agreement, QWK, average scores, and human real/simulated classification accuracy.",
+  "scorer_use": "Synthetic-quality validation and calibration before using generated essays for automated scoring engine training augmentation.",
+  "real_response_comparator": "Yes. Simulated essays were compared with matched real essays by score point and expert rater judgments.",
+  "sparsity_or_imbalance_motivation": "The paper frames data augmentation as a way to mitigate limited training data and sparse observations at score points in automated scoring engine development.",
+  "synthetic_data_research_role": "Synthetic essays were not used to validate a deployed scorer in this study; they were used to validate generation strategies for future scorer-training augmentation.",
+  "reported_metrics": "Predict Next achieved agreement comparable to real essays; expert raters labeled only 25% of Predict Next simulations and 18% of 25 Examples simulations as simulated.",
+  "numeric_results_extracted": true,
+  "limitations": "The study evaluates realism and score comparability rather than downstream scorer training; it uses one prompt, one grade level, and one state assessment context."
+}

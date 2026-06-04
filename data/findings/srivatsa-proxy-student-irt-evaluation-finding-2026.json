@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "srivatsa-proxy-student-irt-evaluation-finding-2026",
+  "name": "LLM Proxy Student Reliability Is Tested on a Shared IRT Ability Scale",
+  "source_id": "srivatsa-llm-student-ability-simulation-2025-source",
+  "artifact_id": "srivatsa-proxy-student-irt-evaluation-artifact",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation"
+  ],
+  "endpoint_category": "irt_ability_alignment",
+  "direction": "reports_quality_limit",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Srivatsa et al. evaluate LLM proxy students by mapping model and real-student response patterns onto the same IRT ability scale, finding that no tested model-prompt combination reliably simulates real student ability patterns across subjects and grades.",
+  "population_or_context": "NAEP mathematics and reading comprehension item responses.",
+  "time_horizon": "BEA 2025 paper retrieved on 2026-06-02.",
+  "quantitative_note": "The ACL Anthology abstract reports 489 NAEP items, thousands of real student responses, and 11 LLMs tested with several prompting strategies.",
+  "caveats": [
+    "The finding is a negative reliability result for proxy-student ability simulation.",
+    "The evaluation is psychometric and item-response based rather than dialogue or essay realism based."
+  ],
+  "evaluation_method": "IRT-scale comparison of model response patterns and real student response patterns across subjects and grades.",
+  "reported_metrics": "IRT ability-scale alignment across 489 NAEP items, 11 LLMs, and multiple prompting strategies.",
+  "limitations": [
+    "The result is bounded to NAEP mathematics and reading comprehension items.",
+    "IRT ability alignment does not directly measure open-response realism, naturalness, or downstream scorer utility.",
+    "The top-line abstract conclusion should be refined with full table extraction before model-specific claims."
+  ],
+  "source_locator": {
+    "section": "ACL Anthology abstract, methodology, and results summary",
+    "url": "https://aclanthology.org/2025.bea-1.75/",
+    "quote_or_paraphrase_note": "The staged finding paraphrases the paper's NAEP item set, real-response comparator, 11-model setup, IRT comparison method, and negative reliability conclusion.",
+    "verification_status": "verified"
+  }
+}

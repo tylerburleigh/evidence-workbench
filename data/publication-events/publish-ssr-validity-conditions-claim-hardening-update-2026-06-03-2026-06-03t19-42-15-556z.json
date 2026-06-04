@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-validity-conditions-claim-hardening-update-2026-06-03-2026-06-03t19-42-15-556z",
+  "name": "Published Validity Conditions Claim Hardening Update",
+  "summary": "Follow-up claim-support update that adds the published validity-condition findings and sources to the affected SSR baseline claim support maps after the controlled-comparison bundle was published.",
+  "candidate_bundle_id": "ssr-validity-conditions-claim-hardening-update-2026-06-03",
+  "event_type": "publish",
+  "published_at": "2026-06-03T19:42:15.556Z",
+  "published_by": "codex-agent",
+  "published_targets": [
+    {
+      "record_type": "claim",
+      "record_id": "ssr-quality-evaluation-baseline-claim",
+      "action": "updated"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-model-generation-effects-baseline-claim",
+      "action": "updated"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-prompt-engineering-effects-baseline-claim",
+      "action": "updated"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-real-response-comparison-baseline-claim",
+      "action": "updated"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-scoring-validation-use-baseline-claim",
+      "action": "updated"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-acceptable-scoring-uses-baseline-claim",
+      "action": "updated"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 6,
+    "by_record_type": {
+      "claim": {
+        "created": 0,
+        "updated": 6,
+        "total": 6
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "ssr-quality-evaluation-baseline-claim",
+    "ssr-model-generation-effects-baseline-claim",
+    "ssr-prompt-engineering-effects-baseline-claim",
+    "ssr-real-response-comparison-baseline-claim",
+    "ssr-scoring-validation-use-baseline-claim",
+    "ssr-acceptable-scoring-uses-baseline-claim"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-ssr-validity-conditions-claim-hardening-applicability-boundary-r1",
+    "evidence-review-ssr-validity-conditions-claim-hardening-construct-mapping-r1",
+    "evidence-review-ssr-validity-conditions-claim-hardening-method-classification-r1",
+    "evidence-review-ssr-validity-conditions-claim-hardening-scorer-validation-relevance-r1",
+    "evidence-review-ssr-validity-conditions-claim-hardening-source-fidelity-r1",
+    "evidence-review-ssr-validity-conditions-claim-hardening-synthesis-overreach-r1"
+  ],
+  "review_corrections_applied": [],
+  "review_follow_up_actions": [
+    "applicability_boundary: Retain the current applicability and limitation language.",
+    "construct_mapping: Retain the explicit limitations attached to each new support entry.",
+    "method_classification: Keep the staged task-bound language.",
+    "scorer_validation_relevance: Keep SMART's support_role as adjacent/direct bounded evidence according to the claim target, with explicit limitations.",
+    "source_fidelity: Keep the source IDs and finding IDs limited to the published validity-condition records.",
+    "synthesis_overreach: Publish the staged support-map updates as written."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "change_note": "Adds direct support for grade-level, cognitive-authenticity, item-difficulty, and error-pattern realism metrics."
+}

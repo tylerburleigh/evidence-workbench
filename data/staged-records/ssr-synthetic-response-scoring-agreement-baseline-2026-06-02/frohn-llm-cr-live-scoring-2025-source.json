@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "frohn-llm-cr-live-scoring-2025-source",
+  "name": "A Framework for Live Scoring Constructed Response Items with Commercial LLMs",
+  "source_type": "conference_paper",
+  "authors": [
+    "Scott Frohn",
+    "Lauren Deters",
+    "Tyler Burleigh",
+    "Kristen DiCerbo"
+  ],
+  "venue": "Artificial Intelligence in Measurement and Education Conference",
+  "year": 2025,
+  "published_on": "2025-10",
+  "urls": [
+    "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs"
+  ],
+  "summary": "Framework paper for commercial LLM scoring of constructed-response items that discusses synthetic response datasets for pre-pilot validation, challenge sets, pilot validation with real student responses, and live monitoring.",
+  "retrieved_on": "2026-06-02",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-02T19:18:00Z",
+      "url": "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs",
+      "result": "full_text_verified",
+      "notes": "ResearchGate public full-text HTML includes the paper text and was used for synthetic pre-pilot validation extraction."
+    }
+  ]
+}

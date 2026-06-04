@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "ssr-sparse-data-supplementation-baseline-claim",
+  "name": "Synthetic Student Responses Are Used to Supplement Sparse or Imbalanced Response Data",
+  "subject_type": "taxonomy_node",
+  "subject_id": "ssr-sparse-data-supplementation",
+  "current_stage": "synthesis_claim_supported",
+  "momentum": "new_baseline_staged",
+  "confidence": "moderate",
+  "summary": "A targeted literature pass found direct examples where synthetic student responses supplement sparse, imbalanced, or subgroup-limited datasets. The role varies: training augmentation and score/class balancing are most common, while some essay studies use synthetic responses to validate generation quality or analyze scorer fairness rather than to validate a deployed scorer directly.",
+  "main_blockers": [
+    "The pass is targeted rather than systematic.",
+    "Some studies use generated target labels or inherited labels rather than independently human-scored synthetic responses.",
+    "The included studies span heterogeneous tasks, score spaces, models, and evaluation designs."
+  ],
+  "best_current_signals": [
+    "Fang, Lee, and Zhai directly use GPT-4 for minority-class science response augmentation and compare against additional authentic student responses.",
+    "Morris and colleagues directly use Coedit-XL to augment underrepresented high-scoring NAEP math constructed responses.",
+    "Zhang and colleagues use GPT-4/GPT-4o essays to examine training augmentation and subgroup fairness in essay scoring."
+  ],
+  "interpretive_note": "This claim should not be read as evidence that synthetic responses automatically validate automated scorers. In the included studies, synthetic data sometimes trains or balances scorers, sometimes benchmarks downstream scoring, and sometimes validates the generation workflow itself.",
+  "limitations": [
+    "The examples were identified through targeted web and citation searching on June 3, 2026, not exhaustive database searching.",
+    "Evidence strength varies: Martin and Graulich is included from an open abstract and needs full-text extraction before detailed method claims.",
+    "The studies are not directly comparable across essays, short text, constructed math responses, chemistry reasoning, and science explanations.",
+    "Some synthetic response labels are generated targets or inherited from source examples rather than independent human ratings."
+  ],
+  "update_notes": [
+    "Created a new taxonomy node for sparse or imbalanced response-data supplementation.",
+    "Added extraction fields for sparsity motivation and synthetic-data research role."
+  ],
+  "supporting_finding_ids": [
+    "fang-gpt4-minority-class-scoring-finding-2025",
+    "morris-coedit-high-score-math-finding-2025",
+    "martin-graulich-chatbot-chemistry-finding-2024",
+    "cochran-gpt35-small-data-finding-2023",
+    "zhang-gpt-essay-augmentation-finding-2026",
+    "yoo-case-score-balance-finding-2025",
+    "wolfe-barber-realism-validation-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "fang-gpt4-imbalanced-automatic-scoring-2025",
+    "morris-naep-math-constructed-response-2025",
+    "martin-graulich-science-assessment-2024",
+    "cochran-gpt35-student-text-augmentation-2023",
+    "zhang-gpt-generated-essay-augmentation-2026",
+    "yoo-dress-rubric-essay-scoring-2025",
+    "wolfe-barber-realistic-essay-augmentation-2026"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Constructed-response and short-response balancing",
+      "claim_field": "summary",
+      "conclusion": "Synthetic responses have been used outside essay scoring to supplement minority or underrepresented response categories.",
+      "support_role": "supports",
+      "rationale": "Fang/Lee/Zhai use GPT-4 to create minority-class science responses; Morris et al. use Coedit-XL for high-scoring NAEP math responses; Cochran et al. use GPT-3.5 to supplement small student text response datasets.",
+      "finding_ids": [
+        "fang-gpt4-minority-class-scoring-finding-2025",
+        "morris-coedit-high-score-math-finding-2025",
+        "cochran-gpt35-small-data-finding-2023"
+      ],
+      "source_ids": [
+        "fang-gpt4-imbalanced-automatic-scoring-2025",
+        "morris-naep-math-constructed-response-2025",
+        "cochran-gpt35-student-text-augmentation-2023"
+      ],
+      "limitations": [
+        "Tasks differ in grade band, response length, and label space.",
+        "Generated responses are often conditioned on existing labeled examples."
+      ]
+    },
+    {
+      "label": "Essay scoring augmentation",
+      "claim_field": "summary",
+      "conclusion": "Essay-scoring studies use synthetic essays for training augmentation, score-distribution balancing, subgroup fairness analysis, or generation-quality validation.",
+      "support_role": "supports",
+      "rationale": "Zhang et al. train scorer models with GPT-4/GPT-4o essays; Yoo et al. use CASE to balance EFL rubric score distributions; Wolfe and Barber validate realism and score comparability of generated essays before scorer-training use.",
+      "finding_ids": [
+        "zhang-gpt-essay-augmentation-finding-2026",
+        "yoo-case-score-balance-finding-2025",
+        "wolfe-barber-realism-validation-finding-2026"
+      ],
+      "source_ids": [
+        "zhang-gpt-generated-essay-augmentation-2026",
+        "yoo-dress-rubric-essay-scoring-2025",
+        "wolfe-barber-realistic-essay-augmentation-2026"
+      ],
+      "limitations": [
+        "Essay examples vary between LLM-generated essays, corruption-based synthetic essays, and human-validation studies.",
+        "Generation realism does not by itself establish automated scorer validity."
+      ]
+    },
+    {
+      "label": "Research-process role",
+      "claim_field": "interpretive_note",
+      "conclusion": "The role of synthetic data differs across studies and should be coded separately from the response format.",
+      "support_role": "supports",
+      "rationale": "Included studies use synthetic data as class-balancing training data, training-sample augmentation, benchmark comparison against authentic data, subgroup-fairness probe, and generation-quality validation.",
+      "finding_ids": [
+        "fang-gpt4-minority-class-scoring-finding-2025",
+        "morris-coedit-high-score-math-finding-2025",
+        "martin-graulich-chatbot-chemistry-finding-2024",
+        "cochran-gpt35-small-data-finding-2023",
+        "zhang-gpt-essay-augmentation-finding-2026",
+        "yoo-case-score-balance-finding-2025",
+        "wolfe-barber-realism-validation-finding-2026"
+      ],
+      "source_ids": [
+        "fang-gpt4-imbalanced-automatic-scoring-2025",
+        "morris-naep-math-constructed-response-2025",
+        "martin-graulich-science-assessment-2024",
+        "cochran-gpt35-student-text-augmentation-2023",
+        "zhang-gpt-generated-essay-augmentation-2026",
+        "yoo-dress-rubric-essay-scoring-2025",
+        "wolfe-barber-realistic-essay-augmentation-2026"
+      ],
+      "limitations": [
+        "Some roles are prospective or indirect, especially synthetic-quality validation before downstream scorer training."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-03"
+}

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "bonthu-non-llm-asag-augmentation-finding-2023",
+  "name": "Non-LLM Text Augmentation for Programming ASAG",
+  "source_id": "bonthu-transfer-augmentation-asag-2023",
+  "artifact_id": "bonthu-transfer-asag-augmentation-2023",
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "endpoint_category": "limited_data_short_answer_augmentation",
+  "direction": "supports",
+  "evidence_tier": "abstract_extracted",
+  "confidence": "medium",
+  "statement": "Bonthu, Rama Sree, and Krishna Prasad report a programming-domain ASAG study in which text augmentation techniques supplemented limited short-answer training data for sentence-transformer scoring models.",
+  "population_or_context": "Programming-related short answers in the SPRAG corpus.",
+  "time_horizon": "2023 publication; non-LLM text augmentation paired with sentence-transformer transfer learning.",
+  "quantitative_note": "The official abstract reports a 4.91% accuracy increase and a 3.36% F1-score increase for random swap plus synonym replacement, but full tables were not extracted.",
+  "evaluation_method": "Accuracy and F1 comparisons across augmentation conditions according to the official abstract.",
+  "sparsity_or_imbalance_motivation": "The abstract frames ASAG performance limitations around limited data and lack of available data in many domains.",
+  "synthetic_data_research_role": "Training-data supplementation for ASAG model development under limited domain-specific data.",
+  "reported_metrics": "Accuracy and F1-score improvements reported in the official abstract; table-level results pending full-text access.",
+  "numeric_results_extracted": false,
+  "limitations": [
+    "Extraction is limited to the official abstract/search-indexed ScienceDirect text.",
+    "Exact sample sizes, splits, and table-level metric values still need full-text verification."
+  ],
+  "source_locator": "ScienceDirect abstract/highlights and Crossref metadata; direct full-text fetch blocked by Cloudflare on 2026-06-03."
+}

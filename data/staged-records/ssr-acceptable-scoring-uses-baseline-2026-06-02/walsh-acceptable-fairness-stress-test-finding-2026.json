@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "walsh-acceptable-fairness-stress-test-finding-2026",
+  "name": "Synthetic Demographic Analogs Are Diagnostic Fairness Stress-test Material",
+  "source_id": "walsh-sjt-automated-scoring-2026-source",
+  "artifact_id": "walsh-acceptable-fairness-stress-test-artifact",
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses"
+  ],
+  "endpoint_category": "fairness_stress_test",
+  "direction": "adjacent_boundary",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Walsh et al. use 100 original Casper responses and 100 analogous synthetic demographic-injected responses as an early fairness stress-test for open-response automated scoring, supporting synthetic variants as diagnostic probes rather than subgroup validation evidence.",
+  "population_or_context": "Open-response SJT automated scoring for Casper admissions assessment responses.",
+  "time_horizon": "Frontiers in Education article published on 2026-04-28 and retrieved on 2026-06-02.",
+  "quantitative_note": "The fairness pilot uses 100 original and 100 analogous synthetic responses and reports near-zero average score deltas for inspected demographic comparisons.",
+  "caveats": [
+    "The authors frame the fairness analysis as an early pilot.",
+    "Small sample size limits between-group effect-size interpretation.",
+    "SJT admissions responses are adjacent to, but not identical with, classroom student responses or correctness-scored constructed responses."
+  ],
+  "evaluation_method": "Paired comparison of automated LLM evaluations on original responses and analogous demographic-injected synthetic responses.",
+  "reported_metrics": "Average score deltas for gender and race comparisons; broader study reports automated-scoring performance against human ratings.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "original_responses_for_fairness_pilot": 100,
+    "synthetic_analog_responses_for_fairness_pilot": 100
+  },
+  "limitations": [
+    "Not evidence that synthetic demographic variants can replace real subgroup fairness validation.",
+    "Included as bounded stress-test evidence from an adjacent open-response assessment context."
+  ],
+  "source_locator": {
+    "section": "Fairness analysis",
+    "table": "Table reporting demographic synthetic-response comparisons",
+    "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1756673/full",
+    "quote_or_paraphrase_note": "The finding paraphrases the original-versus-analogous synthetic response fairness pilot and its sample-size caveat.",
+    "verification_status": "verified"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "rezayi-communication-skills-synthetic-training-2025-source",
+  "name": "Automated Scoring of Communication Skills in Physician-Patient Interaction: Balancing Performance and Scalability",
+  "source_type": "conference_paper",
+  "authors": [
+    "Saed Rezayi",
+    "Le An Ha",
+    "Yiyun Zhou",
+    "Andrew Houriet",
+    "Angelo D'Addario",
+    "Peter Baldwin",
+    "Polina Harik",
+    "Ann King",
+    "Victoria Yaneva"
+  ],
+  "venue": "Proceedings of the 20th Workshop on Innovative Use of NLP for Building Educational Applications (BEA 2025)",
+  "year": 2025,
+  "doi": "10.18653/v1/2025.bea-1.66",
+  "urls": [
+    "https://aclanthology.org/2025.bea-1.66/",
+    "https://aclanthology.org/2025.bea-1.66.pdf"
+  ],
+  "summary": "BEA 2025 paper on automated scoring for a formative communication-skills tool for learner physicians. The study evaluates Qwen-generated synthetic learner responses for training augmentation and explicitly preserves real learner responses for evaluation, with ethical discussion separating formative use from summative human-review workflows.",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03T11:00:00Z",
+      "url": "https://aclanthology.org/2025.bea-1.66/",
+      "result": "verified",
+      "notes": "ACL Anthology metadata, abstract, DOI, citation, and PDF link verified."
+    },
+    {
+      "attempted_at": "2026-06-03T11:01:00Z",
+      "url": "https://aclanthology.org/2025.bea-1.66.pdf",
+      "result": "verified",
+      "notes": "PDF downloaded and text extracted locally."
+    }
+  ]
+}

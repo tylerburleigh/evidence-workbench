@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "wolfe-prompt-strategy-generation-artifact",
+  "name": "Wolfe et al. Simulated Essay Prompt Strategy Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "wolfe-calibrating-realistic-essays-2026-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-generation-methods"
+  ],
+  "population_or_context": "Simulated student essays for automated-scoring data augmentation.",
+  "sample_size": "96 real student essays and 288 simulated essays generated across three prompt-engineering strategies.",
+  "methods": "Extracted the three prompt strategies and their role in producing simulated essays from real student essays.",
+  "endpoint_categories": [
+    "prompt_strategy_comparison",
+    "data_augmentation_generation"
+  ],
+  "education_context": "Student essays scored with a four-point rubric.",
+  "response_origin": "LLM-generated simulated essays derived from real student essays.",
+  "rubric_label_space": "Four-point essay scoring rubric.",
+  "label_source": "Expert raters assign scores and realism judgments to simulated essays; original essays had professional scores.",
+  "generation_model": "Large language model; the public preprint text reviewed here does not name a specific model version.",
+  "generation_method": "Prompt-based generation of simulated essays from real student essays.",
+  "prompt_strategy": "25 examples, Predict Next, and Sentence prompting strategies are compared.",
+  "evaluation_method": "Expert scoring, score-distribution comparison, agreement metrics, and realism ratings.",
+  "scorer_use": "Data augmentation calibration for automated scoring.",
+  "real_response_comparator": "Real student essays are the basis and comparator for simulated essay generation.",
+  "reported_metrics": "96 real essays, 288 simulated essays, exact agreement, weighted kappa, score-distribution comparisons, and realism ratings.",
+  "limitations": [
+    "The source is a preprint.",
+    "The public extract does not name a specific model version.",
+    "The generation methods are essay-specific and prompt-strategy-specific."
+  ],
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "generation_method_mapping"
+}

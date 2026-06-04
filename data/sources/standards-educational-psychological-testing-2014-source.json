@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "standards-educational-psychological-testing-2014-source",
+  "name": "Standards for Educational and Psychological Testing",
+  "source_type": "standards_document",
+  "authors": [
+    "American Educational Research Association",
+    "American Psychological Association",
+    "National Council on Measurement in Education"
+  ],
+  "year": 2014,
+  "urls": [
+    "https://www.testingstandards.net/open-access-files.html",
+    "https://www.testingstandards.net/uploads/7/6/6/4/76643089/standards_2014edition.pdf",
+    "https://ncme.org/resources-publications/books/testing-standards"
+  ],
+  "summary": "Professional testing standards that frame validity around intended score interpretations and uses, and that make higher-stakes uses more demanding in their need for evidence, fairness, reliability, and documentation.",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-02T22:10:00Z",
+      "url": "https://www.testingstandards.net/open-access-files.html",
+      "result": "full_text_verified",
+      "notes": "Official open-access page links to the 2014 Standards PDF."
+    }
+  ]
+}

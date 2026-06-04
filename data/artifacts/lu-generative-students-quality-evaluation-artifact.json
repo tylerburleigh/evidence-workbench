@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "lu-generative-students-quality-evaluation-artifact",
+  "name": "Lu and Wang Generative Students Quality Evaluation Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "lu-generative-students-item-evaluation-2024-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation"
+  ],
+  "population_or_context": "Multiple-choice question item evaluation for Cambridge International AS and A Level Psychology questions.",
+  "sample_size": "The arXiv abstract reports 45 GPT-4-simulated student profiles responding to 20 multiple-choice questions.",
+  "methods": "Extracted the profile-alignment and item-evaluation quality checks comparing simulated student responses with real student response patterns.",
+  "endpoint_categories": [
+    "profile_alignment",
+    "item_difficulty_overlap",
+    "real_response_correlation"
+  ],
+  "education_context": "Psychology multiple-choice question item evaluation in an assessment-design support workflow.",
+  "response_origin": "GPT-4-simulated student profiles generate multiple-choice responses used as preliminary item-evaluation evidence.",
+  "rubric_label_space": "Multiple-choice answer options and item-level difficulty indicators.",
+  "label_source": "Generated profiles and responses provide simulated signals; real student responses provide the comparator for correlation and difficult-item overlap.",
+  "generation_model": "GPT-4.",
+  "generation_method": "LLM-simulated student profiles answer multiple-choice questions under profile-conditioned prompting.",
+  "prompt_strategy": "Student-profile simulation is used to produce profile-aligned multiple-choice response patterns.",
+  "evaluation_method": "Quality is evaluated through logical and believable response inspection, profile-response alignment, correlation with real student responses, and overlap in difficult questions.",
+  "scorer_use": "Question item evaluation support; not scorer training or automated scorer validation.",
+  "real_response_comparator": "Real student responses to the same item-evaluation setting are used for correlation and difficult-item overlap checks.",
+  "reported_metrics": "The source reports correlations with real student responses and overlap in difficult questions; the staged abstract-level pass does not extract the exact numeric correlations.",
+  "limitations": [
+    "The baseline stages the arXiv abstract and evaluation summary, not a full numeric results table.",
+    "The task is multiple-choice item evaluation rather than constructed-response scoring.",
+    "Profile alignment and item-level correlation are preliminary quality signals, not proof that simulated students replace real examinees."
+  ],
+  "assessment_purpose": "summative_assessment",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "quality_evaluation"
+}

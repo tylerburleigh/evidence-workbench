@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "ssr-sparse-data-supplementation-baseline-claim",
+  "name": "Synthetic Student Responses Are Used to Supplement Sparse or Imbalanced Response Data",
+  "subject_type": "taxonomy_node",
+  "subject_id": "ssr-sparse-data-supplementation",
+  "current_stage": "synthesis_claim_updated",
+  "momentum": "expanded_with_non_llm_constructed_response_examples",
+  "confidence": "moderate",
+  "summary": "Targeted literature passes found direct examples where synthetic, simulated, transformed, or feature-space student-response data supplement sparse, imbalanced, or subgroup-limited datasets. The pattern is not confined to recent LLM essay scoring: older and non-LLM short-answer/constructed-response work used back-translation, manual response simulation, SMOTE, and image augmentation primarily for scorer training or class balancing. The role varies: training augmentation and score/class balancing are most common, while some essay studies use synthetic responses to validate generation quality or analyze scorer fairness rather than to validate a deployed scorer directly.",
+  "main_blockers": [
+    "The pass is targeted rather than systematic.",
+    "Some studies use generated target labels, inherited labels, or feature-space labels rather than independently human-scored synthetic textual responses.",
+    "The included studies span heterogeneous tasks, score spaces, models, and evaluation designs.",
+    "Some useful examples are abstract-only or use feature-space/image augmentation rather than generated student prose."
+  ],
+  "best_current_signals": [
+    "Fang, Lee, and Zhai directly use GPT-4 for minority-class science response augmentation and compare against additional authentic student responses.",
+    "Morris and colleagues directly use Coedit-XL to augment underrepresented high-scoring NAEP math constructed responses.",
+    "Lun and colleagues provide a pre-GPT short-answer scoring example where back-translation, correct-answer reference augmentation, and swap variants supplement limited SciEntsBank training data.",
+    "Krisnawati, Mahastama, and Haw use manual response simulation and SMOTE feature-space oversampling to address imbalanced cross-prompt ASAG data.",
+    "Li, Haudek, and Krajcik show adjacent constructed-response evidence where SMOTE and image augmentation address imbalanced automated scoring of student scientific models.",
+    "Zhang and colleagues use GPT-4/GPT-4o essays to examine training augmentation and subgroup fairness in essay scoring."
+  ],
+  "interpretive_note": "This claim should not be read as evidence that synthetic responses automatically validate automated scorers. In the included studies, synthetic data sometimes trains or balances scorers, sometimes benchmarks downstream scoring, sometimes supports fairness or rare-category analysis, and sometimes validates the generation workflow itself. Feature-space or image augmentation should be distinguished from generated textual student responses.",
+  "limitations": [
+    "The examples were identified through targeted web and citation searching on June 3, 2026, not exhaustive database searching.",
+    "Evidence strength varies: Martin and Graulich is included from an open abstract and needs full-text extraction before detailed method claims.",
+    "Bonthu et al. is included from official abstract/search-indexed publisher text and needs full-text extraction before detailed method or quantitative synthesis.",
+    "The studies are not directly comparable across essays, short text, constructed math responses, chemistry reasoning, science explanations, programming answers, and scientific models.",
+    "Some synthetic response labels are generated targets or inherited from source examples rather than independent human ratings.",
+    "SMOTE and image augmentation examples supplement scorer training data but do not create readable student prose."
+  ],
+  "update_notes": [
+    "Created a new taxonomy node for sparse or imbalanced response-data supplementation.",
+    "Added extraction fields for sparsity motivation and synthetic-data research role.",
+    "Added a non-LLM constructed-response augmentation update on 2026-06-03."
+  ],
+  "supporting_finding_ids": [
+    "fang-gpt4-minority-class-scoring-finding-2025",
+    "morris-coedit-high-score-math-finding-2025",
+    "martin-graulich-chatbot-chemistry-finding-2024",
+    "cochran-gpt35-small-data-finding-2023",
+    "zhang-gpt-essay-augmentation-finding-2026",
+    "yoo-case-score-balance-finding-2025",
+    "wolfe-barber-realism-validation-finding-2026",
+    "lun-mda-asas-non-llm-short-answer-augmentation-finding-2020",
+    "krisnawati-smote-cross-prompt-asag-finding-2025",
+    "li-smote-scientific-models-imbalance-finding-2025",
+    "bonthu-non-llm-asag-augmentation-finding-2023"
+  ],
+  "supporting_source_ids": [
+    "fang-gpt4-imbalanced-automatic-scoring-2025",
+    "morris-naep-math-constructed-response-2025",
+    "martin-graulich-science-assessment-2024",
+    "cochran-gpt35-student-text-augmentation-2023",
+    "zhang-gpt-generated-essay-augmentation-2026",
+    "yoo-dress-rubric-essay-scoring-2025",
+    "wolfe-barber-realistic-essay-augmentation-2026",
+    "lun-mda-asas-short-answer-augmentation-2020",
+    "krisnawati-cross-prompt-asag-smote-2025",
+    "li-scientific-models-smote-2025",
+    "bonthu-transfer-augmentation-asag-2023"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Constructed-response and short-response balancing",
+      "claim_field": "summary",
+      "conclusion": "Synthetic responses have been used outside essay scoring to supplement minority or underrepresented response categories.",
+      "support_role": "supports",
+      "rationale": "Fang/Lee/Zhai use GPT-4 to create minority-class science responses; Morris et al. use Coedit-XL for high-scoring NAEP math responses; Cochran et al. use GPT-3.5 to supplement small student text response datasets.",
+      "finding_ids": [
+        "fang-gpt4-minority-class-scoring-finding-2025",
+        "morris-coedit-high-score-math-finding-2025",
+        "cochran-gpt35-small-data-finding-2023"
+      ],
+      "source_ids": [
+        "fang-gpt4-imbalanced-automatic-scoring-2025",
+        "morris-naep-math-constructed-response-2025",
+        "cochran-gpt35-student-text-augmentation-2023"
+      ],
+      "limitations": [
+        "Tasks differ in grade band, response length, and label space.",
+        "Generated responses are often conditioned on existing labeled examples."
+      ]
+    },
+    {
+      "label": "Older and non-LLM constructed-response augmentation",
+      "claim_field": "summary",
+      "conclusion": "Sparse-data supplementation predates recent LLM work and appears in short-answer or constructed-response settings through back-translation, lexical augmentation, manual response simulation, SMOTE, and image augmentation.",
+      "support_role": "supports",
+      "rationale": "Lun et al. use back-translation and related augmentation for SciEntsBank ASAS; Krisnawati et al. combine manual response generation with SMOTE for imbalanced cross-prompt ASAG; Li et al. use SMOTE and image augmentation for automated scoring of scientific models; Bonthu et al. report text augmentation for programming-domain ASAG.",
+      "finding_ids": [
+        "lun-mda-asas-non-llm-short-answer-augmentation-finding-2020",
+        "krisnawati-smote-cross-prompt-asag-finding-2025",
+        "li-smote-scientific-models-imbalance-finding-2025",
+        "bonthu-non-llm-asag-augmentation-finding-2023"
+      ],
+      "source_ids": [
+        "lun-mda-asas-short-answer-augmentation-2020",
+        "krisnawati-cross-prompt-asag-smote-2025",
+        "li-scientific-models-smote-2025",
+        "bonthu-transfer-augmentation-asag-2023"
+      ],
+      "limitations": [
+        "Li et al. is adjacent non-text constructed-response evidence because augmentation occurs over images/features, not generated prose.",
+        "Krisnawati et al. uses both manually generated answers and SMOTE feature vectors; only the manual component is textual response simulation.",
+        "Bonthu et al. remains abstract-level in this extraction."
+      ]
+    },
+    {
+      "label": "Essay scoring augmentation",
+      "claim_field": "summary",
+      "conclusion": "Essay-scoring studies use synthetic essays for training augmentation, score-distribution balancing, subgroup fairness analysis, or generation-quality validation.",
+      "support_role": "supports",
+      "rationale": "Zhang et al. train scorer models with GPT-4/GPT-4o essays; Yoo et al. use CASE to balance EFL rubric score distributions; Wolfe and Barber validate realism and score comparability of generated essays before scorer-training use.",
+      "finding_ids": [
+        "zhang-gpt-essay-augmentation-finding-2026",
+        "yoo-case-score-balance-finding-2025",
+        "wolfe-barber-realism-validation-finding-2026"
+      ],
+      "source_ids": [
+        "zhang-gpt-generated-essay-augmentation-2026",
+        "yoo-dress-rubric-essay-scoring-2025",
+        "wolfe-barber-realistic-essay-augmentation-2026"
+      ],
+      "limitations": [
+        "Essay examples vary between LLM-generated essays, corruption-based synthetic essays, and human-validation studies.",
+        "Generation realism does not by itself establish automated scorer validity."
+      ]
+    },
+    {
+      "label": "Research-process role",
+      "claim_field": "interpretive_note",
+      "conclusion": "The role of synthetic data differs across studies and should be coded separately from the response format.",
+      "support_role": "supports",
+      "rationale": "Included studies use synthetic data as class-balancing training data, training-sample augmentation, benchmark comparison against authentic data, subgroup-fairness probe, generation-quality validation, manual response simulation, and feature-space balancing.",
+      "finding_ids": [
+        "fang-gpt4-minority-class-scoring-finding-2025",
+        "morris-coedit-high-score-math-finding-2025",
+        "martin-graulich-chatbot-chemistry-finding-2024",
+        "cochran-gpt35-small-data-finding-2023",
+        "zhang-gpt-essay-augmentation-finding-2026",
+        "yoo-case-score-balance-finding-2025",
+        "wolfe-barber-realism-validation-finding-2026",
+        "lun-mda-asas-non-llm-short-answer-augmentation-finding-2020",
+        "krisnawati-smote-cross-prompt-asag-finding-2025",
+        "li-smote-scientific-models-imbalance-finding-2025",
+        "bonthu-non-llm-asag-augmentation-finding-2023"
+      ],
+      "source_ids": [
+        "fang-gpt4-imbalanced-automatic-scoring-2025",
+        "morris-naep-math-constructed-response-2025",
+        "martin-graulich-science-assessment-2024",
+        "cochran-gpt35-student-text-augmentation-2023",
+        "zhang-gpt-generated-essay-augmentation-2026",
+        "yoo-dress-rubric-essay-scoring-2025",
+        "wolfe-barber-realistic-essay-augmentation-2026",
+        "lun-mda-asas-short-answer-augmentation-2020",
+        "krisnawati-cross-prompt-asag-smote-2025",
+        "li-scientific-models-smote-2025",
+        "bonthu-transfer-augmentation-asag-2023"
+      ],
+      "limitations": [
+        "Some roles are prospective or indirect, especially synthetic-quality validation before downstream scorer training.",
+        "Training augmentation should not be re-described as independent validation of scorer validity unless the study actually uses synthetic data that way."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-03"
+}
