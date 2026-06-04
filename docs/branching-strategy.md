@@ -106,9 +106,10 @@ Usually core/platform:
 - `schemas/**`
 - `skills/**`
 - `tests/**`
+- `docs/**`
+- `README.md`
 - `package.json`
 - `package-lock.json`
-- `plans/generic-research-ops-framework/**`
 
 Usually domain configuration:
 

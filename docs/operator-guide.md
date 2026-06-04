@@ -307,7 +307,9 @@ When a new domain pack or published graph changes expected behavior, update focu
 
 Update docs:
 
-- `plans/generic-research-ops-framework/implementation-plan.md`
+- `docs/domain-packs.md`, if the domain-pack contract changes
+- `docs/ui.md`, if routes or UI behavior change
+- `docs/workflows.md`, if the publish or review workflow changes
 - domain-specific notes if the new pack establishes a reusable pattern
 
 ## 11. Verify Locally
@@ -362,7 +364,7 @@ If the branch contains both reusable platform changes and domain-specific resear
 npm run branch:audit -- --base main --head HEAD
 ```
 
-Use `plans/generic-research-ops-framework/branching-strategy.md` to decide what belongs in a short-lived `core/<feature>` branch versus a long-lived `research/<domain-or-question>` branch.
+Use [branching-strategy.md](branching-strategy.md) to decide what belongs in a short-lived `core/<feature>` branch versus a long-lived `research/<domain-or-question>` branch.
 
 Use the next planning queue item as the handoff:
 

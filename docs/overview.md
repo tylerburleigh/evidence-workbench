@@ -1,8 +1,8 @@
-# Generic Research Ops Framework
+# Framework Overview
 
-This directory describes a domain-configurable research operations framework derived from a prior reference app.
+Evidence Workbench is a domain-configurable framework for agent-assisted research.
 
-The goal is not to clone any particular research domain. The goal is to preserve the durable pattern:
+The goal is not to clone any particular research domain. The goal is to give agentic research a durable, inspectable structure:
 
 ```text
 domain taxonomy
@@ -20,29 +20,29 @@ domain taxonomy
 
 Build a file-backed research workbench for domains where claims must be traceable, reviewable, and updateable.
 
-Possible downstream domains include any area where public claims need traceable evidence and controlled updates. These examples must not be encoded into the core:
+Possible downstream domains include any area where public claims need traceable evidence and controlled updates. Domain vocabulary should generally live in domain packs or research branches, not in core workflow code:
 
 - scientific or technical evidence curation
 - policy, market, or product research
 - internal knowledge-base curation
 
-The framework should support multiple domain packs, but the first implementation can run one active domain at a time.
+The framework supports multiple domain packs, but the current implementation runs one active domain at a time.
 
 ## Document Map
 
 - [architecture.md](architecture.md): system layers, repo layout, and module boundaries
 - [data-model.md](data-model.md): core records and relationships
-- [domain-pack-contract.md](domain-pack-contract.md): how a new research domain customizes the framework
-- [workflow-spec.md](workflow-spec.md): bootstrap, surveillance, evidence review, publish, planning sync, and report-integration workflows
-- [agent-skill-model.md](agent-skill-model.md): reusable agent skills and domain-specific adapters
-- [ui-spec.md](ui-spec.md): public and admin app surfaces
+- [domain-packs.md](domain-packs.md): how a new research domain customizes the framework
+- [workflows.md](workflows.md): bootstrap, surveillance, evidence review, publish, planning sync, and report-integration workflows
+- [ui.md](ui.md): current public evidence browser and admin review workspace
+- [agent-skills.md](agent-skills.md): reusable agent skills and domain-specific adapters
 - [operator-guide.md](operator-guide.md): concrete downstream domain-pack setup, publish, verify, and commit workflow
 - [branching-strategy.md](branching-strategy.md): how to keep reusable platform changes separate from domain-specific research branches
-- [implementation-plan.md](implementation-plan.md): pragmatic build phases and acceptance criteria
+- [case-studies/synthetic-student-responses.md](case-studies/synthetic-student-responses.md): lessons from the first real literature-review branch
 
 ## What To Preserve From This Repo
 
-The reference implementation has several design choices worth carrying forward:
+The implementation has several design choices worth preserving:
 
 - Research work is bounded by a stable taxonomy unit.
 - Research output does not directly change public records.
@@ -55,11 +55,11 @@ The reference implementation has several design choices worth carrying forward:
 - Public pages separate source evidence from curator interpretation and domain-defined context.
 - Agent skills encode workflow discipline around scope, extraction, review, and publishing.
 
-## Current Repo Analogue
+## Current Repo Paths
 
 Use these existing paths as implementation references:
 
-- `taxonomies/`: domain taxonomy
+- `domain-packs/`: domain taxonomy, extraction fields, review lanes, public copy, and skill adapters
 - `schemas/`: JSON Schema contracts
 - `data/sources`, `data/artifacts`, `data/findings`, `data/claims`: public evidence graph
 - `data/candidate-bundles`: reviewable staged changes
@@ -69,12 +69,12 @@ Use these existing paths as implementation references:
 - `research/state` and `research/backlog`: generated planning state
 - `research/sessions`: bounded research pass logs
 - `research/syntheses`: traceable Markdown synthesis reports
-- `.codex/skills`: agent operating procedures
+- `skills/`: reusable agent operating procedures
 - `scripts/bundle.mjs`: bundle validation, approval, publish, and smoke checks
 - `scripts/review-evidence.mjs`: evidence-review scaffold and apply flow
 - `src/lib/`: app-facing data access and mutation layer
 
-## Non-Goals For V0
+## Non-Goals
 
 - Do not build a social product.
 - Do not auto-publish model outputs.
