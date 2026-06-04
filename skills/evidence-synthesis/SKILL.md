@@ -13,7 +13,7 @@ Create a traceable synthesis report from published evidence records. Do not crea
 - `domain-packs/<domain-id>/domain.json`
 - `domain-packs/<domain-id>/taxonomy.v1.json`
 - `domain-packs/<domain-id>/public-copy.v1.json`
-- `domain-packs/<domain-id>/skills/synthesis.md`
+- `domain-packs/<domain-id>/skills/evidence-synthesis.md`
 - `research/state/coverage-status.v1.json`
 - `research/backlog/priority-queue.v1.json`
 - Published records under `data/claims`, `data/findings`, `data/sources`, `data/evidence-appraisals`, and `data/publication-events`.

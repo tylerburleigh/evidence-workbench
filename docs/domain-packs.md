@@ -30,7 +30,7 @@ domain-packs/<domain-id>/
     review-update.md
     evidence-appraisal.md
     editorial-decision.md
-    synthesis.md
+    evidence-synthesis.md
 ```
 
 ## `domain.json`

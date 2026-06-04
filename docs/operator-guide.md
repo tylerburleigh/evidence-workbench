@@ -43,7 +43,7 @@ domain-packs/<domain-id>/
     review-update.md
     evidence-appraisal.md
     editorial-decision.md
-    synthesis.md
+    evidence-synthesis.md
 ```
 
 Use `domain-packs/sample-research/`, `domain-packs/sample-archive/`, and `domain-packs/software-supply-chain/` as implementation references.
