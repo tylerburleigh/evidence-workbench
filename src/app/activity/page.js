@@ -5,7 +5,7 @@ import {
   EmptyState,
   Metric,
   PageHeader,
-  ReviewGateBadge,
+  AppraisalGateBadge,
   Section,
   StatusBadge
 } from "../components.js";
@@ -76,7 +76,7 @@ export default async function ActivityPage() {
                     <div className="meta-row">
                       <Badge>{formatDate(item.timestamp)}</Badge>
                       <Badge>{item.type}</Badge>
-                      <ReviewGateBadge report={report} />
+                      <AppraisalGateBadge report={report} />
                     </div>
                     {item.bundle?.scope?.research_question ? (
                       <p className="row-kicker timeline-question">{item.bundle.scope.research_question}</p>

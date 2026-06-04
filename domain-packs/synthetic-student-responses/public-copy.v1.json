@@ -29,7 +29,7 @@
     "no_baseline": "This review question exists, but no literature baseline has been published yet.",
     "no_recent_activity": "No review activity has been recorded for this review question.",
     "no_findings": "No extracted study results have been published for this source yet.",
-    "missing_review": "This bundle is waiting for structured literature-appraisal gates.",
+    "missing_appraisal": "This bundle is waiting for structured literature appraisal gates.",
     "no_synthesis_rows": "No study artifacts have been published for the synthesis matrix yet.",
     "no_search_protocols": "No search, screening, inclusion, or exclusion protocol records have been published yet."
   }

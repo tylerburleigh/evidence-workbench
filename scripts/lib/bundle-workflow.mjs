@@ -1412,7 +1412,7 @@ async function auditTimestampOrder(bundle, promotion, evidenceAppraisalGate, pub
       left_label: "bundle submitted_at",
       left_at: bundle.submitted_at,
       left_at_millis: bundleSubmittedAtMillis,
-      right_label: `review ${review.id} created_at`,
+      right_label: `appraisal ${review.id} created_at`,
       right_at: review.created_at,
       right_at_millis: parseDateTimeMillis(review.created_at)
     });
@@ -1420,7 +1420,7 @@ async function auditTimestampOrder(bundle, promotion, evidenceAppraisalGate, pub
     if (earliestPublicationMillis !== undefined) {
       addTimestampWarning(warnings, checks, {
         check_type: "review_created_before_publication",
-        left_label: `review ${review.id} created_at`,
+        left_label: `appraisal ${review.id} created_at`,
         left_at: review.created_at,
         left_at_millis: parseDateTimeMillis(review.created_at),
         right_label: "earliest publication published_at",
@@ -2033,10 +2033,10 @@ async function updateCandidateBundleStatus(bundleId, nextStatus, options = {}) {
   };
 }
 
-async function addReviewComment(bundleId, options = {}) {
+async function addEditorialComment(bundleId, options = {}) {
   const body = typeof options.body === "string" ? options.body.trim() : "";
   if (body.length === 0) {
-    throw new Error("Review comment body is required.");
+    throw new Error("Editorial comment body is required.");
   }
 
   const { filePath, record: bundle } = await loadCandidateBundle(bundleId);
@@ -2093,7 +2093,7 @@ async function commandComment(options) {
     fail("comment requires --bundle <bundle-id>.");
   }
 
-  const result = await addReviewComment(options.bundle, {
+  const result = await addEditorialComment(options.bundle, {
     body: options.comment,
     authorKind: "human",
     authorId: options["author-id"] ?? "local-curator"
@@ -2224,7 +2224,7 @@ async function publishCandidateBundle(bundleId, options = {}) {
       approving_evidence_appraisal_ids: report.evidence_appraisal_gate.eligible
         ? report.evidence_appraisal_gate.appraisals.map((review) => review.id)
         : undefined,
-      review_corrections_applied: report.evidence_appraisal_gate.appraisals.flatMap((review) =>
+      appraisal_corrections_applied: report.evidence_appraisal_gate.appraisals.flatMap((review) =>
         Array.isArray(review.corrections_applied) ? review.corrections_applied : []
       ),
       appraisal_follow_up_actions: appraisalFollowUpActions,
@@ -2265,7 +2265,7 @@ async function publishCandidateBundle(bundleId, options = {}) {
       published_targets: publicationEvent.published_targets,
       public_graph_delta: publicationEvent.public_graph_delta,
       affected_claim_ids: affectedClaimIds,
-      review_corrections_applied: publicationEvent.review_corrections_applied,
+      appraisal_corrections_applied: publicationEvent.appraisal_corrections_applied,
       appraisal_follow_up_actions: appraisalFollowUpActions,
       source_access_follow_up_actions: sourceAccessFollowUpActions,
       extraction_follow_up_actions: extractionFollowUpActions,
@@ -2313,7 +2313,7 @@ async function commandSmoke(options) {
 }
 
 export {
-  addReviewComment,
+  addEditorialComment,
   approveCandidateBundle,
   buildReadinessSummary,
   buildBundleReport,

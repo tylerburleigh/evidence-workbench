@@ -13,7 +13,7 @@ Draft narrative literature-review prose from published evidence records. Treat t
 - `domain-packs/<domain-id>/domain.json`
 - `domain-packs/<domain-id>/taxonomy.v1.json`
 - `domain-packs/<domain-id>/public-copy.v1.json`
-- `domain-packs/<domain-id>/skills/literature-review.md` when present.
+- `domain-packs/<domain-id>/skills/literature-review-drafting.md` when present.
 - Relevant published records under `data/sources`, `data/findings`, `data/claims`, `data/artifacts`, `data/evidence-appraisals`, and `data/publication-events`.
 - Existing synthesis reports under `research/syntheses/` when they summarize the target scope.
 

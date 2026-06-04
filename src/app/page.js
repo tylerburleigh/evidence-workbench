@@ -18,7 +18,7 @@ import {
   Metric,
   PageHeader,
   RecordCard,
-  ReviewGateBadge,
+  AppraisalGateBadge,
   Section,
   StatusBadge
 } from "./components.js";
@@ -268,7 +268,7 @@ export default async function HomePage() {
                     </span>
                     <span className="meta-row">
                       <StatusBadge status={bundle.lifecycle_status} />
-                      <ReviewGateBadge report={report} />
+                      <AppraisalGateBadge report={report} />
                     </span>
                   </div>
                 );

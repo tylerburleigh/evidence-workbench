@@ -7,7 +7,7 @@ import {
   EmptyState,
   PageHeader,
   RecordCard,
-  ReviewGateBadge,
+  AppraisalGateBadge,
   Section,
   SourceAccessBadge,
   StatusBadge,
@@ -120,7 +120,7 @@ export default async function TopicDetailPage({ params }) {
                   </span>
                   <span className="meta-row">
                     <StatusBadge status={record.lifecycle_status} />
-                    <ReviewGateBadge report={report} />
+                    <AppraisalGateBadge report={report} />
                   </span>
                 </div>
               ))}

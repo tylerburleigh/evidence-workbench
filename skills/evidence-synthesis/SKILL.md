@@ -35,7 +35,7 @@ Create a traceable synthesis report from published evidence records. Do not crea
    - cross-cutting conclusions,
    - strength-of-evidence notes,
    - gaps and proposed next research actions,
-   - traceability links to claim, finding, source, and review IDs.
+   - traceability links to claim, finding, source, and appraisal IDs.
 6. If the report is a sidecar, include a disposition note naming the target canonical report, the integration trigger, and whether the sidecar should be archived, deleted, or kept after integration.
 7. Create or update a `report_artifact` record under `data/report-artifacts/` when the report should be listed in the app. Include `domain_id`, `scope_ids`, `artifact_type`, `status`, `path`, `source_ids`, `claim_ids`, and citation-audit status. When replacing a current report, mark the older artifact `superseded` or `archived`.
 8. Keep the synthesis report descriptive unless a published claim directly supports stronger language.

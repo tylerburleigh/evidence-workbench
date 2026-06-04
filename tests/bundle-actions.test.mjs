@@ -97,8 +97,8 @@ test("editorial comments are written without touching real fixture data", async 
     const result = await runWorkflow(
       workspace,
       `
-        const { addReviewComment } = await import(process.env.WORKFLOW_MODULE_PATH);
-        const result = await addReviewComment("${archiveBundleId}", {
+        const { addEditorialComment } = await import(process.env.WORKFLOW_MODULE_PATH);
+        const result = await addEditorialComment("${archiveBundleId}", {
           body: "Needs one final editorial pass.",
           authorId: "test-curator"
         });

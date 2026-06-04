@@ -9,9 +9,9 @@ export default async function AdminReviewPage() {
   const queue = getBundleQueue(data);
   const openBundles = queue.filter(({ record }) => !["published", "rejected"].includes(record.lifecycle_status));
   const readyForPromotion = queue.filter(({ report }) => report?.promotion?.ready).length;
-  const reviewReady = queue.filter(({ report }) => !report?.evidence_appraisal_gate?.eligible || report.evidence_appraisal_gate.ready).length;
+  const appraisalReady = queue.filter(({ report }) => !report?.evidence_appraisal_gate?.eligible || report.evidence_appraisal_gate.ready).length;
   const queueRows = queue.map(({ record, report, scopeNodes }, index) => {
-    const reviewGateReady = !report?.evidence_appraisal_gate?.eligible || Boolean(report.evidence_appraisal_gate.ready);
+    const appraisalGateReady = !report?.evidence_appraisal_gate?.eligible || Boolean(report.evidence_appraisal_gate.ready);
     const promotionReady = Boolean(report?.promotion?.ready);
     const validationReady = Boolean(report?.validation?.ready);
     const readinessMessage = report?.readiness?.message;
@@ -24,13 +24,13 @@ export default async function AdminReviewPage() {
       kicker: `${scopeNodes.map((node) => node.name).join(", ") || "Unscoped"} - ${formatDate(record.submitted_at)}${readinessMessage ? ` - ${readinessMessage}` : ""}`,
       badges: [
         { label: statusLabel(record.lifecycle_status), tone: ["published", "approved"].includes(record.lifecycle_status) ? "good" : "neutral" },
-        { label: reviewGateReady ? "Appraisal ready" : "Appraisal blocked", tone: reviewGateReady ? "good" : "warn" },
+        { label: appraisalGateReady ? "Appraisal ready" : "Appraisal blocked", tone: appraisalGateReady ? "good" : "warn" },
         { label: promotionReady ? "Promotion ready" : "Promotion blocked", tone: promotionReady ? "good" : "warn" },
         { label: validationReady ? "Validation ready" : "Validation blocked", tone: validationReady ? "good" : "warn" }
       ],
       filterValues: {
         status: record.lifecycle_status,
-        review_gate: reviewGateReady ? "ready" : "blocked",
+        appraisal_gate: appraisalGateReady ? "ready" : "blocked",
         promotion: promotionReady ? "ready" : "blocked",
         validation: validationReady ? "ready" : "blocked"
       },
@@ -64,7 +64,7 @@ export default async function AdminReviewPage() {
         <Metric icon={ClipboardList} label="Candidate bundles" value={queue.length} />
         <Metric icon={TriangleAlert} label="Open bundles" value={openBundles.length} />
         <Metric icon={CheckCircle2} label="Promotion ready" value={readyForPromotion} />
-        <Metric icon={ShieldCheck} label="Appraisal ready" value={reviewReady} />
+        <Metric icon={ShieldCheck} label="Appraisal ready" value={appraisalReady} />
       </div>
 
       <Section title="Bundle Queue" note={`${openBundles.length} open bundle(s)`}>
@@ -77,8 +77,8 @@ export default async function AdminReviewPage() {
               options: optionList(queue, ({ record }) => record.lifecycle_status, statusLabel)
             },
             {
-              id: "review_gate",
-              label: "Review Gate",
+              id: "appraisal_gate",
+              label: "Appraisal Gate",
               options: [
                 { value: "ready", label: "Ready" },
                 { value: "blocked", label: "Blocked" }

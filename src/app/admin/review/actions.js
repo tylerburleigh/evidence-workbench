@@ -3,7 +3,7 @@
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import {
-  addReviewComment,
+  addEditorialComment,
   approveCandidateBundle,
   publishCandidateBundle,
   updateCandidateBundleStatus
@@ -20,7 +20,7 @@ function revalidateAdminPaths(bundleId) {
 }
 
 const actionHandlers = createAdminReviewActionHandlers({
-  addReviewComment,
+  addEditorialComment,
   approveCandidateBundle,
   loadDomainStudioData,
   publishCandidateBundle,

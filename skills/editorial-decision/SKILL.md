@@ -54,5 +54,5 @@ npm run sync:research-planning
 
 ## Expected Outputs
 
-- A editorial comment, lifecycle status change, approval, rejection, or publication event.
+- An editorial comment, lifecycle status change, approval, rejection, or publication event.
 - Published bundles have promoted live records, a publication event, and refreshed planning state.

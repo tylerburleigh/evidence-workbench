@@ -6,7 +6,7 @@ import {
   BreadcrumbLink,
   EmptyState,
   PageHeader,
-  ReviewGateBadge,
+  AppraisalGateBadge,
   Section,
   StatusBadge
 } from "../../../components.js";
@@ -123,24 +123,24 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
   const validation = report?.validation;
   const workflowAudit = report?.workflow_audit;
   const projectedDeltaRows = Object.entries(workflowAudit?.projected_publication_delta?.by_record_type ?? {});
-  const reviewGateReady = !evidenceGate?.eligible || Boolean(evidenceGate?.ready);
+  const appraisalGateReady = !evidenceGate?.eligible || Boolean(evidenceGate?.ready);
   const canRequestChanges = ["submitted", "in_review", "needs_revision"].includes(bundle.lifecycle_status);
   const canReject = !["published", "rejected"].includes(bundle.lifecycle_status);
-  const canApprove = ["submitted", "in_review", "revised"].includes(bundle.lifecycle_status) && Boolean(validation?.ready) && reviewGateReady;
-  const canPublish = bundle.lifecycle_status === "approved" && Boolean(validation?.ready) && reviewGateReady;
+  const canApprove = ["submitted", "in_review", "revised"].includes(bundle.lifecycle_status) && Boolean(validation?.ready) && appraisalGateReady;
+  const canPublish = bundle.lifecycle_status === "approved" && Boolean(validation?.ready) && appraisalGateReady;
   const approvalBlockers = [
     !["submitted", "in_review", "revised"].includes(bundle.lifecycle_status)
       ? `Status must be submitted, in review, or revised. Current status is ${statusLabel(bundle.lifecycle_status)}.`
       : undefined,
     validation?.ready ? undefined : validation?.issues?.join(" ") || "Validation has not passed.",
-    reviewGateReady ? undefined : evidenceGate?.issues?.join(" ") || "Evidence appraisal gate has not passed."
+    appraisalGateReady ? undefined : evidenceGate?.issues?.join(" ") || "Evidence appraisal gate has not passed."
   ].filter(Boolean);
   const publishBlockers = [
     bundle.lifecycle_status === "approved"
       ? undefined
       : `Status must be approved before publication. Current status is ${statusLabel(bundle.lifecycle_status)}.`,
     validation?.ready ? undefined : validation?.issues?.join(" ") || "Validation has not passed.",
-    reviewGateReady ? undefined : evidenceGate?.issues?.join(" ") || "Evidence appraisal gate has not passed."
+    appraisalGateReady ? undefined : evidenceGate?.issues?.join(" ") || "Evidence appraisal gate has not passed."
   ].filter(Boolean);
 
   return (
@@ -292,11 +292,11 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
           </table>
         </Section>
 
-        <Section title="Review Gate">
+        <Section title="Appraisal Gate">
           {evidenceGate ? (
             <>
               <div className="meta-row">
-                <ReviewGateBadge report={report} />
+                <AppraisalGateBadge report={report} />
                 <Badge>{evidenceGate.completed_lanes.length}/{evidenceGate.required_lanes.length} lane(s)</Badge>
                 <Badge>{evidenceGate.min_complete_appraisals_per_lane} appraisal(s) per lane</Badge>
               </div>

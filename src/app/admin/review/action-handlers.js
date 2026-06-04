@@ -13,7 +13,7 @@ function errorMessage(error) {
 }
 
 export function createAdminReviewActionHandlers({
-  addReviewComment,
+  addEditorialComment,
   approveCandidateBundle,
   loadDomainStudioData,
   publishCandidateBundle,
@@ -52,12 +52,12 @@ export function createAdminReviewActionHandlers({
       return runBundleAction(
         formData,
         (bundleId) =>
-          addReviewComment(bundleId, {
+          addEditorialComment(bundleId, {
             body,
             authorKind: "human",
             authorId
           }),
-        "Review comment added."
+        "Editorial comment added."
       );
     },
 

@@ -325,14 +325,14 @@ export function getAttentionItems(data) {
 
   for (const { record, report, scopeNodes } of queue) {
     const closed = ["published", "rejected"].includes(record.lifecycle_status);
-    const reviewGateReady = !report?.evidence_appraisal_gate?.eligible || Boolean(report.evidence_appraisal_gate.ready);
+    const appraisalGateReady = !report?.evidence_appraisal_gate?.eligible || Boolean(report.evidence_appraisal_gate.ready);
     const validationReady = Boolean(report?.validation?.ready);
     const promotionReady = Boolean(report?.promotion?.ready);
 
     if (!closed) {
       items.push({
         id: `bundle-${record.id}`,
-        severity: validationReady && reviewGateReady && promotionReady ? "info" : "warn",
+        severity: validationReady && appraisalGateReady && promotionReady ? "info" : "warn",
         label: "Bundle",
         title: record.name,
         body: report?.readiness?.message ?? record.summary,
@@ -341,7 +341,7 @@ export function getAttentionItems(data) {
       });
     }
 
-    if (!closed && (!validationReady || !reviewGateReady || !promotionReady)) {
+    if (!closed && (!validationReady || !appraisalGateReady || !promotionReady)) {
       items.push({
         id: `blocked-${record.id}`,
         severity: "warn",
@@ -349,7 +349,7 @@ export function getAttentionItems(data) {
         title: `${record.name} has blocked checks`,
         body: [
           validationReady ? undefined : "Validation blocked",
-          reviewGateReady ? undefined : "Review gate blocked",
+          appraisalGateReady ? undefined : "Appraisal gate blocked",
           promotionReady ? undefined : "Promotion blocked"
         ]
           .filter(Boolean)

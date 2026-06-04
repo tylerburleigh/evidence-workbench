@@ -86,7 +86,7 @@ function actionHarnessSource(actionName, fields) {
     const { loadDomainStudioData } = await import(process.env.STUDIO_DATA_MODULE_PATH);
     const revalidatedPaths = [];
     const handlers = createAdminReviewActionHandlers({
-      addReviewComment: workflow.addReviewComment,
+      addEditorialComment: workflow.addEditorialComment,
       approveCandidateBundle: workflow.approveCandidateBundle,
       loadDomainStudioData,
       publishCandidateBundle: workflow.publishCandidateBundle,
@@ -121,7 +121,7 @@ test("admin add-comment action trims form input, writes comment, and returns not
 
     const target = parseQueryPath(result.targetPath);
     assert.equal(target.pathname, `/admin/review/${archiveBundleId}`);
-    assert.equal(target.searchParams.get("notice"), "Review comment added.");
+    assert.equal(target.searchParams.get("notice"), "Editorial comment added.");
     assert.deepEqual(result.revalidatedPaths, ["/", "/activity", "/scope", "/admin/review", `/admin/review/${archiveBundleId}`]);
 
     const bundle = await readWorkspaceJson(workspace, `data/candidate-bundles/${archiveBundleId}.json`);
