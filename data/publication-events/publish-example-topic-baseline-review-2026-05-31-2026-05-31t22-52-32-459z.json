@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-example-topic-baseline-review-2026-05-31-2026-05-31t22-52-32-459z",
+  "name": "Published Example Topic Baseline Baseline Review",
+  "summary": "Synthetic fixture bundle that stages a source, artifact, finding, and claim for the neutral sample research domain.",
+  "candidate_bundle_id": "example-topic-baseline-review-2026-05-31",
+  "event_type": "publish",
+  "published_at": "2026-05-31T22:52:32.459Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "source",
+      "record_id": "sample-source-example-topic-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "sample-artifact-example-topic-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "sample-finding-example-topic-context-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "sample-claim-example-topic-baseline",
+      "action": "created"
+    }
+  ],
+  "affected_claim_ids": [
+    "sample-claim-example-topic-baseline"
+  ],
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-example-topic-interpretation-r1",
+    "evidence-appraisal-example-topic-source-fidelity-r1"
+  ],
+  "change_note": "Creates the first synthetic baseline claim for the sample topic."
+}

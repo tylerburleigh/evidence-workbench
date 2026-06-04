@@ -31,7 +31,7 @@
       "enum": ["draft", "searched", "screened", "included_sources_staged", "complete"]
     },
     "systematicity_level": {
-      "enum": ["targeted_bootstrap", "scoping_review", "systematic_review", "manual_note"]
+      "enum": ["targeted_baseline_review", "scoping_review", "systematic_review", "manual_note"]
     },
     "search_started_at": { "type": "string", "minLength": 1 },
     "search_completed_at": { "type": "string", "minLength": 1 },

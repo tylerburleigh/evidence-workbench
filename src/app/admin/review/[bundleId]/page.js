@@ -14,11 +14,11 @@ import {
   formatDate,
   getBundleById,
   getBundleReport,
-  getEvidenceReviewsForBundle,
+  getEvidenceAppraisalsForBundle,
   getNodesForIds,
   getPublicationEventsForBundle,
-  getReviewCommentsForBundle,
-  getWorkbenchData,
+  getEditorialCommentsForBundle,
+  getStudioData,
   statusLabel
 } from "../../../../lib/public-data.js";
 import {
@@ -106,7 +106,7 @@ function queryValue(value) {
 export default async function AdminBundleDetailPage({ params, searchParams }) {
   const { bundleId } = await params;
   const query = searchParams ? await searchParams : {};
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const bundle = getBundleById(data, bundleId);
   if (!bundle) {
     notFound();
@@ -114,10 +114,10 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
 
   const report = getBundleReport(data, bundle.id);
   const scopeNodes = getNodesForIds(data, bundle.scope?.taxonomy_node_ids ?? []);
-  const reviews = getEvidenceReviewsForBundle(data, bundle.id);
-  const comments = getReviewCommentsForBundle(data, bundle.id);
+  const appraisals = getEvidenceAppraisalsForBundle(data, bundle.id);
+  const comments = getEditorialCommentsForBundle(data, bundle.id);
   const publicationEvents = getPublicationEventsForBundle(data, bundle.id);
-  const evidenceGate = report?.evidence_review_gate;
+  const evidenceGate = report?.evidence_appraisal_gate;
   const promotion = report?.promotion;
   const publication = report?.publication;
   const validation = report?.validation;
@@ -133,14 +133,14 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
       ? `Status must be submitted, in review, or revised. Current status is ${statusLabel(bundle.lifecycle_status)}.`
       : undefined,
     validation?.ready ? undefined : validation?.issues?.join(" ") || "Validation has not passed.",
-    reviewGateReady ? undefined : evidenceGate?.issues?.join(" ") || "Evidence review gate has not passed."
+    reviewGateReady ? undefined : evidenceGate?.issues?.join(" ") || "Evidence appraisal gate has not passed."
   ].filter(Boolean);
   const publishBlockers = [
     bundle.lifecycle_status === "approved"
       ? undefined
       : `Status must be approved before publication. Current status is ${statusLabel(bundle.lifecycle_status)}.`,
     validation?.ready ? undefined : validation?.issues?.join(" ") || "Validation has not passed.",
-    reviewGateReady ? undefined : evidenceGate?.issues?.join(" ") || "Evidence review gate has not passed."
+    reviewGateReady ? undefined : evidenceGate?.issues?.join(" ") || "Evidence appraisal gate has not passed."
   ].filter(Boolean);
 
   return (
@@ -159,7 +159,7 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
       </PageHeader>
 
       <div className="meta-row">
-        <BreadcrumbLink href="/admin/review">Review Queue</BreadcrumbLink>
+        <BreadcrumbLink href="/admin/review">Bundle Queue</BreadcrumbLink>
         <Badge>{bundle.intake_mode}</Badge>
         <Badge>{formatDate(bundle.submitted_at)}</Badge>
       </div>
@@ -176,7 +176,7 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
           {promotion?.ready ? "Staged files can be promoted to target records." : promotion?.issues?.join(" ")}
         </ReadinessCard>
         <ReadinessCard icon={ShieldCheck} title="Evidence Gate" ready={!evidenceGate?.eligible || Boolean(evidenceGate?.ready)}>
-          {evidenceGate?.eligible ? evidenceGate.issues.join(" ") || "Required review lanes are complete." : "No review gate required."}
+          {evidenceGate?.eligible ? evidenceGate.issues.join(" ") || "Required appraisal lanes are complete." : "No appraisal gate required."}
         </ReadinessCard>
         <ReadinessCard icon={GitPullRequest} title="Publication" ready={Boolean(publication?.ready)}>
           {publication?.eligible ? publication.issues?.join(" ") || "Publication event state is valid." : "Not published yet."}
@@ -188,7 +188,7 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
           <form action={addCommentAction} className="action-form comment-action-form">
             <HiddenBundleId bundleId={bundle.id} />
             <label className="form-label" htmlFor="comment-body">
-              Review Comment
+              Editorial Comment
             </label>
             <textarea
               className="text-area"
@@ -298,7 +298,7 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
               <div className="meta-row">
                 <ReviewGateBadge report={report} />
                 <Badge>{evidenceGate.completed_lanes.length}/{evidenceGate.required_lanes.length} lane(s)</Badge>
-                <Badge>{evidenceGate.min_complete_reviews_per_lane} review(s) per lane</Badge>
+                <Badge>{evidenceGate.min_complete_appraisals_per_lane} appraisal(s) per lane</Badge>
               </div>
               <div className="meta-row">
                 {evidenceGate.required_lanes.map((lane) => (
@@ -393,10 +393,10 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
         )}
       </Section>
 
-      <Section title="Evidence Reviews" note={`${reviews.length} review(s)`}>
-        {reviews.length ? (
+      <Section title="Evidence Appraisals" note={`${appraisals.length} appraisal(s)`}>
+        {appraisals.length ? (
           <div className="grid two">
-            {reviews.map((review) => (
+            {appraisals.map((review) => (
               <div className="card" key={review.id}>
                 <div className="card-title">
                   <span>{review.name}</span>
@@ -404,7 +404,7 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
                 </div>
                 <p className="card-body">{review.summary}</p>
                 <div className="meta-row">
-                  <Badge>{statusLabel(review.review_lane)}</Badge>
+                  <Badge>{statusLabel(review.appraisal_lane)}</Badge>
                   <Badge>{review.status}</Badge>
                   <Badge tone={review.blocking ? "danger" : "good"}>{review.blocking ? "Blocking" : "Non-blocking"}</Badge>
                 </div>
@@ -422,7 +422,7 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
             ))}
           </div>
         ) : (
-          <EmptyState>No evidence reviews have been recorded for this bundle.</EmptyState>
+          <EmptyState>No evidence appraisals have been recorded for this bundle.</EmptyState>
         )}
       </Section>
 
@@ -445,7 +445,7 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
           )}
         </Section>
 
-        <Section title="Review Comments" note={`${comments.length} comment(s)`}>
+        <Section title="Editorial Comments" note={`${comments.length} comment(s)`}>
           {comments.length ? (
             <div className="list">
               {comments.map((comment) => (
@@ -459,7 +459,7 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
               ))}
             </div>
           ) : (
-            <EmptyState>No review comments have been recorded.</EmptyState>
+            <EmptyState>No editorial comments have been recorded.</EmptyState>
           )}
         </Section>
       </div>

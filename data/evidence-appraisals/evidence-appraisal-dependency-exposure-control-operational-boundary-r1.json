@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-dependency-exposure-control-operational-boundary-r1",
+  "name": "Operational Boundary Review for Dependency Exposure Control Bundle",
+  "candidate_bundle_id": "dependency-exposure-control-baseline-2026-06-01",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "operational_boundary",
+  "appraiser_kind": "agent",
+  "appraiser_id": "codex-agent",
+  "skill_name": "evidence-appraisal",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The records clearly bound the baseline to documentation-level Scorecard check semantics and leave repository, package, dependency graph, SBOM, scan, and remediation review to later project-specific bundles.",
+  "appraised_change_ids": [
+    "create-scorecard-checks-source",
+    "create-scorecard-dependency-exposure-artifact",
+    "create-scorecard-dependency-exposure-finding",
+    "create-dependency-exposure-claim"
+  ],
+  "findings": [],
+  "created_at": "2026-06-01T20:21:00Z",
+  "updated_at": "2026-06-01T20:21:00Z"
+}

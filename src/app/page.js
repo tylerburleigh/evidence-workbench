@@ -33,7 +33,7 @@ import {
   getReportArtifacts,
   getScopeNodes,
   getScopePluralLabel,
-  getWorkbenchData
+  getStudioData
 } from "../lib/public-data.js";
 
 function attentionTone(severity) {
@@ -67,7 +67,7 @@ function activityHref(item) {
 }
 
 export default async function HomePage() {
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const scopeNodes = getScopeNodes(data);
   const scopePlural = getScopePluralLabel(data);
   const attentionItems = getAttentionItems(data).slice(0, 6);
@@ -85,7 +85,7 @@ export default async function HomePage() {
   return (
     <main className="page">
       <PageHeader
-        eyebrow="Evidence Workbench"
+        eyebrow="Lit Review Studio"
         title={data.domainPack.domain.name}
         aside={<Badge tone="info">{data.domainPack.domain.default_scope_unit}</Badge>}
       >

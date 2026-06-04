@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "record_type": "research_session",
   "id": "dependency-exposure-control-baseline-2026-06-01",
-  "mode": "bootstrap",
+  "mode": "baseline_review",
   "started_at": "2026-06-01T20:10:00Z",
   "completed_at": "2026-06-01T20:16:00Z",
   "scope": {
@@ -25,9 +25,9 @@
     "https://github.com/ossf/scorecard/blob/main/docs/checks.md#sbom",
     "https://github.com/ossf/scorecard/blob/main/docs/checks.md#vulnerabilities"
   ],
-  "next_recommended_mode": "surveillance",
+  "next_recommended_mode": "review_update",
   "next_actions": [
-    "Complete source fidelity, control fit, risk framing, and operational boundary reviews.",
+    "Complete source fidelity, control fit, risk framing, and operational boundary appraisals.",
     "Approve and publish after the evidence gate passes.",
     "Use a project-specific bundle before making claims about an actual repository, package, SBOM, vulnerability scan, or remediation workflow."
   ]

@@ -9,7 +9,7 @@ The domain pack should answer:
 - What are the stable research units?
 - What counts as evidence?
 - What fields must be extracted?
-- What review lanes are required?
+- What appraisal lanes are required?
 - What context-of-use or applicability facets bound claims?
 - How should public claims be worded and bounded?
 - What should agents read before acting?
@@ -23,13 +23,13 @@ domain-packs/<domain-id>/
   taxonomy.v1.json
   evidence-ladder.v1.json
   extraction-schema.v1.json
-  review-lanes.v1.json
+  appraisal-lanes.v1.json
   public-copy.v1.json
   skills/
-    bootstrap.md
-    surveillance.md
-    evidence-review.md
-    editorial-review.md
+    baseline-review.md
+    review-update.md
+    evidence-appraisal.md
+    editorial-decision.md
     synthesis.md
 ```
 
@@ -46,9 +46,9 @@ Suggested shape:
   "taxonomy_file": "taxonomy.v1.json",
   "evidence_ladder_file": "evidence-ladder.v1.json",
   "extraction_schema_file": "extraction-schema.v1.json",
-  "review_lanes_file": "review-lanes.v1.json",
+  "appraisal_lanes_file": "appraisal-lanes.v1.json",
   "public_copy_file": "public-copy.v1.json",
-  "default_review_lanes": [
+  "default_appraisal_lanes": [
     "source_fidelity",
     "interpretation",
     "limitations",
@@ -136,8 +136,8 @@ Examples:
 
 - assessment purpose or decision consequence in education
 - deployment environment or criticality in software operations
-- population, severity, or care setting in clinical evidence reviews
-- jurisdiction or enforcement setting in policy reviews
+- population, severity, or care setting in clinical evidence appraisals
+- jurisdiction or enforcement setting in policy appraisals
 
 Suggested shape:
 
@@ -161,9 +161,9 @@ Suggested shape:
 
 When configured with `values`, validation should reject unsupported facet values. Domains can also make facet fields required through `extraction-schema.v1.json`.
 
-## Review Lanes
+## Appraisal Lanes
 
-Review lanes should be explicit and domain-configurable.
+Appraisal lanes should be explicit and domain-configurable.
 
 Core lanes worth preserving:
 
@@ -172,7 +172,7 @@ Core lanes worth preserving:
 - `limitations`: are caveats, context, uncertainty, and boundaries visible?
 - `taxonomy_mapping`: are records mapped to the right domain scope units?
 - `applicability_boundary`: do conclusions stay within the contexts, populations, settings, use cases, or consequence levels represented by the evidence?
-- optional domain-defined review lanes for pack-specific risks or limitations
+- optional domain-defined appraisal lanes for pack-specific risks or limitations
 
 Domain-specific lanes can be added, but the core should treat lane IDs as configuration.
 
@@ -201,5 +201,5 @@ For example, a domain adapter can specify:
 - required fields that must be extracted before drafting a claim
 - common ways claims overreach beyond the extracted findings
 - boundaries that must appear near public conclusions
-- review lanes required before approval
+- appraisal lanes required before approval
 - terms, labels, and page copy that should replace generic UI language

@@ -1,6 +1,6 @@
 # UI Guide
 
-Evidence Workbench has two UI surfaces:
+Lit Review Studio has two UI surfaces:
 
 - a public evidence browser for published records and report artifacts
 - an admin review workspace for candidate bundles before publication
@@ -105,7 +105,7 @@ The CSV and Markdown matrix routes expose the configured synthesis matrix for re
 - how curator interpretation is separated from source facts
 - how the domain pack defines evidence tiers and labels
 - how review and publication work
-- what the workbench is not claiming to do
+- what the studio is not claiming to do
 
 `/activity` shows publication and bundle activity so readers can see what changed recently.
 
@@ -118,21 +118,21 @@ The admin review workspace is available at:
 /admin/review/[bundleId]
 ```
 
-`/admin/review` lists candidate bundles with status, scope, intake mode, submitted date, revision number, required review lanes, missing lanes, blocking findings, promotion readiness, and proposed change count.
+`/admin/review` lists candidate bundles with status, scope, intake mode, submitted date, revision number, required appraisal lanes, missing lanes, blocking findings, promotion readiness, and proposed change count.
 
 `/admin/review/[bundleId]` shows the reviewable unit in detail:
 
 - validation readiness
 - promotion readiness
-- evidence-review gate state
+- evidence-appraisal gate state
 - publication readiness
-- review comments
+- editorial comments
 - request-changes, approve, reject, publish, and comment actions
 - scope and research question
-- required and completed review lanes
+- required and completed appraisal lanes
 - workflow audit
 - staged and target file paths for proposed changes
-- evidence reviews and structured review findings
+- evidence appraisals and structured appraisal findings
 - publication events
 - next actions
 
@@ -148,7 +148,7 @@ The UI adapts to the active domain pack. Domain packs provide:
 - public copy and empty-state text
 - evidence ladder labels
 - report and synthesis matrix configuration
-- review lanes
+- appraisal lanes
 
 Optional domain-specific entity routes are not implemented in the current app. Domain-specific concepts should first be represented through taxonomy, records, extraction fields, report artifacts, or domain pack copy. Add entity routes only when a domain has a repeated object type that cannot be handled clearly by the generic records.
 
@@ -162,7 +162,7 @@ Empty states should help users distinguish different kinds of absence:
 - source exists but no extracted findings yet
 - report artifacts are not indexed
 - search protocols have not been published
-- bundle exists but evidence review is missing
+- bundle exists but evidence appraisal is missing
 
 "Not researched yet" is different from "researched and no signal found." UI copy should preserve that distinction.
 

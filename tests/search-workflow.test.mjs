@@ -16,7 +16,7 @@ const validateScriptPath = path.join(repoRoot, "scripts/validate-records.mjs");
 const fixtureBundleId = "fixture-sample-search-bundle";
 
 async function createWorkspace() {
-  const workspace = await mkdtemp(path.join(tmpdir(), "evidence-workbench-search-"));
+  const workspace = await mkdtemp(path.join(tmpdir(), "lit-review-studio-search-"));
   await Promise.all(
     ["data", "domain-packs", "research", "schemas"].map((entry) =>
       cp(path.join(repoRoot, entry), path.join(workspace, entry), { recursive: true })
@@ -63,7 +63,7 @@ test("search workflow scaffolds a staged protocol and attaches it to a bundle", 
       record_type: "candidate_bundle",
       id: fixtureBundleId,
       name: "Fixture Sample Search Bundle",
-      intake_mode: "bootstrap",
+      intake_mode: "baseline_review",
       lifecycle_status: "submitted",
       submitted_at: "2026-06-02T00:00:00Z",
       submitted_by: "test-agent",
@@ -74,9 +74,9 @@ test("search workflow scaffolds a staged protocol and attaches it to a bundle", 
         research_question: "Fixture search workflow question."
       },
       proposed_changes: [],
-      required_review_lanes: [],
-      review_requirement: {
-        min_complete_reviews_per_lane: 1,
+      required_appraisal_lanes: [],
+      appraisal_requirement: {
+        min_complete_appraisals_per_lane: 1,
         block_on_open_critical_findings: true,
         block_on_open_major_findings: false
       }
@@ -91,24 +91,24 @@ test("search workflow scaffolds a staged protocol and attaches it to a bundle", 
           bundleId: "${fixtureBundleId}",
           name: "Fixture Sample Search Pass",
           taxonomyNodeIds: ["example-topic"],
-          queries: ["\\"fixture topic\\" evidence review"],
+          queries: ["\\"fixture topic\\" evidence appraisal"],
           databases: ["Fixture Search"],
-          inclusionCriteria: ["Includes fixture evidence review context."],
+          inclusionCriteria: ["Includes fixture evidence appraisal context."],
           exclusionCriteria: ["Outside the fixture topic."],
           startedAt: "2026-06-02T00:00:00Z"
         });
         const decision = await addScreeningDecision({
           protocolId: "fixture-sample-search-pass",
           bundleId: "${fixtureBundleId}",
-          title: "Fixture Evidence Review Source",
+          title: "Fixture Evidence Appraisal Source",
           decision: "include",
           sourceId: "sample-source-example-topic-2026",
           reason: "Directly discusses the fixture topic.",
-          url: "https://example.test/fixture-evidence-review-source"
+          url: "https://example.test/fixture-evidence-appraisal-source"
         });
         console.log(JSON.stringify({ scaffold, decision }));
       `,
-      { WORKBENCH_DOMAIN: "sample-research" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-research" }
     );
 
     assert.equal(result.scaffold.action, "scaffolded_search_protocol");
@@ -119,7 +119,7 @@ test("search workflow scaffolds a staged protocol and attaches it to a bundle", 
       workspace,
       `data/staged-records/${fixtureBundleId}/fixture-sample-search-pass.json`
     );
-    assert.equal(protocol.systematicity_level, "targeted_bootstrap");
+    assert.equal(protocol.systematicity_level, "targeted_baseline_review");
     assert.equal(protocol.screening_decisions.length, 1);
     assert.deepEqual(protocol.source_ids, ["sample-source-example-topic-2026"]);
 
@@ -136,7 +136,7 @@ test("search workflow scaffolds a staged protocol and attaches it to a bundle", 
       cwd: workspace,
       env: {
         ...process.env,
-        WORKBENCH_DOMAIN: "sample-research"
+        LIT_REVIEW_STUDIO_DOMAIN: "sample-research"
       }
     });
   });
@@ -156,7 +156,7 @@ test("research search CLI scaffolds a standalone protocol record", async () => {
         "--taxonomy-node",
         "example-topic",
         "--query",
-        "\"fixture topic\" evidence review",
+        "\"fixture topic\" evidence appraisal",
         "--database",
         "Fixture Search",
         "--include-criterion",
@@ -168,7 +168,7 @@ test("research search CLI scaffolds a standalone protocol record", async () => {
         cwd: workspace,
         env: {
           ...process.env,
-          WORKBENCH_DOMAIN: "sample-research"
+          LIT_REVIEW_STUDIO_DOMAIN: "sample-research"
         }
       }
     );
@@ -179,7 +179,7 @@ test("research search CLI scaffolds a standalone protocol record", async () => {
 
     const protocol = await readWorkspaceJson(workspace, "data/search-protocols/fixture-standalone-search.json");
     assert.equal(protocol.record_type, "search_protocol");
-    assert.equal(protocol.systematicity_level, "targeted_bootstrap");
+    assert.equal(protocol.systematicity_level, "targeted_baseline_review");
     assert.equal(protocol.search_queries[0].database, "Fixture Search");
 
     await execFileAsync(process.execPath, [validateScriptPath], { cwd: workspace });
@@ -193,7 +193,7 @@ test("research search CLI stages bundled protocols under the bundle directory", 
       record_type: "candidate_bundle",
       id: fixtureBundleId,
       name: "Fixture Sample Search Bundle",
-      intake_mode: "bootstrap",
+      intake_mode: "baseline_review",
       lifecycle_status: "submitted",
       submitted_at: "2026-06-02T00:00:00Z",
       submitted_by: "test-agent",
@@ -204,9 +204,9 @@ test("research search CLI stages bundled protocols under the bundle directory", 
         research_question: "Fixture bundled search workflow question."
       },
       proposed_changes: [],
-      required_review_lanes: [],
-      review_requirement: {
-        min_complete_reviews_per_lane: 1,
+      required_appraisal_lanes: [],
+      appraisal_requirement: {
+        min_complete_appraisals_per_lane: 1,
         block_on_open_critical_findings: true,
         block_on_open_major_findings: false
       }
@@ -234,7 +234,7 @@ test("research search CLI stages bundled protocols under the bundle directory", 
         cwd: workspace,
         env: {
           ...process.env,
-          WORKBENCH_DOMAIN: "sample-research"
+          LIT_REVIEW_STUDIO_DOMAIN: "sample-research"
         }
       }
     );

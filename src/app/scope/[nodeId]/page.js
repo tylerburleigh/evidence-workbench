@@ -23,12 +23,12 @@ import {
   getScopeLabel,
   getScopePluralLabel,
   getSourcesForIds,
-  getWorkbenchData
+  getStudioData
 } from "../../../lib/public-data.js";
 
 export default async function TopicDetailPage({ params }) {
   const { nodeId } = await params;
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const node = getNodeById(data, nodeId);
   if (!node) {
     notFound();

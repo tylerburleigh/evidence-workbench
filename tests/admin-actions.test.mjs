@@ -11,11 +11,11 @@ const execFileAsync = promisify(execFile);
 const repoRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const actionHandlersModulePath = path.join(repoRoot, "src/app/admin/review/action-handlers.js");
 const workflowModulePath = path.join(repoRoot, "scripts/lib/bundle-workflow.mjs");
-const workbenchDataModulePath = path.join(repoRoot, "scripts/lib/workbench-data.mjs");
+const studioDataModulePath = path.join(repoRoot, "scripts/lib/studio-data.mjs");
 const archiveBundleId = "archive-question-baseline-2026-05-31";
 
 async function createWorkspace() {
-  const workspace = await mkdtemp(path.join(tmpdir(), "evidence-workbench-admin-actions-"));
+  const workspace = await mkdtemp(path.join(tmpdir(), "lit-review-studio-admin-actions-"));
   await Promise.all(
     ["data", "domain-packs", "research", "schemas"].map((entry) =>
       cp(path.join(repoRoot, entry), path.join(workspace, entry), { recursive: true })
@@ -69,7 +69,7 @@ async function runCapturedNode(workspace, source, env = {}) {
       ...process.env,
       ...env,
       ACTION_HANDLERS_MODULE_PATH: actionHandlersModulePath,
-      WORKBENCH_DATA_MODULE_PATH: workbenchDataModulePath,
+      STUDIO_DATA_MODULE_PATH: studioDataModulePath,
       WORKFLOW_MODULE_PATH: workflowModulePath,
       WORKFLOW_STDOUT_PATH: outputPath
     }
@@ -83,12 +83,12 @@ function actionHarnessSource(actionName, fields) {
   return `
     const { createAdminReviewActionHandlers } = await import(process.env.ACTION_HANDLERS_MODULE_PATH);
     const workflow = await import(process.env.WORKFLOW_MODULE_PATH);
-    const { loadDomainWorkbenchData } = await import(process.env.WORKBENCH_DATA_MODULE_PATH);
+    const { loadDomainStudioData } = await import(process.env.STUDIO_DATA_MODULE_PATH);
     const revalidatedPaths = [];
     const handlers = createAdminReviewActionHandlers({
       addReviewComment: workflow.addReviewComment,
       approveCandidateBundle: workflow.approveCandidateBundle,
-      loadDomainWorkbenchData,
+      loadDomainStudioData,
       publishCandidateBundle: workflow.publishCandidateBundle,
       revalidateAdminPaths(bundleId) {
         revalidatedPaths.push("/", "/activity", "/scope", "/admin/review", \`/admin/review/\${bundleId}\`);
@@ -116,7 +116,7 @@ test("admin add-comment action trims form input, writes comment, and returns not
         bundleId: archiveBundleId,
         body: "  Needs one final editorial pass.  "
       }),
-      { WORKBENCH_DOMAIN: "sample-archive" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
     );
 
     const target = parseQueryPath(result.targetPath);
@@ -125,8 +125,8 @@ test("admin add-comment action trims form input, writes comment, and returns not
     assert.deepEqual(result.revalidatedPaths, ["/", "/activity", "/scope", "/admin/review", `/admin/review/${archiveBundleId}`]);
 
     const bundle = await readWorkspaceJson(workspace, `data/candidate-bundles/${archiveBundleId}.json`);
-    const commentId = bundle.review_comment_ids.at(-1);
-    const comment = await readWorkspaceJson(workspace, `data/review-comments/${commentId}.json`);
+    const commentId = bundle.editorial_comment_ids.at(-1);
+    const comment = await readWorkspaceJson(workspace, `data/editorial-comments/${commentId}.json`);
     assert.equal(comment.body, "Needs one final editorial pass.");
     assert.equal(comment.author_kind, "human");
     assert.equal(comment.author_id, "local-curator");
@@ -141,7 +141,7 @@ test("admin request-changes and reject actions parse reasons and update bundle s
         bundleId: archiveBundleId,
         reason: "  Clarify the support map boundary.  "
       }),
-      { WORKBENCH_DOMAIN: "sample-archive" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
     );
 
     let target = parseQueryPath(requested.targetPath);
@@ -156,7 +156,7 @@ test("admin request-changes and reject actions parse reasons and update bundle s
         bundleId: archiveBundleId,
         reason: "  Do not publish this fixture branch.  "
       }),
-      { WORKBENCH_DOMAIN: "sample-archive" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
     );
 
     target = parseQueryPath(rejected.targetPath);
@@ -174,7 +174,7 @@ test("admin approve and publish actions return notice redirects and promote reco
       actionHarnessSource("approve", {
         bundleId: archiveBundleId
       }),
-      { WORKBENCH_DOMAIN: "sample-archive" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
     );
 
     let target = parseQueryPath(approved.targetPath);
@@ -187,7 +187,7 @@ test("admin approve and publish actions return notice redirects and promote reco
       actionHarnessSource("publish", {
         bundleId: archiveBundleId
       }),
-      { WORKBENCH_DOMAIN: "sample-archive" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
     );
 
     target = parseQueryPath(published.targetPath);
@@ -205,7 +205,7 @@ test("admin actions return error redirects for missing bundle id and active-doma
     const missing = await runCapturedNode(
       workspace,
       actionHarnessSource("approve", {}),
-      { WORKBENCH_DOMAIN: "sample-archive" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
     );
     let target = parseQueryPath(missing.targetPath);
     assert.equal(target.pathname, "/admin/review");
@@ -217,7 +217,7 @@ test("admin actions return error redirects for missing bundle id and active-doma
       actionHarnessSource("approve", {
         bundleId: archiveBundleId
       }),
-      { WORKBENCH_DOMAIN: "sample-research" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-research" }
     );
     target = parseQueryPath(mismatch.targetPath);
     assert.equal(target.pathname, `/admin/review/${archiveBundleId}`);
@@ -236,7 +236,7 @@ test("admin publish action returns workflow error redirect when bundle is not ap
       actionHarnessSource("publish", {
         bundleId: archiveBundleId
       }),
-      { WORKBENCH_DOMAIN: "sample-archive" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
     );
 
     const target = parseQueryPath(result.targetPath);
@@ -249,9 +249,9 @@ test("admin publish action returns workflow error redirect when bundle is not ap
   });
 });
 
-test("admin approve action returns workflow error redirect when evidence reviews are incomplete", async () => {
+test("admin approve action returns workflow error redirect when evidence appraisals are incomplete", async () => {
   await withWorkspace(async (workspace) => {
-    const reviewPath = "data/evidence-reviews/evidence-review-archive-question-source-fidelity-r1.json";
+    const reviewPath = "data/evidence-appraisals/evidence-appraisal-archive-question-source-fidelity-r1.json";
     const review = await readWorkspaceJson(workspace, reviewPath);
     await writeWorkspaceJson(workspace, reviewPath, {
       ...review,
@@ -263,7 +263,7 @@ test("admin approve action returns workflow error redirect when evidence reviews
       actionHarnessSource("approve", {
         bundleId: archiveBundleId
       }),
-      { WORKBENCH_DOMAIN: "sample-archive" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
     );
 
     const target = parseQueryPath(result.targetPath);

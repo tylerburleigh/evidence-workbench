@@ -26,7 +26,7 @@
       "node_type": "control",
       "parent_id": "software-release-integrity",
       "canonical_order": 1,
-      "summary": "Reviews whether a release has inspectable provenance, build metadata, attestations, or reproducibility evidence.",
+      "summary": "Assesses whether a release has inspectable provenance, build metadata, attestations, or reproducibility evidence.",
       "search_aliases": [
         "release provenance",
         "build attestation",
@@ -49,7 +49,7 @@
       "node_type": "control",
       "parent_id": "software-release-integrity",
       "canonical_order": 2,
-      "summary": "Reviews source-backed evidence about direct dependency inventory, vulnerability exposure, and update posture.",
+      "summary": "Assesses source-backed evidence about direct dependency inventory, vulnerability exposure, and update posture.",
       "search_aliases": [
         "dependency risk",
         "vulnerability exposure",
@@ -72,7 +72,7 @@
       "node_type": "control",
       "parent_id": "software-release-integrity",
       "canonical_order": 3,
-      "summary": "Reviews evidence about update cadence, ownership signals, issue response, and operational maintenance context.",
+      "summary": "Assesses evidence about update cadence, ownership signals, issue response, and operational maintenance context.",
       "search_aliases": [
         "maintenance posture",
         "release cadence",

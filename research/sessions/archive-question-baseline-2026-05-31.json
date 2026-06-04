@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "record_type": "research_session",
   "id": "archive-question-baseline-2026-05-31",
-  "mode": "bootstrap",
+  "mode": "baseline_review",
   "started_at": "2026-05-31T12:45:00Z",
   "completed_at": "2026-05-31T13:10:00Z",
   "scope": {
@@ -10,7 +10,7 @@
     "taxonomy_node_ids": [
       "archive-question"
     ],
-    "research_question": "Can the generic workflow validate a non-topic scope unit with different review lanes?"
+    "research_question": "Can the generic workflow validate a non-topic scope unit with different appraisal lanes?"
   },
   "selected_via": "fixture",
   "outcome": "candidate_bundle",
@@ -22,9 +22,9 @@
   "source_urls": [
     "https://example.com/sample-archive/archive-question"
   ],
-  "next_recommended_mode": "surveillance",
+  "next_recommended_mode": "review_update",
   "next_actions": [
-    "Validate this bundle with WORKBENCH_DOMAIN=sample-archive.",
+    "Validate this bundle with LIT_REVIEW_STUDIO_DOMAIN=sample-archive.",
     "Use this fixture to detect accidental topic or review-lane assumptions."
   ]
 }

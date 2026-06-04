@@ -8,7 +8,7 @@ import {
   publishCandidateBundle,
   updateCandidateBundleStatus
 } from "../../../../scripts/lib/bundle-workflow.mjs";
-import { loadDomainWorkbenchData } from "../../../../scripts/lib/workbench-data.mjs";
+import { loadDomainStudioData } from "../../../../scripts/lib/studio-data.mjs";
 import { createAdminReviewActionHandlers } from "./action-handlers.js";
 
 function revalidateAdminPaths(bundleId) {
@@ -22,7 +22,7 @@ function revalidateAdminPaths(bundleId) {
 const actionHandlers = createAdminReviewActionHandlers({
   addReviewComment,
   approveCandidateBundle,
-  loadDomainWorkbenchData,
+  loadDomainStudioData,
   publishCandidateBundle,
   revalidateAdminPaths,
   updateCandidateBundleStatus

@@ -2,16 +2,16 @@ import { CheckCircle2, ClipboardList, FileText, ShieldCheck, TriangleAlert } fro
 import { Badge, Metric, PageHeader, Section } from "../../components.js";
 import { optionList } from "../../index-options.js";
 import { RecordIndex } from "../../record-index.js";
-import { formatDate, getBundleQueue, getWorkbenchData, statusLabel } from "../../../lib/public-data.js";
+import { formatDate, getBundleQueue, getStudioData, statusLabel } from "../../../lib/public-data.js";
 
 export default async function AdminReviewPage() {
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const queue = getBundleQueue(data);
   const openBundles = queue.filter(({ record }) => !["published", "rejected"].includes(record.lifecycle_status));
   const readyForPromotion = queue.filter(({ report }) => report?.promotion?.ready).length;
-  const reviewReady = queue.filter(({ report }) => !report?.evidence_review_gate?.eligible || report.evidence_review_gate.ready).length;
+  const reviewReady = queue.filter(({ report }) => !report?.evidence_appraisal_gate?.eligible || report.evidence_appraisal_gate.ready).length;
   const queueRows = queue.map(({ record, report, scopeNodes }, index) => {
-    const reviewGateReady = !report?.evidence_review_gate?.eligible || Boolean(report.evidence_review_gate.ready);
+    const reviewGateReady = !report?.evidence_appraisal_gate?.eligible || Boolean(report.evidence_appraisal_gate.ready);
     const promotionReady = Boolean(report?.promotion?.ready);
     const validationReady = Boolean(report?.validation?.ready);
     const readinessMessage = report?.readiness?.message;
@@ -24,7 +24,7 @@ export default async function AdminReviewPage() {
       kicker: `${scopeNodes.map((node) => node.name).join(", ") || "Unscoped"} - ${formatDate(record.submitted_at)}${readinessMessage ? ` - ${readinessMessage}` : ""}`,
       badges: [
         { label: statusLabel(record.lifecycle_status), tone: ["published", "approved"].includes(record.lifecycle_status) ? "good" : "neutral" },
-        { label: reviewGateReady ? "Review ready" : "Review blocked", tone: reviewGateReady ? "good" : "warn" },
+        { label: reviewGateReady ? "Appraisal ready" : "Appraisal blocked", tone: reviewGateReady ? "good" : "warn" },
         { label: promotionReady ? "Promotion ready" : "Promotion blocked", tone: promotionReady ? "good" : "warn" },
         { label: validationReady ? "Validation ready" : "Validation blocked", tone: validationReady ? "good" : "warn" }
       ],
@@ -57,17 +57,17 @@ export default async function AdminReviewPage() {
   return (
     <main className="page">
       <PageHeader eyebrow="Admin Review" title="Candidate Bundle Queue" aside={<Badge tone="info">Read Only</Badge>}>
-        Inspect bundle readiness, review gates, promotion checks, and publication state before adding mutation actions.
+        Inspect bundle readiness, appraisal gates, promotion checks, and publication state before adding mutation actions.
       </PageHeader>
 
       <div className="metrics">
         <Metric icon={ClipboardList} label="Candidate bundles" value={queue.length} />
         <Metric icon={TriangleAlert} label="Open bundles" value={openBundles.length} />
         <Metric icon={CheckCircle2} label="Promotion ready" value={readyForPromotion} />
-        <Metric icon={ShieldCheck} label="Review ready" value={reviewReady} />
+        <Metric icon={ShieldCheck} label="Appraisal ready" value={reviewReady} />
       </div>
 
-      <Section title="Review Queue" note={`${openBundles.length} open bundle(s)`}>
+      <Section title="Bundle Queue" note={`${openBundles.length} open bundle(s)`}>
         <RecordIndex
           emptyMessage="No candidate bundles match the current filters."
           filters={[
@@ -117,10 +117,10 @@ export default async function AdminReviewPage() {
           <div className="card">
             <div className="card-title">
               <span>
-                <ShieldCheck className="icon" size={16} /> Evidence Reviews
+                <ShieldCheck className="icon" size={16} /> Evidence Appraisals
               </span>
             </div>
-            <p className="card-body">Required lanes, missing lanes, blocking reviews, and open blocking findings.</p>
+            <p className="card-body">Required lanes, missing lanes, blocking appraisals, and open blocking findings.</p>
           </div>
           <div className="card">
             <div className="card-title">

@@ -6,12 +6,12 @@ import {
   getArtifactById,
   getNodeById,
   getSourceById,
-  getWorkbenchData
+  getStudioData
 } from "../../../lib/public-data.js";
 
 export default async function ArtifactDetailPage({ params }) {
   const { artifactId } = await params;
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const artifact = getArtifactById(data, artifactId);
   if (!artifact) {
     notFound();

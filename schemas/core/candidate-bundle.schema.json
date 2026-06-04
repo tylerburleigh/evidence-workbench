@@ -15,8 +15,8 @@
     "revision_number",
     "scope",
     "proposed_changes",
-    "required_review_lanes",
-    "review_requirement"
+    "required_appraisal_lanes",
+    "appraisal_requirement"
   ],
   "properties": {
     "schema_version": { "const": "1.0.0" },
@@ -24,7 +24,7 @@
     "id": { "type": "string", "minLength": 1 },
     "name": { "type": "string", "minLength": 1 },
     "summary": { "type": "string" },
-    "intake_mode": { "enum": ["bootstrap", "surveillance", "manual"] },
+    "intake_mode": { "enum": ["baseline_review", "review_update", "manual"] },
     "lifecycle_status": {
       "enum": ["submitted", "in_review", "needs_revision", "revised", "approved", "published", "rejected"]
     },
@@ -55,10 +55,10 @@
       }
     },
     "proposed_claim_implications": { "type": "array", "items": { "type": "object" } },
-    "required_review_lanes": { "type": "array", "items": { "type": "string" } },
-    "review_requirement": { "type": "object" },
-    "evidence_review_ids": { "type": "array", "items": { "type": "string" } },
-    "review_comment_ids": { "type": "array", "items": { "type": "string" } },
+    "required_appraisal_lanes": { "type": "array", "items": { "type": "string" } },
+    "appraisal_requirement": { "type": "object" },
+    "evidence_appraisal_ids": { "type": "array", "items": { "type": "string" } },
+    "editorial_comment_ids": { "type": "array", "items": { "type": "string" } },
     "publication_event_ids": { "type": "array", "items": { "type": "string" } },
     "next_actions": { "type": "array", "items": { "type": "string" } },
     "source_access_follow_up_actions": {

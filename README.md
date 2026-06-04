@@ -1,8 +1,8 @@
-# Evidence Workbench
+# Lit Review Studio
 
-Evidence Workbench is a framework for agent-assisted research.
+Lit Review Studio is a framework for agent-assisted research.
 
-It is designed for situations where a user wants an AI agent to help research a topic, but does not want the result to be a black-box answer, a long chat transcript, or a loose pile of notes. The workbench gives agentic research a durable shape: sources, extracted findings, supported claims, review steps, synthesis reports, planning queues, and a browsable web interface.
+It is designed for situations where a user wants an AI agent to help research a topic, but does not want the result to be a black-box answer, a long chat transcript, or a loose pile of notes. The studio gives agentic research a durable shape: sources, extracted findings, supported claims, review steps, synthesis reports, planning queues, and a browsable web interface.
 
 The point is not to let an agent decide what is true on its own. The point is to make the agent's research work decomposed, observable, reviewable, and easy for a person to inspect.
 
@@ -12,7 +12,7 @@ LLM-assisted research can be useful, but it is often hard to audit. A model can 
 
 Traditional notes and wiki pages have a related problem. They can be readable, but they often hide how the page was produced and how it should be updated later.
 
-Evidence Workbench sits between those modes. It lets an agent help with research, while turning the work into structured records and readable pages. After a few rounds of work, a user should still be able to answer:
+Lit Review Studio sits between those modes. It lets an agent help with research, while turning the work into structured records and readable pages. After a few rounds of work, a user should still be able to answer:
 
 - What claim are we making?
 - Which sources support it?
@@ -22,14 +22,14 @@ Evidence Workbench sits between those modes. It lets an agent help with research
 - What changed since the last review?
 - Is this topic fresh, stale, or still uncovered?
 
-That structure matters because research is rarely finished after one answer. It needs review, correction, synthesis, follow-up, and later surveillance.
+That structure matters because research is rarely finished after one answer. It needs review, correction, synthesis, follow-up, and later review update.
 
 ## What The Framework Provides
 
-Evidence Workbench combines four parts:
+Lit Review Studio combines four parts:
 
-- **Data models** for sources, artifacts, findings, claims, reviews, bundles, reports, and planning state.
-- **Workflows** for search, extraction, review, publication, synthesis, and surveillance.
+- **Data models** for sources, artifacts, findings, claims, appraisals, bundles, reports, and planning state.
+- **Workflows** for search, extraction, review, publication, synthesis, and review update.
 - **Agent skills** that guide an AI assistant through bounded research tasks.
 - **A web UI** for browsing the resulting evidence graph, reports, methods, and review state.
 
@@ -37,13 +37,13 @@ Those parts are meant to work together. The agent has a workflow to follow. The 
 
 ## What It Can Help With
 
-Evidence Workbench is useful for research and knowledge work where accuracy, traceability, and revision history matter. Examples include:
+Lit Review Studio is useful for research and knowledge work where accuracy, traceability, and revision history matter. Examples include:
 
 - literature reviews
 - policy or market research
 - product and technical research
 - internal knowledge-base curation
-- standards or compliance evidence review
+- standards or compliance evidence appraisal
 - domain-specific evidence maps
 
 It can be thought of as a variant of an LLM wiki or an agentic research workspace: the agent can help build the knowledge base, but the result is structured enough for people to inspect and maintain.
@@ -57,7 +57,7 @@ A project starts with a domain: the subject area being researched. Each domain h
 3. Extract source-backed findings.
 4. Draft claims or report sections that stay within the evidence.
 5. Stage the proposed changes in a candidate bundle.
-6. Review the bundle through structured review lanes.
+6. Review the bundle through structured appraisal lanes.
 7. Publish approved records to the evidence graph.
 8. Track what is covered, what is stale, and what should be researched next.
 
@@ -70,14 +70,14 @@ The public side of the app lets people browse claims, findings, sources, reports
 - **Finding**: a specific source-backed observation.
 - **Claim**: a public interpretation that must point back to findings and sources.
 - **Candidate bundle**: a proposed set of changes waiting for review.
-- **Evidence review**: a structured check before publication.
+- **Evidence appraisal**: a structured check before publication.
 - **Report artifact**: a Markdown synthesis or literature review connected to the evidence graph.
-- **Planning state**: generated queues showing what needs bootstrap research or surveillance updates.
-- **Domain pack**: the configuration that adapts the workbench to a subject area.
+- **Planning state**: generated queues showing what needs baseline review research or review updates.
+- **Domain pack**: the configuration that adapts the studio to a subject area.
 
 ## What Is In This Repository
 
-The `main` branch is intended to hold the reusable workbench platform, not every active research project.
+The `main` branch is intended to hold the reusable studio platform, not every active research project.
 
 It contains:
 
@@ -102,30 +102,30 @@ A practical first path looks like this:
    Run the app with the default `sample-research` domain so you can see how sources, findings, claims, reports, review state, and planning queues appear in the UI.
 
 2. **Describe the research job in ordinary language.**
-   Tell the agent what kind of research you want the workbench to support, who the audience is, what kinds of sources matter, what questions you expect to answer, and what would make a claim trustworthy.
+   Tell the agent what kind of research you want the studio to support, who the audience is, what kinds of sources matter, what questions you expect to answer, and what would make a claim trustworthy.
 
 3. **Create a domain pack before doing research.**
-   The domain pack is the foundation for a new use case. It defines the topic taxonomy, evidence ladder, extraction fields, review lanes, public labels, and domain-specific agent instructions. This is where the workbench becomes specific to a literature review, policy area, product research workflow, or other domain.
+   The domain pack is the foundation for a new use case. It defines the topic taxonomy, evidence ladder, extraction fields, appraisal lanes, public labels, and domain-specific agent instructions. This is where the studio becomes specific to a literature review, policy area, product research workflow, or other domain.
 
 4. **Keep the first version small.**
    Start with a few scope units in the taxonomy and one bounded research question. The goal is to prove that the structure fits the domain before building a large corpus.
 
 5. **Run one complete research pass.**
-   Have the agent gather sources, extract findings, stage records in a candidate bundle, complete evidence reviews, publish approved records, and sync planning state. This first pass tests the full loop.
+   Have the agent gather sources, extract findings, stage records in a candidate bundle, complete evidence appraisals, publish approved records, and sync planning state. This first pass tests the full loop.
 
 6. **Use the UI to inspect the result.**
    Browse the claim pages, source pages, report pages, methods page, and admin review state. The UI is part of the research process: it shows whether the agent's work is understandable and whether the evidence can be audited.
 
 7. **Adjust the domain pack and workflows.**
-   If the first pass exposes missing extraction fields, unclear review lanes, awkward labels, or unsupported source types, update the domain pack and tests before scaling up.
+   If the first pass exposes missing extraction fields, unclear appraisal lanes, awkward labels, or unsupported source types, update the domain pack and tests before scaling up.
 
 8. **Separate reusable improvements from research output.**
-   If adapting the workbench requires a feature that would help every domain, put that work on a `core/*` branch. Keep domain-specific records, reports, and planning state on a `research/*` branch.
+   If adapting the studio requires a feature that would help every domain, put that work on a `core/*` branch. Keep domain-specific records, reports, and planning state on a `research/*` branch.
 
 A useful prompt for the agent is:
 
 ```text
-I want to adapt Evidence Workbench for <research domain>. Read the README, domain pack contract, operator guide, and branching strategy. Help me design a small first domain pack, choose one bounded research question, and run one complete research pass. Keep reusable platform changes separate from domain-specific research records.
+I want to adapt Lit Review Studio for <research domain>. Read the README, domain pack contract, operator guide, and branching strategy. Help me design a small first domain pack, choose one bounded research question, and run one complete research pass. Keep reusable platform changes separate from domain-specific research records.
 ```
 
 ## Quick Start For Operators
@@ -149,7 +149,7 @@ Run the local app:
 npm run dev
 ```
 
-The default active domain is configured in `workbench.config.json`. Override it for commands with `WORKBENCH_DOMAIN=<domain-id>`.
+The default active domain is configured in `lit-review-studio.config.json`. Override it for commands with `LIT_REVIEW_STUDIO_DOMAIN=<domain-id>`.
 
 ## Common Commands
 
@@ -204,14 +204,14 @@ The durable framework documentation lives under `docs/`:
 ```text
 data/                         Published and staged evidence records
 docs/                         Durable framework and operator documentation
-domain-packs/                 Domain taxonomies, review lanes, copy, and skill adapters
+domain-packs/                 Domain taxonomies, appraisal lanes, copy, and skill adapters
 research/                     Research sessions, planning state, and syntheses
 schemas/                      JSON Schema contracts
 scripts/                      Validation, planning, search, bundle, and audit CLIs
 skills/                       Reusable agent workflow skills
-src/                          Next.js public/admin workbench
+src/                          Next.js public/admin studio
 tests/                        Node test suite
-workbench.config.json         Default active domain
+lit-review-studio.config.json         Default active domain
 ```
 
 ## Branching Model
@@ -219,7 +219,7 @@ workbench.config.json         Default active domain
 Use branches to keep platform improvements separate from research output:
 
 - `main`: stable platform, fixtures, schemas, reusable skills, docs, and tests
-- `core/<feature>`: short-lived branches for reusable workbench improvements
+- `core/<feature>`: short-lived branches for reusable studio improvements
 - `research/<domain-or-question>`: long-lived branches for domain corpora, syntheses, sessions, and generated planning state
 
 When a research branch produces a reusable improvement, harvest it into a `core/*` branch from `main`, validate it, merge it back to `main`, then merge `main` back into the research branch. See the [branching strategy](docs/branching-strategy.md) for the full process.

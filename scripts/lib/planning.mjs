@@ -21,7 +21,7 @@ function titleCaseFromIdentifier(value) {
 }
 
 function buildDefaultQuestion(scopeName, scopeUnitLabel, mode, domainName) {
-  if (mode === "bootstrap") {
+  if (mode === "baseline_review") {
     return `What is the current evidence landscape for ${scopeName} in ${domainName}, and what belongs in the first public baseline for this ${scopeUnitLabel}?`;
   }
 
@@ -152,9 +152,9 @@ function getQueueState({ activeReview, freshnessStatus, hasBaseline, latestSessi
   return freshnessStatus === "stale" || freshnessStatus === "unknown" ? "ready" : "deferred";
 }
 
-function getSurveillanceRationale(row) {
+function getReviewUpdateRationale(row) {
   if (row.freshness_status === "unknown") {
-    return "A public baseline exists, but planning cannot find a reliable dated check; run surveillance to refresh coverage state.";
+    return "A public baseline exists, but planning cannot find a reliable dated check; run a review update to refresh coverage state.";
   }
 
   if (row.freshness_status === "stale") {
@@ -165,15 +165,15 @@ function getSurveillanceRationale(row) {
 }
 
 function getNextQueueItem(status, mode) {
-  if (mode === "bootstrap") {
-    return status.queues.bootstrap[0] ?? null;
+  if (mode === "baseline_review") {
+    return status.queues.baseline_review[0] ?? null;
   }
 
-  if (mode === "surveillance") {
-    return status.queues.surveillance[0] ?? null;
+  if (mode === "review_update") {
+    return status.queues.review_update[0] ?? null;
   }
 
-  return status.queues.bootstrap[0] ?? status.queues.surveillance[0] ?? null;
+  return status.queues.baseline_review[0] ?? status.queues.review_update[0] ?? null;
 }
 
 export async function readPlanningStatus() {
@@ -182,8 +182,8 @@ export async function readPlanningStatus() {
   const priorityQueuePath = path.join(workspaceRoot, "research", "backlog", "priority-queue.v1.json");
   const coverage = (await fileExists(coveragePath)) ? await readJson(coveragePath) : undefined;
   const priorityQueue = (await fileExists(priorityQueuePath)) ? await readJson(priorityQueuePath) : undefined;
-  const bootstrapQueue = priorityQueue?.bootstrap_queue ?? [];
-  const surveillanceQueue = priorityQueue?.surveillance_queue ?? [];
+  const baselineReviewQueue = priorityQueue?.baseline_review_queue ?? [];
+  const reviewUpdateQueue = priorityQueue?.review_update_queue ?? [];
   const status = {
     domain_id: domainPack.domain.id,
     coverage_path: "research/state/coverage-status.v1.json",
@@ -196,17 +196,17 @@ export async function readPlanningStatus() {
     updated_at: priorityQueue?.updated_at ?? coverage?.updated_at,
     selection_policy: priorityQueue?.selection_policy ?? coverage?.selection_policy,
     queue_counts: {
-      bootstrap: bootstrapQueue.length,
-      surveillance: surveillanceQueue.length
+      baseline_review: baselineReviewQueue.length,
+      review_update: reviewUpdateQueue.length
     },
     queues: {
-      bootstrap: bootstrapQueue,
-      surveillance: surveillanceQueue
+      baseline_review: baselineReviewQueue,
+      review_update: reviewUpdateQueue
     },
     next: {
-      bootstrap: getNextQueueItem({ queues: { bootstrap: bootstrapQueue, surveillance: surveillanceQueue } }, "bootstrap"),
-      surveillance: getNextQueueItem({ queues: { bootstrap: bootstrapQueue, surveillance: surveillanceQueue } }, "surveillance"),
-      recommended: getNextQueueItem({ queues: { bootstrap: bootstrapQueue, surveillance: surveillanceQueue } })
+      baseline_review: getNextQueueItem({ queues: { baseline_review: baselineReviewQueue, review_update: reviewUpdateQueue } }, "baseline_review"),
+      review_update: getNextQueueItem({ queues: { baseline_review: baselineReviewQueue, review_update: reviewUpdateQueue } }, "review_update"),
+      recommended: getNextQueueItem({ queues: { baseline_review: baselineReviewQueue, review_update: reviewUpdateQueue } })
     }
   };
 
@@ -221,7 +221,7 @@ export async function readPlanningStatus() {
 
 export { getNextQueueItem };
 
-function compareSurveillancePriority(left, right) {
+function compareReviewUpdatePriority(left, right) {
   const statusRank = { unknown: 0, stale: 1 };
   const leftRank = statusRank[left.freshness_status] ?? 9;
   const rightRank = statusRank[right.freshness_status] ?? 9;
@@ -301,7 +301,7 @@ export async function syncResearchPlanning(options = {}) {
     const activeReview = latestBundle && !isTerminalBundleStatus(latestBundle.lifecycle_status);
     const hasBaseline = Boolean(claim || latestPublication || latestBundle?.lifecycle_status === "published");
     const coverageStatus = hasBaseline ? "baseline" : activeReview ? "in_review" : "not_started";
-    const nextMode = latestSession?.next_recommended_mode ?? (hasBaseline ? "surveillance" : "bootstrap");
+    const nextMode = latestSession?.next_recommended_mode ?? (hasBaseline ? "review_update" : "baseline_review");
     const freshness = getFreshness({
       activeReview,
       claim,
@@ -325,7 +325,7 @@ export async function syncResearchPlanning(options = {}) {
     } else if (freshness.freshness_status === "stale" || freshness.freshness_status === "unknown") {
       notes = freshness.stale_reason;
     } else if (freshness.freshness_status === "fresh") {
-      notes = `${freshness.stale_reason} Next surveillance is due at ${freshness.stale_at}.`;
+      notes = `${freshness.stale_reason} Next review update is due at ${freshness.stale_at}.`;
     } else if (latestPublication) {
       notes = `Latest publication event: ${latestPublication.id}.`;
     } else if (latestSession) {
@@ -333,7 +333,7 @@ export async function syncResearchPlanning(options = {}) {
     } else if (claim) {
       notes = "A public claim exists for this topic.";
     } else {
-      notes = "No public baseline has been bootstrapped yet.";
+      notes = "No public baseline review has been completed yet.";
     }
 
     return {
@@ -369,26 +369,26 @@ export async function syncResearchPlanning(options = {}) {
     return output;
   };
 
-  const bootstrapQueue = coverageRows
-    .filter((row) => row.next_mode === "bootstrap" && row.queue_state === "ready")
+  const baselineReviewQueue = coverageRows
+    .filter((row) => row.next_mode === "baseline_review" && row.queue_state === "ready")
     .map((row, index) => ({
       rank: index + 1,
       taxonomy_node_id: row.taxonomy_node_id,
       priority_tier: index < 3 ? "now" : index < 8 ? "soon" : "later",
-      default_mode: "bootstrap",
-      rationale: `This ${scopeUnitLabel} lacks a public baseline and is ready for a bounded bootstrap pass.`,
+      default_mode: "baseline_review",
+      rationale: `This ${scopeUnitLabel} lacks a public baseline and is ready for a bounded baseline review pass.`,
       default_question: row.default_research_question
     }));
 
-  const surveillanceQueue = coverageRows
-    .filter((row) => row.next_mode === "surveillance" && row.queue_state === "ready")
-    .sort(compareSurveillancePriority)
+  const reviewUpdateQueue = coverageRows
+    .filter((row) => row.next_mode === "review_update" && row.queue_state === "ready")
+    .sort(compareReviewUpdatePriority)
     .map((row, index) => ({
       rank: index + 1,
       taxonomy_node_id: row.taxonomy_node_id,
       priority_tier: index < 3 ? "now" : index < 8 ? "soon" : "later",
-      default_mode: "surveillance",
-      rationale: getSurveillanceRationale(row),
+      default_mode: "review_update",
+      rationale: getReviewUpdateRationale(row),
       default_question: row.default_research_question,
       freshness_status: row.freshness_status,
       last_checked_at: row.last_checked_at,
@@ -412,8 +412,8 @@ export async function syncResearchPlanning(options = {}) {
     selection_policy: {
       default_unit: scopeUnit,
       stale_after_days: staleAfterDays,
-      max_scope_units_per_bootstrap_run: 1,
-      max_scope_units_per_surveillance_run: 1,
+      max_scope_units_per_baseline_review_run: 1,
+      max_scope_units_per_review_update_run: 1,
       when_request_is_too_broad: `Decompose to one ${scopeUnitLabel}-level pass before creating records.`
     },
     nodes: coverageRows.map(pruneUndefined)
@@ -426,8 +426,8 @@ export async function syncResearchPlanning(options = {}) {
     taxonomy_version: domainPack.taxonomy.taxonomy_version,
     updated_at: timestamp,
     notes: [
-      `Bootstrap priority applies to uncovered ${scopeUnitLabel}s.`,
-      `Surveillance priority applies to stale ${scopeUnitLabel}s with public baseline coverage and no active review bundle.`
+      `Baseline Review priority applies to uncovered ${scopeUnitLabel}s.`,
+      `Review Update priority applies to stale ${scopeUnitLabel}s with public baseline coverage and no active review bundle.`
     ],
     selection_policy: {
       default_unit: scopeUnit,
@@ -435,8 +435,8 @@ export async function syncResearchPlanning(options = {}) {
       when_request_is_vague: `Choose the highest-priority ready ${scopeUnitLabel} from the queue matching the requested mode.`,
       when_request_is_too_broad: `Narrow the work to one ${scopeUnitLabel} before starting.`
     },
-    bootstrap_queue: bootstrapQueue,
-    surveillance_queue: surveillanceQueue
+    baseline_review_queue: baselineReviewQueue,
+    review_update_queue: reviewUpdateQueue
   };
 
   await writeJson(path.join(workspaceRoot, "research", "state", "coverage-status.v1.json"), coverageStatus);
@@ -446,7 +446,7 @@ export async function syncResearchPlanning(options = {}) {
     coverage_path: "research/state/coverage-status.v1.json",
     priority_queue_path: "research/backlog/priority-queue.v1.json",
     coverage_node_count: coverageRows.length,
-    bootstrap_queue_count: bootstrapQueue.length,
-    surveillance_queue_count: surveillanceQueue.length
+    baseline_review_queue_count: baselineReviewQueue.length,
+    review_update_queue_count: reviewUpdateQueue.length
   };
 }

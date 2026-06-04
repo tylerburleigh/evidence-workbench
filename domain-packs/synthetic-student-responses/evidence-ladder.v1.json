@@ -32,15 +32,15 @@
       "description": "A literature-review claim is backed by a support map citing concrete findings and sources.",
       "minimum_support_expected": "The claim names the review question, cites supporting findings and sources, and separates evidence about generation, evaluation, and scorer-validation use.",
       "common_overclaim_risk": "Generalizing across tasks, rubrics, grade bands, models, or prompt regimes that were not jointly studied.",
-      "moves_to_next_stage": "Complete required evidence-review lanes for source fidelity, construct mapping, method classification, relevance, and synthesis overreach."
+      "moves_to_next_stage": "Complete required evidence-appraisal lanes for source fidelity, construct mapping, method classification, relevance, and synthesis overreach."
     },
     {
       "id": "reviewed_literature_baseline",
       "label": "Reviewed Literature Baseline",
-      "description": "The synthesis claim and supporting records have passed required literature-review gates and can be published.",
-      "minimum_support_expected": "All required review lanes accept the bundle with no blocking findings.",
+      "description": "The synthesis claim and supporting records have passed required literature-appraisal gates and can be published.",
+      "minimum_support_expected": "All required appraisal lanes accept the bundle with no blocking findings.",
       "common_overclaim_risk": "Treating a reviewed baseline as complete or permanently current in a fast-moving LLM literature.",
-      "moves_to_next_stage": "Run surveillance after the configured stale window or when material new work appears."
+      "moves_to_next_stage": "Run a review update after the configured stale window or when material new work appears."
     }
   ]
 }

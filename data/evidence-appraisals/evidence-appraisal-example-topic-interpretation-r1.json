@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-example-topic-interpretation-r1",
+  "name": "Interpretation Review For Example Topic Bundle",
+  "candidate_bundle_id": "example-topic-baseline-review-2026-05-31",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "interpretation",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged claim is visibly bounded to fixture workflow validation and does not imply real-domain evidence.",
+  "appraised_change_ids": [
+    "create-sample-source",
+    "create-sample-artifact",
+    "create-sample-finding",
+    "create-sample-claim"
+  ],
+  "findings": [],
+  "created_at": "2026-05-31T12:06:00Z",
+  "updated_at": "2026-05-31T12:06:00Z"
+}

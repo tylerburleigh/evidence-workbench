@@ -6,11 +6,11 @@ import {
   getFindingsForNode,
   getScopeNodes,
   getScopePluralLabel,
-  getWorkbenchData
+  getStudioData
 } from "../../lib/public-data.js";
 
 export default async function TopicsPage() {
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const nodes = getScopeNodes(data);
   const scopePlural = getScopePluralLabel(data);
 

@@ -7,12 +7,12 @@ import {
   getFindingById,
   getNodeById,
   getSourceById,
-  getWorkbenchData
+  getStudioData
 } from "../../../lib/public-data.js";
 
 export default async function ClaimDetailPage({ params }) {
   const { claimId } = await params;
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const claim = getClaimById(data, claimId);
   if (!claim) {
     notFound();

@@ -13,7 +13,7 @@ const planningModulePath = path.join(repoRoot, "scripts/lib/planning.mjs");
 const planningScriptPath = path.join(repoRoot, "scripts/research-planning.mjs");
 
 async function createWorkspace() {
-  const workspace = await mkdtemp(path.join(tmpdir(), "evidence-workbench-planning-"));
+  const workspace = await mkdtemp(path.join(tmpdir(), "lit-review-studio-planning-"));
   await Promise.all(
     ["data", "domain-packs", "research", "schemas"].map((entry) =>
       cp(path.join(repoRoot, entry), path.join(workspace, entry), { recursive: true })
@@ -66,9 +66,9 @@ async function ageSampleResearchBaseline(workspace) {
   const oldDate = "2026-01-01";
   const files = [
     "data/claims/sample-claim-example-topic-baseline.json",
-    "data/candidate-bundles/example-topic-bootstrap-2026-05-31.json",
-    "research/sessions/example-topic-bootstrap-2026-05-31.json",
-    "data/publication-events/publish-example-topic-bootstrap-2026-05-31-2026-05-31t22-52-32-459z.json"
+    "data/candidate-bundles/example-topic-baseline-review-2026-05-31.json",
+    "research/sessions/example-topic-baseline-review-2026-05-31.json",
+    "data/publication-events/publish-example-topic-baseline-review-2026-05-31-2026-05-31t22-52-32-459z.json"
   ];
 
   for (const relativePath of files) {
@@ -97,34 +97,34 @@ async function ageSampleResearchBaseline(workspace) {
 
 test("planning defers fresh baseline coverage until the stale threshold", async () => {
   await withWorkspace(async (workspace) => {
-    await runPlanningSync(workspace, { WORKBENCH_DOMAIN: "sample-research" });
+    await runPlanningSync(workspace, { LIT_REVIEW_STUDIO_DOMAIN: "sample-research" });
 
     const coverage = await readWorkspaceJson(workspace, "research/state/coverage-status.v1.json");
     const queue = await readWorkspaceJson(workspace, "research/backlog/priority-queue.v1.json");
     const row = coverage.nodes.find((node) => node.taxonomy_node_id === "example-topic");
 
     assert.equal(row.coverage_status, "baseline");
-    assert.equal(row.next_mode, "surveillance");
+    assert.equal(row.next_mode, "review_update");
     assert.equal(row.queue_state, "deferred");
     assert.equal(row.freshness_status, "fresh");
     assert.equal(row.stale_after_days, 90);
     assert.equal(row.days_since_last_check, 0);
-    assert.equal(queue.surveillance_queue.some((item) => item.taxonomy_node_id === "example-topic"), false);
+    assert.equal(queue.review_update_queue.some((item) => item.taxonomy_node_id === "example-topic"), false);
   });
 });
 
-test("planning moves stale baseline coverage into the surveillance queue", async () => {
+test("planning moves stale baseline coverage into the Review Update queue", async () => {
   await withWorkspace(async (workspace) => {
     await ageSampleResearchBaseline(workspace);
-    await runPlanningSync(workspace, { WORKBENCH_DOMAIN: "sample-research" });
+    await runPlanningSync(workspace, { LIT_REVIEW_STUDIO_DOMAIN: "sample-research" });
 
     const coverage = await readWorkspaceJson(workspace, "research/state/coverage-status.v1.json");
     const queue = await readWorkspaceJson(workspace, "research/backlog/priority-queue.v1.json");
     const row = coverage.nodes.find((node) => node.taxonomy_node_id === "example-topic");
-    const queueItem = queue.surveillance_queue.find((item) => item.taxonomy_node_id === "example-topic");
+    const queueItem = queue.review_update_queue.find((item) => item.taxonomy_node_id === "example-topic");
 
     assert.equal(row.coverage_status, "baseline");
-    assert.equal(row.next_mode, "surveillance");
+    assert.equal(row.next_mode, "review_update");
     assert.equal(row.queue_state, "ready");
     assert.equal(row.freshness_status, "stale");
     assert.equal(row.stale_after_days, 90);
@@ -132,44 +132,44 @@ test("planning moves stale baseline coverage into the surveillance queue", async
     assert.equal(row.stale_at, "2026-04-01T00:00:00.000Z");
     assert.ok(row.stale_reason.includes("stale after 90 days"));
 
-    assert.equal(queueItem.default_mode, "surveillance");
+    assert.equal(queueItem.default_mode, "review_update");
     assert.equal(queueItem.freshness_status, "stale");
     assert.equal(queueItem.days_since_last_check, 151);
     assert.ok(queueItem.rationale.includes("Baseline coverage is stale"));
   });
 });
 
-test("planning CLI exposes normalized queue paths and bootstrap next state", async () => {
+test("planning CLI exposes normalized queue paths and baseline_review next state", async () => {
   await withWorkspace(async (workspace) => {
-    await runPlanningSync(workspace, { WORKBENCH_DOMAIN: "sample-research" });
+    await runPlanningSync(workspace, { LIT_REVIEW_STUDIO_DOMAIN: "sample-research" });
 
     const { stdout: statusStdout } = await execFileAsync(process.execPath, [planningScriptPath, "status"], {
       cwd: workspace,
       env: {
         ...process.env,
-        WORKBENCH_DOMAIN: "sample-research"
+        LIT_REVIEW_STUDIO_DOMAIN: "sample-research"
       }
     });
     const status = JSON.parse(statusStdout);
 
     assert.equal(status.domain_id, "sample-research");
     assert.equal(status.domain_matches, true);
-    assert.ok(Array.isArray(status.queues.bootstrap));
-    assert.ok(Array.isArray(status.queues.surveillance));
-    assert.equal(status.queue_counts.bootstrap, status.queues.bootstrap.length);
+    assert.ok(Array.isArray(status.queues.baseline_review));
+    assert.ok(Array.isArray(status.queues.review_update));
+    assert.equal(status.queue_counts.baseline_review, status.queues.baseline_review.length);
 
-    const { stdout: nextStdout } = await execFileAsync(process.execPath, [planningScriptPath, "next", "--mode", "bootstrap"], {
+    const { stdout: nextStdout } = await execFileAsync(process.execPath, [planningScriptPath, "next", "--mode", "baseline_review"], {
       cwd: workspace,
       env: {
         ...process.env,
-        WORKBENCH_DOMAIN: "sample-research"
+        LIT_REVIEW_STUDIO_DOMAIN: "sample-research"
       }
     });
     const next = JSON.parse(nextStdout);
 
-    assert.equal(next.mode, "bootstrap");
-    if (status.next.bootstrap) {
-      assert.equal(next.item.taxonomy_node_id, status.next.bootstrap.taxonomy_node_id);
+    assert.equal(next.mode, "baseline_review");
+    if (status.next.baseline_review) {
+      assert.equal(next.item.taxonomy_node_id, status.next.baseline_review.taxonomy_node_id);
     } else {
       assert.equal(next.item, null);
     }

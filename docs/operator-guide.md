@@ -9,8 +9,8 @@ Use it when the framework already exists and the task is to onboard a new resear
 The successful end state is:
 
 - a valid `domain-packs/<domain-id>/` directory
-- one bounded bootstrap bundle for one taxonomy scope unit
-- required evidence reviews completed
+- one bounded baseline review bundle for one taxonomy scope unit
+- required evidence appraisals completed
 - the bundle approved and published through `scripts/bundle.mjs`
 - planning state synced
 - public and admin routes smoke-tested
@@ -18,7 +18,7 @@ The successful end state is:
 
 ## Operating Rules
 
-- Work on one taxonomy scope unit per bootstrap run.
+- Work on one taxonomy scope unit per baseline review run.
 - Keep domain vocabulary inside the domain pack, records, and skill adapters.
 - Do not add core code unless the new domain exposes a true framework bug.
 - Do not publish model output directly into live records.
@@ -36,13 +36,13 @@ domain-packs/<domain-id>/
   taxonomy.v1.json
   evidence-ladder.v1.json
   extraction-schema.v1.json
-  review-lanes.v1.json
+  appraisal-lanes.v1.json
   public-copy.v1.json
   skills/
-    bootstrap.md
-    surveillance.md
-    evidence-review.md
-    editorial-review.md
+    baseline-review.md
+    review-update.md
+    evidence-appraisal.md
+    editorial-decision.md
     synthesis.md
 ```
 
@@ -52,21 +52,21 @@ Minimum checks:
 
 - `domain.json` IDs and file names match the directory contents.
 - `default_scope_unit` matches at least one taxonomy node type.
-- `default_review_lanes` are present in `review-lanes.v1.json`.
+- `default_appraisal_lanes` are present in `appraisal-lanes.v1.json`.
 - Public copy provides labels for the configured scope unit.
 - Skill adapters add domain-specific discipline without restating the whole core workflow.
 
 Run:
 
 ```bash
-WORKBENCH_DOMAIN=<domain-id> npm run sync:research-planning
+LIT_REVIEW_STUDIO_DOMAIN=<domain-id> npm run sync:research-planning
 npm run validate
 npm test
 ```
 
-The first planning sync should place uncovered scope units into the bootstrap queue.
+The first planning sync should place uncovered scope units into the Baseline Review queue.
 
-## 2. Select One Bootstrap Scope
+## 2. Select One Baseline Review Scope
 
 Read:
 
@@ -75,13 +75,13 @@ cat research/backlog/priority-queue.v1.json
 cat research/state/coverage-status.v1.json
 ```
 
-Choose one `bootstrap_queue` item. If a user asks for a whole field, narrow the run to the highest-priority ready scope unit.
+Choose one `baseline_review_queue` item. If a user asks for a whole field, narrow the run to the highest-priority ready scope unit.
 
 Record the research question from the queue unless there is a better bounded question for the same scope.
 
 ## 3. Gather Source-Backed Evidence
 
-For a baseline bootstrap, prefer stable primary or official sources:
+For a baseline review, prefer stable primary or official sources:
 
 - specifications
 - standards
@@ -92,7 +92,7 @@ For a baseline bootstrap, prefer stable primary or official sources:
 When the run involves source discovery, scaffold a search protocol before drafting findings:
 
 ```bash
-WORKBENCH_DOMAIN=<domain-id> npm run research:search -- scaffold \
+LIT_REVIEW_STUDIO_DOMAIN=<domain-id> npm run research:search -- scaffold \
   --bundle <bundle-id> \
   --id <search-protocol-id> \
   --name "<search protocol name>" \
@@ -104,7 +104,7 @@ WORKBENCH_DOMAIN=<domain-id> npm run research:search -- scaffold \
 Record screening decisions as sources are included, deferred, or excluded:
 
 ```bash
-WORKBENCH_DOMAIN=<domain-id> npm run research:search -- screen \
+LIT_REVIEW_STUDIO_DOMAIN=<domain-id> npm run research:search -- screen \
   --bundle <bundle-id> \
   --id <search-protocol-id> \
   --title "<candidate title>" \
@@ -175,13 +175,13 @@ The candidate bundle should include:
 - `scope.taxonomy_node_ids`
 - `source_ids` and `source_urls`
 - one `proposed_changes` entry per staged record
-- required review lanes
+- required appraisal lanes
 - review requirement policy
-- evidence review IDs, once reviews exist
+- evidence appraisal IDs, once appraisals exist
 
 The research session should include:
 
-- `mode: "bootstrap"`
+- `mode: "baseline_review"`
 - the same domain and taxonomy scope
 - `outcome: "candidate_bundle"`
 - source IDs and URLs
@@ -191,24 +191,24 @@ Keep timestamps coherent:
 
 - session starts before it completes
 - bundle submission follows the session
-- evidence reviews follow submission
+- evidence appraisals follow submission
 - publication follows approval
 
-## 6. Complete Evidence Reviews
+## 6. Complete Evidence Appraisals
 
-For each required review lane, create one `data/evidence-reviews/<review-id>.json` record for the current bundle revision.
+For each required appraisal lane, create one `data/evidence-appraisals/<appraisal-id>.json` record for the current bundle revision.
 
 Each review must identify:
 
 - bundle ID
 - revision number
-- review lane
+- appraisal lane
 - verdict
 - blocking status
 - reviewed change IDs
 - structured findings, even if empty
 
-Required review lanes come from the domain pack. For example, the software supply-chain pack requires:
+Required appraisal lanes come from the domain pack. For example, the software supply-chain pack requires:
 
 ```text
 source_fidelity
@@ -220,7 +220,7 @@ operational_boundary
 Run:
 
 ```bash
-WORKBENCH_DOMAIN=<domain-id> npm run research:bundle -- status --bundle <bundle-id>
+LIT_REVIEW_STUDIO_DOMAIN=<domain-id> npm run research:bundle -- status --bundle <bundle-id>
 npm run validate
 ```
 
@@ -228,21 +228,21 @@ Do not approve until:
 
 - bundle validation is ready
 - promotion is ready
-- every required lane has the minimum complete accepting reviews
-- there are no open blocking review findings
+- every required lane has the minimum complete accepting appraisals
+- there are no open blocking appraisal findings
 
 ## 7. Approve And Publish
 
 Approve:
 
 ```bash
-WORKBENCH_DOMAIN=<domain-id> npm run research:bundle -- approve --bundle <bundle-id>
+LIT_REVIEW_STUDIO_DOMAIN=<domain-id> npm run research:bundle -- approve --bundle <bundle-id>
 ```
 
 Publish:
 
 ```bash
-WORKBENCH_DOMAIN=<domain-id> npm run research:bundle -- publish --bundle <bundle-id> --published-by <operator-id>
+LIT_REVIEW_STUDIO_DOMAIN=<domain-id> npm run research:bundle -- publish --bundle <bundle-id> --published-by <operator-id>
 ```
 
 Publication should:
@@ -279,7 +279,7 @@ Do not leave parallel current literature reviews for the same paper-facing scope
 Run:
 
 ```bash
-WORKBENCH_DOMAIN=<domain-id> npm run sync:research-planning
+LIT_REVIEW_STUDIO_DOMAIN=<domain-id> npm run sync:research-planning
 ```
 
 Inspect:
@@ -289,13 +289,13 @@ cat research/state/coverage-status.v1.json
 cat research/backlog/priority-queue.v1.json
 ```
 
-Expected bootstrap completion state:
+Expected Baseline Review completion state:
 
 - the published scope has `coverage_status: "baseline"`
 - `last_checked_source` is usually `publication`
-- `next_mode` is `surveillance`
-- uncovered scope units remain in `bootstrap_queue`
-- stale covered scope units appear in `surveillance_queue`
+- `next_mode` is `review_update`
+- uncovered scope units remain in `baseline_review_queue`
+- stale covered scope units appear in `review_update_queue`
 
 ## 10. Update Tests And Docs
 
@@ -326,8 +326,8 @@ npm run build
 Then smoke public routes with the domain active:
 
 ```bash
-WORKBENCH_DOMAIN=<domain-id> npm run start -- -p 3002
-WORKBENCH_DOMAIN=<domain-id> npm run smoke:routes
+LIT_REVIEW_STUDIO_DOMAIN=<domain-id> npm run start -- -p 3002
+LIT_REVIEW_STUDIO_DOMAIN=<domain-id> npm run smoke:routes
 ```
 
 Stop the server and confirm the port is clear:
@@ -352,7 +352,7 @@ Commit the domain pack or bundle as one coherent unit. A good commit contains:
 
 - domain-pack config and skill files, or one published baseline bundle
 - staged records and live records when publication happened
-- evidence reviews
+- evidence appraisals
 - publication event
 - research session
 - planning state
@@ -368,20 +368,20 @@ Use [branching-strategy.md](branching-strategy.md) to decide what belongs in a s
 
 Use the next planning queue item as the handoff:
 
-- if bootstrap queue is non-empty, continue with the next uncovered scope unit
-- if bootstrap queue is empty, write operator docs, start a new domain, or wait for surveillance staleness/material change
+- if Baseline Review queue is non-empty, continue with the next uncovered scope unit
+- if Baseline Review queue is empty, write operator docs, start a new domain, or wait for review update staleness/material change
 
 ## Worked Pattern From `software-supply-chain`
 
 The completed downstream rehearsal used this sequence:
 
 1. Added a `software-supply-chain` domain pack with `control` as the default scope unit.
-2. Bootstrapped `release-provenance-control` from the SLSA Build Provenance specification.
-3. Bootstrapped `dependency-exposure-control` from OpenSSF Scorecard dependency-related checks.
-4. Bootstrapped `maintenance-signal-control` from OpenSSF Scorecard maintenance-related checks.
-5. Completed all required evidence review lanes for each bundle.
+2. Completed a baseline review for `release-provenance-control` from the SLSA Build Provenance specification.
+3. Completed a baseline review for `dependency-exposure-control` from OpenSSF Scorecard dependency-related checks.
+4. Completed a baseline review for `maintenance-signal-control` from OpenSSF Scorecard maintenance-related checks.
+5. Completed all required evidence appraisal lanes for each bundle.
 6. Published all three bundles through the bundle workflow.
 7. Synced planning so every configured control has fresh baseline coverage.
-8. Smoke-tested the public and admin route inventory under `WORKBENCH_DOMAIN=software-supply-chain`.
+8. Smoke-tested the public and admin route inventory under `LIT_REVIEW_STUDIO_DOMAIN=software-supply-chain`.
 
 That pattern is the reference for future downstream domains: a domain pack proves vocabulary and workflow fit, then one bounded source-backed baseline proves the publication path for each configured scope unit.

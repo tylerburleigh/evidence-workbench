@@ -12,7 +12,7 @@ const repoRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const validateScriptPath = path.join(repoRoot, "scripts/validate-records.mjs");
 
 async function createWorkspace() {
-  const workspace = await mkdtemp(path.join(tmpdir(), "evidence-workbench-validation-"));
+  const workspace = await mkdtemp(path.join(tmpdir(), "lit-review-studio-validation-"));
   await Promise.all(
     ["data", "domain-packs", "research", "schemas"].map((entry) =>
       cp(path.join(repoRoot, entry), path.join(workspace, entry), { recursive: true })
@@ -52,9 +52,9 @@ async function writeValidationFixtureDomain(workspace) {
     taxonomy_file: "taxonomy.v1.json",
     evidence_ladder_file: "evidence-ladder.v1.json",
     extraction_schema_file: "extraction-schema.v1.json",
-    review_lanes_file: "review-lanes.v1.json",
+    appraisal_lanes_file: "appraisal-lanes.v1.json",
     public_copy_file: "public-copy.v1.json",
-    default_review_lanes: ["fixture_review"],
+    default_appraisal_lanes: ["fixture_review"],
     applicability_facets: [
       {
         id: "fixture_context_type",
@@ -100,14 +100,14 @@ async function writeValidationFixtureDomain(workspace) {
     ]
   });
 
-  await writeWorkspaceJson(workspace, `domain-packs/${validationDomainId}/review-lanes.v1.json`, {
-    id: "validation-fixture-review-lanes",
+  await writeWorkspaceJson(workspace, `domain-packs/${validationDomainId}/appraisal-lanes.v1.json`, {
+    id: "validation-fixture-appraisal-lanes",
     domain_id: validationDomainId,
     lanes: [
       {
         id: "fixture_review",
         label: "Fixture Review",
-        description: "A temporary review lane.",
+        description: "A temporary appraisal lane.",
         required_by_default: true
       }
     ]

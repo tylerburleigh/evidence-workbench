@@ -1,5 +1,5 @@
 import { pathToFileURL } from "node:url";
-import { loadDomainWorkbenchData } from "./lib/workbench-data.mjs";
+import { loadDomainStudioData } from "./lib/studio-data.mjs";
 
 const defaultBaseUrl = process.env.PUBLIC_BASE_URL ?? "http://localhost:3002";
 
@@ -63,7 +63,7 @@ export function buildRouteChecks(data) {
   const bundles = records(data.collections.candidateBundles);
   const reportArtifacts = records(data.collections.reportArtifacts);
 
-  addRoute(routes, "/", ["Evidence Workbench", data.domainPack.domain.name, "Record Index", "Published Claims"]);
+  addRoute(routes, "/", ["Lit Review Studio", data.domainPack.domain.name, "Record Index", "Published Claims"]);
   addRoute(routes, "/scope", ["Scope Index", scopePlural]);
   addRoute(routes, "/claims", ["Public Records", "Claims"]);
   addRoute(routes, "/findings", ["Public Records", "Findings"]);
@@ -82,7 +82,7 @@ export function buildRouteChecks(data) {
     "Access-Limited Screened Sources"
   ]);
   addRoute(routes, "/methods", ["Trust Model", "Evidence Ladder", "Review Process"]);
-  addRoute(routes, "/admin/review", ["Candidate Bundle Queue", "Review Queue", "Review Surface"]);
+  addRoute(routes, "/admin/review", ["Candidate Bundle Queue", "Bundle Queue", "Review Surface"]);
 
   for (const node of scopeNodes) {
     addRoute(routes, `/scope/${node.id}`, [node.name, "Claims", "Bundle State", "Findings", "Artifacts", "Sources"]);
@@ -115,7 +115,7 @@ export function buildRouteChecks(data) {
       "Validation",
       "Promotion",
       "Proposed Changes",
-      "Evidence Reviews"
+      "Evidence Appraisals"
     ]);
   }
 
@@ -159,7 +159,7 @@ async function assertOldScopeRouteRemoved(baseUrl, data) {
 
 export async function smokeRoutes(options = {}) {
   const baseUrl = options.baseUrl ?? defaultBaseUrl;
-  const data = options.data ?? await loadDomainWorkbenchData();
+  const data = options.data ?? await loadDomainStudioData();
   const routes = buildRouteChecks(data);
 
   for (const { path, expectedText } of routes) {

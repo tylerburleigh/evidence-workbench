@@ -19,12 +19,12 @@ const schemaByRecordType = {
   artifact: "core/artifact.schema.json",
   candidate_bundle: "core/candidate-bundle.schema.json",
   claim: "core/claim.schema.json",
-  evidence_review: "core/evidence-review.schema.json",
+  evidence_appraisal: "core/evidence-appraisal.schema.json",
   finding: "core/finding.schema.json",
   publication_event: "core/publication-event.schema.json",
   report_artifact: "core/report-artifact.schema.json",
   research_session: "core/research-session.schema.json",
-  review_comment: "core/review-comment.schema.json",
+  editorial_comment: "core/editorial-comment.schema.json",
   search_protocol: "core/search-protocol.schema.json",
   source: "core/source.schema.json"
 };
@@ -42,7 +42,7 @@ const schemaByDomainPackFile = {
   "taxonomy.v1.json": "core/taxonomy.schema.json",
   "evidence-ladder.v1.json": "core/evidence-ladder.schema.json",
   "extraction-schema.v1.json": "core/extraction-schema.schema.json",
-  "review-lanes.v1.json": "core/review-lanes.schema.json",
+  "appraisal-lanes.v1.json": "core/appraisal-lanes.schema.json",
   "public-copy.v1.json": "core/public-copy.schema.json"
 };
 
@@ -160,7 +160,7 @@ function addDomainNodeChecks({ issues, relativePath, domainId, nodeIds, domainId
 
 function validateDomainPackContracts(entries, issues) {
   const domainIds = new Set();
-  const reviewLaneIdsByDomain = new Map();
+  const appraisalLaneIdsByDomain = new Map();
   const nodeIdsByDomain = new Map();
   const nodeDomainById = new Map();
   const requiredExtractionFieldsByDomain = new Map();
@@ -194,8 +194,8 @@ function validateDomainPackContracts(entries, issues) {
       nodeIdsByDomain.set(directory, nodeIds);
     }
 
-    if (fileName === "review-lanes.v1.json") {
-      reviewLaneIdsByDomain.set(directory, new Set((value.lanes ?? []).map((lane) => lane.id)));
+    if (fileName === "appraisal-lanes.v1.json") {
+      appraisalLaneIdsByDomain.set(directory, new Set((value.lanes ?? []).map((lane) => lane.id)));
     }
 
     if (fileName === "domain.json") {
@@ -257,7 +257,7 @@ function validateDomainPackContracts(entries, issues) {
 
     const directory = getDomainPackDirectory(relativePath);
     const nodeIds = nodeIdsByDomain.get(directory) ?? new Set();
-    const reviewLaneIds = reviewLaneIdsByDomain.get(directory) ?? new Set();
+    const appraisalLaneIds = appraisalLaneIdsByDomain.get(directory) ?? new Set();
 
     if (![...nodeIds].length) {
       issues.push(`${relativePath}: domain pack must define at least one taxonomy node.`);
@@ -270,16 +270,16 @@ function validateDomainPackContracts(entries, issues) {
       issues.push(`${relativePath}: default_scope_unit has no matching taxonomy nodes: ${value.default_scope_unit}.`);
     }
 
-    for (const laneId of value.default_review_lanes ?? []) {
-      if (!reviewLaneIds.has(laneId)) {
-        issues.push(`${relativePath}: default_review_lanes references unknown review lane: ${laneId}.`);
+    for (const laneId of value.default_appraisal_lanes ?? []) {
+      if (!appraisalLaneIds.has(laneId)) {
+        issues.push(`${relativePath}: default_appraisal_lanes references unknown appraisal lane: ${laneId}.`);
       }
     }
   }
 
   return {
     domainIds,
-    reviewLaneIdsByDomain,
+    appraisalLaneIdsByDomain,
     nodeIdsByDomain,
     nodeDomainById,
     requiredExtractionFieldsByDomain,
@@ -361,10 +361,10 @@ function validateCandidateBundle(entry, context, issues) {
     nodeDomainById: context.nodeDomainById
   });
 
-  const reviewLaneIds = context.reviewLaneIdsByDomain.get(domainId) ?? new Set();
-  for (const laneId of bundle.required_review_lanes ?? []) {
-    if (!reviewLaneIds.has(laneId)) {
-      issues.push(`${relativePath}: required_review_lanes references unknown lane for ${domainId}: ${laneId}.`);
+  const appraisalLaneIds = context.appraisalLaneIdsByDomain.get(domainId) ?? new Set();
+  for (const laneId of bundle.required_appraisal_lanes ?? []) {
+    if (!appraisalLaneIds.has(laneId)) {
+      issues.push(`${relativePath}: required_appraisal_lanes references unknown lane for ${domainId}: ${laneId}.`);
     }
   }
 
@@ -725,7 +725,7 @@ function validateEvidenceLinkedSourceSummaries(entries, context, issues) {
   }
 }
 
-function validateEvidenceReview(entry, context, issues) {
+function validateEvidenceAppraisal(entry, context, issues) {
   const { value: review, relativePath } = entry;
   const bundleEntry = context.recordByTypeAndId.get("candidate_bundle")?.get(review.candidate_bundle_id);
   if (!bundleEntry) {
@@ -735,9 +735,9 @@ function validateEvidenceReview(entry, context, issues) {
 
   const bundle = bundleEntry.value;
   const domainId = bundle.scope?.domain_id;
-  const reviewLaneIds = context.reviewLaneIdsByDomain.get(domainId) ?? new Set();
-  if (!reviewLaneIds.has(review.review_lane)) {
-    issues.push(`${relativePath}: review_lane ${review.review_lane} is not defined for domain ${domainId}.`);
+  const appraisalLaneIds = context.appraisalLaneIdsByDomain.get(domainId) ?? new Set();
+  if (!appraisalLaneIds.has(review.appraisal_lane)) {
+    issues.push(`${relativePath}: appraisal_lane ${review.appraisal_lane} is not defined for domain ${domainId}.`);
   }
 
   if (review.bundle_revision_number !== (bundle.revision_number ?? 1)) {
@@ -745,9 +745,9 @@ function validateEvidenceReview(entry, context, issues) {
   }
 
   const validChangeIds = new Set((bundle.proposed_changes ?? []).map((change) => change.change_id));
-  for (const changeId of review.reviewed_change_ids ?? []) {
+  for (const changeId of review.appraised_change_ids ?? []) {
     if (!validChangeIds.has(changeId)) {
-      issues.push(`${relativePath}: reviewed_change_ids references unknown change_id: ${changeId}.`);
+      issues.push(`${relativePath}: appraised_change_ids references unknown change_id: ${changeId}.`);
     }
   }
 }
@@ -774,9 +774,9 @@ function validatePublicationEvent(entry, context, issues) {
     issues.push(`${relativePath}: references missing candidate_bundle_id: ${event.candidate_bundle_id}.`);
   }
 
-  for (const reviewId of event.approving_evidence_review_ids ?? []) {
-    if (!hasRecord(context.recordByTypeAndId, "evidence_review", reviewId)) {
-      issues.push(`${relativePath}: references missing approving_evidence_review_id: ${reviewId}.`);
+  for (const appraisalId of event.approving_evidence_appraisal_ids ?? []) {
+    if (!hasRecord(context.recordByTypeAndId, "evidence_appraisal", appraisalId)) {
+      issues.push(`${relativePath}: references missing approving_evidence_appraisal_id: ${appraisalId}.`);
     }
   }
 
@@ -809,8 +809,8 @@ function validateCrossReferences(entries) {
       case "claim":
         validateClaim(entry, context, issues);
         break;
-      case "evidence_review":
-        validateEvidenceReview(entry, context, issues);
+      case "evidence_appraisal":
+        validateEvidenceAppraisal(entry, context, issues);
         break;
       case "research_session":
         validateResearchSession(entry, context, issues);

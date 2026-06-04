@@ -16,7 +16,7 @@ const stagedRecordsRoot = path.join(dataRoot, "staged-records");
 
 const searchProtocolStatuses = new Set(["draft", "searched", "screened", "included_sources_staged", "complete"]);
 const screeningDecisions = new Set(["include", "exclude", "maybe", "duplicate", "not_relevant", "no_full_text"]);
-const systematicityLevels = new Set(["targeted_bootstrap", "scoping_review", "systematic_review", "manual_note"]);
+const systematicityLevels = new Set(["targeted_baseline_review", "scoping_review", "systematic_review", "manual_note"]);
 
 function nonEmptyString(value) {
   return typeof value === "string" && value.trim().length > 0;
@@ -191,7 +191,7 @@ async function scaffoldSearchProtocol(options = {}) {
     throw new Error(`Unsupported search protocol status: ${status}`);
   }
 
-  const systematicityLevel = options.systematicityLevel ?? options["systematicity-level"] ?? "targeted_bootstrap";
+  const systematicityLevel = options.systematicityLevel ?? options["systematicity-level"] ?? "targeted_baseline_review";
   if (!systematicityLevels.has(systematicityLevel)) {
     throw new Error(`Unsupported systematicity level: ${systematicityLevel}`);
   }

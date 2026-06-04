@@ -29,10 +29,10 @@
     {
       "id": "reviewed_control_baseline",
       "label": "Reviewed Control Baseline",
-      "description": "Required review lanes have accepted the control baseline for publication.",
-      "minimum_support_expected": "Complete non-blocking evidence reviews for all default lanes.",
+      "description": "Required appraisal lanes have accepted the control baseline for publication.",
+      "minimum_support_expected": "Complete non-blocking evidence appraisals for all default lanes.",
       "common_overclaim_risk": "Treating a reviewed baseline as permanent assurance rather than a time-bounded assessment.",
-      "moves_to_next_stage": "Surveillance refreshes stale control coverage or stages a material update."
+      "moves_to_next_stage": "Review Update refreshes stale control coverage or stages a material update."
     }
   ]
 }

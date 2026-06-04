@@ -19,7 +19,7 @@ Responsibilities:
 - source and artifact types
 - extraction fields
 - appraisal criteria
-- review lanes
+- appraisal lanes
 - public labels and explanatory text
 - domain-specific agent instructions
 
@@ -55,7 +55,7 @@ The queue should be generated, not hand-maintained. It should answer:
 - what has baseline coverage?
 - what is in active review?
 - what is stale?
-- what should be bootstrapped next?
+- what should be baselined next?
 - what should be surveilled next?
 
 ### 4. Candidate Bundle Layer
@@ -74,22 +74,22 @@ A bundle should contain:
 - proposed changes
 - target live paths
 - staged paths
-- evidence review requirements
+- evidence appraisal requirements
 - source IDs and URLs
 - next actions
 - lifecycle status
 
-### 5. Evidence Review Layer
+### 5. Evidence Appraisal Layer
 
-Evidence review is a structured gate between research output and editorial approval.
+Evidence appraisal is a structured gate between research output and editorial approval.
 
-The framework should support review lanes like:
+The framework should support appraisal lanes like:
 
 - `source_fidelity`
 - `interpretation`
 - `limitations`
 - `taxonomy_mapping`
-- optional domain-defined review lanes
+- optional domain-defined appraisal lanes
 
 Domain packs may rename or add lanes, but every review should produce machine-readable findings.
 
@@ -117,7 +117,7 @@ The admin UI manages:
 - candidate queue
 - bundle detail
 - promotion readiness
-- evidence-review state
+- evidence-appraisal state
 - comments
 - approval
 - publication
@@ -133,7 +133,7 @@ domain-packs/
     taxonomy.v1.json
     evidence-ladder.v1.json
     extraction-schema.v1.json
-    review-lanes.v1.json
+    appraisal-lanes.v1.json
     public-copy.v1.json
     skills/
   <domain-id>/
@@ -141,7 +141,7 @@ domain-packs/
     taxonomy.v1.json
     evidence-ladder.v1.json
     extraction-schema.v1.json
-    review-lanes.v1.json
+    appraisal-lanes.v1.json
     public-copy.v1.json
     schemas/
     rubrics/
@@ -158,8 +158,8 @@ data/
   claims/
   activity-items/
   candidate-bundles/
-  evidence-reviews/
-  review-comments/
+  evidence-appraisals/
+  editorial-comments/
   publication-events/
   staged-records/
 
@@ -172,7 +172,7 @@ research/
 
 scripts/
   bundle.mjs
-  review-evidence.mjs
+  appraise-evidence.mjs
   sync-research-planning.mjs
   validate-records.mjs
 
@@ -189,7 +189,7 @@ Keep the core framework responsible for workflow mechanics:
 - reading and writing JSON records
 - validating bundle paths and record IDs
 - enforcing lifecycle transitions
-- applying evidence-review gates
+- applying evidence-appraisal gates
 - publishing staged records
 - deriving coverage state
 
@@ -198,7 +198,7 @@ Keep domain packs responsible for:
 - what the taxonomy means
 - what fields are required for extraction
 - what counts as stronger evidence
-- what review lanes are required
+- what appraisal lanes are required
 - how claims are worded and bounded
 
 ## V0 Storage Choice

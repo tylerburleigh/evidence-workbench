@@ -4,7 +4,7 @@
   "id": "dependency-exposure-control-baseline-2026-06-01",
   "name": "Dependency Exposure Control Baseline",
   "summary": "Downstream rehearsal bundle that stages a source-backed baseline for the software supply-chain dependency exposure control.",
-  "intake_mode": "bootstrap",
+  "intake_mode": "baseline_review",
   "lifecycle_status": "published",
   "submitted_at": "2026-06-01T20:17:00Z",
   "submitted_by": "codex-agent",
@@ -71,7 +71,7 @@
       "file_path": "data/claims/dependency-exposure-control-baseline-claim.json",
       "staged_file_path": "data/staged-records/dependency-exposure-control-baseline-2026-06-01/dependency-exposure-control-baseline-claim.json",
       "summary": "Add a bounded baseline claim for the dependency exposure control.",
-      "rationale": "The downstream domain needs a second public claim to verify multi-control support maps, review gates, publication, planning, and routes."
+      "rationale": "The downstream domain needs a second public claim to verify multi-control support maps, appraisal gates, publication, planning, and routes."
     }
   ],
   "proposed_claim_implications": [
@@ -81,24 +81,24 @@
       "note": "Creates the first source-backed baseline for the dependency exposure control."
     }
   ],
-  "required_review_lanes": [
+  "required_appraisal_lanes": [
     "source_fidelity",
     "control_fit",
     "risk_framing",
     "operational_boundary"
   ],
-  "review_requirement": {
-    "min_complete_reviews_per_lane": 1,
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": false
   },
-  "evidence_review_ids": [
-    "evidence-review-dependency-exposure-control-source-fidelity-r1",
-    "evidence-review-dependency-exposure-control-control-fit-r1",
-    "evidence-review-dependency-exposure-control-risk-framing-r1",
-    "evidence-review-dependency-exposure-control-operational-boundary-r1"
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-dependency-exposure-control-source-fidelity-r1",
+    "evidence-appraisal-dependency-exposure-control-control-fit-r1",
+    "evidence-appraisal-dependency-exposure-control-risk-framing-r1",
+    "evidence-appraisal-dependency-exposure-control-operational-boundary-r1"
   ],
-  "review_comment_ids": [],
+  "editorial_comment_ids": [],
   "publication_event_ids": [
     "publish-dependency-exposure-control-baseline-2026-06-01-2026-06-01t20-21-18-430z"
   ],
