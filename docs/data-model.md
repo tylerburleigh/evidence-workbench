@@ -14,7 +14,7 @@ claim
   -> sources
   -> research session
   -> candidate bundle
-  -> evidence review
+  -> evidence appraisal
   -> publication event
 ```
 
@@ -32,7 +32,7 @@ Suggested fields:
 - `taxonomy_id`
 - `default_scope_unit`
 - `evidence_ladder_id`
-- `default_review_lanes`
+- `default_appraisal_lanes`
 - `public_claim_language`
 - `applicability_facets`
 
@@ -236,8 +236,8 @@ Suggested fields:
 
 Modes:
 
-- `bootstrap`
-- `surveillance`
+- `baseline_review`
+- `review_update`
 - `manual`
 
 Outcomes:
@@ -266,10 +266,10 @@ Suggested fields:
 - `related_records`
 - `proposed_changes`
 - `proposed_claim_implications`
-- `required_review_lanes`
-- `review_requirement`
-- `evidence_review_ids`
-- `review_comment_ids`
+- `required_appraisal_lanes`
+- `appraisal_requirement`
+- `evidence_appraisal_ids`
+- `editorial_comment_ids`
 - `publication_event_ids`
 - `next_actions`
 
@@ -283,7 +283,7 @@ Lifecycle statuses:
 - `published`
 - `rejected`
 
-### Evidence Review
+### Evidence Appraisal
 
 A structured verification pass for one bundle revision and one lane.
 
@@ -292,14 +292,14 @@ Suggested fields:
 - `id`
 - `candidate_bundle_id`
 - `bundle_revision_number`
-- `review_round`
-- `review_lane`
-- `reviewer_kind`
+- `appraisal_round`
+- `appraisal_lane`
+- `appraiser_kind`
 - `status`
 - `verdict`
 - `blocking`
 - `summary`
-- `reviewed_change_ids`
+- `appraised_change_ids`
 - `findings`
 
 Findings should include:
@@ -311,7 +311,7 @@ Findings should include:
 - `recommended_action`
 - `resolution_status`
 
-### Review Comment
+### Editorial Comment
 
 Editorial conversation around a bundle.
 
@@ -330,7 +330,7 @@ Suggested fields:
 - `published_by`
 - `published_targets`
 - `affected_claim_ids`
-- `approving_evidence_review_ids`
+- `approving_evidence_appraisal_ids`
 - `change_note`
 
 ### Coverage Status

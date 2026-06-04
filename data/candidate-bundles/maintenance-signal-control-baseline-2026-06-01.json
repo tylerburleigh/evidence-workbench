@@ -4,7 +4,7 @@
   "id": "maintenance-signal-control-baseline-2026-06-01",
   "name": "Maintenance Signal Control Baseline",
   "summary": "Downstream rehearsal bundle that stages a source-backed baseline for the software supply-chain maintenance signal control.",
-  "intake_mode": "bootstrap",
+  "intake_mode": "baseline_review",
   "lifecycle_status": "published",
   "submitted_at": "2026-06-01T21:08:00Z",
   "submitted_by": "codex-agent",
@@ -77,7 +77,7 @@
       "file_path": "data/claims/maintenance-signal-control-baseline-claim.json",
       "staged_file_path": "data/staged-records/maintenance-signal-control-baseline-2026-06-01/maintenance-signal-control-baseline-claim.json",
       "summary": "Add a bounded baseline claim for the maintenance signal control.",
-      "rationale": "The downstream domain needs a third public claim to complete the control rehearsal across support maps, review gates, publication, planning, and routes."
+      "rationale": "The downstream domain needs a third public claim to complete the control rehearsal across support maps, appraisal gates, publication, planning, and routes."
     }
   ],
   "proposed_claim_implications": [
@@ -87,24 +87,24 @@
       "note": "Creates the first source-backed baseline for the maintenance signal control."
     }
   ],
-  "required_review_lanes": [
+  "required_appraisal_lanes": [
     "source_fidelity",
     "control_fit",
     "risk_framing",
     "operational_boundary"
   ],
-  "review_requirement": {
-    "min_complete_reviews_per_lane": 1,
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": false
   },
-  "evidence_review_ids": [
-    "evidence-review-maintenance-signal-control-source-fidelity-r1",
-    "evidence-review-maintenance-signal-control-control-fit-r1",
-    "evidence-review-maintenance-signal-control-risk-framing-r1",
-    "evidence-review-maintenance-signal-control-operational-boundary-r1"
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-maintenance-signal-control-source-fidelity-r1",
+    "evidence-appraisal-maintenance-signal-control-control-fit-r1",
+    "evidence-appraisal-maintenance-signal-control-risk-framing-r1",
+    "evidence-appraisal-maintenance-signal-control-operational-boundary-r1"
   ],
-  "review_comment_ids": [],
+  "editorial_comment_ids": [],
   "publication_event_ids": [
     "publish-maintenance-signal-control-baseline-2026-06-01-2026-06-01t21-12-32-526z"
   ],

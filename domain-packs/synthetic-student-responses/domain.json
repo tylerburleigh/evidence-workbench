@@ -6,9 +6,9 @@
   "taxonomy_file": "taxonomy.v1.json",
   "evidence_ladder_file": "evidence-ladder.v1.json",
   "extraction_schema_file": "extraction-schema.v1.json",
-  "review_lanes_file": "review-lanes.v1.json",
+  "appraisal_lanes_file": "appraisal-lanes.v1.json",
   "public_copy_file": "public-copy.v1.json",
-  "default_review_lanes": [
+  "default_appraisal_lanes": [
     "source_fidelity",
     "construct_mapping",
     "method_classification",

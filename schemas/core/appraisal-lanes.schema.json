@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/appraisal-lanes.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["id", "domain_id", "lanes"],
+  "properties": {
+    "id": { "type": "string", "minLength": 1 },
+    "domain_id": { "type": "string", "minLength": 1 },
+    "lanes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "required": ["id", "label", "description"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "label": { "type": "string", "minLength": 1 },
+          "description": { "type": "string", "minLength": 1 },
+          "required_by_default": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

@@ -25,7 +25,7 @@
     "Operational assurance requires a later bundle with project-specific dependency inventory and vulnerability context."
   ],
   "update_notes": [
-    "Use surveillance or a project-specific bootstrap bundle when reviewing a concrete repository, package release, SBOM, or vulnerability scan."
+    "Use a review update or a project-specific baseline review bundle when reviewing a concrete repository, package release, SBOM, or vulnerability scan."
   ],
   "supporting_finding_ids": [
     "openssf-scorecard-dependency-exposure-finding-2026"

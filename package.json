@@ -1,5 +1,5 @@
 {
-  "name": "evidence-workbench",
+  "name": "lit-review-studio",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -12,7 +12,7 @@
     "research:planning": "node scripts/research-planning.mjs",
     "research:bundle": "node scripts/bundle.mjs",
     "research:search": "node scripts/search-pass.mjs",
-    "research:review-evidence": "node scripts/review-evidence.mjs",
+    "research:appraise-evidence": "node scripts/appraise-evidence.mjs",
     "branch:audit": "node scripts/branch-audit.mjs",
     "smoke:public": "node scripts/smoke-public-routes.mjs",
     "smoke:routes": "node scripts/smoke-public-routes.mjs",

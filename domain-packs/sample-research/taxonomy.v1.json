@@ -24,7 +24,7 @@
       "node_type": "topic",
       "parent_id": "example-category",
       "canonical_order": 1,
-      "summary": "A neutral topic used to test candidate bundles, support maps, review gates, and publication.",
+      "summary": "A neutral topic used to test candidate bundles, support maps, appraisal gates, and publication.",
       "search_aliases": [
         "demo topic",
         "fixture topic"

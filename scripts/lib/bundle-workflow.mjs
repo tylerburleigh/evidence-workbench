@@ -17,9 +17,9 @@ import {
 import { readPlanningStatus, syncResearchPlanning } from "./planning.mjs";
 
 const candidateBundlesRoot = path.join(dataRoot, "candidate-bundles");
-const evidenceReviewsRoot = path.join(dataRoot, "evidence-reviews");
+const evidenceAppraisalsRoot = path.join(dataRoot, "evidence-appraisals");
 const publicationEventsRoot = path.join(dataRoot, "publication-events");
-const reviewCommentsRoot = path.join(dataRoot, "review-comments");
+const editorialCommentsRoot = path.join(dataRoot, "editorial-comments");
 const stagedRecordsRoot = path.join(dataRoot, "staged-records");
 
 const recordCollections = {
@@ -115,7 +115,7 @@ Usage:
 
 Notes:
   - validate checks staged files, record IDs/types, references, support maps, and published-file drift.
-  - approve requires a structurally valid bundle and clean evidence-review gates when configured.
+  - approve requires a structurally valid bundle and clean evidence-appraisal gates when configured.
   - publish copies staged JSON into data/, writes a publication event, marks the bundle published, and syncs planning state.
 `.trim();
 
@@ -192,8 +192,8 @@ async function loadCandidateBundle(bundleId) {
   };
 }
 
-async function loadEvidenceReviews() {
-  return readJsonCollection("data/evidence-reviews");
+async function loadEvidenceAppraisals() {
+  return readJsonCollection("data/evidence-appraisals");
 }
 
 function getCurrentRevision(bundle) {
@@ -305,13 +305,13 @@ function recordExists(recordMaps, recordType, recordId) {
   return nonEmptyString(recordId) && Boolean(recordMaps[recordType]?.has(recordId));
 }
 
-async function evaluateEvidenceReviewGate(bundle, domainPack) {
+async function evaluateEvidenceAppraisalGate(bundle, domainPack) {
   const currentRevision = getCurrentRevision(bundle);
-  const requiredLanes = bundle.required_review_lanes ?? [];
-  const minReviewsPerLane = bundle.review_requirement?.min_complete_reviews_per_lane ?? 1;
-  const blockOnOpenCriticalFindings = bundle.review_requirement?.block_on_open_critical_findings ?? true;
-  const blockOnOpenMajorFindings = bundle.review_requirement?.block_on_open_major_findings ?? false;
-  const reviews = (await loadEvidenceReviews()).filter(
+  const requiredLanes = bundle.required_appraisal_lanes ?? [];
+  const minAppraisalsPerLane = bundle.appraisal_requirement?.min_complete_appraisals_per_lane ?? 1;
+  const blockOnOpenCriticalFindings = bundle.appraisal_requirement?.block_on_open_critical_findings ?? true;
+  const blockOnOpenMajorFindings = bundle.appraisal_requirement?.block_on_open_major_findings ?? false;
+  const appraisals = (await loadEvidenceAppraisals()).filter(
     ({ record }) =>
       record.candidate_bundle_id === bundle.id &&
       record.bundle_revision_number === currentRevision &&
@@ -320,24 +320,24 @@ async function evaluateEvidenceReviewGate(bundle, domainPack) {
 
   const issues = [];
   for (const lane of requiredLanes) {
-    if (!domainPack.reviewLaneIds.has(lane)) {
-      issues.push(`Required evidence review lane is not defined by the active domain pack: ${lane}.`);
+    if (!domainPack.appraisalLaneIds.has(lane)) {
+      issues.push(`Required evidence appraisal lane is not defined by the active domain pack: ${lane}.`);
     }
   }
 
   const laneCounts = new Map();
-  for (const { record } of reviews) {
-    laneCounts.set(record.review_lane, (laneCounts.get(record.review_lane) ?? 0) + 1);
+  for (const { record } of appraisals) {
+    laneCounts.set(record.appraisal_lane, (laneCounts.get(record.appraisal_lane) ?? 0) + 1);
   }
 
   const completedLanes = Array.from(laneCounts.keys()).sort();
-  const missingLanes = requiredLanes.filter((lane) => (laneCounts.get(lane) ?? 0) < minReviewsPerLane);
-  const blockingReviewIds = reviews
+  const missingLanes = requiredLanes.filter((lane) => (laneCounts.get(lane) ?? 0) < minAppraisalsPerLane);
+  const blockingAppraisalIds = appraisals
     .filter(({ record }) => record.blocking || record.verdict === "needs_revision" || record.verdict === "reject")
     .map(({ record }) => record.id)
     .sort();
 
-  const openBlockingFindings = reviews.flatMap(({ record }) =>
+  const openBlockingFindings = appraisals.flatMap(({ record }) =>
     (record.findings ?? [])
       .filter((finding) => {
         if (finding.resolution_status === "closed") {
@@ -355,7 +355,7 @@ async function evaluateEvidenceReviewGate(bundle, domainPack) {
         return false;
       })
       .map((finding) => ({
-        review_id: record.id,
+        appraisal_id: record.id,
         finding_id: finding.finding_id,
         severity: finding.severity,
         category: finding.category
@@ -363,11 +363,11 @@ async function evaluateEvidenceReviewGate(bundle, domainPack) {
   );
 
   if (missingLanes.length > 0) {
-    issues.push(`Missing complete evidence review lanes for revision ${currentRevision}: ${missingLanes.join(", ")}.`);
+    issues.push(`Missing complete evidence appraisal lanes for revision ${currentRevision}: ${missingLanes.join(", ")}.`);
   }
 
-  if (blockingReviewIds.length > 0) {
-    issues.push(`Blocking evidence reviews remain open for revision ${currentRevision}.`);
+  if (blockingAppraisalIds.length > 0) {
+    issues.push(`Blocking evidence appraisals remain open for revision ${currentRevision}.`);
   }
 
   if (openBlockingFindings.length > 0) {
@@ -380,21 +380,21 @@ async function evaluateEvidenceReviewGate(bundle, domainPack) {
     revision_number: currentRevision,
     required_lanes: requiredLanes,
     completed_lanes: completedLanes,
-    min_complete_reviews_per_lane: minReviewsPerLane,
-    completed_reviews: reviews
+    min_complete_appraisals_per_lane: minAppraisalsPerLane,
+    completed_appraisals: appraisals
       .map(({ record }) => ({
         id: record.id,
-        lane: record.review_lane,
-        round: record.review_round,
+        lane: record.appraisal_lane,
+        round: record.appraisal_round,
         verdict: record.verdict,
         blocking: record.blocking
       }))
       .sort((left, right) => left.id.localeCompare(right.id)),
     missing_lanes: missingLanes,
-    blocking_review_ids: blockingReviewIds,
+    blocking_appraisal_ids: blockingAppraisalIds,
     open_blocking_findings: openBlockingFindings,
     issues,
-    reviews: reviews.map(({ record }) => record)
+    appraisals: appraisals.map(({ record }) => record)
   };
 }
 
@@ -1351,7 +1351,7 @@ async function loadBundleResearchSessions(bundleId) {
     .filter((session) => session.candidate_bundle_id === bundleId);
 }
 
-async function auditTimestampOrder(bundle, promotion, evidenceReviewGate, publication) {
+async function auditTimestampOrder(bundle, promotion, evidenceAppraisalGate, publication) {
   const warnings = [];
   const checks = [];
   const bundleSubmittedAtMillis = parseDateTimeMillis(bundle.submitted_at);
@@ -1406,23 +1406,23 @@ async function auditTimestampOrder(bundle, promotion, evidenceReviewGate, public
     }
   }
 
-  for (const review of evidenceReviewGate.reviews ?? []) {
+  for (const appraisal of evidenceAppraisalGate.appraisals ?? []) {
     addTimestampWarning(warnings, checks, {
-      check_type: "bundle_submitted_before_review_created",
+      check_type: "bundle_submitted_before_appraisal_created",
       left_label: "bundle submitted_at",
       left_at: bundle.submitted_at,
       left_at_millis: bundleSubmittedAtMillis,
-      right_label: `review ${review.id} created_at`,
-      right_at: review.created_at,
-      right_at_millis: parseDateTimeMillis(review.created_at)
+      right_label: `appraisal ${appraisal.id} created_at`,
+      right_at: appraisal.created_at,
+      right_at_millis: parseDateTimeMillis(appraisal.created_at)
     });
 
     if (earliestPublicationMillis !== undefined) {
       addTimestampWarning(warnings, checks, {
-        check_type: "review_created_before_publication",
-        left_label: `review ${review.id} created_at`,
-        left_at: review.created_at,
-        left_at_millis: parseDateTimeMillis(review.created_at),
+        check_type: "appraisal_created_before_publication",
+        left_label: `appraisal ${appraisal.id} created_at`,
+        left_at: appraisal.created_at,
+        left_at_millis: parseDateTimeMillis(appraisal.created_at),
         right_label: "earliest publication published_at",
         right_at: earliestPublicationAt,
         right_at_millis: earliestPublicationMillis
@@ -1600,12 +1600,12 @@ function buildExtractionFollowUps(promotionChanges) {
   };
 }
 
-async function buildWorkflowAudit(bundle, promotion, recordMaps, evidenceReviewGate, publication, domainPack) {
+async function buildWorkflowAudit(bundle, promotion, recordMaps, evidenceAppraisalGate, publication, domainPack) {
   const sourceDepth = auditSourceDepth(promotion.changes, recordMaps);
   const sourceAccess = auditSourceAccess(promotion.changes, recordMaps, domainPack);
   const searchLinkage = auditSearchLinkage(bundle, promotion.changes, recordMaps);
   const publicationCompleteness = auditPublicationCompleteness(bundle, promotion, publication);
-  const timestampOrder = await auditTimestampOrder(bundle, promotion, evidenceReviewGate, publication);
+  const timestampOrder = await auditTimestampOrder(bundle, promotion, evidenceAppraisalGate, publication);
   const numericExtraction = auditNumericExtraction(promotion.changes);
   const extractionFollowUps = buildExtractionFollowUps(promotion.changes);
   const issues = [
@@ -1689,7 +1689,7 @@ async function evaluatePublication(bundle, promotion) {
       published_targets: event.published_targets?.length ?? 0,
       public_graph_delta: event.public_graph_delta ?? countTargetsByRecordType(event.published_targets ?? []),
       affected_claim_ids: event.affected_claim_ids ?? [],
-      review_follow_up_actions: event.review_follow_up_actions ?? [],
+      appraisal_follow_up_actions: event.appraisal_follow_up_actions ?? [],
       source_access_follow_up_actions: event.source_access_follow_up_actions ?? [],
       extraction_follow_up_actions: event.extraction_follow_up_actions ?? []
     })),
@@ -1722,15 +1722,15 @@ async function buildBundleReport(bundleIdOrRecord, options = {}) {
     bundle.lifecycle_status,
     domainPack
   );
-  const evidenceReviewGate = await evaluateEvidenceReviewGate(bundle, domainPack);
+  const evidenceAppraisalGate = await evaluateEvidenceAppraisalGate(bundle, domainPack);
   const publication = await evaluatePublication(bundle, promotion);
-  const workflowAudit = await buildWorkflowAudit(bundle, promotion, recordMaps, evidenceReviewGate, publication, domainPack);
+  const workflowAudit = await buildWorkflowAudit(bundle, promotion, recordMaps, evidenceAppraisalGate, publication, domainPack);
 
   issues.push(...promotion.issues, ...stagedSemantics.issues, ...workflowAudit.issues, ...publication.issues);
   warnings.push(...promotion.warnings, ...stagedSemantics.warnings, ...workflowAudit.warnings, ...publication.warnings);
 
-  if (["approved", "published"].includes(bundle.lifecycle_status) && evidenceReviewGate.eligible && !evidenceReviewGate.ready) {
-    issues.push(...evidenceReviewGate.issues);
+  if (["approved", "published"].includes(bundle.lifecycle_status) && evidenceAppraisalGate.eligible && !evidenceAppraisalGate.ready) {
+    issues.push(...evidenceAppraisalGate.issues);
   }
 
   return {
@@ -1744,7 +1744,7 @@ async function buildBundleReport(bundleIdOrRecord, options = {}) {
     promotion,
     staged_semantics: stagedSemantics,
     workflow_audit: workflowAudit,
-    evidence_review_gate: evidenceReviewGate,
+    evidence_appraisal_gate: evidenceAppraisalGate,
     publication
   };
 }
@@ -1757,18 +1757,18 @@ function toPublicReport(report) {
     revision_number: getCurrentRevision(report.bundle),
     readiness: buildReadinessSummary(report),
     validation: report.validation,
-    evidence_review_gate: {
-      eligible: report.evidence_review_gate.eligible,
-      ready: report.evidence_review_gate.ready,
-      revision_number: report.evidence_review_gate.revision_number,
-      required_lanes: report.evidence_review_gate.required_lanes,
-      completed_lanes: report.evidence_review_gate.completed_lanes,
-      min_complete_reviews_per_lane: report.evidence_review_gate.min_complete_reviews_per_lane,
-      completed_reviews: report.evidence_review_gate.completed_reviews,
-      missing_lanes: report.evidence_review_gate.missing_lanes,
-      blocking_review_ids: report.evidence_review_gate.blocking_review_ids,
-      open_blocking_findings: report.evidence_review_gate.open_blocking_findings,
-      issues: report.evidence_review_gate.issues
+    evidence_appraisal_gate: {
+      eligible: report.evidence_appraisal_gate.eligible,
+      ready: report.evidence_appraisal_gate.ready,
+      revision_number: report.evidence_appraisal_gate.revision_number,
+      required_lanes: report.evidence_appraisal_gate.required_lanes,
+      completed_lanes: report.evidence_appraisal_gate.completed_lanes,
+      min_complete_appraisals_per_lane: report.evidence_appraisal_gate.min_complete_appraisals_per_lane,
+      completed_appraisals: report.evidence_appraisal_gate.completed_appraisals,
+      missing_lanes: report.evidence_appraisal_gate.missing_lanes,
+      blocking_appraisal_ids: report.evidence_appraisal_gate.blocking_appraisal_ids,
+      open_blocking_findings: report.evidence_appraisal_gate.open_blocking_findings,
+      issues: report.evidence_appraisal_gate.issues
     },
     promotion: {
       ready: report.promotion.ready,
@@ -1800,31 +1800,31 @@ function buildReadinessSummary(report) {
   const promotionIssueCount = report.promotion.issues.length;
   const promotionWarningCount = report.promotion.warnings.length;
   const workflowAuditWarningCount = report.workflow_audit?.warnings?.length ?? 0;
-  const missingReviewLanes = report.evidence_review_gate.missing_lanes ?? [];
-  const reviewIssueCount = report.evidence_review_gate.issues.length;
+  const missingAppraisalLanes = report.evidence_appraisal_gate.missing_lanes ?? [];
+  const appraisalIssueCount = report.evidence_appraisal_gate.issues.length;
 
   const readyForApproval =
     ["submitted", "in_review", "revised"].includes(report.bundle.lifecycle_status) &&
     report.validation.ready &&
-    (!report.evidence_review_gate.eligible || report.evidence_review_gate.ready);
+    (!report.evidence_appraisal_gate.eligible || report.evidence_appraisal_gate.ready);
   const readyForPublication =
     report.bundle.lifecycle_status === "approved" &&
     report.validation.ready &&
-    (!report.evidence_review_gate.eligible || report.evidence_review_gate.ready);
+    (!report.evidence_appraisal_gate.eligible || report.evidence_appraisal_gate.ready);
 
   let message;
   if (report.bundle.lifecycle_status === "published") {
     message = "Published. Promotion files and publication events are available for audit.";
   } else if (!report.validation.ready) {
-    message = `Validation has ${validationIssueCount} issue(s). Resolve structural and reference problems before review or publication.`;
+    message = `Validation has ${validationIssueCount} issue(s). Resolve structural and reference problems before appraisal or publication.`;
   } else if (!report.promotion.ready) {
     message = `Structurally valid, but promotion has ${promotionIssueCount} issue(s). Check staged and target files.`;
-  } else if (report.evidence_review_gate.eligible && !report.evidence_review_gate.ready) {
-    message = `Structurally valid. Waiting on ${missingReviewLanes.length} evidence review lane(s): ${missingReviewLanes.join(", ")}.`;
+  } else if (report.evidence_appraisal_gate.eligible && !report.evidence_appraisal_gate.ready) {
+    message = `Structurally valid. Waiting on ${missingAppraisalLanes.length} evidence appraisal lane(s): ${missingAppraisalLanes.join(", ")}.`;
   } else if (readyForPublication) {
-    message = "Approved, structurally valid, and review-ready. Ready to publish.";
+    message = "Approved, structurally valid, and appraisal-complete. Ready to publish.";
   } else if (readyForApproval) {
-    message = "Structurally valid and review-ready. Ready for approval.";
+    message = "Structurally valid and appraisal-complete. Ready for approval.";
   } else {
     message = "Structurally valid. Lifecycle status determines the next action.";
   }
@@ -1838,8 +1838,8 @@ function buildReadinessSummary(report) {
     promotion_issue_count: promotionIssueCount,
     promotion_warning_count: promotionWarningCount,
     workflow_audit_warning_count: workflowAuditWarningCount,
-    review_issue_count: reviewIssueCount,
-    missing_review_lanes: missingReviewLanes
+    appraisal_issue_count: appraisalIssueCount,
+    missing_appraisal_lanes: missingAppraisalLanes
   };
 }
 
@@ -1893,13 +1893,13 @@ async function buildPrecommitSummary(bundleIdOrRecord, options = {}) {
       issue_count: report.promotion.issues.length,
       warning_count: report.promotion.warnings.length
     },
-    evidence_reviews: {
-      ready: report.evidence_review_gate.ready,
-      required_lanes: report.evidence_review_gate.required_lanes,
-      completed_lanes: report.evidence_review_gate.completed_lanes,
-      missing_lanes: report.evidence_review_gate.missing_lanes,
-      blocking_review_ids: report.evidence_review_gate.blocking_review_ids,
-      open_blocking_findings: report.evidence_review_gate.open_blocking_findings
+    evidence_appraisals: {
+      ready: report.evidence_appraisal_gate.ready,
+      required_lanes: report.evidence_appraisal_gate.required_lanes,
+      completed_lanes: report.evidence_appraisal_gate.completed_lanes,
+      missing_lanes: report.evidence_appraisal_gate.missing_lanes,
+      blocking_appraisal_ids: report.evidence_appraisal_gate.blocking_appraisal_ids,
+      open_blocking_findings: report.evidence_appraisal_gate.open_blocking_findings
     },
     workflow_audit: {
       ready: workflowAudit.ready,
@@ -1933,9 +1933,9 @@ async function buildPrecommitSummary(bundleIdOrRecord, options = {}) {
     },
     verification_commands: [
       "npm run validate",
-      `WORKBENCH_DOMAIN=${domainId} npm run research:bundle -- validate --bundle ${report.bundle.id}`,
+      `LIT_REVIEW_STUDIO_DOMAIN=${domainId} npm run research:bundle -- validate --bundle ${report.bundle.id}`,
       "npm test",
-      `WORKBENCH_DOMAIN=${domainId} npm run build`
+      `LIT_REVIEW_STUDIO_DOMAIN=${domainId} npm run build`
     ],
     readiness: publicReport.readiness
   };
@@ -1963,9 +1963,9 @@ async function approveCandidateBundle(bundleId) {
       throw new Error(`Candidate bundle ${latestBundle.id} is not valid: ${report.validation.issues.join(" ")}`);
     }
 
-    if (report.evidence_review_gate.eligible && !report.evidence_review_gate.ready) {
+    if (report.evidence_appraisal_gate.eligible && !report.evidence_appraisal_gate.ready) {
       throw new Error(
-        `Candidate bundle ${latestBundle.id} is not ready for approval: ${report.evidence_review_gate.issues.join(" ")}`
+        `Candidate bundle ${latestBundle.id} is not ready for approval: ${report.evidence_appraisal_gate.issues.join(" ")}`
       );
     }
 
@@ -2033,20 +2033,20 @@ async function updateCandidateBundleStatus(bundleId, nextStatus, options = {}) {
   };
 }
 
-async function addReviewComment(bundleId, options = {}) {
+async function addEditorialComment(bundleId, options = {}) {
   const body = typeof options.body === "string" ? options.body.trim() : "";
   if (body.length === 0) {
-    throw new Error("Review comment body is required.");
+    throw new Error("Editorial comment body is required.");
   }
 
   const { filePath, record: bundle } = await loadCandidateBundle(bundleId);
   const result = await withFileLock(`${filePath}.lock`, async () => {
     const latestBundle = await readJson(filePath);
     const timestamp = new Date().toISOString();
-    const commentId = `review-comment-${latestBundle.id}-${slugTimestamp(timestamp)}`;
+    const commentId = `editorial-comment-${latestBundle.id}-${slugTimestamp(timestamp)}`;
     const comment = {
       schema_version: "1.0.0",
-      record_type: "review_comment",
+      record_type: "editorial_comment",
       id: commentId,
       candidate_bundle_id: latestBundle.id,
       author_kind: options.authorKind ?? "human",
@@ -2055,12 +2055,12 @@ async function addReviewComment(bundleId, options = {}) {
       created_at: timestamp
     };
 
-    const commentPath = path.join(reviewCommentsRoot, `${commentId}.json`);
+    const commentPath = path.join(editorialCommentsRoot, `${commentId}.json`);
     await writeJson(commentPath, comment);
 
     const updatedBundle = {
       ...latestBundle,
-      review_comment_ids: Array.from(new Set([...(latestBundle.review_comment_ids ?? []), commentId]))
+      editorial_comment_ids: Array.from(new Set([...(latestBundle.editorial_comment_ids ?? []), commentId]))
     };
     await writeJson(filePath, updatedBundle);
 
@@ -2093,7 +2093,7 @@ async function commandComment(options) {
     fail("comment requires --bundle <bundle-id>.");
   }
 
-  const result = await addReviewComment(options.bundle, {
+  const result = await addEditorialComment(options.bundle, {
     body: options.comment,
     authorKind: "human",
     authorId: options["author-id"] ?? "local-curator"
@@ -2128,11 +2128,11 @@ async function getClaimIdForSubject(subjectType, subjectId) {
   return claims.find(({ record }) => record.subject_type === subjectType && record.subject_id === subjectId)?.record.id;
 }
 
-function getReviewFollowUpActions(evidenceReviewGate) {
+function getAppraisalFollowUpActions(evidenceAppraisalGate) {
   const actions = [];
 
-  for (const review of evidenceReviewGate.reviews ?? []) {
-    for (const finding of review.findings ?? []) {
+  for (const appraisal of evidenceAppraisalGate.appraisals ?? []) {
+    for (const finding of appraisal.findings ?? []) {
       if (!nonBlockingFollowUpSeverities.has(finding.severity)) {
         continue;
       }
@@ -2141,7 +2141,7 @@ function getReviewFollowUpActions(evidenceReviewGate) {
         continue;
       }
 
-      actions.push(`${review.review_lane}: ${finding.recommended_action.trim()}`);
+      actions.push(`${appraisal.appraisal_lane}: ${finding.recommended_action.trim()}`);
     }
   }
 
@@ -2166,9 +2166,9 @@ async function publishCandidateBundle(bundleId, options = {}) {
       throw new Error(`Candidate bundle ${bundle.id} is not valid: ${report.validation.issues.join(" ")}`);
     }
 
-    if (report.evidence_review_gate.eligible && !report.evidence_review_gate.ready) {
+    if (report.evidence_appraisal_gate.eligible && !report.evidence_appraisal_gate.ready) {
       throw new Error(
-        `Candidate bundle ${bundle.id} is blocked by evidence review: ${report.evidence_review_gate.issues.join(" ")}`
+        `Candidate bundle ${bundle.id} is blocked by evidence appraisal: ${report.evidence_appraisal_gate.issues.join(" ")}`
       );
     }
 
@@ -2193,7 +2193,7 @@ async function publishCandidateBundle(bundleId, options = {}) {
       )
     ).filter(Boolean);
     const affectedClaimIds = Array.from(new Set([...claimIdsFromChanges, ...claimIdsFromImplications]));
-    const reviewFollowUpActions = getReviewFollowUpActions(report.evidence_review_gate);
+    const appraisalFollowUpActions = getAppraisalFollowUpActions(report.evidence_appraisal_gate);
     const extractionFollowUpActions = report.workflow_audit.extraction_follow_ups?.actions ?? [];
     const sourceAccessFollowUpActions = report.workflow_audit.source_access?.follow_ups?.actions ?? [];
     const extractionFollowUpSummary =
@@ -2221,18 +2221,18 @@ async function publishCandidateBundle(bundleId, options = {}) {
       })),
       public_graph_delta: buildPublicationDeltaFromChanges(bundle.proposed_changes ?? []),
       affected_claim_ids: affectedClaimIds,
-      approving_evidence_review_ids: report.evidence_review_gate.eligible
-        ? report.evidence_review_gate.reviews.map((review) => review.id)
+      approving_evidence_appraisal_ids: report.evidence_appraisal_gate.eligible
+        ? report.evidence_appraisal_gate.appraisals.map((appraisal) => appraisal.id)
         : undefined,
-      review_corrections_applied: report.evidence_review_gate.reviews.flatMap((review) =>
-        Array.isArray(review.corrections_applied) ? review.corrections_applied : []
+      appraisal_corrections_applied: report.evidence_appraisal_gate.appraisals.flatMap((appraisal) =>
+        Array.isArray(appraisal.corrections_applied) ? appraisal.corrections_applied : []
       ),
-      review_follow_up_actions: reviewFollowUpActions,
+      appraisal_follow_up_actions: appraisalFollowUpActions,
       source_access_follow_up_actions: sourceAccessFollowUpActions,
       extraction_follow_up_actions: extractionFollowUpActions,
       change_note:
         bundle.proposed_claim_implications?.[0]?.note ??
-        "A reviewed candidate bundle was published to the public evidence graph."
+        "An appraised candidate bundle was published to the public evidence graph."
     };
 
     const publicationEventPath = path.join(publicationEventsRoot, `${publicationEventId}.json`);
@@ -2244,7 +2244,7 @@ async function publishCandidateBundle(bundleId, options = {}) {
       next_actions: Array.from(
         new Set([
           "Publication complete. Review downstream pages if this change affects shared surfaces.",
-          ...reviewFollowUpActions,
+          ...appraisalFollowUpActions,
           ...sourceAccessFollowUpSummary,
           ...extractionFollowUpSummary
         ])
@@ -2265,8 +2265,8 @@ async function publishCandidateBundle(bundleId, options = {}) {
       published_targets: publicationEvent.published_targets,
       public_graph_delta: publicationEvent.public_graph_delta,
       affected_claim_ids: affectedClaimIds,
-      review_corrections_applied: publicationEvent.review_corrections_applied,
-      review_follow_up_actions: reviewFollowUpActions,
+      appraisal_corrections_applied: publicationEvent.appraisal_corrections_applied,
+      appraisal_follow_up_actions: appraisalFollowUpActions,
       source_access_follow_up_actions: sourceAccessFollowUpActions,
       extraction_follow_up_actions: extractionFollowUpActions,
       planning
@@ -2313,7 +2313,7 @@ async function commandSmoke(options) {
 }
 
 export {
-  addReviewComment,
+  addEditorialComment,
   approveCandidateBundle,
   buildReadinessSummary,
   buildBundleReport,
@@ -2328,11 +2328,11 @@ export {
   commandStatus,
   commandValidate,
   buildPrecommitSummary,
-  evaluateEvidenceReviewGate,
+  evaluateEvidenceAppraisalGate,
   evaluatePromotionFiles,
   getCurrentRevision,
   loadCandidateBundle,
-  loadEvidenceReviews,
+  loadEvidenceAppraisals,
   publishCandidateBundle,
   toPublicReport,
   updateCandidateBundleStatus

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "example-topic-baseline-review-2026-05-31",
+  "mode": "baseline_review",
+  "started_at": "2026-05-31T11:45:00Z",
+  "completed_at": "2026-05-31T12:10:00Z",
+  "scope": {
+    "domain_id": "sample-research",
+    "taxonomy_node_ids": [
+      "example-topic"
+    ],
+    "research_question": "Can the generic workflow publish a source-backed baseline claim for a neutral sample topic?"
+  },
+  "selected_via": "fixture",
+  "outcome": "candidate_bundle",
+  "summary": "Created a synthetic candidate bundle for validating the generic file-backed workflow.",
+  "candidate_bundle_id": "example-topic-baseline-review-2026-05-31",
+  "source_ids": [
+    "sample-source-example-topic-2026"
+  ],
+  "source_urls": [
+    "https://example.com/sample-research/example-topic"
+  ],
+  "next_recommended_mode": "review_update",
+  "next_actions": [
+    "Approve and publish the sample bundle through the CLI.",
+    "Regenerate planning state after publication."
+  ]
+}

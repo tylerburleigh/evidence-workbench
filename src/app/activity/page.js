@@ -5,11 +5,11 @@ import {
   EmptyState,
   Metric,
   PageHeader,
-  ReviewGateBadge,
+  AppraisalGateBadge,
   Section,
   StatusBadge
 } from "../components.js";
-import { formatDate, getActivityFeed, getWorkbenchData } from "../../lib/public-data.js";
+import { formatDate, getActivityFeed, getStudioData } from "../../lib/public-data.js";
 
 function targetHref(target) {
   if (target.record_type === "claim") {
@@ -29,7 +29,7 @@ function targetHref(target) {
 }
 
 export default async function ActivityPage() {
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const feed = getActivityFeed(data);
   const publishedEvents = data.collections.publicationEvents.length;
   const bundleReports = new Map(data.bundleReports.map((report) => [report.bundle_id, report]));
@@ -76,7 +76,7 @@ export default async function ActivityPage() {
                     <div className="meta-row">
                       <Badge>{formatDate(item.timestamp)}</Badge>
                       <Badge>{item.type}</Badge>
-                      <ReviewGateBadge report={report} />
+                      <AppraisalGateBadge report={report} />
                     </div>
                     {item.bundle?.scope?.research_question ? (
                       <p className="row-kicker timeline-question">{item.bundle.scope.research_question}</p>

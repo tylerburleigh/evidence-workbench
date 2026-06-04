@@ -11,11 +11,11 @@ const execFileAsync = promisify(execFile);
 const repoRoot = path.resolve(fileURLToPath(new URL("..", import.meta.url)));
 const workflowModulePath = path.join(repoRoot, "scripts/lib/bundle-workflow.mjs");
 const bundleScriptPath = path.join(repoRoot, "scripts/bundle.mjs");
-const reviewScriptPath = path.join(repoRoot, "scripts/review-evidence.mjs");
+const reviewScriptPath = path.join(repoRoot, "scripts/appraise-evidence.mjs");
 const archiveBundleId = "archive-question-baseline-2026-05-31";
 
 async function createWorkspace() {
-  const workspace = await mkdtemp(path.join(tmpdir(), "evidence-workbench-actions-"));
+  const workspace = await mkdtemp(path.join(tmpdir(), "lit-review-studio-actions-"));
   await Promise.all(
     ["data", "domain-packs", "research", "schemas"].map((entry) =>
       cp(path.join(repoRoot, entry), path.join(workspace, entry), { recursive: true })
@@ -92,19 +92,19 @@ async function runBundleCli(workspace, args, env = {}) {
   return JSON.parse(stdout);
 }
 
-test("review comments are written without touching real fixture data", async () => {
+test("editorial comments are written without touching real fixture data", async () => {
   await withWorkspace(async (workspace) => {
     const result = await runWorkflow(
       workspace,
       `
-        const { addReviewComment } = await import(process.env.WORKFLOW_MODULE_PATH);
-        const result = await addReviewComment("${archiveBundleId}", {
+        const { addEditorialComment } = await import(process.env.WORKFLOW_MODULE_PATH);
+        const result = await addEditorialComment("${archiveBundleId}", {
           body: "Needs one final editorial pass.",
           authorId: "test-curator"
         });
         console.log(JSON.stringify(result));
       `,
-      { WORKBENCH_DOMAIN: "sample-archive" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
     );
 
     assert.equal(result.action, "commented");
@@ -113,7 +113,7 @@ test("review comments are written without touching real fixture data", async () 
 
     assert.equal(comment.body, "Needs one final editorial pass.");
     assert.equal(comment.author_id, "test-curator");
-    assert.ok(bundle.review_comment_ids.includes(result.comment_id));
+    assert.ok(bundle.editorial_comment_ids.includes(result.comment_id));
   });
 });
 
@@ -128,7 +128,7 @@ test("request changes and reject update bundle status in an isolated workspace",
         });
         console.log(JSON.stringify(result));
       `,
-      { WORKBENCH_DOMAIN: "sample-archive" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
     );
 
     assert.equal(requested.previous_lifecycle_status, "submitted");
@@ -146,7 +146,7 @@ test("request changes and reject update bundle status in an isolated workspace",
         });
         console.log(JSON.stringify(result));
       `,
-      { WORKBENCH_DOMAIN: "sample-archive" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
     );
 
     assert.equal(rejected.previous_lifecycle_status, "needs_revision");
@@ -157,12 +157,12 @@ test("request changes and reject update bundle status in an isolated workspace",
   });
 });
 
-test("approve is blocked when required evidence review lanes are incomplete", async () => {
+test("approve is blocked when required evidence appraisal lanes are incomplete", async () => {
   await withWorkspace(async (workspace) => {
-    const reviewPath = "data/evidence-reviews/evidence-review-archive-question-source-fidelity-r1.json";
-    const review = await readWorkspaceJson(workspace, reviewPath);
-    await writeWorkspaceJson(workspace, reviewPath, {
-      ...review,
+    const appraisalPath = "data/evidence-appraisals/evidence-appraisal-archive-question-source-fidelity-r1.json";
+    const appraisal = await readWorkspaceJson(workspace, appraisalPath);
+    await writeWorkspaceJson(workspace, appraisalPath, {
+      ...appraisal,
       status: "draft"
     });
 
@@ -174,7 +174,7 @@ test("approve is blocked when required evidence review lanes are incomplete", as
           const result = await approveCandidateBundle("${archiveBundleId}");
           console.log(JSON.stringify(result));
         `,
-        { WORKBENCH_DOMAIN: "sample-archive" }
+        { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
       ),
       /not ready for approval/
     );
@@ -194,7 +194,7 @@ test("publish is blocked until a bundle is approved", async () => {
           const result = await publishCandidateBundle("${archiveBundleId}");
           console.log(JSON.stringify(result));
         `,
-        { WORKBENCH_DOMAIN: "sample-archive" }
+        { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
       ),
       /must be approved before publication/
     );
@@ -211,7 +211,7 @@ test("approved bundle publishes staged records in a temporary workspace", async 
         const result = await publishCandidateBundle("${archiveBundleId}", { publishedBy: "test-curator" });
         console.log(JSON.stringify(result));
       `,
-      { WORKBENCH_DOMAIN: "sample-archive" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
     );
 
     assert.equal(result.action, "published");
@@ -231,7 +231,7 @@ test("approved bundle publishes staged records in a temporary workspace", async 
   });
 });
 
-test("publish propagates non-blocking review findings into follow-up actions", async () => {
+test("publish propagates non-blocking appraisal findings into follow-up actions", async () => {
   await withWorkspace(async (workspace) => {
     const artifactPath =
       "data/staged-records/archive-question-baseline-2026-05-31/sample-archive-artifact-2026.json";
@@ -242,17 +242,17 @@ test("publish propagates non-blocking review findings into follow-up actions", a
       numeric_results_extracted: false
     });
 
-    const reviewPath = "data/evidence-reviews/evidence-review-archive-question-source-fidelity-r1.json";
-    const review = await readWorkspaceJson(workspace, reviewPath);
-    await writeWorkspaceJson(workspace, reviewPath, {
-      ...review,
+    const appraisalPath = "data/evidence-appraisals/evidence-appraisal-archive-question-source-fidelity-r1.json";
+    const appraisal = await readWorkspaceJson(workspace, appraisalPath);
+    await writeWorkspaceJson(workspace, appraisalPath, {
+      ...appraisal,
       findings: [
         {
           finding_id: "archive-follow-up-note",
           severity: "note",
           category: "uncertainty",
-          claim_or_issue: "The fixture review includes a non-blocking follow-up note.",
-          why_it_matters: "Non-blocking review notes should remain visible after publication.",
+          claim_or_issue: "The fixture appraisal includes a non-blocking follow-up note.",
+          why_it_matters: "Non-blocking appraisal notes should remain visible after publication.",
           recommended_action: "Revisit fixture detail extraction in the next manual pass.",
           resolution_status: "closed",
           applies_to_change_id: "create-archive-claim"
@@ -268,7 +268,7 @@ test("publish propagates non-blocking review findings into follow-up actions", a
         const result = await publishCandidateBundle("${archiveBundleId}", { publishedBy: "test-curator" });
         console.log(JSON.stringify(result));
       `,
-      { WORKBENCH_DOMAIN: "sample-archive" }
+      { LIT_REVIEW_STUDIO_DOMAIN: "sample-archive" }
     );
 
     const expectedAction = "source_fidelity: Revisit fixture detail extraction in the next manual pass.";
@@ -291,12 +291,12 @@ test("publish propagates non-blocking review findings into follow-up actions", a
       artifact_id: "sample-archive-artifact-2026"
     };
 
-    assert.deepEqual(result.review_follow_up_actions, [expectedAction]);
+    assert.deepEqual(result.appraisal_follow_up_actions, [expectedAction]);
     assert.deepEqual(result.extraction_follow_up_actions, [expectedExtractionAction]);
     assert.ok(bundle.next_actions.includes(expectedAction));
     assert.ok(bundle.next_actions.includes("Resolve 1 structured extraction follow-up action(s) before quantitative synthesis."));
     assert.deepEqual(bundle.extraction_follow_up_actions, [expectedExtractionAction]);
-    assert.deepEqual(event.review_follow_up_actions, [expectedAction]);
+    assert.deepEqual(event.appraisal_follow_up_actions, [expectedAction]);
     assert.deepEqual(event.extraction_follow_up_actions, [expectedExtractionAction]);
   });
 });
@@ -304,19 +304,19 @@ test("publish propagates non-blocking review findings into follow-up actions", a
 test("bundle CLI exposes non-destructive status JSON after action refactor", async () => {
   await withWorkspace(async (workspace) => {
     const status = await runBundleCli(workspace, ["status", "--bundle", archiveBundleId], {
-      WORKBENCH_DOMAIN: "sample-archive"
+      LIT_REVIEW_STUDIO_DOMAIN: "sample-archive"
     });
 
     assert.equal(status.bundle_id, archiveBundleId);
     assert.equal(status.validation.ready, true);
-    assert.equal(status.evidence_review_gate.ready, true);
+    assert.equal(status.evidence_appraisal_gate.ready, true);
   });
 });
 
 test("bundle CLI audit exposes workflow checks and projected graph deltas", async () => {
   await withWorkspace(async (workspace) => {
     const audit = await runBundleCli(workspace, ["audit", "--bundle", archiveBundleId], {
-      WORKBENCH_DOMAIN: "sample-archive"
+      LIT_REVIEW_STUDIO_DOMAIN: "sample-archive"
     });
 
     assert.equal(audit.bundle_id, archiveBundleId);
@@ -339,8 +339,8 @@ test("published bundle audit exposes publication completeness and live/staged dr
       summary: "Synthetic drift introduced by the audit test."
     });
 
-    const audit = await runBundleCli(workspace, ["audit", "--bundle", "example-topic-bootstrap-2026-05-31"], {
-      WORKBENCH_DOMAIN: "sample-research"
+    const audit = await runBundleCli(workspace, ["audit", "--bundle", "example-topic-baseline-review-2026-05-31"], {
+      LIT_REVIEW_STUDIO_DOMAIN: "sample-research"
     });
     const driftCheck = audit.workflow_audit.publication_completeness.checks.find(
       (check) => check.target_record_id === "sample-claim-example-topic-baseline"
@@ -364,7 +364,7 @@ test("bundle audit flags missing numeric extraction status when metric fields ar
     });
 
     const audit = await runBundleCli(workspace, ["audit", "--bundle", archiveBundleId], {
-      WORKBENCH_DOMAIN: "sample-archive"
+      LIT_REVIEW_STUDIO_DOMAIN: "sample-archive"
     });
     const numericCheck = audit.workflow_audit.numeric_extraction.checks.find(
       (check) => check.target_record_id === "sample-archive-artifact-2026"
@@ -399,7 +399,7 @@ test("bundle audit surfaces structured extraction follow-ups for deferred numeri
     });
 
     const audit = await runBundleCli(workspace, ["audit", "--bundle", archiveBundleId], {
-      WORKBENCH_DOMAIN: "sample-archive"
+      LIT_REVIEW_STUDIO_DOMAIN: "sample-archive"
     });
     const followUps = audit.workflow_audit.extraction_follow_ups;
 
@@ -466,7 +466,7 @@ test("bundle audit surfaces source-access follow-ups for abstract-only supportin
     });
 
     const audit = await runBundleCli(workspace, ["audit", "--bundle", archiveBundleId], {
-      WORKBENCH_DOMAIN: "sample-archive"
+      LIT_REVIEW_STUDIO_DOMAIN: "sample-archive"
     });
     const sourceAccess = audit.workflow_audit.source_access;
 
@@ -504,15 +504,15 @@ test("bundle audit surfaces source-access follow-ups for abstract-only supportin
 
 test("bundle audit flags timestamp ordering inversions", async () => {
   await withWorkspace(async (workspace) => {
-    const bundlePath = "data/candidate-bundles/example-topic-bootstrap-2026-05-31.json";
+    const bundlePath = "data/candidate-bundles/example-topic-baseline-review-2026-05-31.json";
     const bundle = await readWorkspaceJson(workspace, bundlePath);
     await writeWorkspaceJson(workspace, bundlePath, {
       ...bundle,
       submitted_at: "2026-06-01T00:00:00Z"
     });
 
-    const audit = await runBundleCli(workspace, ["audit", "--bundle", "example-topic-bootstrap-2026-05-31"], {
-      WORKBENCH_DOMAIN: "sample-research"
+    const audit = await runBundleCli(workspace, ["audit", "--bundle", "example-topic-baseline-review-2026-05-31"], {
+      LIT_REVIEW_STUDIO_DOMAIN: "sample-research"
     });
 
     assert.equal(audit.workflow_audit.timestamp_order.ready, false);
@@ -527,13 +527,13 @@ test("bundle audit flags timestamp ordering inversions", async () => {
 test("bundle CLI precommit summarizes workflow state and verification commands", async () => {
   await withWorkspace(async (workspace) => {
     const summary = await runBundleCli(workspace, ["precommit", "--bundle", archiveBundleId], {
-      WORKBENCH_DOMAIN: "sample-archive"
+      LIT_REVIEW_STUDIO_DOMAIN: "sample-archive"
     });
 
     assert.equal(summary.action, "precommit_summary");
     assert.equal(summary.bundle_id, archiveBundleId);
     assert.equal(summary.public_graph_delta.by_record_type.claim.created, 1);
-    assert.equal(summary.evidence_reviews.ready, true);
+    assert.equal(summary.evidence_appraisals.ready, true);
     assert.equal(summary.workflow_audit.source_access_follow_up_count, 0);
     assert.deepEqual(summary.source_access_follow_ups, {
       open_count: 0,
@@ -542,7 +542,7 @@ test("bundle CLI precommit summarizes workflow state and verification commands",
     assert.ok(summary.verification_commands.includes("npm run validate"));
     assert.ok(
       summary.verification_commands.includes(
-        `WORKBENCH_DOMAIN=sample-archive npm run research:bundle -- validate --bundle ${archiveBundleId}`
+        `LIT_REVIEW_STUDIO_DOMAIN=sample-archive npm run research:bundle -- validate --bundle ${archiveBundleId}`
       )
     );
     assert.equal(summary.planning.domain_matches, false);
@@ -550,7 +550,7 @@ test("bundle CLI precommit summarizes workflow state and verification commands",
   });
 });
 
-test("evidence review scaffold includes lane checklist and correction metadata", async () => {
+test("evidence appraisal scaffold includes lane checklist and correction metadata", async () => {
   await withWorkspace(async (workspace) => {
     const { stdout } = await execFileAsync(
       process.execPath,
@@ -567,7 +567,7 @@ test("evidence review scaffold includes lane checklist and correction metadata",
         cwd: workspace,
         env: {
           ...process.env,
-          WORKBENCH_DOMAIN: "sample-archive"
+          LIT_REVIEW_STUDIO_DOMAIN: "sample-archive"
         }
       }
     );

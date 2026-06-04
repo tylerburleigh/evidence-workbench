@@ -38,8 +38,8 @@
       }
     },
     "affected_claim_ids": { "type": "array", "items": { "type": "string" } },
-    "approving_evidence_review_ids": { "type": "array", "items": { "type": "string" } },
-    "review_follow_up_actions": { "type": "array", "items": { "type": "string" } },
+    "approving_evidence_appraisal_ids": { "type": "array", "items": { "type": "string" } },
+    "appraisal_follow_up_actions": { "type": "array", "items": { "type": "string" } },
     "source_access_follow_up_actions": {
       "type": "array",
       "items": { "$ref": "#/$defs/source_access_follow_up_action" }

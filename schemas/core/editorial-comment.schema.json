@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "core/editorial-comment.schema.json",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["schema_version", "record_type", "id", "candidate_bundle_id", "author_kind", "body", "created_at"],
+  "properties": {
+    "schema_version": { "const": "1.0.0" },
+    "record_type": { "const": "editorial_comment" },
+    "id": { "type": "string", "minLength": 1 },
+    "candidate_bundle_id": { "type": "string", "minLength": 1 },
+    "author_kind": { "enum": ["agent", "human"] },
+    "author_id": { "type": "string" },
+    "body": { "type": "string", "minLength": 1 },
+    "created_at": { "type": "string", "minLength": 1 }
+  }
+}

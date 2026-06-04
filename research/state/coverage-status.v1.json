@@ -12,8 +12,8 @@
   "selection_policy": {
     "default_unit": "control",
     "stale_after_days": 60,
-    "max_scope_units_per_bootstrap_run": 1,
-    "max_scope_units_per_surveillance_run": 1,
+    "max_scope_units_per_baseline_review_run": 1,
+    "max_scope_units_per_review_update_run": 1,
     "when_request_is_too_broad": "Decompose to one control-level pass before creating records."
   },
   "nodes": [
@@ -24,7 +24,7 @@
       "canonical_order": 1,
       "name": "Release Provenance Control",
       "coverage_status": "baseline",
-      "next_mode": "surveillance",
+      "next_mode": "review_update",
       "queue_state": "deferred",
       "freshness_status": "fresh",
       "last_checked_at": "2026-06-01T19:38:49.833Z",
@@ -35,14 +35,14 @@
       "stale_reason": "Latest publication check is 0 days old; stale after 60 days.",
       "last_session_id": "release-provenance-control-baseline-2026-06-01",
       "last_session_at": "2026-06-01T19:30:00Z",
-      "last_session_mode": "bootstrap",
+      "last_session_mode": "baseline_review",
       "last_session_outcome": "candidate_bundle",
       "last_candidate_bundle_id": "release-provenance-control-baseline-2026-06-01",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-release-provenance-control-baseline-2026-06-01-2026-06-01t19-38-49-833z",
       "last_published_at": "2026-06-01T19:38:49.833Z",
       "default_research_question": "What changed for Release Provenance Control since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest publication check is 0 days old; stale after 60 days. Next surveillance is due at 2026-07-31T19:38:49.833Z."
+      "notes": "Latest publication check is 0 days old; stale after 60 days. Next review update is due at 2026-07-31T19:38:49.833Z."
     },
     {
       "taxonomy_node_id": "dependency-exposure-control",
@@ -51,7 +51,7 @@
       "canonical_order": 2,
       "name": "Dependency Exposure Control",
       "coverage_status": "baseline",
-      "next_mode": "surveillance",
+      "next_mode": "review_update",
       "queue_state": "deferred",
       "freshness_status": "fresh",
       "last_checked_at": "2026-06-01T20:21:18.430Z",
@@ -62,14 +62,14 @@
       "stale_reason": "Latest publication check is 0 days old; stale after 60 days.",
       "last_session_id": "dependency-exposure-control-baseline-2026-06-01",
       "last_session_at": "2026-06-01T20:16:00Z",
-      "last_session_mode": "bootstrap",
+      "last_session_mode": "baseline_review",
       "last_session_outcome": "candidate_bundle",
       "last_candidate_bundle_id": "dependency-exposure-control-baseline-2026-06-01",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-dependency-exposure-control-baseline-2026-06-01-2026-06-01t20-21-18-430z",
       "last_published_at": "2026-06-01T20:21:18.430Z",
       "default_research_question": "What changed for Dependency Exposure Control since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest publication check is 0 days old; stale after 60 days. Next surveillance is due at 2026-07-31T20:21:18.430Z."
+      "notes": "Latest publication check is 0 days old; stale after 60 days. Next review update is due at 2026-07-31T20:21:18.430Z."
     },
     {
       "taxonomy_node_id": "maintenance-signal-control",
@@ -78,7 +78,7 @@
       "canonical_order": 3,
       "name": "Maintenance Signal Control",
       "coverage_status": "baseline",
-      "next_mode": "surveillance",
+      "next_mode": "review_update",
       "queue_state": "deferred",
       "freshness_status": "fresh",
       "last_checked_at": "2026-06-01T21:12:32.526Z",
@@ -89,14 +89,14 @@
       "stale_reason": "Latest publication check is 0 days old; stale after 60 days.",
       "last_session_id": "maintenance-signal-control-baseline-2026-06-01",
       "last_session_at": "2026-06-01T21:07:00Z",
-      "last_session_mode": "bootstrap",
+      "last_session_mode": "baseline_review",
       "last_session_outcome": "candidate_bundle",
       "last_candidate_bundle_id": "maintenance-signal-control-baseline-2026-06-01",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-maintenance-signal-control-baseline-2026-06-01-2026-06-01t21-12-32-526z",
       "last_published_at": "2026-06-01T21:12:32.526Z",
       "default_research_question": "What changed for Maintenance Signal Control since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest publication check is 0 days old; stale after 60 days. Next surveillance is due at 2026-07-31T21:12:32.526Z."
+      "notes": "Latest publication check is 0 days old; stale after 60 days. Next review update is due at 2026-07-31T21:12:32.526Z."
     }
   ]
 }

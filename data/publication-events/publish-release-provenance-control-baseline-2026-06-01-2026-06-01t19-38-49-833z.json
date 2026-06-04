@@ -33,11 +33,11 @@
   "affected_claim_ids": [
     "release-provenance-control-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-release-provenance-control-control-fit-r1",
-    "evidence-review-release-provenance-control-operational-boundary-r1",
-    "evidence-review-release-provenance-control-risk-framing-r1",
-    "evidence-review-release-provenance-control-source-fidelity-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-release-provenance-control-control-fit-r1",
+    "evidence-appraisal-release-provenance-control-operational-boundary-r1",
+    "evidence-appraisal-release-provenance-control-risk-framing-r1",
+    "evidence-appraisal-release-provenance-control-source-fidelity-r1"
   ],
   "change_note": "Creates the first source-backed baseline for the release provenance control."
 }

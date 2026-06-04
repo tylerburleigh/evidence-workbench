@@ -8,7 +8,7 @@ The generic framework should have core skills plus domain adapters.
 
 ## Core Skills
 
-### `research-bootstrap`
+### `baseline-review`
 
 Use when initializing coverage for one topic.
 
@@ -30,7 +30,7 @@ Boundaries:
 - do not cover multiple scope units unless explicitly decomposed
 - do not make claims without source-backed findings
 
-### `surveillance-update`
+### `review-update`
 
 Use when checking what changed since the last review.
 
@@ -48,33 +48,33 @@ Boundaries:
 - do not redo baseline research
 - do not upgrade evidence due to activity alone
 
-### `evidence-review`
+### `evidence-appraisal`
 
 Use when verifying a candidate bundle.
 
 Responsibilities:
 
 - run bundle validation
-- review one lane for one revision
+- appraise one lane for one revision
 - compare staged records against source facts
 - verify support maps
 - write structured findings
-- apply review
+- apply appraisal
 
 Boundaries:
 
 - do not conduct new research
 - do not approve or publish
-- do not edit staged records unless explicitly asked to revise after review
+- do not edit staged records unless explicitly asked to revise after appraisal
 
-### `editorial-review`
+### `editorial-decision`
 
-Use when approving or publishing a reviewed bundle.
+Use when approving or publishing an appraised bundle.
 
 Responsibilities:
 
 - inspect promotion readiness
-- inspect evidence-review gate
+- inspect evidence-appraisal gate
 - compare staged and live records
 - request changes, approve, or publish
 - run post-publish checks
@@ -84,7 +84,7 @@ Boundaries:
 - do not bypass publish workflow
 - do not approve unsupported claims
 
-### `synthesis-review`
+### `evidence-synthesis`
 
 Use when summarizing already-published evidence across one domain or a bounded group of scope units.
 
@@ -92,13 +92,13 @@ Responsibilities:
 
 - resolve synthesis scope
 - inspect current report artifacts and decide update, supersede, or sidecar disposition
-- inventory published claims, findings, sources, reviews, publication events, and planning state
+- inventory published claims, findings, sources, appraisals, publication events, and planning state
 - classify question status and claim strength
 - identify cross-cutting conclusions
 - separate evidence-supported conclusions from workflow gaps
 - draft a traceable Markdown synthesis report
 - update report-artifact metadata when a visible report changes
-- recommend next bootstrap, surveillance, review, or publication actions
+- recommend next baseline review, review update, appraisal, or publication actions
 
 Boundaries:
 
@@ -108,7 +108,7 @@ Boundaries:
 - do not generalize across scope units without explaining the support
 - do not create parallel current reports for the same domain, artifact type, and scope unless the audience or section boundary is explicit
 
-### `attention-triage`
+### `review-triage`
 
 Use when deciding what needs attention now in one active domain.
 
@@ -136,14 +136,14 @@ Adapters should add:
 - common overclaim patterns
 - evidence hierarchy
 - limitations, safety, or ethics caveats when configured
-- domain-specific review lanes
+- domain-specific appraisal lanes
 - public wording rules
 
 Adapters should not duplicate generic lifecycle instructions.
 
 ## Domain Adapter Example
 
-Bootstrap instructions:
+Baseline Review instructions:
 
 - Identify the domain subject, context, endpoint or observation type, result, and limitations.
 - Extract required fields before drafting a claim.
@@ -151,12 +151,12 @@ Bootstrap instructions:
 - Flag common domain-specific overclaim patterns.
 - Keep boundaries visible near the public claim.
 
-Evidence review instructions:
+Evidence appraisal instructions:
 
 - Check whether the public claim matches the source-backed finding.
 - Check whether claim scope matches the configured taxonomy unit.
 - Check whether limitations and uncertainty are represented.
-- Check whether domain-specific review lanes are complete before approval.
+- Check whether domain-specific appraisal lanes are complete before approval.
 
 ## Skill File Shape
 
@@ -176,9 +176,9 @@ Keep `SKILL.md` short. Put longer rubrics in domain-pack reference files.
 The framework can use separate agents or skill passes:
 
 1. Research drafter creates bundle.
-2. Source-fidelity reviewer checks facts.
-3. Interpretation reviewer checks claims.
-4. Limitations reviewer checks caveats, boundaries, or configured risk/ethics concerns.
+2. Source-fidelity appraiser checks facts.
+3. Interpretation appraiser checks claims.
+4. Limitations appraiser checks caveats, boundaries, or configured risk/ethics concerns.
 5. Editorial publisher approves and publishes.
 
 Do not let the same pass silently do every role unless the user explicitly accepts lower review independence.

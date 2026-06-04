@@ -22,7 +22,7 @@
           "taxonomy_node_id": { "type": "string", "minLength": 1 },
           "name": { "type": "string", "minLength": 1 },
           "coverage_status": { "enum": ["not_started", "in_review", "baseline"] },
-          "next_mode": { "enum": ["bootstrap", "surveillance", "manual"] },
+          "next_mode": { "enum": ["baseline_review", "review_update", "manual"] },
           "queue_state": { "enum": ["ready", "active_review", "deferred"] },
           "freshness_status": { "enum": ["uncovered", "in_review", "fresh", "stale", "unknown"] },
           "last_checked_at": { "type": "string", "minLength": 1 },

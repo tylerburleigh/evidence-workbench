@@ -1,10 +1,10 @@
 import { PageHeader, Section } from "../components.js";
 import { optionList } from "../index-options.js";
 import { RecordIndex } from "../record-index.js";
-import { getWorkbenchData } from "../../lib/public-data.js";
+import { getStudioData } from "../../lib/public-data.js";
 
 export default async function ClaimsPage() {
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const claims = data.collections.claims.map(({ record }) => record).sort((left, right) => left.name.localeCompare(right.name));
   const items = claims.map((claim) => ({
     id: claim.id,

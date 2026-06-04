@@ -27,6 +27,6 @@
     "no_baseline": "This control exists, but no public baseline has been published yet.",
     "no_recent_activity": "No review activity has been recorded for this control.",
     "no_findings": "No source-backed observations have been published for this source yet.",
-    "missing_review": "This bundle is waiting for structured supply-chain review."
+    "missing_appraisal": "This bundle is waiting for structured supply-chain appraisal."
   }
 }

@@ -33,11 +33,11 @@
   "affected_claim_ids": [
     "maintenance-signal-control-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-maintenance-signal-control-control-fit-r1",
-    "evidence-review-maintenance-signal-control-operational-boundary-r1",
-    "evidence-review-maintenance-signal-control-risk-framing-r1",
-    "evidence-review-maintenance-signal-control-source-fidelity-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-maintenance-signal-control-control-fit-r1",
+    "evidence-appraisal-maintenance-signal-control-operational-boundary-r1",
+    "evidence-appraisal-maintenance-signal-control-risk-framing-r1",
+    "evidence-appraisal-maintenance-signal-control-source-fidelity-r1"
   ],
   "change_note": "Creates the first source-backed baseline for the maintenance signal control."
 }

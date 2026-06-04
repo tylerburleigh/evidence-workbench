@@ -2,9 +2,9 @@
   "schema_version": "1.0.0",
   "record_type": "candidate_bundle",
   "id": "archive-question-baseline-2026-05-31",
-  "name": "Archive Question Baseline Bootstrap",
+  "name": "Archive Question Baseline Baseline Review",
   "summary": "Second synthetic fixture bundle that stages an archive-style source, artifact, finding, and claim.",
-  "intake_mode": "bootstrap",
+  "intake_mode": "baseline_review",
   "lifecycle_status": "submitted",
   "submitted_at": "2026-05-31T13:00:00Z",
   "submitted_by": "fixture-agent",
@@ -14,7 +14,7 @@
     "taxonomy_node_ids": [
       "archive-question"
     ],
-    "research_question": "Can the generic workflow validate a non-topic scope unit with different review lanes?"
+    "research_question": "Can the generic workflow validate a non-topic scope unit with different appraisal lanes?"
   },
   "source_ids": [
     "sample-archive-source-2026"
@@ -72,24 +72,24 @@
       "note": "Creates a synthetic baseline claim for the archive question fixture."
     }
   ],
-  "required_review_lanes": [
+  "required_appraisal_lanes": [
     "source_fidelity",
     "scope_fit",
     "context_boundaries"
   ],
-  "review_requirement": {
-    "min_complete_reviews_per_lane": 1,
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": false
   },
-  "evidence_review_ids": [
-    "evidence-review-archive-question-source-fidelity-r1",
-    "evidence-review-archive-question-scope-fit-r1",
-    "evidence-review-archive-question-context-boundaries-r1"
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-archive-question-source-fidelity-r1",
+    "evidence-appraisal-archive-question-scope-fit-r1",
+    "evidence-appraisal-archive-question-context-boundaries-r1"
   ],
-  "review_comment_ids": [],
+  "editorial_comment_ids": [],
   "publication_event_ids": [],
   "next_actions": [
-    "Use WORKBENCH_DOMAIN=sample-archive when validating this bundle."
+    "Use LIT_REVIEW_STUDIO_DOMAIN=sample-archive when validating this bundle."
   ]
 }

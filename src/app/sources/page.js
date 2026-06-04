@@ -1,10 +1,10 @@
 import { PageHeader, Section } from "../components.js";
 import { optionList } from "../index-options.js";
 import { RecordIndex } from "../record-index.js";
-import { getSourceAccessInfo, getSourceAccessSummary, getWorkbenchData } from "../../lib/public-data.js";
+import { getSourceAccessInfo, getSourceAccessSummary, getStudioData } from "../../lib/public-data.js";
 
 export default async function SourcesPage() {
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const sources = data.collections.sources.map(({ record }) => record).sort((left, right) => left.name.localeCompare(right.name));
   const accessSummary = getSourceAccessSummary(data);
   const items = sources.map((source) => {

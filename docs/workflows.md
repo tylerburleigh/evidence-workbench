@@ -8,7 +8,7 @@ This prevents broad, diffuse research passes and makes review feasible.
 
 If a user asks for a whole field, the system should select or ask for one bounded scope unit.
 
-## Workflow 1: Bootstrap Research
+## Workflow 1: Baseline Review
 
 Use when a topic has no baseline public coverage.
 
@@ -36,7 +36,7 @@ Expected outputs:
 
 No-op is valid when evidence does not justify a public baseline.
 
-## Workflow 2: Surveillance Update
+## Workflow 2: Review Update
 
 Use when a topic already has baseline coverage.
 
@@ -63,39 +63,39 @@ Rules:
 - New sources should not silently invalidate support maps; update the support map when a claim rationale changes.
 - Null, negative, mixed, retracted, or stalled evidence should remain visible when it matters.
 
-## Workflow 3: Evidence Review
+## Workflow 3: Evidence Appraisal
 
 Use after a candidate bundle is submitted.
 
 Steps:
 
-1. Pick one bundle revision and one review lane.
+1. Pick one bundle revision and one appraisal lane.
 2. Run bundle status and validation.
-3. Scaffold an evidence review.
+3. Scaffold an evidence appraisal.
 4. Compare staged records against sources and live records.
 5. Write structured findings.
-6. Apply the review.
+6. Apply the appraisal.
 7. Confirm gate state.
 
-Review verdicts:
+Appraisal verdicts:
 
 - `accept`
 - `needs_revision`
 - `reject`
 - `needs_human_judgment`
 
-Evidence review findings should be actionable. They should identify the claim, why it matters, and the needed repair.
+Evidence appraisal findings should be actionable. They should identify the claim, why it matters, and the needed repair.
 
-## Workflow 4: Editorial Review
+## Workflow 4: Editorial Decision
 
-Use after required evidence-review lanes are complete.
+Use after required evidence-appraisal lanes are complete.
 
 Steps:
 
 1. Inspect bundle status.
 2. Inspect promotion readiness.
 3. Compare staged records to live records.
-4. Check evidence-review findings.
+4. Check evidence-appraisal findings.
 5. Request revision or approve.
 6. Publish only after approval.
 7. Run planning sync after publish.
@@ -104,7 +104,7 @@ Steps:
 Rules:
 
 - Do not hand-copy staged records into public data.
-- Do not publish if evidence-review gates are incomplete or blocking.
+- Do not publish if evidence-appraisal gates are incomplete or blocking.
 - Do not approve if staged claims exceed the support map.
 
 ## Workflow 5: Planning Sync
@@ -120,12 +120,12 @@ The sync should compute:
 
 - coverage status by topic
 - next recommended mode
-- active review status
+- active appraisal status
 - latest session
 - latest bundle
 - latest publication
-- bootstrap queue
-- surveillance queue
+- Baseline Review queue
+- Review Update queue
 
 ## Workflow 6: Report Integration
 
@@ -139,7 +139,7 @@ Steps:
    - create a new report version and mark the replaced artifact `superseded` or `archived`
    - keep the new synthesis as an unindexed or draft sidecar
    - intentionally keep a separate current report because its audience, section, or scope differs
-3. Merge newly published sources, findings, claims, reviews, and publication events into the target report metadata.
+3. Merge newly published sources, findings, claims, appraisals, and publication events into the target report metadata.
 4. Update the Markdown report prose or traceability sections so the visible synthesis reflects the published graph.
 5. Run validation and citation-audit checks when report indexes changed.
 
@@ -165,7 +165,7 @@ The validator should check:
 - artifact references exist
 - finding references exist
 - claim support maps reference concrete findings and sources
-- required review lanes are complete before approval
+- required appraisal lanes are complete before approval
 - publication event exists after publication
 
 ## Lifecycle Transitions
@@ -182,4 +182,4 @@ published -> terminal
 rejected -> terminal
 ```
 
-Approval may be allowed directly from `submitted` for small bundles, but only when validation and review gates are clean.
+Approval may be allowed directly from `submitted` for small bundles, but only when validation and appraisal gates are clean.

@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Badge, Breadcrumbs, EmptyState, PageHeader, Section, SourceAccessBadge } from "../../components.js";
-import { getArtifactById, getFindingById, getNodeById, getSourceById, getWorkbenchData } from "../../../lib/public-data.js";
+import { getArtifactById, getFindingById, getNodeById, getSourceById, getStudioData } from "../../../lib/public-data.js";
 
 export default async function FindingDetailPage({ params }) {
   const { findingId } = await params;
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const finding = getFindingById(data, findingId);
   if (!finding) {
     notFound();

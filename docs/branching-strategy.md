@@ -2,9 +2,9 @@
 
 ## Purpose
 
-Use branches to separate reusable workbench improvements from domain-specific research output.
+Use branches to separate reusable studio improvements from domain-specific research output.
 
-The workbench is meant to support many research areas. A research branch can accumulate a large evidence graph, but `main` should stay usable as the stable, reusable platform.
+The studio is meant to support many research areas. A research branch can accumulate a large evidence graph, but `main` should stay usable as the stable, reusable platform.
 
 ## Branch Roles
 
@@ -33,7 +33,7 @@ Use these when a research branch reveals a reusable need, such as:
 - report rendering
 - source-access audits
 - search protocol workflow
-- evidence review gates
+- evidence appraisal gates
 - synthesis/report integration helpers
 - UI discoverability improvements
 
@@ -51,7 +51,7 @@ Use these for domain-specific work:
 - claims
 - candidate bundles
 - staged records
-- evidence reviews
+- evidence appraisals
 - publication events
 - research sessions
 - domain-specific syntheses
@@ -125,7 +125,7 @@ Usually research corpus:
 - `data/claims/**`
 - `data/candidate-bundles/**`
 - `data/staged-records/**`
-- `data/evidence-reviews/**`
+- `data/evidence-appraisals/**`
 - `data/publication-events/**`
 - `data/report-artifacts/**`
 - `data/search-protocols/**`

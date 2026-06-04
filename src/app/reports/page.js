@@ -8,11 +8,11 @@ import {
   getSynthesisMatrixConfig,
   getSynthesisMatrixRows,
   getSearchProtocols,
-  getWorkbenchData
+  getStudioData
 } from "../../lib/public-data.js";
 
 export default async function ReportsPage() {
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const config = getSynthesisMatrixConfig(data);
   const rows = getSynthesisMatrixRows(data);
   const protocols = getSearchProtocols(data);

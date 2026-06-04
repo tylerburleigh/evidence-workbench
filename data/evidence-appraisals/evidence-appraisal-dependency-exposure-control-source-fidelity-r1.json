@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-dependency-exposure-control-source-fidelity-r1",
+  "name": "Source Fidelity Review for Dependency Exposure Control Bundle",
+  "candidate_bundle_id": "dependency-exposure-control-baseline-2026-06-01",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "source_fidelity",
+  "appraiser_kind": "agent",
+  "appraiser_id": "codex-agent",
+  "skill_name": "evidence-appraisal",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged source, artifact, finding, and claim stay anchored to the official OpenSSF Scorecard check documentation and avoid repository-specific assertions.",
+  "appraised_change_ids": [
+    "create-scorecard-checks-source",
+    "create-scorecard-dependency-exposure-artifact",
+    "create-scorecard-dependency-exposure-finding",
+    "create-dependency-exposure-claim"
+  ],
+  "findings": [],
+  "created_at": "2026-06-01T20:18:00Z",
+  "updated_at": "2026-06-01T20:18:00Z"
+}

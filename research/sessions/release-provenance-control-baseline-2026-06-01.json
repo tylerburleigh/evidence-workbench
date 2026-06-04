@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "record_type": "research_session",
   "id": "release-provenance-control-baseline-2026-06-01",
-  "mode": "bootstrap",
+  "mode": "baseline_review",
   "started_at": "2026-06-01T19:20:00Z",
   "completed_at": "2026-06-01T19:30:00Z",
   "scope": {
@@ -22,9 +22,9 @@
   "source_urls": [
     "https://slsa.dev/spec/v1.2/build-provenance"
   ],
-  "next_recommended_mode": "surveillance",
+  "next_recommended_mode": "review_update",
   "next_actions": [
-    "Complete source fidelity, control fit, risk framing, and operational boundary reviews.",
+    "Complete source fidelity, control fit, risk framing, and operational boundary appraisals.",
     "Approve and publish after the evidence gate passes.",
     "Use a release-specific bundle before making claims about an actual project release."
   ]
