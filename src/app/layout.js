@@ -1,7 +1,8 @@
-import { Activity, Archive, BookOpen, ClipboardList, Database, FileText, Home, Network, ShieldCheck } from "lucide-react";
+import { Database } from "lucide-react";
 import Link from "next/link";
 import { getReportArtifacts, getScopePluralLabel, getWorkbenchData } from "../lib/public-data.js";
 import "./globals.css";
+import { PrimaryNav } from "./primary-nav.js";
 
 export const dynamic = "force-dynamic";
 
@@ -30,42 +31,7 @@ export default async function RootLayout({ children }) {
                   <span className="brand-subtitle">{data.domainPack.domain.id}</span>
                 </span>
               </Link>
-              <nav className="nav" aria-label="Primary">
-                <Link className="nav-link" href="/">
-                  <Home size={15} />
-                  Overview
-                </Link>
-                <Link className="nav-link" href="/scope">
-                  <Network size={15} />
-                  {scopeLabel}
-                </Link>
-                <Link className="nav-link" href="/sources">
-                  <Archive size={15} />
-                  Sources
-                </Link>
-                <Link className="nav-link" href="/activity">
-                  <Activity size={15} />
-                  Activity
-                </Link>
-                {literatureReview ? (
-                  <Link className="nav-link" href={`/reports/${literatureReview.id}`}>
-                    <BookOpen size={15} />
-                    Literature Review
-                  </Link>
-                ) : null}
-                <Link className="nav-link" href="/reports">
-                  <FileText size={15} />
-                  Reports
-                </Link>
-                <Link className="nav-link" href="/methods">
-                  <ShieldCheck size={15} />
-                  Methods
-                </Link>
-                <Link className="nav-link" href="/admin/review">
-                  <ClipboardList size={15} />
-                  Review
-                </Link>
-              </nav>
+              <PrimaryNav scopeLabel={scopeLabel} literatureReviewHref={literatureReview ? `/reports/${literatureReview.id}` : undefined} />
             </div>
           </header>
           {children}

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Badge, EmptyState, PageHeader, Section } from "../../components.js";
+import { Badge, Breadcrumbs, EmptyState, PageHeader, Section } from "../../components.js";
 import {
   getClaimById,
   getNodeById,
@@ -27,6 +27,13 @@ export default async function ReportArtifactPage({ params }) {
 
   return (
     <main className="page">
+      <Breadcrumbs
+        items={[
+          { href: "/reports", label: "Reports" },
+          { label: report.name }
+        ]}
+      />
+
       <PageHeader
         eyebrow="Report Artifact"
         title={report.name}

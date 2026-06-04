@@ -675,6 +675,56 @@ function validateCurrentReportArtifactUniqueness(entries, issues) {
   }
 }
 
+function addSummaryReference(summaryReferences, sourceId, referencePath) {
+  if (!nonEmptyString(sourceId)) {
+    return;
+  }
+
+  if (!summaryReferences.has(sourceId)) {
+    summaryReferences.set(sourceId, new Set());
+  }
+
+  summaryReferences.get(sourceId).add(referencePath);
+}
+
+function validateEvidenceLinkedSourceSummaries(entries, context, issues) {
+  const summaryReferences = new Map();
+
+  for (const { value: record, relativePath } of entries) {
+    if (record?.record_type === "finding") {
+      addSummaryReference(summaryReferences, record.source_id, relativePath);
+    }
+
+    if (record?.record_type === "claim") {
+      for (const sourceId of record.supporting_source_ids ?? []) {
+        addSummaryReference(summaryReferences, sourceId, relativePath);
+      }
+
+      for (const support of record.supporting_evidence ?? []) {
+        for (const sourceId of support.source_ids ?? []) {
+          addSummaryReference(summaryReferences, sourceId, relativePath);
+        }
+      }
+    }
+  }
+
+  for (const [sourceId, references] of summaryReferences.entries()) {
+    const sourceEntries = (context.recordsByType.get("source") ?? []).filter((entry) => entry.value.id === sourceId);
+
+    const referenceList = [...references].sort((left, right) => left.localeCompare(right));
+    const suffix = referenceList.length > 3 ? ` and ${referenceList.length - 3} more` : "";
+    for (const sourceEntry of sourceEntries) {
+      if (nonEmptyString(sourceEntry.value.summary)) {
+        continue;
+      }
+
+      issues.push(
+        `${sourceEntry.relativePath}: evidence-linked source must include a descriptive summary; referenced by ${referenceList.slice(0, 3).join(", ")}${suffix}.`
+      );
+    }
+  }
+}
+
 function validateEvidenceReview(entry, context, issues) {
   const { value: review, relativePath } = entry;
   const bundleEntry = context.recordByTypeAndId.get("candidate_bundle")?.get(review.candidate_bundle_id);
@@ -780,6 +830,7 @@ function validateCrossReferences(entries) {
   }
 
   validateCurrentReportArtifactUniqueness(entries, issues);
+  validateEvidenceLinkedSourceSummaries(entries, context, issues);
 
   return issues;
 }

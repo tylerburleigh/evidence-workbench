@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Badge, EmptyState, PageHeader, Section, SourceAccessBadge, SupportMap } from "../../components.js";
+import { Badge, Breadcrumbs, EmptyState, PageHeader, Section, SourceAccessBadge, SupportMap } from "../../components.js";
 import {
   getApplicabilityFacetEntries,
   getClaimById,
@@ -25,6 +25,14 @@ export default async function ClaimDetailPage({ params }) {
 
   return (
     <main className="page">
+      <Breadcrumbs
+        items={[
+          { href: "/claims", label: "Claims" },
+          ...(subject ? [{ href: `/scope/${subject.id}`, label: subject.name }] : []),
+          { label: claim.name }
+        ]}
+      />
+
       <PageHeader
         eyebrow={subject?.name ?? claim.subject_type}
         title={claim.name}
@@ -43,7 +51,7 @@ export default async function ClaimDetailPage({ params }) {
           {claim.supporting_evidence?.length ? (
             <div className="support-list">
               {claim.supporting_evidence.map((support) => (
-                <SupportMap key={support.label} support={support} />
+                <SupportMap findings={findings} key={support.label} sources={sources} support={support} />
               ))}
             </div>
           ) : (

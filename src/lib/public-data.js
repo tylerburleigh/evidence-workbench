@@ -156,6 +156,49 @@ export function getSourcesForIds(data, sourceIds) {
     .sort((left, right) => left.name.localeCompare(right.name));
 }
 
+export function getArtifactsForSource(data, sourceId) {
+  return data.collections.artifacts
+    .map(({ record }) => record)
+    .filter((artifact) => (artifact.source_ids ?? []).includes(sourceId))
+    .sort((left, right) => left.name.localeCompare(right.name));
+}
+
+export function getFindingsForSource(data, sourceId) {
+  return data.collections.findings
+    .map(({ record }) => record)
+    .filter((finding) => finding.source_id === sourceId)
+    .sort((left, right) => left.name.localeCompare(right.name));
+}
+
+export function claimReferencesSource(claim, sourceId) {
+  return (
+    (claim.supporting_source_ids ?? []).includes(sourceId) ||
+    (claim.supporting_evidence ?? []).some((support) => (support.source_ids ?? []).includes(sourceId))
+  );
+}
+
+export function claimReferencesFinding(claim, findingId) {
+  return (
+    (claim.supporting_finding_ids ?? []).includes(findingId) ||
+    (claim.supporting_evidence ?? []).some((support) => (support.finding_ids ?? []).includes(findingId))
+  );
+}
+
+export function getClaimsForSource(data, sourceId) {
+  const findings = getFindingsForSource(data, sourceId);
+  const findingIds = new Set(findings.map((finding) => finding.id));
+  return data.collections.claims
+    .map(({ record }) => record)
+    .filter(
+      (claim) => claimReferencesSource(claim, sourceId) || [...findingIds].some((findingId) => claimReferencesFinding(claim, findingId))
+    )
+    .sort((left, right) => left.name.localeCompare(right.name));
+}
+
+export function getReportsForSource(data, sourceId) {
+  return getReportArtifacts(data).filter((report) => (report.source_ids ?? []).includes(sourceId));
+}
+
 export function getArtifactById(data, artifactId) {
   return data.collections.artifacts.map(({ record }) => record).find((artifact) => artifact.id === artifactId);
 }
@@ -216,6 +259,162 @@ export function getOpenBundleCount(data) {
   return data.collections.candidateBundles.filter(
     ({ record }) => !["published", "rejected"].includes(record.lifecycle_status)
   ).length;
+}
+
+export function getCoverageSnapshot(data) {
+  const coverageByNodeId = new Map((data.planning.coverageStatus?.nodes ?? []).map((row) => [row.taxonomy_node_id, row]));
+  const groups = new Map();
+
+  for (const node of getScopeNodes(data)) {
+    const coverage = coverageByNodeId.get(node.id);
+    const status = coverage?.coverage_status ?? "not_started";
+    if (!groups.has(status)) {
+      groups.set(status, []);
+    }
+    groups.get(status).push({ node, coverage });
+  }
+
+  return [...groups.entries()]
+    .map(([status, nodes]) => ({ status, nodes }))
+    .sort((left, right) => coverageStatusRank(left.status) - coverageStatusRank(right.status) || left.status.localeCompare(right.status));
+}
+
+export function getSourcesMissingSummaries(data) {
+  const evidenceSourceIds = new Set([
+    ...data.collections.findings.map(({ record }) => record.source_id).filter(Boolean),
+    ...data.collections.claims.flatMap(({ record }) => [
+      ...(record.supporting_source_ids ?? []),
+      ...(record.supporting_evidence ?? []).flatMap((support) => support.source_ids ?? [])
+    ])
+  ]);
+
+  return data.collections.sources
+    .map(({ record }) => record)
+    .filter((source) => evidenceSourceIds.has(source.id) && !source.summary?.trim())
+    .sort((left, right) => left.name.localeCompare(right.name));
+}
+
+export function getClaimsWithThinSupport(data) {
+  return data.collections.claims
+    .map(({ record }) => record)
+    .filter(
+      (claim) =>
+        (claim.supporting_evidence ?? []).length === 0 ||
+        (claim.supporting_finding_ids ?? []).length === 0 ||
+        (claim.supporting_source_ids ?? []).length === 0
+    )
+    .sort((left, right) => left.name.localeCompare(right.name));
+}
+
+export function getEvidenceHealth(data) {
+  const sourceAccess = getSourceAccessSummary(data);
+
+  return {
+    sourceAccess,
+    missingSummaries: getSourcesMissingSummaries(data),
+    thinClaims: getClaimsWithThinSupport(data),
+    directFullTextRatio: `${sourceAccess.direct_finding_sources.full_text}/${sourceAccess.direct_finding_sources.total}`
+  };
+}
+
+export function getAttentionItems(data) {
+  const items = [];
+  const queue = getBundleQueue(data);
+  const coverageSnapshot = getCoverageSnapshot(data);
+  const health = getEvidenceHealth(data);
+
+  for (const { record, report, scopeNodes } of queue) {
+    const closed = ["published", "rejected"].includes(record.lifecycle_status);
+    const reviewGateReady = !report?.evidence_review_gate?.eligible || Boolean(report.evidence_review_gate.ready);
+    const validationReady = Boolean(report?.validation?.ready);
+    const promotionReady = Boolean(report?.promotion?.ready);
+
+    if (!closed) {
+      items.push({
+        id: `bundle-${record.id}`,
+        severity: validationReady && reviewGateReady && promotionReady ? "info" : "warn",
+        label: "Bundle",
+        title: record.name,
+        body: report?.readiness?.message ?? record.summary,
+        href: `/admin/review/${record.id}`,
+        meta: [statusLabel(record.lifecycle_status), scopeNodes.map((node) => node.name).join(", ") || "Unscoped"].filter(Boolean)
+      });
+    }
+
+    if (!closed && (!validationReady || !reviewGateReady || !promotionReady)) {
+      items.push({
+        id: `blocked-${record.id}`,
+        severity: "warn",
+        label: "Readiness",
+        title: `${record.name} has blocked checks`,
+        body: [
+          validationReady ? undefined : "Validation blocked",
+          reviewGateReady ? undefined : "Review gate blocked",
+          promotionReady ? undefined : "Promotion blocked"
+        ]
+          .filter(Boolean)
+          .join("; "),
+        href: `/admin/review/${record.id}`,
+        meta: [statusLabel(record.lifecycle_status)]
+      });
+    }
+  }
+
+  for (const { status, nodes } of coverageSnapshot) {
+    if (status === "baseline" || status === "answered_well") {
+      continue;
+    }
+
+    for (const { node, coverage } of nodes) {
+      items.push({
+        id: `coverage-${node.id}`,
+        severity: status === "not_started" ? "warn" : "info",
+        label: "Coverage",
+        title: node.name,
+        body: coverage?.summary ?? node.summary,
+        href: `/scope/${node.id}`,
+        meta: [statusLabel(status)]
+      });
+    }
+  }
+
+  if (health.sourceAccess.direct_finding_sources.access_limited > 0) {
+    items.push({
+      id: "direct-source-access",
+      severity: "warn",
+      label: "Access",
+      title: "Direct finding sources need access attention",
+      body: `${health.sourceAccess.direct_finding_sources.access_limited} direct finding source(s) are not full text.`,
+      href: "/sources",
+      meta: [`Full text ${health.directFullTextRatio}`]
+    });
+  }
+
+  if (health.missingSummaries.length > 0) {
+    items.push({
+      id: "source-summaries",
+      severity: "warn",
+      label: "Sources",
+      title: "Evidence-linked sources need summaries",
+      body: `${health.missingSummaries.length} source summary gap(s) remain.`,
+      href: "/sources",
+      meta: ["Summary"]
+    });
+  }
+
+  if (health.thinClaims.length > 0) {
+    items.push({
+      id: "thin-claims",
+      severity: "warn",
+      label: "Claims",
+      title: "Claims need stronger support links",
+      body: `${health.thinClaims.length} claim(s) have missing support-map, finding, or source links.`,
+      href: "/claims",
+      meta: ["Support"]
+    });
+  }
+
+  return items.sort((left, right) => attentionSeverityRank(left.severity) - attentionSeverityRank(right.severity) || left.title.localeCompare(right.title));
 }
 
 export function getActivityFeed(data) {
@@ -543,6 +742,23 @@ export function titleCase(value) {
 
 export function statusLabel(value) {
   return titleCase(value ?? "unknown");
+}
+
+function attentionSeverityRank(severity) {
+  return severity === "danger" ? 0 : severity === "warn" ? 1 : severity === "info" ? 2 : 3;
+}
+
+function coverageStatusRank(status) {
+  const rank = {
+    not_started: 0,
+    in_progress: 1,
+    stale: 2,
+    baseline: 3,
+    answered_directionally: 4,
+    answered_well: 5
+  };
+
+  return rank[status] ?? 10;
 }
 
 function bundleStatusRank(status) {

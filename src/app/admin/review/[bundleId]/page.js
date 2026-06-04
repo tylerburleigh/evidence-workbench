@@ -31,7 +31,7 @@ import {
 
 function ReadinessCard({ icon: Icon, title, ready, children }) {
   return (
-    <div className="card">
+    <div className="card readiness-card">
       <div className="card-title">
         <span>
           <Icon className="icon" size={16} /> {title}
@@ -168,7 +168,7 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
 
       {report?.readiness?.message ? <p className="section-note">{report.readiness.message}</p> : null}
 
-      <div className="grid four">
+      <div className="grid four readiness-grid">
         <ReadinessCard icon={CheckCircle2} title="Validation" ready={Boolean(validation?.ready)}>
           {validation?.ready ? "Bundle shape, references, and publication state are valid." : validation?.issues?.join(" ")}
         </ReadinessCard>
@@ -184,8 +184,8 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
       </div>
 
       <Section title="Actions">
-        <div className="grid two">
-          <form action={addCommentAction} className="action-form">
+        <div className="grid two admin-actions-grid">
+          <form action={addCommentAction} className="action-form comment-action-form">
             <HiddenBundleId bundleId={bundle.id} />
             <label className="form-label" htmlFor="comment-body">
               Review Comment

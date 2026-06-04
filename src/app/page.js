@@ -1,4 +1,16 @@
-import { Archive, BookOpen, CheckCircle2, FileText, FlaskConical, Layers, Network } from "lucide-react";
+import {
+  Activity,
+  Archive,
+  BookOpen,
+  CheckCircle2,
+  FileText,
+  FlaskConical,
+  Layers,
+  Network,
+  SearchCheck,
+  ShieldCheck,
+  TriangleAlert
+} from "lucide-react";
 import Link from "next/link";
 import {
   Badge,
@@ -12,6 +24,10 @@ import {
 } from "./components.js";
 import {
   formatDate,
+  getActivityFeed,
+  getAttentionItems,
+  getCoverageSnapshot,
+  getEvidenceHealth,
   getOpenBundleCount,
   getPublishedCount,
   getReportArtifacts,
@@ -20,10 +36,44 @@ import {
   getWorkbenchData
 } from "../lib/public-data.js";
 
+function attentionTone(severity) {
+  return severity === "danger" ? "danger" : severity === "warn" ? "warn" : severity === "info" ? "info" : "neutral";
+}
+
+function attentionIcon(severity) {
+  return severity === "warn" || severity === "danger" ? TriangleAlert : SearchCheck;
+}
+
+function activityHref(item) {
+  if (item.bundle) {
+    return `/admin/review/${item.bundle.id}`;
+  }
+
+  const target = item.targets?.[0];
+  if (target?.record_type === "claim") {
+    return `/claims/${target.record_id}`;
+  }
+  if (target?.record_type === "finding") {
+    return `/findings/${target.record_id}`;
+  }
+  if (target?.record_type === "artifact") {
+    return `/artifacts/${target.record_id}`;
+  }
+  if (target?.record_type === "source") {
+    return `/sources/${target.record_id}`;
+  }
+
+  return "/activity";
+}
+
 export default async function HomePage() {
   const data = await getWorkbenchData();
   const scopeNodes = getScopeNodes(data);
   const scopePlural = getScopePluralLabel(data);
+  const attentionItems = getAttentionItems(data).slice(0, 6);
+  const coverageSnapshot = getCoverageSnapshot(data);
+  const evidenceHealth = getEvidenceHealth(data);
+  const recentActivity = getActivityFeed(data).slice(0, 4);
   const reportArtifacts = getReportArtifacts(data);
   const literatureReview = reportArtifacts.find((report) => report.artifact_type === "literature_review");
   const supportingReports = reportArtifacts.filter((report) => report.id !== literatureReview?.id).slice(0, 3);
@@ -48,6 +98,91 @@ export default async function HomePage() {
         <Metric icon={Archive} label="Sources" value={data.collections.sources.length} />
         <Metric icon={CheckCircle2} label="Published bundles" value={getPublishedCount(data)} />
       </div>
+
+      <Section title="Needs Attention Now" note={`${attentionItems.length} active signal(s)`}>
+        {attentionItems.length ? (
+          <div className="list">
+            {attentionItems.map((item) => {
+              const Icon = attentionIcon(item.severity);
+              return (
+                <Link className="row-link attention-row" href={item.href} key={item.id}>
+                  <span>
+                    <strong>
+                      <Icon className="icon" size={15} /> {item.title}
+                    </strong>
+                    <span className="row-kicker">{item.body}</span>
+                  </span>
+                  <span className="meta-row">
+                    <Badge tone={attentionTone(item.severity)}>{item.label}</Badge>
+                    {item.meta.map((meta) => (
+                      <Badge key={`${item.id}-${meta}`}>{meta}</Badge>
+                    ))}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        ) : (
+          <EmptyState>No active attention signals for this domain.</EmptyState>
+        )}
+      </Section>
+
+      <div className="split">
+        <Section title="Coverage Snapshot" note={`${scopeNodes.length} ${scopePlural.toLowerCase()}`}>
+          {coverageSnapshot.length ? (
+            <div className="coverage-groups">
+              {coverageSnapshot.map(({ status, nodes }) => (
+                <div className="coverage-group" key={status}>
+                  <div className="coverage-group-head">
+                    <StatusBadge status={status} />
+                    <Badge>{nodes.length}</Badge>
+                  </div>
+                  <div className="link-list">
+                    {nodes.slice(0, 6).map(({ node }) => (
+                      <Link className="text-link" href={`/scope/${node.id}`} key={node.id}>
+                        {node.name}
+                      </Link>
+                    ))}
+                    {nodes.length > 6 ? <Badge>{nodes.length - 6} more</Badge> : null}
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <EmptyState>No configured coverage state.</EmptyState>
+          )}
+        </Section>
+
+        <Section title="Evidence Health">
+          <div className="grid two compact-health-grid">
+            <Metric icon={Archive} label="Direct full text" value={evidenceHealth.directFullTextRatio} />
+            <Metric icon={TriangleAlert} label="Access-limited direct" value={evidenceHealth.sourceAccess.direct_finding_sources.access_limited} />
+            <Metric icon={FileText} label="Summary gaps" value={evidenceHealth.missingSummaries.length} />
+            <Metric icon={ShieldCheck} label="Thin claims" value={evidenceHealth.thinClaims.length} />
+          </div>
+        </Section>
+      </div>
+
+      <Section title="Recent Changes" note={`${recentActivity.length} latest`}>
+        {recentActivity.length ? (
+          <div className="list">
+            {recentActivity.map((item) => (
+              <Link className="row-link" href={activityHref(item)} key={item.id}>
+                <span>
+                  <strong>{item.title}</strong>
+                  <span className="row-kicker">{item.summary}</span>
+                </span>
+                <span className="meta-row">
+                  <Badge>{formatDate(item.timestamp)}</Badge>
+                  <Badge>{item.type}</Badge>
+                </span>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <EmptyState>No recent activity for this domain.</EmptyState>
+        )}
+      </Section>
 
       <div className="split">
         <Section title="Current Literature Review" note={literatureReview ? "Manuscript-facing synthesis" : "Not indexed"}>

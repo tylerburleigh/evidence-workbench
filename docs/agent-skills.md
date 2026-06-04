@@ -108,6 +108,24 @@ Boundaries:
 - do not generalize across scope units without explaining the support
 - do not create parallel current reports for the same domain, artifact type, and scope unless the audience or section boundary is explicit
 
+### `attention-triage`
+
+Use when deciding what needs attention now in one active domain.
+
+Responsibilities:
+
+- inspect bundle readiness, coverage state, source access, source summaries, claim support, and report integration signals
+- prioritize the highest-leverage operational work items
+- point each item to the relevant review, scope, source, claim, report, or planning surface
+- produce a short queue rather than a broad project plan
+
+Boundaries:
+
+- do not create new evidence
+- do not approve or publish
+- do not recommend broad research unless a concrete attention signal supports it
+- do not treat planning state or activity as evidence
+
 ## Domain Adapter Skills
 
 Each domain pack should provide short adapter instructions for the core skills.
