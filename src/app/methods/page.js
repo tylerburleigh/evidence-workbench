@@ -99,7 +99,7 @@ export default async function MethodsPage() {
       </Section>
 
       <div className="split">
-        <Section title="Review Process" note={`${defaultLaneIds.size} default lane(s)`}>
+        <Section title="Appraisal Process" note={`${defaultLaneIds.size} default lane(s)`}>
           {lanes.length ? (
             <div className="support-list">
               {lanes.map((lane) => (

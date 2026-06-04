@@ -1406,23 +1406,23 @@ async function auditTimestampOrder(bundle, promotion, evidenceAppraisalGate, pub
     }
   }
 
-  for (const review of evidenceAppraisalGate.appraisals ?? []) {
+  for (const appraisal of evidenceAppraisalGate.appraisals ?? []) {
     addTimestampWarning(warnings, checks, {
-      check_type: "bundle_submitted_before_review_created",
+      check_type: "bundle_submitted_before_appraisal_created",
       left_label: "bundle submitted_at",
       left_at: bundle.submitted_at,
       left_at_millis: bundleSubmittedAtMillis,
-      right_label: `appraisal ${review.id} created_at`,
-      right_at: review.created_at,
-      right_at_millis: parseDateTimeMillis(review.created_at)
+      right_label: `appraisal ${appraisal.id} created_at`,
+      right_at: appraisal.created_at,
+      right_at_millis: parseDateTimeMillis(appraisal.created_at)
     });
 
     if (earliestPublicationMillis !== undefined) {
       addTimestampWarning(warnings, checks, {
-        check_type: "review_created_before_publication",
-        left_label: `appraisal ${review.id} created_at`,
-        left_at: review.created_at,
-        left_at_millis: parseDateTimeMillis(review.created_at),
+        check_type: "appraisal_created_before_publication",
+        left_label: `appraisal ${appraisal.id} created_at`,
+        left_at: appraisal.created_at,
+        left_at_millis: parseDateTimeMillis(appraisal.created_at),
         right_label: "earliest publication published_at",
         right_at: earliestPublicationAt,
         right_at_millis: earliestPublicationMillis
@@ -1801,7 +1801,7 @@ function buildReadinessSummary(report) {
   const promotionWarningCount = report.promotion.warnings.length;
   const workflowAuditWarningCount = report.workflow_audit?.warnings?.length ?? 0;
   const missingAppraisalLanes = report.evidence_appraisal_gate.missing_lanes ?? [];
-  const reviewIssueCount = report.evidence_appraisal_gate.issues.length;
+  const appraisalIssueCount = report.evidence_appraisal_gate.issues.length;
 
   const readyForApproval =
     ["submitted", "in_review", "revised"].includes(report.bundle.lifecycle_status) &&
@@ -1816,15 +1816,15 @@ function buildReadinessSummary(report) {
   if (report.bundle.lifecycle_status === "published") {
     message = "Published. Promotion files and publication events are available for audit.";
   } else if (!report.validation.ready) {
-    message = `Validation has ${validationIssueCount} issue(s). Resolve structural and reference problems before review or publication.`;
+    message = `Validation has ${validationIssueCount} issue(s). Resolve structural and reference problems before appraisal or publication.`;
   } else if (!report.promotion.ready) {
     message = `Structurally valid, but promotion has ${promotionIssueCount} issue(s). Check staged and target files.`;
   } else if (report.evidence_appraisal_gate.eligible && !report.evidence_appraisal_gate.ready) {
     message = `Structurally valid. Waiting on ${missingAppraisalLanes.length} evidence appraisal lane(s): ${missingAppraisalLanes.join(", ")}.`;
   } else if (readyForPublication) {
-    message = "Approved, structurally valid, and review-ready. Ready to publish.";
+    message = "Approved, structurally valid, and appraisal-complete. Ready to publish.";
   } else if (readyForApproval) {
-    message = "Structurally valid and review-ready. Ready for approval.";
+    message = "Structurally valid and appraisal-complete. Ready for approval.";
   } else {
     message = "Structurally valid. Lifecycle status determines the next action.";
   }
@@ -1838,7 +1838,7 @@ function buildReadinessSummary(report) {
     promotion_issue_count: promotionIssueCount,
     promotion_warning_count: promotionWarningCount,
     workflow_audit_warning_count: workflowAuditWarningCount,
-    appraisal_issue_count: reviewIssueCount,
+    appraisal_issue_count: appraisalIssueCount,
     missing_appraisal_lanes: missingAppraisalLanes
   };
 }
@@ -2131,8 +2131,8 @@ async function getClaimIdForSubject(subjectType, subjectId) {
 function getAppraisalFollowUpActions(evidenceAppraisalGate) {
   const actions = [];
 
-  for (const review of evidenceAppraisalGate.appraisals ?? []) {
-    for (const finding of review.findings ?? []) {
+  for (const appraisal of evidenceAppraisalGate.appraisals ?? []) {
+    for (const finding of appraisal.findings ?? []) {
       if (!nonBlockingFollowUpSeverities.has(finding.severity)) {
         continue;
       }
@@ -2141,7 +2141,7 @@ function getAppraisalFollowUpActions(evidenceAppraisalGate) {
         continue;
       }
 
-      actions.push(`${review.appraisal_lane}: ${finding.recommended_action.trim()}`);
+      actions.push(`${appraisal.appraisal_lane}: ${finding.recommended_action.trim()}`);
     }
   }
 
@@ -2222,17 +2222,17 @@ async function publishCandidateBundle(bundleId, options = {}) {
       public_graph_delta: buildPublicationDeltaFromChanges(bundle.proposed_changes ?? []),
       affected_claim_ids: affectedClaimIds,
       approving_evidence_appraisal_ids: report.evidence_appraisal_gate.eligible
-        ? report.evidence_appraisal_gate.appraisals.map((review) => review.id)
+        ? report.evidence_appraisal_gate.appraisals.map((appraisal) => appraisal.id)
         : undefined,
-      appraisal_corrections_applied: report.evidence_appraisal_gate.appraisals.flatMap((review) =>
-        Array.isArray(review.corrections_applied) ? review.corrections_applied : []
+      appraisal_corrections_applied: report.evidence_appraisal_gate.appraisals.flatMap((appraisal) =>
+        Array.isArray(appraisal.corrections_applied) ? appraisal.corrections_applied : []
       ),
       appraisal_follow_up_actions: appraisalFollowUpActions,
       source_access_follow_up_actions: sourceAccessFollowUpActions,
       extraction_follow_up_actions: extractionFollowUpActions,
       change_note:
         bundle.proposed_claim_implications?.[0]?.note ??
-        "A reviewed candidate bundle was published to the public evidence graph."
+        "An appraised candidate bundle was published to the public evidence graph."
     };
 
     const publicationEventPath = path.join(publicationEventsRoot, `${publicationEventId}.json`);

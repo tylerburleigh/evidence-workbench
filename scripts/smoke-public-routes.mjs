@@ -81,8 +81,8 @@ export function buildRouteChecks(data) {
     "Search Protocols",
     "Access-Limited Screened Sources"
   ]);
-  addRoute(routes, "/methods", ["Trust Model", "Evidence Ladder", "Review Process"]);
-  addRoute(routes, "/admin/review", ["Candidate Bundle Queue", "Bundle Queue", "Review Surface"]);
+  addRoute(routes, "/methods", ["Trust Model", "Evidence Ladder", "Appraisal Process"]);
+  addRoute(routes, "/admin/review", ["Candidate Bundle Queue", "Bundle Queue", "Appraisal Surface"]);
 
   for (const node of scopeNodes) {
     addRoute(routes, `/scope/${node.id}`, [node.name, "Claims", "Bundle State", "Findings", "Artifacts", "Sources"]);

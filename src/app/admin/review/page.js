@@ -112,7 +112,7 @@ export default async function AdminReviewPage() {
         />
       </Section>
 
-      <Section title="Review Surface">
+      <Section title="Appraisal Surface">
         <div className="grid three">
           <div className="card">
             <div className="card-title">

@@ -49,7 +49,7 @@ test("sample-research route smoke inventory covers public collections, detail ro
   assertRouteHasText(routes, "/admin/review/example-topic-baseline-review-2026-05-31", ["Actions", "Evidence Appraisals"]);
 });
 
-test("sample-archive route smoke inventory still covers unpublished review workspace routes", async () => {
+test("sample-archive route smoke inventory still covers unpublished admin workspace routes", async () => {
   const data = await loadDomainStudioData({ domainId: "sample-archive" });
   const routes = buildRouteChecks(data);
   const paths = routePaths(routes);
@@ -145,7 +145,7 @@ test("software supply-chain route smoke inventory covers downstream published gr
     "Actions",
     "Evidence Appraisals"
   ]);
-  assertRouteHasText(routes, "/methods", ["Trust Model", "Evidence Ladder", "Review Process"]);
+  assertRouteHasText(routes, "/methods", ["Trust Model", "Evidence Ladder", "Appraisal Process"]);
   assertRouteHasText(routes, "/reports", ["Reports", "Source Access Audit", "Synthesis Matrix", "Report Artifacts"]);
 });
 

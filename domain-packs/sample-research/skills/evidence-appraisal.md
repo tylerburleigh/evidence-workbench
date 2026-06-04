@@ -2,7 +2,7 @@
 name: sample-research-evidence-appraisal-adapter
 domain_id: sample-research
 adapter_for: evidence-appraisal
-description: Domain adapter for reviewing source fidelity, interpretation, limitations, and taxonomy mapping in sample-research bundles.
+description: Domain adapter for appraising source fidelity, interpretation, limitations, and taxonomy mapping in sample-research bundles.
 ---
 
 # Sample Research Evidence Appraisal Adapter
@@ -26,6 +26,6 @@ Use with `skills/evidence-appraisal/SKILL.md`.
 
 ## Output Checks
 
-- Review `appraised_change_ids` covers the staged changes actually inspected.
+- Confirm `appraised_change_ids` covers the staged changes actually inspected.
 - `blocking` is true for unresolved source mismatch, unsupported claim, missing limitation, or wrong taxonomy scope.
 - Completed appraisals are applied with `LIT_REVIEW_STUDIO_DOMAIN=sample-research`.

@@ -726,26 +726,26 @@ function validateEvidenceLinkedSourceSummaries(entries, context, issues) {
 }
 
 function validateEvidenceAppraisal(entry, context, issues) {
-  const { value: review, relativePath } = entry;
-  const bundleEntry = context.recordByTypeAndId.get("candidate_bundle")?.get(review.candidate_bundle_id);
+  const { value: appraisal, relativePath } = entry;
+  const bundleEntry = context.recordByTypeAndId.get("candidate_bundle")?.get(appraisal.candidate_bundle_id);
   if (!bundleEntry) {
-    issues.push(`${relativePath}: references missing candidate_bundle_id: ${review.candidate_bundle_id}.`);
+    issues.push(`${relativePath}: references missing candidate_bundle_id: ${appraisal.candidate_bundle_id}.`);
     return;
   }
 
   const bundle = bundleEntry.value;
   const domainId = bundle.scope?.domain_id;
   const appraisalLaneIds = context.appraisalLaneIdsByDomain.get(domainId) ?? new Set();
-  if (!appraisalLaneIds.has(review.appraisal_lane)) {
-    issues.push(`${relativePath}: appraisal_lane ${review.appraisal_lane} is not defined for domain ${domainId}.`);
+  if (!appraisalLaneIds.has(appraisal.appraisal_lane)) {
+    issues.push(`${relativePath}: appraisal_lane ${appraisal.appraisal_lane} is not defined for domain ${domainId}.`);
   }
 
-  if (review.bundle_revision_number !== (bundle.revision_number ?? 1)) {
+  if (appraisal.bundle_revision_number !== (bundle.revision_number ?? 1)) {
     issues.push(`${relativePath}: bundle_revision_number must match candidate bundle revision.`);
   }
 
   const validChangeIds = new Set((bundle.proposed_changes ?? []).map((change) => change.change_id));
-  for (const changeId of review.appraised_change_ids ?? []) {
+  for (const changeId of appraisal.appraised_change_ids ?? []) {
     if (!validChangeIds.has(changeId)) {
       issues.push(`${relativePath}: appraised_change_ids references unknown change_id: ${changeId}.`);
     }

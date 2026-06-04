@@ -53,7 +53,7 @@ The implementation has several design choices worth preserving:
 - Current report artifacts stay canonical for their domain, type, and scope; additive synthesis updates, supersedes, or remains a labeled sidecar.
 - Coverage state and priority queues are generated from source records, sessions, bundles, and publication history.
 - Public pages separate source evidence from curator interpretation and domain-defined context.
-- Agent skills encode workflow discipline around scope, extraction, review, and publishing.
+- Agent skills encode workflow discipline around scope, extraction, appraisal, and publishing.
 
 ## Current Repo Paths
 

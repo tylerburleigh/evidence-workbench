@@ -5,7 +5,7 @@ description: Use when verifying one appraisal lane for one candidate bundle revi
 
 # Evidence Appraisal
 
-Review one lane for one candidate bundle revision. Produce a structured evidence appraisal; do not revise the staged records during the same pass.
+Appraise one lane for one candidate bundle revision. Produce a structured evidence appraisal; do not revise the staged records during the same pass.
 
 ## Read First
 
@@ -35,8 +35,8 @@ LIT_REVIEW_STUDIO_DOMAIN=<domain-id> npm run research:appraise-evidence -- scaff
 ```
 
 4. Compare staged records against cited source facts and the lane-specific domain adapter. Check support maps, taxonomy IDs, limitations, and claim wording as relevant to the lane.
-5. Replace all draft placeholders. Set `verdict`, `blocking`, `summary`, and `findings` based on the review. Use `needs_human_judgment` when the source cannot be checked reliably.
-6. Apply the completed review:
+5. Replace all draft placeholders. Set `verdict`, `blocking`, `summary`, and `findings` based on the appraisal. Use `needs_human_judgment` when the source cannot be checked reliably.
+6. Apply the completed appraisal:
 
 ```bash
 LIT_REVIEW_STUDIO_DOMAIN=<domain-id> npm run research:appraise-evidence -- apply --file <draft-path>
@@ -47,10 +47,10 @@ LIT_REVIEW_STUDIO_DOMAIN=<domain-id> npm run research:appraise-evidence -- apply
 - Do not conduct new research beyond verifying cited material.
 - Do not approve, reject, request changes, or publish.
 - Do not silently edit staged records while acting as appraiser.
-- Do not mark a review non-blocking if critical support, source, or scope issues remain open.
+- Do not mark an appraisal non-blocking if critical support, source, or scope issues remain open.
 
 ## Expected Outputs
 
 - One complete `data/evidence-appraisals/<appraisal-id>.json` record for the lane.
 - Updated `evidence_appraisal_ids` on the candidate bundle.
-- Review status showing lane completion or explicit blocking issues.
+- Appraisal status showing lane completion or explicit blocking issues.

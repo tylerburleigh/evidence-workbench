@@ -55,21 +55,21 @@ Use when verifying a candidate bundle.
 Responsibilities:
 
 - run bundle validation
-- review one lane for one revision
+- appraise one lane for one revision
 - compare staged records against source facts
 - verify support maps
 - write structured findings
-- apply review
+- apply appraisal
 
 Boundaries:
 
 - do not conduct new research
 - do not approve or publish
-- do not edit staged records unless explicitly asked to revise after review
+- do not edit staged records unless explicitly asked to revise after appraisal
 
 ### `editorial-decision`
 
-Use when approving or publishing a reviewed bundle.
+Use when approving or publishing an appraised bundle.
 
 Responsibilities:
 

@@ -159,10 +159,10 @@ test("request changes and reject update bundle status in an isolated workspace",
 
 test("approve is blocked when required evidence appraisal lanes are incomplete", async () => {
   await withWorkspace(async (workspace) => {
-    const reviewPath = "data/evidence-appraisals/evidence-appraisal-archive-question-source-fidelity-r1.json";
-    const review = await readWorkspaceJson(workspace, reviewPath);
-    await writeWorkspaceJson(workspace, reviewPath, {
-      ...review,
+    const appraisalPath = "data/evidence-appraisals/evidence-appraisal-archive-question-source-fidelity-r1.json";
+    const appraisal = await readWorkspaceJson(workspace, appraisalPath);
+    await writeWorkspaceJson(workspace, appraisalPath, {
+      ...appraisal,
       status: "draft"
     });
 
@@ -242,17 +242,17 @@ test("publish propagates non-blocking appraisal findings into follow-up actions"
       numeric_results_extracted: false
     });
 
-    const reviewPath = "data/evidence-appraisals/evidence-appraisal-archive-question-source-fidelity-r1.json";
-    const review = await readWorkspaceJson(workspace, reviewPath);
-    await writeWorkspaceJson(workspace, reviewPath, {
-      ...review,
+    const appraisalPath = "data/evidence-appraisals/evidence-appraisal-archive-question-source-fidelity-r1.json";
+    const appraisal = await readWorkspaceJson(workspace, appraisalPath);
+    await writeWorkspaceJson(workspace, appraisalPath, {
+      ...appraisal,
       findings: [
         {
           finding_id: "archive-follow-up-note",
           severity: "note",
           category: "uncertainty",
-          claim_or_issue: "The fixture review includes a non-blocking follow-up note.",
-          why_it_matters: "Non-blocking review notes should remain visible after publication.",
+          claim_or_issue: "The fixture appraisal includes a non-blocking follow-up note.",
+          why_it_matters: "Non-blocking appraisal notes should remain visible after publication.",
           recommended_action: "Revisit fixture detail extraction in the next manual pass.",
           resolution_status: "closed",
           applies_to_change_id: "create-archive-claim"

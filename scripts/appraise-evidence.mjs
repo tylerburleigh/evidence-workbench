@@ -213,7 +213,7 @@ function buildDraftAppraisal({
         .filter(({ record }) => record.status === "complete")
         .map(({ record }) => record.id),
       instructions: [
-        "Replace placeholder summary, verdict, blocking flag, and findings after completing the review.",
+        "Replace placeholder summary, verdict, blocking flag, and findings after completing the appraisal.",
         "Set corrections_applied[] when the appraisal changes staged records before acceptance."
       ],
       lane_checklist: getLaneChecklist(lane)
@@ -248,7 +248,7 @@ function buildDraftAppraisal({
   return draftAppraisal;
 }
 
-async function validateAppraisalShape(review, bundle, domainPack) {
+async function validateAppraisalShape(appraisal, bundle, domainPack) {
   const requiredStringFields = [
     "schema_version",
     "record_type",
@@ -263,81 +263,81 @@ async function validateAppraisalShape(review, bundle, domainPack) {
   ];
 
   for (const field of requiredStringFields) {
-    if (!nonEmptyString(review[field])) {
+    if (!nonEmptyString(appraisal[field])) {
       fail(`Appraisal field ${field} must be a non-empty string.`);
     }
   }
 
-  if (review.schema_version !== "1.0.0") {
+  if (appraisal.schema_version !== "1.0.0") {
     fail("Appraisal schema_version must be 1.0.0.");
   }
 
-  if (review.record_type !== "evidence_appraisal") {
+  if (appraisal.record_type !== "evidence_appraisal") {
     fail("Appraisal record_type must be evidence_appraisal.");
   }
 
-  if (review.candidate_bundle_id !== bundle.id) {
+  if (appraisal.candidate_bundle_id !== bundle.id) {
     fail("Appraisal candidate_bundle_id does not match the target bundle.");
   }
 
   const revisionNumber = getCurrentRevision(bundle);
-  if (!Number.isInteger(review.bundle_revision_number) || review.bundle_revision_number !== revisionNumber) {
+  if (!Number.isInteger(appraisal.bundle_revision_number) || appraisal.bundle_revision_number !== revisionNumber) {
     fail(`Appraisal bundle_revision_number must match the bundle revision (${revisionNumber}).`);
   }
 
-  if (!Number.isInteger(review.appraisal_round) || review.appraisal_round < 1) {
+  if (!Number.isInteger(appraisal.appraisal_round) || appraisal.appraisal_round < 1) {
     fail("Appraisal appraisal_round must be a positive integer.");
   }
 
-  if (!domainPack.appraisalLaneIds.has(review.appraisal_lane)) {
-    fail(`Unsupported appraisal lane for active domain pack: ${review.appraisal_lane}`);
+  if (!domainPack.appraisalLaneIds.has(appraisal.appraisal_lane)) {
+    fail(`Unsupported appraisal lane for active domain pack: ${appraisal.appraisal_lane}`);
   }
 
-  if (!appraiserKinds.has(review.appraiser_kind)) {
-    fail(`Unsupported appraiser kind: ${review.appraiser_kind}`);
+  if (!appraiserKinds.has(appraisal.appraiser_kind)) {
+    fail(`Unsupported appraiser kind: ${appraisal.appraiser_kind}`);
   }
 
-  if (!appraisalStatuses.has(review.status)) {
-    fail(`Unsupported appraisal status: ${review.status}`);
+  if (!appraisalStatuses.has(appraisal.status)) {
+    fail(`Unsupported appraisal status: ${appraisal.status}`);
   }
 
-  if (!appraisalVerdicts.has(review.verdict)) {
-    fail(`Unsupported appraisal verdict: ${review.verdict}`);
+  if (!appraisalVerdicts.has(appraisal.verdict)) {
+    fail(`Unsupported appraisal verdict: ${appraisal.verdict}`);
   }
 
-  if (typeof review.blocking !== "boolean") {
+  if (typeof appraisal.blocking !== "boolean") {
     fail("Appraisal blocking must be a boolean.");
   }
 
-  if (review.appraiser_kind === "agent" && typeof review.skill_name !== "string") {
+  if (appraisal.appraiser_kind === "agent" && typeof appraisal.skill_name !== "string") {
     fail("Agent appraisal must include skill_name.");
   }
 
-  if (review.appraiser_kind === "human" && typeof review.appraiser_id !== "string") {
+  if (appraisal.appraiser_kind === "human" && typeof appraisal.appraiser_id !== "string") {
     fail("Human appraisal must include appraiser_id.");
   }
 
-  if (isPlaceholderText(review.summary)) {
+  if (isPlaceholderText(appraisal.summary)) {
     fail("Appraisal summary still contains a TODO placeholder.");
   }
 
-  if (!Array.isArray(review.appraised_change_ids) || review.appraised_change_ids.length === 0) {
+  if (!Array.isArray(appraisal.appraised_change_ids) || appraisal.appraised_change_ids.length === 0) {
     fail("Appraisal appraised_change_ids must contain at least one bundle change.");
   }
 
   const validChangeIds = new Set(bundle.proposed_changes.map((change) => change.change_id));
-  for (const changeId of review.appraised_change_ids) {
+  for (const changeId of appraisal.appraised_change_ids) {
     if (!validChangeIds.has(changeId)) {
       fail(`Appraisal references unknown change_id: ${changeId}`);
     }
   }
 
-  if (review.corrections_applied !== undefined) {
-    if (!Array.isArray(review.corrections_applied)) {
+  if (appraisal.corrections_applied !== undefined) {
+    if (!Array.isArray(appraisal.corrections_applied)) {
       fail("Appraisal corrections_applied must be an array when present.");
     }
 
-    review.corrections_applied.forEach((correction, index) => {
+    appraisal.corrections_applied.forEach((correction, index) => {
       if (!nonEmptyString(correction.change_id)) {
         fail(`Correction ${index + 1} is missing change_id.`);
       }
@@ -356,11 +356,11 @@ async function validateAppraisalShape(review, bundle, domainPack) {
     });
   }
 
-  if (!Array.isArray(review.findings)) {
+  if (!Array.isArray(appraisal.findings)) {
     fail("Appraisal findings must be an array.");
   }
 
-  review.findings.forEach((finding, index) => {
+  appraisal.findings.forEach((finding, index) => {
     if (!nonEmptyString(finding.finding_id)) {
       fail(`Finding ${index + 1} is missing finding_id.`);
     }

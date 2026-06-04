@@ -1,6 +1,6 @@
 ---
 name: editorial-decision
-description: Use when deciding whether a reviewed candidate bundle should receive comments, changes requested, rejection, approval, or publication.
+description: Use when deciding whether an appraised candidate bundle should receive comments, changes requested, rejection, approval, or publication.
 ---
 
 # Editorial Decision

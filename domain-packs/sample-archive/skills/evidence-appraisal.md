@@ -2,7 +2,7 @@
 name: sample-archive-evidence-appraisal-adapter
 domain_id: sample-archive
 adapter_for: evidence-appraisal
-description: Domain adapter for reviewing archive source fidelity, scope fit, and context boundaries.
+description: Domain adapter for appraising archive source fidelity, scope fit, and context boundaries.
 ---
 
 # Sample Archive Evidence Appraisal Adapter

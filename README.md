@@ -29,9 +29,9 @@ That structure matters because research is rarely finished after one answer. It 
 Lit Review Studio combines four parts:
 
 - **Data models** for sources, artifacts, findings, claims, appraisals, bundles, reports, and planning state.
-- **Workflows** for search, extraction, review, publication, synthesis, and review update.
+- **Workflows** for search, extraction, appraisal, publication, synthesis, and review update.
 - **Agent skills** that guide an AI assistant through bounded research tasks.
-- **A web UI** for browsing the resulting evidence graph, reports, methods, and review state.
+- **A web UI** for browsing the resulting evidence graph, reports, methods, and appraisal state.
 
 Those parts are meant to work together. The agent has a workflow to follow. The output has a schema. Reviewers have specific checks to perform. Readers have pages they can browse instead of reconstructing the work from a transcript.
 
@@ -61,7 +61,7 @@ A project starts with a domain: the subject area being researched. Each domain h
 7. Publish approved records to the evidence graph.
 8. Track what is covered, what is stale, and what should be researched next.
 
-The public side of the app lets people browse claims, findings, sources, reports, and methods. The admin side supports review and publication workflows. The repository stores the underlying records as plain files so the work can be versioned, audited, branched, and reviewed.
+The public side of the app lets people browse claims, findings, sources, reports, and methods. The admin side supports appraisal and publication workflows. The repository stores the underlying records as plain files so the work can be versioned, audited, branched, and reviewed.
 
 ## Key Ideas
 
@@ -83,7 +83,7 @@ It contains:
 
 - the local web app
 - schemas for evidence records
-- command-line tools for validation, planning, search, review, publication, and branch audits
+- command-line tools for validation, planning, search, appraisal, publication, and branch audits
 - reusable agent skills
 - workflow documentation
 - fixture and example domain packs
@@ -99,7 +99,7 @@ Most users should not start by editing JSON files by hand. Start by using the ex
 A practical first path looks like this:
 
 1. **Clone or fork the repo.**
-   Run the app with the default `sample-research` domain so you can see how sources, findings, claims, reports, review state, and planning queues appear in the UI.
+   Run the app with the default `sample-research` domain so you can see how sources, findings, claims, reports, appraisal state, and planning queues appear in the UI.
 
 2. **Describe the research job in ordinary language.**
    Tell the agent what kind of research you want the studio to support, who the audience is, what kinds of sources matter, what questions you expect to answer, and what would make a claim trustworthy.
@@ -114,7 +114,7 @@ A practical first path looks like this:
    Have the agent gather sources, extract findings, stage records in a candidate bundle, complete evidence appraisals, publish approved records, and sync planning state. This first pass tests the full loop.
 
 6. **Use the UI to inspect the result.**
-   Browse the claim pages, source pages, report pages, methods page, and admin review state. The UI is part of the research process: it shows whether the agent's work is understandable and whether the evidence can be audited.
+   Browse the claim pages, source pages, report pages, methods page, and admin appraisal state. The UI is part of the research process: it shows whether the agent's work is understandable and whether the evidence can be audited.
 
 7. **Adjust the domain pack and workflows.**
    If the first pass exposes missing extraction fields, unclear appraisal lanes, awkward labels, or unsupported source types, update the domain pack and tests before scaling up.

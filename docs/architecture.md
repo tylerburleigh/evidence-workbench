@@ -91,7 +91,7 @@ The framework should support appraisal lanes like:
 - `taxonomy_mapping`
 - optional domain-defined appraisal lanes
 
-Domain packs may rename or add lanes, but every review should produce machine-readable findings.
+Domain packs may rename or add lanes, but every appraisal should produce machine-readable findings.
 
 ### 6. Editorial Publish Layer
 

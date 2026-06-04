@@ -1,6 +1,6 @@
 ---
 name: review-update
-description: Use when checking an already scoped research unit for material changes since the latest review, publication, or review update pass.
+description: Use when checking an already scoped research unit for material changes since the latest baseline-review pass, publication, or review-update pass.
 ---
 
 # Review Update

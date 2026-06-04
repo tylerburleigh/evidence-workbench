@@ -5,7 +5,7 @@ Lit Review Studio has two UI surfaces:
 - a public evidence browser for published records and report artifacts
 - an admin review workspace for candidate bundles before publication
 
-The UI is intentionally work-focused. It should help readers inspect evidence, trace claims back to sources, and see review state without needing to reconstruct the work from chat history or raw JSON files.
+The UI is intentionally work-focused. It should help readers inspect evidence, trace claims back to sources, and see appraisal state without needing to reconstruct the work from chat history or raw JSON files.
 
 ## Public Surface
 
@@ -104,7 +104,7 @@ The CSV and Markdown matrix routes expose the configured synthesis matrix for re
 - what counts as source evidence
 - how curator interpretation is separated from source facts
 - how the domain pack defines evidence tiers and labels
-- how review and publication work
+- how appraisal and publication work
 - what the studio is not claiming to do
 
 `/activity` shows publication and bundle activity so readers can see what changed recently.

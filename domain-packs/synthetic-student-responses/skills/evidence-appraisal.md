@@ -2,7 +2,7 @@
 name: synthetic-student-responses-evidence-appraisal-adapter
 domain_id: synthetic-student-responses
 adapter_for: evidence-appraisal
-description: Domain adapter for reviewing source fidelity, construct mapping, method classification, scorer relevance, and synthesis boundaries.
+description: Domain adapter for appraising source fidelity, construct mapping, method classification, scorer relevance, and synthesis boundaries.
 ---
 
 # Synthetic Student Responses Evidence Appraisal Adapter

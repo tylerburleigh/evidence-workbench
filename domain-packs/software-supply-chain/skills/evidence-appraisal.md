@@ -2,7 +2,7 @@
 name: software-supply-chain-evidence-appraisal-adapter
 domain_id: software-supply-chain
 adapter_for: evidence-appraisal
-description: Domain adapter for reviewing source fidelity, control fit, risk framing, and operational boundaries.
+description: Domain adapter for appraising source fidelity, control fit, risk framing, and operational boundaries.
 ---
 
 # Software Supply Chain Evidence Appraisal Adapter

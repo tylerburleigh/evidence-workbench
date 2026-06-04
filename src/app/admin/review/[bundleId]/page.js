@@ -194,7 +194,7 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
               className="text-area"
               id="comment-body"
               name="body"
-              placeholder="Add a note for the review history."
+              placeholder="Add a note for the editorial history."
               rows={4}
             />
             <button className="action-button" type="submit">
@@ -396,21 +396,23 @@ export default async function AdminBundleDetailPage({ params, searchParams }) {
       <Section title="Evidence Appraisals" note={`${appraisals.length} appraisal(s)`}>
         {appraisals.length ? (
           <div className="grid two">
-            {appraisals.map((review) => (
-              <div className="card" key={review.id}>
+            {appraisals.map((appraisal) => (
+              <div className="card" key={appraisal.id}>
                 <div className="card-title">
-                  <span>{review.name}</span>
-                  <StatusBadge status={review.verdict} />
+                  <span>{appraisal.name}</span>
+                  <StatusBadge status={appraisal.verdict} />
                 </div>
-                <p className="card-body">{review.summary}</p>
+                <p className="card-body">{appraisal.summary}</p>
                 <div className="meta-row">
-                  <Badge>{statusLabel(review.appraisal_lane)}</Badge>
-                  <Badge>{review.status}</Badge>
-                  <Badge tone={review.blocking ? "danger" : "good"}>{review.blocking ? "Blocking" : "Non-blocking"}</Badge>
+                  <Badge>{statusLabel(appraisal.appraisal_lane)}</Badge>
+                  <Badge>{appraisal.status}</Badge>
+                  <Badge tone={appraisal.blocking ? "danger" : "good"}>
+                    {appraisal.blocking ? "Blocking" : "Non-blocking"}
+                  </Badge>
                 </div>
-                {review.findings?.length ? (
+                {appraisal.findings?.length ? (
                   <div className="support-list compact-list">
-                    {review.findings.map((finding) => (
+                    {appraisal.findings.map((finding) => (
                       <div className="support-item" key={finding.finding_id}>
                         <h3>{finding.finding_id}</h3>
                         <p>{finding.summary}</p>

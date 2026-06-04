@@ -123,7 +123,7 @@ export function getBundleReport(data, bundleId) {
 export function getEvidenceAppraisalsForBundle(data, bundleId) {
   return data.collections.evidenceAppraisals
     .map(({ record }) => record)
-    .filter((review) => review.candidate_bundle_id === bundleId)
+    .filter((appraisal) => appraisal.candidate_bundle_id === bundleId)
     .sort((left, right) => left.appraisal_lane.localeCompare(right.appraisal_lane) || left.id.localeCompare(right.id));
 }
 

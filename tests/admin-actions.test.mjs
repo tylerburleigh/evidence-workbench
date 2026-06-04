@@ -251,10 +251,10 @@ test("admin publish action returns workflow error redirect when bundle is not ap
 
 test("admin approve action returns workflow error redirect when evidence appraisals are incomplete", async () => {
   await withWorkspace(async (workspace) => {
-    const reviewPath = "data/evidence-appraisals/evidence-appraisal-archive-question-source-fidelity-r1.json";
-    const review = await readWorkspaceJson(workspace, reviewPath);
-    await writeWorkspaceJson(workspace, reviewPath, {
-      ...review,
+    const appraisalPath = "data/evidence-appraisals/evidence-appraisal-archive-question-source-fidelity-r1.json";
+    const appraisal = await readWorkspaceJson(workspace, appraisalPath);
+    await writeWorkspaceJson(workspace, appraisalPath, {
+      ...appraisal,
       status: "draft"
     });
 

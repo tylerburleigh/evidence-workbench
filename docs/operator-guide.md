@@ -113,7 +113,7 @@ LIT_REVIEW_STUDIO_DOMAIN=<domain-id> npm run research:search -- screen \
   --reason "<short inclusion reason>"
 ```
 
-Use `--decision maybe`, `exclude`, `duplicate`, `not_relevant`, or `no_full_text` for deferred or rejected candidates. The search protocol should stay staged with the bundle and be published only after review.
+Use `--decision maybe`, `exclude`, `duplicate`, `not_relevant`, or `no_full_text` for deferred or rejected candidates. The search protocol should stay staged with the bundle and be published only after appraisal and editorial approval.
 
 Avoid using a source to support claims outside its boundary. A specification can support a control model; it does not prove that a project executes that control.
 
@@ -176,7 +176,7 @@ The candidate bundle should include:
 - `source_ids` and `source_urls`
 - one `proposed_changes` entry per staged record
 - required appraisal lanes
-- review requirement policy
+- appraisal requirement policy
 - evidence appraisal IDs, once appraisals exist
 
 The research session should include:
@@ -198,14 +198,14 @@ Keep timestamps coherent:
 
 For each required appraisal lane, create one `data/evidence-appraisals/<appraisal-id>.json` record for the current bundle revision.
 
-Each review must identify:
+Each appraisal must identify:
 
 - bundle ID
 - revision number
 - appraisal lane
 - verdict
 - blocking status
-- reviewed change IDs
+- appraised change IDs
 - structured findings, even if empty
 
 Required appraisal lanes come from the domain pack. For example, the software supply-chain pack requires:
@@ -253,7 +253,7 @@ Publication should:
 - update `publication_event_ids`
 - sync planning state
 
-If manual timestamps are later than the generated publication timestamp, normalize the manual session, submission, or review timestamps and run planning sync again.
+If manual timestamps are later than the generated publication timestamp, normalize the manual session, submission, or appraisal timestamps and run planning sync again.
 
 ## 8. Integrate Reports
 
@@ -309,7 +309,7 @@ Update docs:
 
 - `docs/domain-packs.md`, if the domain-pack contract changes
 - `docs/ui.md`, if routes or UI behavior change
-- `docs/workflows.md`, if the publish or review workflow changes
+- `docs/workflows.md`, if the publish or appraisal workflow changes
 - domain-specific notes if the new pack establishes a reusable pattern
 
 ## 11. Verify Locally

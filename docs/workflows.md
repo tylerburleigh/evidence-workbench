@@ -120,7 +120,7 @@ The sync should compute:
 
 - coverage status by topic
 - next recommended mode
-- active review status
+- active appraisal status
 - latest session
 - latest bundle
 - latest publication
