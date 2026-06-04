@@ -1,0 +1,311 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "ssr-assessment-stakes-boundaries-baseline-claim",
+  "name": "Assessment Stakes and Synthetic Response Use Boundaries Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "ssr-assessment-stakes-boundaries",
+  "current_stage": "synthesis_claim_supported",
+  "momentum": "baseline_staged",
+  "confidence": "medium",
+  "summary": "The updated stakes-boundary synthesis finds that acceptable synthetic-response use is strongly context-dependent. A targeted 2026-06-03 pass adds direct operational state summative evidence from the New Mexico MSSA technical report: LLM-generated synthetic responses were used as limited training augmentation for some Writing automated-scoring models when high-score real examples were sparse, with staff review, PED approval, and independent model validation criteria. This strengthens the case for controlled high-stakes training augmentation, but not for synthetic-only final validation, subgroup fairness evidence, cut-score evidence, or live scoring decisions. In lower-stakes formative, in-term, and classroom contexts, synthetic responses can support scorer-development augmentation and feedback-oriented testing more readily, but only when learner consequences, response origin, label source, comparator data, and human oversight remain explicit.",
+  "main_blockers": [
+    "The first pass is targeted rather than systematic.",
+    "General assessment standards and AI-assessment guidance are contextual guardrails, not synthetic-response-specific empirical evidence.",
+    "Direct high-stakes evidence now includes one operational state summative training-augmentation report, but it remains a narrow use case rather than a general validation policy.",
+    "Lower-stakes examples often support prototype development, feedback testing, or training augmentation rather than operational scoring.",
+    "No included source supports synthetic responses alone for final validation, subgroup fairness validation, cut scores, or high-stakes live scoring."
+  ],
+  "best_current_signals": [
+    "The Standards for Educational and Psychological Testing frame validity evidence around intended score use and make stakes central to how much evidence and protection are needed.",
+    "The New Mexico MSSA technical report documents operational state summative automated scoring in which LLM-generated synthetic Writing responses were used to supplement sparse high-score training data after scoring-staff review and PED approval.",
+    "Frohn et al. show a summative constructed-response workflow where synthetic responses are acceptable before pilot testing, but real student responses carry the pilot-validation role.",
+    "Yoo et al. show in-term AES training augmentation where synthetic essays support model development while real essays remain the validation/test evidence.",
+    "Bexte and Zesch show that even lower-consequence classroom training use still requires generated-label audit or relabeling.",
+    "Watts et al. show a lower-stakes formative feedback setting where synthetic inputs support chatbot prompt and feedback testing rather than scorer validation.",
+    "Rezayi et al. show formative professional-education scoring where Qwen-generated synthetic learner responses improve training augmentation when evaluated on real learner responses, while summative use is framed as hybrid human review.",
+    "Djagba et al. show classroom NGSS scoring augmentation where GPT-generated synthetic responses can improve rare-category F1 on held-out real responses, while the authors call for additional validity work and expert quality checks.",
+    "Wang et al. provide adjacent high-stakes spoken-assessment evidence for synthetic or mismatched off-topic cases as detection/stress-test material, not automated score validation.",
+    "Walsh et al. provide adjacent high-stakes admissions evidence for synthetic demographic analogs as fairness stress-test material, not subgroup fairness validation."
+  ],
+  "interpretive_note": "This baseline answers the user's stakes question by treating acceptable use as a function of assessment purpose, learner consequence, and operational role. The synthetic-response evidence does not license a blanket acceptable-use policy. It supports a gradient: lower-stakes formative and development settings allow broader exploratory use when bounded by feedback and oversight controls; higher-stakes summative, admissions, accountability, or deployment decisions can include tightly governed training augmentation or stress testing, but still require real-response validation and stronger fairness, reliability, transparency, and monitoring evidence before operational score-use claims.",
+  "limitations": [
+    "The claim does not create a policy for any testing program, district, vendor, or course.",
+    "The claim does not establish that synthetic responses can replace real student responses for final validation, subgroup fairness evidence, cut-score evidence, or live scoring decisions.",
+    "The claim does not generalize one New Mexico MSSA operational report into a broad institutional accountability or vendor policy.",
+    "Some supporting guidance sources are not specific to synthetic student responses and should remain boundary context rather than direct synthetic-response evidence."
+  ],
+  "update_notes": [
+    "A later pass should search explicitly for more operational technical reports, vendor policies, state-assessment documentation, and summative/interim classroom systems that mention synthetic-response training, validation, monitoring, or approval.",
+    "Future evidence extraction should separate no-direct-consequence research from feedback support, classroom grades, high-stakes individual decisions, and institutional/accountability decisions.",
+    "If this baseline is published, evidence appraisal should focus heavily on applicability_boundary and synthesis_overreach because the claim uses contextual standards guidance alongside direct synthetic-response studies."
+  ],
+  "supporting_finding_ids": [
+    "standards-stakes-intended-use-boundary-finding-2026",
+    "ets-ai-assessment-guardrails-finding-2026",
+    "usdoe-formative-feedback-boundary-finding-2026",
+    "new-mexico-mssa-operational-synthetic-training-boundary-finding-2026",
+    "frohn-stakes-prepilot-validation-boundary-finding-2026",
+    "yoo-stakes-training-real-validation-boundary-finding-2026",
+    "bexte-stakes-label-audit-training-boundary-finding-2026",
+    "watts-stakes-formative-prototype-boundary-finding-2026",
+    "walsh-stakes-high-stakes-stress-test-boundary-finding-2026",
+    "wang-high-stakes-off-topic-synthetic-detection-boundary-finding-2026",
+    "rezayi-formative-hybrid-synthetic-training-boundary-finding-2026",
+    "djagba-classroom-synthetic-augmentation-validity-boundary-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "standards-educational-psychological-testing-2014-source",
+    "ets-responsible-ai-assessment-principles-2024-source",
+    "usdoe-teal-formative-assessment-source",
+    "new-mexico-mssa-technical-report-2025-source",
+    "frohn-llm-cr-live-scoring-2025-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "bexte-zesch-synthetic-content-scoring-2025-source",
+    "watts-scientific-argumentation-chatbot-2025-source",
+    "walsh-sjt-automated-scoring-2026-source",
+    "wang-off-topic-spoken-responses-2019-source",
+    "rezayi-communication-skills-synthetic-training-2025-source",
+    "djagba-ngss-classroom-augmentation-2026-source"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Use-and-stakes validity frame",
+      "claim_field": "interpretive_note",
+      "conclusion": "Acceptable synthetic-response use should be interpreted through intended score use and consequence level, not only through technical realism or scorer agreement.",
+      "support_role": "boundary_condition",
+      "rationale": "The 2014 testing standards tie validity to intended interpretations and uses and make high-stakes uses more demanding.",
+      "finding_ids": [
+        "standards-stakes-intended-use-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "standards-educational-psychological-testing-2014-source"
+      ],
+      "limitations": [
+        "Contextual standards guidance, not synthetic-response-specific empirical evidence."
+      ]
+    },
+    {
+      "label": "AI assessment guardrails",
+      "claim_field": "limitations",
+      "conclusion": "AI-supported assessment workflows need validity, fairness, transparency, human oversight, and monitoring controls, especially when use becomes operational.",
+      "support_role": "boundary_condition",
+      "rationale": "ETS responsible AI assessment guidance supplies guardrails that align with the claim's deployment-readiness limitation.",
+      "finding_ids": [
+        "ets-ai-assessment-guardrails-finding-2026"
+      ],
+      "source_ids": [
+        "ets-responsible-ai-assessment-principles-2024-source"
+      ],
+      "limitations": [
+        "Not a synthetic-response validation threshold."
+      ]
+    },
+    {
+      "label": "Lower-stakes formative context",
+      "claim_field": "summary",
+      "conclusion": "Formative feedback and instructional support are lower-consequence contexts than final grading, selection, or accountability decisions.",
+      "support_role": "boundary_condition",
+      "rationale": "LINCS/TEAL guidance defines formative assessment around ongoing feedback, instructional adjustment, and learner self-assessment.",
+      "finding_ids": [
+        "usdoe-formative-feedback-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "usdoe-teal-formative-assessment-source"
+      ],
+      "limitations": [
+        "Does not address synthetic responses directly."
+      ]
+    },
+    {
+      "label": "Operational state summative training augmentation",
+      "claim_field": "summary",
+      "conclusion": "A state summative automated scoring program used LLM-generated synthetic Writing responses as limited training augmentation for sparse upper score points, with review, approval, and independent model validation criteria.",
+      "support_role": "direct_support",
+      "rationale": "The 2025 New Mexico MSSA technical report describes field-test and operational responses supplemented in some cases with synthetic responses, staff review, PED approval, and model validation criteria based on human-machine agreement, degradation, and mean score difference.",
+      "finding_ids": [
+        "new-mexico-mssa-operational-synthetic-training-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "new-mexico-mssa-technical-report-2025-source"
+      ],
+      "limitations": [
+        "Single state-assessment technical report.",
+        "Supports training augmentation, not synthetic-only validation.",
+        "Does not provide synthetic-response subgroup fairness, cut-score, or prompt/generator details."
+      ]
+    },
+    {
+      "label": "Summative pre-pilot boundary",
+      "claim_field": "best_current_signals",
+      "conclusion": "In a summative constructed-response scoring workflow, synthetic responses are acceptable before pilot validation, not as a replacement for real pilot evidence.",
+      "support_role": "direct_support",
+      "rationale": "Frohn et al. explicitly separate synthetic pre-pilot checks and challenge sets from later real-response pilot validation.",
+      "finding_ids": [
+        "frohn-stakes-prepilot-validation-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "frohn-llm-cr-live-scoring-2025-source"
+      ],
+      "limitations": [
+        "Framework evidence rather than one operational validation study."
+      ]
+    },
+    {
+      "label": "In-term training boundary",
+      "claim_field": "best_current_signals",
+      "conclusion": "In-term or classroom AES can use synthetic responses for training augmentation when real responses remain the validation/test evidence.",
+      "support_role": "direct_support",
+      "rationale": "Yoo et al. use synthetic CASE essays for training support while preserving real classroom essays for validation and testing.",
+      "finding_ids": [
+        "yoo-stakes-training-real-validation-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "yoo-dress-rubric-aes-2025-source"
+      ],
+      "limitations": [
+        "Bounded to EFL writing and CASE-style corruption."
+      ]
+    },
+    {
+      "label": "Label audit boundary",
+      "claim_field": "best_current_signals",
+      "conclusion": "Even low- or no-direct-consequence training augmentation should not accept generated labels without audit.",
+      "support_role": "direct_support",
+      "rationale": "Bexte and Zesch show generated target labels can require manual relabeling before supervised content-scoring training.",
+      "finding_ids": [
+        "bexte-stakes-label-audit-training-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "bexte-zesch-synthetic-content-scoring-2025-source"
+      ],
+      "limitations": [
+        "Does not address operational scoring use."
+      ]
+    },
+    {
+      "label": "Formative prototype boundary",
+      "claim_field": "summary",
+      "conclusion": "Synthetic inputs can support lower-stakes formative feedback prototype testing, but that is not scorer validation.",
+      "support_role": "direct_support",
+      "rationale": "Watts et al. use synthetic student inputs to test chatbot prompt and feedback behavior in a formative scientific-argumentation support workflow.",
+      "finding_ids": [
+        "watts-stakes-formative-prototype-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "watts-scientific-argumentation-chatbot-2025-source"
+      ],
+      "limitations": [
+        "Feedback-generation prototype testing, not automated scorer validation."
+      ]
+    },
+    {
+      "label": "High-stakes stress-test boundary",
+      "claim_field": "best_current_signals",
+      "conclusion": "In an adjacent admissions setting, synthetic demographic variants are defensible as diagnostic stress tests, not as subgroup fairness validation or operational decision evidence.",
+      "support_role": "direct_support",
+      "rationale": "Walsh et al. compare original Casper responses with synthetic demographic analogs in an early fairness pilot and preserve a sample-size caveat.",
+      "finding_ids": [
+        "walsh-stakes-high-stakes-stress-test-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "walsh-sjt-automated-scoring-2026-source"
+      ],
+      "limitations": [
+        "Adjacent SJT admissions context.",
+        "Early pilot, not subgroup fairness validation."
+      ]
+    },
+    {
+      "label": "High-stakes detection boundary",
+      "claim_field": "best_current_signals",
+      "conclusion": "Synthetic or constructed response sets can support high-stakes validity-protection detectors, but this is not the same as validating automated scores.",
+      "support_role": "boundary_condition",
+      "rationale": "Wang et al. create synthetic off-topic spoken responses from mismatched operational responses to develop an off-topic detector for a high-stakes speaking assessment.",
+      "finding_ids": [
+        "wang-high-stakes-off-topic-synthetic-detection-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "wang-off-topic-spoken-responses-2019-source"
+      ],
+      "limitations": [
+        "Mismatched real responses rather than LLM-generated synthetic responses.",
+        "Detection and scoring-pipeline protection rather than scorer validation."
+      ]
+    },
+    {
+      "label": "Formative professional-education training boundary",
+      "claim_field": "summary",
+      "conclusion": "In a formative professional-education tool, synthetic learner responses can improve training augmentation when evaluation remains anchored in real learner responses.",
+      "support_role": "direct_support",
+      "rationale": "Rezayi et al. show stronger binary F1 for real-plus-synthetic training than limited real-only training, while preserving real learner responses for evaluation and warning that synthetic data cannot replace real annotated data.",
+      "finding_ids": [
+        "rezayi-formative-hybrid-synthetic-training-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "rezayi-communication-skills-synthetic-training-2025-source"
+      ],
+      "limitations": [
+        "Formative primary context.",
+        "Summative use is framed as hybrid human review rather than autonomous scoring."
+      ]
+    },
+    {
+      "label": "Classroom augmentation validity boundary",
+      "claim_field": "summary",
+      "conclusion": "In classroom/in-term automated scoring, synthetic responses can help address class imbalance and improve held-out real-response scoring metrics, but validity and expert quality checks remain necessary before stronger use claims.",
+      "support_role": "direct_support",
+      "rationale": "Djagba et al. use GPT-generated synthetic responses for rare NGSS rubric categories and evaluate augmented models on held-out real responses, while explicitly calling for more validity work.",
+      "finding_ids": [
+        "djagba-classroom-synthetic-augmentation-validity-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "djagba-ngss-classroom-augmentation-2026-source"
+      ],
+      "limitations": [
+        "Conference preprint.",
+        "Does not establish grade-bearing or high-stakes classroom use.",
+        "GPT augmentation is not always the strongest augmentation method in the source."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-03",
+  "assessment_purpose": [
+    "research_or_development",
+    "formative_feedback",
+    "in_term_or_classroom_assessment",
+    "summative_assessment",
+    "admissions_or_selection"
+  ],
+  "decision_consequence": [
+    "no_direct_learner_consequence",
+    "feedback_or_instructional_support",
+    "high_stakes_individual_decision",
+    "institutional_or_accountability_decision"
+  ],
+  "operational_use": [
+    "generation_method_mapping",
+    "training_augmentation",
+    "calibration_or_development",
+    "pre_pilot_validation",
+    "stress_testing",
+    "validation_or_benchmarking"
+  ],
+  "applicability": {
+    "applies_when": [
+      "The question is whether synthetic student responses are acceptable in a particular assessment context, consequence level, and workflow role.",
+      "Synthetic responses are used for formative feedback development, scorer training augmentation, calibration, pre-pilot checks, stress testing, or controlled high-stakes training augmentation with explicit response origin, label source, review/approval, and comparator boundaries."
+    ],
+    "does_not_apply_when": [
+      "Synthetic responses are treated as the sole evidence for final scorer validation, deployment readiness, cut scores, subgroup fairness, live high-stakes decisions, or institutional accountability.",
+      "A single operational report is generalized into a blanket acceptable-use policy for all state assessments, vendors, or high-stakes programs.",
+      "The workflow does not distinguish formative feedback, classroom/in-term use, summative scoring, selection/admissions, and accountability consequences."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Grade-bearing classroom decisions where synthetic responses directly affect student grades.",
+      "Certification, licensure, placement, or promotion decisions.",
+      "Operational vendor policies for automated scoring systems using synthetic validation data.",
+      "Additional state accountability testing programs beyond the New Mexico MSSA technical-report case."
+    ]
+  }
+}

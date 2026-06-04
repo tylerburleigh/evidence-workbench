@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-ssr-validity-conditions-claim-hardening-construct-mapping-r1",
+  "name": "Construct Mapping review for Validity Conditions Claim Hardening Update bundle",
+  "candidate_bundle_id": "ssr-validity-conditions-claim-hardening-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "construct_mapping",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "appraiser_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The staged claim updates distinguish realism, authenticity, comparator, model/workflow, prompt/workflow, item-difficulty, and scorer-validation constructs. SMART is mapped as scoring-adjacent item-development evidence, not final scorer validation.",
+  "appraised_change_ids": [
+    "update-quality-evaluation-claim",
+    "update-model-generation-effects-claim",
+    "update-prompt-engineering-effects-claim",
+    "update-real-response-comparison-claim",
+    "update-scoring-validation-use-claim",
+    "update-acceptable-scoring-uses-claim"
+  ],
+  "findings": [
+    {
+      "finding_id": "claim-hardening-preserves-construct-boundaries",
+      "severity": "note",
+      "category": "construct_conflation",
+      "claim_or_issue": "The support entries do not collapse synthetic-response realism into scorer validity or real-response interchangeability.",
+      "why_it_matters": "The claim updates should harden the graph without broadening the validity conclusion beyond the source evidence.",
+      "recommended_action": "Retain the explicit limitations attached to each new support entry.",
+      "resolution_status": "closed"
+    }
+  ],
+  "created_at": "2026-06-03T19:37:00Z",
+  "updated_at": "2026-06-03T19:37:00Z"
+}

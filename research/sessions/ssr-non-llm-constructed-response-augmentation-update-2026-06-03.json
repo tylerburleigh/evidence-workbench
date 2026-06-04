@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "ssr-non-llm-constructed-response-augmentation-update-2026-06-03",
+  "mode": "review_update",
+  "started_at": "2026-06-03T15:10:00Z",
+  "completed_at": "2026-06-03T16:40:00Z",
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-sparse-data-supplementation"
+    ],
+    "research_question": "Are there older or non-LLM examples where generated, transformed, manually simulated, feature-space, or image-augmented constructed-response data supplement sparse or imbalanced automated-scoring datasets, and what role did that synthetic data play in the research process?"
+  },
+  "selected_via": "User selected the older/non-LLM constructed-response augmentation next step.",
+  "outcome": "candidate_bundle",
+  "summary": "Added a targeted update with four sources: Lun et al. 2020 for pre-GPT ASAS back-translation and recombination, Bonthu et al. 2023 for programming ASAG text augmentation at abstract-level depth, Krisnawati et al. 2025 for manual response simulation and SMOTE in cross-prompt ASAG, and Li, Haudek, and Krajcik 2025 for adjacent scientific-model scoring with SMOTE/image augmentation. The update reinforces that sparse-data supplementation is usually training augmentation or class balancing, not scorer validation.",
+  "candidate_bundle_id": "ssr-non-llm-constructed-response-augmentation-update-2026-06-03",
+  "source_ids": [
+    "lun-mda-asas-short-answer-augmentation-2020",
+    "bonthu-transfer-augmentation-asag-2023",
+    "krisnawati-cross-prompt-asag-smote-2025",
+    "li-scientific-models-smote-2025"
+  ],
+  "source_urls": [
+    "https://doi.org/10.1609/aaai.v34i09.7062",
+    "https://doi.org/10.1016/j.engappai.2023.106292",
+    "https://doi.org/10.21512/commit.v19i2.13423",
+    "https://doi.org/10.1007/s10956-025-10217-0"
+  ],
+  "next_recommended_mode": "manual",
+  "next_actions": [
+    "Retrieve Bonthu et al. full text before detailed method or numeric synthesis.",
+    "Keep feature-space and image augmentation distinct from generated textual student responses.",
+    "Citation-chain Lun, Fang, Zhang, Morris, and Krisnawati if this becomes a systematic or scoping pass."
+  ]
+}

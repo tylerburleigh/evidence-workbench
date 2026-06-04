@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "martynova-teacher-authenticity-failure-finding-2025",
+  "name": "Teacher Interviews Identify Authenticity Gaps in GPT-3.5 Simulated Students",
+  "source_id": "martynova-human-learners-teacher-insights-2025-source",
+  "artifact_id": "martynova-teacher-insights-authenticity-artifact",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-real-response-comparison",
+    "ssr-model-generation-effects"
+  ],
+  "endpoint_category": "teacher_authenticity_judgment",
+  "direction": "reports_authenticity_limit",
+  "evidence_tier": "peer_reviewed_full_text",
+  "confidence": "medium",
+  "statement": "Martynova et al. find that teachers who tutored GPT-3.5-turbo simulated students identified authenticity gaps including limited emotional response, overly complex language, unnatural attentiveness, repetitive behavior, logical inconsistency, and abrupt tactic changes after feedback.",
+  "population_or_context": "Teachers and tutors interacting with LLM-simulated sixth-grade math students in the MathDial context.",
+  "time_horizon": "BEA 2025 paper retrieved on 2026-06-03.",
+  "quantitative_note": "The paper reports 12 interviews, 2,861 MathDial dialogues, 377 teacher feedback entries, 21% non-typical conversation ratings, 51 repetitive-answer feedback mentions, 8 of 12 interviewees noting limited emotional responses, and 10 of 12 noting high attentiveness.",
+  "caveats": [
+    "The analyzed simulated students used GPT-3.5-turbo, so the finding is not a current model ranking.",
+    "The evidence is teacher-perception and dialogue-authenticity evidence, not scoring validation.",
+    "The sample is small and filtered through prior MathDial participation."
+  ],
+  "evaluation_method": "Teacher feedback topic modeling, typical/non-typical interaction analysis, and semi-structured teacher interviews.",
+  "reported_metrics": "Typical/non-typical proportions, repeated-answer feedback counts, and interview theme counts.",
+  "numeric_results_extracted": true,
+  "source_locator": {
+    "section": "Abstract; Sections 3.1-3.2; Section 4; Table 2; Limitations",
+    "url": "https://aclanthology.org/2025.bea-1.8.pdf",
+    "quote_or_paraphrase_note": "Extraction uses participant/sample details, MathDial setup, teacher-identified authenticity gaps, Table 2 behavior categories, and limitations.",
+    "verification_status": "verified"
+  },
+  "limitations": [
+    "Supports model-choice caution and quality-evaluation dimensions, not a claim that GPT-3.5 is representative of current systems.",
+    "Does not support automated scorer validation or synthetic response interchangeability."
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-non-llm-constructed-response-augmentation-update-2026-06-03-2026-06-03t16-43-08-294z",
+  "name": "Published Non-LLM Constructed-Response Augmentation Update",
+  "summary": "Stages older and non-LLM examples where synthetic, transformed, manual, feature-space, or image-augmented constructed-response data supplement sparse or imbalanced automated-scoring datasets.",
+  "candidate_bundle_id": "ssr-non-llm-constructed-response-augmentation-update-2026-06-03",
+  "event_type": "publish",
+  "published_at": "2026-06-03T16:43:08.294Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "search_protocol",
+      "record_id": "ssr-non-llm-constructed-response-augmentation-search-2026-06-03",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "lun-mda-asas-short-answer-augmentation-2020",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "bonthu-transfer-augmentation-asag-2023",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "krisnawati-cross-prompt-asag-smote-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "li-scientific-models-smote-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "lun-mda-asas-scientsbank-augmentation-2020",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "bonthu-transfer-asag-augmentation-2023",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "krisnawati-cross-prompt-asag-smote-augmentation-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "li-scientific-models-smote-augmentation-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "lun-mda-asas-non-llm-short-answer-augmentation-finding-2020",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "bonthu-non-llm-asag-augmentation-finding-2023",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "krisnawati-smote-cross-prompt-asag-finding-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "li-smote-scientific-models-imbalance-finding-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-sparse-data-supplementation-baseline-claim",
+      "action": "updated"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 14,
+    "by_record_type": {
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "source": {
+        "created": 4,
+        "updated": 0,
+        "total": 4
+      },
+      "artifact": {
+        "created": 4,
+        "updated": 0,
+        "total": 4
+      },
+      "finding": {
+        "created": 4,
+        "updated": 0,
+        "total": 4
+      },
+      "claim": {
+        "created": 0,
+        "updated": 1,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "ssr-sparse-data-supplementation-baseline-claim"
+  ],
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-non-llm-cr-augmentation-applicability-boundary-r1",
+    "evidence-appraisal-ssr-non-llm-cr-augmentation-construct-mapping-r1",
+    "evidence-appraisal-ssr-non-llm-cr-augmentation-method-classification-r1",
+    "evidence-appraisal-ssr-non-llm-cr-augmentation-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-non-llm-cr-augmentation-search-protocol-r1",
+    "evidence-appraisal-ssr-non-llm-cr-augmentation-source-fidelity-r1",
+    "evidence-appraisal-ssr-non-llm-cr-augmentation-synthesis-overreach-r1"
+  ],
+  "review_corrections_applied": [],
+  "appraisal_follow_up_actions": [
+    "applicability_boundary: Keep operational-use claims in separate policy/practice nodes.",
+    "construct_mapping: Maintain the response-origin and synthetic-data-form distinction in downstream synthesis text.",
+    "method_classification: Keep generation_model and scorer_use fields separate in synthesis exports.",
+    "scorer_validation_relevance: Retain the distinction between training augmentation and scorer validation in the literature review.",
+    "search_protocol: Leave systematicity_level as targeted_bootstrap and keep screening counts non-exhaustive.",
+    "source_fidelity: Retrieve full text before using Bonthu et al. for detailed method comparison or quantitative synthesis.",
+    "source_fidelity: Use Li, Haudek, and Krajcik in all source, finding, and synthesis text.",
+    "synthesis_overreach: Use language such as targeted pass, examples, or pattern rather than systematic prevalence claims."
+  ],
+  "source_access_follow_up_actions": [
+    {
+      "action_id": "resolve-source-access-bonthu-non-llm-asag-augmentation-finding-2023",
+      "action_type": "source_access_resolution",
+      "status": "open",
+      "priority": "high",
+      "target_record_type": "finding",
+      "target_record_id": "bonthu-non-llm-asag-augmentation-finding-2023",
+      "source_ids": [
+        "bonthu-transfer-augmentation-asag-2023"
+      ],
+      "taxonomy_node_ids": [
+        "ssr-sparse-data-supplementation"
+      ],
+      "access_status": "abstract_only_available",
+      "access_depth": "abstract_only",
+      "locator_depth": "abstract_or_metadata",
+      "required_access_depth": "full_text",
+      "reason": "create-finding-bonthu: finding bonthu-non-llm-asag-augmentation-finding-2023 relies on Improving the Performance of Automatic Short Answer Grading Using Transfer Learning and Augmentation with abstract only, below the domain minimum of full_text.",
+      "recommended_action": "Retrieve full text for Improving the Performance of Automatic Short Answer Grading Using Transfer Learning and Augmentation, replace or downgrade the finding, or mark the source as screening-only before synthesis use.",
+      "finding_id": "bonthu-non-llm-asag-augmentation-finding-2023",
+      "artifact_id": "bonthu-transfer-asag-augmentation-2023"
+    }
+  ],
+  "extraction_follow_up_actions": [
+    {
+      "action_id": "extract-numeric-results-bonthu-non-llm-asag-augmentation-finding-2023",
+      "action_type": "numeric_results_extraction",
+      "status": "open",
+      "priority": "medium",
+      "target_record_type": "finding",
+      "target_record_id": "bonthu-non-llm-asag-augmentation-finding-2023",
+      "source_ids": [
+        "bonthu-transfer-augmentation-asag-2023"
+      ],
+      "taxonomy_node_ids": [
+        "ssr-sparse-data-supplementation"
+      ],
+      "metric_fields_present": [
+        "reported_metrics",
+        "quantitative_note"
+      ],
+      "reason": "finding bonthu-non-llm-asag-augmentation-finding-2023 reports metric text but numeric_results_extracted is false.",
+      "recommended_action": "Extract table-level numeric results for Non-LLM Text Augmentation for Programming ASAG before quantitative synthesis.",
+      "finding_id": "bonthu-non-llm-asag-augmentation-finding-2023",
+      "artifact_id": "bonthu-transfer-asag-augmentation-2023"
+    }
+  ],
+  "change_note": "Expands the existing sparse-data supplementation claim with non-LLM and non-essay examples."
+}

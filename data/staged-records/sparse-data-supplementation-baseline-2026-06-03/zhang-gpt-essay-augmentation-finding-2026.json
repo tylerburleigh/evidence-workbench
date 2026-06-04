@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "zhang-gpt-essay-augmentation-finding-2026",
+  "name": "GPT-Generated Essays Increased Score-Level and Subgroup Training Samples",
+  "source_id": "zhang-gpt-generated-essay-augmentation-2026",
+  "artifact_id": "zhang-gpt4-gpt4o-essay-sample-augmentation-2026",
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "endpoint_category": "essay_sample_augmentation",
+  "direction": "supports",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Zhang, Badola, Johnson, and Li generated GPT-4 and GPT-4o essays by prompt and score level to augment AI essay scorer training samples, then evaluated score agreement and subgroup fairness on held-out student essays.",
+  "population_or_context": "Seven essay prompts with human-scored student essays on a six-point scale.",
+  "quantitative_note": "The paper reports that score levels 1, 5, and 6 had few student essays, and that GPT augmentation substantially increased training samples at each score level.",
+  "evaluation_method": "QWK, correlation, SMD, subgroup MDSS, subgroup QWK, and feature comparisons between student and generated essays.",
+  "sparsity_or_imbalance_motivation": "Small samples for some score levels and subgroups could cause scorer performance and fairness issues.",
+  "synthetic_data_research_role": "Generated essays were used for scorer training augmentation, performance benchmarking, and subgroup fairness analysis.",
+  "reported_metrics": "Human-AI QWK, correlations, SMD, MDSS, subgroup QWK; augmented models generally performed comparably to student-only models and mitigated some subgroup differences.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "Only one human rating was available.",
+    "Generated essays may differ from student essays in subtle content and style ways not fully captured by surface features."
+  ],
+  "source_locator": "Abstract; Sections 3.2-3.3; Base and augmented scoring model training; Results for RQ2 and RQ3; Limitations."
+}

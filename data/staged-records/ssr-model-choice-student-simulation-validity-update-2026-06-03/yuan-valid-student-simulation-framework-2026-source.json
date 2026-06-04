@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "yuan-valid-student-simulation-framework-2026-source",
+  "name": "Towards Valid Student Simulation with Large Language Models",
+  "source_type": "preprint",
+  "authors": [
+    "Zhihao Yuan",
+    "Yunze Xiao",
+    "Ming Li",
+    "Weihao Xuan",
+    "Richard Tong",
+    "Mona Diab",
+    "Tom Mitchell"
+  ],
+  "venue": "arXiv",
+  "year": 2026,
+  "published_on": "2026-01-09",
+  "doi": "10.48550/arXiv.2601.05473",
+  "urls": [
+    "https://arxiv.org/abs/2601.05473",
+    "https://arxiv.org/pdf/2601.05473",
+    "https://arxiv.org/html/2601.05473"
+  ],
+  "summary": "arXiv conceptual and methodological framework for valid LLM-based student simulation, centered on the competence paradox, Goal-by-Environment framing, and Epistemic State Specification.",
+  "retrieved_on": "2026-06-03",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03T20:13:00Z",
+      "url": "https://arxiv.org/pdf/2601.05473",
+      "result": "full_text_verified",
+      "notes": "arXiv PDF was downloaded and text-extracted for the competence paradox, ESS reporting card, goal-aligned fidelity guidance, and limitations."
+    }
+  ]
+}

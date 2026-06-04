@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "yuan-epistemic-state-specification-artifact",
+  "name": "Yuan et al. Epistemic State Specification Framework Extract",
+  "artifact_type": "framework_extract",
+  "status": "staged",
+  "source_ids": [
+    "yuan-valid-student-simulation-framework-2026-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-model-generation-effects",
+    "ssr-real-response-comparison"
+  ],
+  "population_or_context": "LLM-based student simulation in educational settings across performance simulation, learning simulation, and human-aspect simulation goals.",
+  "sample_size": "Conceptual framework; no new empirical sample or benchmark.",
+  "methods": "The paper synthesizes prior literature and proposes Goal-by-Environment framing plus Epistemic State Specification as a reporting and validity-control device for LLM simulated students.",
+  "endpoint_categories": [
+    "validity_framework",
+    "epistemic_fidelity",
+    "reporting_checklist",
+    "model_choice_boundary"
+  ],
+  "numeric_results_extracted": "not_applicable",
+  "education_context": "General LLM student simulation for teacher training, learning-by-teaching, content evaluation, question-difficulty estimation, and synthetic data augmentation.",
+  "response_origin": "Framework for LLM-generated simulated student behavior rather than a new generated-response dataset.",
+  "rubric_label_space": "Epistemic State Specification levels and goal-aligned fidelity criteria rather than a scoring rubric.",
+  "label_source": "Conceptual reporting card and literature synthesis.",
+  "generation_model": "No specific model is evaluated.",
+  "generation_method": "Defines student simulation as constrained generation under explicit epistemic boundaries.",
+  "prompt_strategy": "Warns that context-window prompting alone can produce unrealistic learning dynamics for longitudinal simulation.",
+  "evaluation_method": "Recommends goal-aligned fidelity, misconception consistency, learning trajectory metrics, socio-affective metrics, and ESS reporting.",
+  "scorer_use": "Validity framework and reporting guidance; not direct scorer validation.",
+  "real_response_comparator": "The framework argues that comparators should match the simulator goal and environment, but it does not add a new empirical comparator dataset.",
+  "reported_metrics": "No numeric metrics; proposes ESS levels E0-E4 and a reporting card to make student-simulation claims falsifiable.",
+  "limitations": [
+    "The paper is theoretical and does not conduct empirical evaluations, classroom deployments, or large-scale psychometric validations.",
+    "The framework should guide reporting and interpretation rather than change empirical confidence in any model.",
+    "It does not rank models or generation workflows."
+  ],
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "quality_evaluation"
+}

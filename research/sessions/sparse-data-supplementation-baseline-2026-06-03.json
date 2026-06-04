@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "sparse-data-supplementation-baseline-2026-06-03",
+  "mode": "baseline_review",
+  "started_at": "2026-06-03T13:50:00Z",
+  "completed_at": "2026-06-03T14:35:00Z",
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-sparse-data-supplementation"
+    ],
+    "research_question": "How have synthetic student responses been used to supplement sparse, imbalanced, or incomplete student-response datasets, and what role did that synthetic data play in the research process?"
+  },
+  "selected_via": "User requested examples and agreed to proceed with a new bounded review question.",
+  "outcome": "candidate_bundle",
+  "summary": "Added a new review-question node and staged a targeted evidence baseline with seven sources spanning essay scoring, EFL rubric-based essay scoring, math constructed response, science written explanations, chemistry reasoning, and small student text response classification. The staged claim distinguishes training augmentation, score/class balancing, subgroup-fairness analysis, benchmarking, and synthetic-quality validation.",
+  "candidate_bundle_id": "sparse-data-supplementation-baseline-2026-06-03",
+  "source_ids": [
+    "fang-gpt4-imbalanced-automatic-scoring-2025",
+    "morris-naep-math-constructed-response-2025",
+    "martin-graulich-science-assessment-2024",
+    "cochran-gpt35-student-text-augmentation-2023",
+    "zhang-gpt-generated-essay-augmentation-2026",
+    "yoo-dress-rubric-essay-scoring-2025",
+    "wolfe-barber-realistic-essay-augmentation-2026"
+  ],
+  "source_urls": [
+    "https://arxiv.org/abs/2310.18365",
+    "https://link.springer.com/article/10.1007/s40593-024-00418-w",
+    "https://www.sciencedirect.com/science/article/pii/S2666920X24000687",
+    "https://par.nsf.gov/biblio/10468770-improving-automated-evaluation-student-text-responses-using-gpt-text-data-augmentation",
+    "https://www.jowr.org/jowr/article/view/1777",
+    "https://arxiv.org/abs/2402.16733",
+    "https://arxiv.org/abs/2602.06772"
+  ],
+  "next_recommended_mode": "manual",
+  "next_actions": [
+    "Run required evidence-appraisal lanes.",
+    "Perform full-text follow-up extraction for Martin and Graulich.",
+    "Expand citation chaining for older non-LLM augmentation and additional constructed-response examples."
+  ]
+}

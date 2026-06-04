@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "maine-science-simulated-response-authoring-review-artifact",
+  "name": "Maine Science Simulated Response Authoring Review Extract",
+  "artifact_type": "technical_report_extract",
+  "status": "complete",
+  "source_ids": [
+    "maine-science-assessment-2024-technical-report-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses",
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "population_or_context": "Spring 2024 Maine Science Assessment; machine-scorable selected-response and technology-enhanced items scored in the ADAM test delivery platform for online and paper administration modalities.",
+  "sample_size": "Not applicable; the passage describes item authoring/review QA rather than a study sample.",
+  "methods": "Extracted Chapter 4, Section 4.1. The report states that item scoring rules are documented on test maps and verified during key-check validation, and that the item authoring/review process supports review of simulated student responses and machine-scored output.",
+  "endpoint_categories": [
+    "state_operational_machine_scoring_quality_assurance",
+    "simulated_response_authoring_review",
+    "rule_based_machine_scoring"
+  ],
+  "education_context": "State science summative assessment with selected-response, technology-enhanced, and constructed-response formats; the simulated-response passage concerns machine-scorable items in ADAM.",
+  "response_origin": "Simulated student responses to machine-scorable assessment items, used during item authoring/review to inspect machine-scored output.",
+  "rubric_label_space": "Rule-based item scores produced by ADAM using scoring rules and QTI-encoded response processing for machine-scorable interactions.",
+  "label_source": "Expected machine-scored output is derived from item authoring, test maps, scoring rules, and key-check validation rather than independent human labels.",
+  "generation_model": "Not applicable; no LLM or generation model is reported.",
+  "generation_method": "Native item authoring/review workflow allows review of simulated student responses and corresponding machine-scored output; the report does not describe how simulated responses are authored.",
+  "prompt_strategy": "Not applicable.",
+  "assessment_purpose": "summative_assessment",
+  "decision_consequence": "institutional_or_accountability_decision",
+  "operational_use": "pre_pilot_validation",
+  "evaluation_method": "Quality control review verifies that item scoring rules are configured correctly and that items are properly machine scored when administered.",
+  "scorer_use": "Simulated responses support rule-based machine-scoring QA in ADAM item authoring/review, not automated essay scoring training or validation.",
+  "real_response_comparator": "No real-response comparator is reported for the simulated-response authoring/review workflow.",
+  "reported_metrics": "No quantitative metrics are reported for the simulated-response review process.",
+  "numeric_results_extracted": "not_applicable",
+  "limitations": [
+    "The passage supports simulated-response review for rule-based machine-scored items, not LLM-generated response augmentation.",
+    "The passage does not establish final validation evidence, fairness evidence, or live-scoring performance evidence.",
+    "The report does not specify simulated-response counts, authorship procedures, or review criteria beyond item authoring/review QA."
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "martin-graulich-full-text-follow-up-2026-06-03",
+  "mode": "manual",
+  "started_at": "2026-06-03T15:35:00Z",
+  "completed_at": "2026-06-03T15:50:56Z",
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-sparse-data-supplementation"
+    ],
+    "research_question": "Can the Martin and Graulich (2024) full text be retrieved and used to resolve the open numeric/method extraction follow-up?"
+  },
+  "selected_via": "extraction_follow_up_from_published_sparse_data_supplementation_bundle",
+  "outcome": "blocked",
+  "summary": "Full-text/numeric extraction was attempted but not completed. ScienceDirect and DOI/DOAJ pages exposed abstract/open-access metadata only; ScienceDirect direct PDF and browser paths returned CAPTCHA/IP-block pages; Elsevier text-mining links returned metadata or required an API key; Unpaywall, OpenAlex, Semantic Scholar, and CORE exposed no PDF or article-body URL. Martin/Graulich remains abstract-bounded and excluded from numeric or method-specific synthesis.",
+  "source_ids": [
+    "martin-graulich-science-assessment-2024"
+  ],
+  "source_urls": [
+    "https://doi.org/10.1016/j.caeai.2024.100265",
+    "https://www.sciencedirect.com/science/article/pii/S2666920X24000687",
+    "https://doaj.org/article/c000988151064cd9a90b1f1a4552760f"
+  ],
+  "next_recommended_mode": "manual",
+  "next_actions": [
+    "Obtain the publisher PDF through user-provided upload, institutional access, or another primary full-text route, then extract methods and results tables.",
+    "Keep Martin/Graulich in the qualitative map only until source-backed numeric and method details are extracted."
+  ]
+}

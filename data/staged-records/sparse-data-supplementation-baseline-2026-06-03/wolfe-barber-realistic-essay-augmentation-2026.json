@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "wolfe-barber-realistic-essay-augmentation-2026",
+  "name": "Calibrating Generative AI to Produce Realistic Essays for Data Augmentation",
+  "source_type": "conference_preprint",
+  "authors": [
+    "Edward W. Wolfe",
+    "Justin O. Barber"
+  ],
+  "venue": "Artificial Intelligence in Measurement and Education Conference; arXiv",
+  "year": 2026,
+  "published_on": "2026-02-06",
+  "doi": "10.48550/arXiv.2602.06772",
+  "urls": [
+    "https://arxiv.org/abs/2602.06772"
+  ],
+  "summary": "Preprint evaluating prompt strategies for generating realistic essay simulations before using them in automated scoring engine data augmentation."
+}

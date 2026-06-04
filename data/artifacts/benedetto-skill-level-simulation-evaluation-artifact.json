@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "benedetto-skill-level-simulation-evaluation-artifact",
+  "name": "Benedetto et al. Skill-level Simulated Exam Response Evaluation Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "benedetto-simulated-exam-responses-2024-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-synthetic-response-scoring-agreement"
+  ],
+  "population_or_context": "Simulation of exam-question answers by LLMs acting as students at different skill levels.",
+  "sample_size": "Three public datasets are evaluated: one science exam dataset and two English reading-comprehension datasets; experiments use GPT-3.5 versions and GPT-4.",
+  "methods": "Extracted how target skill-level labels are assigned in prompts and evaluated through generated answer accuracy across domains, datasets, LLMs, and prompting choices.",
+  "endpoint_categories": [
+    "target_skill_labels",
+    "simulation_accuracy",
+    "prompt_generalization"
+  ],
+  "education_context": "Science exam and English reading-comprehension exam questions.",
+  "response_origin": "LLMs generate answers to exam questions while simulating students of specified skill levels.",
+  "rubric_label_space": "Answer accuracy and target student skill-level conditions rather than a human-rated ordinal writing rubric.",
+  "label_source": "Skill-level targets are assigned by the prompt and evaluated against answer correctness on exam-question datasets.",
+  "generation_model": "GPT-3.5 versions and GPT-4 are tested.",
+  "generation_method": "LLMs answer public exam questions under a prompt engineered to simulate students at different skill levels.",
+  "prompt_strategy": "Prompt engineering for GPT-3.5, with chain-of-thought rationale variants evaluated in relation to accuracy.",
+  "evaluation_method": "Generated answer accuracy is analyzed by target skill level, dataset, domain, and model; prompt robustness and model transfer are evaluated.",
+  "scorer_use": "Simulation-quality benchmarking for generated exam responses; not direct automated scorer validation.",
+  "real_response_comparator": "The comparator is dataset answer correctness and target skill-level behavior, not a separately human-scored synthetic response corpus.",
+  "reported_metrics": "The paper reports accuracy scores across target skill levels, datasets, prompt variants, and LLMs.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "simulated_skill_levels": 5,
+    "ideal_accuracy_curve": [
+      0,
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "reference_prompt_metric_arc_dev": 0.91,
+    "reference_prompt_metric_arc_test": 0.86,
+    "reference_prompt_metric_cupa": 0.9,
+    "reference_prompt_metric_race": 0.94,
+    "gpt_3_5_non_simulated_accuracy": {
+      "arc_dev": 0.92,
+      "arc_test": 0.86,
+      "race": 0.78,
+      "cupa": 0.77
+    }
+  },
+  "limitations": [
+    "Skill-level targets are prompt-assigned and should not be treated as independently validated learner ability labels.",
+    "The paper evaluates multiple-choice or answer correctness behavior, not human rubric scoring agreement for generated open responses.",
+    "The prompt engineered for one GPT-3.5 version does not generalize equally well to other LLMs."
+  ],
+  "assessment_purpose": "summative_assessment",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "quality_evaluation"
+}

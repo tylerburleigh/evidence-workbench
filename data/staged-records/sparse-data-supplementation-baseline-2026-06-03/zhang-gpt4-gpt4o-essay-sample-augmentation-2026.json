@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "zhang-gpt4-gpt4o-essay-sample-augmentation-2026",
+  "name": "GPT-4 and GPT-4o Essay Sample Augmentation for AI Scoring",
+  "artifact_type": "study_extract",
+  "status": "staged",
+  "source_ids": [
+    "zhang-gpt-generated-essay-augmentation-2026"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "population_or_context": "Student essays across seven writing prompts, with subgroup and score-level analyses.",
+  "sample_size": "Student essay samples ranged from 1,372 to 2,167 across prompts; generated data included about 120 GPT-4 essays per score level and about 275 GPT-4o essays per score level after filtering.",
+  "methods": "GPT-4 and GPT-4o generated essays by prompt and score level using sampled student examples; DeBERTaV3 scoring models were trained on student-only and mixed student/synthetic samples at multiple student-sample fractions.",
+  "endpoint_categories": [
+    "essay_sample_augmentation",
+    "score_level_scarcity",
+    "subgroup_fairness"
+  ],
+  "education_context": "Writing assessment essays scored on a six-point scale.",
+  "response_origin": "Hybrid: student-written essays plus GPT-4 or GPT-4o generated essays.",
+  "rubric_label_space": "Six score levels from 1 to 6.",
+  "label_source": "Human scores for student essays; generated essays were prompted for predetermined score levels and used in training.",
+  "generation_model": "GPT-4 and GPT-4o",
+  "generation_method": "Prompted essay generation by score level and prompt, conditioned on sampled student essays receiving the same score.",
+  "prompt_strategy": "Templates asked the model to generate essays matching prompt, score level, and randomly sampled same-score student examples.",
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "training_augmentation",
+  "evaluation_method": "Compared text features, human-AI QWK/correlation/SMD on held-out student essays, subgroup MDSS/QWK fairness measures, and model predictions on generated essays.",
+  "scorer_use": "Training augmentation, scorer performance benchmarking, and subgroup fairness analysis.",
+  "real_response_comparator": "Yes. Models were evaluated on held-out student essays with human scores and compared against student-only training baselines.",
+  "sparsity_or_imbalance_motivation": "The paper notes that certain subgroups and top/bottom score levels can have small samples; score categories 1, 5, and 6 had few student essays.",
+  "synthetic_data_research_role": "Generated essays increased training sample size across prompts and score levels to examine scoring accuracy and fairness effects.",
+  "reported_metrics": "QWK, correlation, standardized mean difference, subgroup MDSS, subgroup QWK; augmented models generally performed comparably to student-only models and mitigated some subgroup discrepancies.",
+  "numeric_results_extracted": true,
+  "limitations": "Only one human rating was available; generated essays showed subtle content and style differences that require qualitative review."
+}

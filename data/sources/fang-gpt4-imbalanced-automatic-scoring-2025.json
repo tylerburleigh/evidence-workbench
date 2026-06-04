@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "fang-gpt4-imbalanced-automatic-scoring-2025",
+  "name": "Using GPT-4 to Augment Imbalanced Data for Automatic Scoring",
+  "source_type": "journal_article",
+  "authors": [
+    "Luyang Fang",
+    "Gyeonggeon Lee",
+    "Xiaoming Zhai"
+  ],
+  "venue": "Journal of Educational Measurement",
+  "year": 2025,
+  "published_on": "2025-11-19",
+  "doi": "10.1111/jedm.70020",
+  "urls": [
+    "https://doi.org/10.1111/jedm.70020",
+    "https://arxiv.org/abs/2310.18365"
+  ],
+  "summary": "Study of GPT-4 augmentation for imbalanced student-written science responses used to train automatic scoring models."
+}

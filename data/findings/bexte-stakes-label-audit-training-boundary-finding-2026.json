@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "bexte-stakes-label-audit-training-boundary-finding-2026",
+  "name": "Classroom Short-answer Training Data Requires Label Audit Before Development Use",
+  "source_id": "bexte-zesch-synthetic-content-scoring-2025-source",
+  "artifact_id": "bexte-acceptable-cold-start-relabeling-artifact",
+  "taxonomy_node_ids": [
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "endpoint_category": "classroom_training_label_audit_boundary",
+  "direction": "cautionary",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Bexte and Zesch show that even in a classroom short-answer content-scoring development context with no direct learner consequence, prompt-requested labels for generated answers require audit or manual relabeling before the synthetic data can responsibly support supervised scorer training.",
+  "population_or_context": "Short-answer supervised content scoring on the Student Response Analysis dataset.",
+  "time_horizon": "Full text retrieved and extracted on 2026-06-02.",
+  "quantitative_note": "The staged acceptable-uses finding records macro-F1 and label-conformance evidence; this finding emphasizes the stakes-sensitive label-provenance boundary.",
+  "caveats": [
+    "Does not show that generated target labels can be accepted without audit.",
+    "Manual relabeling reduces the claim that the workflow is label-free."
+  ],
+  "evaluation_method": "Label-conformance analysis, macro-averaged F1 on original student answers, and comparison between as-generated and manually cleaned labels.",
+  "numeric_results_extracted": "not_applicable",
+  "limitations": [
+    "One short-answer content-scoring setup.",
+    "Does not address summative or high-stakes operational scoring."
+  ],
+  "source_locator": {
+    "section": "Sections 4, 6, and conclusion",
+    "url": "https://aclanthology.org/2025.bea-1.11/",
+    "quote_or_paraphrase_note": "The finding paraphrases the generated-label setup, audit/relabeling step, and development-use boundary.",
+    "verification_status": "located"
+  }
+}

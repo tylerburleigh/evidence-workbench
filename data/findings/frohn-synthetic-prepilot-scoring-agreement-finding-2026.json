@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "frohn-synthetic-prepilot-scoring-agreement-finding-2026",
+  "name": "Labeled Synthetic Responses Are Framed as Pre-pilot Scorer Checks, Not Replacement Validation",
+  "source_id": "frohn-llm-cr-live-scoring-2025-source",
+  "artifact_id": "frohn-synthetic-prepilot-scoring-agreement-artifact",
+  "taxonomy_node_ids": [
+    "ssr-synthetic-response-scoring-agreement"
+  ],
+  "endpoint_category": "pre_pilot_validation",
+  "direction": "supports_with_boundary",
+  "evidence_tier": "framework_extracted",
+  "confidence": "medium",
+  "statement": "Frohn et al. explicitly place labeled synthetic student responses in a pre-pilot validation role for LLM constructed-response scoring, using human labels and agreement metrics to revise items and scoring criteria before real student pilot validation.",
+  "population_or_context": "Commercial LLM scoring of constructed-response assessment items.",
+  "time_horizon": "Conference paper full text retrieved on 2026-06-02.",
+  "quantitative_note": "The framework discusses agreement thresholds such as quadratic weighted kappa against human labels, along with accuracy, F1, Matthews correlation coefficient, false-positive rates, and false-negative rates.",
+  "caveats": [
+    "The source is a framework paper rather than a single empirical scorer-validation study.",
+    "The paper treats real student responses as necessary for pilot validation after synthetic pre-pilot checks.",
+    "Synthetic-response generation details are not fixed to one published empirical protocol."
+  ],
+  "evaluation_method": "Human-labeled synthetic responses and challenge sets are used to evaluate LLM scorer performance before pilot testing on real student responses.",
+  "reported_metrics": "Cohen kappa, quadratic weighted kappa, accuracy, F1, Matthews correlation coefficient, false-positive and false-negative rates, score distributions, and conditional accuracy.",
+  "numeric_results_extracted": "not_applicable",
+  "limitations": [
+    "Does not establish that synthetic responses can replace authentic pilot data.",
+    "Specific thresholds and sample sizes must be instantiated for each assessment context."
+  ],
+  "source_locator": {
+    "section": "Sections 3.3-3.5",
+    "url": "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs",
+    "quote_or_paraphrase_note": "The finding paraphrases the pre-pilot validation section describing labeled synthetic student responses, agreement metrics, and later real-response pilot testing.",
+    "verification_status": "located"
+  }
+}

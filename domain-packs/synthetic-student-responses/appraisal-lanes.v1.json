@@ -27,6 +27,12 @@
       "required_by_default": true
     },
     {
+      "id": "applicability_boundary",
+      "label": "Applicability Boundary",
+      "description": "Checks whether assessment purpose, decision consequence, and operational use are classified clearly enough to avoid transferring low-stakes or developmental evidence into high-stakes validation claims.",
+      "required_by_default": true
+    },
+    {
       "id": "synthesis_overreach",
       "label": "Synthesis Overreach",
       "description": "Checks whether synthesis claims stay within the supported task, model, prompt, dataset, rubric, and metric boundaries.",

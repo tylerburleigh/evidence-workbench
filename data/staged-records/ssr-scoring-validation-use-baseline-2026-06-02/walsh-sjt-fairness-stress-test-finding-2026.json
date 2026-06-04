@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "walsh-sjt-fairness-stress-test-finding-2026",
+  "name": "Synthetic Demographic Variants Are Used for a Fairness Stress-test Pilot",
+  "source_id": "walsh-sjt-automated-scoring-2026-source",
+  "artifact_id": "walsh-sjt-fairness-stress-test-artifact",
+  "taxonomy_node_ids": [
+    "ssr-scoring-validation-use"
+  ],
+  "endpoint_category": "fairness_stress_test",
+  "direction": "supports_bounded_use",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Walsh et al. report an early fairness pilot in which LLM evaluations of 100 original Casper responses were compared with 100 analogous synthetic responses containing demographic information; the reported average score deltas were approximately zero, with larger-sample fairness analysis still needed.",
+  "population_or_context": "Open-response SJT automated scoring for Casper admissions assessment responses.",
+  "time_horizon": "Frontiers in Education article published on 2026-04-28 and retrieved on 2026-06-02.",
+  "quantitative_note": "The fairness pilot uses 100 original and 100 analogous synthetic responses; the article reports near-zero average score deltas for the inspected demographic comparisons.",
+  "caveats": [
+    "The source describes the fairness analysis as a pilot.",
+    "Small sample size limits between-group effect-size interpretation.",
+    "Open-response SJT admissions scoring is not the same construct as classroom correctness scoring."
+  ],
+  "evaluation_method": "Paired comparison of automated LLM evaluations on original responses and analogous demographic-injected synthetic responses.",
+  "reported_metrics": "Average score deltas for gender and race comparisons; broader study reports automated-scoring performance against human ratings.",
+  "limitations": [
+    "The synthetic responses are used for fairness probing, not as an independently human-labeled validation set.",
+    "Further validation is required before generalizing across demographic groups, tasks, or scoring rubrics."
+  ],
+  "source_locator": {
+    "section": "Fairness analysis",
+    "table": "Table reporting demographic synthetic-response comparisons",
+    "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1756673/full",
+    "quote_or_paraphrase_note": "The staged finding paraphrases the original-versus-analogous synthetic response fairness pilot and its sample-size caveat.",
+    "verification_status": "verified"
+  }
+}

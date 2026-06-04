@@ -1,0 +1,556 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "srivatsa-model-prompt-irt-effects-artifact",
+  "name": "Srivatsa et al. Model-Prompt IRT Effects Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "srivatsa-llm-student-ability-simulation-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-model-generation-effects"
+  ],
+  "population_or_context": "LLM proxy students answering NAEP mathematics and reading comprehension items compared with real student populations.",
+  "sample_size": "The ACL paper reports 489 NAEP multiple-choice items and 11 LLMs evaluated across subjects, grades, and prompt settings.",
+  "methods": "Extracted the model and prompt effects portion of the IRT proxy-student evaluation, including differences across 11 model families and grade-enforcement prompts.",
+  "endpoint_categories": [
+    "model_family_effect",
+    "prompt_enforcement_effect",
+    "irt_ability_alignment",
+    "proxy_student_reliability"
+  ],
+  "education_context": "NAEP mathematics and reading comprehension multiple-choice items across grades 4, 8, and 12.",
+  "response_origin": "LLM-generated proxy-student item answers are compared with real NAEP student response patterns.",
+  "rubric_label_space": "Correct/incorrect multiple-choice item outcomes mapped to an IRT ability scale.",
+  "label_source": "NAEP correct answers and aggregate real student response patterns provide the comparator; LLM responses are generated under unenforced and grade-enforced prompt settings.",
+  "generation_model": "Eleven LLMs spanning open/closed, general-purpose, and pedagogically tuned models, including GPT-3.5-Turbo, o3-Mini, SocraticLM, and LearnLM-1.5-Pro.",
+  "generation_method": "Models answer NAEP items under standard and grade-enforced zero-shot prompting strategies.",
+  "prompt_strategy": "Unenforced, grade-enforced minimal, grade-enforced basic chain-of-thought, and grade-enforced full chain-of-thought prompt families are evaluated.",
+  "evaluation_method": "Model response patterns are compared with real student populations on a shared Rasch/IRT ability scale and by grade-alignment deviation.",
+  "scorer_use": "Proxy-student reliability evaluation for assessment and tutoring contexts, not automated scorer validation.",
+  "real_response_comparator": "Real NAEP student response distributions provide the population comparator.",
+  "reported_metrics": "Extracted Table 2 percentile ranks under unenforced and best grade-enforced prompting, Table 4 unenforced accuracy percentages, and Table 5 best grade-enforced prompt families by subject. Average deviation in Table 2 improves from 40.5 to 27.5 for mathematics grade 4, 35.0 to 30.2 for mathematics grade 8, 32.9 to 28.8 for mathematics grade 12, 41.9 to 30.6 for reading grade 4, 37.8 to 27.5 for reading grade 8, and 25.4 to 15.2 for reading grade 12.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_tables": [
+    {
+      "table": "Table 2",
+      "metric": "percentile_rank",
+      "columns": [
+        "math_g4_pu",
+        "math_g4_pe",
+        "math_g4_delta_reported",
+        "math_g8_pu",
+        "math_g8_pe",
+        "math_g8_delta_reported",
+        "math_g12_pu",
+        "math_g12_pe",
+        "math_g12_delta_reported",
+        "reading_g4_pu",
+        "reading_g4_pe",
+        "reading_g4_delta_reported",
+        "reading_g8_pu",
+        "reading_g8_pe",
+        "reading_g8_delta_reported",
+        "reading_g12_pu",
+        "reading_g12_pe",
+        "reading_g12_delta_reported"
+      ],
+      "rows": [
+        {
+          "model": "LLaMA2-13B",
+          "values": [
+            63.7,
+            66.1,
+            2.4,
+            52.6,
+            50.8,
+            -1.8,
+            48.6,
+            66.5,
+            17.9,
+            99.7,
+            95.5,
+            -4.2,
+            94.9,
+            87.6,
+            -7.3,
+            80.9,
+            58.7,
+            -22.3
+          ]
+        },
+        {
+          "model": "LLaMA2-70B",
+          "values": [
+            85.5,
+            33.5,
+            -52,
+            23.9,
+            31.6,
+            7.6,
+            42.4,
+            57.8,
+            15.4,
+            88.6,
+            79.8,
+            -8.8,
+            72.3,
+            69.1,
+            -3.2,
+            71.6,
+            58.7,
+            -12.9
+          ]
+        },
+        {
+          "model": "LLaMA3.1-8B",
+          "values": [
+            96.8,
+            85.5,
+            -11.3,
+            85.2,
+            60,
+            -25.2,
+            79.5,
+            69.3,
+            -10.2,
+            99.7,
+            77.9,
+            -21.8,
+            96.7,
+            92.7,
+            -4,
+            86.7,
+            83.9,
+            -2.8
+          ]
+        },
+        {
+          "model": "LLaMA3.1-70B",
+          "values": [
+            99.6,
+            97.6,
+            -2,
+            98.9,
+            98,
+            -0.9,
+            96.1,
+            97,
+            0.9,
+            99.9,
+            99.9,
+            0,
+            96.7,
+            92.7,
+            -4,
+            83.9,
+            80.9,
+            -3
+          ]
+        },
+        {
+          "model": "Mistral-7B",
+          "values": [
+            63.7,
+            58.9,
+            -4.8,
+            43.5,
+            49,
+            5.4,
+            63.7,
+            57.8,
+            -5.9,
+            94.3,
+            67.9,
+            -26.4,
+            84.8,
+            69.1,
+            -15.7,
+            83.9,
+            55.5,
+            -28.4
+          ]
+        },
+        {
+          "model": "Qwen2.5-7B",
+          "values": [
+            99.6,
+            18.5,
+            -81.2,
+            99.3,
+            22.5,
+            -76.7,
+            96.1,
+            30.3,
+            -65.8,
+            98.2,
+            5.2,
+            -93.1,
+            98.2,
+            7.8,
+            -90.4,
+            77.9,
+            30.2,
+            -47.7
+          ]
+        },
+        {
+          "model": "Qwen2.5-Math",
+          "values": [
+            99.8,
+            70.7,
+            -29.1,
+            98.5,
+            96.1,
+            -2.4,
+            97.8,
+            97.8,
+            0,
+            72,
+            69.9,
+            -2,
+            36.5,
+            29.4,
+            -7.1,
+            43.4,
+            43.4,
+            0
+          ]
+        },
+        {
+          "model": "GPT-3.5-Turbo",
+          "values": [
+            89,
+            44.7,
+            -44.3,
+            70.8,
+            11.7,
+            -59.1,
+            79.5,
+            45.5,
+            -34,
+            99.7,
+            61.8,
+            -37.8,
+            98.2,
+            65.9,
+            -32.3,
+            68.3,
+            43.4,
+            -24.9
+          ]
+        },
+        {
+          "model": "o3-Mini",
+          "values": [
+            98.9,
+            98.3,
+            -0.6,
+            98.5,
+            99.5,
+            1,
+            95.1,
+            99.3,
+            4.2,
+            99.3,
+            99.9,
+            0.6,
+            99.1,
+            98.2,
+            -0.9,
+            86.7,
+            86.8,
+            0.1
+          ]
+        },
+        {
+          "model": "SocraticLM",
+          "values": [
+            99.3,
+            96.8,
+            -2.6,
+            99.7,
+            99.3,
+            -0.5,
+            97,
+            98.4,
+            1.4,
+            59.8,
+            63.9,
+            4.1,
+            34,
+            39.1,
+            5,
+            32.6,
+            49.3,
+            16.7
+          ]
+        },
+        {
+          "model": "LearnLM-1.5-Pro",
+          "values": [
+            99.8,
+            75.3,
+            -24.6,
+            99.7,
+            93.6,
+            -6.2,
+            98.9,
+            98.4,
+            -0.5,
+            99.9,
+            24.5,
+            -75.4,
+            94.9,
+            53.3,
+            -41.6,
+            65.1,
+            58.7,
+            -6.4
+          ]
+        }
+      ],
+      "average_deviation": [
+        40.5,
+        27.5,
+        -13,
+        35,
+        30.2,
+        -4.8,
+        32.9,
+        28.8,
+        -4.2,
+        41.9,
+        30.6,
+        -11.3,
+        37.8,
+        27.5,
+        -10.3,
+        25.4,
+        15.2,
+        -10.2
+      ],
+      "random_choice_percentiles": [
+        6.1,
+        1.4,
+        6.7,
+        4.12,
+        4,
+        0.9
+      ]
+    },
+    {
+      "table": "Table 4",
+      "metric": "unenforced_accuracy_percent",
+      "columns": [
+        "math_g4",
+        "math_g8",
+        "math_g12",
+        "reading_g4",
+        "reading_g8",
+        "reading_g12"
+      ],
+      "rows": [
+        {
+          "model": "LLaMA2-13B",
+          "values": [
+            78.05,
+            43.4,
+            41.67,
+            85.15,
+            80.56,
+            77.61
+          ]
+        },
+        {
+          "model": "LLaMA2-70B",
+          "values": [
+            65.85,
+            59.43,
+            45,
+            96.04,
+            91.67,
+            82.09
+          ]
+        },
+        {
+          "model": "LLaMA3.1-8B",
+          "values": [
+            87.8,
+            77.36,
+            63.33,
+            96.04,
+            93.06,
+            85.07
+          ]
+        },
+        {
+          "model": "LLaMA3.1-70B",
+          "values": [
+            93.9,
+            91.51,
+            80,
+            98.02,
+            93.06,
+            83.58
+          ]
+        },
+        {
+          "model": "Mistral-7B",
+          "values": [
+            65.85,
+            54.72,
+            53.33,
+            89.11,
+            86.11,
+            83.58
+          ]
+        },
+        {
+          "model": "Qwen2.5-7B",
+          "values": [
+            93.9,
+            92.45,
+            80,
+            93.07,
+            94.44,
+            80.6
+          ]
+        },
+        {
+          "model": "Qwen2.5-Math",
+          "values": [
+            95.12,
+            90.57,
+            83.33,
+            76.24,
+            63.89,
+            64.18
+          ]
+        },
+        {
+          "model": "GPT-3.5-Turbo",
+          "values": [
+            80.49,
+            68.87,
+            63.33,
+            96.04,
+            94.44,
+            76.12
+          ]
+        },
+        {
+          "model": "o3-Mini",
+          "values": [
+            91.46,
+            90.57,
+            78.33,
+            95.05,
+            95.83,
+            85.07
+          ]
+        },
+        {
+          "model": "SocraticLM",
+          "values": [
+            92.68,
+            94.34,
+            81.67,
+            70.3,
+            62.5,
+            58.21
+          ]
+        },
+        {
+          "model": "LearnLM-1.5-Pro",
+          "values": [
+            95.12,
+            94.34,
+            86.67,
+            97.03,
+            91.67,
+            74.63
+          ]
+        }
+      ],
+      "average": [
+        78.69,
+        72.13,
+        64.06,
+        83.01,
+        79.6,
+        71.9
+      ]
+    },
+    {
+      "table": "Table 5",
+      "metric": "best_prompt_for_grade_alignment_by_subject",
+      "rows": [
+        {
+          "model": "LLaMA2-13B",
+          "mathematics": "GRADEENFORCEDMINIMAL",
+          "reading": "GRADEENFORCEDMINIMAL"
+        },
+        {
+          "model": "LLaMA2-70B",
+          "mathematics": "GRADEENFORCEDBASICCOT",
+          "reading": "GRADEENFORCEDFULLCOT"
+        },
+        {
+          "model": "LLaMA3.1-8B",
+          "mathematics": "GRADEENFORCEDMINIMAL",
+          "reading": "GRADEENFORCEDFULLCOT"
+        },
+        {
+          "model": "LLaMA3.1-70B",
+          "mathematics": "GRADEENFORCEDBASICCOT",
+          "reading": "GRADEENFORCEDMINIMAL"
+        },
+        {
+          "model": "Mistral-7B",
+          "mathematics": "GRADEENFORCEDMINIMAL",
+          "reading": "GRADEENFORCEDFULLCOT"
+        },
+        {
+          "model": "Qwen2.5-7B",
+          "mathematics": "GRADEENFORCEDFULLCOT",
+          "reading": "GRADEENFORCEDFULLCOT"
+        },
+        {
+          "model": "Qwen2.5-Math",
+          "mathematics": "GRADEENFORCEDFULLCOT",
+          "reading": "GRADEENFORCEDMINIMAL"
+        },
+        {
+          "model": "GPT-3.5-Turbo",
+          "mathematics": "GRADEENFORCEDFULLCOT",
+          "reading": "GRADEENFORCEDFULLCOT"
+        },
+        {
+          "model": "o3-Mini",
+          "mathematics": "GRADEENFORCEDFULLCOT",
+          "reading": "GRADEENFORCEDFULLCOT"
+        },
+        {
+          "model": "SocraticLM",
+          "mathematics": "GRADEENFORCEDFULLCOT",
+          "reading": "GRADEENFORCEDFULLCOT"
+        },
+        {
+          "model": "LearnLM-1.5-Pro",
+          "mathematics": "GRADEENFORCEDFULLCOT",
+          "reading": "GRADEENFORCEDFULLCOT"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "The extracted table values support table-level review but still do not provide a universal model ranking because task, grade, subject, and prompt condition all affect interpretation.",
+    "The evidence is item-response and ability-alignment evidence, not open-ended response realism or scorer utility evidence.",
+    "The authors warn that no evaluated model-prompt pair reliably fits the average grade-level student across subjects and grades."
+  ],
+  "assessment_purpose": "summative_assessment",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "quality_evaluation"
+}

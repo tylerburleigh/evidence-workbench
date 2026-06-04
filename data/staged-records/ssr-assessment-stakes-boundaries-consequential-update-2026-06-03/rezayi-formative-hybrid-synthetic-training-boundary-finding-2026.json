@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "rezayi-formative-hybrid-synthetic-training-boundary-finding-2026",
+  "name": "Formative Communication-Skills Scoring Supports Hybrid Synthetic Training With Real Evaluation",
+  "source_id": "rezayi-communication-skills-synthetic-training-2025-source",
+  "artifact_id": "rezayi-formative-communication-skills-synthetic-training-artifact",
+  "taxonomy_node_ids": [
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "endpoint_category": "formative_hybrid_training_boundary",
+  "direction": "supports_with_boundary",
+  "evidence_tier": "peer_reviewed_empirical",
+  "confidence": "medium",
+  "statement": "Rezayi et al. support synthetic learner responses as lower-stakes formative training augmentation when models are evaluated on real annotated learner responses; they explicitly state that synthetic data reduces but does not replace real data collection and that summative contexts require human-rater review for borderline or below-passing responses.",
+  "population_or_context": "Learner physicians practicing communication skills through simulated patient interactions.",
+  "time_horizon": "Full text retrieved and extracted on 2026-06-03.",
+  "quantitative_note": "Table 3 reports average binary F1 of 0.878 for 15 real plus 50 synthetic examples compared with 0.793 for 15 real only; synthetic-only training averaged 0.757 compared with 0.723 baseline.",
+  "caveats": [
+    "The primary use case is formative feedback and communication-skills development.",
+    "The study covers 8 clinical scenarios and may not generalize to other domains or high-stakes uses.",
+    "The authors identify real annotated responses as necessary for robust evaluation."
+  ],
+  "evaluation_method": "5-fold cross-validation at the case level and binary F1 on real learner responses.",
+  "reported_metrics": "Binary F1 by case and average F1 across training scenarios.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "Does not validate synthetic-only scoring for summative decisions.",
+    "Summative deployment is framed as a hybrid model with human review of borderline or below-passing responses."
+  ],
+  "source_locator": {
+    "section": "Sections 3-4, 6, and 8",
+    "page": "891-897",
+    "table": "Table 3",
+    "url": "https://aclanthology.org/2025.bea-1.66.pdf",
+    "quote_or_paraphrase_note": "The finding paraphrases the synthetic training setup, F1 comparisons, real-evaluation limitation, and ethical considerations for formative versus summative contexts.",
+    "verification_status": "verified"
+  }
+}

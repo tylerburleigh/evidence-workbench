@@ -1,0 +1,302 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-prompt-engineering-effects-baseline-2026-06-02",
+  "name": "Prompt Engineering Effects Baseline",
+  "summary": "Staged first literature-review baseline for how prompt design, examples, grade conditioning, role framing, and prompt-conditioned inputs affect synthetic student response generation.",
+  "intake_mode": "baseline_review",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T18:24:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-prompt-engineering-effects"
+    ],
+    "research_question": "What is the current evidence landscape for Prompt Engineering Effects in Synthetic Student Response Literature Review, and what belongs in the first public baseline for this review question?"
+  },
+  "source_ids": [
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "srivatsa-llm-student-ability-simulation-2025-source",
+    "lu-generative-students-item-evaluation-2024-source",
+    "watts-scientific-argumentation-chatbot-2025-source",
+    "agent4edu-learner-response-generation-2025-source",
+    "duan-history-aware-profiles-student-simulation-2026-source",
+    "liu-llm-respondents-item-evaluation-2025-source",
+    "scarlatos-simulated-students-dialogue-2026-source",
+    "walsh-sjt-automated-scoring-2026-source",
+    "yoo-dress-rubric-aes-2025-source"
+  ],
+  "source_urls": [
+    "https://arxiv.org/abs/2602.06772",
+    "https://aclanthology.org/2025.bea-1.75/",
+    "https://arxiv.org/abs/2405.11591",
+    "https://www.mdpi.com/2227-7102/15/11/1507",
+    "https://arxiv.org/abs/2501.10332",
+    "https://arxiv.org/abs/2605.30051",
+    "https://arxiv.org/abs/2407.10899",
+    "https://arxiv.org/abs/2601.04025",
+    "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1756673/full",
+    "https://aclanthology.org/2025.acl-long.659/"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "ssr-generation-methods-baseline-claim",
+      "relationship": "same_literature_review_domain"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-quality-evaluation-baseline-claim",
+      "relationship": "same_literature_review_domain"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-model-generation-effects-baseline-claim",
+      "relationship": "same_literature_review_domain"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "update-agent4edu-source-access",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "agent4edu-learner-response-generation-2025-source",
+      "file_path": "data/sources/agent4edu-learner-response-generation-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/agent4edu-learner-response-generation-2025-source.json",
+      "summary": "Mark Agent4Edu source as full-text verified from arXiv PDF access.",
+      "rationale": "Source access metadata should distinguish full-text evidence from abstract-only discovery sources."
+    },
+    {
+      "change_id": "update-duan-source-access",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "duan-history-aware-profiles-student-simulation-2026-source",
+      "file_path": "data/sources/duan-history-aware-profiles-student-simulation-2026-source.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/duan-history-aware-profiles-student-simulation-2026-source.json",
+      "summary": "Mark Duan et al. source as full-text verified from arXiv PDF access.",
+      "rationale": "Source access metadata should distinguish full-text evidence from abstract-only discovery sources."
+    },
+    {
+      "change_id": "update-liu-source-access",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "liu-llm-respondents-item-evaluation-2025-source",
+      "file_path": "data/sources/liu-llm-respondents-item-evaluation-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/liu-llm-respondents-item-evaluation-2025-source.json",
+      "summary": "Mark Liu et al. source as full-text verified from arXiv PDF access.",
+      "rationale": "Source access metadata should distinguish full-text evidence from abstract-only discovery sources."
+    },
+    {
+      "change_id": "update-lu-source-access",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "lu-generative-students-item-evaluation-2024-source",
+      "file_path": "data/sources/lu-generative-students-item-evaluation-2024-source.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/lu-generative-students-item-evaluation-2024-source.json",
+      "summary": "Mark Lu and Wang source as full-text verified from arXiv HTML/PDF access.",
+      "rationale": "Prompt-architecture findings should be grounded in verified full text."
+    },
+    {
+      "change_id": "update-scarlatos-source-access",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "scarlatos-simulated-students-dialogue-2026-source",
+      "file_path": "data/sources/scarlatos-simulated-students-dialogue-2026-source.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/scarlatos-simulated-students-dialogue-2026-source.json",
+      "summary": "Mark Scarlatos et al. source as full-text verified from arXiv PDF access.",
+      "rationale": "Source access metadata should distinguish full-text evidence from abstract-only discovery sources."
+    },
+    {
+      "change_id": "update-srivatsa-source-access",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "srivatsa-llm-student-ability-simulation-2025-source",
+      "file_path": "data/sources/srivatsa-llm-student-ability-simulation-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/srivatsa-llm-student-ability-simulation-2025-source.json",
+      "summary": "Mark Srivatsa et al. source as full-text verified from ACL Anthology PDF access.",
+      "rationale": "Prompt-effect findings should be grounded in verified full text."
+    },
+    {
+      "change_id": "update-walsh-source-access",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "walsh-sjt-automated-scoring-2026-source",
+      "file_path": "data/sources/walsh-sjt-automated-scoring-2026-source.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/walsh-sjt-automated-scoring-2026-source.json",
+      "summary": "Mark Walsh et al. source as full-text verified from Frontiers full-text HTML access.",
+      "rationale": "Source access metadata should distinguish full-text evidence from abstract-only discovery sources."
+    },
+    {
+      "change_id": "update-watts-source-access",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "watts-scientific-argumentation-chatbot-2025-source",
+      "file_path": "data/sources/watts-scientific-argumentation-chatbot-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/watts-scientific-argumentation-chatbot-2025-source.json",
+      "summary": "Mark Watts et al. source as full-text verified from MDPI full-text HTML access.",
+      "rationale": "Prompt-conditioned input findings should be grounded in verified full text."
+    },
+    {
+      "change_id": "update-wolfe-source-access",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "wolfe-calibrating-realistic-essays-2026-source",
+      "file_path": "data/sources/wolfe-calibrating-realistic-essays-2026-source.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/wolfe-calibrating-realistic-essays-2026-source.json",
+      "summary": "Mark Wolfe and Barber source as full-text verified from arXiv PDF access.",
+      "rationale": "Prompt-strategy findings should be grounded in verified full text."
+    },
+    {
+      "change_id": "update-yoo-source-access",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "yoo-dress-rubric-aes-2025-source",
+      "file_path": "data/sources/yoo-dress-rubric-aes-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/yoo-dress-rubric-aes-2025-source.json",
+      "summary": "Mark Yoo et al. source as full-text verified from ACL Anthology PDF access.",
+      "rationale": "Source access metadata should distinguish full-text evidence from abstract-only discovery sources."
+    },
+    {
+      "change_id": "create-ssr-prompt-engineering-effects-search-2026-06-02",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "ssr-prompt-engineering-effects-search-2026-06-02",
+      "file_path": "data/search-protocols/ssr-prompt-engineering-effects-search-2026-06-02.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/ssr-prompt-engineering-effects-search-2026-06-02.json",
+      "summary": "Stage search protocol ssr-prompt-engineering-effects-search-2026-06-02.",
+      "rationale": "The bundle needs an auditable search and screening record for prompt engineering effects."
+    },
+    {
+      "change_id": "create-wolfe-prompt-engineering-effects-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "wolfe-prompt-engineering-effects-artifact",
+      "file_path": "data/artifacts/wolfe-prompt-engineering-effects-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/wolfe-prompt-engineering-effects-artifact.json",
+      "summary": "Stage Wolfe and Barber prompt-strategy effects extract.",
+      "rationale": "The baseline needs direct evidence that prompt strategy changes simulated essay outcomes."
+    },
+    {
+      "change_id": "create-srivatsa-grade-enforcement-prompt-effects-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "srivatsa-grade-enforcement-prompt-effects-artifact",
+      "file_path": "data/artifacts/srivatsa-grade-enforcement-prompt-effects-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/srivatsa-grade-enforcement-prompt-effects-artifact.json",
+      "summary": "Stage Srivatsa grade-enforcement prompt effects extract.",
+      "rationale": "The baseline needs direct evidence that grade-conditioned prompt families alter proxy-student IRT alignment."
+    },
+    {
+      "change_id": "create-lu-generative-students-prompt-architecture-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "lu-generative-students-prompt-architecture-artifact",
+      "file_path": "data/artifacts/lu-generative-students-prompt-architecture-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/lu-generative-students-prompt-architecture-artifact.json",
+      "summary": "Stage Lu and Wang prompt-architecture extract.",
+      "rationale": "The baseline needs evidence on profile, example, role, and one-question-at-a-time prompt ingredients."
+    },
+    {
+      "change_id": "create-watts-copilot-prompt-conditioning-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "watts-copilot-prompt-conditioning-artifact",
+      "file_path": "data/artifacts/watts-copilot-prompt-conditioning-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/watts-copilot-prompt-conditioning-artifact.json",
+      "summary": "Stage Watts et al. Copilot prompt-conditioning extract.",
+      "rationale": "The baseline needs bounded evidence on prompt-conditioned synthetic input generation for stress testing."
+    },
+    {
+      "change_id": "create-wolfe-prompt-engineering-effects-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "wolfe-prompt-engineering-effects-finding-2026",
+      "file_path": "data/findings/wolfe-prompt-engineering-effects-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/wolfe-prompt-engineering-effects-finding-2026.json",
+      "summary": "Stage finding on Wolfe and Barber prompt-strategy sensitivity.",
+      "rationale": "The synthesis needs a quantitative prompt-strategy finding for simulated essays."
+    },
+    {
+      "change_id": "create-srivatsa-grade-enforcement-prompt-effects-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "srivatsa-grade-enforcement-prompt-effects-finding-2026",
+      "file_path": "data/findings/srivatsa-grade-enforcement-prompt-effects-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/srivatsa-grade-enforcement-prompt-effects-finding-2026.json",
+      "summary": "Stage finding on Srivatsa grade-enforced prompt effects.",
+      "rationale": "The synthesis needs direct evidence that grade-conditioned prompts can shift proxy-student alignment while preserving reliability caveats."
+    },
+    {
+      "change_id": "create-lu-generative-students-prompt-architecture-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "lu-generative-students-prompt-architecture-finding-2026",
+      "file_path": "data/findings/lu-generative-students-prompt-architecture-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/lu-generative-students-prompt-architecture-finding-2026.json",
+      "summary": "Stage finding on Lu and Wang prompt architecture.",
+      "rationale": "The synthesis needs bounded support for profile, example, role, and sequencing prompt ingredients."
+    },
+    {
+      "change_id": "create-watts-copilot-prompt-conditioning-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "watts-copilot-prompt-conditioning-finding-2026",
+      "file_path": "data/findings/watts-copilot-prompt-conditioning-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/watts-copilot-prompt-conditioning-finding-2026.json",
+      "summary": "Stage finding on Watts et al. prompt-conditioned synthetic inputs.",
+      "rationale": "The synthesis needs a boundary finding for prompt-conditioned stress-test input generation."
+    },
+    {
+      "change_id": "create-ssr-prompt-engineering-effects-baseline-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-prompt-engineering-effects-baseline-claim",
+      "file_path": "data/claims/ssr-prompt-engineering-effects-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-prompt-engineering-effects-baseline-2026-06-02/ssr-prompt-engineering-effects-baseline-claim.json",
+      "summary": "Stage synthesis claim for prompt engineering effects baseline.",
+      "rationale": "The review question needs one bounded claim tying prompt ingredients to observed synthetic-response effects without overgeneralization."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-prompt-engineering-effects",
+      "note": "Creates the first staged literature-review baseline for prompt engineering effects in synthetic student response generation."
+    },
+    {
+      "subject_type": "workflow",
+      "subject_id": "source_access_tracking",
+      "note": "Adds full-text access metadata for ten existing SSR source records where open full text had already been used or verified."
+    }
+  ],
+  "required_appraisal_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "synthesis_overreach"
+  ],
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-prompt-engineering-effects-source-fidelity-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-construct-mapping-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-method-classification-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-synthesis-overreach-r1"
+  ],
+  "editorial_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-prompt-engineering-effects-baseline-2026-06-02-2026-06-02t18-35-33-041z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": []
+}

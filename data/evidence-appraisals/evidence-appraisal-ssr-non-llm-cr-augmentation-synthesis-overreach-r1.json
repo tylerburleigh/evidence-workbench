@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-ssr-non-llm-cr-augmentation-synthesis-overreach-r1",
+  "name": "Synthesis Overreach Review for Non-LLM CR Augmentation Update",
+  "candidate_bundle_id": "ssr-non-llm-constructed-response-augmentation-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "synthesis_overreach",
+  "appraiser_kind": "agent",
+  "appraiser_id": "codex-agent",
+  "skill_name": "synthetic-student-responses-evidence-appraisal-adapter",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The claim update is additive and appropriately qualified. It supports the existence of older/non-LLM constructed-response augmentation examples, while avoiding prevalence claims, avoiding scorer-validity overclaiming, and flagging Bonthu's abstract-only extraction and Li's non-text boundary.",
+  "appraised_change_ids": [
+    "create-search-protocol",
+    "create-source-lun",
+    "create-source-bonthu",
+    "create-source-krisnawati",
+    "create-source-li",
+    "create-artifact-lun",
+    "create-artifact-bonthu",
+    "create-artifact-krisnawati",
+    "create-artifact-li",
+    "create-finding-lun",
+    "create-finding-bonthu",
+    "create-finding-krisnawati",
+    "create-finding-li",
+    "update-claim-sparse-supplementation"
+  ],
+  "findings": [
+    {
+      "finding_id": "synthesis-overreach-targeted-not-systematic",
+      "severity": "minor",
+      "category": "scope",
+      "applies_to_change_id": "update-claim-sparse-supplementation",
+      "claim_or_issue": "The search was targeted and should not be described as exhaustive.",
+      "why_it_matters": "The examples answer the existence and role question but not field-wide prevalence.",
+      "recommended_action": "Use language such as targeted pass, examples, or pattern rather than systematic prevalence claims.",
+      "resolution_status": "addressed"
+    }
+  ],
+  "created_at": "2026-06-03T16:35:25Z",
+  "updated_at": "2026-06-03T16:35:25Z"
+}

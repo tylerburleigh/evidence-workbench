@@ -1,0 +1,373 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "ssr-acceptable-scoring-uses-baseline-claim",
+  "name": "Acceptable Uses of Synthetic Responses in Automated Scoring Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "ssr-acceptable-scoring-uses",
+  "current_stage": "synthesis_claim_supported",
+  "momentum": "baseline_staged",
+  "confidence": "medium",
+  "summary": "The updated baseline finds that synthetic and simulated student responses are most defensible in automated scoring as supporting, diagnostic, or developmental evidence: operational machine-scoring QA/test suites, pre-pilot scorer checks and challenge sets, controlled training augmentation, cold-start training after label audit, human-benchmarked LLM annotation, augmentation calibration, scoring-adjacent item-development/difficulty-estimation workflows, and bounded fairness, robustness, or detection stress tests. A 2026-06-03 operational-practice pass adds two public operational sources showing simulated responses used for rule-based machine-scoring QA and item-authoring review, plus peer-reviewed GPT essay augmentation evidence from Zhang et al. A 2026-06-03 validity-condition pass adds SMART as a real-response-anchored item-difficulty example. The stronger synthesis is narrower rather than broader: synthetic or simulated responses can be acceptable when their workflow role is specific and independently bounded, but they still do not support synthetic-only final validation, deployment readiness, subgroup fairness validation, cut-score evidence, or substitution for real or independently human-scored response data.",
+  "main_blockers": [
+    "The first pass is targeted rather than systematic, and the 2026-06-03 operational update is a targeted surveillance update rather than a systematic policy review.",
+    "Included sources span constructed responses, EFL essays, short-answer content scoring, adaptive writing, simulated essays, and one adjacent admissions SJT context.",
+    "Direct public operational evidence now includes one state summative LLM training-augmentation report and two rule-based machine-scoring QA sources, but these support narrow operational use categories rather than a broad cross-state, vendor, or accountability-policy norm.",
+    "The New Meridian and Maine sources concern simulated-response test cases for machine-scoring and scanning-rule QA, not LLM-generated response training or automated essay scorer validation.",
+    "Several strong-sounding augmentation examples rely on real-response validation, human labels, expert scoring, scoring-staff approval, or human-benchmarked model annotation.",
+    "The New Mexico source does not fully specify prompt/model details, subgroup effects, cut-score evidence, or validation-set composition relative to approved synthetic rows.",
+    "Access-limited candidates such as Ipci et al. are screened but not used as direct support."
+  ],
+  "best_current_signals": [
+    "The New Mexico MSSA technical report is the strongest current signal for acceptable operational LLM-generated response use: synthetic Writing responses were used as limited training augmentation for sparse high-score examples in a state summative assessment after scoring-staff review and state approval.",
+    "New Meridian's Standard Processes guidance supports simulated responses as operational machine-scoring test-suite material for validating scoring and scanning rules.",
+    "The Spring 2024 Maine Science Assessment technical report supports simulated student responses as item authoring/review QA material for inspecting machine-scored output in a state summative program.",
+    "Zhang et al. provide peer-reviewed GPT essay training-augmentation evidence with held-out student-essay evaluation and subgroup analysis, while preserving limits around generated-essay fidelity, single available human ratings, and prompt/model transfer.",
+    "Frohn et al. place labeled synthetic responses and challenge sets in a pre-pilot role and still require real student pilot validation.",
+    "Yoo et al. use a large synthetic essay subset for AES training while preserving real classroom essays for validation and testing.",
+    "Bexte and Zesch show generated target labels require audit or manual relabeling before generated short answers become useful for content-scoring model training.",
+    "Nebhi et al. benchmark LLM annotators against expert human ratings before using majority-vote annotation for synthetic writing responses.",
+    "Wolfe and Barber use expert scoring, agreement metrics, and realism ratings to calibrate simulated essays for augmentation suitability.",
+    "Rezayi et al. provide lower-stakes formative evidence that real-plus-synthetic training can improve communication-skills scoring while preserving real learner responses for evaluation and recommending human review for summative borderline cases.",
+    "Djagba et al. provide classroom/in-term evidence that GPT-generated responses can improve rare-category NGSS scoring under held-out real-response evaluation, while explicitly calling for expert checks and additional validity work.",
+    "Wang et al. provide adjacent high-stakes evidence for synthetic or constructed off-topic detection sets as validity-protection stress tests, not automated-score validation evidence.",
+    "Walsh et al. provide adjacent open-response scoring evidence that synthetic demographic variants can be diagnostic fairness stress-test material, not subgroup validation evidence.",
+    "SMART provides a scoring-adjacent item-development example where synthetic open-ended responses support item-difficulty prediction only because the workflow is anchored to human-scored real responses, IRT estimates, and a bounded scoring-model step."
+  ],
+  "interpretive_note": "For this review question, acceptable use depends on workflow role and decision consequence. Synthetic or simulated responses can help develop, debug, calibrate, augment, QA, estimate item difficulty, or stress-test an automated scorer when response origin, label source, rubric label space, real-response comparator, and downstream role are explicit. The new operational-practice evidence adds an important distinction: simulated responses can be acceptable as rule-based machine-scoring QA/test-suite cases even in summative programs, but that is not the same as validating a statistical or LLM scoring model. SMART adds a separate item-development boundary: synthetic responses can be validity-relevant for difficulty prediction when anchored to human-scored real responses and IRT estimates. In consequential settings, the current evidence supports only controlled training augmentation, operational scoring-rule QA, or validity-protection stress testing when human review or approval, real-response validation where applicable, and monitoring boundaries are explicit. Synthetic responses should not be treated as standalone validation unless the claim is restricted to the synthetic-response distribution and its labels are independently audited.",
+  "limitations": [
+    "This claim does not review automated scoring agreement writ large.",
+    "The claim does not establish that synthetic responses can replace real student responses for scorer validation, final deployment readiness, subgroup fairness, cut-score validation, or accountability decisions.",
+    "The claim does not validate any specific automated scorer, task, model, prompt strategy, grade band, subject, demographic subgroup, or rubric.",
+    "The New Mexico report supports limited operational training augmentation in one state summative context but does not establish a general high-stakes policy or synthetic-only validation pathway.",
+    "The New Meridian and Maine sources support simulated-response QA for rule-based machine scoring, not LLM-generated training augmentation or automated essay scorer validation.",
+    "Zhang et al. strengthens research-use GPT essay augmentation, but it is not an operational policy source and does not remove the need for human review or real-response validation.",
+    "Walsh et al. is adjacent assessment evidence from an admissions SJT context and is included only for the stress-test use category.",
+    "Wang et al. uses mismatched real operational spoken responses to create off-topic examples, so it is adjacent high-stakes detection evidence rather than LLM-generated response or scorer-validation evidence.",
+    "Abstract-only or metadata-only sources should not be promoted into direct support without full-text review."
+  ],
+  "update_notes": [
+    "A later pass should add full-text Ipci et al. if accessible because it appears directly relevant to automated grading augmentation.",
+    "Future synthesis should separate operational machine-scoring QA/test suites, training augmentation, pre-pilot validation, calibration, stress testing, and final validation as distinct use classes.",
+    "Future search should look for additional operational technical reports, state documentation, vendor documentation, and policy guidance that separate rule-QA, training augmentation, validation, monitoring, and live scoring decisions.",
+    "Search updates should continue excluding generic human-AI scoring studies unless synthetic responses are part of the scored corpus.",
+    "2026-06-03 claim-hardening update added SMART as a scoring-adjacent item-development/difficulty-estimation support case."
+  ],
+  "supporting_finding_ids": [
+    "frohn-acceptable-prepilot-use-finding-2026",
+    "yoo-acceptable-training-boundary-finding-2026",
+    "bexte-acceptable-cold-start-relabeling-finding-2026",
+    "nebhi-acceptable-llm-annotation-benchmark-finding-2026",
+    "wolfe-acceptable-augmentation-calibration-finding-2026",
+    "walsh-acceptable-fairness-stress-test-finding-2026",
+    "new-mexico-mssa-operational-synthetic-training-boundary-finding-2026",
+    "new-meridian-operational-simulated-response-test-suite-finding-2026",
+    "maine-science-operational-simulated-response-review-finding-2026",
+    "zhang-gpt-essay-training-augmentation-validity-boundary-finding-2026",
+    "rezayi-formative-hybrid-synthetic-training-boundary-finding-2026",
+    "djagba-classroom-synthetic-augmentation-validity-boundary-finding-2026",
+    "wang-high-stakes-off-topic-synthetic-detection-boundary-finding-2026",
+    "scarlatos-smart-irt-validity-boundary-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "frohn-llm-cr-live-scoring-2025-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "bexte-zesch-synthetic-content-scoring-2025-source",
+    "nebhi-adaptive-writing-aig-scoring-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "walsh-sjt-automated-scoring-2026-source",
+    "new-mexico-mssa-technical-report-2025-source",
+    "new-meridian-standard-processes-2020-source",
+    "maine-science-assessment-2024-technical-report-source",
+    "zhang-gpt-essay-augmentation-2026-source",
+    "rezayi-communication-skills-synthetic-training-2025-source",
+    "djagba-ngss-classroom-augmentation-2026-source",
+    "wang-off-topic-spoken-responses-2019-source",
+    "scarlatos-smart-irt-simulated-students-2025-source"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Pre-pilot scorer checks and challenge sets",
+      "claim_field": "summary",
+      "conclusion": "Synthetic responses can support pre-pilot scorer checks, calibration, challenge sets, and item/scoring-criteria revision, but not final validation without real student responses.",
+      "support_role": "direct_support",
+      "rationale": "Frohn et al. explicitly separate synthetic pre-pilot checks from real-response pilot validation in an LLM constructed-response scoring workflow.",
+      "finding_ids": [
+        "frohn-acceptable-prepilot-use-finding-2026"
+      ],
+      "source_ids": [
+        "frohn-llm-cr-live-scoring-2025-source"
+      ],
+      "limitations": [
+        "Framework guidance rather than one empirical validation result.",
+        "Bounded to constructed-response LLM scoring."
+      ]
+    },
+    {
+      "label": "Training augmentation with real validation boundary",
+      "claim_field": "best_current_signals",
+      "conclusion": "Synthetic responses can support automated-scoring training augmentation when validation/test evidence remains real-response based.",
+      "support_role": "direct_support",
+      "rationale": "Yoo et al. use 40,185 synthetic CASE essays for AES training while preserving real DREsS_New essays for validation and testing.",
+      "finding_ids": [
+        "yoo-acceptable-training-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "yoo-dress-rubric-aes-2025-source"
+      ],
+      "limitations": [
+        "CASE corruption is not LLM generation.",
+        "Bounded to EFL rubric-based essay scoring."
+      ]
+    },
+    {
+      "label": "Generated-label audit before scorer training",
+      "claim_field": "best_current_signals",
+      "conclusion": "Prompt-requested synthetic labels should be audited or relabeled before generated responses are used to train content-scoring models.",
+      "support_role": "direct_support",
+      "rationale": "Bexte and Zesch show as-generated labels can be substantially nonconforming and that manual relabeling changes scorer-training utility.",
+      "finding_ids": [
+        "bexte-acceptable-cold-start-relabeling-finding-2026"
+      ],
+      "source_ids": [
+        "bexte-zesch-synthetic-content-scoring-2025-source"
+      ],
+      "limitations": [
+        "One short-answer content-scoring setup.",
+        "Manual relabeling adds human labor."
+      ]
+    },
+    {
+      "label": "Human-benchmarked model annotation",
+      "claim_field": "best_current_signals",
+      "conclusion": "LLM annotation can support synthetic-response pipelines only when annotator quality is benchmarked against expert human labels and label provenance remains explicit.",
+      "support_role": "direct_support",
+      "rationale": "Nebhi et al. select LLM annotators using Cohen kappa against expert human ratings before majority-vote annotation of synthetic writing responses.",
+      "finding_ids": [
+        "nebhi-acceptable-llm-annotation-benchmark-finding-2026"
+      ],
+      "source_ids": [
+        "nebhi-adaptive-writing-aig-scoring-2025-source"
+      ],
+      "limitations": [
+        "Compact human gold standard.",
+        "Majority-vote model labels are not the same as human scoring all synthetic responses."
+      ]
+    },
+    {
+      "label": "Augmentation calibration",
+      "claim_field": "best_current_signals",
+      "conclusion": "Expert scoring and realism checks can calibrate simulated essays for augmentation suitability, but this remains weaker than direct validation of a deployed scorer.",
+      "support_role": "direct_support",
+      "rationale": "Wolfe and Barber evaluate simulated essays with expert scores, agreement metrics, score distributions, and realism ratings.",
+      "finding_ids": [
+        "wolfe-acceptable-augmentation-calibration-finding-2026"
+      ],
+      "source_ids": [
+        "wolfe-calibrating-realistic-essays-2026-source"
+      ],
+      "limitations": [
+        "Preprint evidence.",
+        "Downstream scorer validity still requires real or independently scored validation data."
+      ]
+    },
+    {
+      "label": "Diagnostic fairness stress testing",
+      "claim_field": "best_current_signals",
+      "conclusion": "Synthetic variants can be useful as diagnostic stress tests for scoring behavior, but not as subgroup fairness validation by themselves.",
+      "support_role": "boundary_condition",
+      "rationale": "Walsh et al. compare automated evaluations of original Casper responses with synthetic demographic analogs and explicitly leave larger-sample fairness work open.",
+      "finding_ids": [
+        "walsh-acceptable-fairness-stress-test-finding-2026"
+      ],
+      "source_ids": [
+        "walsh-sjt-automated-scoring-2026-source"
+      ],
+      "limitations": [
+        "Adjacent admissions SJT setting.",
+        "Early fairness pilot with a small synthetic-analog sample."
+      ]
+    },
+    {
+      "label": "Controlled operational training augmentation",
+      "claim_field": "summary",
+      "conclusion": "Synthetic responses can be acceptable as limited operational training augmentation in a consequential assessment when they address sparse training examples and are governed by documented review, approval, and real-response validation boundaries.",
+      "support_role": "direct_support",
+      "rationale": "The New Mexico MSSA technical report states that English non-accommodated operational Writing forms used LLM-generated synthetic responses to supplement field-test and operational responses for items with sparse high-score examples, with scoring-staff review and state approval before use.",
+      "finding_ids": [
+        "new-mexico-mssa-operational-synthetic-training-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "new-mexico-mssa-technical-report-2025-source"
+      ],
+      "limitations": [
+        "One state summative technical report.",
+        "Supports training augmentation rather than synthetic-only final validation.",
+        "Prompt/model details, subgroup effects, cut-score evidence, and validation-set composition relative to approved synthetic rows are not fully specified in the extracted record."
+      ]
+    },
+    {
+      "label": "Operational machine-scoring test suites",
+      "claim_field": "summary",
+      "conclusion": "Simulated responses can be acceptable as operational QA/test-suite cases for rule-based machine scoring and scanning rules, but this is not evidence for synthetic-only automated scorer validation.",
+      "support_role": "direct_support",
+      "rationale": "New Meridian's Standard Processes guidance defines a machine-scoring test suite as test cases used to validate scoring and scanning rules and says bank assets should include simulated responses to items across content areas and mathematics language versions.",
+      "finding_ids": [
+        "new-meridian-operational-simulated-response-test-suite-finding-2026"
+      ],
+      "source_ids": [
+        "new-meridian-standard-processes-2020-source"
+      ],
+      "limitations": [
+        "Operational process guidance rather than empirical scorer-validation evidence.",
+        "Covers simulated response test cases for rule/scanning QA, not LLM-generated training data.",
+        "No response counts, generation procedure, or performance metrics are reported."
+      ]
+    },
+    {
+      "label": "State item authoring and machine-scored output review",
+      "claim_field": "best_current_signals",
+      "conclusion": "A public state technical report documents simulated student responses as part of item authoring/review QA for machine-scored output.",
+      "support_role": "direct_support",
+      "rationale": "The Spring 2024 Maine Science Assessment technical report states that the ability to review simulated student responses and machine-scored output is native to the item authoring/review process and helps ensure scoring accuracy.",
+      "finding_ids": [
+        "maine-science-operational-simulated-response-review-finding-2026"
+      ],
+      "source_ids": [
+        "maine-science-assessment-2024-technical-report-source"
+      ],
+      "limitations": [
+        "State operational report for rule-based machine-scorable science items.",
+        "Does not address LLM-generated responses, automated essay scoring, fairness validation, or live scoring model performance.",
+        "The report does not describe how simulated responses are authored or reviewed."
+      ]
+    },
+    {
+      "label": "Peer-reviewed GPT essay augmentation",
+      "claim_field": "best_current_signals",
+      "conclusion": "GPT-generated essays can support research/development training augmentation when evaluation remains anchored in held-out real student essays and generated-label limits are explicit.",
+      "support_role": "direct_support",
+      "rationale": "Zhang et al. train student-only and student-plus-GPT essay scoring models and evaluate them on held-out student essays, finding generally comparable QWK and correlation values with some subgroup-discrepancy reductions, while documenting limitations around generated-essay fidelity and available human ratings.",
+      "finding_ids": [
+        "zhang-gpt-essay-training-augmentation-validity-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "zhang-gpt-essay-augmentation-2026-source"
+      ],
+      "limitations": [
+        "Research/development setting rather than operational policy.",
+        "Only one human rating is available in the public data, preventing true-score evaluation.",
+        "Target generated score levels are not the same as independent expert human labels for every generated essay."
+      ]
+    },
+    {
+      "label": "Formative hybrid augmentation",
+      "claim_field": "best_current_signals",
+      "conclusion": "In lower-stakes formative scoring, real-plus-synthetic training augmentation can be acceptable when evaluation remains based on real learner responses and summative or borderline decisions retain human review.",
+      "support_role": "direct_support",
+      "rationale": "Rezayi et al. evaluate Qwen-generated synthetic learner responses for communication-skills scoring, report better real-response F1 for a real-plus-synthetic training condition than real-only training at the same sparse real-data level, and frame summative use around hybrid human review.",
+      "finding_ids": [
+        "rezayi-formative-hybrid-synthetic-training-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "rezayi-communication-skills-synthetic-training-2025-source"
+      ],
+      "limitations": [
+        "Formative professional-education setting.",
+        "Real annotated learner responses remain necessary.",
+        "Summative or borderline cases are not delegated wholly to synthetic-response-trained automation."
+      ]
+    },
+    {
+      "label": "Classroom rare-category augmentation",
+      "claim_field": "best_current_signals",
+      "conclusion": "For classroom or in-term research uses, synthetic responses can support rare-category training augmentation when held-out evaluation remains real-response based and additional validity work is treated as required.",
+      "support_role": "direct_support",
+      "rationale": "Djagba et al. report that GPT-generated synthetic responses improved rare-category NGSS scoring performance on held-out real student responses, while also calling for expert quality checks and further validity work.",
+      "finding_ids": [
+        "djagba-classroom-synthetic-augmentation-validity-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "djagba-ngss-classroom-augmentation-2026-source"
+      ],
+      "limitations": [
+        "Classroom/in-term research context rather than grade-bearing operational decision evidence.",
+        "Conference preprint evidence.",
+        "The source itself calls for additional validity work and expert quality checks."
+      ]
+    },
+    {
+      "label": "High-stakes detection and validity-protection stress testing",
+      "claim_field": "best_current_signals",
+      "conclusion": "Synthetic or constructed response sets can support high-stakes detection and validity-protection stress tests, but this is distinct from validating automated scoring of on-topic student responses.",
+      "support_role": "boundary_condition",
+      "rationale": "Wang et al. use operational spoken responses and mismatched responses from other prompts to construct off-topic cases for a high-stakes English speaking assessment detector, improving detection metrics without making a scorer-validation claim.",
+      "finding_ids": [
+        "wang-high-stakes-off-topic-synthetic-detection-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "wang-off-topic-spoken-responses-2019-source"
+      ],
+      "limitations": [
+        "Synthetic cases are constructed from mismatched real operational responses rather than LLM-generated responses.",
+        "The task is off-topic detection and validity protection, not automated scoring validation.",
+        "Does not establish subgroup fairness, cut-score, or live scoring decision evidence."
+      ]
+    },
+    {
+      "label": "Item-development and difficulty-estimation support",
+      "claim_field": "summary",
+      "conclusion": "Synthetic open-ended responses can support item-development or difficulty-estimation workflows when the workflow is anchored to human-scored real responses, IRT estimates, and bounded scoring-model evaluation.",
+      "support_role": "direct_support",
+      "rationale": "SMART uses simulated responses aligned with IRT ability, LLM-based scoring, and IRT difficulty estimation to predict item difficulty against human-scored real-response datasets.",
+      "finding_ids": [
+        "scarlatos-smart-irt-validity-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "scarlatos-smart-irt-simulated-students-2025-source"
+      ],
+      "limitations": [
+        "Supports item-development/difficulty prediction, not synthetic-only final scorer validation.",
+        "The workflow depends on human-scored real responses and does not remove the need for real-response scorer validation."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-03",
+  "assessment_purpose": [
+    "research_or_development",
+    "formative_feedback",
+    "in_term_or_classroom_assessment",
+    "summative_assessment",
+    "admissions_or_selection"
+  ],
+  "decision_consequence": [
+    "no_direct_learner_consequence",
+    "feedback_or_instructional_support",
+    "high_stakes_individual_decision",
+    "institutional_or_accountability_decision"
+  ],
+  "operational_use": [
+    "pre_pilot_validation",
+    "training_augmentation",
+    "calibration_or_development",
+    "stress_testing",
+    "calibration_or_development"
+  ],
+  "applicability": {
+    "applies_when": [
+      "Synthetic responses are used as supporting, diagnostic, developmental, calibration, augmentation, or stress-test evidence.",
+      "Simulated responses are used as operational machine-scoring QA/test-suite cases to verify scoring rules, scanning rules, item authoring, or machine-scored output.",
+      "Response origin, label source, rubric label space, real-response comparator, and workflow role are explicit.",
+      "Operational use is limited to controlled training augmentation, rule-based machine-scoring QA, or detection/stress testing with documented human review or approval, real-response validation where applicable, and monitoring boundaries."
+    ],
+    "does_not_apply_when": [
+      "Synthetic responses are used as the sole basis for final validation, deployment readiness, subgroup fairness, cut scores, or operational high-stakes decisions.",
+      "Rule-based machine-scoring QA evidence is generalized into LLM automated scorer validation evidence.",
+      "A small set of operational training-augmentation and QA examples is generalized into a broad vendor, state, or accountability policy without additional direct evidence."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Specific grade bands, subjects, demographic subgroups, operational scoring vendors, and local policy thresholds remain unreviewed unless separately sourced.",
+      "Additional state summative programs, certification/licensure uses, placement or promotion decisions, and grade-bearing classroom deployments need separate direct review."
+    ]
+  }
+}

@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "ssr-synthetic-response-scoring-agreement-baseline-claim",
+  "name": "Synthetic Response Scoring Agreement Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "ssr-synthetic-response-scoring-agreement",
+  "current_stage": "synthesis_claim_supported",
+  "momentum": "baseline_staged",
+  "confidence": "medium",
+  "summary": "The first staged baseline for synthetic response scoring agreement finds that generated student responses are rarely useful as scoring evidence without explicit label provenance and agreement checks. Direct evidence spans labeled synthetic constructed-response pre-pilot validation, expert-scored simulated essays, synthetic rubric-labeled EFL essays for AES training, generated short-answer labels that require manual relabeling, majority-vote LLM annotation benchmarked against expert human ratings, and prompt-assigned skill levels evaluated by answer accuracy. Across the sources, synthetic responses are most defensible when labels are audited against human or real-response benchmarks and when synthetic training or pre-pilot use is kept separate from real-response validation.",
+  "main_blockers": [
+    "The first pass is targeted rather than systematic.",
+    "Included sources use different label spaces: checklist CR labels, four-point essay scores, EFL rubric dimensions, five-way short-answer labels, grammatical-accuracy ratings, and target skill levels.",
+    "Generated target labels and synthetic rubric labels are not equivalent to independent human labels.",
+    "Some adjacent human-AI scoring agreement sources were excluded because they did not verify a synthetic student response corpus."
+  ],
+  "best_current_signals": [
+    "Frohn et al. frame labeled synthetic responses as pre-pilot scorer checks and challenge sets, with real student responses still required for pilot validation.",
+    "Wolfe and Barber show expert scoring, weighted kappa, and realism ratings used to evaluate simulated essay score preservation.",
+    "Yoo et al. show synthetic rubric-aligned EFL essays used for AES training augmentation while real classroom essays remain validation/test evidence.",
+    "Bexte and Zesch show that prompt-requested labels on generated short answers can be noisy enough to require manual relabeling before competitive content-scoring training.",
+    "Nebhi et al. show an LLM annotation ensemble selected by Cohen kappa against expert human ratings before large-scale synthetic writing annotation.",
+    "Benedetto et al. show prompt-assigned skill-level labels evaluated through generated answer accuracy, but this remains label-fidelity evidence rather than human rubric-score agreement."
+  ],
+  "interpretive_note": "For this review question, the key extraction fields are response origin, label source, label space, scorer or annotator identity, access depth, and whether the label is used for synthetic training, pre-pilot validation, model-selection benchmarking, or real-response validation. A generated target label should be treated as a hypothesis until audited against human labels, real response data, or a transparent evaluation metric.",
+  "limitations": [
+    "This claim does not review human-AI scoring agreement writ large.",
+    "The staged source set is a compact bootstrap baseline, not an exhaustive review.",
+    "The claim does not establish that synthetic responses can replace real student responses for scoring validation.",
+    "The included sources mix empirical studies and one framework paper, so support roles are separated in the support map.",
+    "Abstract-only candidates should not support synthesis claims until full text is obtained or the abstract-only limitation is made explicit."
+  ],
+  "update_notes": [
+    "A later pass should separate human labels, human scores, generated target labels, LLM annotations, and downstream model predictions as separate label-source classes.",
+    "Future synthesis should classify use contexts as training augmentation, pre-pilot validation, challenge-set stress testing, model-selection benchmarking, and real-response validation.",
+    "Revisit no-full-text and adjacent candidates only after full-text access and synthetic-response corpus membership are verified."
+  ],
+  "supporting_finding_ids": [
+    "frohn-synthetic-prepilot-scoring-agreement-finding-2026",
+    "wolfe-human-scored-simulated-essays-finding-2026",
+    "yoo-case-synthetic-rubric-labeling-finding-2026",
+    "bexte-generated-answer-label-noise-finding-2026",
+    "nebhi-majority-vote-synthetic-response-annotation-finding-2026",
+    "benedetto-skill-level-simulation-evaluation-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "frohn-llm-cr-live-scoring-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "bexte-zesch-synthetic-content-scoring-2025-source",
+    "nebhi-adaptive-writing-aig-scoring-2025-source",
+    "benedetto-simulated-exam-responses-2024-source"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Labeled synthetic pre-pilot validation",
+      "claim_field": "best_current_signals",
+      "conclusion": "Synthetic responses can support pre-pilot scorer checks when they are accurately labeled and followed by real-response pilot validation.",
+      "support_role": "direct_support",
+      "rationale": "Frohn et al. describe labeled synthetic student responses, challenge sets, agreement metrics, and later real-response validation for LLM constructed-response scoring.",
+      "finding_ids": [
+        "frohn-synthetic-prepilot-scoring-agreement-finding-2026"
+      ],
+      "source_ids": [
+        "frohn-llm-cr-live-scoring-2025-source"
+      ],
+      "limitations": [
+        "Framework paper, not a single empirical dataset.",
+        "Synthetic data is not positioned as a replacement for real pilot responses."
+      ]
+    },
+    {
+      "label": "Expert-scored simulated essays",
+      "claim_field": "best_current_signals",
+      "conclusion": "Human scoring agreement and realism ratings can evaluate generated essay score preservation, but they do not by themselves validate downstream scorer use.",
+      "support_role": "direct_support",
+      "rationale": "Wolfe and Barber report expert scores, weighted kappa, exact/adjacent agreement, score distribution, and realism ratings for simulated essays.",
+      "finding_ids": [
+        "wolfe-human-scored-simulated-essays-finding-2026"
+      ],
+      "source_ids": [
+        "wolfe-calibrating-realistic-essays-2026-source"
+      ],
+      "limitations": [
+        "Preprint evidence.",
+        "Real source essays condition the simulated essays."
+      ]
+    },
+    {
+      "label": "Synthetic rubric-labeled training augmentation",
+      "claim_field": "best_current_signals",
+      "conclusion": "Synthetic rubric-aligned labels can support AES training augmentation when real held-out evaluation data remains separate.",
+      "support_role": "direct_support",
+      "rationale": "Yoo et al. use DREsS_CASE synthetic corrupted essays with rubric-aligned labels for training and real DREsS_New essays for validation and testing.",
+      "finding_ids": [
+        "yoo-case-synthetic-rubric-labeling-finding-2026"
+      ],
+      "source_ids": [
+        "yoo-dress-rubric-aes-2025-source"
+      ],
+      "limitations": [
+        "CASE corruption is not the same as LLM student simulation.",
+        "The evidence does not validate synthetic-only test sets."
+      ]
+    },
+    {
+      "label": "Generated target-label audit",
+      "claim_field": "best_current_signals",
+      "conclusion": "Prompt-requested generated labels need audit or relabeling before they are treated as scoring labels.",
+      "support_role": "direct_support",
+      "rationale": "Bexte and Zesch find substantial nonconformance to requested labels and show manual relabeling improves synthetic-data utility for content scoring.",
+      "finding_ids": [
+        "bexte-generated-answer-label-noise-finding-2026"
+      ],
+      "source_ids": [
+        "bexte-zesch-synthetic-content-scoring-2025-source"
+      ],
+      "limitations": [
+        "Bounded to SRA short answers and one generation setup.",
+        "Manual relabeling adds labor and weakens any claim of label-free synthetic training data."
+      ]
+    },
+    {
+      "label": "LLM annotation benchmarked against humans",
+      "claim_field": "best_current_signals",
+      "conclusion": "LLM annotation can be incorporated into synthetic response pipelines when model annotators are selected against expert human labels and the limitation is explicit.",
+      "support_role": "direct_support",
+      "rationale": "Nebhi et al. compare candidate LLM annotators with a human-rated gold standard using Cohen kappa and use a majority-vote ensemble for large-scale synthetic response annotation.",
+      "finding_ids": [
+        "nebhi-majority-vote-synthetic-response-annotation-finding-2026"
+      ],
+      "source_ids": [
+        "nebhi-adaptive-writing-aig-scoring-2025-source"
+      ],
+      "limitations": [
+        "The human benchmark is compact.",
+        "LLM majority vote is not equivalent to independent human scoring of all generated responses."
+      ]
+    },
+    {
+      "label": "Prompt-assigned skill labels",
+      "claim_field": "best_current_signals",
+      "conclusion": "Target skill labels can benchmark generated response behavior through accuracy, but they are weaker evidence than human rubric-score agreement.",
+      "support_role": "boundary_condition",
+      "rationale": "Benedetto et al. evaluate whether generated exam answers match prompt-assigned skill-level behavior across datasets and models.",
+      "finding_ids": [
+        "benedetto-skill-level-simulation-evaluation-finding-2026"
+      ],
+      "source_ids": [
+        "benedetto-simulated-exam-responses-2024-source"
+      ],
+      "limitations": [
+        "Skill labels are assigned by the prompt.",
+        "Answer accuracy is not human rubric-score agreement."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-02",
+  "assessment_purpose": [
+    "research_or_development",
+    "formative_feedback",
+    "in_term_or_classroom_assessment",
+    "summative_assessment"
+  ],
+  "decision_consequence": [
+    "no_direct_learner_consequence",
+    "feedback_or_instructional_support"
+  ],
+  "operational_use": [
+    "pre_pilot_validation",
+    "training_augmentation",
+    "calibration_or_development",
+    "quality_evaluation"
+  ],
+  "applicability": {
+    "applies_when": [
+      "Generated-response labels are evaluated with explicit provenance and agreement checks."
+    ],
+    "does_not_apply_when": [
+      "Generated target labels are treated as independent truth without audit."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Large-scale operational scoring agreement studies that include synthetic and real response corpora side by side."
+    ]
+  }
+}

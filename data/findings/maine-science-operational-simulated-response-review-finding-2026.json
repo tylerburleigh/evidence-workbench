@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "maine-science-operational-simulated-response-review-finding-2026",
+  "name": "State Science Technical Report Uses Simulated Student Responses for Machine-Scoring Review",
+  "source_id": "maine-science-assessment-2024-technical-report-source",
+  "artifact_id": "maine-science-simulated-response-authoring-review-artifact",
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses",
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "endpoint_category": "state_operational_machine_scoring_quality_assurance",
+  "direction": "supports_with_strong_boundary",
+  "evidence_tier": "operational_technical_report",
+  "confidence": "high",
+  "statement": "The Spring 2024 Maine Science Assessment technical report provides direct state operational evidence that simulated student responses can be part of item authoring/review quality assurance for rule-based machine scoring. The report frames this as a way to review machine-scored output and ensure scoring accuracy, not as a source of final validation evidence for automated scoring models.",
+  "population_or_context": "Spring 2024 Maine Science Assessment machine-scorable items scored in ADAM.",
+  "time_horizon": "Full text retrieved and extracted on 2026-06-03.",
+  "quantitative_note": "No response counts or statistical metrics are reported for the simulated-response review workflow.",
+  "caveats": [
+    "The report concerns rule-based machine-scored item output, not LLM-generated constructed responses.",
+    "The source does not support synthetic-only scorer validation or subgroup fairness validation.",
+    "The report does not document how simulated responses are created, sampled, or independently reviewed."
+  ],
+  "evaluation_method": "Item authoring/review and key-check quality control for scoring-rule configuration and machine-scored output.",
+  "reported_metrics": "No quantitative metrics reported.",
+  "numeric_results_extracted": "not_applicable",
+  "limitations": [
+    "Bounded to Maine Science Assessment machine-scorable item QA.",
+    "Does not generalize to automated essay scoring or LLM scorer validation.",
+    "Supports an operational QA use category, not a policy that synthetic responses can substitute for real student validation data."
+  ],
+  "source_locator": {
+    "section": "Chapter 4 Item-Level Scoring, Section 4.1 Machine-Scored Items",
+    "page": "30",
+    "url": "https://www.maine.gov/doe/sites/maine.gov.doe/files/inline-files/Assessment%20-%20Maine%20Science%20Assessment%202024%20Technical%20Report%20Redacted%20-%203.11.2025.pdf",
+    "quote_or_paraphrase_note": "The finding paraphrases the passage stating that reviewing simulated student responses and machine-scored output is native to the item authoring/review process and further ensures scoring accuracy.",
+    "verification_status": "verified"
+  }
+}

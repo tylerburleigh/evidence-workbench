@@ -1,0 +1,212 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-model-choice-student-simulation-validity-update-2026-06-03",
+  "name": "Model Choice and Student-Simulation Validity Update",
+  "summary": "Targeted literature-only update promoting newer model-choice and student-simulation validity sources into the SSR evidence graph, with fine-tuning evidence treated as a boundary rather than an action recommendation.",
+  "intake_mode": "review_update",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-03T20:05:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-quality-evaluation",
+      "ssr-model-generation-effects",
+      "ssr-prompt-engineering-effects",
+      "ssr-real-response-comparison"
+    ],
+    "research_question": "What does newer literature add to desk-based model-choice guidance for synthetic student responses and LLM-based simulated students, without running first-hand model comparisons?"
+  },
+  "source_ids": [
+    "do-misconception-faithfulness-2026-source",
+    "yuan-valid-student-simulation-framework-2026-source",
+    "martynova-human-learners-teacher-insights-2025-source"
+  ],
+  "source_urls": [
+    "https://arxiv.org/abs/2605.12748",
+    "https://arxiv.org/pdf/2605.12748",
+    "https://arxiv.org/abs/2601.05473",
+    "https://arxiv.org/pdf/2601.05473",
+    "https://aclanthology.org/2025.bea-1.8/",
+    "https://aclanthology.org/2025.bea-1.8.pdf"
+  ],
+  "related_records": [
+    {
+      "record_type": "report_artifact",
+      "record_id": "ssr-application-memo-2026-06-03",
+      "relationship": "will_update_model_choice_context_after_publication"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-model-generation-effects-baseline-claim",
+      "relationship": "candidate_support_context"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-quality-evaluation-baseline-claim",
+      "relationship": "candidate_support_context"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-do-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "do-misconception-faithfulness-2026-source",
+      "file_path": "data/sources/do-misconception-faithfulness-2026-source.json",
+      "staged_file_path": "data/staged-records/ssr-model-choice-student-simulation-validity-update-2026-06-03/do-misconception-faithfulness-2026-source.json",
+      "summary": "Add Do et al.'s misconception-faithfulness preprint.",
+      "rationale": "The paper directly evaluates prompted LLM simulated students across seven models and is relevant to off-the-shelf model-choice cautions."
+    },
+    {
+      "change_id": "create-do-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "do-misconception-faithfulness-artifact",
+      "file_path": "data/artifacts/do-misconception-faithfulness-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-model-choice-student-simulation-validity-update-2026-06-03/do-misconception-faithfulness-artifact.json",
+      "summary": "Extract Do et al.'s model-list, SFS metric, prompting limits, and post-training boundary.",
+      "rationale": "The extraction supports model-choice guidance while preserving the distinction between prompt-only use and post-training evidence."
+    },
+    {
+      "change_id": "create-do-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "do-misconception-faithfulness-off-the-shelf-limit-finding-2026",
+      "file_path": "data/findings/do-misconception-faithfulness-off-the-shelf-limit-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-model-choice-student-simulation-validity-update-2026-06-03/do-misconception-faithfulness-off-the-shelf-limit-finding-2026.json",
+      "summary": "Add a finding that prompted off-the-shelf LLM simulators can fail misconception faithfulness despite fluent responses.",
+      "rationale": "The finding sharpens the memo's warning against treating off-the-shelf model selection as a validated student-simulation claim."
+    },
+    {
+      "change_id": "create-yuan-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "yuan-valid-student-simulation-framework-2026-source",
+      "file_path": "data/sources/yuan-valid-student-simulation-framework-2026-source.json",
+      "staged_file_path": "data/staged-records/ssr-model-choice-student-simulation-validity-update-2026-06-03/yuan-valid-student-simulation-framework-2026-source.json",
+      "summary": "Add Yuan et al.'s validity framework preprint.",
+      "rationale": "The paper provides model-choice-relevant reporting criteria and a validity framework without requiring new empirical testing."
+    },
+    {
+      "change_id": "create-yuan-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "yuan-epistemic-state-specification-artifact",
+      "file_path": "data/artifacts/yuan-epistemic-state-specification-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-model-choice-student-simulation-validity-update-2026-06-03/yuan-epistemic-state-specification-artifact.json",
+      "summary": "Extract the competence paradox, ESS reporting card, and goal-aligned fidelity guidance.",
+      "rationale": "The artifact converts the framework into concrete reporting and overclaiming controls for the application memo."
+    },
+    {
+      "change_id": "create-yuan-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "yuan-epistemic-fidelity-model-choice-boundary-finding-2026",
+      "file_path": "data/findings/yuan-epistemic-fidelity-model-choice-boundary-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-model-choice-student-simulation-validity-update-2026-06-03/yuan-epistemic-fidelity-model-choice-boundary-finding-2026.json",
+      "summary": "Add a finding that simulation validity requires epistemic fidelity rather than surface realism.",
+      "rationale": "The finding supports desk-based model-selection criteria and limits on model superiority claims."
+    },
+    {
+      "change_id": "create-martynova-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "martynova-human-learners-teacher-insights-2025-source",
+      "file_path": "data/sources/martynova-human-learners-teacher-insights-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-model-choice-student-simulation-validity-update-2026-06-03/martynova-human-learners-teacher-insights-2025-source.json",
+      "summary": "Add Martynova et al.'s BEA 2025 teacher-insights paper.",
+      "rationale": "The paper adds peer-reviewed stakeholder evidence about authenticity gaps in LLM-simulated students."
+    },
+    {
+      "change_id": "create-martynova-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "martynova-teacher-insights-authenticity-artifact",
+      "file_path": "data/artifacts/martynova-teacher-insights-authenticity-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-model-choice-student-simulation-validity-update-2026-06-03/martynova-teacher-insights-authenticity-artifact.json",
+      "summary": "Extract teacher-authenticity judgments and MathDial context.",
+      "rationale": "The artifact identifies quality dimensions that a model-choice rationale should not ignore: language complexity, emotion, attentiveness, repetition, and gradual knowledge building."
+    },
+    {
+      "change_id": "create-martynova-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "martynova-teacher-authenticity-failure-finding-2025",
+      "file_path": "data/findings/martynova-teacher-authenticity-failure-finding-2025.json",
+      "staged_file_path": "data/staged-records/ssr-model-choice-student-simulation-validity-update-2026-06-03/martynova-teacher-authenticity-failure-finding-2025.json",
+      "summary": "Add a finding that teacher interviews reveal authenticity gaps in GPT-3.5 simulated students.",
+      "rationale": "The finding supports the memo's shift from model ranking to documented constraints and quality criteria."
+    },
+    {
+      "change_id": "create-model-choice-search-protocol",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "ssr-model-choice-student-simulation-validity-search-2026-06-03",
+      "file_path": "data/search-protocols/ssr-model-choice-student-simulation-validity-search-2026-06-03.json",
+      "staged_file_path": "data/staged-records/ssr-model-choice-student-simulation-validity-update-2026-06-03/ssr-model-choice-student-simulation-validity-search-2026-06-03.json",
+      "summary": "Add the targeted search protocol for model-choice and student-simulation validity evidence.",
+      "rationale": "The protocol documents this as a desk-based, literature-only follow-up rather than first-hand model comparison."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-model-generation-effects",
+      "note": "Strengthens the task-bound conclusion: stronger or more capable models are not automatically better simulated students because they may re-solve from latent expertise rather than preserve learner misconceptions."
+    },
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-quality-evaluation",
+      "note": "Adds quality dimensions beyond surface realism: misconception faithfulness, epistemic fidelity, language complexity, emotional/social behavior, attentiveness, and gradual knowledge building."
+    },
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-prompt-engineering-effects",
+      "note": "Adds direct caution that reflective prompting may not repair misconception-faithfulness failures in interactive simulation."
+    },
+    {
+      "subject_type": "report_artifact",
+      "subject_id": "ssr-application-memo-2026-06-03",
+      "note": "After publication, update the application memo to remove contextual-source caveats and make the desk-based model-choice criteria more explicit."
+    }
+  ],
+  "required_appraisal_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "applicability_boundary",
+    "synthesis_overreach"
+  ],
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-model-choice-student-simulation-validity-update-source-fidelity-r1",
+    "evidence-appraisal-ssr-model-choice-student-simulation-validity-update-construct-mapping-r1",
+    "evidence-appraisal-ssr-model-choice-student-simulation-validity-update-method-classification-r1",
+    "evidence-appraisal-ssr-model-choice-student-simulation-validity-update-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-model-choice-student-simulation-validity-update-applicability-boundary-r1",
+    "evidence-appraisal-ssr-model-choice-student-simulation-validity-update-synthesis-overreach-r1"
+  ],
+  "editorial_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-model-choice-student-simulation-validity-update-2026-06-03-2026-06-03t20-20-40-207z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces.",
+    "applicability_boundary: Retain the limitation that the evidence supports authenticity dimensions rather than model superiority.",
+    "construct_mapping: Preserve the artifact fields that label scorer_use as not automated scorer validation.",
+    "method_classification: Keep the fine-tuning scope caveat in the finding and memo update.",
+    "scorer_validation_relevance: Use the new records to refine model-choice and reporting criteria while preserving held-out real-response validation as the scorer evidence standard.",
+    "source_fidelity: Keep the full-text access metadata and source locators as staged.",
+    "synthesis_overreach: Update the application memo to emphasize desk-based selection criteria, ESS-style reporting, and off-the-shelf prompt-only limitations."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": []
+}

@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-ssr-operational-practice-policy-update-synthesis-overreach-r1",
+  "name": "Synthesis Overreach review for Operational Practice and Policy Boundary Update bundle",
+  "candidate_bundle_id": "ssr-operational-practice-policy-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "synthesis_overreach",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "appraiser_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The synthesis language gets more specific rather than more permissive: it adds operational machine-scoring QA/test suites as a distinct acceptable-use lane and continues to exclude synthetic-only validation, subgroup fairness validation, cut-score evidence, and live scoring decisions.",
+  "appraised_change_ids": [
+    "create-new-meridian-source",
+    "create-new-meridian-artifact",
+    "create-new-meridian-finding",
+    "create-maine-source",
+    "create-maine-artifact",
+    "create-maine-finding",
+    "create-zhang-source",
+    "create-zhang-artifact",
+    "create-zhang-finding",
+    "create-operational-practice-search-protocol",
+    "update-acceptable-scoring-uses-claim",
+    "update-assessment-stakes-boundaries-claim"
+  ],
+  "findings": [
+    {
+      "finding_id": "new-operational-lane-does-not-expand-final-validation",
+      "severity": "note",
+      "category": "synthesis_overreach",
+      "claim_or_issue": "The bundle's conclusion remains bounded: operational simulated-response QA is acceptable for rule checking, not for replacing real student validation data.",
+      "why_it_matters": "This preserves the distinction between acceptable use in the tool's synthesis and unsupported policy claims.",
+      "recommended_action": "Retain the staged blockers and final-validation exclusions.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "update-acceptable-scoring-uses-claim"
+    }
+  ],
+  "created_at": "2026-06-03T13:22:00Z",
+  "updated_at": "2026-06-03T13:22:00Z"
+}

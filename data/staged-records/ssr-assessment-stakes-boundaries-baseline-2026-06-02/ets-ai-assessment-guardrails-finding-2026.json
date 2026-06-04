@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "ets-ai-assessment-guardrails-finding-2026",
+  "name": "AI Assessment Guidance Reinforces Validity, Fairness, Oversight, and Monitoring",
+  "source_id": "ets-responsible-ai-assessment-principles-2024-source",
+  "taxonomy_node_ids": [
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "endpoint_category": "ai_assessment_guardrails",
+  "direction": "sets_boundary",
+  "evidence_tier": "policy_guidance",
+  "confidence": "medium",
+  "statement": "ETS responsible AI-in-assessment guidance reinforces that AI-supported assessment workflows should preserve validity and fairness, be transparent about human and automated roles, maintain human oversight, and monitor operational performance over time.",
+  "population_or_context": "AI-enabled assessment design, scoring, feedback, and operational monitoring.",
+  "time_horizon": "Official ETS executive summary screened on 2026-06-02.",
+  "quantitative_note": "No numeric study results; this is principles guidance.",
+  "caveats": [
+    "The guidance is not specific to synthetic student responses.",
+    "It supports guardrails around AI-mediated assessment evidence rather than a direct finding about one synthetic-response dataset."
+  ],
+  "evaluation_method": "Expert convening principles for responsible AI in assessment.",
+  "numeric_results_extracted": "not_applicable",
+  "limitations": [
+    "Does not define a synthetic-response validation threshold.",
+    "Should be treated as contextual guardrail evidence, not direct empirical support."
+  ],
+  "source_locator": {
+    "section": "Executive summary principles and recommendations",
+    "url": "https://www.ets.org/Rebrand/pdf/ETS_Convening_executive_summary_for_the_AI_Guidelines.pdf",
+    "quote_or_paraphrase_note": "The finding paraphrases the report's responsible AI assessment principles around validity, fairness, transparency, oversight, and monitoring.",
+    "verification_status": "located"
+  }
+}

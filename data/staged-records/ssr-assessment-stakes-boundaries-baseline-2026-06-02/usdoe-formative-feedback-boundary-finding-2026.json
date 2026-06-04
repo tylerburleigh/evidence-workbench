@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "usdoe-formative-feedback-boundary-finding-2026",
+  "name": "Formative Assessment Guidance Frames Feedback and Instructional Support as a Distinct Use Context",
+  "source_id": "usdoe-teal-formative-assessment-source",
+  "taxonomy_node_ids": [
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "endpoint_category": "formative_feedback_context_boundary",
+  "direction": "sets_boundary",
+  "evidence_tier": "practice_guidance",
+  "confidence": "medium",
+  "statement": "LINCS/TEAL Center formative-assessment guidance frames formative assessment as ongoing evidence gathering used to support feedback, instruction, and learner self-assessment, which is a lower-consequence use context than summative or selection decisions.",
+  "population_or_context": "Classroom and adult-education formative assessment practice.",
+  "time_horizon": "LINCS/TEAL Center page screened on 2026-06-02.",
+  "quantitative_note": "No numeric study results; this is official practice guidance.",
+  "caveats": [
+    "The guidance is not specific to synthetic responses or automated scoring.",
+    "It does not remove the need to validate feedback quality, bias, and instructional appropriateness."
+  ],
+  "evaluation_method": "Formative-assessment practice guidance.",
+  "numeric_results_extracted": "not_applicable",
+  "limitations": [
+    "Does not justify synthetic-only validation for feedback systems.",
+    "Does not address high-stakes operational scoring."
+  ],
+  "source_locator": {
+    "section": "What is formative assessment?",
+    "url": "https://lincs.ed.gov/federal-initiatives/teal/guide/formativeassessment",
+    "quote_or_paraphrase_note": "The finding paraphrases the page's definition of formative assessment as ongoing evidence used for feedback and instructional adjustment.",
+    "verification_status": "located"
+  }
+}

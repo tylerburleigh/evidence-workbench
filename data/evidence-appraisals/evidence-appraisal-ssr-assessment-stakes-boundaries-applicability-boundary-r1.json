@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-ssr-assessment-stakes-boundaries-applicability-boundary-r1",
+  "name": "Applicability Boundary review for Ssr Assessment Stakes Boundaries bundle",
+  "candidate_bundle_id": "ssr-assessment-stakes-boundaries-baseline-2026-06-02",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "applicability_boundary",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "appraiser_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The claim explicitly separates assessment purpose, learner consequence, and operational role, and it blocks transfer from formative or developmental evidence into high-stakes validation, subgroup fairness, cut-score, live-scoring, or accountability claims.",
+  "appraised_change_ids": [
+    "create-standards-educational-psychological-testing-source",
+    "create-ets-responsible-ai-assessment-principles-source",
+    "create-usdoe-teal-formative-assessment-source",
+    "create-ssr-assessment-stakes-boundaries-search",
+    "create-standards-stakes-intended-use-boundary-finding",
+    "create-ets-ai-assessment-guardrails-finding",
+    "create-usdoe-formative-feedback-boundary-finding",
+    "create-frohn-stakes-prepilot-validation-boundary-finding",
+    "create-yoo-stakes-training-real-validation-boundary-finding",
+    "create-bexte-stakes-label-audit-training-boundary-finding",
+    "create-watts-stakes-formative-prototype-boundary-finding",
+    "create-walsh-stakes-high-stakes-stress-test-boundary-finding",
+    "create-ssr-assessment-stakes-boundaries-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "validation-facet-needs-claim-text",
+      "severity": "note",
+      "category": "applicability_boundary",
+      "claim_or_issue": "The claim's operational_use facet includes validation_or_benchmarking because the review question addresses validation boundaries, but the accepted use is not synthetic-only validation.",
+      "why_it_matters": "Facet values can be skimmed without the supporting applicability text.",
+      "recommended_action": "Keep does_not_apply_when and summary language explicit that final validation requires real or independently human-scored response evidence.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-ssr-assessment-stakes-boundaries-baseline-claim"
+    }
+  ],
+  "created_at": "2026-06-02T22:42:40Z",
+  "updated_at": "2026-06-02T22:42:40Z"
+}

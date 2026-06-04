@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "wang-high-stakes-off-topic-synthetic-detection-boundary-finding-2026",
+  "name": "High-Stakes Spoken Assessment Uses Synthetic Off-Topic Cases for Detection Rather Than Scorer Validation",
+  "source_id": "wang-off-topic-spoken-responses-2019-source",
+  "artifact_id": "wang-high-stakes-synthetic-off-topic-detection-artifact",
+  "taxonomy_node_ids": [
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "endpoint_category": "high_stakes_detection_boundary",
+  "direction": "supports_adjacent_boundary",
+  "evidence_tier": "peer_reviewed_adjacent",
+  "confidence": "medium",
+  "statement": "Wang et al. provide adjacent high-stakes assessment evidence for using synthetic or constructed response sets to train and evaluate validity-protection detectors, but the synthetic cases are mismatched real spoken responses used for off-topic detection rather than generated responses used to validate automated scores.",
+  "population_or_context": "Large-scale high-stakes English speaking assessment for non-native speakers.",
+  "time_horizon": "Full text retrieved and extracted on 2026-06-03.",
+  "quantitative_note": "The best Inception-ResNet-v2 model achieved F1 = 92.8% on the off-topic class, compared with baseline F1 = 85.5%.",
+  "caveats": [
+    "The synthetic off-topic cases are created by prompt-response mismatch rather than by LLM generation.",
+    "The target task is off-topic detection for downstream scoring protection, not automated score validation.",
+    "Authentic off-topic responses are rare, so generalization to real off-topic behavior remains bounded."
+  ],
+  "evaluation_method": "Train/test classification of on-topic versus synthetic off-topic spoken responses, evaluated with F1 on the off-topic class.",
+  "reported_metrics": "Off-topic-class F1, precision, and recall.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "Adjacent to synthetic student response scoring; included to clarify a high-stakes stress-testing/detection boundary.",
+    "Does not establish acceptable use of synthetic responses for final scoring, fairness validation, or deployment readiness."
+  ],
+  "source_locator": {
+    "section": "Sections 4.1, 4.3, and abstract",
+    "page": "4200-4204",
+    "table": "Table 2",
+    "url": "https://www.isca-archive.org/interspeech_2019/wang19p_interspeech.pdf",
+    "quote_or_paraphrase_note": "The finding paraphrases the high-stakes speaking context, synthetic off-topic construction, train/test corpus, and F1 results.",
+    "verification_status": "verified"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "ssr-model-generation-effects-srivatsa-numeric-update-2026-06-02",
+  "mode": "manual",
+  "started_at": "2026-06-02T17:45:00Z",
+  "completed_at": "2026-06-02T17:56:00Z",
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-model-generation-effects"
+    ],
+    "research_question": "What exact Srivatsa et al. model and prompt numeric values should be attached to the model and generation effects baseline?"
+  },
+  "selected_via": "extraction_follow_up_from_published_model_generation_effects_bundle",
+  "outcome": "candidate_bundle",
+  "summary": "Extracted Srivatsa et al. Table 2 percentile ranks and average deviations, Appendix Table 4 unenforced accuracies, and Appendix Table 5 best grade-enforced prompt families, then staged updates to the Srivatsa artifact, finding, and model-effects claim.",
+  "candidate_bundle_id": "ssr-model-generation-effects-srivatsa-numeric-update-2026-06-02",
+  "source_ids": [
+    "srivatsa-llm-student-ability-simulation-2025-source"
+  ],
+  "source_urls": [
+    "https://aclanthology.org/2025.bea-1.75/"
+  ],
+  "next_recommended_mode": "manual",
+  "next_actions": [
+    "Publish the numeric extraction update after review gates pass.",
+    "Return to the next taxonomy queue item after the extraction follow-up is closed."
+  ]
+}

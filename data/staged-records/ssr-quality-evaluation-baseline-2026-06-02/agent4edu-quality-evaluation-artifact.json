@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "agent4edu-quality-evaluation-artifact",
+  "name": "Agent4Edu Learner Response Quality Evaluation Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "agent4edu-learner-response-generation-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation"
+  ],
+  "population_or_context": "Personalized learning and computerized adaptive testing simulator for Chinese high school mathematics and physics response records.",
+  "sample_size": "EduData comprises 18,045 time-ordered response records from 500 Chinese high school students.",
+  "methods": "Extracted the learner-simulation quality evaluation comparing generated agent responses with human learner responses.",
+  "endpoint_categories": [
+    "response_consistency",
+    "human_response_discrepancy",
+    "simulator_metric"
+  ],
+  "education_context": "Personalized learning and computerized adaptive testing contexts with time-ordered learner response data.",
+  "response_origin": "LLM-powered generative agents produce learner response data initialized from real-world learner profiles and histories.",
+  "rubric_label_space": "Practice-response outcomes and learner behavior signals rather than a single analytic scoring rubric.",
+  "label_source": "Real-world learner response data initializes profiles and provides the human-response comparator; generated responses come from the agent action module.",
+  "generation_model": "GPT-3.5-turbo-1106 and GPT-4-turbo are used in the experiments; unless otherwise specified, the paper reports GPT-3.5-turbo as the default.",
+  "generation_method": "Generative agents equipped with learner profile, memory, reflection, and action modules generate response data while interacting with personalized learning algorithms.",
+  "prompt_strategy": "Agent state and module design condition response generation rather than a single one-shot prompt.",
+  "evaluation_method": "Generated learner responses are evaluated with consistency and discrepancy metrics against human learner responses, including ACC, F1-score, and ROUGE-3.",
+  "scorer_use": "Simulation and algorithm evaluation for personalized learning systems; not direct automated scorer validation.",
+  "real_response_comparator": "Human learner responses from the EduData dataset serve as the comparator for generated response consistency.",
+  "reported_metrics": "The arXiv HTML reports ACC, F1-score, and ROUGE-3, including Agent4Edu (GPT-3.5-turbo) at 66.70 ACC, 79.84 F1-score, and 37.97 ROUGE-3 in Table 1.",
+  "limitations": [
+    "The evaluation measures simulator fidelity rather than validity of a classroom scoring instrument.",
+    "The response setting is personalized learning practice data, not rubric-scored open responses.",
+    "Appendix-level prompt details are not staged in this baseline."
+  ],
+  "assessment_purpose": "formative_feedback",
+  "decision_consequence": "feedback_or_instructional_support",
+  "operational_use": "quality_evaluation"
+}

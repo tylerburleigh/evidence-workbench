@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "liu-llm-respondents-model-ensemble-finding-2026",
+  "name": "LLM Respondent Distributions Vary by Model and Improve Unevenly With Ensembles",
+  "source_id": "liu-llm-respondents-item-evaluation-2025-source",
+  "artifact_id": "liu-llm-respondents-model-ensemble-artifact",
+  "taxonomy_node_ids": [
+    "ssr-model-generation-effects"
+  ],
+  "endpoint_category": "model_and_ensemble_effects",
+  "direction": "reports_generation_effect",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Liu, Bhandari, and Pardos show that LLM respondent proficiency distributions and item-calibration correlations differ by model; no single LLM reproduces human respondent variability, while a resampled human-plus-LLM mixture improves Spearman correlation but yields mixed augmentation results.",
+  "population_or_context": "College Algebra item-response simulation for item evaluation.",
+  "time_horizon": "BJET 2025 article metadata and arXiv full text retrieved on 2026-06-02.",
+  "quantitative_note": "Table 1 reports human SD 0.98 versus LLM SDs from 0.29 to 0.58; Table 2 reports GPT-3.5 Pearson 0.83/Spearman 0.87, GPT-4 Pearson 0.72/Spearman 0.78, and Experiment 3 Pearson 0.93/Spearman 0.93.",
+  "caveats": [
+    "The item set is a single College Algebra lesson.",
+    "The ensemble/augmentation result improves rank correlation but does not eliminate concerns about distribution shift and RMSE."
+  ],
+  "evaluation_method": "IRT proficiency distribution comparison, item-parameter calibration correlation, and augmentation/resampling experiments.",
+  "reported_metrics": "Model-specific proficiency means and SDs, Pearson and Spearman item-calibration correlations, RMSE, and augmentation experiment correlations.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The evidence is multiple-choice College Algebra item-response evidence, not open-ended response realism.",
+    "No single model should be treated as a human substitute because LLM respondent distributions are too narrow.",
+    "The staged conclusion is about model and ensemble effects, not a recommendation to replace human item calibration."
+  ],
+  "source_locator": {
+    "section": "arXiv PDF Sections 3-5, Table 1, Table 2, and Discussion; ERIC publication metadata",
+    "url": "https://arxiv.org/pdf/2407.10899",
+    "quote_or_paraphrase_note": "The staged finding paraphrases model-specific distribution and item-calibration results plus the ensemble/resampling conclusion.",
+    "verification_status": "verified"
+  }
+}

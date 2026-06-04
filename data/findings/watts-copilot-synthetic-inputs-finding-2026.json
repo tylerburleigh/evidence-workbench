@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "watts-copilot-synthetic-inputs-finding-2026",
+  "name": "Copilot Prompts Generate Quality- and Error-conditioned Synthetic Student Inputs",
+  "source_id": "watts-scientific-argumentation-chatbot-2025-source",
+  "artifact_id": "watts-copilot-synthetic-inputs-artifact",
+  "taxonomy_node_ids": [
+    "ssr-generation-methods"
+  ],
+  "endpoint_category": "example_conditioned_generation",
+  "direction": "defines_generation_method",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Watts et al. report using Microsoft Copilot 365 prompts with high-quality examples, low-quality examples, and typo-conditioned mixed examples to generate synthetic student inputs for chatbot prompt evaluation.",
+  "population_or_context": "Middle-school scientific argumentation chatbot prototype evaluation.",
+  "time_horizon": "Education Sciences article retrieved on 2026-06-02.",
+  "quantitative_note": "The source snippet reports 18 synthetic student inputs and 162 chatbot responses across prompt versions.",
+  "caveats": [
+    "The generated text is chatbot input, not a scored student response corpus.",
+    "The finding is included for method taxonomy, not for automated scorer validation."
+  ],
+  "evaluation_method": "Synthetic inputs were used to test multiple chatbot system prompts.",
+  "reported_metrics": "18 synthetic inputs; three independent chatbot responses for each input and version.",
+  "limitations": [
+    "The generation context is scientific argumentation chatbot design.",
+    "The staged source locator relies on public ETS/MDPI summary snippets and should receive full-text source-fidelity review before publication."
+  ],
+  "source_locator": {
+    "section": "Synthetic Student Inputs section",
+    "url": "https://www.mdpi.com/2227-7102/15/11/1507",
+    "quote_or_paraphrase_note": "The staged finding paraphrases the reported Copilot prompt sets for high-quality, low-quality, and typographical-error synthetic inputs.",
+    "verification_status": "located"
+  }
+}

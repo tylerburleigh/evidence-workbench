@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-operational-practice-policy-update-2026-06-03-2026-06-03t13-26-26-193z",
+  "name": "Published Operational Practice and Policy Boundary Update",
+  "summary": "Targeted surveillance update adding operational machine-scoring QA evidence for simulated responses and peer-reviewed GPT essay training-augmentation evidence, then tightening acceptable-use and stakes-boundary claims.",
+  "candidate_bundle_id": "ssr-operational-practice-policy-update-2026-06-03",
+  "event_type": "publish",
+  "published_at": "2026-06-03T13:26:26.193Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "source",
+      "record_id": "new-meridian-standard-processes-2020-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "new-meridian-simulated-response-test-suite-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "new-meridian-operational-simulated-response-test-suite-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "maine-science-assessment-2024-technical-report-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "maine-science-simulated-response-authoring-review-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "maine-science-operational-simulated-response-review-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "zhang-gpt-essay-augmentation-2026-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "zhang-gpt-essay-training-augmentation-validity-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "zhang-gpt-essay-training-augmentation-validity-boundary-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "search_protocol",
+      "record_id": "ssr-operational-practice-policy-search-2026-06-03",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-acceptable-scoring-uses-baseline-claim",
+      "action": "updated"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-assessment-stakes-boundaries-baseline-claim",
+      "action": "updated"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 12,
+    "by_record_type": {
+      "source": {
+        "created": 3,
+        "updated": 0,
+        "total": 3
+      },
+      "artifact": {
+        "created": 3,
+        "updated": 0,
+        "total": 3
+      },
+      "finding": {
+        "created": 3,
+        "updated": 0,
+        "total": 3
+      },
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "claim": {
+        "created": 0,
+        "updated": 2,
+        "total": 2
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "ssr-acceptable-scoring-uses-baseline-claim",
+    "ssr-assessment-stakes-boundaries-baseline-claim"
+  ],
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-operational-practice-policy-update-applicability-boundary-r1",
+    "evidence-appraisal-ssr-operational-practice-policy-update-construct-mapping-r1",
+    "evidence-appraisal-ssr-operational-practice-policy-update-method-classification-r1",
+    "evidence-appraisal-ssr-operational-practice-policy-update-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-operational-practice-policy-update-source-fidelity-r1",
+    "evidence-appraisal-ssr-operational-practice-policy-update-synthesis-overreach-r1"
+  ],
+  "review_corrections_applied": [],
+  "appraisal_follow_up_actions": [
+    "applicability_boundary: Keep the staged applies_when, does_not_apply_when, and unknown_or_unreviewed_contexts language.",
+    "construct_mapping: Retain the staged artifact fields that separate response origin, label source, scorer use, and real-response comparator.",
+    "method_classification: Keep the no-LLM classifications for operational QA sources and the research/development classification for Zhang et al.",
+    "scorer_validation_relevance: Retain the staged does_not_apply_when and limitations that exclude synthetic-only final validation and live scoring claims.",
+    "source_fidelity: Keep the staged source access metadata, locators, and source-specific limitations.",
+    "synthesis_overreach: Retain the staged blockers and final-validation exclusions."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "change_note": "Adds simulated-response machine-scoring QA/test suites as a distinct acceptable-use category, separate from LLM-generated training augmentation and final validation."
+}

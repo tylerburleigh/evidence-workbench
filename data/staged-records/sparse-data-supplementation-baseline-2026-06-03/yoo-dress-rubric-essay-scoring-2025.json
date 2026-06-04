@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "yoo-dress-rubric-essay-scoring-2025",
+  "name": "DREsS: Dataset for Rubric-Based Essay Scoring on EFL Writing",
+  "source_type": "conference_paper",
+  "authors": [
+    "Haneul Yoo",
+    "Jieun Han",
+    "So-Yeon Ahn",
+    "Alice Oh"
+  ],
+  "venue": "ACL 2025",
+  "year": 2025,
+  "published_on": "2025-06-11",
+  "doi": "10.48550/arXiv.2402.16733",
+  "urls": [
+    "https://arxiv.org/abs/2402.16733"
+  ],
+  "summary": "Rubric-based EFL essay scoring dataset introducing CASE, a corruption-based synthetic essay augmentation strategy."
+}

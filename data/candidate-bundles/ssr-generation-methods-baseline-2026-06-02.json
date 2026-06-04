@@ -1,0 +1,225 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-generation-methods-baseline-2026-06-02",
+  "name": "Synthetic Response Generation Methods Baseline",
+  "summary": "Staged first literature-review baseline for methods used to generate synthetic student or learner responses.",
+  "intake_mode": "baseline_review",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T12:40:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-generation-methods"
+    ],
+    "research_question": "What is the current evidence landscape for Synthetic Response Generation Methods in Synthetic Student Response Literature Review, and what belongs in the first public baseline for this review question?"
+  },
+  "source_ids": [
+    "ipci-knowledge-profiles-response-generation-2025-source",
+    "agent4edu-learner-response-generation-2025-source",
+    "watts-scientific-argumentation-chatbot-2025-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source"
+  ],
+  "source_urls": [
+    "https://infoscience.epfl.ch/entities/publication/c186f403-251d-44b0-8b03-55bd9037d352",
+    "https://arxiv.org/abs/2501.10332",
+    "https://www.ets.org/research/policy_research_reports/publications/article/2025/khoj.html",
+    "https://aclanthology.org/2025.acl-long.659/",
+    "https://arxiv.org/abs/2602.06772"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "ssr-scoring-validation-use-baseline-claim",
+      "relationship": "same_literature_review_domain"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-ssr-generation-methods-search-2026-06-02",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "ssr-generation-methods-search-2026-06-02",
+      "file_path": "data/search-protocols/ssr-generation-methods-search-2026-06-02.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/ssr-generation-methods-search-2026-06-02.json",
+      "summary": "Stage search protocol ssr-generation-methods-search-2026-06-02.",
+      "rationale": "The bundle needs an auditable search and screening record."
+    },
+    {
+      "change_id": "create-ipci-knowledge-profiles-response-generation-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "ipci-knowledge-profiles-response-generation-2025-source",
+      "file_path": "data/sources/ipci-knowledge-profiles-response-generation-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/ipci-knowledge-profiles-response-generation-2025-source.json",
+      "summary": "Add the Ipci et al. profile-based response generation source.",
+      "rationale": "The source directly describes rubric-aligned synthetic student response generation with knowledge profiles and representative examples."
+    },
+    {
+      "change_id": "create-agent4edu-learner-response-generation-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "agent4edu-learner-response-generation-2025-source",
+      "file_path": "data/sources/agent4edu-learner-response-generation-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/agent4edu-learner-response-generation-2025-source.json",
+      "summary": "Add the Agent4Edu learner response generation source.",
+      "rationale": "The source describes a generative-agent method for producing learner response data from profiles, memory, and action modules."
+    },
+    {
+      "change_id": "create-watts-scientific-argumentation-chatbot-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "watts-scientific-argumentation-chatbot-2025-source",
+      "file_path": "data/sources/watts-scientific-argumentation-chatbot-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/watts-scientific-argumentation-chatbot-2025-source.json",
+      "summary": "Add the Watts et al. scientific argumentation chatbot source.",
+      "rationale": "The source reports synthetic student inputs generated with Copilot prompts conditioned on response quality and typo examples."
+    },
+    {
+      "change_id": "create-ipci-profile-based-generation-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "ipci-profile-based-generation-artifact",
+      "file_path": "data/artifacts/ipci-profile-based-generation-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/ipci-profile-based-generation-artifact.json",
+      "summary": "Stage the Ipci et al. profile-based generation extraction.",
+      "rationale": "The generation-methods baseline needs a source-level extraction for knowledge-profile and rubric-conditioned LLM generation."
+    },
+    {
+      "change_id": "create-agent4edu-generative-agent-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "agent4edu-generative-agent-artifact",
+      "file_path": "data/artifacts/agent4edu-generative-agent-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/agent4edu-generative-agent-artifact.json",
+      "summary": "Stage the Agent4Edu generative-agent extraction.",
+      "rationale": "The baseline needs a method extraction for learner simulation through generative agents."
+    },
+    {
+      "change_id": "create-watts-copilot-synthetic-inputs-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "watts-copilot-synthetic-inputs-artifact",
+      "file_path": "data/artifacts/watts-copilot-synthetic-inputs-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/watts-copilot-synthetic-inputs-artifact.json",
+      "summary": "Stage the Watts et al. Copilot synthetic-input extraction.",
+      "rationale": "The baseline needs a method extraction for example- and error-conditioned prompt generation."
+    },
+    {
+      "change_id": "create-yoo-case-corruption-generation-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "yoo-case-corruption-generation-artifact",
+      "file_path": "data/artifacts/yoo-case-corruption-generation-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/yoo-case-corruption-generation-artifact.json",
+      "summary": "Stage the DREsS CASE corruption generation extraction.",
+      "rationale": "The baseline needs a boundary method extraction for non-LLM rubric-aligned synthetic essay generation."
+    },
+    {
+      "change_id": "create-wolfe-prompt-strategy-generation-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "wolfe-prompt-strategy-generation-artifact",
+      "file_path": "data/artifacts/wolfe-prompt-strategy-generation-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/wolfe-prompt-strategy-generation-artifact.json",
+      "summary": "Stage the Wolfe et al. prompt-strategy generation extraction.",
+      "rationale": "The baseline needs a method extraction for simulated essay generation under different prompt strategies."
+    },
+    {
+      "change_id": "create-ipci-profile-based-generation-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ipci-profile-based-generation-finding-2026",
+      "file_path": "data/findings/ipci-profile-based-generation-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/ipci-profile-based-generation-finding-2026.json",
+      "summary": "Stage a finding about knowledge-profile and representative-example response generation.",
+      "rationale": "The synthesis claim needs concrete support for profile- and rubric-conditioned LLM generation."
+    },
+    {
+      "change_id": "create-agent4edu-generative-agent-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "agent4edu-generative-agent-finding-2026",
+      "file_path": "data/findings/agent4edu-generative-agent-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/agent4edu-generative-agent-finding-2026.json",
+      "summary": "Stage a finding about generative-agent learner response simulation.",
+      "rationale": "The synthesis claim needs concrete support for agent-based learner response generation."
+    },
+    {
+      "change_id": "create-watts-copilot-synthetic-inputs-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "watts-copilot-synthetic-inputs-finding-2026",
+      "file_path": "data/findings/watts-copilot-synthetic-inputs-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/watts-copilot-synthetic-inputs-finding-2026.json",
+      "summary": "Stage a finding about Copilot generation from quality and typo-conditioned examples.",
+      "rationale": "The synthesis claim needs concrete support for example- and error-conditioned prompt generation."
+    },
+    {
+      "change_id": "create-yoo-case-corruption-generation-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "yoo-case-corruption-generation-finding-2026",
+      "file_path": "data/findings/yoo-case-corruption-generation-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/yoo-case-corruption-generation-finding-2026.json",
+      "summary": "Stage a finding about CASE corruption-based synthetic essay generation.",
+      "rationale": "The synthesis claim needs concrete support for non-LLM corruption-based generation as a distinct method family."
+    },
+    {
+      "change_id": "create-wolfe-prompt-strategy-generation-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "wolfe-prompt-strategy-generation-finding-2026",
+      "file_path": "data/findings/wolfe-prompt-strategy-generation-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/wolfe-prompt-strategy-generation-finding-2026.json",
+      "summary": "Stage a finding about prompt strategies for simulated essay generation.",
+      "rationale": "The synthesis claim needs concrete support for prompt-strategy variation in response generation."
+    },
+    {
+      "change_id": "create-ssr-generation-methods-baseline-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-generation-methods-baseline-claim",
+      "file_path": "data/claims/ssr-generation-methods-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-generation-methods-baseline-2026-06-02/ssr-generation-methods-baseline-claim.json",
+      "summary": "Stage the first bounded synthesis claim for synthetic response generation methods.",
+      "rationale": "The review question needs a public-baseline candidate claim with explicit method families, support, and limitations."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-generation-methods",
+      "note": "Creates the first staged literature-review baseline for synthetic response generation methods."
+    }
+  ],
+  "required_appraisal_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "synthesis_overreach"
+  ],
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-generation-methods-construct-mapping-r1",
+    "evidence-appraisal-ssr-generation-methods-method-classification-r1",
+    "evidence-appraisal-ssr-generation-methods-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-generation-methods-source-fidelity-r1",
+    "evidence-appraisal-ssr-generation-methods-synthesis-overreach-r1"
+  ],
+  "editorial_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-generation-methods-baseline-2026-06-02-2026-06-02t13-26-12-424z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "wolfe-human-scored-simulated-essays-finding-2026",
+  "name": "Expert Scores and Kappa Are Used to Evaluate Simulated Essay Score Preservation",
+  "source_id": "wolfe-calibrating-realistic-essays-2026-source",
+  "artifact_id": "wolfe-human-scored-simulated-essays-artifact",
+  "taxonomy_node_ids": [
+    "ssr-synthetic-response-scoring-agreement"
+  ],
+  "endpoint_category": "expert_scored_simulated_essays",
+  "direction": "supports",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Wolfe and Barber evaluate LLM-simulated essays with expert scores, score-distribution checks, exact and adjacent agreement, weighted kappa, and realism ratings, showing that scoring agreement is a central quality signal for generated essays.",
+  "population_or_context": "Simulated student essays for automated-scoring data augmentation.",
+  "time_horizon": "arXiv preprint version retrieved on 2026-06-02.",
+  "quantitative_note": "The study reports 96 real essays, 288 simulated essays, exact agreement, adjacent agreement, weighted kappa, score-distribution differences, and realism ratings.",
+  "caveats": [
+    "The source is a preprint.",
+    "The real essay source conditions the generated essay, limiting comparator independence.",
+    "Human score agreement does not by itself validate a downstream automated scorer."
+  ],
+  "evaluation_method": "Expert scoring and realism judgments compare simulated essays with original source essay scores and generated-output plausibility.",
+  "reported_metrics": "Exact agreement, adjacent agreement, weighted kappa, score-distribution differences, and realism ratings.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "original_essays_average_score": 1.53,
+    "predict_next_student_score_agreement": 0.72,
+    "predict_next_quadratic_weighted_kappa": 0.74,
+    "sentence_average_score": 1.97,
+    "simulation_detection_accuracy": {
+      "twenty_five_examples": 0.18,
+      "predict_next": 0.25,
+      "sentence": 0.74
+    }
+  },
+  "limitations": [
+    "Evidence is essay-specific and prompt-strategy-specific.",
+    "The public preprint reviewed here does not name the exact LLM version."
+  ],
+  "source_locator": {
+    "section": "Methods and results sections on scoring agreement and realism",
+    "url": "https://arxiv.org/abs/2602.06772",
+    "quote_or_paraphrase_note": "The finding paraphrases the simulated essay scoring and agreement metrics reported for generated essays.",
+    "verification_status": "located"
+  }
+}

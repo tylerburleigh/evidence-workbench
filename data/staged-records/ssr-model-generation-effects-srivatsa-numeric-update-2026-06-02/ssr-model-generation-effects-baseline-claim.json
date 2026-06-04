@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "ssr-model-generation-effects-baseline-claim",
+  "name": "Model and Generation Effects Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "ssr-model-generation-effects",
+  "current_stage": "synthesis_claim_supported",
+  "momentum": "baseline_staged",
+  "confidence": "medium",
+  "summary": "The first staged model-effects baseline finds that synthetic student response quality is sensitive to model choice and generation workflow, but the evidence does not support a single cross-task model ranking. Reported effects include bounded LLM-version sensitivity in Agent4Edu, model- and prompt-specific IRT alignment in NAEP proxy-student simulation, post-training improvements over prompting in tutoring-dialogue simulation, multi-model and ensemble effects for LLM respondents in item evaluation, and current preprint evidence that history-conditioned profiles plus DPO/GRPO improve turn-level simulated-student fidelity.",
+  "main_blockers": [
+    "The first pass is targeted rather than systematic.",
+    "Compared studies vary by response format, subject, grade band, model family, prompt, post-training workflow, metric, and comparator, so model effects are not directly rankable across sources.",
+    "Several comparisons change model and workflow together; causal isolation is limited unless later studies align tasks, prompts, decoding settings, and metrics.",
+    "The newest history-conditioned profile evidence is a May 2026 arXiv preprint and should be monitored for revision."
+  ],
+  "best_current_signals": [
+    "Agent4Edu reports a bounded GPT-4 exploratory condition above GPT-3.5-turbo under a 100-learner setup, while also documenting a profile/memory/reflection/action workflow.",
+    "Srivatsa et al. compare 11 LLMs and grade-enforcement prompts on NAEP items and conclude that no tested model-prompt pair reliably simulates average real students across subjects and grades.",
+    "Scarlatos et al. report that SFT and DPO student simulators outperform prompting on several dialogue fidelity metrics, while prompting can inflate correctness via majority-class correct responses.",
+    "Liu et al. show model-specific respondent distributions and item-calibration correlations, with no single LLM matching human variability and mixed evidence for ensemble augmentation.",
+    "Duan et al. report that history-conditioned profiles, simulator DPO, and profile-generator GRPO improve simulated student turn fidelity over prompting-only and simpler fine-tuning baselines in a current preprint."
+  ],
+  "interpretive_note": "Model and generation effects should be expressed as task-bound sensitivity claims. A stronger model, a fine-tuned simulator, or a profile-conditioned workflow may improve one metric while still failing another, and prompt-only correctness can be misleading when generated responses overfit majority-class correct answers.",
+  "limitations": [
+    "The staged source set is a compact bootstrap baseline, not an exhaustive review.",
+    "Evidence spans personalized learning response records, NAEP multiple-choice items, College Algebra item calibration, and math tutoring dialogues.",
+    "The claim does not establish that synthetic responses can replace real student responses for validation, item calibration, or scorer benchmarking.",
+    "Prompt-engineering-only evidence is intentionally deferred to the adjacent prompt-engineering-effects node unless it also compares broader model or workflow choices."
+  ],
+  "update_notes": [
+    "Srivatsa et al. per-model Table 2, Table 4, and Table 5 values were extracted in the 2026-06-02 numeric follow-up; check whether Agent4Edu provides fuller controlled GPT-4 comparisons outside the small exploratory condition before model-ranking synthesis.",
+    "Track later versions or venue status for Duan et al. because it is current preprint evidence.",
+    "A later bundle should explicitly separate model-family effects, post-training effects, history/profile conditioning effects, decoding/sampling effects, and prompt-engineering effects."
+  ],
+  "supporting_finding_ids": [
+    "agent4edu-model-generation-effects-finding-2026",
+    "srivatsa-model-prompt-irt-effects-finding-2026",
+    "scarlatos-post-training-effects-finding-2026",
+    "liu-llm-respondents-model-ensemble-finding-2026",
+    "duan-history-profile-rl-effects-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "agent4edu-learner-response-generation-2025-source",
+    "srivatsa-llm-student-ability-simulation-2025-source",
+    "scarlatos-simulated-students-dialogue-2026-source",
+    "liu-llm-respondents-item-evaluation-2025-source",
+    "duan-history-aware-profiles-student-simulation-2026-source"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Bounded LLM-version sensitivity",
+      "claim_field": "best_current_signals",
+      "conclusion": "Agent4Edu provides bounded evidence that LLM version can affect learner-response simulation performance, but not enough for a general cross-task model ranking.",
+      "support_role": "direct_support",
+      "rationale": "Agent4Edu reports GPT-3.5-turbo and GPT-4 ACC rows, with the GPT-4 result tied to a 100-learner exploratory setup.",
+      "finding_ids": [
+        "agent4edu-model-generation-effects-finding-2026"
+      ],
+      "source_ids": [
+        "agent4edu-learner-response-generation-2025-source"
+      ],
+      "limitations": [
+        "The model comparison is exploratory and sample-condition bound.",
+        "The agent workflow and model version are not fully separable."
+      ]
+    },
+    {
+      "label": "Model-prompt ability alignment",
+      "claim_field": "summary",
+      "conclusion": "Proxy-student ability alignment varies by model and prompt, and no tested model-prompt pair is reliable across the NAEP conditions.",
+      "support_role": "direct_support",
+      "rationale": "Srivatsa et al. test 11 LLMs and multiple grade-enforced prompts on NAEP response patterns using IRT.",
+      "finding_ids": [
+        "srivatsa-model-prompt-irt-effects-finding-2026"
+      ],
+      "source_ids": [
+        "srivatsa-llm-student-ability-simulation-2025-source"
+      ],
+      "limitations": [
+        "The evidence is multiple-choice item-response ability alignment, not dialogue or essay realism.",
+        "The extracted table values still do not justify ranking models across unrelated response-generation tasks."
+      ]
+    },
+    {
+      "label": "Post-training versus prompting",
+      "claim_field": "best_current_signals",
+      "conclusion": "Post-trained student simulators improve several tutoring-dialogue fidelity metrics over prompting, though correctness and error metrics remain nuanced.",
+      "support_role": "direct_support",
+      "rationale": "Scarlatos et al. compare prompted GPT methods with SFT and DPO Llama simulators and report stronger results for post-training on acts, knowledge, linguistic similarity, ROUGE-L, and tutor-response metrics.",
+      "finding_ids": [
+        "scarlatos-post-training-effects-finding-2026"
+      ],
+      "source_ids": [
+        "scarlatos-simulated-students-dialogue-2026-source"
+      ],
+      "limitations": [
+        "The comparison is a method-package comparison, not a pure model-family causal test.",
+        "The evidence is dialogue-turn specific."
+      ]
+    },
+    {
+      "label": "Multi-model respondent and ensemble effects",
+      "claim_field": "summary",
+      "conclusion": "LLM respondent behavior differs by model, and ensemble/resampling can improve some psychometric similarity signals while remaining mixed.",
+      "support_role": "direct_support",
+      "rationale": "Liu et al. compare six LLMs and augmentation strategies against human College Algebra response distributions and item calibration.",
+      "finding_ids": [
+        "liu-llm-respondents-model-ensemble-finding-2026"
+      ],
+      "source_ids": [
+        "liu-llm-respondents-item-evaluation-2025-source"
+      ],
+      "limitations": [
+        "The item set is a single College Algebra lesson.",
+        "Narrow LLM proficiency distributions limit human-substitution claims."
+      ]
+    },
+    {
+      "label": "History-profile and RL workflow effects",
+      "claim_field": "best_current_signals",
+      "conclusion": "History-conditioned profiles and RL-tuned workflow stages can improve simulated-student turn fidelity in current preprint evidence.",
+      "support_role": "direct_support",
+      "rationale": "Duan et al. compare prompting, SFT/DPO, history SFT, ProfileRL, and ablations over profile sections and RL stages.",
+      "finding_ids": [
+        "duan-history-profile-rl-effects-finding-2026"
+      ],
+      "source_ids": [
+        "duan-history-aware-profiles-student-simulation-2026-source"
+      ],
+      "limitations": [
+        "The source is a current arXiv preprint.",
+        "The evaluated dataset is private and math-domain specific."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-02",
+  "assessment_purpose": [
+    "research_or_development",
+    "formative_feedback",
+    "summative_assessment"
+  ],
+  "decision_consequence": [
+    "no_direct_learner_consequence",
+    "feedback_or_instructional_support"
+  ],
+  "operational_use": [
+    "quality_evaluation",
+    "validation_or_benchmarking"
+  ],
+  "applicability": {
+    "applies_when": [
+      "The claim is framed as task-bound sensitivity to model and workflow choices."
+    ],
+    "does_not_apply_when": [
+      "The claim is used as a universal model ranking across subjects, response types, or stakes levels."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Aligned head-to-head studies that hold task, prompt, decoding, model, and comparator constant."
+    ]
+  }
+}

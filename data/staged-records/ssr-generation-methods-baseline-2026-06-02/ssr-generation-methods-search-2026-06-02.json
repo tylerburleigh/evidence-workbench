@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-generation-methods-search-2026-06-02",
+  "name": "Synthetic Response Generation Methods Search Pass",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-generation-methods"
+  ],
+  "status": "included_sources_staged",
+  "systematicity_level": "targeted_baseline_review",
+  "search_started_at": "2026-06-02T12:41:00Z",
+  "search_completed_at": "2026-06-02T12:50:00Z",
+  "databases": [
+    "Web search"
+  ],
+  "search_queries": [
+    {
+      "database": "Web search",
+      "query": "generate synthetic student responses LLM",
+      "searched_at": "2026-06-02T12:41:00Z",
+      "result_count": "screened first result page for each targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "student answer generation prompt rubric",
+      "searched_at": "2026-06-02T12:41:00Z",
+      "result_count": "screened first result page for each targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "synthetic educational response generation",
+      "searched_at": "2026-06-02T12:41:00Z",
+      "result_count": "screened first result page for each targeted query"
+    }
+  ],
+  "inclusion_criteria": [
+    "The source describes a method for generating synthetic, simulated, or AI-authored student or learner response text.",
+    "The source reports generation ingredients such as profiles, prompts, examples, target labels, corruption, agent state, or filtering."
+  ],
+  "exclusion_criteria": [
+    "Exclude sources that only evaluate chatbot feedback without a recoverable synthetic student response generation method.",
+    "Exclude generic synthetic education datasets without response text or scoring/feedback relevance."
+  ],
+  "dedupe_method": "Deduplicated by title, DOI, arXiv identifier, and canonical source page.",
+  "screening_counts": {
+    "records_identified": "at least 25 web results across targeted queries",
+    "records_screened": 6,
+    "full_text_reviewed": 5,
+    "sources_included": 5
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "candidate-ipci-2025",
+      "title": "Leveraging Knowledge Profiles and Generative AI for Realistic Student Response Generation",
+      "decision": "include",
+      "reason": "Directly describes profile-based, rubric-aligned LLM generation strategies for synthetic student responses.",
+      "source_id": "ipci-knowledge-profiles-response-generation-2025-source",
+      "doi": "10.1007/978-3-031-99264-3_18",
+      "url": "https://infoscience.epfl.ch/entities/publication/c186f403-251d-44b0-8b03-55bd9037d352"
+    },
+    {
+      "candidate_id": "candidate-agent4edu-2025",
+      "title": "Agent4Edu: Generating Learner Response Data by Generative Agents for Intelligent Education Systems",
+      "decision": "include",
+      "reason": "Describes LLM-powered generative agents with learner profiles, memory, and action modules for learner response generation.",
+      "source_id": "agent4edu-learner-response-generation-2025-source",
+      "doi": "10.48550/arXiv.2501.10332",
+      "url": "https://arxiv.org/abs/2501.10332"
+    },
+    {
+      "candidate_id": "candidate-watts-chatbot-2025",
+      "title": "A Framework for Designing an AI Chatbot to Support Scientific Argumentation",
+      "decision": "include",
+      "reason": "Reports synthetic student inputs generated through Copilot prompts using high-quality, low-quality, and typo-conditioned examples.",
+      "source_id": "watts-scientific-argumentation-chatbot-2025-source",
+      "doi": "10.3390/educsci15111507",
+      "url": "https://www.ets.org/research/policy_research_reports/publications/article/2025/khoj.html"
+    },
+    {
+      "candidate_id": "candidate-yoo-dress-2025",
+      "title": "DREsS: Dataset for Rubric-based Essay Scoring on EFL Writing",
+      "decision": "include",
+      "reason": "Provides a non-LLM CASE corruption generation method for synthetic rubric-aligned essay training data.",
+      "source_id": "yoo-dress-rubric-aes-2025-source",
+      "doi": "10.18653/v1/2025.acl-long.659",
+      "url": "https://aclanthology.org/2025.acl-long.659/"
+    },
+    {
+      "candidate_id": "candidate-wolfe-2026",
+      "title": "Calibrating Generative AI to Produce Realistic Essays for Data Augmentation",
+      "decision": "include",
+      "reason": "Compares prompt strategies for generating simulated essays from real student essays.",
+      "source_id": "wolfe-calibrating-realistic-essays-2026-source",
+      "doi": "10.48550/arXiv.2602.06772",
+      "url": "https://arxiv.org/abs/2602.06772"
+    },
+    {
+      "candidate_id": "candidate-agent4edu-summary-page",
+      "title": "Agent4Edu summary pages and repository mirrors",
+      "decision": "duplicate",
+      "reason": "Duplicate metadata for the arXiv/AAAI source already included as candidate-agent4edu-2025.",
+      "url": "https://github.com/bigdata-ustc/Agent4Edu"
+    }
+  ],
+  "source_ids": [
+    "ipci-knowledge-profiles-response-generation-2025-source",
+    "agent4edu-learner-response-generation-2025-source",
+    "watts-scientific-argumentation-chatbot-2025-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source"
+  ],
+  "screening_summary": "Targeted bootstrap screening included five sources spanning profile- and rubric-conditioned LLM generation, generative-agent learner simulation, Copilot prompt generation from quality and typo-conditioned examples, CASE corruption-based essay generation, and prompt-strategy variation for simulated essays.",
+  "limitations": [
+    "This was a targeted bootstrap pass, not a systematic review.",
+    "Screening prioritized web-accessible source pages and already available SSR baseline sources.",
+    "Some extraction depends on abstracts, metadata, or article summaries where full prompt templates and implementation details are not fully available in the indexed source page."
+  ]
+}

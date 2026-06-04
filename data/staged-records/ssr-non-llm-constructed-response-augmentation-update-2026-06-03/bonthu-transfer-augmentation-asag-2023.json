@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "bonthu-transfer-augmentation-asag-2023",
+  "name": "Improving the Performance of Automatic Short Answer Grading Using Transfer Learning and Augmentation",
+  "source_type": "journal_article",
+  "authors": [
+    "Sridevi Bonthu",
+    "S. Rama Sree",
+    "M. H. M. Krishna Prasad"
+  ],
+  "venue": "Engineering Applications of Artificial Intelligence",
+  "year": 2023,
+  "published_on": "2023-08",
+  "doi": "10.1016/j.engappai.2023.106292",
+  "urls": [
+    "https://doi.org/10.1016/j.engappai.2023.106292",
+    "https://www.sciencedirect.com/science/article/abs/pii/S0952197623004761",
+    "https://dblp.org/rec/journals/eaai/BonthuSP23"
+  ],
+  "summary": "ASAG study using sentence-transformer transfer learning and non-LLM text augmentation techniques on programming short-answer responses in the SPRAG corpus.",
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03",
+      "url": "https://api.crossref.org/works/10.1016%2Fj.engappai.2023.106292",
+      "result": "Crossref metadata verified DOI, authors, venue, volume, and article number."
+    },
+    {
+      "attempted_at": "2026-06-03",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/S0952197623004761",
+      "result": "Direct page fetch returned Cloudflare error; official indexed abstract and highlights were available through web search result.",
+      "notes": "Extraction is limited to official abstract/highlights and search-indexed ScienceDirect text, not full article tables."
+    }
+  ]
+}

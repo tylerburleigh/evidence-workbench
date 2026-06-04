@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "scarlatos-post-training-effects-finding-2026",
+  "name": "Post-Training Improves Several Tutoring-Dialogue Fidelity Metrics Over Prompting",
+  "source_id": "scarlatos-simulated-students-dialogue-2026-source",
+  "artifact_id": "scarlatos-post-training-effects-artifact",
+  "taxonomy_node_ids": [
+    "ssr-model-generation-effects"
+  ],
+  "endpoint_category": "prompting_vs_post_training",
+  "direction": "reports_generation_effect",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Scarlatos et al. report that SFT and DPO student simulators outperform prompted LLM methods on several tutoring-dialogue fidelity metrics, while prompting can score higher on correctness partly because it over-generates correct majority-class responses.",
+  "population_or_context": "Math tutoring dialogue turn simulation.",
+  "time_horizon": "ACL 2026/arXiv source retrieved on 2026-06-02.",
+  "quantitative_note": "Table 1 reports DPO (Llama 3.1 8B) at Acts 0.6840, Knowledge 0.8787, Cos. Sim. 0.7390, ROUGE-L 0.3212, Tutor Resp. 0.2039 versus Zero-Shot (GPT-4.1) at Acts 0.4998, Knowledge 0.8078, Cos. Sim. 0.5460, ROUGE-L 0.1648, Tutor Resp. 0.1911.",
+  "caveats": [
+    "The result compares method packages, because prompting and post-training conditions differ by both workflow and model family.",
+    "Error prediction remains weak, and prompt correctness can be misleading when it reflects majority-class correct-response bias."
+  ],
+  "evaluation_method": "Turn-level simulated-student metrics for acts, correctness, errors, knowledge acquisition, text similarity, ROUGE-L, and induced tutor responses.",
+  "reported_metrics": "Table 1 method-by-metric results for fine-tuning and prompting methods.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The evidence is specific to tutoring-dialogue turns.",
+    "Prompting-vs-post-training effects should not be generalized to all item-response or essay-generation settings.",
+    "All methods leave fidelity gaps, especially for reproducing specific student errors."
+  ],
+  "source_locator": {
+    "section": "Author PDF Table 1 and Results Section 4.1",
+    "url": "https://people.umass.edu/~andrewlan/papers/26acl-studentsim.pdf",
+    "quote_or_paraphrase_note": "The staged finding paraphrases Table 1 and the results discussion comparing prompting and fine-tuning.",
+    "verification_status": "verified"
+  }
+}

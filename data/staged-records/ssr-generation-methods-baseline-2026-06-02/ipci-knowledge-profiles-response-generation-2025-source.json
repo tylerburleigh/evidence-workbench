@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "ipci-knowledge-profiles-response-generation-2025-source",
+  "name": "Leveraging Knowledge Profiles and Generative AI for Realistic Student Response Generation",
+  "source_type": "conference_paper",
+  "authors": [
+    "Eylul Ipci",
+    "Tatjana Nazaretsky",
+    "Tanja Kaser"
+  ],
+  "venue": "Artificial Intelligence in Education. Posters and Late Breaking Results, Workshops and Tutorials, Industry and Innovation Tracks, Practitioners, Doctoral Consortium, Blue Sky, and WideAIED",
+  "year": 2025,
+  "published_on": "2025-07",
+  "doi": "10.1007/978-3-031-99264-3_18",
+  "urls": [
+    "https://infoscience.epfl.ch/entities/publication/c186f403-251d-44b0-8b03-55bd9037d352",
+    "https://doi.org/10.1007/978-3-031-99264-3_18"
+  ],
+  "summary": "AIED 2025 paper proposing rubric-aligned synthetic student response generation with LLMs guided by knowledge profiles and representative examples.",
+  "retrieved_on": "2026-06-02"
+}

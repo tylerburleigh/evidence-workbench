@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "li-smote-scientific-models-imbalance-finding-2025",
+  "name": "SMOTE and Image Augmentation for Imbalanced Scientific-Model Scoring",
+  "source_id": "li-scientific-models-smote-2025",
+  "artifact_id": "li-scientific-models-smote-augmentation-2025",
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "endpoint_category": "constructed_scientific_model_imbalance",
+  "direction": "supports",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Li, Haudek, and Krajcik used SMOTE and image augmentation to supplement imbalanced training data for automated scoring of student-generated scientific models, providing adjacent non-text constructed-response evidence.",
+  "population_or_context": "High-school electroscope modeling responses scored across 13 analytic rubric categories.",
+  "time_horizon": "2025 publication; non-text constructed-response/scientific-model augmentation.",
+  "quantitative_note": "The article reports severe-category recall increasing from 0.52 to 0.89 after SMOTE, Category 11 F1 increasing from 0.47 to 0.86, and Category 8 recall increasing from 0.70 to 0.86 after SMOTE.",
+  "evaluation_method": "CNN scoring models evaluated using tenfold cross-validation and independent testing with accuracy, precision, recall, and F1.",
+  "sparsity_or_imbalance_motivation": "The authors report highly imbalanced rubric categories, including categories with positive cases below 10%, and note that high-performance responses can be scarce in complex assessment tasks.",
+  "synthetic_data_research_role": "Training-set balancing and robustness/fairness analysis for underrepresented constructed-response categories.",
+  "reported_metrics": "Accuracy, precision, recall, and F1 across no augmentation, general augmentation, and SMOTE conditions.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The synthetic data are image/feature-space augmentations, not generated textual student responses.",
+    "SMOTE was used to improve model training and fairness, not as independent validation of a deployed scorer."
+  ],
+  "source_locator": "Full-text HTML; Abstract; Methods/Data Preparation; SMOTE implementations; Results/RQ2; Conclusions and Discussions."
+}

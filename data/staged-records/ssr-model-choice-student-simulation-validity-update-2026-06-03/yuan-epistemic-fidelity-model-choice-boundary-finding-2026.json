@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "yuan-epistemic-fidelity-model-choice-boundary-finding-2026",
+  "name": "Student-Simulation Validity Requires Epistemic Fidelity Rather Than Surface Realism",
+  "source_id": "yuan-valid-student-simulation-framework-2026-source",
+  "artifact_id": "yuan-epistemic-state-specification-artifact",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-model-generation-effects",
+    "ssr-real-response-comparison"
+  ],
+  "endpoint_category": "epistemic_fidelity_framework",
+  "direction": "defines_validity_boundary",
+  "evidence_tier": "conceptual_full_text",
+  "confidence": "medium",
+  "statement": "Yuan et al. argue that LLM student simulation should be treated as constrained generation under an explicit Epistemic State Specification, because broadly capable LLMs face a competence paradox when asked to emulate partially knowledgeable learners.",
+  "population_or_context": "LLM-based student simulation for education research, teacher training, content evaluation, and synthetic data augmentation.",
+  "time_horizon": "arXiv preprint submitted 2026-01-09 and retrieved 2026-06-03.",
+  "quantitative_note": "No empirical results; the paper proposes ESS levels and a reporting card.",
+  "caveats": [
+    "The paper is theoretical and does not evaluate specific models.",
+    "It does not provide evidence that any model family is superior.",
+    "Its strongest contribution is reporting and validity framing."
+  ],
+  "evaluation_method": "Conceptual synthesis and framework proposal.",
+  "reported_metrics": "Not applicable; proposes Goal-by-Environment framing and ESS levels E0-E4.",
+  "numeric_results_extracted": "not_applicable",
+  "source_locator": {
+    "section": "Abstract; Sections 3.2-3.3; Sections 6.2-6.4; Conclusion; Appendix reporting card",
+    "url": "https://arxiv.org/pdf/2601.05473",
+    "quote_or_paraphrase_note": "Extraction uses competence paradox, constrained-generation definition, ESS reporting guidance, goal-aligned fidelity guidance, and limitations.",
+    "verification_status": "verified"
+  },
+  "limitations": [
+    "Framework evidence should not change empirical confidence in model performance.",
+    "Best used to sharpen reporting criteria and avoid model-choice overclaiming."
+  ]
+}

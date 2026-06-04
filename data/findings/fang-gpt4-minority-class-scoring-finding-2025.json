@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "fang-gpt4-minority-class-scoring-finding-2025",
+  "name": "GPT-4 Generated Minority-Class Science Responses for Scorer Training",
+  "source_id": "fang-gpt4-imbalanced-automatic-scoring-2025",
+  "artifact_id": "fang-gpt4-minority-science-response-augmentation-2025",
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "endpoint_category": "minority_class_balancing",
+  "direction": "supports",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Fang, Lee, and Zhai used GPT-4 to generate additional student-like science responses for minority scoring classes, then fine-tuned DistilBERT scorers on the augmented and original datasets.",
+  "population_or_context": "Four short open-ended science response tasks with imbalanced score labels.",
+  "quantitative_note": "The study reports task-specific improvements, with the abstract noting that 20% to 40% augmented data was needed for stable automatic-scoring improvement.",
+  "evaluation_method": "Accuracy, precision, recall, and F1 comparisons across augmentation levels and against additional authentic student-response augmentation.",
+  "sparsity_or_imbalance_motivation": "Unbalanced student responses across scoring categories, especially minority classes.",
+  "synthetic_data_research_role": "Training augmentation and benchmark comparison against extra authentic minority-class responses.",
+  "reported_metrics": "Accuracy, precision, recall, F1; task-specific saturation points.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "Task effects varied.",
+    "The authors note that generated responses may not fully capture the true minority-class distribution."
+  ],
+  "source_locator": "Abstract; Methods sections 3.1-3.4; Table 1; Results section."
+}

@@ -149,7 +149,7 @@ test("software supply-chain route smoke inventory covers downstream published gr
   assertRouteHasText(routes, "/reports", ["Reports", "Source Access Audit", "Synthesis Matrix", "Report Artifacts"]);
 });
 
-test("synthetic student response route smoke inventory covers configured review questions", async () => {
+test("synthetic student response route smoke inventory covers configured review questions and reports", async () => {
   const data = await loadDomainStudioData({ domainId: "synthetic-student-responses" });
   const routes = buildRouteChecks(data);
   const paths = routePaths(routes);
@@ -165,13 +165,18 @@ test("synthetic student response route smoke inventory covers configured review 
     "/reports",
     "/methods",
     "/admin/review",
+    "/reports/ssr-background-lit-review-2026-06-03",
+    "/reports/ssr-synthesis-2026-06-03",
+    "/reports/ssr-application-memo-2026-06-03",
     "/scope/ssr-scoring-validation-use",
     "/scope/ssr-generation-methods",
     "/scope/ssr-quality-evaluation",
     "/scope/ssr-model-generation-effects",
     "/scope/ssr-prompt-engineering-effects",
     "/scope/ssr-real-response-comparison",
-    "/scope/ssr-human-ai-scoring-agreement"
+    "/scope/ssr-synthetic-response-scoring-agreement",
+    "/scope/ssr-acceptable-scoring-uses",
+    "/scope/ssr-assessment-stakes-boundaries"
   ]) {
     assert.ok(paths.has(path), `Missing route check for ${path}`);
   }
@@ -187,9 +192,21 @@ test("synthetic student response route smoke inventory covers configured review 
     "Claims",
     "Bundle State"
   ]);
-  assertRouteHasText(routes, "/scope/ssr-human-ai-scoring-agreement", [
-    "Human and AI Scoring Agreement",
+  assertRouteHasText(routes, "/scope/ssr-synthetic-response-scoring-agreement", [
+    "Synthetic Response Scoring Agreement",
     "Claims",
     "Bundle State"
+  ]);
+  assertRouteHasText(routes, "/reports/ssr-synthesis-2026-06-03", [
+    "Synthetic Student Responses Synthesis",
+    "Traceability"
+  ]);
+  assertRouteHasText(routes, "/reports/ssr-background-lit-review-2026-06-03", [
+    "Synthetic Student Responses Background Literature Review",
+    "Traceability"
+  ]);
+  assertRouteHasText(routes, "/reports/ssr-application-memo-2026-06-03", [
+    "Synthetic Student Responses Application Memo",
+    "Traceability"
   ]);
 });

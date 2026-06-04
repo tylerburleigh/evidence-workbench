@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-validity-conditions-controlled-comparisons-update-2026-06-03-2026-06-03t19-28-50-265z",
+  "name": "Published Validity Conditions and Controlled Comparison Update",
+  "summary": "Targeted surveillance update for the cross-cutting question of when synthetic student responses provide validity-relevant evidence for automated scoring workflows, emphasizing realism metrics, model/workflow choice, and real-response comparators.",
+  "candidate_bundle_id": "ssr-validity-conditions-controlled-comparisons-update-2026-06-03",
+  "event_type": "publish",
+  "published_at": "2026-06-03T19:28:50.265Z",
+  "published_by": "codex-agent",
+  "published_targets": [
+    {
+      "record_type": "source",
+      "record_id": "nguyen-cao-science-thinking-simulation-2026-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "nguyen-cao-science-thinking-realism-model-comparison-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "nguyen-cao-science-thinking-realism-model-effects-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "cao-nguyen-math-simulated-learners-2026-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "cao-nguyen-math-simulated-learner-authenticity-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "cao-nguyen-authenticity-workflow-comparison-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "scarlatos-smart-irt-simulated-students-2025-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "scarlatos-smart-irt-open-ended-difficulty-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "scarlatos-smart-irt-validity-boundary-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "wu-embracing-imperfection-student-agents-2025-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "wu-student100-cognitive-level-realism-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "wu-cognitive-level-imperfection-realism-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "search_protocol",
+      "record_id": "ssr-validity-conditions-controlled-comparisons-search-2026-06-03",
+      "action": "created"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 13,
+    "by_record_type": {
+      "source": {
+        "created": 4,
+        "updated": 0,
+        "total": 4
+      },
+      "artifact": {
+        "created": 4,
+        "updated": 0,
+        "total": 4
+      },
+      "finding": {
+        "created": 4,
+        "updated": 0,
+        "total": 4
+      },
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "ssr-quality-evaluation-baseline-claim",
+    "ssr-model-generation-effects-baseline-claim",
+    "ssr-prompt-engineering-effects-baseline-claim",
+    "ssr-real-response-comparison-baseline-claim",
+    "ssr-scoring-validation-use-baseline-claim",
+    "ssr-acceptable-scoring-uses-baseline-claim"
+  ],
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-validity-conditions-controlled-comparisons-update-applicability-boundary-r1",
+    "evidence-appraisal-ssr-validity-conditions-controlled-comparisons-update-construct-mapping-r1",
+    "evidence-appraisal-ssr-validity-conditions-controlled-comparisons-update-method-classification-r1",
+    "evidence-appraisal-ssr-validity-conditions-controlled-comparisons-update-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-validity-conditions-controlled-comparisons-update-source-fidelity-r1",
+    "evidence-appraisal-ssr-validity-conditions-controlled-comparisons-update-synthesis-overreach-r1"
+  ],
+  "review_corrections_applied": [],
+  "appraisal_follow_up_actions": [
+    "applicability_boundary: Keep the current assessment_purpose, decision_consequence, operational_use, and limitations fields.",
+    "construct_mapping: Retain the explicit scorer_use, real_response_comparator, and limitations fields in each staged artifact.",
+    "method_classification: Keep the model/workflow wording in future literature-review revisions.",
+    "scorer_validation_relevance: Retain the SMART caveat in the finding and carry it into the unified literature review.",
+    "source_fidelity: Keep the source URLs, DOI/arXiv/ACL metadata, and section-level locators in the staged records.",
+    "synthesis_overreach: Preserve the short conditional claim and the explicit remaining gap around direct scorer-validation studies in future unified literature-review revisions."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "change_note": "Strengthens the claim that realism is multidimensional: semantic overlap, grade-level language, cognitive authenticity, error-pattern plausibility, ability alignment, teacher/user judgments, and downstream utility are not interchangeable."
+}

@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "ssr-prompt-engineering-effects-baseline-claim",
+  "name": "Prompt Engineering Effects Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "ssr-prompt-engineering-effects",
+  "current_stage": "synthesis_claim_supported",
+  "momentum": "baseline_staged",
+  "confidence": "medium",
+  "summary": "The staged prompt-engineering baseline finds that prompt ingredients measurably affect synthetic student response behavior, but the evidence supports task-bound sensitivity claims rather than universal prompt prescriptions. Current evidence includes simulated-essay prompt strategies that trade off score agreement, average-score alignment, and human realism detection; grade-enforced prompt families that improve some NAEP proxy-student IRT deviations without solving reliability; profile/example/role prompt architecture that shapes GPT-4 simulated MCQ profile alignment; Copilot prompt conditioning that creates targeted synthetic chatbot inputs for stress testing; lesson-context science prompts; and few-shot versus workflow-prompted simulated-learner generation.",
+  "main_blockers": [
+    "The first pass is targeted rather than systematic.",
+    "Included studies vary by response format, domain, model, prompt family, comparator, and evaluation metric.",
+    "Prompt ingredients are often bundled with model, task, or workflow choices, limiting causal isolation.",
+    "Some potentially relevant candidates were not used as direct support because full-text access was not verified in this pass."
+  ],
+  "best_current_signals": [
+    "Wolfe and Barber report that Predict Next has stronger score agreement and weighted kappa than the other simulated-essay prompt strategies, while Sentence has an average score closer to original essays and is easier for judges to identify as simulated.",
+    "Srivatsa et al. report that grade-enforced prompt families reduce average absolute IRT deviation in all six extracted subject-grade cells, while still failing to establish reliable cross-setting proxy-student alignment.",
+    "Lu and Wang report a prompt-architecture process using profile examples, instructor role prediction, and one-question-at-a-time prompting, with Table 3 showing profile-rule-specific differences in simulated response alignment.",
+    "Watts et al. show a bounded use case for prompt-conditioned synthetic inputs: high-quality, low-quality, and typo-conditioned examples can create targeted chatbot test inputs, though not validated student-response corpora.",
+    "Nguyen and Cao use detailed lesson-context prompts to elicit varied science ideas, including everyday, scientific, partial, and incorrect reasoning.",
+    "Cao et al. show that few-shot prompting underperforms fine-tuned, multi-agent, and DPO workflows on mathematics simulated-learner authenticity."
+  ],
+  "interpretive_note": "Prompt engineering should be tracked as an experimental method variable. The same prompt strategy can improve one target signal while weakening another, and prompt-conditioned inputs may be useful for stress testing without being validated substitutes for real student responses.",
+  "limitations": [
+    "The staged source set is a compact bootstrap baseline, not an exhaustive review.",
+    "Evidence spans essays, multiple-choice ability simulation, multiple-choice item evaluation, and chatbot inputs.",
+    "The claim does not establish that synthetic responses can replace real student responses for validation, item calibration, or scorer benchmarking.",
+    "Access-limited candidates should not support synthesis claims until full text is obtained or the abstract-only limitation is made explicit."
+  ],
+  "update_notes": [
+    "A later pass should extract prompt templates and appendices where available and separate few-shot examples, role framing, target-label conditioning, chain-of-thought, self-revision, decoding, and model-family effects.",
+    "Revisit source-access-deferred candidates such as Frohn et al. and IPCI only after a primary full text or sufficiently bounded abstract-level use is recorded.",
+    "Future synthesis should compare prompt effects within aligned task/model/metric settings before recommending prompt patterns.",
+    "2026-06-03 claim-hardening update added published lesson-context and workflow-prompt evidence from Nguyen and Cao and Cao et al."
+  ],
+  "supporting_finding_ids": [
+    "wolfe-prompt-engineering-effects-finding-2026",
+    "srivatsa-grade-enforcement-prompt-effects-finding-2026",
+    "lu-generative-students-prompt-architecture-finding-2026",
+    "watts-copilot-prompt-conditioning-finding-2026",
+    "nguyen-cao-science-thinking-realism-model-effects-finding-2026",
+    "cao-nguyen-authenticity-workflow-comparison-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "srivatsa-llm-student-ability-simulation-2025-source",
+    "lu-generative-students-item-evaluation-2024-source",
+    "watts-scientific-argumentation-chatbot-2025-source",
+    "nguyen-cao-science-thinking-simulation-2026-source",
+    "cao-nguyen-math-simulated-learners-2026-source"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Essay prompt-strategy sensitivity",
+      "claim_field": "best_current_signals",
+      "conclusion": "Prompt strategy changes simulated essay score agreement, score distribution, and human realism detection.",
+      "support_role": "direct_support",
+      "rationale": "Wolfe and Barber compare three prompt strategies on the same essay-generation setting and report prompt-specific Table 2 results.",
+      "finding_ids": [
+        "wolfe-prompt-engineering-effects-finding-2026"
+      ],
+      "source_ids": [
+        "wolfe-calibrating-realistic-essays-2026-source"
+      ],
+      "limitations": [
+        "The study is an essay-specific preprint.",
+        "The public text reviewed here does not name the exact model version."
+      ]
+    },
+    {
+      "label": "Grade-enforced proxy-student prompting",
+      "claim_field": "summary",
+      "conclusion": "Grade-enforced prompt families improve some proxy-student IRT alignment measures but do not create a reliable universal proxy student.",
+      "support_role": "direct_support",
+      "rationale": "Srivatsa et al. compare prompt-unenforced and grade-enforced prompt families across 11 LLMs and NAEP subject-grade cells.",
+      "finding_ids": [
+        "srivatsa-grade-enforcement-prompt-effects-finding-2026"
+      ],
+      "source_ids": [
+        "srivatsa-llm-student-ability-simulation-2025-source"
+      ],
+      "limitations": [
+        "Multiple-choice IRT alignment is not open-response realism.",
+        "Prompt and model effects interact."
+      ]
+    },
+    {
+      "label": "Profile/example/role prompt architecture",
+      "claim_field": "best_current_signals",
+      "conclusion": "Prompt architecture affects simulated student profile-response alignment in MCQ item evaluation.",
+      "support_role": "direct_support",
+      "rationale": "Lu and Wang describe prompt-architecture changes and report profile-rule response alignment in Table 3.",
+      "finding_ids": [
+        "lu-generative-students-prompt-architecture-finding-2026"
+      ],
+      "source_ids": [
+        "lu-generative-students-item-evaluation-2024-source"
+      ],
+      "limitations": [
+        "The source is not a full factorial prompt ablation.",
+        "The response format and domain are narrow."
+      ]
+    },
+    {
+      "label": "Prompt-conditioned stress-test inputs",
+      "claim_field": "best_current_signals",
+      "conclusion": "Prompt-conditioned examples can generate targeted synthetic chatbot inputs for testing, but this is boundary evidence for response realism.",
+      "support_role": "boundary_condition",
+      "rationale": "Watts et al. generate synthetic inputs from high-quality, low-quality, and typo-conditioned example prompts to test chatbot prompt versions.",
+      "finding_ids": [
+        "watts-copilot-prompt-conditioning-finding-2026"
+      ],
+      "source_ids": [
+        "watts-scientific-argumentation-chatbot-2025-source"
+      ],
+      "limitations": [
+        "The generated text is chatbot input, not a scored response corpus.",
+        "The article does not validate the generated inputs against real student response distributions."
+      ]
+    },
+    {
+      "label": "Lesson-context and workflow-prompt sensitivity",
+      "claim_field": "summary",
+      "conclusion": "Lesson-context prompts and few-shot versus workflow-prompted generation affect synthetic student response authenticity, but the evidence remains task-bound.",
+      "support_role": "direct_support",
+      "rationale": "Nguyen and Cao's science prompts specify learning standards, prior instruction, activity description, task, grade level, and simulation instructions; Cao et al. compare few-shot prompting with fine-tuned, multi-agent, and DPO simulated-learner workflows.",
+      "finding_ids": [
+        "nguyen-cao-science-thinking-realism-model-effects-finding-2026",
+        "cao-nguyen-authenticity-workflow-comparison-finding-2026"
+      ],
+      "source_ids": [
+        "nguyen-cao-science-thinking-simulation-2026-source",
+        "cao-nguyen-math-simulated-learners-2026-source"
+      ],
+      "limitations": [
+        "The sources are not pure prompt-only ablations.",
+        "The evidence supports prompt/workflow sensitivity, not universal prompt prescriptions."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-03",
+  "assessment_purpose": [
+    "research_or_development",
+    "formative_feedback",
+    "summative_assessment"
+  ],
+  "decision_consequence": [
+    "no_direct_learner_consequence",
+    "feedback_or_instructional_support"
+  ],
+  "operational_use": [
+    "calibration_or_development",
+    "quality_evaluation"
+  ],
+  "applicability": {
+    "applies_when": [
+      "Prompt ingredients are treated as method variables affecting generated response behavior."
+    ],
+    "does_not_apply_when": [
+      "Prompt patterns are promoted as universal best practices or validation guarantees."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Controlled prompt-only ablations across operational assessment settings."
+    ]
+  }
+}

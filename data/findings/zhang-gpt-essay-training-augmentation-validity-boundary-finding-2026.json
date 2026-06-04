@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "zhang-gpt-essay-training-augmentation-validity-boundary-finding-2026",
+  "name": "GPT Essay Augmentation Supports Research Training Utility with Held-Out Student Evaluation",
+  "source_id": "zhang-gpt-essay-augmentation-2026-source",
+  "artifact_id": "zhang-gpt-essay-training-augmentation-validity-artifact",
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses",
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "endpoint_category": "essay_scoring_training_augmentation_boundary",
+  "direction": "supports_with_strong_boundary",
+  "evidence_tier": "peer_reviewed_journal_article",
+  "confidence": "high",
+  "statement": "Zhang et al. provide direct research evidence that GPT-generated essays can support AI essay-scoring training augmentation when model evaluation is anchored in held-out real student essays. The study also preserves important validity boundaries: performance varies by prompt and sample, generated essays can differ from student essays in subtle ways, and target generated score levels are not a substitute for independent human validation.",
+  "population_or_context": "PERSUADE 2.0 source-based essays from grades 6-10 across seven prompts.",
+  "time_horizon": "Full text retrieved and extracted on 2026-06-03.",
+  "quantitative_note": "Student essay samples ranged from 1,372 to 2,167 per prompt; GPT-4 generated about 120 usable essays per score level and GPT-4o about 275. Most held-out student-essay QWK and correlation values exceeded .75 except the P7 A Cowboy condition, and SMD generally stayed within +/- .15.",
+  "caveats": [
+    "The evidence is research/development evidence, not an operational testing-program policy.",
+    "Only one human rating is available in the public data, preventing true-score evaluation.",
+    "Generated target score levels require caution because the paper notes they are not equivalent to expert human scoring of each synthetic essay."
+  ],
+  "evaluation_method": "Held-out real student essay evaluation using QWK, correlation, SMD, subgroup MDSS, subgroup QWK, linguistic-feature analysis, and DecompX token-importance analysis.",
+  "reported_metrics": "Human-AI QWK, correlation, SMD, subgroup MDSS, subgroup QWK, and linguistic-feature measures.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "Does not support synthetic-only final validation, live scoring, or subgroup fairness validation in an operational program.",
+    "Bounded to essay scoring with GPT-4/GPT-4o and PERSUADE 2.0 prompts.",
+    "Requires real held-out response evaluation and additional human review for generated-essay fidelity."
+  ],
+  "source_locator": {
+    "section": "Sections 3.1-3.5, 4.2-4.3, and 5 Discussion",
+    "page": "505-508, 521-526, 535-537",
+    "url": "https://www.jowr.org/jowr/article/download/1777/1039/6929",
+    "quote_or_paraphrase_note": "The finding paraphrases the dataset, sample partition, GPT generation workflow, held-out evaluation results, subgroup analysis, and limitations.",
+    "verification_status": "verified"
+  }
+}

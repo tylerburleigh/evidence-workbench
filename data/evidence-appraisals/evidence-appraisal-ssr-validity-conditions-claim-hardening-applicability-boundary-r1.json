@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-ssr-validity-conditions-claim-hardening-applicability-boundary-r1",
+  "name": "Applicability Boundary review for Validity Conditions Claim Hardening Update bundle",
+  "candidate_bundle_id": "ssr-validity-conditions-claim-hardening-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "applicability_boundary",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "appraiser_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The claim updates preserve existing applicability boundaries and add calibration/development support for SMART without introducing a high-stakes final-validation claim.",
+  "appraised_change_ids": [
+    "update-quality-evaluation-claim",
+    "update-model-generation-effects-claim",
+    "update-prompt-engineering-effects-claim",
+    "update-real-response-comparison-claim",
+    "update-scoring-validation-use-claim",
+    "update-acceptable-scoring-uses-claim"
+  ],
+  "findings": [
+    {
+      "finding_id": "claim-hardening-does-not-expand-stakes-boundary",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "claim_or_issue": "The staged updates add development-facing evidence and do not map new evidence to live high-stakes validation.",
+      "why_it_matters": "Claim-hardening should improve traceability without changing acceptable-use stakes boundaries accidentally.",
+      "recommended_action": "Retain the current applicability and limitation language.",
+      "resolution_status": "closed"
+    }
+  ],
+  "created_at": "2026-06-03T19:40:00Z",
+  "updated_at": "2026-06-03T19:40:00Z"
+}

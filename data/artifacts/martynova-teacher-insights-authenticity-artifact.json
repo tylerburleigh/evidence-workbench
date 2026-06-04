@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "martynova-teacher-insights-authenticity-artifact",
+  "name": "Martynova et al. Teacher-Observed LLM Student Authenticity Extract",
+  "artifact_type": "study_extraction",
+  "status": "staged",
+  "source_ids": [
+    "martynova-human-learners-teacher-insights-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-real-response-comparison",
+    "ssr-model-generation-effects"
+  ],
+  "population_or_context": "Teachers and tutors of STEM subjects who had tutored LLM-simulated sixth-grade students in MathDial.",
+  "sample_size": "12 teacher/tutor interviews; MathDial context includes 2,861 dialogues from 90 teacher participants and 377 optional teacher feedback entries.",
+  "methods": "The study analyzes teacher ratings and feedback in MathDial, then conducts semi-structured interviews with teachers who interacted with LLM-simulated students.",
+  "endpoint_categories": [
+    "teacher_authenticity_judgment",
+    "student_behavior_realism",
+    "language_complexity",
+    "social_cognitive_presence"
+  ],
+  "numeric_results_extracted": true,
+  "education_context": "Teacher training and lesson-preparation simulation using LLM-simulated math students.",
+  "response_origin": "MathDial LLM-simulated student dialogues generated with GPT-3.5-turbo, followed by teacher/tutor interaction and rating.",
+  "rubric_label_space": "Teacher ratings and qualitative authenticity judgments rather than automated scoring labels.",
+  "label_source": "Teacher ratings, teacher feedback, and interview analysis grounded in Community of Inquiry and Scaffolding frameworks.",
+  "generation_model": "GPT-3.5-turbo for the MathDial simulated students analyzed in the paper.",
+  "generation_method": "LLM was prompted to generate an initial incorrect solution and act as a student who believes the solution is correct, with persona/confusion details.",
+  "prompt_strategy": "Student persona plus initial incorrect solution and specified confusion from MathDial.",
+  "evaluation_method": "LDA topic modeling of teacher feedback, statistical comparison of typical versus non-typical interactions, and semi-structured teacher interviews.",
+  "scorer_use": "Student-simulation authenticity evaluation; not automated scorer validation.",
+  "real_response_comparator": "Teachers compare LLM-simulated student behavior with their experience of real students; the paper also contrasts typical and non-typical teacher-rated simulated interactions.",
+  "reported_metrics": "Teachers rated 21% of MathDial conversations as non-typical and 79% as typical; 51 of 377 feedback entries mentioned repetitive answers; 8 of 12 interviewees noted limited emotional response; 10 of 12 reported high attentiveness.",
+  "limitations": [
+    "The simulated-student dataset used GPT-3.5-turbo, so results should not be treated as a current model ranking.",
+    "The evidence concerns teacher perceptions and dialogue authenticity, not scoring-model validity.",
+    "The sample is small and centered on teachers/tutors with prior MathDial participation."
+  ],
+  "assessment_purpose": "formative_feedback",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "quality_evaluation"
+}

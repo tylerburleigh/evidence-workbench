@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "new-meridian-simulated-response-test-suite-artifact",
+  "name": "New Meridian Simulated Response Test Suite Extract",
+  "artifact_type": "technical_guidance_extract",
+  "status": "complete",
+  "source_ids": [
+    "new-meridian-standard-processes-2020-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses",
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "population_or_context": "New Meridian operational test forms and item bank assets used by states interested in comparability claims; scoring-process guidance covers machine-scored ELA/literacy and mathematics items.",
+  "sample_size": "Not applicable; process guidance does not report a response count.",
+  "methods": "Extracted the Machine Scoring subsection. The source defines a test suite as test cases used to validate scoring and scanning rules and procedures for machine-scored items, then states that bank assets should include simulated responses across content areas and mathematics language versions.",
+  "endpoint_categories": [
+    "operational_machine_scoring_quality_assurance",
+    "simulated_response_test_suite",
+    "scoring_rule_validation"
+  ],
+  "education_context": "State summative operational test forms using New Meridian ELA/literacy and mathematics item bank content, including machine-scored items with scoring and scanning rules.",
+  "response_origin": "Simulated responses to items used as machine-scoring test cases; not real student responses and not LLM-generated responses.",
+  "rubric_label_space": "Expected scoring-rule and scanning-rule outcomes for machine-scored items, including complex scoring rules, unusual response patterns, gridded mathematics variations, and partially completed or erased responses.",
+  "label_source": "Expected outcomes are derived from item scoring and scanning rules rather than independent human scoring.",
+  "generation_model": "Not applicable; no LLM or response generator is reported.",
+  "generation_method": "Construct simulated response test cases that cover relevant content areas, language versions, complex rules, unusual response patterns, gridded-response variations, and incomplete or erased responses.",
+  "prompt_strategy": "Not applicable.",
+  "assessment_purpose": "summative_assessment",
+  "decision_consequence": "institutional_or_accountability_decision",
+  "operational_use": "pre_pilot_validation",
+  "evaluation_method": "Operational test-suite review verifies that scoring rules, scanning rules, and procedures for machine-scored items are applied correctly; no statistical evaluation metric is reported for the simulated cases.",
+  "scorer_use": "Simulated responses are used for rule-based machine-scoring and scanning quality assurance, not for training an automated essay scorer or validating an LLM scorer.",
+  "real_response_comparator": "No real-response comparator is reported for the simulated test-suite cases.",
+  "reported_metrics": "No quantitative metrics are reported for the simulated-response test suite.",
+  "numeric_results_extracted": "not_applicable",
+  "limitations": [
+    "The source supports simulated-response test suites for machine-scoring and scanning-rule QA, not LLM-generated training augmentation.",
+    "The source does not describe automated essay scoring model training, subgroup fairness validation, or final deployment validation from simulated responses.",
+    "The guidance does not report response counts, generation procedures, or empirical performance metrics for the simulated test cases."
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "usdoe-teal-formative-assessment-source",
+  "name": "TEAL Center Fact Sheet No. 9: Formative Assessment",
+  "source_type": "practice_guidance",
+  "authors": [
+    "U.S. Department of Education",
+    "TEAL Center"
+  ],
+  "urls": [
+    "https://lincs.ed.gov/federal-initiatives/teal/guide/formativeassessment"
+  ],
+  "summary": "LINCS/TEAL Center practice guidance describing formative assessment as an ongoing process that gathers evidence to support feedback, instructional decisions, and learner self-assessment.",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-02T22:14:00Z",
+      "url": "https://lincs.ed.gov/federal-initiatives/teal/guide/formativeassessment",
+      "result": "full_text_verified",
+      "notes": "LINCS/TEAL Center page retrieved and screened for formative-assessment context."
+    }
+  ]
+}

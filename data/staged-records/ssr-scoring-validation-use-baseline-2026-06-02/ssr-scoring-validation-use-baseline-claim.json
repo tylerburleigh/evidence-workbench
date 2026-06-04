@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "ssr-scoring-validation-use-baseline-claim",
+  "name": "Synthetic Response Use in Automated Scorer Validation Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "ssr-scoring-validation-use",
+  "current_stage": "synthesis_claim_supported",
+  "momentum": "baseline_staged",
+  "confidence": "medium",
+  "summary": "The first staged literature baseline finds that synthetic student or constructed-response data is most defensibly used as pre-pilot validation data, challenge or fairness stress-test material, and automated-scoring augmentation evidence; real or independently human-scored responses remain central for authentic scorer-accuracy validation.",
+  "main_blockers": [
+    "The first pass is targeted rather than systematic.",
+    "Direct empirical examples of synthetic responses as validation or fairness stress-test inputs are thinner than adjacent training and augmentation examples.",
+    "Included sources span constructed-response scoring, SJT admissions scoring, EFL essay scoring, and essay augmentation, so cross-task generalization is limited."
+  ],
+  "best_current_signals": [
+    "Frohn et al. explicitly describe synthetic datasets and challenge sets for pre-pilot validation, then require real student pilot responses for authentic validation.",
+    "Walsh et al. provide a concrete early fairness pilot using synthetic demographic-response analogs to probe LLM evaluation behavior.",
+    "Yoo et al. use a large synthetic essay subset for training while reserving real classroom essays for validation and testing.",
+    "Wolfe et al. use expert scoring and realism ratings to calibrate LLM-generated essays for augmentation, not to replace real validation evidence."
+  ],
+  "interpretive_note": "This baseline should be read as a map of scorer-validation relevance, not a conclusion that synthetic responses validate automated scorers on their own. The strongest current posture is to treat synthetic responses as diagnostic, calibration, stress-test, or augmentation material that must be tied back to real or independently human-scored validation data.",
+  "limitations": [
+    "The staged sources are a compact bootstrap set, not an exhaustive literature review.",
+    "Some included evidence is framework guidance or preprint evidence rather than peer-reviewed empirical validation.",
+    "Synthetic response origin, rubric label space, and label source vary across included studies and should not be collapsed into one construct.",
+    "The claim does not establish validity for any specific automated scorer, grade band, subject area, item type, demographic subgroup, model, or prompt strategy."
+  ],
+  "update_notes": [
+    "Run a broader database search before treating this as a complete paper section.",
+    "Add evidence appraisals for source fidelity, construct mapping, method classification, scorer-validation relevance, and synthesis overreach before publication.",
+    "Use later bundles to separate generation-method evidence from scorer-validation evidence."
+  ],
+  "supporting_finding_ids": [
+    "frohn-llm-cr-validation-framework-finding-2026",
+    "walsh-sjt-fairness-stress-test-finding-2026",
+    "yoo-dress-synthetic-training-boundary-finding-2026",
+    "wolfe-calibrating-realistic-essays-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "frohn-llm-cr-live-scoring-2025-source",
+    "walsh-sjt-automated-scoring-2026-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Pre-pilot validation and challenge-set workflow",
+      "claim_field": "summary",
+      "conclusion": "Synthetic responses can support pre-pilot validation and stress testing when separated from real-response pilot validation.",
+      "support_role": "direct_support",
+      "rationale": "The Frohn et al. framework explicitly places synthetic datasets before real pilot validation and treats challenge sets as diagnostic material for LLM scoring workflows.",
+      "finding_ids": [
+        "frohn-llm-cr-validation-framework-finding-2026"
+      ],
+      "source_ids": [
+        "frohn-llm-cr-live-scoring-2025-source"
+      ],
+      "limitations": [
+        "The support is framework guidance rather than one empirical validation result.",
+        "Synthetic pre-pilot data is not a substitute for real student-response validation."
+      ]
+    },
+    {
+      "label": "Synthetic demographic fairness stress-test example",
+      "claim_field": "best_current_signals",
+      "conclusion": "A concrete open-response scoring study used synthetic analog responses with demographic information for an early fairness stress-test.",
+      "support_role": "direct_support",
+      "rationale": "Walsh et al. compared LLM evaluations of 100 original Casper responses with 100 analogous synthetic responses and reported near-zero average score deltas while flagging sample-size limits.",
+      "finding_ids": [
+        "walsh-sjt-fairness-stress-test-finding-2026"
+      ],
+      "source_ids": [
+        "walsh-sjt-automated-scoring-2026-source"
+      ],
+      "limitations": [
+        "The fairness analysis is an early pilot.",
+        "SJT admissions scoring is not equivalent to classroom correctness scoring."
+      ]
+    },
+    {
+      "label": "Training and augmentation boundary",
+      "claim_field": "interpretive_note",
+      "conclusion": "Adjacent automated-scoring studies use synthetic responses for training or augmentation and keep validation tied to real or expert-scored responses.",
+      "support_role": "boundary_condition",
+      "rationale": "Yoo et al. reserve real DREsS_New essays for validation/test despite a large synthetic training subset, and Wolfe et al. evaluate GPT-generated essays through expert scoring and realism checks before augmentation use.",
+      "finding_ids": [
+        "yoo-dress-synthetic-training-boundary-finding-2026",
+        "wolfe-calibrating-realistic-essays-finding-2026"
+      ],
+      "source_ids": [
+        "yoo-dress-rubric-aes-2025-source",
+        "wolfe-calibrating-realistic-essays-2026-source"
+      ],
+      "limitations": [
+        "These studies are adjacent evidence for validation boundaries, not direct proof of synthetic-response validation.",
+        "Generation mechanisms and response tasks differ across the two sources."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-02",
+  "assessment_purpose": [
+    "research_or_development",
+    "in_term_or_classroom_assessment",
+    "admissions_or_selection"
+  ],
+  "decision_consequence": [
+    "no_direct_learner_consequence",
+    "high_stakes_individual_decision",
+    "not_reported"
+  ],
+  "operational_use": [
+    "pre_pilot_validation",
+    "stress_testing",
+    "training_augmentation",
+    "calibration_or_development"
+  ],
+  "applicability": {
+    "applies_when": [
+      "Synthetic responses are used before or around scorer validation as diagnostics, challenge sets, calibration data, or bounded stress-test material."
+    ],
+    "does_not_apply_when": [
+      "The claim is interpreted as proof that synthetic responses validate automated scorers without real or independently human-scored response evidence."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Operational policies for particular testing programs, cut scores, and accountability uses."
+    ]
+  }
+}

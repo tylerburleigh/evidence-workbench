@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "cochran-gpt35-student-text-augmentation-2023",
+  "name": "Improving Automated Evaluation of Student Text Responses Using GPT-3.5 for Text Data Augmentation",
+  "source_type": "conference_paper",
+  "authors": [
+    "Keith Cochran",
+    "Clayton Cohn",
+    "Jean-Francois Rouet",
+    "Peter Hastings"
+  ],
+  "venue": "Artificial Intelligence in Education",
+  "year": 2023,
+  "published_on": "2023-06-26",
+  "doi": "10.1007/978-3-031-36272-9_18",
+  "urls": [
+    "https://doi.org/10.1007/978-3-031-36272-9_18",
+    "https://par.nsf.gov/biblio/10468770-improving-automated-evaluation-student-text-responses-using-gpt-text-data-augmentation",
+    "https://learninganalytics.upenn.edu/ryanbaker/EDM2023/ImprovingAutomatedEvaluationOfStudentTextResponsesUsingGPT.pdf"
+  ],
+  "summary": "AIED paper using GPT-3.5 completions to supplement small student text response datasets before training multilingual BERT classifiers."
+}

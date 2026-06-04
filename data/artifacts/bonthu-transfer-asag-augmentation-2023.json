@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "bonthu-transfer-asag-augmentation-2023",
+  "name": "Programming ASAG Transfer Learning and Text Augmentation",
+  "artifact_type": "study_extract",
+  "status": "staged",
+  "source_ids": [
+    "bonthu-transfer-augmentation-asag-2023"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "population_or_context": "Programming-domain automatic short-answer grading using the SPRAG corpus of short student responses containing natural language, keywords, symbols, identifiers, and expressions.",
+  "sample_size": "The abstract reports experiments with four data sizes; exact split sizes were not extracted from full text.",
+  "methods": "Three sentence-transformer models were fine-tuned on SPRAG data with five text augmentation techniques: random deletion, synonym replacement, random swap, backtranslation, and NLPAug.",
+  "endpoint_categories": [
+    "programming_short_answer_grading",
+    "limited_training_data",
+    "non_llm_text_augmentation",
+    "transfer_learning"
+  ],
+  "education_context": "Short programming-related objective answers authored by students.",
+  "response_origin": "Real SPRAG student responses plus text-augmented variants derived from existing examples.",
+  "rubric_label_space": "Binary classification labels, 0 or 1, according to the ScienceDirect abstract/introduction text.",
+  "label_source": "Original SPRAG labels; augmented variants appear to inherit source labels, but full-text extraction is pending.",
+  "generation_model": "No generative LLM identified in the abstract; sentence transformers were fine-tuned as scoring models and augmentation used lexical/back-translation/NLPAug transformations.",
+  "generation_method": "Random deletion, synonym replacement, random swap, backtranslation, and NLPAug transformations of existing short-answer examples.",
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "training_augmentation",
+  "evaluation_method": "The abstract reports accuracy and F1 comparisons across augmented and non-augmented fine-tuning conditions.",
+  "scorer_use": "Training augmentation for ASAG model development under limited domain-specific data.",
+  "real_response_comparator": "Likely yes, but exact test split details require full-text access.",
+  "sparsity_or_imbalance_motivation": "The abstract states that ASAG performance suffers from limited data and lack of available data in many domains.",
+  "synthetic_data_research_role": "Text augmentation was used to test whether augmented short-answer training examples improve sentence-transformer ASAG performance under limited-data conditions.",
+  "reported_metrics": "The official abstract reports that combining random swap and synonym replacement improved accuracy by 4.91% and F1-score by 3.36% over the comparison condition.",
+  "numeric_results_extracted": false,
+  "limitations": "Extraction is limited to the official abstract/search-indexed ScienceDirect text; full tables, exact sample sizes, and split details still need full-text verification."
+}

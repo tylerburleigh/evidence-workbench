@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-prompt-engineering-effects-search-2026-06-02",
+  "name": "Prompt Engineering Effects Search Pass",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-prompt-engineering-effects"
+  ],
+  "status": "included_sources_staged",
+  "systematicity_level": "targeted_baseline_review",
+  "search_started_at": "2026-06-02T18:15:00Z",
+  "search_completed_at": "2026-06-02T18:23:00Z",
+  "databases": [
+    "Web search",
+    "arXiv",
+    "ACL Anthology",
+    "MDPI",
+    "ACM Digital Library metadata"
+  ],
+  "search_queries": [
+    {
+      "database": "Web search",
+      "query": "\"prompt engineering\" \"synthetic student responses\"",
+      "searched_at": "2026-06-02T18:15:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"few-shot\" \"generated student responses\" LLM education",
+      "searched_at": "2026-06-02T18:15:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"rubric conditioned\" \"student answer generation\" prompt",
+      "searched_at": "2026-06-02T18:15:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"synthetic student inputs\" Copilot prompt high quality low quality typo",
+      "searched_at": "2026-06-02T18:15:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "arXiv",
+      "query": "\"Calibrating Generative AI to Produce Realistic Essays\" prompt strategies",
+      "searched_at": "2026-06-02T18:18:00Z",
+      "result_count": "reviewed arXiv abstract, HTML/search snippets, and PDF link"
+    },
+    {
+      "database": "arXiv",
+      "query": "\"Generative Students\" \"one question at a time\" \"examples\"",
+      "searched_at": "2026-06-02T18:18:00Z",
+      "result_count": "reviewed arXiv HTML full text"
+    }
+  ],
+  "inclusion_criteria": [
+    "The source compares prompt strategies or reports prompt ingredients that affect generated synthetic student responses or synthetic student inputs.",
+    "The source reports prompt-conditioned generation for student response, proxy-student, item-evaluation, or chatbot-input contexts.",
+    "Direct findings for the baseline require accessible full text; abstract-only or access-limited sources may be retained only as screened/deferred candidates."
+  ],
+  "exclusion_criteria": [
+    "Exclude sources whose primary variation is model family, post-training, history conditioning, or workflow design without prompt ingredients as a central variable.",
+    "Exclude generic LLM tutoring or feedback studies that do not generate or evaluate synthetic student responses or inputs.",
+    "Exclude abstract-only or paywalled sources from direct synthesis support until full text is obtained or the finding is explicitly limited to abstract-level discovery."
+  ],
+  "dedupe_method": "Deduplicated by title, DOI, arXiv identifier, venue metadata, and canonical source page.",
+  "screening_counts": {
+    "records_identified": "at least 25 web and primary-source records across targeted queries",
+    "records_screened": 10,
+    "full_text_reviewed": 4,
+    "sources_included": 4,
+    "sources_deferred_for_access_or_scope": 6
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "candidate-wolfe-2026",
+      "title": "Calibrating Generative AI to Produce Realistic Essays for Data Augmentation",
+      "decision": "include",
+      "reason": "Directly compares 25 Examples, Predict Next, and Sentence prompt strategies for simulated essays and reports score agreement, weighted kappa, average score, and realism detection results.",
+      "source_id": "wolfe-calibrating-realistic-essays-2026-source",
+      "doi": "10.48550/arXiv.2602.06772",
+      "url": "https://arxiv.org/abs/2602.06772"
+    },
+    {
+      "candidate_id": "candidate-srivatsa-2025",
+      "title": "Can LLMs Reliably Simulate Real Students' Abilities in Mathematics and Reading Comprehension?",
+      "decision": "include",
+      "reason": "Directly compares unenforced and grade-enforced prompt families for proxy-student NAEP item answering and reports prompt-specific IRT alignment changes.",
+      "source_id": "srivatsa-llm-student-ability-simulation-2025-source",
+      "doi": "10.18653/v1/2025.bea-1.75",
+      "url": "https://aclanthology.org/2025.bea-1.75/"
+    },
+    {
+      "candidate_id": "candidate-lu-2024",
+      "title": "Generative Students: Using LLM-Simulated Student Profiles to Support Question Item Evaluation",
+      "decision": "include",
+      "reason": "Reports prompt-architecture choices for GPT-4 simulated profiles, examples, instructor role prediction, and one-question-at-a-time prompting, with profile-rule response alignment results.",
+      "source_id": "lu-generative-students-item-evaluation-2024-source",
+      "doi": "10.1145/3657604.3662031",
+      "url": "https://arxiv.org/abs/2405.11591"
+    },
+    {
+      "candidate_id": "candidate-watts-2025",
+      "title": "A Framework for Designing an AI Chatbot to Support Scientific Argumentation",
+      "decision": "include",
+      "reason": "Provides prompt-conditioned synthetic student inputs generated from high-quality, low-quality, and typo-conditioned examples for chatbot prompt testing; useful as boundary evidence for prompt-conditioned stress-test input generation.",
+      "source_id": "watts-scientific-argumentation-chatbot-2025-source",
+      "doi": "10.3390/educsci15111507",
+      "url": "https://www.mdpi.com/2227-7102/15/11/1507"
+    },
+    {
+      "candidate_id": "candidate-ipci-2025",
+      "title": "Generating Student Responses Based on Knowledge Component Mastery Profiles",
+      "decision": "no_full_text",
+      "reason": "Potentially relevant to prompt/profile-conditioned response generation, but this pass did not verify full-text access and does not use it as direct support.",
+      "source_id": "ipci-knowledge-profiles-response-generation-2025-source",
+      "url": "https://doi.org/10.35542/osf.io/dh8jw"
+    },
+    {
+      "candidate_id": "candidate-frohn-2025",
+      "title": "Using ChatGPT to generate and score open-ended assessment tasks",
+      "decision": "no_full_text",
+      "reason": "Potentially relevant to prompt-guided generated responses and scoring, but current source metadata points to a ResearchGate page and the pass did not verify primary full text.",
+      "source_id": "frohn-llm-cr-live-scoring-2025-source",
+      "url": "https://www.researchgate.net/publication/387755782_Using_ChatGPT_to_generate_and_score_open-ended_assessment_tasks"
+    },
+    {
+      "candidate_id": "candidate-agent4edu-2025",
+      "title": "Agent4Edu: Generating Learner Response Data by Generative Agents for Intelligent Education Systems",
+      "decision": "exclude",
+      "reason": "Relevant source with full-text access, but the already-published evidence is stronger for agent workflow and model-generation effects than prompt-engineering effects alone.",
+      "source_id": "agent4edu-learner-response-generation-2025-source",
+      "doi": "10.48550/arXiv.2501.10332",
+      "url": "https://arxiv.org/abs/2501.10332"
+    },
+    {
+      "candidate_id": "candidate-scarlatos-2026",
+      "title": "Simulated Students in Tutoring Dialogues: Substance or Illusion?",
+      "decision": "exclude",
+      "reason": "Relevant source with full-text access, but the strongest contrast is prompting versus SFT/DPO post-training, already covered under model and generation effects.",
+      "source_id": "scarlatos-simulated-students-dialogue-2026-source",
+      "doi": "10.48550/arXiv.2601.04025",
+      "url": "https://arxiv.org/abs/2601.04025"
+    },
+    {
+      "candidate_id": "candidate-liu-2025",
+      "title": "Leveraging LLM Respondents for Item Evaluation: A Psychometric Analysis",
+      "decision": "exclude",
+      "reason": "Relevant source with full-text access, but the staged evidence is primarily model and ensemble sensitivity rather than prompt design.",
+      "source_id": "liu-llm-respondents-item-evaluation-2025-source",
+      "doi": "10.1111/bjet.13570",
+      "url": "https://arxiv.org/abs/2407.10899"
+    },
+    {
+      "candidate_id": "candidate-yoo-2025",
+      "title": "DRESS: Dataset for Rubric-based Essay Scoring on ELL Writings",
+      "decision": "exclude",
+      "reason": "Useful for synthetic/corrupted writing and rubric scoring context, but not a prompt-engineering source for synthetic student response generation in this pass.",
+      "source_id": "yoo-dress-rubric-aes-2025-source",
+      "doi": "10.18653/v1/2025.acl-long.659",
+      "url": "https://aclanthology.org/2025.acl-long.659/"
+    }
+  ],
+  "source_ids": [
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "srivatsa-llm-student-ability-simulation-2025-source",
+    "lu-generative-students-item-evaluation-2024-source",
+    "watts-scientific-argumentation-chatbot-2025-source"
+  ],
+  "screening_summary": "Targeted bootstrap screening included four prompt-focused sources: a direct simulated-essay prompt-strategy comparison, a direct grade-enforced proxy-student prompt comparison, a profile/example/role prompt-architecture source for MCQ item evaluation, and a boundary source on prompt-conditioned synthetic chatbot inputs. Access-limited or scope-adjacent sources were not used for direct synthesis support.",
+  "limitations": [
+    "This was a targeted bootstrap pass, not a systematic review.",
+    "Prompt ingredients are not isolated uniformly across included sources; some evidence is prompt-family or prompt-architecture package evidence.",
+    "Included studies span essays, NAEP multiple-choice ability simulation, psychology MCQ item evaluation, and scientific-argumentation chatbot inputs.",
+    "The pass prioritized accessible primary full text. Access-limited candidates should be revisited before any direct finding is created from them."
+  ]
+}

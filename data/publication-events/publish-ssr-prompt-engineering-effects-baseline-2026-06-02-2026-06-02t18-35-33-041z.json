@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-prompt-engineering-effects-baseline-2026-06-02-2026-06-02t18-35-33-041z",
+  "name": "Published Prompt Engineering Effects Baseline",
+  "summary": "Staged first literature-review baseline for how prompt design, examples, grade conditioning, role framing, and prompt-conditioned inputs affect synthetic student response generation.",
+  "candidate_bundle_id": "ssr-prompt-engineering-effects-baseline-2026-06-02",
+  "event_type": "publish",
+  "published_at": "2026-06-02T18:35:33.041Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "source",
+      "record_id": "agent4edu-learner-response-generation-2025-source",
+      "action": "updated"
+    },
+    {
+      "record_type": "source",
+      "record_id": "duan-history-aware-profiles-student-simulation-2026-source",
+      "action": "updated"
+    },
+    {
+      "record_type": "source",
+      "record_id": "liu-llm-respondents-item-evaluation-2025-source",
+      "action": "updated"
+    },
+    {
+      "record_type": "source",
+      "record_id": "lu-generative-students-item-evaluation-2024-source",
+      "action": "updated"
+    },
+    {
+      "record_type": "source",
+      "record_id": "scarlatos-simulated-students-dialogue-2026-source",
+      "action": "updated"
+    },
+    {
+      "record_type": "source",
+      "record_id": "srivatsa-llm-student-ability-simulation-2025-source",
+      "action": "updated"
+    },
+    {
+      "record_type": "source",
+      "record_id": "walsh-sjt-automated-scoring-2026-source",
+      "action": "updated"
+    },
+    {
+      "record_type": "source",
+      "record_id": "watts-scientific-argumentation-chatbot-2025-source",
+      "action": "updated"
+    },
+    {
+      "record_type": "source",
+      "record_id": "wolfe-calibrating-realistic-essays-2026-source",
+      "action": "updated"
+    },
+    {
+      "record_type": "source",
+      "record_id": "yoo-dress-rubric-aes-2025-source",
+      "action": "updated"
+    },
+    {
+      "record_type": "search_protocol",
+      "record_id": "ssr-prompt-engineering-effects-search-2026-06-02",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "wolfe-prompt-engineering-effects-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "srivatsa-grade-enforcement-prompt-effects-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "lu-generative-students-prompt-architecture-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "watts-copilot-prompt-conditioning-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "wolfe-prompt-engineering-effects-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "srivatsa-grade-enforcement-prompt-effects-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "lu-generative-students-prompt-architecture-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "watts-copilot-prompt-conditioning-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-prompt-engineering-effects-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 20,
+    "by_record_type": {
+      "source": {
+        "created": 0,
+        "updated": 10,
+        "total": 10
+      },
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "artifact": {
+        "created": 4,
+        "updated": 0,
+        "total": 4
+      },
+      "finding": {
+        "created": 4,
+        "updated": 0,
+        "total": 4
+      },
+      "claim": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "ssr-prompt-engineering-effects-baseline-claim"
+  ],
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-prompt-engineering-effects-construct-mapping-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-method-classification-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-source-fidelity-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-synthesis-overreach-r1"
+  ],
+  "review_corrections_applied": [],
+  "appraisal_follow_up_actions": [],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "change_note": "Creates the first staged literature-review baseline for prompt engineering effects in synthetic student response generation."
+}

@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "yoo-case-synthetic-rubric-labeling-artifact",
+  "name": "Yoo et al. DREsS CASE Synthetic Rubric Labeling Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "yoo-dress-rubric-aes-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-synthetic-response-scoring-agreement"
+  ],
+  "population_or_context": "Rubric-based automated essay scoring for English as a foreign language writing.",
+  "sample_size": "DREsS includes 2,279 real classroom essays, 6,515 standardized existing-dataset samples, and 40,185 synthetic CASE corrupted essays.",
+  "methods": "Extracted how synthetic corrupted essays are assigned rubric-aligned score ranges and used as training data while real classroom essays remain validation/test evidence.",
+  "endpoint_categories": [
+    "rubric_label_generation",
+    "training_augmentation",
+    "aes_evaluation_boundary"
+  ],
+  "education_context": "Undergraduate EFL argumentative writing scored on content, organization, and language rubric dimensions.",
+  "response_origin": "Synthetic DREsS_CASE corrupted essays are combined with real and standardized essay sources for training augmentation.",
+  "rubric_label_space": "Rubric-based content, organization, and language scores.",
+  "label_source": "Synthetic CASE labels are generated through corruption aligned with target score ranges; real and standardized essays use human or existing-dataset labels.",
+  "generation_model": "CASE corruption strategy rather than an LLM response generator.",
+  "generation_method": "Synthetic essays are created by corrupting essays to create lower-quality samples aligned with target score ranges.",
+  "prompt_strategy": "No LLM prompt strategy; synthetic generation uses a corruption method tied to rubric score ranges.",
+  "evaluation_method": "Automated essay scoring models are evaluated with rubric-score agreement metrics, while real DREsS_New data is reserved for validation and testing.",
+  "scorer_use": "Rubric-based AES training and augmentation; not synthetic-only scorer validation.",
+  "real_response_comparator": "Real classroom essays in DREsS_New provide train, validation, and test evidence and separate real evaluation from synthetic training augmentation.",
+  "reported_metrics": "The paper reports 40,185 DREsS_CASE synthetic samples and uses weighted kappa for AES evaluation.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "real_classroom_essays": 2279,
+    "standardized_existing_dataset_samples": 6515,
+    "synthetic_case_corrupted_essays": 40185,
+    "evaluation_metric_family": "weighted_kappa"
+  },
+  "limitations": [
+    "The synthetic responses are used for training, not to validate a scorer as a standalone synthetic test set.",
+    "CASE corruption differs from LLM-generated student response simulation.",
+    "The evidence is bounded to EFL essay scoring and the DREsS rubric structure."
+  ],
+  "assessment_purpose": "in_term_or_classroom_assessment",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "training_augmentation"
+}

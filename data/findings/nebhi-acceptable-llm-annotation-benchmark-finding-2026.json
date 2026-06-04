@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "nebhi-acceptable-llm-annotation-benchmark-finding-2026",
+  "name": "LLM Annotation Is Acceptable Only After Benchmarking Against Expert Human Ratings",
+  "source_id": "nebhi-adaptive-writing-aig-scoring-2025-source",
+  "artifact_id": "nebhi-acceptable-llm-annotation-benchmark-artifact",
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses"
+  ],
+  "endpoint_category": "human_benchmarked_annotation",
+  "direction": "supports_with_boundary",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Nebhi et al. benchmark candidate LLM annotators against expert human grammatical-accuracy ratings before using a majority-vote ensemble to annotate synthetic writing responses for scoring-model development.",
+  "population_or_context": "Adaptive English writing assessment for EFSET.",
+  "time_horizon": "BEA 2025 paper retrieved on 2026-06-02.",
+  "quantitative_note": "The source reports Cohen kappa values of 0.86 for LLaMA 3.3 70B, 0.87 for GPT-4o, 0.78 for Nova Pro, and 0.89 for the selected ensemble against a human-annotated gold standard.",
+  "caveats": [
+    "Human benchmarking is based on approximately 200 item-response pairs.",
+    "LLM majority vote is not equivalent to independent human scoring of all generated responses.",
+    "The response type is proficiency-aligned English writing."
+  ],
+  "evaluation_method": "Cohen kappa is used to select LLM annotators against expert human ratings before majority-vote annotation of synthetic response pairs.",
+  "reported_metrics": "Cohen kappa by candidate model and ensemble; synthetic response-pair counts.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "human_gold_standard_pairs": 200,
+    "expert_raters": 5,
+    "synthetic_response_pairs": 20000,
+    "cohen_kappa_against_human_gold_standard": {
+      "llama_3_3_70b": 0.86,
+      "gpt_4o": 0.87,
+      "nova_pro": 0.78,
+      "ensemble": 0.89
+    }
+  },
+  "limitations": [
+    "Does not remove the need to document label source and human benchmark size.",
+    "Does not prove synthetic labels are valid across all writing prompts or scoring rubrics."
+  ],
+  "source_locator": {
+    "section": "Sections 3.2-3.5 and Table 1",
+    "url": "https://aclanthology.org/2025.bea-1.73/",
+    "quote_or_paraphrase_note": "The finding paraphrases the expert-human gold standard, model-selection kappa table, majority-vote procedure, and synthetic response-pair annotation.",
+    "verification_status": "located"
+  }
+}

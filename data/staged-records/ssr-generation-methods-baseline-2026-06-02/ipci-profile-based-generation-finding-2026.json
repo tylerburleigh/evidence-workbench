@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "ipci-profile-based-generation-finding-2026",
+  "name": "Knowledge Profiles Support Rubric-aligned LLM Response Generation",
+  "source_id": "ipci-knowledge-profiles-response-generation-2025-source",
+  "artifact_id": "ipci-profile-based-generation-artifact",
+  "taxonomy_node_ids": [
+    "ssr-generation-methods"
+  ],
+  "endpoint_category": "profile_conditioned_generation",
+  "direction": "defines_generation_method",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Ipci et al. propose generating rubric-aligned synthetic student responses with LLMs guided by knowledge profiles and representative examples, including straightforward and error-informed profile-based strategies.",
+  "population_or_context": "Discrete mathematics logical-proof responses.",
+  "time_horizon": "AIED 2025 paper retrieved on 2026-06-02.",
+  "quantitative_note": "Repository metadata reports N = 585 authentic open-ended logical-proof responses as the comparator dataset.",
+  "caveats": [
+    "The staged extraction is from the repository metadata page, not a full prompt appendix.",
+    "The method is bounded to logical-proof response generation and augmentation."
+  ],
+  "evaluation_method": "Embedding-based diversity and realism analysis plus automated-grading model-training utility.",
+  "reported_metrics": "N = 585 authentic responses; diversity, realism, and training-utility comparisons are summarized.",
+  "limitations": [
+    "Synthetic-only training reportedly performs worse than real data.",
+    "Fine-grained prompt parameters require full-text review."
+  ],
+  "source_locator": {
+    "section": "Infoscience abstract and details",
+    "url": "https://infoscience.epfl.ch/entities/publication/c186f403-251d-44b0-8b03-55bd9037d352",
+    "quote_or_paraphrase_note": "The staged finding paraphrases the abstract's knowledge-profile and representative-example generation strategy.",
+    "verification_status": "verified"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "bexte-acceptable-cold-start-relabeling-finding-2026",
+  "name": "Generated Short-answer Labels Require Audit Before Cold-start Scorer Training",
+  "source_id": "bexte-zesch-synthetic-content-scoring-2025-source",
+  "artifact_id": "bexte-acceptable-cold-start-relabeling-artifact",
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses"
+  ],
+  "endpoint_category": "generated_label_audit",
+  "direction": "cautionary",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Bexte and Zesch show that LLM-generated short answers can support cold-start content-scoring research only after label audit or manual relabeling; as-generated target labels underperform original student-response training data and can be highly nonconforming.",
+  "population_or_context": "Short-answer supervised content scoring on the Student Response Analysis dataset.",
+  "time_horizon": "BEA 2025 paper retrieved on 2026-06-02.",
+  "quantitative_note": "The paper reports macro-averaged F1 comparisons and states that up to 75% of generated answers requested for a specific label did not conform to that label.",
+  "caveats": [
+    "Bounded to one SRA setup, five-way labels, DeepSeek-v2, and the tested zero-shot prompt.",
+    "Manual relabeling improves utility but adds human labor.",
+    "This is training-utility evidence, not final scorer-validation evidence."
+  ],
+  "evaluation_method": "Label-conformance analysis, macro-averaged F1 on original student answers, and comparison between as-generated and manually cleaned labels.",
+  "reported_metrics": "Macro-averaged F1 and label-conformance findings, including the reported up-to-75% nonconformance for requested labels.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "reported_max_label_nonconformance_share": 0.75,
+    "generated_answers_per_label": 100,
+    "label_count": 5
+  },
+  "limitations": [
+    "Does not show generated target labels can be accepted without audit.",
+    "Does not generalize across all LLMs, subjects, or score scales."
+  ],
+  "source_locator": {
+    "section": "Sections 4, 6, and conclusion",
+    "url": "https://aclanthology.org/2025.bea-1.11/",
+    "quote_or_paraphrase_note": "The finding paraphrases generated-label setup, macro-F1 comparisons, label nonconformance, and manual relabeling implications.",
+    "verification_status": "located"
+  }
+}

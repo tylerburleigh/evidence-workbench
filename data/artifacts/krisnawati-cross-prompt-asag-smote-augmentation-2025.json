@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "krisnawati-cross-prompt-asag-smote-augmentation-2025",
+  "name": "Cross-Prompt ASAG Manual and SMOTE Augmentation",
+  "artifact_type": "study_extract",
+  "status": "staged",
+  "source_ids": [
+    "krisnawati-cross-prompt-asag-smote-2025"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "population_or_context": "Indonesian closed and semi-open short-answer grading in a cross-prompt setup.",
+  "sample_size": "Training data grew from 642 short answers before SMOTE to 1505 after SMOTE across nine prompts; independent testing used 175 short answers from three distinct prompts.",
+  "methods": "Three teaching assistants manually generated additional natural responses with intentional errors for underrepresented grade categories, and SMOTE was applied after preprocessing and feature extraction. Models included linear regression, logistic regression, XGBoost, AdaBoost, and kNN.",
+  "endpoint_categories": [
+    "short_answer_score_imbalance",
+    "manual_response_simulation",
+    "feature_space_oversampling",
+    "cross_prompt_asag_training"
+  ],
+  "education_context": "Short-answer responses from courses and high school examinations in East Java, Indonesia.",
+  "response_origin": "Hybrid: real student answers plus manually generated teaching-assistant responses and SMOTE-generated feature-vector samples.",
+  "rubric_label_space": "Five grade categories A-E.",
+  "label_source": "Manual labels for original and teaching-assistant-generated answers; SMOTE samples inherited class labels through feature-space interpolation.",
+  "generation_model": "No text-generation model; manual teaching-assistant augmentation plus SMOTE feature-space interpolation.",
+  "generation_method": "Teaching assistants authored plausible short answers for underrepresented grade categories; SMOTE generated synthetic feature vectors independently per prompt/class after feature extraction.",
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "training_augmentation",
+  "evaluation_method": "Cross-prompt model evaluation with weighted average F1, macro average F1, and RMSE, comparing models trained with and without SMOTE.",
+  "scorer_use": "Class balancing and training augmentation for ASAG model development.",
+  "real_response_comparator": "Yes. Final testing used held-out real responses from prompts not included in training.",
+  "sparsity_or_imbalance_motivation": "The study explicitly identifies imbalanced class distributions in real-world multiclass ASAG as a reason classifiers perform poorly.",
+  "synthetic_data_research_role": "Manual response simulation and SMOTE are used to increase representation of underrepresented grade categories during scorer training.",
+  "reported_metrics": "Table V reports, among other results, logistic regression improving from MAF/WAF 0.18/0.18 without SMOTE to 0.50/0.58 with SMOTE, kNN from 0.25/0.24 to 0.57/0.61, while linear regression declined from 0.75/0.79 to 0.60/0.75.",
+  "numeric_results_extracted": true,
+  "limitations": "SMOTE creates feature-space samples, not text responses. Manual augmentation came from teaching assistants, not actual students. Effects were model-dependent and did not improve every classifier."
+}

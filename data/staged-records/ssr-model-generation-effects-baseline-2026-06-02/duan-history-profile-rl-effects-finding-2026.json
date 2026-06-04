@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "duan-history-profile-rl-effects-finding-2026",
+  "name": "History, Profiles, DPO, and GRPO Change Simulated-Student Turn Fidelity",
+  "source_id": "duan-history-aware-profiles-student-simulation-2026-source",
+  "artifact_id": "duan-history-profile-rl-effects-artifact",
+  "taxonomy_node_ids": [
+    "ssr-model-generation-effects"
+  ],
+  "endpoint_category": "history_profile_rl_workflow_effects",
+  "direction": "reports_generation_effect",
+  "evidence_tier": "preprint_extracted",
+  "confidence": "medium",
+  "statement": "Duan et al. report that history-conditioned and profile-conditioned workflows outperform prompting-only and simpler fine-tuning baselines for turn-level student simulation, and ablations show that simulator DPO, profile-generator GRPO, and both knowledge and behavior profile sections contribute to fidelity.",
+  "population_or_context": "Math tutoring dialogue simulation with prior learning histories.",
+  "time_horizon": "arXiv v1 submitted 2026-05-28 and retrieved on 2026-06-02.",
+  "quantitative_note": "Table 1 reports ProfileRL at Acts 0.644, Corr. 0.516, Errors 0.149, Cos. Sim. 0.700, ROUGE-L 0.296; Table 2 reports ProfileRL at Acts 0.605, Corr. 0.466, Errors 0.150, Cos. Sim. 0.689, ROUGE-L 0.271 versus Prompting Only at 0.502, 0.446, 0.109, 0.488, 0.145.",
+  "caveats": [
+    "This is current preprint evidence and should be revisited after peer review or later arXiv versions.",
+    "The evaluated workflow uses a private math dataset and method packages with different base models across prompting and fine-tuning conditions."
+  ],
+  "evaluation_method": "Five-fold cross-validation over turn-level acts, correctness, errors, cosine similarity, and ROUGE-L, with workflow and profile-section ablations.",
+  "reported_metrics": "Table 1 and Table 2 method-by-metric results and ablations.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The evidence does not isolate all causal variables because history, profile structure, model family, and training workflow differ across conditions.",
+    "The private math dataset limits generalization to other subjects and response formats.",
+    "This finding should be labeled as preprint evidence in synthesis."
+  ],
+  "source_locator": {
+    "section": "arXiv PDF Sections 3-5, Table 1, Table 2, Appendix C, and Limitations",
+    "url": "https://arxiv.org/pdf/2605.30051",
+    "quote_or_paraphrase_note": "The staged finding paraphrases the history-conditioned simulation setup, ProfileRL benchmark, and DPO/GRPO/profile ablations.",
+    "verification_status": "verified"
+  }
+}

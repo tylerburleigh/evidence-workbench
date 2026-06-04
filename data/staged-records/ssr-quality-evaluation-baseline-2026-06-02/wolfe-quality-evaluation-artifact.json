@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "wolfe-quality-evaluation-artifact",
+  "name": "Wolfe et al. Simulated Essay Quality Evaluation Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "wolfe-calibrating-realistic-essays-2026-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation"
+  ],
+  "population_or_context": "Student essay responses evaluated for data-augmentation suitability in automated scoring.",
+  "sample_size": "96 real student essays and 288 simulated essays generated from three prompt-engineering strategies.",
+  "methods": "Extracted expert scoring, agreement analysis, score-distribution comparison, and realism-rating methods for evaluating LLM-simulated essays.",
+  "endpoint_categories": [
+    "expert_score_preservation",
+    "score_distribution_alignment",
+    "human_realism_rating"
+  ],
+  "education_context": "Student essay responses scored with a four-point rubric; grade band and prompt family are study-specific.",
+  "response_origin": "Large-language-model simulated essays are generated from real student essays and evaluated against the real essay score distribution and expert judgments.",
+  "rubric_label_space": "Four-point essay scoring rubric.",
+  "label_source": "Expert raters assign scores and realism judgments to simulated essays; original real essays have professional ratings.",
+  "generation_model": "Large language model; the public preprint text reviewed here does not name a specific model version.",
+  "generation_method": "Three prompt-based methods generate simulated essays from real student essays.",
+  "prompt_strategy": "25 Examples, Predict Next, and Sentence prompting strategies are compared.",
+  "evaluation_method": "Human scoring agreement between original and simulated essays, score-distribution comparisons, and expert realism ratings.",
+  "scorer_use": "Calibration and data-augmentation suitability for automated scoring; not direct validation of a synthetic-only scorer test set.",
+  "real_response_comparator": "Real student essays are the comparator for simulated essay quality and score preservation.",
+  "reported_metrics": "Study reports exact and adjacent agreement, weighted kappa, score-distribution differences, and realism ratings across prompting methods.",
+  "limitations": [
+    "The paper is a preprint focused on generated-data quality for augmentation.",
+    "Expert realism and score preservation do not by themselves establish downstream automated-scorer validity.",
+    "The quality evidence is essay-specific and prompt-strategy-specific."
+  ],
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "calibration_or_development"
+}

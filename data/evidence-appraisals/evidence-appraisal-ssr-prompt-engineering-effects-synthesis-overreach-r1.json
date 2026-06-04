@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-ssr-prompt-engineering-effects-synthesis-overreach-r1",
+  "name": "Synthesis Overreach review for Ssr Prompt Engineering Effects bundle",
+  "candidate_bundle_id": "ssr-prompt-engineering-effects-baseline-2026-06-02",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "synthesis_overreach",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted because the synthesis explicitly treats prompt ingredients as task-bound method variables, not universal best practices. The claim notes that prompt effects can trade off across metrics, that prompt-conditioned input generation is boundary evidence, and that access-limited candidates should not directly support synthesis claims.",
+  "appraised_change_ids": [
+    "create-ssr-prompt-engineering-effects-search-2026-06-02",
+    "create-wolfe-prompt-engineering-effects-finding",
+    "create-srivatsa-grade-enforcement-prompt-effects-finding",
+    "create-lu-generative-students-prompt-architecture-finding",
+    "create-watts-copilot-prompt-conditioning-finding",
+    "create-ssr-prompt-engineering-effects-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [],
+  "skill_name": "evidence-appraisal",
+  "appraiser_id": "codex-agent",
+  "created_at": "2026-06-02T18:25:00Z",
+  "updated_at": "2026-06-02T18:25:00Z"
+}

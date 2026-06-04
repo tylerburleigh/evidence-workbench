@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "agent4edu-real-response-comparison-finding-2026",
+  "name": "Agent4Edu Compares Generated Learner Responses Against Human Learner Records",
+  "source_id": "agent4edu-learner-response-generation-2025-source",
+  "artifact_id": "agent4edu-real-response-comparison-artifact",
+  "taxonomy_node_ids": [
+    "ssr-real-response-comparison"
+  ],
+  "endpoint_category": "same_dataset_response_consistency",
+  "direction": "reports_real_response_comparison",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Agent4Edu evaluates generated learner responses against real EduData learner response records, making human-response consistency a central quality signal for the simulator.",
+  "population_or_context": "Chinese high school mathematics and physics personalized learning response records.",
+  "time_horizon": "AAAI 2025/arXiv source retrieved on 2026-06-02.",
+  "quantitative_note": "The staged extraction records 18,045 response records from 500 students and reports Agent4Edu (GPT-3.5-turbo) at 66.70 ACC, 79.84 F1-score, and 37.97 ROUGE-3.",
+  "caveats": [
+    "The evaluation measures simulator fidelity rather than scorer validity.",
+    "The generated responses are initialized from real learner histories, so this is not an independent real-vs-synthetic held-out comparison."
+  ],
+  "evaluation_method": "Consistency and discrepancy assessment between generated agent responses and human learner responses.",
+  "reported_metrics": "ACC, F1-score, and ROUGE-3 for learner simulation.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The response setting is personalized learning practice data, not rubric-scored constructed responses.",
+    "The source does not establish synthetic responses as validation data for an automated scorer."
+  ],
+  "source_locator": {
+    "section": "arXiv HTML sections 3.2 and 4, Table 1",
+    "url": "https://arxiv.org/html/2501.10332",
+    "quote_or_paraphrase_note": "The finding paraphrases the real learner-response dataset, simulator-response comparison, and Table 1 metrics.",
+    "verification_status": "verified"
+  }
+}

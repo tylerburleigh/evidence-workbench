@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "martin-graulich-chemistry-reasoning-augmentation-2024",
+  "name": "Chemistry Reasoning Data Augmentation Strategy Comparison",
+  "artifact_type": "study_extract",
+  "status": "staged",
+  "source_ids": [
+    "martin-graulich-science-assessment-2024"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "population_or_context": "Undergraduate chemistry students' reasoning about reaction mechanisms.",
+  "sample_size": "Not extracted in this baseline pass; source abstract describes multiple augmentation strategies and validation conditions.",
+  "methods": "Compared collecting additional student data, chatbot paraphrasing of existing responses, and chatbot generation of synthetic responses for machine-learning scoring.",
+  "endpoint_categories": [
+    "heterogeneity_augmentation",
+    "rubric_refinement",
+    "constructed_response_scoring"
+  ],
+  "education_context": "Postsecondary chemistry formative assessment focused on causal reasoning about organic reaction mechanisms.",
+  "response_origin": "Hybrid: authentic student responses, chatbot-paraphrased responses, and chatbot-generated synthetic responses.",
+  "rubric_label_space": "Categorization of levels of causality in students' chemistry reasoning; the paper reports expanding to a more detailed scoring rubric.",
+  "label_source": "Human-coded or research-coded chemistry reasoning categories are implied by the scoring-rubric and validation setup; detailed label source requires full-text follow-up.",
+  "generation_model": "Chatbots or generative AI models; exact model details not extracted in this baseline pass.",
+  "generation_method": "Paraphrasing existing student responses and prompting chatbots to generate synthetic responses.",
+  "prompt_strategy": "Not extracted in this baseline pass.",
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "training_augmentation",
+  "evaluation_method": "Compared machine-human score agreement across validation conditions and augmentation strategies.",
+  "scorer_use": "Training augmentation, scorer performance improvement, and scoring-rubric refinement.",
+  "real_response_comparator": "Yes. The study compared augmentation against additional authentic student data and validation conditions with human scores.",
+  "sparsity_or_imbalance_motivation": "The study frames diverse training data as hard to gather because capturing nuanced student reasoning is resource-constrained.",
+  "synthetic_data_research_role": "Synthetic and paraphrased responses expanded training-data size and heterogeneity and supported a more fine-grained rubric.",
+  "reported_metrics": "Best machine-human score agreements were reported when authentic and/or paraphrased responses were combined with chatbot responses.",
+  "numeric_results_extracted": false,
+  "limitations": "The baseline extraction relies mostly on the open abstract; full methods should be reviewed before making model-specific claims."
+}

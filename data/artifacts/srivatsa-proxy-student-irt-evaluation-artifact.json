@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "srivatsa-proxy-student-irt-evaluation-artifact",
+  "name": "Srivatsa et al. Proxy Student IRT Evaluation Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "srivatsa-llm-student-ability-simulation-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation"
+  ],
+  "population_or_context": "Mathematics and reading comprehension items from NAEP used to compare LLM proxy students with real student populations.",
+  "sample_size": "The ACL Anthology abstract reports 489 NAEP items and thousands of real student responses, with 11 LLMs tested under several prompting strategies.",
+  "methods": "Extracted the psychometric quality-evaluation strategy that maps model and real-student response patterns onto the same IRT ability scale.",
+  "endpoint_categories": [
+    "irt_ability_alignment",
+    "population_response_pattern_match",
+    "proxy_student_reliability"
+  ],
+  "education_context": "NAEP mathematics and reading comprehension item responses across subjects and grades.",
+  "response_origin": "LLM proxy-student responses are compared with real student response patterns from NAEP populations.",
+  "rubric_label_space": "NAEP item response outcomes used for IRT ability estimation.",
+  "label_source": "Real NAEP responses and IRT calibration provide the comparator scale; LLM responses are model-generated.",
+  "generation_model": "Eleven LLMs are tested with several prompting strategies.",
+  "generation_method": "LLMs are prompted as proxy students to answer NAEP items in mathematics and reading comprehension.",
+  "prompt_strategy": "Several prompting strategies are evaluated rather than one fixed prompt design.",
+  "evaluation_method": "Model and real student response patterns are mapped onto the same IRT ability scale and compared across subjects and grades.",
+  "scorer_use": "Proxy-student simulation quality evaluation; not automated scorer validation.",
+  "real_response_comparator": "Thousands of real NAEP student responses provide the population comparator.",
+  "reported_metrics": "IRT ability-scale alignment and response-pattern comparison across 489 NAEP items, 11 LLMs, and multiple prompting strategies.",
+  "limitations": [
+    "The reported conclusion is negative: no model-prompt combination reliably simulates real student ability patterns across subjects and grades.",
+    "The evidence is bounded to NAEP mathematics and reading comprehension items.",
+    "IRT alignment evaluates ability-pattern fidelity, not open-response realism or scorer utility."
+  ],
+  "assessment_purpose": "summative_assessment",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "quality_evaluation"
+}

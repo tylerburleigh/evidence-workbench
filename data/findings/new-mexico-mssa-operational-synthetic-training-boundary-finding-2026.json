@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "new-mexico-mssa-operational-synthetic-training-boundary-finding-2026",
+  "name": "Operational State Summative Scoring Uses Synthetic Responses as Limited Training Augmentation",
+  "source_id": "new-mexico-mssa-technical-report-2025-source",
+  "artifact_id": "new-mexico-mssa-operational-synthetic-training-artifact",
+  "taxonomy_node_ids": [
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "endpoint_category": "operational_summative_training_boundary",
+  "direction": "supports_with_strong_boundary",
+  "evidence_tier": "operational_technical_report",
+  "confidence": "high",
+  "statement": "The 2025 New Mexico MSSA technical report provides direct operational state summative evidence that LLM-generated synthetic responses can be used in a controlled, limited training-augmentation role for automated Writing scoring when high-score real examples are sparse, provided that generated responses are reviewed, approved, and the resulting scoring models are evaluated on independent validation sets.",
+  "population_or_context": "New Mexico MSSA 2024-2025 state summative assessment automated scoring for English non-accommodated operational forms.",
+  "time_horizon": "Full text retrieved and extracted on 2026-06-03.",
+  "quantitative_note": "Approximately 100 synthetic responses were generated for each affected item, typically 10-30 approved per item; target training coverage was 2,000 responses per item and at least 200 responses per score point, with about 85% training and 15% validation. Model criteria included human-machine QWK >= 0.65, QWK degradation < 0.10, and |SMD| < 0.15.",
+  "caveats": [
+    "The evidence supports training augmentation, not synthetic-only validation.",
+    "The report does not provide prompt details, generator identity, or subgroup fairness analysis for the synthetic responses.",
+    "The validation-set composition relative to synthetic responses is not fully specified in the extracted section."
+  ],
+  "evaluation_method": "Review and approval of generated responses followed by independent validation-set model evaluation against professional-rater agreement criteria.",
+  "reported_metrics": "Human-machine QWK, human-human minus human-machine QWK degradation, and human-machine standardized mean score difference.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "Bounded to New Mexico MSSA automated Writing scoring and English non-accommodated operational forms.",
+    "Does not establish a broad vendor or assessment-policy norm for all high-stakes assessments.",
+    "Does not address cut scores, subgroup fairness validation, or live scoring without real-response validation."
+  ],
+  "source_locator": {
+    "section": "Section 6.2.2.2 Model Training and Validation",
+    "page": "48-50",
+    "table": "Tables 6-6 and 6-7",
+    "url": "https://newmexico.onlinehelp.cognia.org/wp-content/uploads/sites/10/2024/10/2024-2025_New_Mexico_MSSA_Technical_Report_ADA.pdf",
+    "quote_or_paraphrase_note": "The finding paraphrases the training-data augmentation workflow, review/approval process, 85/15 split, and model evaluation criteria.",
+    "verification_status": "verified"
+  }
+}

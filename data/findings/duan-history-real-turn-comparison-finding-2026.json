@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "duan-history-real-turn-comparison-finding-2026",
+  "name": "History-Aware Profiles Improve Simulated Future Turns Against Real Ground Truth",
+  "source_id": "duan-history-aware-profiles-student-simulation-2026-source",
+  "artifact_id": "duan-history-real-turn-comparison-artifact",
+  "taxonomy_node_ids": [
+    "ssr-real-response-comparison"
+  ],
+  "endpoint_category": "future_real_turn_prediction",
+  "direction": "reports_real_response_comparison",
+  "evidence_tier": "preprint_extracted",
+  "confidence": "medium",
+  "statement": "Duan et al. compare simulated future student turns with ground-truth real tutoring dialogue turns and report that history/profile-conditioned workflows outperform prompting-only baselines.",
+  "population_or_context": "Math tutoring dialogue simulation with prior learning histories.",
+  "time_horizon": "arXiv v1 submitted 2026-05-28 and retrieved on 2026-06-02.",
+  "quantitative_note": "The source reports 1,775 dialogues and 66,705 question-answering records from 670 students. Table 2 reports ProfileRL at Acts 0.605, Corr. 0.466, Errors 0.150, Cos. Sim. 0.689, ROUGE-L 0.271 versus Prompting Only at 0.502, 0.446, 0.109, 0.488, 0.145.",
+  "caveats": [
+    "This is current preprint evidence and should be revisited after peer review or later arXiv versions.",
+    "The evaluated workflow uses a private math dataset and method packages with different base models across prompting and fine-tuning conditions."
+  ],
+  "evaluation_method": "Five-fold cross-validation over turn-level acts, correctness, errors, cosine similarity, and ROUGE-L, with workflow and profile-section ablations.",
+  "reported_metrics": "Table 1 and Table 2 method-by-metric results and ablations.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The evidence does not isolate all causal variables because history, profile structure, model family, and training workflow differ across conditions.",
+    "The private math dataset limits generalization to other subjects and response formats."
+  ],
+  "source_locator": {
+    "section": "arXiv PDF Sections 3-5, Table 1, Table 2, Appendix C, and Limitations",
+    "url": "https://arxiv.org/pdf/2605.30051",
+    "quote_or_paraphrase_note": "The finding paraphrases the ground-truth future-turn comparison and ProfileRL benchmark.",
+    "verification_status": "verified"
+  }
+}

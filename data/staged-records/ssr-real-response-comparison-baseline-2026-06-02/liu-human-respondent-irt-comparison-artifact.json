@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "liu-human-respondent-irt-comparison-artifact",
+  "name": "Liu et al. Human Respondent IRT Comparison Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "liu-llm-respondents-item-evaluation-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-real-response-comparison"
+  ],
+  "population_or_context": "LLM respondents generating College Algebra item answers compared with undergraduate human respondents.",
+  "sample_size": "The arXiv full text reports 20 OpenStax College Algebra items, 150 responses per LLM, six LLMs, and human item-response data with effectively N >= 99 for all items.",
+  "methods": "Extracted the human respondent distribution and item-calibration comparison from the LLM respondent psychometric analysis.",
+  "endpoint_categories": [
+    "human_response_distribution",
+    "irt_item_calibration",
+    "augmentation_comparison"
+  ],
+  "education_context": "College Algebra multiple-choice item evaluation using OpenStax items and undergraduate respondent data.",
+  "response_origin": "Synthetic LLM respondents from multiple models are compared with human undergraduate responses.",
+  "rubric_label_space": "Correct/incorrect College Algebra item responses calibrated with Rasch/IRT methods.",
+  "label_source": "Human response data and manually graded LLM responses provide correctness data for IRT calibration.",
+  "generation_model": "GPT-3.5, GPT-4, Llama 2, Llama 3, Gemini-Pro, and Cohere Command R Plus.",
+  "generation_method": "Each model generates a pool of LLM respondent answers to the same item set; augmentation experiments resample and mix synthetic respondents with human responses.",
+  "prompt_strategy": "A simple uniform prompt presents 20 labeled College Algebra questions; the paper notes that item-by-item and model-customized prompting remain future work.",
+  "evaluation_method": "Fixed-parameter IRT and separate calibrations compare human and LLM respondent proficiency distributions and item-parameter correlations.",
+  "scorer_use": "Item-evaluation and item-calibration support; not automated scorer validation.",
+  "real_response_comparator": "Human undergraduate responses to the same College Algebra items provide the comparator.",
+  "reported_metrics": "Table 1 reports human SD 0.98 versus LLM SDs 0.29 to 0.58. Table 2 reports item-calibration correlations including GPT-3.5 Pearson 0.83/Spearman 0.87, GPT-4 Pearson 0.72/Spearman 0.78, and Experiment 3 Pearson 0.93/Spearman 0.93.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "table_1_distribution_anchors": {
+      "human_sd": 0.98,
+      "gpt_3_5_mean": 0.27,
+      "gpt_3_5_sd": 0.58,
+      "gpt_4_mean": 0,
+      "gpt_4_sd": 0.31,
+      "llama_2_mean": -1.81,
+      "llama_2_sd": 0.44,
+      "llama_3_mean": 0.37,
+      "llama_3_sd": 0.51
+    },
+    "table_2_item_calibration_correlations": {
+      "gpt_3_5": {
+        "pearson": 0.83,
+        "spearman": 0.87
+      },
+      "gpt_4": {
+        "pearson": 0.72,
+        "spearman": 0.78
+      },
+      "experiment_3": {
+        "pearson": 0.93,
+        "spearman": 0.93
+      }
+    }
+  },
+  "limitations": [
+    "The item set is one College Algebra lesson.",
+    "No single LLM fully mimics human respondent variability because LLM proficiency distributions are narrower.",
+    "Augmentation improves some correlations but does not remove distribution-shift concerns."
+  ],
+  "assessment_purpose": "summative_assessment",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "validation_or_benchmarking"
+}

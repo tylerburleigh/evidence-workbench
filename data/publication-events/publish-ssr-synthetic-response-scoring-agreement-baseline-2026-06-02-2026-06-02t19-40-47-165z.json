@@ -1,0 +1,148 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-synthetic-response-scoring-agreement-baseline-2026-06-02-2026-06-02t19-40-47-165z",
+  "name": "Published Synthetic Response Scoring Agreement Baseline",
+  "summary": "Staged first literature-review baseline for how synthetic student response studies use human labels, AI/model scores, generated target labels, rubric labels, and scorer agreement to evaluate, label, validate, or benchmark generated responses.",
+  "candidate_bundle_id": "ssr-synthetic-response-scoring-agreement-baseline-2026-06-02",
+  "event_type": "publish",
+  "published_at": "2026-06-02T19:40:47.165Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "search_protocol",
+      "record_id": "ssr-synthetic-response-scoring-agreement-search-2026-06-02",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "bexte-zesch-synthetic-content-scoring-2025-source",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "nebhi-adaptive-writing-aig-scoring-2025-source",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "benedetto-simulated-exam-responses-2024-source",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "frohn-llm-cr-live-scoring-2025-source",
+      "action": "updated"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "frohn-synthetic-prepilot-scoring-agreement-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "wolfe-human-scored-simulated-essays-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "yoo-case-synthetic-rubric-labeling-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "bexte-generated-answer-relabeling-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "nebhi-llm-annotated-synthetic-writing-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "benedetto-skill-level-simulation-evaluation-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "frohn-synthetic-prepilot-scoring-agreement-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "wolfe-human-scored-simulated-essays-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "yoo-case-synthetic-rubric-labeling-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "bexte-generated-answer-label-noise-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "nebhi-majority-vote-synthetic-response-annotation-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "benedetto-skill-level-simulation-evaluation-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-synthetic-response-scoring-agreement-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 18,
+    "by_record_type": {
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "source": {
+        "created": 3,
+        "updated": 1,
+        "total": 4
+      },
+      "artifact": {
+        "created": 6,
+        "updated": 0,
+        "total": 6
+      },
+      "finding": {
+        "created": 6,
+        "updated": 0,
+        "total": 6
+      },
+      "claim": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "ssr-synthetic-response-scoring-agreement-baseline-claim"
+  ],
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-synthetic-response-scoring-agreement-construct-mapping-r1",
+    "evidence-appraisal-ssr-synthetic-response-scoring-agreement-method-classification-r1",
+    "evidence-appraisal-ssr-synthetic-response-scoring-agreement-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-synthetic-response-scoring-agreement-source-fidelity-r1",
+    "evidence-appraisal-ssr-synthetic-response-scoring-agreement-synthesis-overreach-r1"
+  ],
+  "review_corrections_applied": [],
+  "appraisal_follow_up_actions": [],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "change_note": "Creates the first staged literature-review baseline for scoring, labeling, and agreement evidence specifically within synthetic student response studies."
+}

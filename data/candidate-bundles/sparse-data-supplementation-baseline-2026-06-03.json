@@ -1,0 +1,334 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "sparse-data-supplementation-baseline-2026-06-03",
+  "name": "Sparse Data Supplementation Literature Baseline",
+  "summary": "Stages a targeted literature baseline on uses of synthetic student responses to supplement sparse, imbalanced, or subgroup-limited response datasets.",
+  "intake_mode": "baseline_review",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-03T14:30:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-sparse-data-supplementation"
+    ],
+    "research_question": "How have synthetic student responses been used to supplement sparse, imbalanced, or incomplete student-response datasets, and what role did that synthetic data play in the research process?"
+  },
+  "source_ids": [
+    "fang-gpt4-imbalanced-automatic-scoring-2025",
+    "morris-naep-math-constructed-response-2025",
+    "martin-graulich-science-assessment-2024",
+    "cochran-gpt35-student-text-augmentation-2023",
+    "zhang-gpt-generated-essay-augmentation-2026",
+    "yoo-dress-rubric-essay-scoring-2025",
+    "wolfe-barber-realistic-essay-augmentation-2026"
+  ],
+  "source_urls": [
+    "https://arxiv.org/abs/2310.18365",
+    "https://link.springer.com/article/10.1007/s40593-024-00418-w",
+    "https://www.sciencedirect.com/science/article/pii/S2666920X24000687",
+    "https://par.nsf.gov/biblio/10468770-improving-automated-evaluation-student-text-responses-using-gpt-text-data-augmentation",
+    "https://www.jowr.org/jowr/article/view/1777",
+    "https://arxiv.org/abs/2402.16733",
+    "https://arxiv.org/abs/2602.06772"
+  ],
+  "related_records": [],
+  "proposed_changes": [
+    {
+      "change_id": "create-search-protocol",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "ssr-sparse-data-supplementation-search-2026-06-03",
+      "file_path": "data/search-protocols/ssr-sparse-data-supplementation-search-2026-06-03.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/ssr-sparse-data-supplementation-search-2026-06-03.json",
+      "summary": "Add the targeted search protocol.",
+      "rationale": "The bundle is based on a targeted search pass and screening decisions should be reviewable."
+    },
+    {
+      "change_id": "create-source-fang",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "fang-gpt4-imbalanced-automatic-scoring-2025",
+      "file_path": "data/sources/fang-gpt4-imbalanced-automatic-scoring-2025.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/fang-gpt4-imbalanced-automatic-scoring-2025.json",
+      "summary": "Add Fang, Lee, and Zhai source metadata.",
+      "rationale": "This is a direct primary example of GPT-4 minority-class response augmentation for automatic scoring."
+    },
+    {
+      "change_id": "create-source-morris",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "morris-naep-math-constructed-response-2025",
+      "file_path": "data/sources/morris-naep-math-constructed-response-2025.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/morris-naep-math-constructed-response-2025.json",
+      "summary": "Add Morris et al. source metadata.",
+      "rationale": "This is a direct constructed-response example involving underrepresented high-scoring math responses."
+    },
+    {
+      "change_id": "create-source-martin-graulich",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "martin-graulich-science-assessment-2024",
+      "file_path": "data/sources/martin-graulich-science-assessment-2024.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/martin-graulich-science-assessment-2024.json",
+      "summary": "Add Martin and Graulich source metadata.",
+      "rationale": "This study broadens the baseline to chemistry reasoning and chatbot-generated constructed responses."
+    },
+    {
+      "change_id": "create-source-cochran",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "cochran-gpt35-student-text-augmentation-2023",
+      "file_path": "data/sources/cochran-gpt35-student-text-augmentation-2023.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/cochran-gpt35-student-text-augmentation-2023.json",
+      "summary": "Add Cochran et al. source metadata.",
+      "rationale": "This study directly tests GPT-3.5 augmentation for small student text response datasets."
+    },
+    {
+      "change_id": "create-source-zhang",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "zhang-gpt-generated-essay-augmentation-2026",
+      "file_path": "data/sources/zhang-gpt-generated-essay-augmentation-2026.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/zhang-gpt-generated-essay-augmentation-2026.json",
+      "summary": "Add Zhang et al. source metadata.",
+      "rationale": "This is a recent essay-scoring augmentation paper addressing score-level and subgroup sample scarcity."
+    },
+    {
+      "change_id": "create-source-yoo",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "yoo-dress-rubric-essay-scoring-2025",
+      "file_path": "data/sources/yoo-dress-rubric-essay-scoring-2025.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/yoo-dress-rubric-essay-scoring-2025.json",
+      "summary": "Add Yoo et al. DREsS source metadata.",
+      "rationale": "This study uses synthetic essay augmentation to address rubric-score distribution imbalance."
+    },
+    {
+      "change_id": "create-source-wolfe-barber",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "wolfe-barber-realistic-essay-augmentation-2026",
+      "file_path": "data/sources/wolfe-barber-realistic-essay-augmentation-2026.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/wolfe-barber-realistic-essay-augmentation-2026.json",
+      "summary": "Add Wolfe and Barber source metadata.",
+      "rationale": "This study characterizes generation quality for essay data augmentation rather than downstream scorer validation."
+    },
+    {
+      "change_id": "create-artifact-fang",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "fang-gpt4-minority-science-response-augmentation-2025",
+      "file_path": "data/artifacts/fang-gpt4-minority-science-response-augmentation-2025.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/fang-gpt4-minority-science-response-augmentation-2025.json",
+      "summary": "Add Fang et al. study artifact.",
+      "rationale": "The artifact captures context, generation method, label source, scorer use, and comparator information."
+    },
+    {
+      "change_id": "create-artifact-morris",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "morris-coedit-naep-math-high-score-augmentation-2025",
+      "file_path": "data/artifacts/morris-coedit-naep-math-high-score-augmentation-2025.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/morris-coedit-naep-math-high-score-augmentation-2025.json",
+      "summary": "Add Morris et al. study artifact.",
+      "rationale": "The artifact records the constructed-response high-score augmentation workflow."
+    },
+    {
+      "change_id": "create-artifact-martin-graulich",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "martin-graulich-chemistry-reasoning-augmentation-2024",
+      "file_path": "data/artifacts/martin-graulich-chemistry-reasoning-augmentation-2024.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/martin-graulich-chemistry-reasoning-augmentation-2024.json",
+      "summary": "Add Martin and Graulich study artifact.",
+      "rationale": "The artifact records the chemistry reasoning augmentation strategy comparison."
+    },
+    {
+      "change_id": "create-artifact-cochran",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "cochran-gpt35-small-student-text-augmentation-2023",
+      "file_path": "data/artifacts/cochran-gpt35-small-student-text-augmentation-2023.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/cochran-gpt35-small-student-text-augmentation-2023.json",
+      "summary": "Add Cochran et al. study artifact.",
+      "rationale": "The artifact records GPT-3.5 augmentation of small response sets."
+    },
+    {
+      "change_id": "create-artifact-zhang",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "zhang-gpt4-gpt4o-essay-sample-augmentation-2026",
+      "file_path": "data/artifacts/zhang-gpt4-gpt4o-essay-sample-augmentation-2026.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/zhang-gpt4-gpt4o-essay-sample-augmentation-2026.json",
+      "summary": "Add Zhang et al. study artifact.",
+      "rationale": "The artifact records GPT-4/GPT-4o essay generation for scorer training and fairness analysis."
+    },
+    {
+      "change_id": "create-artifact-yoo",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "yoo-case-efl-essay-augmentation-2025",
+      "file_path": "data/artifacts/yoo-case-efl-essay-augmentation-2025.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/yoo-case-efl-essay-augmentation-2025.json",
+      "summary": "Add Yoo et al. study artifact.",
+      "rationale": "The artifact records CASE synthetic training-data construction for EFL rubric-based essay scoring."
+    },
+    {
+      "change_id": "create-artifact-wolfe-barber",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "wolfe-barber-essay-realism-calibration-2026",
+      "file_path": "data/artifacts/wolfe-barber-essay-realism-calibration-2026.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/wolfe-barber-essay-realism-calibration-2026.json",
+      "summary": "Add Wolfe and Barber study artifact.",
+      "rationale": "The artifact records synthetic essay quality validation before scorer augmentation use."
+    },
+    {
+      "change_id": "create-finding-fang",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "fang-gpt4-minority-class-scoring-finding-2025",
+      "file_path": "data/findings/fang-gpt4-minority-class-scoring-finding-2025.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/fang-gpt4-minority-class-scoring-finding-2025.json",
+      "summary": "Add finding on GPT-4 minority-class science response augmentation.",
+      "rationale": "The finding verifies the role of synthetic science responses in scorer training."
+    },
+    {
+      "change_id": "create-finding-morris",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "morris-coedit-high-score-math-finding-2025",
+      "file_path": "data/findings/morris-coedit-high-score-math-finding-2025.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/morris-coedit-high-score-math-finding-2025.json",
+      "summary": "Add finding on Coedit-XL high-score NAEP math augmentation.",
+      "rationale": "The finding verifies an outside-essay constructed-response example."
+    },
+    {
+      "change_id": "create-finding-martin-graulich",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "martin-graulich-chatbot-chemistry-finding-2024",
+      "file_path": "data/findings/martin-graulich-chatbot-chemistry-finding-2024.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/martin-graulich-chatbot-chemistry-finding-2024.json",
+      "summary": "Add finding on chatbot augmentation for chemistry reasoning.",
+      "rationale": "The finding captures another non-essay constructed-response augmentation example with a lower extraction confidence."
+    },
+    {
+      "change_id": "create-finding-cochran",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "cochran-gpt35-small-data-finding-2023",
+      "file_path": "data/findings/cochran-gpt35-small-data-finding-2023.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/cochran-gpt35-small-data-finding-2023.json",
+      "summary": "Add finding on GPT-3.5 augmentation of small student text datasets.",
+      "rationale": "The finding verifies the small-dataset supplementation role."
+    },
+    {
+      "change_id": "create-finding-zhang",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "zhang-gpt-essay-augmentation-finding-2026",
+      "file_path": "data/findings/zhang-gpt-essay-augmentation-finding-2026.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/zhang-gpt-essay-augmentation-finding-2026.json",
+      "summary": "Add finding on GPT essay sample augmentation.",
+      "rationale": "The finding verifies score-level and subgroup augmentation roles in essay scoring."
+    },
+    {
+      "change_id": "create-finding-yoo",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "yoo-case-score-balance-finding-2025",
+      "file_path": "data/findings/yoo-case-score-balance-finding-2025.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/yoo-case-score-balance-finding-2025.json",
+      "summary": "Add finding on CASE score-distribution balancing.",
+      "rationale": "The finding verifies corruption-based synthetic data use in rubric-based AES."
+    },
+    {
+      "change_id": "create-finding-wolfe-barber",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "wolfe-barber-realism-validation-finding-2026",
+      "file_path": "data/findings/wolfe-barber-realism-validation-finding-2026.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/wolfe-barber-realism-validation-finding-2026.json",
+      "summary": "Add finding on essay generation realism validation.",
+      "rationale": "The finding distinguishes generation-quality validation from downstream scorer validation."
+    },
+    {
+      "change_id": "create-claim-sparse-supplementation",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-sparse-data-supplementation-baseline-claim",
+      "file_path": "data/claims/ssr-sparse-data-supplementation-baseline-claim.json",
+      "staged_file_path": "data/staged-records/sparse-data-supplementation-baseline-2026-06-03/ssr-sparse-data-supplementation-baseline-claim.json",
+      "summary": "Add synthesis claim for sparse or imbalanced response-data supplementation.",
+      "rationale": "The claim maps the included findings to the new review question and separates research-process roles."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-sparse-data-supplementation",
+      "note": "Creates a first baseline claim for the new sparse-data supplementation review question."
+    }
+  ],
+  "required_appraisal_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "applicability_boundary",
+    "synthesis_overreach",
+    "search_protocol"
+  ],
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-sparse-data-supplementation-construct-mapping-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-source-fidelity-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-method-classification-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-applicability-boundary-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-synthesis-overreach-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-search-protocol-r1"
+  ],
+  "editorial_comment_ids": [],
+  "publication_event_ids": [
+    "publish-sparse-data-supplementation-baseline-2026-06-03-2026-06-03t15-21-48-538z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces.",
+    "source_fidelity: Extract full-text methods and results tables for Martin and Graulich before using the record in quantitative synthesis or detailed method comparisons.",
+    "Resolve 1 structured extraction follow-up action(s) before quantitative synthesis."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [
+    {
+      "action_id": "extract-numeric-results-martin-graulich-chatbot-chemistry-finding-2024",
+      "action_type": "numeric_results_extraction",
+      "status": "open",
+      "priority": "medium",
+      "target_record_type": "finding",
+      "target_record_id": "martin-graulich-chatbot-chemistry-finding-2024",
+      "source_ids": [
+        "martin-graulich-science-assessment-2024"
+      ],
+      "taxonomy_node_ids": [
+        "ssr-sparse-data-supplementation"
+      ],
+      "metric_fields_present": [
+        "reported_metrics",
+        "quantitative_note"
+      ],
+      "reason": "finding martin-graulich-chatbot-chemistry-finding-2024 reports metric text but numeric_results_extracted is false.",
+      "recommended_action": "Extract table-level numeric results for Chatbot-Generated Chemistry Responses Expanded Training Heterogeneity before quantitative synthesis.",
+      "finding_id": "martin-graulich-chatbot-chemistry-finding-2024",
+      "artifact_id": "martin-graulich-chemistry-reasoning-augmentation-2024"
+    }
+  ]
+}

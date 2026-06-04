@@ -1,0 +1,60 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-model-generation-effects-srivatsa-numeric-update-2026-06-02-2026-06-02t18-01-11-165z",
+  "name": "Published Srivatsa Numeric Extraction Update",
+  "summary": "Staged update that resolves the deferred Srivatsa per-model numeric extraction for the model and generation effects baseline.",
+  "candidate_bundle_id": "ssr-model-generation-effects-srivatsa-numeric-update-2026-06-02",
+  "event_type": "publish",
+  "published_at": "2026-06-02T18:01:11.165Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "artifact",
+      "record_id": "srivatsa-model-prompt-irt-effects-artifact",
+      "action": "updated"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "srivatsa-model-prompt-irt-effects-finding-2026",
+      "action": "updated"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-model-generation-effects-baseline-claim",
+      "action": "updated"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 3,
+    "by_record_type": {
+      "artifact": {
+        "created": 0,
+        "updated": 1,
+        "total": 1
+      },
+      "finding": {
+        "created": 0,
+        "updated": 1,
+        "total": 1
+      },
+      "claim": {
+        "created": 0,
+        "updated": 1,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "ssr-model-generation-effects-baseline-claim"
+  ],
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-model-generation-effects-srivatsa-numeric-update-method-classification-r1",
+    "evidence-appraisal-ssr-model-generation-effects-srivatsa-numeric-update-source-fidelity-r1",
+    "evidence-appraisal-ssr-model-generation-effects-srivatsa-numeric-update-synthesis-overreach-r1"
+  ],
+  "review_corrections_applied": [],
+  "appraisal_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "change_note": "Resolves the deferred Srivatsa numeric extraction for the published model and generation effects baseline without changing the claim's no-universal-ranking boundary."
+}

@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "cochran-gpt35-small-student-text-augmentation-2023",
+  "name": "GPT-3.5 Augmentation of Small Student Text Response Sets",
+  "artifact_type": "study_extract",
+  "status": "staged",
+  "source_ids": [
+    "cochran-gpt35-student-text-augmentation-2023"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "population_or_context": "French opinion responses and English sixth-grade rainwater-runoff responses.",
+  "sample_size": "French dataset: 163 responses across four labels; runoff dataset: 95 sixth-grade responses coded across six binary concepts.",
+  "methods": "GPT-3.5 completions paraphrased actual student responses at multiple temperature settings; augmented data trained multilingual BERT classifiers.",
+  "endpoint_categories": [
+    "small_sample_augmentation",
+    "student_text_classification",
+    "temperature_comparison"
+  ],
+  "education_context": "Student text responses in two languages, including sixth-grade environmental science/rainwater-runoff concepts and a French opinion task.",
+  "response_origin": "Hybrid: original student responses plus GPT-3.5-generated artificial student responses.",
+  "rubric_label_space": "One four-label opinion classification task and six binary concept-presence classifications.",
+  "label_source": "Original datasets provided concept or opinion labels; generated responses were paraphrases of labeled student responses.",
+  "generation_model": "GPT-3.5 text-curie-001",
+  "generation_method": "Prompt-based paraphrase generation from actual student responses at temperature values 0.1, 0.5, and 0.9.",
+  "prompt_strategy": "The prompt used 'paraphrase this sentence' plus an actual student response.",
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "training_augmentation",
+  "evaluation_method": "Multilingual BERT classifiers were fine-tuned and evaluated with micro-F1 against unaugmented, majority-class, and self-augmentation baselines.",
+  "scorer_use": "Training augmentation for automated evaluation/classification of student text responses.",
+  "real_response_comparator": "Yes. Original held-out real responses were used for testing; self-augmentation and unaugmented BERT baselines were compared.",
+  "sparsity_or_imbalance_motivation": "The paper frames scarcity of student-generated data and imbalanced small educational datasets as the motivation.",
+  "synthetic_data_research_role": "Generated additional training examples to supplement small response sets and test whether synthetic examples beat simple replication.",
+  "reported_metrics": "Augmented models improved over unaugmented BERT in all seven concepts; GPT-3.5 generation produced the maximum performance in four of seven cases.",
+  "numeric_results_extracted": true,
+  "limitations": "Very heavily imbalanced low-entropy datasets could still be better served by majority-label baselines; performance degraded after high augmentation levels."
+}

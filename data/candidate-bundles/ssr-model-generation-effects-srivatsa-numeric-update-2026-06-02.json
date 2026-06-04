@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-model-generation-effects-srivatsa-numeric-update-2026-06-02",
+  "name": "Srivatsa Numeric Extraction Update",
+  "summary": "Staged update that resolves the deferred Srivatsa per-model numeric extraction for the model and generation effects baseline.",
+  "intake_mode": "manual",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T17:56:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-model-generation-effects"
+    ],
+    "research_question": "What exact Srivatsa et al. model and prompt numeric values should be attached to the model and generation effects baseline?"
+  },
+  "source_ids": [
+    "srivatsa-llm-student-ability-simulation-2025-source"
+  ],
+  "source_urls": [
+    "https://aclanthology.org/2025.bea-1.75/"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "ssr-model-generation-effects-baseline-claim",
+      "relationship": "updates_supporting_numeric_extract"
+    },
+    {
+      "record_type": "candidate_bundle",
+      "record_id": "ssr-model-generation-effects-baseline-2026-06-02",
+      "relationship": "addresses_extraction_follow_up"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "update-srivatsa-model-prompt-irt-effects-artifact",
+      "change_type": "update_record",
+      "target_record_type": "artifact",
+      "target_record_id": "srivatsa-model-prompt-irt-effects-artifact",
+      "file_path": "data/artifacts/srivatsa-model-prompt-irt-effects-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-srivatsa-numeric-update-2026-06-02/srivatsa-model-prompt-irt-effects-artifact.json",
+      "summary": "Add extracted Srivatsa Table 2 percentile ranks, Table 4 accuracy percentages, and Table 5 best prompt families.",
+      "rationale": "The original baseline intentionally deferred per-model numeric extraction, which blocks later quantitative model and prompt synthesis."
+    },
+    {
+      "change_id": "update-srivatsa-model-prompt-irt-effects-finding",
+      "change_type": "update_record",
+      "target_record_type": "finding",
+      "target_record_id": "srivatsa-model-prompt-irt-effects-finding-2026",
+      "file_path": "data/findings/srivatsa-model-prompt-irt-effects-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-srivatsa-numeric-update-2026-06-02/srivatsa-model-prompt-irt-effects-finding-2026.json",
+      "summary": "Update the Srivatsa finding with extracted average deviation, largest delta, near-target examples, and unenforced accuracy averages.",
+      "rationale": "The finding should carry the key extracted numeric anchors while preserving the negative reliability interpretation."
+    },
+    {
+      "change_id": "update-ssr-model-generation-effects-baseline-claim",
+      "change_type": "update_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-model-generation-effects-baseline-claim",
+      "file_path": "data/claims/ssr-model-generation-effects-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-model-generation-effects-srivatsa-numeric-update-2026-06-02/ssr-model-generation-effects-baseline-claim.json",
+      "summary": "Replace the Srivatsa extraction caveat with a note that the extraction is complete for Tables 2, 4, and 5.",
+      "rationale": "The synthesis claim should no longer present Srivatsa table extraction as pending after this follow-up is published."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-model-generation-effects",
+      "note": "Resolves the deferred Srivatsa numeric extraction for the published model and generation effects baseline without changing the claim's no-universal-ranking boundary."
+    }
+  ],
+  "required_appraisal_lanes": [
+    "source_fidelity",
+    "method_classification",
+    "synthesis_overreach"
+  ],
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-model-generation-effects-srivatsa-numeric-update-source-fidelity-r1",
+    "evidence-appraisal-ssr-model-generation-effects-srivatsa-numeric-update-method-classification-r1",
+    "evidence-appraisal-ssr-model-generation-effects-srivatsa-numeric-update-synthesis-overreach-r1"
+  ],
+  "editorial_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-model-generation-effects-srivatsa-numeric-update-2026-06-02-2026-06-02t18-01-11-165z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "extraction_follow_up_actions": []
+}

@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-model-choice-student-simulation-validity-search-2026-06-03",
+  "name": "Synthetic Student Response Model-Choice and Student-Simulation Validity Search",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-model-generation-effects",
+    "ssr-prompt-engineering-effects",
+    "ssr-real-response-comparison"
+  ],
+  "status": "complete",
+  "search_started_at": "2026-06-03T20:00:00Z",
+  "search_completed_at": "2026-06-03T20:20:00Z",
+  "databases": [
+    "web_search",
+    "arXiv",
+    "ACL Anthology"
+  ],
+  "systematicity_level": "targeted_baseline_review",
+  "search_queries": [
+    {
+      "database": "Web search",
+      "query": "synthetic student responses LLM model comparison GPT-4 GPT-3.5 generated student answers education paper",
+      "searched_at": "2026-06-03T20:00:00Z",
+      "notes": "Used to identify off-the-shelf LLM comparison and student-simulation validity papers."
+    },
+    {
+      "database": "Web search",
+      "query": "LLM simulated students model comparison student responses education arXiv",
+      "searched_at": "2026-06-03T20:00:00Z",
+      "notes": "Used to identify recent arXiv simulated-student papers."
+    },
+    {
+      "database": "Web search",
+      "query": "large language models simulate student responses model comparison generated answers educational assessment",
+      "searched_at": "2026-06-03T20:00:00Z",
+      "notes": "Used to identify education and assessment simulation studies."
+    },
+    {
+      "database": "Web search",
+      "query": "synthetic student response generation model comparison prompt student answers scoring",
+      "searched_at": "2026-06-03T20:00:00Z",
+      "notes": "Used to screen model and prompt effects for synthetic responses."
+    },
+    {
+      "database": "arXiv",
+      "query": "2605.12748 Simulating Students or Sycophantic Problem Solving",
+      "searched_at": "2026-06-03T20:05:00Z",
+      "notes": "Targeted lookup after discovery."
+    },
+    {
+      "database": "arXiv",
+      "query": "2601.05473 Towards Valid Student Simulation with Large Language Models",
+      "searched_at": "2026-06-03T20:05:00Z",
+      "notes": "Targeted lookup after discovery."
+    },
+    {
+      "database": "ACL Anthology",
+      "query": "2025.bea-1.8 Can LLMs Effectively Simulate Human Learners",
+      "searched_at": "2026-06-03T20:08:00Z",
+      "notes": "Targeted lookup after discovery."
+    }
+  ],
+  "inclusion_criteria": [
+    "Primary source with full text or authoritative abstract/metadata available.",
+    "Addresses LLM-based student simulation, generated student responses, or learner behavior emulation.",
+    "Adds evidence about model choice, prompt-only limits, realism/fidelity evaluation, or reporting criteria for synthetic student responses.",
+    "Helps refine the application memo without requiring first-hand model-comparison research."
+  ],
+  "exclusion_criteria": [
+    "General LLM education papers without simulated student responses or student-behavior emulation.",
+    "Papers focused only on LLMs as tutors, graders, or feedback providers without generated student behavior.",
+    "Secondary summaries and non-primary paper pages unless used only for discovery.",
+    "Fine-tuning-only papers outside student simulation or misconception/error realism."
+  ],
+  "dedupe_method": "Title, DOI, arXiv identifier, and ACL Anthology identifier were used to deduplicate landing pages and PDFs.",
+  "screening_counts": {
+    "records_identified": 8,
+    "records_screened": 8,
+    "full_text_reviewed": 3,
+    "sources_included": 3
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "candidate-do-misconception-faithfulness-2026",
+      "title": "Simulating Students or Sycophantic Problem Solving? On Misconception Faithfulness of LLM Simulators",
+      "decision": "include",
+      "reason": "Directly evaluates prompted off-the-shelf simulated students across seven models and identifies a model-choice-relevant misconception-faithfulness failure mode.",
+      "source_id": "do-misconception-faithfulness-2026-source",
+      "doi": "10.48550/arXiv.2605.12748",
+      "url": "https://arxiv.org/abs/2605.12748"
+    },
+    {
+      "candidate_id": "candidate-yuan-valid-student-simulation-2026",
+      "title": "Towards Valid Student Simulation with Large Language Models",
+      "decision": "include",
+      "reason": "Provides a validity framework and reporting checklist directly relevant to desk-based model-choice criteria and overclaiming controls.",
+      "source_id": "yuan-valid-student-simulation-framework-2026-source",
+      "doi": "10.48550/arXiv.2601.05473",
+      "url": "https://arxiv.org/abs/2601.05473"
+    },
+    {
+      "candidate_id": "candidate-martynova-human-learners-2025",
+      "title": "Can LLMs Effectively Simulate Human Learners? Teachers' Insights from Tutoring LLM Students",
+      "decision": "include",
+      "reason": "Adds full-text peer-reviewed teacher-observed authenticity evidence for LLM-simulated student behavior gaps.",
+      "source_id": "martynova-human-learners-teacher-insights-2025-source",
+      "doi": "10.18653/v1/2025.bea-1.8",
+      "url": "https://aclanthology.org/2025.bea-1.8/"
+    },
+    {
+      "candidate_id": "candidate-malrulelib-2026",
+      "title": "Malrulelib: Large-Scale Executable Misconception Reasoning With Step Traces For Modeling Student Thinking In Mathematics",
+      "decision": "maybe",
+      "reason": "Relevant to misconception modeling, but the current pass already included the more directly applicable misconception-faithfulness simulator paper."
+    },
+    {
+      "candidate_id": "candidate-beagle-grounded-learner-emulation-2026",
+      "title": "Beagle: Behavior-Enforced Agent For Grounded Learner Emulation",
+      "decision": "maybe",
+      "reason": "Potentially relevant to grounded learner emulation, but deeper extraction was deferred to avoid expanding beyond the model-choice memo update."
+    },
+    {
+      "candidate_id": "candidate-check-my-work-sycophancy-2026",
+      "title": "Check My Work? Measuring Sycophancy in a Simulated Educational Context",
+      "decision": "exclude",
+      "reason": "Relevant to LLM educational sycophancy but focused on LLM assistant behavior rather than generated student responses."
+    },
+    {
+      "candidate_id": "candidate-invisible-saboteurs-2025",
+      "title": "Invisible Saboteurs: Sycophantic LLMs Mislead Novices in Problem-Solving Tasks",
+      "decision": "exclude",
+      "reason": "Relevant to learner interactions with LLMs, but not a synthetic student-response generation study."
+    },
+    {
+      "candidate_id": "candidate-secondary-paper-pages",
+      "title": "Secondary paper pages and discovery indexes",
+      "decision": "exclude",
+      "reason": "Used only for discovery; primary arXiv and ACL Anthology pages were used for extraction."
+    }
+  ],
+  "source_ids": [
+    "do-misconception-faithfulness-2026-source",
+    "yuan-valid-student-simulation-framework-2026-source",
+    "martynova-human-learners-teacher-insights-2025-source"
+  ],
+  "screening_summary": "This targeted literature-only update searched for model-choice and student-simulation validity evidence that could refine the application memo without first-hand model benchmarking. It included one empirical model-limit paper, one conceptual validity framework, and one peer-reviewed teacher-authenticity study. The included evidence supports a stronger desk-based caution: off-the-shelf prompt-only models may produce fluent but invalid learner behavior, so model choice should be documented as implementation rationale rather than empirical superiority.",
+  "limitations": [
+    "The pass was targeted rather than exhaustive.",
+    "The included empirical evidence is not automated scorer validation.",
+    "Do et al. is a recent arXiv preprint and should be monitored for venue status or revision.",
+    "Several adjacent sycophancy or learner-emulation papers were deferred or excluded because they were less directly tied to generated student responses."
+  ]
+}

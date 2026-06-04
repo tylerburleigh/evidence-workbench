@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "frohn-acceptable-prepilot-use-artifact",
+  "name": "Frohn et al. Acceptable Pre-pilot and Challenge-set Use Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "frohn-llm-cr-live-scoring-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses"
+  ],
+  "population_or_context": "Commercial LLM scoring of constructed-response assessment items.",
+  "sample_size": "Framework guidance rather than one empirical dataset; the source recommends balanced synthetic response datasets and later real-response pilot validation.",
+  "methods": "Extracted use-boundary guidance for labeled synthetic responses, challenge sets, agreement checks, item/scoring-criteria revision, and pilot validation with real student responses.",
+  "endpoint_categories": [
+    "pre_pilot_validation",
+    "challenge_sets",
+    "real_response_validation_boundary"
+  ],
+  "education_context": "Constructed-response assessment items with checklist, analytic, or holistic rubrics.",
+  "response_origin": "Synthetic student responses are proposed as pre-pilot proxies and challenge-set material; real student responses remain required for pilot validation.",
+  "rubric_label_space": "Constructed-response labels such as correct, partially correct, incorrect, checklist criteria, or rubric score points.",
+  "label_source": "The framework calls for accurate human labels on synthetic responses before using them to evaluate LLM scorer behavior.",
+  "generation_model": "Commercial LLM scoring framework; no single synthetic-response generator is fixed.",
+  "generation_method": "Generate balanced synthetic response datasets and challenge sets that cover score levels, plausible response variation, and scorer failure modes.",
+  "prompt_strategy": "Synthetic generation prompts are framework-level rather than reported as one empirical prompt template.",
+  "evaluation_method": "Agreement and error analysis against human labels during pre-pilot scoring checks, followed by pilot validation on real student responses.",
+  "scorer_use": "Acceptable as pre-pilot diagnostic validation, calibration, challenge testing, and item/scoring-criteria revision; not acceptable as a replacement for real-response pilot validation.",
+  "real_response_comparator": "Real student pilot responses are required after synthetic pre-pilot checks to establish scorer accuracy under authentic conditions.",
+  "reported_metrics": "The paper discusses Cohen kappa, quadratic weighted kappa, accuracy, F1, Matthews correlation coefficient, false-positive and false-negative rates, score distributions, and conditional accuracy.",
+  "numeric_results_extracted": "not_applicable",
+  "limitations": [
+    "Framework paper rather than one empirical validation dataset.",
+    "Synthetic responses are not positioned as sufficient deployment-readiness evidence.",
+    "Specific thresholds and sample sizes must be instantiated for each item/rubric context."
+  ],
+  "assessment_purpose": "summative_assessment",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "pre_pilot_validation"
+}

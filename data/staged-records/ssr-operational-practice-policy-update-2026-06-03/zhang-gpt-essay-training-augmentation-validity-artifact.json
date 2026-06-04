@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "zhang-gpt-essay-training-augmentation-validity-artifact",
+  "name": "Zhang et al. GPT Essay Training Augmentation Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "zhang-gpt-essay-augmentation-2026-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses",
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "population_or_context": "PERSUADE 2.0 essays from U.S. students in grades 6-10 across seven source-based writing prompts; each prompt is modeled separately.",
+  "sample_size": "Student essay samples ranged from 1,372 to 2,167 per prompt. GPT-4 generated about 120 usable essays per score level; GPT-4o generated about 275 usable essays per score level for model training.",
+  "methods": "Student essays were split into generator-feeding, linguistic-comparison/training, and held-out evaluation subsets. GPT-4 and GPT-4o generated score-conditioned essays from prompts containing rubric properties, directives, title/template information, and sampled real essay examples. DeBERTa-V3-XSmall scoring models were trained with student-only or student-plus-GPT samples and evaluated on held-out student essays.",
+  "endpoint_categories": [
+    "essay_scoring_training_augmentation",
+    "held_out_student_essay_evaluation",
+    "subgroup_fairness_analysis",
+    "synthetic_real_essay_comparison"
+  ],
+  "education_context": "Middle and high school source-based essay writing assessment research using a 6-point essay score scale.",
+  "response_origin": "Hybrid training corpora of student-written essays and GPT-generated essays; final model evaluation uses held-out student essays.",
+  "rubric_label_space": "Six-point essay score scale. The publicly released student essays have one available rater score, though the corpus reports two-rater scoring with inter-rater QWK .745 and correlation .750.",
+  "label_source": "Student essay labels come from the PERSUADE 2.0 human-scored corpus. GPT-generated essays are generated for target score levels and used as training augmentation; the study cautions that target score levels are not equivalent to expert human scoring of each generated essay.",
+  "generation_model": "GPT-4 and GPT-4o.",
+  "generation_method": "Score-conditioned GPT generation across prompts and score levels using rubric-driven properties, custom directives, prompt templates, and sampled student essay examples.",
+  "prompt_strategy": "Five-part prompt design with system prompt, custom directives, rubric-driven essay properties, title/generation template, and prompt directives. Each generation call included five sampled real essays for the target prompt and score level.",
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "training_augmentation",
+  "evaluation_method": "Held-out student essay evaluation using human-AI QWK, correlation, standardized mean score difference, subgroup mean difference in standardized scores, subgroup QWK, linguistic-feature comparison, and DecompX token-importance analysis.",
+  "scorer_use": "GPT-generated essays are used as training augmentation for prompt-specific AI essay scoring models, not as standalone validation data.",
+  "real_response_comparator": "The study compares GPT-generated essays with student essays and evaluates augmented scoring models on held-out student essays that were not used during training.",
+  "reported_metrics": "Most augmented and base models, except the P7 A Cowboy condition, achieved QWK and correlation above .75 on held-out student essays. SMD generally fell within +/- .15. Augmentation reduced some subgroup mean score discrepancies and improved some subgroup QWKs.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "Research/development study, not an operational scoring policy or state technical report.",
+    "Only one human rating is available in the public data, so true-score evaluation was not conducted.",
+    "The authors report content and writing-style differences between AI-generated and student essays that need systematic human review.",
+    "Results are limited to GPT-4, GPT-4o, the PERSUADE 2.0 prompts, and the studied model architecture; prompt transfer to other LLMs is uncertain.",
+    "Target score levels for generated essays should not be treated as independently human-verified labels."
+  ]
+}

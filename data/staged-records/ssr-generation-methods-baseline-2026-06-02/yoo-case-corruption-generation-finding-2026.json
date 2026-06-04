@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "yoo-case-corruption-generation-finding-2026",
+  "name": "DREsS CASE Uses Corruption Rather Than LLM Prompting for Synthetic Essays",
+  "source_id": "yoo-dress-rubric-aes-2025-source",
+  "artifact_id": "yoo-case-corruption-generation-artifact",
+  "taxonomy_node_ids": [
+    "ssr-generation-methods"
+  ],
+  "endpoint_category": "corruption_based_generation",
+  "direction": "defines_generation_method",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Yoo et al. use the DREsS_CASE corruption method to generate 40,185 synthetic lower-quality essay samples for rubric-based EFL automated essay scoring training augmentation.",
+  "population_or_context": "EFL rubric-based automated essay scoring.",
+  "time_horizon": "ACL 2025 paper already published in the Lit Review Studio baseline and reviewed on 2026-06-02.",
+  "quantitative_note": "40,185 synthetic DREsS_CASE samples.",
+  "caveats": [
+    "This is not an LLM generation method.",
+    "The generated samples are training augmentation data, not validation/test data."
+  ],
+  "evaluation_method": "Automated essay scoring evaluation with real validation/test data and weighted-kappa-style agreement metrics.",
+  "reported_metrics": "40,185 synthetic samples.",
+  "limitations": [
+    "The method is bounded to EFL essay scoring.",
+    "CASE corruption does not represent profile-conditioned or prompt-conditioned LLM generation."
+  ],
+  "source_locator": {
+    "section": "Dataset composition and experimental setup",
+    "url": "https://aclanthology.org/2025.acl-long.659/",
+    "quote_or_paraphrase_note": "The staged finding reuses the already-published source boundary for DREsS_CASE synthetic samples.",
+    "verification_status": "verified"
+  }
+}

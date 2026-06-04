@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-assessment-stakes-boundaries-consequential-search-2026-06-03",
+  "name": "Consequential Assessment Synthetic Response Use Search Pass",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "status": "included_sources_staged",
+  "systematicity_level": "targeted_baseline_review",
+  "search_started_at": "2026-06-03T10:40:00Z",
+  "search_completed_at": "2026-06-03T11:18:00Z",
+  "databases": [
+    "Web search",
+    "Official New Mexico/Cognia assessment resources",
+    "ISCA Archive",
+    "ACL Anthology",
+    "arXiv",
+    "Existing synthetic-student-responses public graph"
+  ],
+  "search_queries": [
+    {
+      "database": "Web search",
+      "query": "\"synthetic student responses\" \"high-stakes\" automated scoring",
+      "searched_at": "2026-06-03T10:40:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"synthetic responses\" \"automated scoring\" assessment validation",
+      "searched_at": "2026-06-03T10:42:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"LLM-generated\" \"student responses\" \"automated scoring\" validation",
+      "searched_at": "2026-06-03T10:44:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"synthetic\" \"student responses\" \"subgroup fairness\" automated scoring",
+      "searched_at": "2026-06-03T10:46:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"synthetic\" \"automated scoring models\" \"technical report\" \"student responses\"",
+      "searched_at": "2026-06-03T10:48:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"synthetic responses\" \"field test\" \"operational student responses\" automated scoring",
+      "searched_at": "2026-06-03T10:49:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"supplemented\" \"synthetic responses\" \"automated scoring\" \"technical report\"",
+      "searched_at": "2026-06-03T10:50:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Official New Mexico/Cognia assessment resources",
+      "query": "site:newmexico.onlinehelp.cognia.org \"Synthetic responses generated using large language models\"",
+      "searched_at": "2026-06-03T10:52:00Z",
+      "result_count": "official PDF and resources page verified"
+    },
+    {
+      "database": "ACL Anthology",
+      "query": "synthetic training data formative automated scoring communication skills BEA 2025",
+      "searched_at": "2026-06-03T10:57:00Z",
+      "result_count": "source page and PDF verified"
+    },
+    {
+      "database": "ISCA Archive",
+      "query": "synthetic off-topic responses high-stakes spoken assessment Interspeech 2019",
+      "searched_at": "2026-06-03T10:58:00Z",
+      "result_count": "source page and PDF verified"
+    },
+    {
+      "database": "arXiv",
+      "query": "NGSS classroom synthetic responses automated scoring class imbalance GPT-4",
+      "searched_at": "2026-06-03T11:02:00Z",
+      "result_count": "source page and PDF verified"
+    }
+  ],
+  "inclusion_criteria": [
+    "Direct evidence must involve synthetic, simulated, generated, mismatched, or augmented student/learner responses used in automated scoring, scorer development, detection, validation, or assessment-feedback workflows.",
+    "Priority sources must address summative, high-stakes, grade-bearing, operational, formative, in-term, or classroom consequences rather than only no-consequence simulation quality.",
+    "Operational reports and primary peer-reviewed or conference papers are preferred over secondary commentary.",
+    "Full text or official source pages must be available for extraction."
+  ],
+  "exclusion_criteria": [
+    "Exclude automated scoring studies without synthetic or constructed response sets in the development or evaluation workflow.",
+    "Exclude generic AI assessment policy unless it directly mentions synthetic responses or is needed as an assessment-stakes boundary condition.",
+    "Exclude sources that only evaluate LLM scoring of real responses without generated, simulated, or synthetic response artifacts.",
+    "Do not treat off-topic detection or stress testing as final automated-score validation."
+  ],
+  "dedupe_method": "Deduplicated by canonical title, DOI, official report URL, source page, and existing source_id.",
+  "screening_counts": {
+    "records_identified": "at least 35 records across targeted web, official pages, and existing graph audit",
+    "records_screened": 14,
+    "full_text_reviewed": 4,
+    "sources_included": 4,
+    "sources_deferred_for_follow_up": 3
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "candidate-new-mexico-mssa-2025",
+      "title": "2025 New Mexico MSSA Technical Report",
+      "decision": "include",
+      "reason": "Direct official operational state summative assessment evidence for LLM-generated synthetic responses as limited automated-scoring training augmentation.",
+      "source_id": "new-mexico-mssa-technical-report-2025-source",
+      "url": "https://newmexico.onlinehelp.cognia.org/wp-content/uploads/sites/10/2024/10/2024-2025_New_Mexico_MSSA_Technical_Report_ADA.pdf"
+    },
+    {
+      "candidate_id": "candidate-wang-off-topic-2019",
+      "title": "Automatic Detection of Off-Topic Spoken Responses Using Very Deep Convolutional Neural Networks",
+      "decision": "include",
+      "reason": "Adjacent high-stakes spoken assessment evidence for synthetic/mismatched responses used in validity-protection detection rather than scoring validation.",
+      "source_id": "wang-off-topic-spoken-responses-2019-source",
+      "doi": "10.21437/Interspeech.2019-1848",
+      "url": "https://www.isca-archive.org/interspeech_2019/wang19p_interspeech.html"
+    },
+    {
+      "candidate_id": "candidate-rezayi-communication-skills-2025",
+      "title": "Automated Scoring of Communication Skills in Physician-Patient Interaction: Balancing Performance and Scalability",
+      "decision": "include",
+      "reason": "Direct formative/professional-education evidence for synthetic learner responses as training augmentation with real learner-response evaluation and summative human-review caveats.",
+      "source_id": "rezayi-communication-skills-synthetic-training-2025-source",
+      "doi": "10.18653/v1/2025.bea-1.66",
+      "url": "https://aclanthology.org/2025.bea-1.66/"
+    },
+    {
+      "candidate_id": "candidate-djagba-ngss-2026",
+      "title": "Exploring Data Augmentation and Resampling Strategies for Transformer-Based Models to Address Class Imbalance in AI Scoring of Scientific Explanations in NGSS Classroom",
+      "decision": "include",
+      "reason": "Direct classroom/in-term evidence for GPT-generated synthetic responses as training augmentation with held-out real-response evaluation and explicit validity-work limitations.",
+      "source_id": "djagba-ngss-classroom-augmentation-2026-source",
+      "doi": "10.48550/arXiv.2604.19754",
+      "url": "https://arxiv.org/abs/2604.19754"
+    },
+    {
+      "candidate_id": "candidate-new-mexico-resources-page",
+      "title": "NM-MSSA New Mexico Help & Support resources page",
+      "decision": "duplicate",
+      "reason": "Used as official locator for the technical report rather than separate direct evidence.",
+      "source_id": "new-mexico-mssa-technical-report-2025-source",
+      "url": "https://newmexico.onlinehelp.cognia.org/resources-nm-mssa/"
+    },
+    {
+      "candidate_id": "candidate-mendonca-2025-formative-scoring",
+      "title": "Evaluating LLMs for Automated Scoring in Formative Assessments",
+      "decision": "exclude",
+      "reason": "Relevant to lower-stakes LLM automated scoring but not synthetic student responses as a development or validation corpus.",
+      "url": "https://www.mdpi.com/2076-3417/15/5/2787"
+    },
+    {
+      "candidate_id": "candidate-jorgpt-dataset-2026",
+      "title": "A Multilingual Dataset of Student Answers, Human Grading, and Multi-LLM Evaluations for Automated Assessment Research Using JorGPT",
+      "decision": "exclude",
+      "reason": "Automated assessment benchmark with authentic student answers, not synthetic student responses.",
+      "url": "https://www.mdpi.com/2306-5729/11/3/59"
+    },
+    {
+      "candidate_id": "candidate-ipci-2025",
+      "title": "Leveraging Knowledge Profiles and Generative AI for Realistic Student Response Generation",
+      "decision": "maybe",
+      "reason": "Potentially relevant to in-term automated-grading augmentation but already marked as access/scope follow-up in the previous baseline pass.",
+      "source_id": "ipci-knowledge-profiles-response-generation-2025-source",
+      "doi": "10.1007/978-3-031-99264-3_18",
+      "url": "https://infoscience.epfl.ch/entities/publication/c186f403-251d-44b0-8b03-55bd9037d352"
+    }
+  ],
+  "source_ids": [
+    "new-mexico-mssa-technical-report-2025-source",
+    "wang-off-topic-spoken-responses-2019-source",
+    "rezayi-communication-skills-synthetic-training-2025-source",
+    "djagba-ngss-classroom-augmentation-2026-source"
+  ],
+  "screening_summary": "This targeted update searched explicitly for consequential assessment contexts. The strongest new evidence is the New Mexico MSSA technical report, which changes the prior high-stakes boundary from mostly adjacent/diagnostic evidence to direct but tightly controlled operational training-augmentation evidence. The other included sources clarify high-stakes detection/stress-testing, formative professional education, and classroom/in-term augmentation boundaries.",
+  "limitations": [
+    "This is a targeted surveillance pass, not a systematic review.",
+    "The search focused on English-language accessible full texts and official reports.",
+    "The New Mexico report is a single operational state-assessment source and should not be generalized into a universal high-stakes policy.",
+    "The included lower-stakes studies support training augmentation and feedback-oriented development, not synthetic-only validation or grade-bearing deployment."
+  ]
+}

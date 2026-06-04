@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "nguyen-cao-science-thinking-simulation-2026-source",
+  "name": "Exploring the Capacity of Large Language Models to Simulate Students' Scientific Thinking: Insights for Responsive Teaching",
+  "source_type": "journal_article",
+  "authors": [
+    "Ha Nguyen",
+    "Jie Cao"
+  ],
+  "venue": "Journal of Science Education and Technology",
+  "year": 2026,
+  "published_on": "2026-05-21",
+  "doi": "10.1007/s10956-026-10333-5",
+  "urls": [
+    "https://doi.org/10.1007/s10956-026-10333-5",
+    "https://link.springer.com/article/10.1007/s10956-026-10333-5"
+  ],
+  "summary": "Open-access journal article comparing GPT-5-mini, GPT-4o, Claude Sonnet 4, Gemini 2.5 Flash, Mistral 7B, and Llama-4-17B on simulation of open-ended student science ideas across domains and grade levels, with semantic similarity, language appropriateness, knowledge-scope, and teacher-perception evidence.",
+  "access_status": "full_text_available",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03",
+      "url": "https://link.springer.com/article/10.1007/s10956-026-10333-5",
+      "result": "Open-access HTML full text retrieved.",
+      "notes": "Used abstract, methods, results, and limitations-relevant passages for extraction."
+    }
+  ]
+}

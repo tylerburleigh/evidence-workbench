@@ -1,0 +1,229 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-assessment-stakes-boundaries-baseline-2026-06-02",
+  "name": "Assessment Stakes and Use Boundaries Baseline",
+  "summary": "Staged first literature-review baseline for how acceptable synthetic-response uses vary across formative, in-term, summative, high-stakes, and lower-stakes assessment contexts.",
+  "intake_mode": "baseline_review",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T22:23:21Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-assessment-stakes-boundaries"
+    ],
+    "research_question": "How do acceptable uses of synthetic student responses vary across formative, in-term, summative, high-stakes, and lower-stakes assessment contexts?"
+  },
+  "source_ids": [
+    "standards-educational-psychological-testing-2014-source",
+    "ets-responsible-ai-assessment-principles-2024-source",
+    "usdoe-teal-formative-assessment-source",
+    "frohn-llm-cr-live-scoring-2025-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "bexte-zesch-synthetic-content-scoring-2025-source",
+    "watts-scientific-argumentation-chatbot-2025-source",
+    "walsh-sjt-automated-scoring-2026-source"
+  ],
+  "source_urls": [
+    "https://www.testingstandards.net/uploads/7/6/6/4/76643089/standards_2014edition.pdf",
+    "https://www.ets.org/Rebrand/pdf/ETS_Convening_executive_summary_for_the_AI_Guidelines.pdf",
+    "https://lincs.ed.gov/federal-initiatives/teal/guide/formativeassessment",
+    "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs",
+    "https://aclanthology.org/2025.acl-long.659/",
+    "https://aclanthology.org/2025.bea-1.11/",
+    "https://www.mdpi.com/2227-7102/15/11/1507",
+    "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1756673/full"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "ssr-acceptable-scoring-uses-baseline-claim",
+      "relationship": "parent_boundary_claim"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-scoring-validation-use-baseline-claim",
+      "relationship": "adjacent_validation_boundary"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-real-response-comparison-baseline-claim",
+      "relationship": "real_response_validation_context"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-standards-educational-psychological-testing-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "standards-educational-psychological-testing-2014-source",
+      "file_path": "data/sources/standards-educational-psychological-testing-2014-source.json",
+      "staged_file_path": "data/staged-records/ssr-assessment-stakes-boundaries-baseline-2026-06-02/standards-educational-psychological-testing-2014-source.json",
+      "summary": "Stage the 2014 testing standards as contextual use-and-stakes guidance.",
+      "rationale": "The stakes-boundary question needs a validity frame tied to intended score use and consequence level."
+    },
+    {
+      "change_id": "create-ets-responsible-ai-assessment-principles-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "ets-responsible-ai-assessment-principles-2024-source",
+      "file_path": "data/sources/ets-responsible-ai-assessment-principles-2024-source.json",
+      "staged_file_path": "data/staged-records/ssr-assessment-stakes-boundaries-baseline-2026-06-02/ets-responsible-ai-assessment-principles-2024-source.json",
+      "summary": "Stage ETS responsible AI assessment guidance as contextual guardrail evidence.",
+      "rationale": "The claim needs AI-assessment guardrails for validity, fairness, oversight, transparency, and monitoring."
+    },
+    {
+      "change_id": "create-usdoe-teal-formative-assessment-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "usdoe-teal-formative-assessment-source",
+      "file_path": "data/sources/usdoe-teal-formative-assessment-source.json",
+      "staged_file_path": "data/staged-records/ssr-assessment-stakes-boundaries-baseline-2026-06-02/usdoe-teal-formative-assessment-source.json",
+      "summary": "Stage LINCS/TEAL formative-assessment guidance as lower-stakes context evidence.",
+      "rationale": "The claim needs a clear boundary for formative feedback and instructional-support use."
+    },
+    {
+      "change_id": "create-ssr-assessment-stakes-boundaries-search",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "ssr-assessment-stakes-boundaries-search-2026-06-02",
+      "file_path": "data/search-protocols/ssr-assessment-stakes-boundaries-search-2026-06-02.json",
+      "staged_file_path": "data/staged-records/ssr-assessment-stakes-boundaries-baseline-2026-06-02/ssr-assessment-stakes-boundaries-search-2026-06-02.json",
+      "summary": "Stage the targeted search and screening protocol for assessment stakes and use boundaries.",
+      "rationale": "The baseline needs auditable separation between contextual guidance and direct synthetic-response evidence."
+    },
+    {
+      "change_id": "create-standards-stakes-intended-use-boundary-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "standards-stakes-intended-use-boundary-finding-2026",
+      "file_path": "data/findings/standards-stakes-intended-use-boundary-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-assessment-stakes-boundaries-baseline-2026-06-02/standards-stakes-intended-use-boundary-finding-2026.json",
+      "summary": "Stage finding on intended-use and stakes-sensitive validity framing.",
+      "rationale": "The synthesis needs a defensible assessment-stakes frame before interpreting synthetic-response acceptability."
+    },
+    {
+      "change_id": "create-ets-ai-assessment-guardrails-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ets-ai-assessment-guardrails-finding-2026",
+      "file_path": "data/findings/ets-ai-assessment-guardrails-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-assessment-stakes-boundaries-baseline-2026-06-02/ets-ai-assessment-guardrails-finding-2026.json",
+      "summary": "Stage finding on AI-assessment validity, fairness, oversight, transparency, and monitoring guardrails.",
+      "rationale": "Synthetic-response use boundaries need AI assessment controls when the workflow approaches operational scoring or feedback."
+    },
+    {
+      "change_id": "create-usdoe-formative-feedback-boundary-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "usdoe-formative-feedback-boundary-finding-2026",
+      "file_path": "data/findings/usdoe-formative-feedback-boundary-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-assessment-stakes-boundaries-baseline-2026-06-02/usdoe-formative-feedback-boundary-finding-2026.json",
+      "summary": "Stage finding on formative feedback and instructional-support context.",
+      "rationale": "The synthesis needs a lower-stakes context boundary for formative uses."
+    },
+    {
+      "change_id": "create-frohn-stakes-prepilot-validation-boundary-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "frohn-stakes-prepilot-validation-boundary-finding-2026",
+      "file_path": "data/findings/frohn-stakes-prepilot-validation-boundary-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-assessment-stakes-boundaries-baseline-2026-06-02/frohn-stakes-prepilot-validation-boundary-finding-2026.json",
+      "summary": "Stage finding on summative pre-pilot synthetic checks versus real pilot validation.",
+      "rationale": "The synthesis needs direct synthetic-response evidence for summative assessment boundaries."
+    },
+    {
+      "change_id": "create-yoo-stakes-training-real-validation-boundary-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "yoo-stakes-training-real-validation-boundary-finding-2026",
+      "file_path": "data/findings/yoo-stakes-training-real-validation-boundary-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-assessment-stakes-boundaries-baseline-2026-06-02/yoo-stakes-training-real-validation-boundary-finding-2026.json",
+      "summary": "Stage finding on in-term AES training augmentation and real validation/test evidence.",
+      "rationale": "The synthesis needs direct evidence for lower-consequence training use with real-response validation boundaries."
+    },
+    {
+      "change_id": "create-bexte-stakes-label-audit-training-boundary-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "bexte-stakes-label-audit-training-boundary-finding-2026",
+      "file_path": "data/findings/bexte-stakes-label-audit-training-boundary-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-assessment-stakes-boundaries-baseline-2026-06-02/bexte-stakes-label-audit-training-boundary-finding-2026.json",
+      "summary": "Stage finding on generated-label audit before lower-consequence scorer training.",
+      "rationale": "The synthesis needs evidence that lower stakes do not remove label-provenance controls."
+    },
+    {
+      "change_id": "create-watts-stakes-formative-prototype-boundary-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "watts-stakes-formative-prototype-boundary-finding-2026",
+      "file_path": "data/findings/watts-stakes-formative-prototype-boundary-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-assessment-stakes-boundaries-baseline-2026-06-02/watts-stakes-formative-prototype-boundary-finding-2026.json",
+      "summary": "Stage finding on formative chatbot prompt and feedback prototype testing.",
+      "rationale": "The synthesis needs direct lower-stakes formative evidence that is not overread as scorer validation."
+    },
+    {
+      "change_id": "create-walsh-stakes-high-stakes-stress-test-boundary-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "walsh-stakes-high-stakes-stress-test-boundary-finding-2026",
+      "file_path": "data/findings/walsh-stakes-high-stakes-stress-test-boundary-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-assessment-stakes-boundaries-baseline-2026-06-02/walsh-stakes-high-stakes-stress-test-boundary-finding-2026.json",
+      "summary": "Stage finding on admissions SJT synthetic demographic analogs as high-stakes stress-test material.",
+      "rationale": "The synthesis needs direct but bounded high-stakes synthetic-response evidence."
+    },
+    {
+      "change_id": "create-ssr-assessment-stakes-boundaries-baseline-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-assessment-stakes-boundaries-baseline-claim",
+      "file_path": "data/claims/ssr-assessment-stakes-boundaries-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-assessment-stakes-boundaries-baseline-2026-06-02/ssr-assessment-stakes-boundaries-baseline-claim.json",
+      "summary": "Stage the first bounded synthesis claim for assessment stakes and synthetic-response use boundaries.",
+      "rationale": "The review question needs a public-baseline candidate claim that maps acceptable use to assessment purpose, decision consequence, and operational role."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-assessment-stakes-boundaries",
+      "note": "Creates the first staged baseline for how assessment stakes modify acceptable uses of synthetic student responses."
+    }
+  ],
+  "required_appraisal_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "applicability_boundary",
+    "synthesis_overreach"
+  ],
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-source-fidelity-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-construct-mapping-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-method-classification-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-applicability-boundary-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-synthesis-overreach-r1"
+  ],
+  "editorial_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-assessment-stakes-boundaries-baseline-2026-06-02-2026-06-02t23-13-17-951z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces.",
+    "applicability_boundary: Keep does_not_apply_when and summary language explicit that final validation requires real or independently human-scored response evidence.",
+    "construct_mapping: Keep support_role values as boundary_condition for guidance sources and direct_support only for synthetic-response studies.",
+    "scorer_validation_relevance: Keep the Watts support limited to formative prototype testing, as currently written.",
+    "source_fidelity: Keep these sources labeled as boundary conditions and retain the direct-support distinction in supporting_evidence."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": []
+}

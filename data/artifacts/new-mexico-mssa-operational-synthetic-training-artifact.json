@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "new-mexico-mssa-operational-synthetic-training-artifact",
+  "name": "New Mexico MSSA Operational Synthetic Training Augmentation Extract",
+  "artifact_type": "technical_report_extract",
+  "status": "complete",
+  "source_ids": [
+    "new-mexico-mssa-technical-report-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "population_or_context": "2024-2025 New Mexico MSSA state summative assessment; extracted section concerns automated scoring models for items on English non-accommodated operational test forms.",
+  "sample_size": "Field-test and operational student responses were supplemented in some Writing items; the report states approximately 100 synthetic responses were generated for each affected item, typically 10-30 approved per item, with a target of 2,000 total responses per item and at least 200 per score point.",
+  "methods": "Extracted operational model-training and validation workflow from Section 6.2.2.2. Synthetic responses were generated for sparse high-score Writing score points, reviewed by MI scoring staff, submitted to PED for approval, then incorporated into training data.",
+  "endpoint_categories": [
+    "operational_summative_training_augmentation",
+    "score_point_representation",
+    "human_review_and_approval",
+    "human_machine_validation"
+  ],
+  "education_context": "State summative ELA and mathematics assessment; English Writing constructed-response automated scoring on operational non-accommodated forms.",
+  "response_origin": "Hybrid corpus of previously scored field-test responses, operational student responses collected early in the scoring window, and LLM-generated synthetic responses for Writing items with insufficient high-score examples.",
+  "rubric_label_space": "Item-specific score points and Writing traits; the report highlights sparse upper score points, especially 4-point responses in some Writing items.",
+  "label_source": "Professional human scoring for field-test and operational responses; synthetic responses were reviewed by MI scoring staff and submitted to the New Mexico Public Education Department for approval before approved responses entered training data.",
+  "generation_model": "Large language models; model family and prompt details not reported.",
+  "generation_method": "Generate approximately 100 synthetic responses for each affected Writing item, review them through scoring staff, submit candidates for PED approval, and incorporate the approved subset into model training data.",
+  "prompt_strategy": "Not reported.",
+  "assessment_purpose": "summative_assessment",
+  "decision_consequence": "institutional_or_accountability_decision",
+  "operational_use": "training_augmentation",
+  "evaluation_method": "Independent validation set scoring with human-machine QWK, degradation relative to human-human QWK, and standardized mean score difference thresholds.",
+  "scorer_use": "Synthetic responses are used as limited training augmentation for PEG automated scoring models, not as standalone validation evidence.",
+  "real_response_comparator": "Field-test and operational student responses remain the primary training and validation evidence. The report states the validation set is independent of the training set, but does not fully specify whether validation rows exclude all synthetic responses.",
+  "reported_metrics": "Model evaluation criteria include human-machine QWK >= 0.65, human-human minus human-machine QWK degradation < 0.10, and absolute human-machine standardized mean score difference < 0.15; validation results are reported by item/trait.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The report does not identify the LLM, prompts, or detailed synthetic-response quality rubric.",
+    "The report supports controlled training augmentation, not final validation from synthetic responses alone.",
+    "The report does not present subgroup fairness, cut-score, or accountability-validity evidence specific to the synthetic augmentation.",
+    "The composition of validation sets relative to approved synthetic responses should be verified before making stronger validation claims."
+  ]
+}
