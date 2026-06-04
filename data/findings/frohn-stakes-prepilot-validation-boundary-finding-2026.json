@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "frohn-stakes-prepilot-validation-boundary-finding-2026",
+  "name": "Summative Constructed-response Scoring Allows Synthetic Pre-pilot Checks but Still Requires Real Pilot Validation",
+  "source_id": "frohn-llm-cr-live-scoring-2025-source",
+  "artifact_id": "frohn-acceptable-prepilot-use-artifact",
+  "taxonomy_node_ids": [
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "endpoint_category": "summative_prepilot_boundary",
+  "direction": "supports_with_boundary",
+  "evidence_tier": "framework_extracted",
+  "confidence": "medium",
+  "statement": "In a constructed-response scoring framework with summative assessment relevance, Frohn et al. place synthetic responses in pre-pilot checks and challenge sets with no direct learner consequence, while reserving real student responses for pilot validation before live scoring.",
+  "population_or_context": "Commercial LLM scoring of constructed-response assessment items.",
+  "time_horizon": "Full text retrieved and extracted on 2026-06-02.",
+  "quantitative_note": "The source discusses agreement thresholds and monitoring metrics but does not report one standalone synthetic-response validation result.",
+  "caveats": [
+    "Framework guidance rather than a completed deployment validation study.",
+    "The operational boundary is explicit: synthetic pre-pilot evidence does not replace real pilot evidence."
+  ],
+  "evaluation_method": "Pre-pilot agreement and error analysis against human labels, followed by pilot validation on real student responses.",
+  "reported_metrics": "Cohen kappa, quadratic weighted kappa, accuracy, F1, Matthews correlation coefficient, false-positive and false-negative rates, score distributions, and conditional accuracy.",
+  "numeric_results_extracted": "not_applicable",
+  "limitations": [
+    "Bounded to constructed-response LLM scoring workflows.",
+    "Does not establish sufficient evidence for high-stakes operational scoring from synthetic data alone."
+  ],
+  "source_locator": {
+    "section": "Sections 3.3-3.5",
+    "url": "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs",
+    "quote_or_paraphrase_note": "The finding paraphrases the synthetic pre-pilot and challenge-set workflow and the later real-response pilot-validation step.",
+    "verification_status": "located"
+  }
+}

@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-synthetic-response-scoring-agreement-search-2026-06-02",
+  "name": "Synthetic Response Scoring Agreement Search Pass",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-synthetic-response-scoring-agreement"
+  ],
+  "status": "included_sources_staged",
+  "systematicity_level": "targeted_bootstrap",
+  "search_started_at": "2026-06-02T19:05:00Z",
+  "search_completed_at": "2026-06-02T19:29:00Z",
+  "databases": [
+    "Web search",
+    "ACL Anthology",
+    "arXiv",
+    "Frontiers",
+    "ResearchGate primary full-text page"
+  ],
+  "search_queries": [
+    {
+      "database": "Web search",
+      "query": "\"synthetic student responses\" \"rubric\" \"human\" \"scoring\"",
+      "searched_at": "2026-06-02T19:05:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"generated student responses\" \"human\" \"rubric\" \"agreement\"",
+      "searched_at": "2026-06-02T19:05:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"LLM-generated\" \"student responses\" \"weighted kappa\"",
+      "searched_at": "2026-06-02T19:07:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"construct a synthetic response dataset\" \"majority-vote LLM annotation\" \"LLaMA 3.1\"",
+      "searched_at": "2026-06-02T19:10:00Z",
+      "result_count": "identified ACL Anthology BEA 2025 source"
+    },
+    {
+      "database": "Web search",
+      "query": "\"Is Lunch Free Yet\" \"synthetic data\" \"content scoring\" \"BEA 2025\"",
+      "searched_at": "2026-06-02T19:12:00Z",
+      "result_count": "identified ACL Anthology BEA 2025 source"
+    },
+    {
+      "database": "Web search",
+      "query": "\"Using LLMs to Simulate Students' Responses to Exam Questions\" labels scores",
+      "searched_at": "2026-06-02T19:14:00Z",
+      "result_count": "identified ACL Anthology Findings 2024 source"
+    },
+    {
+      "database": "Web search",
+      "query": "\"synthetic data\" \"automated essay scoring\" \"student essays\" \"QWK\"",
+      "searched_at": "2026-06-02T19:17:00Z",
+      "result_count": "screened first result page for targeted query"
+    }
+  ],
+  "inclusion_criteria": [
+    "The source must analyze synthetic, simulated, or generated student/learner/examinee responses, answers, essays, or constructed responses.",
+    "Direct support must involve human labels, expert scores, AI or model scores, generated target labels, rubric scores, or scorer-agreement metrics used to evaluate, label, validate, benchmark, or train with generated responses.",
+    "Direct findings require accessible full text, PDF, or full-text HTML with a source locator beyond an abstract-only page."
+  ],
+  "exclusion_criteria": [
+    "Exclude generic human-AI scoring agreement studies when the scored response corpus is only real student work.",
+    "Exclude synthetic-data generation papers that do not attach a score, label, rubric, target level, scorer, or agreement signal to the generated responses.",
+    "Exclude abstract-only or paywalled candidates from direct synthesis support until full text is obtained or the use is explicitly limited to discovery."
+  ],
+  "dedupe_method": "Deduplicated by title, DOI, venue metadata, arXiv or ACL Anthology identifier, and canonical source page.",
+  "screening_counts": {
+    "records_identified": "at least 40 records across targeted web and primary-source queries",
+    "records_screened": 11,
+    "full_text_reviewed": 6,
+    "sources_included": 6,
+    "sources_deferred_for_access_or_scope": 5
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "candidate-frohn-2025",
+      "title": "A Framework for Live Scoring Constructed Response Items with Commercial LLMs",
+      "decision": "include",
+      "reason": "Directly addresses labeled synthetic student responses for pre-pilot scoring validation, human labels, agreement thresholds, and real-response pilot boundaries.",
+      "source_id": "frohn-llm-cr-live-scoring-2025-source",
+      "url": "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs"
+    },
+    {
+      "candidate_id": "candidate-wolfe-2026",
+      "title": "Calibrating Generative AI to Produce Realistic Essays for Data Augmentation",
+      "decision": "include",
+      "reason": "Uses expert scores, realism judgments, agreement metrics, and weighted kappa to evaluate generated essays against source essay scores.",
+      "source_id": "wolfe-calibrating-realistic-essays-2026-source",
+      "doi": "10.48550/arXiv.2602.06772",
+      "url": "https://arxiv.org/abs/2602.06772"
+    },
+    {
+      "candidate_id": "candidate-yoo-2025",
+      "title": "DREsS: Dataset for Rubric-based Essay Scoring on EFL Writing",
+      "decision": "include",
+      "reason": "Uses synthetic corrupted essays with rubric-aligned target score ranges for automated essay scoring training, while keeping real classroom essays for validation/test evaluation.",
+      "source_id": "yoo-dress-rubric-aes-2025-source",
+      "doi": "10.18653/v1/2025.acl-long.659",
+      "url": "https://aclanthology.org/2025.acl-long.659/"
+    },
+    {
+      "candidate_id": "candidate-bexte-zesch-2025",
+      "title": "Is Lunch Free Yet? Overcoming the Cold-Start Problem in Supervised Content Scoring using Zero-Shot LLM-Generated Training Data",
+      "decision": "include",
+      "reason": "Evaluates generated short-answer training data for content scoring and shows generated target labels need manual relabeling before competitive scorer training.",
+      "source_id": "bexte-zesch-synthetic-content-scoring-2025-source",
+      "doi": "10.18653/v1/2025.bea-1.11",
+      "url": "https://aclanthology.org/2025.bea-1.11/"
+    },
+    {
+      "candidate_id": "candidate-nebhi-2025",
+      "title": "End-to-End Automated Item Generation and Scoring for Adaptive English Writing Assessment with Large Language Models",
+      "decision": "include",
+      "reason": "Constructs synthetic writing responses using majority-vote LLM annotation benchmarked against expert human ratings and uses the annotated responses for scoring-model development.",
+      "source_id": "nebhi-adaptive-writing-aig-scoring-2025-source",
+      "doi": "10.18653/v1/2025.bea-1.73",
+      "url": "https://aclanthology.org/2025.bea-1.73/"
+    },
+    {
+      "candidate_id": "candidate-benedetto-2024",
+      "title": "Using LLMs to simulate students' responses to exam questions",
+      "decision": "include",
+      "reason": "Evaluates generated exam answers against assigned skill-level targets and answer accuracy across datasets and LLMs.",
+      "source_id": "benedetto-simulated-exam-responses-2024-source",
+      "doi": "10.18653/v1/2024.findings-emnlp.663",
+      "url": "https://aclanthology.org/2024.findings-emnlp.663/"
+    },
+    {
+      "candidate_id": "candidate-walsh-2026",
+      "title": "Best of both worlds: combining LLMs and traditional ML for automated scoring of an open-response situational judgment test",
+      "decision": "maybe",
+      "reason": "Uses synthetic demographic analog responses for scorer fairness stress testing, but the response setting is admissions SJT scoring and does not center label agreement for generated student-response datasets.",
+      "source_id": "walsh-sjt-automated-scoring-2026-source",
+      "doi": "10.3389/feduc.2026.1756673",
+      "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1756673/full"
+    },
+    {
+      "candidate_id": "candidate-scalefeedback-2025",
+      "title": "Synthetic Computer science Assignments for LLM-generated Educational Feedback",
+      "decision": "maybe",
+      "reason": "Uses synthetic student submissions and evaluator marks in feedback research, but the target use is feedback generation rather than scoring-agreement validation.",
+      "url": "https://arxiv.org/abs/2508.05953"
+    },
+    {
+      "candidate_id": "candidate-human-ai-score-alignment-2025",
+      "title": "How Model Size, Temperature, and Prompt Style Affect LLM-Human Assessment Score Alignment",
+      "decision": "exclude",
+      "reason": "Relevant to human-AI scoring agreement generally, but the targeted search did not verify that the scored response corpus contains synthetic student responses.",
+      "url": "https://aime-conference.org/2025/conference/paper/how-model-size-temperature-and-prompt-style-affect-llm-human-assessment-score-alignment/"
+    },
+    {
+      "candidate_id": "candidate-generative-ai-cr-scoring-2025",
+      "title": "Validating Generative AI-based Scoring of Constructed Responses in Cognitive Diagnosis",
+      "decision": "exclude",
+      "reason": "Relevant to automated scoring of constructed responses, but the targeted pass did not verify a synthetic response corpus used for scoring agreement.",
+      "url": "https://aime-conference.org/2025/conference/paper/validating-generative-ai-based-scoring-of-constructed-responses-in-cognitive-diagnosis/"
+    },
+    {
+      "candidate_id": "candidate-emulate-human-performance-2026",
+      "title": "Can Large Language Models Emulate Human Performance on Educational Assessments?",
+      "decision": "no_full_text",
+      "reason": "Potentially relevant to generated assessment responses and human-performance comparison, but this pass did not verify full-text access, so it is not used as direct support.",
+      "doi": "10.31234/osf.io/btja8_v2",
+      "url": "https://osf.io/preprints/psyarxiv/btja8_v2"
+    }
+  ],
+  "source_ids": [
+    "frohn-llm-cr-live-scoring-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "bexte-zesch-synthetic-content-scoring-2025-source",
+    "nebhi-adaptive-writing-aig-scoring-2025-source",
+    "benedetto-simulated-exam-responses-2024-source"
+  ],
+  "screening_summary": "Targeted bootstrap screening included six full-text sources where generated student responses, essays, short answers, exam answers, or constructed responses are tied to human labels, expert scores, AI annotation, generated target labels, rubric score ranges, or scorer-agreement thresholds. Broad human-AI scoring agreement papers were excluded unless synthetic student responses were part of the scored response corpus.",
+  "limitations": [
+    "This was a targeted bootstrap pass, not a systematic review.",
+    "Included sources mix empirical datasets, data-augmentation studies, and one implementation framework, so support roles are separated in the claim.",
+    "Scoring labels are heterogeneous: binary or five-way short-answer labels, ordinal essay rubrics, proficiency-aligned writing levels, target skill levels, and checklist-style constructed-response labels.",
+    "Abstract-only candidates are screened but not used as direct support."
+  ]
+}

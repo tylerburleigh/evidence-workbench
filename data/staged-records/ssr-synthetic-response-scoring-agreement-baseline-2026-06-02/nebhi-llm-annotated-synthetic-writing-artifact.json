@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "nebhi-llm-annotated-synthetic-writing-artifact",
+  "name": "Nebhi et al. Majority-vote LLM Annotated Synthetic Writing Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "nebhi-adaptive-writing-aig-scoring-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-synthetic-response-scoring-agreement"
+  ],
+  "population_or_context": "Adaptive English writing assessment for the EF Standard English Test pipeline.",
+  "sample_size": "Approximately 200 human-rated gold-standard item-response pairs for annotator benchmarking; 20,000 synthetic response pairs for response-generator fine-tuning; approximately 200 synthetic answers per new prompt in scoring-model integration.",
+  "methods": "Extracted expert-human annotation, LLM annotator benchmarking, majority-vote annotation, synthetic response generation, and scoring-model integration.",
+  "endpoint_categories": [
+    "llm_annotation_agreement",
+    "majority_vote_labels",
+    "scoring_model_integration"
+  ],
+  "education_context": "Adaptive English writing assessment with proficiency-aligned writing prompts and grammatical accuracy ratings.",
+  "response_origin": "Synthetic writing responses are generated to emulate authentic student work across proficiency levels and are annotated for grammatical accuracy and proficiency level.",
+  "rubric_label_space": "Grammatical accuracy scale from 0 to 4 and proficiency-aligned writing levels.",
+  "label_source": "Five expert human raters establish a gold-standard benchmark; top-performing LLM annotators are selected by Cohen kappa against that benchmark and combined by majority vote for synthetic data annotation.",
+  "generation_model": "A fine-tuned LLaMA 3.1 8B model generates synthetic responses after ORPO fine-tuning; annotation candidates include LLaMA 3.3 70B, GPT-4o, Nova Pro, Mistral models, and Claude Opus.",
+  "generation_method": "Generate proficiency-aligned synthetic responses for validated writing items, annotate response pairs with an LLM ensemble, and use the data to fine-tune response generation and scoring components.",
+  "prompt_strategy": "Few-shot item generation and proficiency-conditioned response generation are used; exact prompts are not treated as a reusable scoring-agreement standard in this baseline.",
+  "evaluation_method": "Candidate LLM annotators are compared to expert human ratings with Cohen kappa; majority-vote annotation is then used to label synthetic response pairs for model development.",
+  "scorer_use": "Automated scoring model development and integration for adaptive writing assessment.",
+  "real_response_comparator": "A human-rated gold standard of real item-response pairs benchmarks LLM annotation before synthetic response annotation is used at scale.",
+  "reported_metrics": "Cohen kappa values include LLaMA 3.3 70B at 0.86, GPT-4o at 0.87, Nova Pro at 0.78, and the selected ensemble at 0.89 against the human-annotated gold standard.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "human_gold_standard_pairs": 200,
+    "expert_raters": 5,
+    "minimum_retained_inter_annotator_agreement": 0.7,
+    "synthetic_response_pairs": 20000,
+    "approximate_synthetic_answers_per_new_prompt": 200,
+    "cohen_kappa_against_human_gold_standard": {
+      "llama_3_3_70b": 0.86,
+      "gpt_4o": 0.87,
+      "nova_pro": 0.78,
+      "mistral_small": 0.18,
+      "mistral_large": -0.01,
+      "claude_opus": -0.08,
+      "ensemble": 0.89
+    }
+  },
+  "limitations": [
+    "The paper's validity language is pipeline-level and should not be read as independent validation of all generated responses.",
+    "The annotation process depends on the quality and representativeness of the approximately 200-pair human gold standard.",
+    "The domain is English writing assessment and grammatical accuracy, not all constructed-response scoring."
+  ],
+  "assessment_purpose": "formative_feedback",
+  "decision_consequence": "feedback_or_instructional_support",
+  "operational_use": "training_augmentation"
+}

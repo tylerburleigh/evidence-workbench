@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "frohn-llm-cr-validation-framework-artifact",
+  "name": "Frohn et al. Constructed-Response LLM Scoring Validation Framework Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "frohn-llm-cr-live-scoring-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-scoring-validation-use"
+  ],
+  "population_or_context": "Constructed-response assessment implementation framework for commercial LLM scoring workflows.",
+  "sample_size": "Framework guidance rather than one empirical dataset.",
+  "methods": "Extracted the described development, synthetic dataset generation, pre-pilot validation, pilot validation, and live monitoring steps.",
+  "endpoint_categories": [
+    "pre_pilot_validation",
+    "challenge_sets",
+    "operational_monitoring"
+  ],
+  "education_context": "Constructed-response assessment items, including checklist-style rubrics and live scoring contexts; not limited to one grade band or subject.",
+  "response_origin": "Synthetic responses are proposed for pre-pilot validation and challenge sets; real student responses are reserved for pilot validation and live-scoring monitoring.",
+  "rubric_label_space": "Checklist, analytic, or constructed-response scoring rubrics; paper emphasizes criteria-level scoring and agreement with human scoring rather than one fixed label set.",
+  "label_source": "Framework recommends human labeling and human scoring for validation; synthetic data labels are not treated as independently validated correctness labels.",
+  "generation_model": "Commercial LLM scoring workflow; the synthetic response generator is framework-level and not pinned to one model version.",
+  "generation_method": "Synthetic-response dataset generation for balanced score-level coverage and challenge examples before real-pilot validation.",
+  "prompt_strategy": "Framework includes prompt templates for scoring and recommends synthetic challenge responses that cover likely LLM failure modes; exact generation prompts are not reported as a fixed empirical protocol.",
+  "evaluation_method": "Pre-pilot validation on synthetic datasets and challenge sets, followed by pilot validation on real student responses using human-scoring agreement, score distributions, conditional accuracy, and bias analysis.",
+  "scorer_use": "Validation, calibration, benchmarking, stress testing, and live-monitoring support for constructed-response automated scoring.",
+  "real_response_comparator": "Real student pilot responses are required for authentic scoring-accuracy validation after synthetic pre-pilot testing.",
+  "reported_metrics": "Examples include exact agreement, adjacent agreement, weighted kappa, F1, Matthews correlation coefficient, false-positive and false-negative rates, and score-distribution comparisons.",
+  "limitations": [
+    "This is a framework paper, not an empirical demonstration that one synthetic dataset validates one scorer.",
+    "The paper separates synthetic pre-pilot validation from pilot validation on real student responses.",
+    "Specific grade band, content domain, and item family generalizations require a concrete implementation study."
+  ],
+  "assessment_purpose": "summative_assessment",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "pre_pilot_validation"
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "bexte-generated-answer-relabeling-artifact",
+  "name": "Bexte and Zesch Generated Short-answer Relabeling Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "bexte-zesch-synthetic-content-scoring-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-synthetic-response-scoring-agreement"
+  ],
+  "population_or_context": "Supervised content scoring for short-answer student responses using the Student Response Analysis dataset.",
+  "sample_size": "For each of five labels, 100 answers were generated; experiments compare SRA-gen synthetic answers with original student-authored SRA answers.",
+  "methods": "Extracted generated target-label design, label-conformance analysis, model training on generated labels, zero-shot LLM scoring baseline, and manual relabeling of generated answers.",
+  "endpoint_categories": [
+    "generated_target_labels",
+    "manual_relabeling",
+    "content_scoring_training"
+  ],
+  "education_context": "Short-answer content scoring with a five-label SRA label scale.",
+  "response_origin": "LLM-generated short answers are created in parallel to a student-authored SRA dataset and used as training data for content scoring models.",
+  "rubric_label_space": "Five-way short-answer content-scoring label scale.",
+  "label_source": "Initial labels are generated target labels requested in the prompt; the paper manually relabels generated answers to clean noisy labels.",
+  "generation_model": "DeepSeek-v2, a 4-bit quantized mixture-of-experts model with 15.7B parameters, accessed through Ollama 0.5.7.",
+  "generation_method": "Zero-shot answer generation requests 100 answers per desired label for each dataset question.",
+  "prompt_strategy": "The prompt includes the question and a description of the desired label; default model parameters are used.",
+  "evaluation_method": "Synthetic-label fidelity is examined through label-conformance analysis; scoring models trained on generated data are evaluated with macro-averaged F1 on original student answers.",
+  "scorer_use": "Training-data generation and cold-start support for supervised content scoring.",
+  "real_response_comparator": "Original SRA student-authored answers provide the test set and comparison point for models trained on generated answers.",
+  "reported_metrics": "Macro-averaged F1, label-conformance analysis, and comparisons between as-generated labels, manually cleaned labels, and original SRA training data.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_tables": [
+    {
+      "table": "Table 4",
+      "metric": "macro_averaged_f1_by_training_data",
+      "rows": [
+        {
+          "method": "Majority baseline",
+          "sra_training_data": 0.21,
+          "sra_gen_training_data": 0.21
+        },
+        {
+          "method": "LLM Scoring",
+          "sra_training_data": 0.21,
+          "sra_gen_training_data": 0.21
+        },
+        {
+          "method": "SBERTpre",
+          "sra_training_data": 0.44,
+          "sra_gen_training_data": 0.3
+        },
+        {
+          "method": "LR",
+          "sra_training_data": 0.46,
+          "sra_gen_training_data": 0.25
+        },
+        {
+          "method": "BERT",
+          "sra_training_data": 0.4,
+          "sra_gen_training_data": 0.25
+        },
+        {
+          "method": "SBERTfine",
+          "sra_training_data": 0.55,
+          "sra_gen_training_data": 0.28
+        }
+      ]
+    }
+  ],
+  "extracted_numeric_summary": {
+    "generated_answers_per_label": 100,
+    "label_count": 5,
+    "reported_max_label_nonconformance_share": 0.75
+  },
+  "limitations": [
+    "Generated answers are not automatically reliable just because the prompt asks for a target label.",
+    "Manual relabeling is required for competitive performance in the study.",
+    "The evidence is bounded to SRA short-answer content scoring and DeepSeek-v2 generation under the tested prompt."
+  ],
+  "assessment_purpose": "in_term_or_classroom_assessment",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "training_augmentation"
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "cao-nguyen-authenticity-workflow-comparison-finding-2026",
+  "name": "Post-Prompt Workflows Improve Mathematics Simulated-Learner Authenticity",
+  "source_id": "cao-nguyen-math-simulated-learners-2026-source",
+  "artifact_id": "cao-nguyen-math-simulated-learner-authenticity-artifact",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-model-generation-effects",
+    "ssr-prompt-engineering-effects"
+  ],
+  "endpoint_category": "workflow_realism_effect",
+  "direction": "post_prompt_workflows_improve_authenticity_with_tradeoffs",
+  "evidence_tier": "accepted_conference_preprint_full_text",
+  "confidence": "moderate",
+  "statement": "Cao, Nguyen, and colleagues show that authenticity of synthetic mathematics learner responses improves when generation moves beyond few-shot prompting, but different workflows create different pedagogical affordances and limitations rather than one generally superior model choice.",
+  "population_or_context": "Fifth-grade fraction simulated learner for preservice mathematics teacher practice.",
+  "time_horizon": "2026",
+  "quantitative_note": "The paper reports significant McNemar-test improvements for cognition and language authenticity for fine-tuning, multi-agent, and DPO workflows against few-shot prompting; DPO reached 100% language and 88.7% cognition authenticity descriptively in the combined set, with no significant GLMM differences among the three post-prompt approaches.",
+  "source_locator": {
+    "section": "Abstract; Method; Results 4.1; Discussion and Conclusion",
+    "url": "https://arxiv.org/pdf/2604.04361",
+    "quote_or_paraphrase_note": "Extraction uses the paper's workflow descriptions, sample construction, coding procedure, and reported authenticity results.",
+    "verification_status": "verified"
+  },
+  "caveats": [
+    "Authenticity is evaluated for teacher learning, not scorer validation.",
+    "The comparison is workflow-specific and does not isolate every model-family effect.",
+    "The single-task, single-agent context limits transfer to constructed-response assessment."
+  ],
+  "numeric_results_extracted": true,
+  "evaluation_method": "Researcher-coded cognition and language authenticity, McNemar tests, GLMMs, and qualitative teacher/researcher interviews.",
+  "limitations": [
+    "No automated scoring model is trained or validated.",
+    "Human authenticity ratings are purpose-specific to teacher noticing."
+  ]
+}

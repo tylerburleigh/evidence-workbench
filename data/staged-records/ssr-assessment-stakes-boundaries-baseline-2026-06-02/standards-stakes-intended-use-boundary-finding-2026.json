@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "standards-stakes-intended-use-boundary-finding-2026",
+  "name": "Testing Standards Make Validity Evidence Use- and Stakes-dependent",
+  "source_id": "standards-educational-psychological-testing-2014-source",
+  "taxonomy_node_ids": [
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "endpoint_category": "assessment_stakes_validity_boundary",
+  "direction": "sets_boundary",
+  "evidence_tier": "standards_guidance",
+  "confidence": "high",
+  "statement": "The 2014 testing standards frame validity around intended score interpretations and uses, and make adherence to rigorous validity, fairness, reliability, and documentation standards more critical as assessment stakes and protection against harm increase.",
+  "population_or_context": "Educational and psychological testing programs, including tests that support consequential decisions and lower-stakes classroom uses.",
+  "time_horizon": "Official 2014 standards document screened on 2026-06-02.",
+  "quantitative_note": "No numeric study results; this is standards guidance.",
+  "caveats": [
+    "The standards are not specific to synthetic student responses.",
+    "They supply the use-and-stakes validity frame used to bound direct synthetic-response evidence."
+  ],
+  "evaluation_method": "Professional standards synthesis for score interpretation, intended use, fairness, reliability, and reporting.",
+  "numeric_results_extracted": "not_applicable",
+  "limitations": [
+    "Does not directly evaluate synthetic responses or automated scoring models.",
+    "Requires translation into concrete evidence requirements for each assessment program."
+  ],
+  "source_locator": {
+    "section": "Introduction and Chapter 1 validity framing",
+    "page": "1-27",
+    "url": "https://www.testingstandards.net/uploads/7/6/6/4/76643089/standards_2014edition.pdf",
+    "quote_or_paraphrase_note": "The finding paraphrases the standards' intended-use validity frame and the statement that standards become more critical as stakes increase.",
+    "verification_status": "located"
+  }
+}

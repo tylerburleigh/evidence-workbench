@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "yoo-acceptable-training-boundary-finding-2026",
+  "name": "Synthetic CASE Essays Support AES Training While Real Essays Carry Validation and Test Evidence",
+  "source_id": "yoo-dress-rubric-aes-2025-source",
+  "artifact_id": "yoo-acceptable-training-boundary-artifact",
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses"
+  ],
+  "endpoint_category": "training_augmentation_boundary",
+  "direction": "sets_boundary",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Yoo et al. use 40,185 synthetic DREsS_CASE essays for rubric-based AES training augmentation while preserving real classroom DREsS_New essays for validation and test splits, making synthetic training acceptable only within a real-response evaluation boundary.",
+  "population_or_context": "Rubric-based EFL automated essay scoring dataset and baselines.",
+  "time_horizon": "ACL 2025 paper retrieved on 2026-06-02.",
+  "quantitative_note": "The dataset includes 2,279 real classroom essays, 6,515 standardized existing-dataset samples, and 40,185 synthetic CASE samples.",
+  "caveats": [
+    "CASE corruption is not the same as LLM-generated student simulation.",
+    "The evidence supports training augmentation, not synthetic-only validation.",
+    "Rubric-based EFL essay scoring may not generalize to short-answer or SJT scoring."
+  ],
+  "evaluation_method": "Automated essay scoring evaluation with real validation/test data and rubric-score agreement metrics.",
+  "reported_metrics": "Dataset sizes and weighted-kappa-style AES evaluation metrics.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "real_classroom_essays": 2279,
+    "standardized_existing_dataset_samples": 6515,
+    "synthetic_case_samples": 40185
+  },
+  "limitations": [
+    "Does not validate a scorer using only synthetic responses.",
+    "Supports a training/augmentation use case with real-response validation controls."
+  ],
+  "source_locator": {
+    "section": "Dataset composition and experimental setup",
+    "url": "https://aclanthology.org/2025.acl-long.659/",
+    "quote_or_paraphrase_note": "The finding paraphrases the DREsS_New, DREsS_Std, and DREsS_CASE data split and validation/test boundary.",
+    "verification_status": "verified"
+  }
+}

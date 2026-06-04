@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "cao-nguyen-math-simulated-learners-2026-source",
+  "name": "Developing Authentic Simulated Learners for Mathematics Teacher Learning: Insights from Three Approaches with Large Language Models",
+  "source_type": "conference_preprint",
+  "authors": [
+    "Jie Cao",
+    "Ha Nguyen",
+    "Selim Yavuz",
+    "Boran Yu",
+    "Shuguang Wang",
+    "Pavneet Kaur Bharaj",
+    "Dionne Cross Francis"
+  ],
+  "venue": "AIED 2026",
+  "year": 2026,
+  "published_on": "2026-04-06",
+  "doi": "10.48550/arXiv.2604.04361",
+  "urls": [
+    "https://arxiv.org/abs/2604.04361",
+    "https://arxiv.org/pdf/2604.04361"
+  ],
+  "summary": "AIED 2026 accepted preprint comparing fine-tuning, multi-agent, and DPO approaches against few-shot prompting for simulated fifth-grade mathematics learners, using cognitive and language authenticity coding plus interviews with preservice teachers and researchers.",
+  "access_status": "full_text_available",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03",
+      "url": "https://arxiv.org/pdf/2604.04361",
+      "result": "PDF full text retrieved.",
+      "notes": "Used abstract, methods, results, and discussion sections for extraction."
+    }
+  ]
+}

@@ -1,0 +1,168 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-validity-conditions-claim-hardening-update-2026-06-03",
+  "name": "Validity Conditions Claim Hardening Update",
+  "summary": "Follow-up claim-support update that adds the published validity-condition findings and sources to the affected SSR baseline claim support maps after the controlled-comparison bundle was published.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-03T19:35:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-quality-evaluation",
+      "ssr-model-generation-effects",
+      "ssr-prompt-engineering-effects",
+      "ssr-real-response-comparison",
+      "ssr-scoring-validation-use",
+      "ssr-acceptable-scoring-uses"
+    ],
+    "research_question": "How should the published validity-condition evidence be reflected in the affected baseline claim support maps?"
+  },
+  "source_ids": [
+    "nguyen-cao-science-thinking-simulation-2026-source",
+    "cao-nguyen-math-simulated-learners-2026-source",
+    "scarlatos-smart-irt-simulated-students-2025-source",
+    "wu-embracing-imperfection-student-agents-2025-source"
+  ],
+  "source_urls": [
+    "https://link.springer.com/article/10.1007/s10956-026-10333-5",
+    "https://arxiv.org/abs/2604.04361",
+    "https://aclanthology.org/2025.emnlp-main.1274/",
+    "https://aclanthology.org/2025.acl-long.488/"
+  ],
+  "related_records": [
+    {
+      "record_type": "candidate_bundle",
+      "record_id": "ssr-validity-conditions-controlled-comparisons-update-2026-06-03",
+      "relationship": "hardens_claim_support_after_publication"
+    },
+    {
+      "record_type": "publication_event",
+      "record_id": "publish-ssr-validity-conditions-controlled-comparisons-update-2026-06-03-2026-06-03t19-28-50-265z",
+      "relationship": "source_publication_for_claim_support"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "update-quality-evaluation-claim",
+      "change_type": "update_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-quality-evaluation-baseline-claim",
+      "file_path": "data/claims/ssr-quality-evaluation-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-claim-hardening-update-2026-06-03/ssr-quality-evaluation-baseline-claim.json",
+      "summary": "Add validity-condition realism and authenticity findings to the quality-evaluation support map.",
+      "rationale": "The published Nguyen/Cao, Cao et al., SMART, and Wu et al. findings add direct support for multidimensional realism metrics."
+    },
+    {
+      "change_id": "update-model-generation-effects-claim",
+      "change_type": "update_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-model-generation-effects-baseline-claim",
+      "file_path": "data/claims/ssr-model-generation-effects-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-claim-hardening-update-2026-06-03/ssr-model-generation-effects-baseline-claim.json",
+      "summary": "Add controlled model/workflow comparison findings to the model-generation support map.",
+      "rationale": "The new evidence strengthens the task-bound model/workflow sensitivity claim without changing claim confidence."
+    },
+    {
+      "change_id": "update-prompt-engineering-effects-claim",
+      "change_type": "update_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-prompt-engineering-effects-baseline-claim",
+      "file_path": "data/claims/ssr-prompt-engineering-effects-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-claim-hardening-update-2026-06-03/ssr-prompt-engineering-effects-baseline-claim.json",
+      "summary": "Add lesson-context and workflow-prompting evidence to the prompt-engineering support map.",
+      "rationale": "The new studies add bounded evidence that contextual prompting and workflow prompts shape synthetic response behavior."
+    },
+    {
+      "change_id": "update-real-response-comparison-claim",
+      "change_type": "update_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-real-response-comparison-baseline-claim",
+      "file_path": "data/claims/ssr-real-response-comparison-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-claim-hardening-update-2026-06-03/ssr-real-response-comparison-baseline-claim.json",
+      "summary": "Add new real-response and comparator-anchor findings to the real-response-comparison support map.",
+      "rationale": "The new evidence clarifies comparator types: lesson ideas, expert-coded authenticity, IRT item difficulty, and programming learning records."
+    },
+    {
+      "change_id": "update-scoring-validation-use-claim",
+      "change_type": "update_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-scoring-validation-use-baseline-claim",
+      "file_path": "data/claims/ssr-scoring-validation-use-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-claim-hardening-update-2026-06-03/ssr-scoring-validation-use-baseline-claim.json",
+      "summary": "Add the SMART scoring-adjacent item-difficulty boundary finding to the scorer-validation-use support map.",
+      "rationale": "SMART is validity-relevant to scoring workflows but must remain classified as item-development/difficulty-estimation evidence, not synthetic-only final scorer validation."
+    },
+    {
+      "change_id": "update-acceptable-scoring-uses-claim",
+      "change_type": "update_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-acceptable-scoring-uses-baseline-claim",
+      "file_path": "data/claims/ssr-acceptable-scoring-uses-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-validity-conditions-claim-hardening-update-2026-06-03/ssr-acceptable-scoring-uses-baseline-claim.json",
+      "summary": "Add the SMART item-development acceptable-use boundary to the acceptable-scoring-uses support map.",
+      "rationale": "The published finding supports a bounded calibration/development use category when synthetic responses are anchored to human-scored real-response IRT evidence."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-quality-evaluation",
+      "note": "Adds direct support for grade-level, cognitive-authenticity, item-difficulty, and error-pattern realism metrics."
+    },
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-model-generation-effects",
+      "note": "Adds direct support for model/workflow sensitivity across multi-model, DPO, multi-agent, IRT-aligned, and cognitive-prototype approaches."
+    },
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-real-response-comparison",
+      "note": "Adds explicit comparator anchors from lesson ideas, real utterance/authenticity data, human-scored IRT estimates, and programming learning records."
+    },
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-scoring-validation-use",
+      "note": "Adds SMART as scoring-adjacent item-difficulty evidence while preserving the synthetic-only validation boundary."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "applicability_boundary",
+    "synthesis_overreach"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_review_ids": [
+    "evidence-review-ssr-validity-conditions-claim-hardening-source-fidelity-r1",
+    "evidence-review-ssr-validity-conditions-claim-hardening-construct-mapping-r1",
+    "evidence-review-ssr-validity-conditions-claim-hardening-method-classification-r1",
+    "evidence-review-ssr-validity-conditions-claim-hardening-scorer-validation-relevance-r1",
+    "evidence-review-ssr-validity-conditions-claim-hardening-applicability-boundary-r1",
+    "evidence-review-ssr-validity-conditions-claim-hardening-synthesis-overreach-r1"
+  ],
+  "review_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-validity-conditions-claim-hardening-update-2026-06-03-2026-06-03t19-42-15-556z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces.",
+    "applicability_boundary: Retain the current applicability and limitation language.",
+    "construct_mapping: Retain the explicit limitations attached to each new support entry.",
+    "method_classification: Keep the staged task-bound language.",
+    "scorer_validation_relevance: Keep SMART's support_role as adjacent/direct bounded evidence according to the claim target, with explicit limitations.",
+    "source_fidelity: Keep the source IDs and finding IDs limited to the published validity-condition records.",
+    "synthesis_overreach: Publish the staged support-map updates as written."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": []
+}

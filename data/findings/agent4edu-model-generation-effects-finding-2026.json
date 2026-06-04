@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "agent4edu-model-generation-effects-finding-2026",
+  "name": "Agent4Edu Shows Bounded Model-Version and Agent-Workflow Sensitivity",
+  "source_id": "agent4edu-learner-response-generation-2025-source",
+  "artifact_id": "agent4edu-model-generation-effects-artifact",
+  "taxonomy_node_ids": [
+    "ssr-model-generation-effects"
+  ],
+  "endpoint_category": "model_version_effect",
+  "direction": "reports_generation_effect",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Agent4Edu reports a bounded exploratory GPT-4 condition with higher ACC than GPT-3.5-turbo under a 100-learner setup, while the broader method depends on an agent workflow that conditions generation on learner profile, memory, knowledge proficiency, reflection, and action prompts.",
+  "population_or_context": "High-school online learning response simulation and personalized learning algorithm augmentation.",
+  "time_horizon": "AAAI 2025/arXiv source retrieved on 2026-06-02.",
+  "quantitative_note": "arXiv HTML Table 1 reports Agent4Edu (GPT-3.5-turbo) at 73.88 ACC, Agent4Edu (GPT-3.5-turbo)100 at 74.57 ACC, and Agent4Edu (GPT-4)100 at 82.43 ACC.",
+  "caveats": [
+    "The GPT-4 comparison is not a full-scale aligned model benchmark because it is marked as a 100-learner exploratory condition.",
+    "The result should be read as model-version sensitivity plus workflow evidence, not a general GPT-4-over-GPT-3.5 ranking for all synthetic response tasks."
+  ],
+  "evaluation_method": "Learner response prediction metrics and downstream CAT augmentation checks.",
+  "reported_metrics": "ACC values from Table 1 and CAT F1-score improvements from Table 4.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The model-version comparison is bounded and exploratory.",
+    "The setting is personalized-learning response simulation rather than essay or constructed-response scoring.",
+    "Model choice, agent workflow, and sample condition are not fully separable in the staged evidence."
+  ],
+  "source_locator": {
+    "section": "arXiv HTML Table 1, Section 4.2, Appendix A.3, and Appendix C.1",
+    "url": "https://arxiv.org/html/2501.10332",
+    "quote_or_paraphrase_note": "The staged finding paraphrases the reported Agent4Edu GPT-3.5/GPT-4 ACC rows and the profile/memory/action workflow.",
+    "verification_status": "verified"
+  }
+}

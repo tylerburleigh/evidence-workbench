@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "yoo-dress-rubric-aes-2025-source",
+  "name": "DREsS: Dataset for Rubric-based Essay Scoring on EFL Writing",
+  "source_type": "conference_paper",
+  "authors": [
+    "Haneul Yoo",
+    "Jieun Han",
+    "So-Yeon Ahn",
+    "Alice Oh"
+  ],
+  "venue": "Proceedings of the 63rd Annual Meeting of the Association for Computational Linguistics",
+  "year": 2025,
+  "published_on": "2025-07",
+  "doi": "10.18653/v1/2025.acl-long.659",
+  "urls": [
+    "https://aclanthology.org/2025.acl-long.659/",
+    "https://aclanthology.org/2025.acl-long.659.pdf"
+  ],
+  "summary": "Rubric-based EFL automated essay scoring dataset paper that includes 2,279 real classroom essays, 6,515 standardized existing-dataset samples, and 40,185 synthetic CASE corrupted-essay samples used for training augmentation.",
+  "retrieved_on": "2026-06-02",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-02T18:23:12.413Z",
+      "url": "https://aclanthology.org/2025.acl-long.659.pdf",
+      "result": "full_text_verified",
+      "notes": "ACL Anthology PDF is available and was used for prior source extraction."
+    }
+  ]
+}

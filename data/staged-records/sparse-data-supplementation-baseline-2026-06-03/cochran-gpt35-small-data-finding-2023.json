@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "cochran-gpt35-small-data-finding-2023",
+  "name": "GPT-3.5 Supplemented Small Student Text Response Sets",
+  "source_id": "cochran-gpt35-student-text-augmentation-2023",
+  "artifact_id": "cochran-gpt35-small-student-text-augmentation-2023",
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "endpoint_category": "small_sample_augmentation",
+  "direction": "supports",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Cochran and colleagues used GPT-3.5 to generate artificial student responses from small student text datasets, then used the augmented data to train multilingual BERT classifiers.",
+  "population_or_context": "French opinion responses and sixth-grade English rainwater-runoff responses.",
+  "quantitative_note": "The study reports that augmented models outperformed unaugmented BERT in all seven concepts and that GPT-3.5 generation achieved the maximum performance in four of seven cases.",
+  "evaluation_method": "Micro-F1 comparison among majority-label baseline, unaugmented BERT, self-augmentation, and GPT-3.5 augmentation.",
+  "sparsity_or_imbalance_motivation": "Small educational text datasets with label imbalance.",
+  "synthetic_data_research_role": "Generated additional training examples to supplement small sets and test whether artificial responses outperform simple replication.",
+  "reported_metrics": "Micro-F1; augmentation peak and degradation levels.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "For very low-entropy datasets, majority-label prediction still outperformed trained classifiers.",
+    "Performance degraded after very high augmentation levels."
+  ],
+  "source_locator": "Abstract; Sections 3.2-3.4; Results; Conclusion."
+}

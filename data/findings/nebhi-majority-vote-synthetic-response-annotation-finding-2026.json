@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "nebhi-majority-vote-synthetic-response-annotation-finding-2026",
+  "name": "Majority-vote LLM Annotation Is Benchmarked Against Expert Human Ratings Before Synthetic Writing Use",
+  "source_id": "nebhi-adaptive-writing-aig-scoring-2025-source",
+  "artifact_id": "nebhi-llm-annotated-synthetic-writing-artifact",
+  "taxonomy_node_ids": [
+    "ssr-synthetic-response-scoring-agreement"
+  ],
+  "endpoint_category": "llm_annotation_agreement",
+  "direction": "supports_with_boundary",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Nebhi et al. select LLM annotators by comparing them with expert human grammatical-accuracy ratings, then use a majority-vote ensemble to annotate synthetic writing response pairs for response generation and scoring-model integration.",
+  "population_or_context": "Adaptive English writing assessment for EFSET.",
+  "time_horizon": "BEA 2025 paper retrieved on 2026-06-02.",
+  "quantitative_note": "The source reports Cohen kappa values of 0.86 for LLaMA 3.3 70B, 0.87 for GPT-4o, 0.78 for Nova Pro, and 0.89 for the selected ensemble against a human-annotated gold standard.",
+  "caveats": [
+    "Human benchmarking is based on approximately 200 item-response pairs with retained inter-annotator agreement above 70%.",
+    "The synthetic responses and labels support a particular adaptive writing pipeline, not a universal scoring benchmark.",
+    "Majority-vote LLM annotation is not the same as independent human labeling of all synthetic responses."
+  ],
+  "evaluation_method": "Cohen kappa is used to select LLM annotators against expert human ratings before majority-vote annotation of synthetic response pairs.",
+  "reported_metrics": "Cohen kappa by candidate model and ensemble; synthetic response-pair counts.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "human_gold_standard_pairs": 200,
+    "expert_raters": 5,
+    "minimum_retained_inter_annotator_agreement": 0.7,
+    "synthetic_response_pairs": 20000,
+    "cohen_kappa_against_human_gold_standard": {
+      "llama_3_3_70b": 0.86,
+      "gpt_4o": 0.87,
+      "nova_pro": 0.78,
+      "ensemble": 0.89
+    }
+  },
+  "limitations": [
+    "The paper should not be interpreted as validating generated responses without reference to the human gold standard.",
+    "The response type is proficiency-aligned English writing, not all student response formats."
+  ],
+  "source_locator": {
+    "section": "Sections 3.2-3.5 and Table 1",
+    "url": "https://aclanthology.org/2025.bea-1.73/",
+    "quote_or_paraphrase_note": "The finding paraphrases the expert-human gold standard, LLM annotator Cohen kappa table, majority-vote procedure, and synthetic response-pair generation.",
+    "verification_status": "located"
+  }
+}

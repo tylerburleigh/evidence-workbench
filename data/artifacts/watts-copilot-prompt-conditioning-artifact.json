@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "watts-copilot-prompt-conditioning-artifact",
+  "name": "Watts et al. Copilot Prompt Conditioning Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "watts-scientific-argumentation-chatbot-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-prompt-engineering-effects"
+  ],
+  "population_or_context": "Middle-school scientific argumentation chatbot design and prototype evaluation.",
+  "sample_size": "18 synthetic student inputs and 162 chatbot responses across prompt versions are described in the article.",
+  "methods": "Extracted synthetic student input generation from prior rootworm-task responses, chatbot use cases, and Copilot prompting.",
+  "endpoint_categories": [
+    "example_conditioned_generation",
+    "quality_conditioned_generation",
+    "error_conditioned_generation",
+    "stress_test_input_generation"
+  ],
+  "education_context": "K-12 scientific argumentation around a rootworm task and chatbot support for claim-evidence-reasoning work.",
+  "response_origin": "Synthetic student inputs were generated from high-quality and low-quality example student responses and typo/error conditioning.",
+  "rubric_label_space": "High-quality versus low-quality scientific argumentation examples, plus typographical-error variants.",
+  "label_source": "Prior researcher-classified student responses provide high-quality and low-quality examples for prompt conditioning.",
+  "generation_model": "Microsoft Copilot 365.",
+  "generation_method": "Prompt-based generation of synthetic chatbot inputs from selected example student responses and articulated chatbot use cases.",
+  "prompt_strategy": "Three prompt-conditioned sets: high-quality examples, low-quality examples, and mixed examples with instructions to include typographical errors.",
+  "evaluation_method": "Synthetic inputs were used to test chatbot system prompt versions and evaluate generated chatbot feedback.",
+  "scorer_use": "Prototype evaluation and prompt engineering for feedback generation; not automated scorer validation.",
+  "real_response_comparator": "Example student responses from an earlier rootworm-task dataset condition the synthetic inputs.",
+  "reported_metrics": "18 synthetic student inputs; three independent chatbot responses per input for each version, totaling 162 chatbot responses.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "synthetic_student_inputs": 18,
+    "chatbot_responses": 162,
+    "prompt_condition_sets": [
+      "high_quality_examples",
+      "low_quality_examples",
+      "mixed_examples_with_typographical_errors"
+    ]
+  },
+  "limitations": [
+    "The synthetic text is chatbot input rather than a scored assessment-response corpus.",
+    "The source does not evaluate whether generated inputs match real student response distributions.",
+    "The evidence supports prompt-conditioned stress-test input generation more than synthetic-response realism or scorer validation."
+  ],
+  "assessment_purpose": "formative_feedback",
+  "decision_consequence": "feedback_or_instructional_support",
+  "operational_use": "calibration_or_development"
+}

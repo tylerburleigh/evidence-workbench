@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "scarlatos-smart-irt-simulated-students-2025-source",
+  "name": "SMART: Simulated Students Aligned with Item Response Theory for Question Difficulty Prediction",
+  "source_type": "conference_paper",
+  "authors": [
+    "Alexander Scarlatos",
+    "Nigel Fernandez",
+    "Christopher Ormerod",
+    "Susan Lottridge",
+    "Andrew Lan"
+  ],
+  "venue": "Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing",
+  "year": 2025,
+  "published_on": "2025-11",
+  "doi": "10.18653/v1/2025.emnlp-main.1274",
+  "urls": [
+    "https://aclanthology.org/2025.emnlp-main.1274/",
+    "https://aclanthology.org/2025.emnlp-main.1274.pdf"
+  ],
+  "summary": "EMNLP 2025 paper introducing SMART, a simulated-student pipeline that generates open-ended responses aligned with IRT ability and item difficulty, scores them with an LLM-based scoring model, and fits an IRT model to predict item difficulty.",
+  "access_status": "full_text_available",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03",
+      "url": "https://aclanthology.org/2025.emnlp-main.1274.pdf",
+      "result": "PDF full text retrieved.",
+      "notes": "Used abstract, methodology, results, qualitative evaluation, conclusion, and limitations sections for extraction."
+    }
+  ]
+}

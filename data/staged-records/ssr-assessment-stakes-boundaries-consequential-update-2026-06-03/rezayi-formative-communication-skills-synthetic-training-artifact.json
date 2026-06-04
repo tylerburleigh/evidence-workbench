@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "rezayi-formative-communication-skills-synthetic-training-artifact",
+  "name": "Rezayi et al. Formative Communication-Skills Synthetic Training Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "rezayi-communication-skills-synthetic-training-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "population_or_context": "Formative assessment tool for learner physicians practicing communication skills through simulated patient interactions across 8 clinical scenarios.",
+  "sample_size": "The synthetic-data experiment reports 50 generated examples per case-learning-point pair and compares synthetic-only, limited real-only, and hybrid real-plus-synthetic training conditions.",
+  "methods": "Fine-tuned DeBERTa/ACTA scoring models were evaluated with 5-fold cross-validation at the case level. Synthetic learner responses were generated for sparse learning points and evaluated through downstream scoring performance on real learner responses.",
+  "endpoint_categories": [
+    "formative_training_augmentation",
+    "hybrid_real_synthetic_training",
+    "summative_human_review_boundary"
+  ],
+  "education_context": "Medical education; learner physician communication-skills assessment using transcribed verbal responses and learning-point labels.",
+  "response_origin": "Real learner responses plus Qwen-generated synthetic learner responses for learning points with sparse annotations.",
+  "rubric_label_space": "Binary detection of whether each response demonstrates target communication learning points.",
+  "label_source": "Real learner responses use human annotations and adjudication; synthetic responses are generated to demonstrate target learning points and evaluated through scorer performance on real annotated responses.",
+  "generation_model": "Qwen2.5-32B-instruct / Qwen32B-4bit as reported in the paper.",
+  "generation_method": "Prompt the LLM with task-specific instructions, target learning-point definitions, and selected positive examples from real learner data to generate realistic responses demonstrating the target learning point.",
+  "prompt_strategy": "Task instructions, target learning-point definitions, and selected positive examples from real learner data.",
+  "assessment_purpose": "formative_feedback",
+  "decision_consequence": "feedback_or_instructional_support",
+  "operational_use": "training_augmentation",
+  "evaluation_method": "5-fold cross-validation at the case level and binary F1 on real learner responses; ethical discussion distinguishes formative use from summative hybrid human-review use.",
+  "scorer_use": "Synthetic responses support training augmentation for automated communication-skills scoring; real learner responses remain necessary for robust evaluation.",
+  "real_response_comparator": "Performance is evaluated on real learner responses from unseen clinical scenarios; hybrid real-plus-synthetic training is compared with real-only and synthetic-only conditions.",
+  "reported_metrics": "Mean binary F1 across 8 clinical scenarios is 0.94 for the broader scoring model; Table 3 reports average F1 of 0.757 for 50 synthetic examples versus 0.723 baseline, and 0.878 for 15 real plus 50 synthetic versus 0.793 for 15 real only.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "The primary tool context is formative rather than high-stakes operational scoring.",
+    "The paper states synthetic data cannot fully replace real annotated learner responses for robust evaluation.",
+    "In summative contexts, the paper frames the models as hybrid systems where borderline or below-passing responses are reviewed by human raters.",
+    "The study is limited to 8 clinical scenarios and communication learning points."
+  ]
+}

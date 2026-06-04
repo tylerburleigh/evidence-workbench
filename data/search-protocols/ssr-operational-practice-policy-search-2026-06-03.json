@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-operational-practice-policy-search-2026-06-03",
+  "name": "Operational Practice and Policy Search for Synthetic Response Use",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses",
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "status": "included_sources_staged",
+  "systematicity_level": "targeted_bootstrap",
+  "search_started_at": "2026-06-03T12:20:00Z",
+  "search_completed_at": "2026-06-03T13:16:00Z",
+  "databases": [
+    "Web search",
+    "ERIC",
+    "Official state assessment technical reports",
+    "Journal of Writing Research",
+    "Existing synthetic-student-responses public graph"
+  ],
+  "search_queries": [
+    {
+      "database": "Web search",
+      "query": "\"synthetic responses\" \"technical report\" \"automated scoring\" assessment",
+      "searched_at": "2026-06-03T12:20:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"Synthetic responses generated using large language models\"",
+      "searched_at": "2026-06-03T12:24:00Z",
+      "result_count": "confirmed existing New Mexico operational source"
+    },
+    {
+      "database": "Web search",
+      "query": "\"simulated responses\" \"automated scoring\" \"technical report\" assessment",
+      "searched_at": "2026-06-03T12:34:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"test suite\" \"simulated responses\" \"machine-scored\" assessment",
+      "searched_at": "2026-06-03T12:38:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "ERIC",
+      "query": "New Meridian Standard Processes simulated responses test suite machine scoring",
+      "searched_at": "2026-06-03T12:42:00Z",
+      "result_count": "official ERIC PDF retrieved"
+    },
+    {
+      "database": "Official state assessment technical reports",
+      "query": "Maine Science Assessment 2024 Technical Report simulated student responses machine-scored output",
+      "searched_at": "2026-06-03T12:49:00Z",
+      "result_count": "official Maine DOE PDF retrieved"
+    },
+    {
+      "database": "Journal of Writing Research",
+      "query": "Augmenting AI scoring of essays with GPT-generated responses",
+      "searched_at": "2026-06-03T12:57:00Z",
+      "result_count": "article page and PDF retrieved"
+    },
+    {
+      "database": "Web search",
+      "query": "\"Using GPT-4 to Augment Imbalanced Data for Automatic Scoring\"",
+      "searched_at": "2026-06-03T13:02:00Z",
+      "result_count": "metadata and preprint located; deferred as redundant with included direct augmentation sources"
+    }
+  ],
+  "inclusion_criteria": [
+    "Direct sources must mention synthetic, simulated, generated, or GPT-created student/learner responses in an automated scoring, machine-scoring, scoring QA, scorer development, or validation-related workflow.",
+    "Operational reports, state technical reports, vendor/process guidance, and peer-reviewed studies with full text were prioritized.",
+    "The source must support a specific workflow role, such as training augmentation, scoring-rule test suites, item authoring/review QA, stress testing, or validation boundary-setting.",
+    "Claims about high-stakes or operational use require primary operational documentation or explicit assessment-program context."
+  ],
+  "exclusion_criteria": [
+    "Exclude generic automated scoring studies that do not include synthetic or simulated response corpora.",
+    "Exclude generic AI policy unless it directly changes a synthetic-response workflow boundary.",
+    "Exclude psychometric simulations that do not involve response artifacts used in scorer development, scoring QA, or automated-scoring evaluation.",
+    "Do not treat rule-based machine-scoring test suites as evidence for LLM automated scorer validation."
+  ],
+  "dedupe_method": "Deduplicated by title, DOI, official technical-report URL, existing source_id, and whether the source added a new workflow role.",
+  "screening_counts": {
+    "records_identified": "at least 40 records across targeted web search, official reports, and existing graph audit",
+    "records_screened": 11,
+    "full_text_reviewed": 5,
+    "sources_included": 3,
+    "sources_confirmed_existing": 1,
+    "sources_deferred_for_follow_up": 2
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "candidate-new-meridian-standard-processes-2020",
+      "title": "Standard Processes",
+      "decision": "include",
+      "reason": "Direct operational process guidance for simulated responses as machine-scoring test-suite cases that validate scoring and scanning rules.",
+      "source_id": "new-meridian-standard-processes-2020-source",
+      "url": "https://files.eric.ed.gov/fulltext/ED606682.pdf"
+    },
+    {
+      "candidate_id": "candidate-maine-science-2024-technical-report",
+      "title": "Maine Science Assessment Technical Report Spring 2024",
+      "decision": "include",
+      "reason": "Official state technical report documenting simulated student responses and machine-scored output review as native to the item authoring/review process.",
+      "source_id": "maine-science-assessment-2024-technical-report-source",
+      "url": "https://www.maine.gov/doe/sites/maine.gov.doe/files/inline-files/Assessment%20-%20Maine%20Science%20Assessment%202024%20Technical%20Report%20Redacted%20-%203.11.2025.pdf"
+    },
+    {
+      "candidate_id": "candidate-zhang-gpt-essay-augmentation-2026",
+      "title": "Augmenting AI Scoring of Essays with GPT-Generated Responses",
+      "decision": "include",
+      "reason": "Peer-reviewed direct evidence for GPT-generated essays as AI scoring training augmentation with held-out real-student evaluation and subgroup analyses.",
+      "source_id": "zhang-gpt-essay-augmentation-2026-source",
+      "doi": "10.17239/jowr-2026.17.03.06",
+      "url": "https://www.jowr.org/jowr/article/view/1777"
+    },
+    {
+      "candidate_id": "candidate-new-mexico-mssa-2025",
+      "title": "2025 New Mexico MSSA Technical Report",
+      "decision": "duplicate",
+      "reason": "Already published in the existing graph; used as contextual operational training-augmentation comparator rather than restaged in this bundle.",
+      "source_id": "new-mexico-mssa-technical-report-2025-source",
+      "url": "https://newmexico.onlinehelp.cognia.org/wp-content/uploads/sites/10/2024/10/2024-2025_New_Mexico_MSSA_Technical_Report_ADA.pdf"
+    },
+    {
+      "candidate_id": "candidate-dlm-reliability-simulation-2021",
+      "title": "2020-2021 Dynamic Learning Maps Technical Manual Update: Reliability",
+      "decision": "exclude",
+      "reason": "Uses simulated item responses for reliability simulation, but not as synthetic student-response evidence for automated scorer training, scoring-rule QA, or scorer validation.",
+      "url": "https://2021-sci-techmanual.dynamiclearningmaps.org/8-reliability"
+    },
+    {
+      "candidate_id": "candidate-fang-gpt4-augmentation-2025",
+      "title": "Using GPT-4 to Augment Imbalanced Data for Automatic Scoring",
+      "decision": "maybe",
+      "reason": "Direct automatic-scoring augmentation source, but deferred because the bundle already includes Zhang et al. and existing Djagba evidence; a later pass can reconcile the arXiv preprint and Journal of Educational Measurement version.",
+      "doi": "10.1111/jedm.70020",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/jedm.70020"
+    },
+    {
+      "candidate_id": "candidate-maine-science-2023-technical-report",
+      "title": "Maine Science Assessment Technical Report Spring 2023",
+      "decision": "duplicate",
+      "reason": "Shows similar simulated-response machine-scoring review language, but the 2024 report is newer and sufficient for the operational state-report finding.",
+      "url": "https://www.maine.gov/doe/sites/maine.gov.doe/files/inline-files/Maine%20Science%20-%20Spring%202023%20Technical%20Report%20-%20FINAL%20ADA%20-%20Redacted%20-%20Compressed.pdf"
+    }
+  ],
+  "source_ids": [
+    "new-meridian-standard-processes-2020-source",
+    "maine-science-assessment-2024-technical-report-source",
+    "zhang-gpt-essay-augmentation-2026-source"
+  ],
+  "screening_summary": "This targeted operational-practice pass found a clearer acceptable-use category that is distinct from LLM training augmentation: simulated responses are documented in operational machine-scoring workflows as scoring-rule, scanning-rule, and item-authoring QA/test-suite material. The pass also adds a peer-reviewed GPT essay augmentation study that strengthens the research-development training-augmentation lane while preserving real-response evaluation and human-review limitations.",
+  "limitations": [
+    "This was a targeted surveillance pass, not a systematic review of all state technical reports or vendors.",
+    "The operational QA sources concern rule-based machine-scored items, not LLM-generated constructed responses or automated essay scoring validation.",
+    "The Zhang et al. source is direct research evidence, not an operational policy or deployment report.",
+    "The search does not resolve whether additional vendors or states allow LLM-generated responses for scorer training, validation, monitoring, or live scoring."
+  ]
+}

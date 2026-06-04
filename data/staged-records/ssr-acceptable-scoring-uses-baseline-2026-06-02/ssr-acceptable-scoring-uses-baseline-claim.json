@@ -1,0 +1,189 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "ssr-acceptable-scoring-uses-baseline-claim",
+  "name": "Acceptable Uses of Synthetic Responses in Automated Scoring Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "ssr-acceptable-scoring-uses",
+  "current_stage": "synthesis_claim_supported",
+  "momentum": "baseline_staged",
+  "confidence": "medium",
+  "summary": "The first staged baseline finds that synthetic student responses are most defensible in automated scoring as supporting, diagnostic, or developmental evidence: pre-pilot scorer checks and challenge sets, training augmentation, cold-start training after label audit, human-benchmarked LLM annotation, augmentation calibration, and bounded fairness or robustness stress tests. The direct sources do not support using synthetic responses alone as final validation, deployment-readiness evidence, subgroup fairness evidence, or a substitute for real or independently human-scored response data.",
+  "main_blockers": [
+    "The first pass is targeted rather than systematic.",
+    "Included sources span constructed responses, EFL essays, short-answer content scoring, adaptive writing, simulated essays, and one adjacent admissions SJT context.",
+    "Several strong-sounding augmentation examples rely on real-response validation, human labels, expert scoring, or human-benchmarked model annotation.",
+    "Access-limited candidates such as Ipci et al. are screened but not used as direct support."
+  ],
+  "best_current_signals": [
+    "Frohn et al. place labeled synthetic responses and challenge sets in a pre-pilot role and still require real student pilot validation.",
+    "Yoo et al. use a large synthetic essay subset for AES training while preserving real classroom essays for validation and testing.",
+    "Bexte and Zesch show generated target labels require audit or manual relabeling before generated short answers become useful for content-scoring model training.",
+    "Nebhi et al. benchmark LLM annotators against expert human ratings before using majority-vote annotation for synthetic writing responses.",
+    "Wolfe and Barber use expert scoring, agreement metrics, and realism ratings to calibrate simulated essays for augmentation suitability.",
+    "Walsh et al. provide adjacent open-response scoring evidence that synthetic demographic variants can be diagnostic fairness stress-test material, not subgroup validation evidence."
+  ],
+  "interpretive_note": "For this review question, acceptable use depends on the workflow role. Synthetic responses can help develop, debug, calibrate, augment, or stress-test an automated scorer when response origin, label source, rubric label space, and real-response comparator are explicit. They should not be treated as standalone validation unless the claim is restricted to the synthetic-response distribution and its labels are independently audited.",
+  "limitations": [
+    "This claim does not review automated scoring agreement writ large.",
+    "The claim does not establish that synthetic responses can replace real student responses for scorer validation.",
+    "The claim does not validate any specific automated scorer, task, model, prompt strategy, grade band, subject, demographic subgroup, or rubric.",
+    "Walsh et al. is adjacent assessment evidence from an admissions SJT context and is included only for the stress-test use category.",
+    "Abstract-only or metadata-only sources should not be promoted into direct support without full-text review."
+  ],
+  "update_notes": [
+    "A later pass should add full-text Ipci et al. if accessible because it appears directly relevant to automated grading augmentation.",
+    "Future synthesis should separate training augmentation, pre-pilot validation, calibration, stress testing, and final validation as distinct use classes.",
+    "Search updates should continue excluding generic human-AI scoring studies unless synthetic responses are part of the scored corpus."
+  ],
+  "supporting_finding_ids": [
+    "frohn-acceptable-prepilot-use-finding-2026",
+    "yoo-acceptable-training-boundary-finding-2026",
+    "bexte-acceptable-cold-start-relabeling-finding-2026",
+    "nebhi-acceptable-llm-annotation-benchmark-finding-2026",
+    "wolfe-acceptable-augmentation-calibration-finding-2026",
+    "walsh-acceptable-fairness-stress-test-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "frohn-llm-cr-live-scoring-2025-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "bexte-zesch-synthetic-content-scoring-2025-source",
+    "nebhi-adaptive-writing-aig-scoring-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "walsh-sjt-automated-scoring-2026-source"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Pre-pilot scorer checks and challenge sets",
+      "claim_field": "summary",
+      "conclusion": "Synthetic responses can support pre-pilot scorer checks, calibration, challenge sets, and item/scoring-criteria revision, but not final validation without real student responses.",
+      "support_role": "direct_support",
+      "rationale": "Frohn et al. explicitly separate synthetic pre-pilot checks from real-response pilot validation in an LLM constructed-response scoring workflow.",
+      "finding_ids": [
+        "frohn-acceptable-prepilot-use-finding-2026"
+      ],
+      "source_ids": [
+        "frohn-llm-cr-live-scoring-2025-source"
+      ],
+      "limitations": [
+        "Framework guidance rather than one empirical validation result.",
+        "Bounded to constructed-response LLM scoring."
+      ]
+    },
+    {
+      "label": "Training augmentation with real validation boundary",
+      "claim_field": "best_current_signals",
+      "conclusion": "Synthetic responses can support automated-scoring training augmentation when validation/test evidence remains real-response based.",
+      "support_role": "direct_support",
+      "rationale": "Yoo et al. use 40,185 synthetic CASE essays for AES training while preserving real DREsS_New essays for validation and testing.",
+      "finding_ids": [
+        "yoo-acceptable-training-boundary-finding-2026"
+      ],
+      "source_ids": [
+        "yoo-dress-rubric-aes-2025-source"
+      ],
+      "limitations": [
+        "CASE corruption is not LLM generation.",
+        "Bounded to EFL rubric-based essay scoring."
+      ]
+    },
+    {
+      "label": "Generated-label audit before scorer training",
+      "claim_field": "best_current_signals",
+      "conclusion": "Prompt-requested synthetic labels should be audited or relabeled before generated responses are used to train content-scoring models.",
+      "support_role": "direct_support",
+      "rationale": "Bexte and Zesch show as-generated labels can be substantially nonconforming and that manual relabeling changes scorer-training utility.",
+      "finding_ids": [
+        "bexte-acceptable-cold-start-relabeling-finding-2026"
+      ],
+      "source_ids": [
+        "bexte-zesch-synthetic-content-scoring-2025-source"
+      ],
+      "limitations": [
+        "One short-answer content-scoring setup.",
+        "Manual relabeling adds human labor."
+      ]
+    },
+    {
+      "label": "Human-benchmarked model annotation",
+      "claim_field": "best_current_signals",
+      "conclusion": "LLM annotation can support synthetic-response pipelines only when annotator quality is benchmarked against expert human labels and label provenance remains explicit.",
+      "support_role": "direct_support",
+      "rationale": "Nebhi et al. select LLM annotators using Cohen kappa against expert human ratings before majority-vote annotation of synthetic writing responses.",
+      "finding_ids": [
+        "nebhi-acceptable-llm-annotation-benchmark-finding-2026"
+      ],
+      "source_ids": [
+        "nebhi-adaptive-writing-aig-scoring-2025-source"
+      ],
+      "limitations": [
+        "Compact human gold standard.",
+        "Majority-vote model labels are not the same as human scoring all synthetic responses."
+      ]
+    },
+    {
+      "label": "Augmentation calibration",
+      "claim_field": "best_current_signals",
+      "conclusion": "Expert scoring and realism checks can calibrate simulated essays for augmentation suitability, but this remains weaker than direct validation of a deployed scorer.",
+      "support_role": "direct_support",
+      "rationale": "Wolfe and Barber evaluate simulated essays with expert scores, agreement metrics, score distributions, and realism ratings.",
+      "finding_ids": [
+        "wolfe-acceptable-augmentation-calibration-finding-2026"
+      ],
+      "source_ids": [
+        "wolfe-calibrating-realistic-essays-2026-source"
+      ],
+      "limitations": [
+        "Preprint evidence.",
+        "Downstream scorer validity still requires real or independently scored validation data."
+      ]
+    },
+    {
+      "label": "Diagnostic fairness stress testing",
+      "claim_field": "best_current_signals",
+      "conclusion": "Synthetic variants can be useful as diagnostic stress tests for scoring behavior, but not as subgroup fairness validation by themselves.",
+      "support_role": "boundary_condition",
+      "rationale": "Walsh et al. compare automated evaluations of original Casper responses with synthetic demographic analogs and explicitly leave larger-sample fairness work open.",
+      "finding_ids": [
+        "walsh-acceptable-fairness-stress-test-finding-2026"
+      ],
+      "source_ids": [
+        "walsh-sjt-automated-scoring-2026-source"
+      ],
+      "limitations": [
+        "Adjacent admissions SJT setting.",
+        "Early fairness pilot with a small synthetic-analog sample."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-02",
+  "assessment_purpose": [
+    "research_or_development",
+    "formative_feedback",
+    "in_term_or_classroom_assessment",
+    "admissions_or_selection"
+  ],
+  "decision_consequence": [
+    "no_direct_learner_consequence",
+    "feedback_or_instructional_support",
+    "high_stakes_individual_decision"
+  ],
+  "operational_use": [
+    "pre_pilot_validation",
+    "training_augmentation",
+    "calibration_or_development",
+    "stress_testing"
+  ],
+  "applicability": {
+    "applies_when": [
+      "Synthetic responses are used as supporting, diagnostic, developmental, calibration, augmentation, or stress-test evidence.",
+      "Response origin, label source, rubric label space, real-response comparator, and workflow role are explicit."
+    ],
+    "does_not_apply_when": [
+      "Synthetic responses are used as the sole basis for final validation, deployment readiness, subgroup fairness, or operational high-stakes decisions."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Specific grade bands, subjects, demographic subgroups, operational scoring vendors, and local policy thresholds remain unreviewed unless separately sourced."
+    ]
+  }
+}

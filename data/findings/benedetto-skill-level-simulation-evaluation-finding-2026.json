@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "benedetto-skill-level-simulation-evaluation-finding-2026",
+  "name": "Prompt-assigned Skill Levels Are Evaluated Through Generated Answer Accuracy",
+  "source_id": "benedetto-simulated-exam-responses-2024-source",
+  "artifact_id": "benedetto-skill-level-simulation-evaluation-artifact",
+  "taxonomy_node_ids": [
+    "ssr-synthetic-response-scoring-agreement"
+  ],
+  "endpoint_category": "target_skill_label_evaluation",
+  "direction": "adjacent_support",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Benedetto et al. use prompt-assigned student skill levels as generation targets and evaluate whether generated exam answers match expected accuracy behavior across datasets and LLMs, providing a label-fidelity example rather than human rubric-scoring agreement.",
+  "population_or_context": "Science exam and English reading-comprehension question answering by simulated students.",
+  "time_horizon": "EMNLP Findings 2024 paper retrieved on 2026-06-02.",
+  "quantitative_note": "The paper reports answer-accuracy results across target skill levels, datasets, prompt variants, and LLMs.",
+  "caveats": [
+    "The target labels are prompt-assigned skill levels, not independently human-adjudicated labels on each generated response.",
+    "The evaluation is answer accuracy, not human-AI rubric score agreement.",
+    "The authors report that prompt engineering for one model version does not transfer cleanly to other LLMs."
+  ],
+  "evaluation_method": "Generated answer accuracy is compared across target skill levels, datasets, model versions, and prompt variants.",
+  "reported_metrics": "Accuracy scores by target skill level and experimental condition.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "reference_prompt_metric_arc_dev": 0.91,
+    "reference_prompt_metric_arc_test": 0.86,
+    "reference_prompt_metric_cupa": 0.9,
+    "reference_prompt_metric_race": 0.94,
+    "gpt_3_5_non_simulated_accuracy": {
+      "arc_dev": 0.92,
+      "arc_test": 0.86,
+      "race": 0.78,
+      "cupa": 0.77
+    }
+  },
+  "limitations": [
+    "Best treated as boundary evidence for model-generated target labels.",
+    "Does not support claims about replacing human-scored validation data."
+  ],
+  "source_locator": {
+    "section": "Abstract, methods, and experiments",
+    "url": "https://aclanthology.org/2024.findings-emnlp.663/",
+    "quote_or_paraphrase_note": "The finding paraphrases the skill-level simulation prompt, answer accuracy evaluation, and model-generalization caveat.",
+    "verification_status": "located"
+  }
+}

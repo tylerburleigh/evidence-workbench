@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "liu-llm-respondents-item-evaluation-2025-source",
+  "name": "Leveraging LLM Respondents for Item Evaluation: A Psychometric Analysis",
+  "source_type": "journal_article",
+  "authors": [
+    "Yunting Liu",
+    "Shreya Bhandari",
+    "Zachary A. Pardos"
+  ],
+  "venue": "British Journal of Educational Technology",
+  "year": 2025,
+  "published_on": "2025-05",
+  "doi": "10.1111/bjet.13570",
+  "urls": [
+    "https://doi.org/10.1111/bjet.13570",
+    "https://arxiv.org/abs/2407.10899",
+    "https://arxiv.org/pdf/2407.10899",
+    "https://eric.ed.gov/?id=EJ1467105"
+  ],
+  "summary": "Journal article comparing six LLM respondent generators and ensemble/resampling strategies against human College Algebra item-response distributions and IRT item calibration.",
+  "retrieved_on": "2026-06-02",
+  "version_note": "ERIC metadata reports British Journal of Educational Technology 56(3), pages 1028-1052, May 2025; arXiv v1 submitted 2024-07-15 was used for table-level extraction."
+}

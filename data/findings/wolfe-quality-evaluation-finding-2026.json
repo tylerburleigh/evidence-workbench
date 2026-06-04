@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "wolfe-quality-evaluation-finding-2026",
+  "name": "Simulated Essay Quality Is Evaluated with Expert Scores, Distribution Checks, and Realism Ratings",
+  "source_id": "wolfe-calibrating-realistic-essays-2026-source",
+  "artifact_id": "wolfe-quality-evaluation-artifact",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation"
+  ],
+  "endpoint_category": "expert_score_preservation",
+  "direction": "defines_quality_evaluation_method",
+  "evidence_tier": "study_extracted",
+  "confidence": "high",
+  "statement": "Wolfe and Barber evaluate LLM-simulated essays by comparing expert scores, exact and adjacent agreement, weighted kappa, score distributions, and realism ratings across prompt strategies.",
+  "population_or_context": "Student essay responses for automated-scoring data augmentation.",
+  "time_horizon": "arXiv preprint submitted 2026-02-06 and retrieved on 2026-06-02.",
+  "quantitative_note": "The study stages 96 real student essays and 288 simulated essays from three prompt strategies.",
+  "caveats": [
+    "The paper is a preprint.",
+    "Human realism ratings and score preservation are quality signals for augmentation, not full scorer-validation evidence."
+  ],
+  "evaluation_method": "Expert scoring, score-agreement analysis, score-distribution comparison, and realism ratings.",
+  "reported_metrics": "Exact and adjacent agreement, weighted kappa, score-distribution differences, and realism ratings across prompting methods.",
+  "limitations": [
+    "The quality evidence is essay-specific and prompt-strategy-specific.",
+    "The source does not validate an automated scorer solely on synthetic responses.",
+    "Model-version details are not staged in this baseline."
+  ],
+  "source_locator": {
+    "section": "Methods and results sections",
+    "url": "https://arxiv.org/pdf/2602.06772",
+    "quote_or_paraphrase_note": "The staged finding paraphrases the paper's simulated essay sample, prompt strategies, expert scoring, agreement, distribution, and realism evaluation descriptions.",
+    "verification_status": "verified"
+  }
+}

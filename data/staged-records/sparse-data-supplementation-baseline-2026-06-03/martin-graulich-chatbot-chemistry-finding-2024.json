@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "martin-graulich-chatbot-chemistry-finding-2024",
+  "name": "Chatbot-Generated Chemistry Responses Expanded Training Heterogeneity",
+  "source_id": "martin-graulich-science-assessment-2024",
+  "artifact_id": "martin-graulich-chemistry-reasoning-augmentation-2024",
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "endpoint_category": "heterogeneity_augmentation",
+  "direction": "supports",
+  "evidence_tier": "source_identified",
+  "confidence": "moderate",
+  "statement": "Martin and Graulich compared additional real student data, chatbot paraphrases, and chatbot-generated responses to address the difficulty of gathering diverse chemistry reasoning data; combinations including chatbot responses yielded the best machine-human score agreements.",
+  "population_or_context": "Undergraduate chemistry reasoning about reaction mechanisms.",
+  "quantitative_note": "The abstract reports significantly improved ML model performance and best machine-human agreements when authentic and/or paraphrased responses were combined with chatbot responses.",
+  "evaluation_method": "Machine-human score agreement across validation conditions.",
+  "sparsity_or_imbalance_motivation": "Resource constraints limited collection of diverse training data capturing nuances of student reasoning.",
+  "synthetic_data_research_role": "Expanded training-data size and heterogeneity and enabled a more detailed categorization of causal reasoning.",
+  "reported_metrics": "Machine-human score agreement; detailed metrics require full-text follow-up.",
+  "numeric_results_extracted": false,
+  "limitations": [
+    "This baseline extraction uses the open abstract rather than full method tables.",
+    "Model and prompt details need follow-up extraction before finer claims."
+  ],
+  "source_locator": "Abstract."
+}

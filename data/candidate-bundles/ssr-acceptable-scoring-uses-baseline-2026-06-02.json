@@ -1,0 +1,231 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-acceptable-scoring-uses-baseline-2026-06-02",
+  "name": "Acceptable Synthetic Response Uses in Automated Scoring Baseline",
+  "summary": "Staged first literature-review baseline for acceptable, limited, and inappropriate uses of synthetic student responses in automated scoring research, development, validation, calibration, benchmarking, and stress testing.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T20:19:29Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-acceptable-scoring-uses"
+    ],
+    "research_question": "Within automated scoring research, development, and validation, which uses of synthetic student responses are treated as appropriate, limited, or inappropriate, and what belongs in the first public baseline for this review question?"
+  },
+  "source_ids": [
+    "frohn-llm-cr-live-scoring-2025-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "bexte-zesch-synthetic-content-scoring-2025-source",
+    "nebhi-adaptive-writing-aig-scoring-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "walsh-sjt-automated-scoring-2026-source"
+  ],
+  "source_urls": [
+    "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs",
+    "https://aclanthology.org/2025.acl-long.659/",
+    "https://aclanthology.org/2025.bea-1.11/",
+    "https://aclanthology.org/2025.bea-1.73/",
+    "https://arxiv.org/abs/2602.06772",
+    "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1756673/full"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "ssr-scoring-validation-use-baseline-claim",
+      "relationship": "adjacent_review_question"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-synthetic-response-scoring-agreement-baseline-claim",
+      "relationship": "adjacent_review_question"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-real-response-comparison-baseline-claim",
+      "relationship": "boundary_context"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-ssr-acceptable-scoring-uses-search",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "ssr-acceptable-scoring-uses-search-2026-06-02",
+      "file_path": "data/search-protocols/ssr-acceptable-scoring-uses-search-2026-06-02.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-baseline-2026-06-02/ssr-acceptable-scoring-uses-search-2026-06-02.json",
+      "summary": "Stage the targeted search and screening protocol for acceptable synthetic-response uses in automated scoring.",
+      "rationale": "The baseline needs an auditable search pass with direct full-text support and explicit access-limited screening."
+    },
+    {
+      "change_id": "create-frohn-acceptable-prepilot-use-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "frohn-acceptable-prepilot-use-artifact",
+      "file_path": "data/artifacts/frohn-acceptable-prepilot-use-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-baseline-2026-06-02/frohn-acceptable-prepilot-use-artifact.json",
+      "summary": "Stage Frohn et al. extraction on pre-pilot and challenge-set use boundaries.",
+      "rationale": "The review question needs direct evidence on synthetic responses as diagnostic pre-pilot scorer checks rather than replacement validation."
+    },
+    {
+      "change_id": "create-yoo-acceptable-training-boundary-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "yoo-acceptable-training-boundary-artifact",
+      "file_path": "data/artifacts/yoo-acceptable-training-boundary-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-baseline-2026-06-02/yoo-acceptable-training-boundary-artifact.json",
+      "summary": "Stage Yoo et al. extraction on synthetic training augmentation and real-response validation boundaries.",
+      "rationale": "The review question needs evidence distinguishing acceptable training augmentation from validation replacement."
+    },
+    {
+      "change_id": "create-bexte-acceptable-cold-start-relabeling-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "bexte-acceptable-cold-start-relabeling-artifact",
+      "file_path": "data/artifacts/bexte-acceptable-cold-start-relabeling-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-baseline-2026-06-02/bexte-acceptable-cold-start-relabeling-artifact.json",
+      "summary": "Stage Bexte and Zesch extraction on cold-start training and relabeling requirements.",
+      "rationale": "The review question needs cautionary evidence that generated labels require audit before scorer development use."
+    },
+    {
+      "change_id": "create-nebhi-acceptable-llm-annotation-benchmark-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "nebhi-acceptable-llm-annotation-benchmark-artifact",
+      "file_path": "data/artifacts/nebhi-acceptable-llm-annotation-benchmark-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-baseline-2026-06-02/nebhi-acceptable-llm-annotation-benchmark-artifact.json",
+      "summary": "Stage Nebhi et al. extraction on LLM annotation selected against human ratings.",
+      "rationale": "The review question needs evidence on synthetic-response annotation pipelines that benchmark model annotators against expert human labels."
+    },
+    {
+      "change_id": "create-wolfe-acceptable-augmentation-calibration-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "wolfe-acceptable-augmentation-calibration-artifact",
+      "file_path": "data/artifacts/wolfe-acceptable-augmentation-calibration-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-baseline-2026-06-02/wolfe-acceptable-augmentation-calibration-artifact.json",
+      "summary": "Stage Wolfe and Barber extraction on human calibration of simulated essays.",
+      "rationale": "The review question needs evidence on augmentation calibration before downstream automated-scoring use."
+    },
+    {
+      "change_id": "create-walsh-acceptable-fairness-stress-test-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "walsh-acceptable-fairness-stress-test-artifact",
+      "file_path": "data/artifacts/walsh-acceptable-fairness-stress-test-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-baseline-2026-06-02/walsh-acceptable-fairness-stress-test-artifact.json",
+      "summary": "Stage Walsh et al. extraction on synthetic demographic analogs for fairness stress testing.",
+      "rationale": "The review question needs a bounded stress-test example while noting the SJT admissions-response boundary."
+    },
+    {
+      "change_id": "create-frohn-acceptable-prepilot-use-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "frohn-acceptable-prepilot-use-finding-2026",
+      "file_path": "data/findings/frohn-acceptable-prepilot-use-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-baseline-2026-06-02/frohn-acceptable-prepilot-use-finding-2026.json",
+      "summary": "Stage finding on pre-pilot and challenge-set use boundaries.",
+      "rationale": "The synthesis needs direct evidence for diagnostic scorer-development use with real-response validation still required."
+    },
+    {
+      "change_id": "create-yoo-acceptable-training-boundary-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "yoo-acceptable-training-boundary-finding-2026",
+      "file_path": "data/findings/yoo-acceptable-training-boundary-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-baseline-2026-06-02/yoo-acceptable-training-boundary-finding-2026.json",
+      "summary": "Stage finding on synthetic training augmentation with real validation and test sets.",
+      "rationale": "The synthesis needs evidence that training augmentation is acceptable only within clear validation boundaries."
+    },
+    {
+      "change_id": "create-bexte-acceptable-cold-start-relabeling-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "bexte-acceptable-cold-start-relabeling-finding-2026",
+      "file_path": "data/findings/bexte-acceptable-cold-start-relabeling-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-baseline-2026-06-02/bexte-acceptable-cold-start-relabeling-finding-2026.json",
+      "summary": "Stage finding on generated-label audit and relabeling for cold-start content scoring.",
+      "rationale": "The synthesis needs evidence that synthetic labels should not be accepted without audit."
+    },
+    {
+      "change_id": "create-nebhi-acceptable-llm-annotation-benchmark-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nebhi-acceptable-llm-annotation-benchmark-finding-2026",
+      "file_path": "data/findings/nebhi-acceptable-llm-annotation-benchmark-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-baseline-2026-06-02/nebhi-acceptable-llm-annotation-benchmark-finding-2026.json",
+      "summary": "Stage finding on LLM annotation benchmarked against expert human ratings.",
+      "rationale": "The synthesis needs evidence on acceptable synthetic-response annotation workflow controls."
+    },
+    {
+      "change_id": "create-wolfe-acceptable-augmentation-calibration-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "wolfe-acceptable-augmentation-calibration-finding-2026",
+      "file_path": "data/findings/wolfe-acceptable-augmentation-calibration-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-baseline-2026-06-02/wolfe-acceptable-augmentation-calibration-finding-2026.json",
+      "summary": "Stage finding on human calibration of simulated essays for augmentation.",
+      "rationale": "The synthesis needs evidence that augmentation suitability is weaker than scorer-validation evidence."
+    },
+    {
+      "change_id": "create-walsh-acceptable-fairness-stress-test-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "walsh-acceptable-fairness-stress-test-finding-2026",
+      "file_path": "data/findings/walsh-acceptable-fairness-stress-test-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-baseline-2026-06-02/walsh-acceptable-fairness-stress-test-finding-2026.json",
+      "summary": "Stage finding on synthetic demographic variants as bounded fairness stress-test material.",
+      "rationale": "The synthesis needs a concrete but bounded stress-test use case."
+    },
+    {
+      "change_id": "create-ssr-acceptable-scoring-uses-baseline-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-acceptable-scoring-uses-baseline-claim",
+      "file_path": "data/claims/ssr-acceptable-scoring-uses-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-baseline-2026-06-02/ssr-acceptable-scoring-uses-baseline-claim.json",
+      "summary": "Stage the first bounded synthesis claim for acceptable uses of synthetic responses in automated scoring.",
+      "rationale": "The review question needs a public-baseline candidate claim with clear use categories and limitations."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-acceptable-scoring-uses",
+      "note": "Creates the first staged literature-review baseline for acceptable and limited synthetic-response uses in automated scoring research and development."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "synthesis_overreach"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_review_ids": [
+    "evidence-review-ssr-acceptable-scoring-uses-source-fidelity-r1",
+    "evidence-review-ssr-acceptable-scoring-uses-construct-mapping-r1",
+    "evidence-review-ssr-acceptable-scoring-uses-method-classification-r1",
+    "evidence-review-ssr-acceptable-scoring-uses-scorer-validation-relevance-r1",
+    "evidence-review-ssr-acceptable-scoring-uses-synthesis-overreach-r1"
+  ],
+  "review_comment_ids": [],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces.",
+    "scorer_validation_relevance: Keep the claim's replacement-validation limitation and support roles unchanged.",
+    "source_fidelity: Keep those candidates screened as no_full_text and exclude them from direct claim support until full text is obtained."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "publication_event_ids": [
+    "publish-ssr-acceptable-scoring-uses-baseline-2026-06-02-2026-06-02t20-27-18-938z"
+  ]
+}

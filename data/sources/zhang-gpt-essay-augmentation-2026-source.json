@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "zhang-gpt-essay-augmentation-2026-source",
+  "name": "Augmenting AI Scoring of Essays with GPT-Generated Responses",
+  "source_type": "journal_article",
+  "authors": [
+    "Mo Zhang",
+    "Akshay Badola",
+    "Matthew Johnson",
+    "Chen Li"
+  ],
+  "venue": "Journal of Writing Research",
+  "year": 2026,
+  "published_on": "2026-02-17",
+  "doi": "10.17239/jowr-2026.17.03.06",
+  "urls": [
+    "https://www.jowr.org/jowr/article/view/1777",
+    "https://www.jowr.org/jowr/article/download/1777/1039/6929"
+  ],
+  "summary": "Peer-reviewed writing-assessment study evaluating GPT-4 and GPT-4o essay generation as training augmentation for AI essay scoring. The study uses PERSUADE 2.0 essays from seven prompts, compares GPT-generated and student essays, evaluates augmented scoring models on held-out student essays, and analyzes subgroup scoring discrepancies.",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03T13:12:00Z",
+      "url": "https://www.jowr.org/jowr/article/view/1777",
+      "result": "verified",
+      "notes": "Article landing page verified authors, DOI, keywords, abstract, and publication date."
+    },
+    {
+      "attempted_at": "2026-06-03T13:13:00Z",
+      "url": "https://www.jowr.org/jowr/article/download/1777/1039/6929",
+      "result": "verified",
+      "notes": "PDF downloaded and text extracted locally. Relevant extraction spans Methods, Results, and Discussion sections."
+    }
+  ]
+}

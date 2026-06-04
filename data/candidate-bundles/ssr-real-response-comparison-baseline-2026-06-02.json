@@ -1,0 +1,251 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-real-response-comparison-baseline-2026-06-02",
+  "name": "Real Response Comparison Baseline",
+  "summary": "Staged first literature-review baseline for how synthetic student response studies compare generated outputs with real student response records, distributions, scores, and dialogue turns.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T18:51:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-real-response-comparison"
+    ],
+    "research_question": "What is the current evidence landscape for Comparison With Real Student Responses in Synthetic Student Response Literature Review, and what belongs in the first public baseline for this review question?"
+  },
+  "source_ids": [
+    "agent4edu-learner-response-generation-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "lu-generative-students-item-evaluation-2024-source",
+    "srivatsa-llm-student-ability-simulation-2025-source",
+    "liu-llm-respondents-item-evaluation-2025-source",
+    "scarlatos-simulated-students-dialogue-2026-source",
+    "duan-history-aware-profiles-student-simulation-2026-source"
+  ],
+  "source_urls": [
+    "https://arxiv.org/abs/2501.10332",
+    "https://arxiv.org/abs/2602.06772",
+    "https://arxiv.org/abs/2405.11591",
+    "https://aclanthology.org/2025.bea-1.75/",
+    "https://arxiv.org/abs/2407.10899",
+    "https://arxiv.org/abs/2601.04025",
+    "https://arxiv.org/abs/2605.30051"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "ssr-quality-evaluation-baseline-claim",
+      "relationship": "same_literature_review_domain"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-model-generation-effects-baseline-claim",
+      "relationship": "same_literature_review_domain"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-prompt-engineering-effects-baseline-claim",
+      "relationship": "same_literature_review_domain"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-ssr-real-response-comparison-search-2026-06-02",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "ssr-real-response-comparison-search-2026-06-02",
+      "file_path": "data/search-protocols/ssr-real-response-comparison-search-2026-06-02.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/ssr-real-response-comparison-search-2026-06-02.json",
+      "summary": "Stage search protocol ssr-real-response-comparison-search-2026-06-02.",
+      "rationale": "The bundle needs an auditable search and screening record for real-response comparison evidence."
+    },
+    {
+      "change_id": "create-agent4edu-real-response-comparison-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "agent4edu-real-response-comparison-artifact",
+      "file_path": "data/artifacts/agent4edu-real-response-comparison-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/agent4edu-real-response-comparison-artifact.json",
+      "summary": "Stage Agent4Edu real learner response comparison extract.",
+      "rationale": "The baseline needs evidence on generated learner records compared with real response histories."
+    },
+    {
+      "change_id": "create-wolfe-real-essay-comparison-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "wolfe-real-essay-comparison-artifact",
+      "file_path": "data/artifacts/wolfe-real-essay-comparison-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/wolfe-real-essay-comparison-artifact.json",
+      "summary": "Stage Wolfe and Barber real essay comparison extract.",
+      "rationale": "The baseline needs evidence on simulated essays compared with their real source essays."
+    },
+    {
+      "change_id": "create-lu-real-student-mcq-comparison-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "lu-real-student-mcq-comparison-artifact",
+      "file_path": "data/artifacts/lu-real-student-mcq-comparison-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/lu-real-student-mcq-comparison-artifact.json",
+      "summary": "Stage Lu and Wang real student MCQ comparison extract.",
+      "rationale": "The baseline needs same-item MCQ comparison evidence with real student responses."
+    },
+    {
+      "change_id": "create-srivatsa-naep-real-response-comparison-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "srivatsa-naep-real-response-comparison-artifact",
+      "file_path": "data/artifacts/srivatsa-naep-real-response-comparison-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/srivatsa-naep-real-response-comparison-artifact.json",
+      "summary": "Stage Srivatsa NAEP real response comparison extract.",
+      "rationale": "The baseline needs evidence on proxy-student item answers compared with real NAEP response patterns."
+    },
+    {
+      "change_id": "create-liu-human-respondent-irt-comparison-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "liu-human-respondent-irt-comparison-artifact",
+      "file_path": "data/artifacts/liu-human-respondent-irt-comparison-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/liu-human-respondent-irt-comparison-artifact.json",
+      "summary": "Stage Liu et al. human respondent IRT comparison extract.",
+      "rationale": "The baseline needs evidence on LLM respondent distributions and item calibration compared with human responses."
+    },
+    {
+      "change_id": "create-scarlatos-real-dialogue-comparison-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "scarlatos-real-dialogue-comparison-artifact",
+      "file_path": "data/artifacts/scarlatos-real-dialogue-comparison-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/scarlatos-real-dialogue-comparison-artifact.json",
+      "summary": "Stage Scarlatos real tutoring dialogue comparison extract.",
+      "rationale": "The baseline needs evidence on simulated dialogue turns compared with real student turns."
+    },
+    {
+      "change_id": "create-duan-history-real-turn-comparison-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "duan-history-real-turn-comparison-artifact",
+      "file_path": "data/artifacts/duan-history-real-turn-comparison-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/duan-history-real-turn-comparison-artifact.json",
+      "summary": "Stage Duan et al. history-aware real turn comparison extract.",
+      "rationale": "The baseline needs current evidence on future-turn simulation compared with real ground truth."
+    },
+    {
+      "change_id": "create-agent4edu-real-response-comparison-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "agent4edu-real-response-comparison-finding-2026",
+      "file_path": "data/findings/agent4edu-real-response-comparison-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/agent4edu-real-response-comparison-finding-2026.json",
+      "summary": "Stage finding on Agent4Edu real learner response comparison.",
+      "rationale": "The synthesis needs a bounded same-dataset learner-record comparison finding."
+    },
+    {
+      "change_id": "create-wolfe-real-essay-comparison-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "wolfe-real-essay-comparison-finding-2026",
+      "file_path": "data/findings/wolfe-real-essay-comparison-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/wolfe-real-essay-comparison-finding-2026.json",
+      "summary": "Stage finding on Wolfe and Barber real essay comparison.",
+      "rationale": "The synthesis needs prompt-specific real essay comparator evidence."
+    },
+    {
+      "change_id": "create-lu-real-student-mcq-comparison-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "lu-real-student-mcq-comparison-finding-2026",
+      "file_path": "data/findings/lu-real-student-mcq-comparison-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/lu-real-student-mcq-comparison-finding-2026.json",
+      "summary": "Stage finding on Lu and Wang real MCQ response comparison.",
+      "rationale": "The synthesis needs same-item simulated-versus-real MCQ comparison evidence."
+    },
+    {
+      "change_id": "create-srivatsa-naep-real-response-comparison-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "srivatsa-naep-real-response-comparison-finding-2026",
+      "file_path": "data/findings/srivatsa-naep-real-response-comparison-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/srivatsa-naep-real-response-comparison-finding-2026.json",
+      "summary": "Stage finding on Srivatsa NAEP real response comparison.",
+      "rationale": "The synthesis needs aggregate real population response-pattern comparison evidence."
+    },
+    {
+      "change_id": "create-liu-human-respondent-irt-comparison-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "liu-human-respondent-irt-comparison-finding-2026",
+      "file_path": "data/findings/liu-human-respondent-irt-comparison-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/liu-human-respondent-irt-comparison-finding-2026.json",
+      "summary": "Stage finding on Liu et al. human respondent IRT comparison.",
+      "rationale": "The synthesis needs human response distribution and item-calibration comparison evidence."
+    },
+    {
+      "change_id": "create-scarlatos-real-dialogue-comparison-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "scarlatos-real-dialogue-comparison-finding-2026",
+      "file_path": "data/findings/scarlatos-real-dialogue-comparison-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/scarlatos-real-dialogue-comparison-finding-2026.json",
+      "summary": "Stage finding on Scarlatos real dialogue turn comparison.",
+      "rationale": "The synthesis needs real-turn dialogue fidelity comparison evidence."
+    },
+    {
+      "change_id": "create-duan-history-real-turn-comparison-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "duan-history-real-turn-comparison-finding-2026",
+      "file_path": "data/findings/duan-history-real-turn-comparison-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/duan-history-real-turn-comparison-finding-2026.json",
+      "summary": "Stage finding on Duan et al. real future-turn comparison.",
+      "rationale": "The synthesis needs current history-conditioned real-turn comparison evidence."
+    },
+    {
+      "change_id": "create-ssr-real-response-comparison-baseline-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-real-response-comparison-baseline-claim",
+      "file_path": "data/claims/ssr-real-response-comparison-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-real-response-comparison-baseline-2026-06-02/ssr-real-response-comparison-baseline-claim.json",
+      "summary": "Stage synthesis claim for real response comparison baseline.",
+      "rationale": "The review question needs one bounded claim tying comparator designs, real-response evidence, and non-substitution caveats together."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-real-response-comparison",
+      "note": "Creates the first staged literature-review baseline for comparisons between synthetic and real student responses."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "synthesis_overreach"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_review_ids": [
+    "evidence-review-ssr-real-response-comparison-source-fidelity-r1",
+    "evidence-review-ssr-real-response-comparison-construct-mapping-r1",
+    "evidence-review-ssr-real-response-comparison-method-classification-r1",
+    "evidence-review-ssr-real-response-comparison-scorer-validation-relevance-r1",
+    "evidence-review-ssr-real-response-comparison-synthesis-overreach-r1"
+  ],
+  "review_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-real-response-comparison-baseline-2026-06-02-2026-06-02t18-55-01-388z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": []
+}

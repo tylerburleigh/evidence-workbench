@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "ipci-quality-evaluation-artifact",
+  "name": "Ipci et al. Synthetic Response Quality Evaluation Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "ipci-knowledge-profiles-response-generation-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation"
+  ],
+  "population_or_context": "Open-ended logical-proof responses in a discrete mathematics course.",
+  "sample_size": "585 authentic open-ended logical-proof responses are reported as the real-response comparator.",
+  "methods": "Extracted the reported quality-evaluation approach for knowledge-profile synthetic responses, including diversity, realism, embedding/PCA comparison, and training-utility evidence.",
+  "endpoint_categories": [
+    "embedding_realism",
+    "response_diversity",
+    "training_utility"
+  ],
+  "education_context": "Higher-education discrete mathematics logical-proof responses with analytic rubric alignment.",
+  "response_origin": "LLM-generated synthetic responses are evaluated against authentic student responses from the same response setting.",
+  "rubric_label_space": "Rubric-aligned logical-proof response quality categories.",
+  "label_source": "Knowledge profiles and representative examples guide synthetic generation; authentic responses and rubric labels provide the comparison boundary.",
+  "generation_model": "Large language models; model details are not fully specified in the repository metadata page.",
+  "generation_method": "Profile-based LLM generation guided by knowledge profiles and representative examples.",
+  "prompt_strategy": "Straightforward profile use and error-informed profile use are reported as profile-based strategies.",
+  "evaluation_method": "Quality is evaluated through diversity and realism analysis, embedding-based distance metrics and PCA comparison, and downstream utility for automated grading model training.",
+  "scorer_use": "Synthetic responses are considered for training augmentation and formative-feedback model development, not as standalone scorer-validation evidence.",
+  "real_response_comparator": "Authentic logical-proof responses from the same educational context are the comparator.",
+  "reported_metrics": "Repository metadata reports N = 585 authentic responses and summarizes diversity, realism, and model-training utility comparisons.",
+  "limitations": [
+    "The public repository page summarizes the method and results but does not expose every prompt or model detail.",
+    "The evidence is bounded to discrete mathematics logical-proof responses.",
+    "Synthetic-only training is not established as a replacement for real response data."
+  ],
+  "assessment_purpose": "in_term_or_classroom_assessment",
+  "decision_consequence": "feedback_or_instructional_support",
+  "operational_use": "quality_evaluation"
+}

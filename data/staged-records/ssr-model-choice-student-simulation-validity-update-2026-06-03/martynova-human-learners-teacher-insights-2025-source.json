@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "martynova-human-learners-teacher-insights-2025-source",
+  "name": "Can LLMs Effectively Simulate Human Learners? Teachers' Insights from Tutoring LLM Students",
+  "source_type": "conference_paper",
+  "authors": [
+    "Daria Martynova",
+    "Jakub Macina",
+    "Nico Daheim",
+    "Nilay Yalcin",
+    "Xiaoyu Zhang",
+    "Mrinmaya Sachan"
+  ],
+  "venue": "Proceedings of the 20th Workshop on Innovative Use of NLP for Building Educational Applications",
+  "year": 2025,
+  "published_on": "2025-07",
+  "doi": "10.18653/v1/2025.bea-1.8",
+  "urls": [
+    "https://aclanthology.org/2025.bea-1.8/",
+    "https://aclanthology.org/2025.bea-1.8.pdf"
+  ],
+  "summary": "BEA 2025 paper using MathDial data analysis and interviews with teachers who tutored LLM-simulated students to identify authenticity gaps in learner simulation.",
+  "retrieved_on": "2026-06-03",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-03T20:13:00Z",
+      "url": "https://aclanthology.org/2025.bea-1.8.pdf",
+      "result": "full_text_verified",
+      "notes": "ACL Anthology PDF was downloaded and text-extracted for sample details, MathDial context, teacher-reported authenticity failures, and limitations."
+    }
+  ]
+}

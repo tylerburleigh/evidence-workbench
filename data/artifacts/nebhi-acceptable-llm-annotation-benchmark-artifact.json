@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "nebhi-acceptable-llm-annotation-benchmark-artifact",
+  "name": "Nebhi et al. Acceptable LLM Annotation Benchmark Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "nebhi-adaptive-writing-aig-scoring-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses"
+  ],
+  "population_or_context": "Adaptive English writing assessment for the EF Standard English Test pipeline.",
+  "sample_size": "Approximately 200 human-rated gold-standard item-response pairs for annotator benchmarking; 20,000 synthetic response pairs for response-generator fine-tuning; approximately 200 synthetic answers per new prompt in scoring-model integration.",
+  "methods": "Extracted expert-human annotation, LLM annotator benchmarking, majority-vote annotation, synthetic response generation, and scoring-model integration.",
+  "endpoint_categories": [
+    "human_benchmarking",
+    "llm_annotation",
+    "scoring_model_development"
+  ],
+  "education_context": "Adaptive English writing assessment with proficiency-aligned writing prompts and grammatical accuracy ratings.",
+  "response_origin": "Synthetic writing responses are generated to emulate authentic student work across proficiency levels and are annotated for grammatical accuracy and proficiency level.",
+  "rubric_label_space": "Grammatical accuracy scale from 0 to 4 and proficiency-aligned writing levels.",
+  "label_source": "Five expert human raters establish a gold-standard benchmark; top-performing LLM annotators are selected by Cohen kappa against that benchmark and combined by majority vote.",
+  "generation_model": "A fine-tuned LLaMA 3.1 8B model generates synthetic responses after ORPO fine-tuning; annotation candidates include LLaMA 3.3 70B, GPT-4o, Nova Pro, Mistral models, and Claude Opus.",
+  "generation_method": "Generate proficiency-aligned synthetic responses for validated writing items, annotate response pairs with an LLM ensemble, and use the data to fine-tune response generation and scoring components.",
+  "prompt_strategy": "Few-shot item generation and proficiency-conditioned response generation are used; exact prompts are not treated as a reusable scoring standard.",
+  "evaluation_method": "Candidate LLM annotators are compared to expert human ratings with Cohen kappa; majority-vote annotation is then used for larger synthetic response annotation.",
+  "scorer_use": "Potentially acceptable for scoring-model development when model annotators are benchmarked against expert human labels and limitations are explicit.",
+  "real_response_comparator": "A human-rated gold standard of real item-response pairs benchmarks LLM annotation before synthetic response annotation is used at scale.",
+  "reported_metrics": "Cohen kappa values include LLaMA 3.3 70B at 0.86, GPT-4o at 0.87, Nova Pro at 0.78, and the selected ensemble at 0.89 against the human-annotated gold standard.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "human_gold_standard_pairs": 200,
+    "expert_raters": 5,
+    "minimum_retained_inter_annotator_agreement": 0.7,
+    "synthetic_response_pairs": 20000,
+    "approximate_synthetic_answers_per_new_prompt": 200,
+    "cohen_kappa_against_human_gold_standard": {
+      "llama_3_3_70b": 0.86,
+      "gpt_4o": 0.87,
+      "nova_pro": 0.78,
+      "ensemble": 0.89
+    }
+  },
+  "limitations": [
+    "The human benchmark is compact.",
+    "Majority-vote LLM annotation is not equivalent to independent human scoring of all generated responses.",
+    "The domain is English writing assessment and grammatical accuracy, not all constructed-response scoring."
+  ],
+  "assessment_purpose": "formative_feedback",
+  "decision_consequence": "feedback_or_instructional_support",
+  "operational_use": "training_augmentation"
+}

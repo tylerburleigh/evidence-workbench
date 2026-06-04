@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "cao-nguyen-math-simulated-learner-authenticity-artifact",
+  "name": "Mathematics Simulated Learner Authenticity Workflow Artifact",
+  "artifact_type": "study_extraction",
+  "status": "staged",
+  "source_ids": [
+    "cao-nguyen-math-simulated-learners-2026-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-model-generation-effects",
+    "ssr-prompt-engineering-effects",
+    "ssr-real-response-comparison"
+  ],
+  "population_or_context": "Fifth-grade fraction reasoning simulation for preservice teacher noticing practice.",
+  "sample_size": "15 preservice teachers in an initial implementation; 1,438 talk turns; 40 inauthentic interactions used for targeted regeneration; 240 generated responses in the full comparison; eight interview participants.",
+  "methods": "The study compares few-shot prompting with multi-agent, fine-tuning, and DPO approaches, then codes simulated responses for cognition and language authenticity and gathers interview-based teacher/researcher perceptions.",
+  "endpoint_categories": [
+    "response_realism",
+    "model_generation_effects",
+    "prompt_engineering_effects",
+    "real_response_comparison"
+  ],
+  "numeric_results_extracted": true,
+  "education_context": "Elementary mathematics teacher learning and preservice-teacher practice with a simulated fifth-grade student.",
+  "response_origin": "LLM-generated student-agent utterances produced by few-shot prompting, a multi-agent responder/evaluator/refiner workflow, fine-tuned GPT-4.1, and DPO-tuned GPT-4.1.",
+  "rubric_label_space": "Binary or categorical authenticity judgments for cognition and language, not a learner score rubric.",
+  "label_source": "Researchers with mathematics teaching experience coded authenticity; training data included prior task utterances, Khan Academy student-AI tutor chats, and elementary fraction lesson transcripts.",
+  "generation_model": "gpt-4o for the multi-agent workflow; gpt-4.1-2025-04-14 for fine-tuning and DPO; GPT-4o-mini and GPT-5.2 used in automated preference-data construction.",
+  "generation_method": "Comparison of few-shot prompting, a multi-agent responder/evaluator/refiner workflow, supervised fine-tuning on student utterances, and DPO using Reflexion-generated preference pairs.",
+  "prompt_strategy": "Baseline few-shot role-play prompt plus workflow-specific prompts for multi-agent critique/refinement and preference-data generation.",
+  "evaluation_method": "Researcher coding of cognition and language authenticity, McNemar tests, GLMM comparisons, response-time reporting, usability/effectiveness survey, and qualitative interviews.",
+  "scorer_use": "No automated scorer validation; the simulation supports teacher learning and noticing practice.",
+  "real_response_comparator": "Prior task interactions, student-AI tutoring chats, and elementary classroom fraction transcripts were used to identify authenticity issues and support fine-tuning; coded authenticity compared generated responses with the study's student profile and discourse expectations.",
+  "reported_metrics": "All three post-prompt approaches significantly improved cognition and language authenticity over the few-shot baseline on targeted inauthentic responses; DPO had the highest descriptive full-dataset performance at 100% language authenticity and 88.7% cognition authenticity, while GLMM differences among approaches were not significant.",
+  "limitations": [
+    "Teacher-learning context rather than automated scoring or operational assessment.",
+    "The study focuses on one fraction task and one simulated learner profile.",
+    "Some workflow outputs introduced tradeoffs such as verbosity, inconsistent uncertainty, latency, or limited opportunities to extend student thinking."
+  ],
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "quality_evaluation"
+}

@@ -1,0 +1,269 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-synthetic-response-scoring-agreement-baseline-2026-06-02",
+  "name": "Synthetic Response Scoring Agreement Baseline",
+  "summary": "Staged first literature-review baseline for how synthetic student response studies use human labels, AI/model scores, generated target labels, rubric labels, and scorer agreement to evaluate, label, validate, or benchmark generated responses.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T19:30:40Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-synthetic-response-scoring-agreement"
+    ],
+    "research_question": "Within synthetic student response research, how are human labels, AI scores, model-generated labels, rubric scores, or scorer agreement used to evaluate, label, validate, or benchmark generated responses, and what belongs in the first public baseline for this review question?"
+  },
+  "source_ids": [
+    "frohn-llm-cr-live-scoring-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "bexte-zesch-synthetic-content-scoring-2025-source",
+    "nebhi-adaptive-writing-aig-scoring-2025-source",
+    "benedetto-simulated-exam-responses-2024-source"
+  ],
+  "source_urls": [
+    "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs",
+    "https://arxiv.org/abs/2602.06772",
+    "https://aclanthology.org/2025.acl-long.659/",
+    "https://aclanthology.org/2025.bea-1.11/",
+    "https://aclanthology.org/2025.bea-1.73/",
+    "https://aclanthology.org/2024.findings-emnlp.663/"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "ssr-scoring-validation-use-baseline-claim",
+      "relationship": "same_literature_review_domain"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-real-response-comparison-baseline-claim",
+      "relationship": "same_literature_review_domain"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-quality-evaluation-baseline-claim",
+      "relationship": "same_literature_review_domain"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-ssr-synthetic-response-scoring-agreement-search-2026-06-02",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "ssr-synthetic-response-scoring-agreement-search-2026-06-02",
+      "file_path": "data/search-protocols/ssr-synthetic-response-scoring-agreement-search-2026-06-02.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/ssr-synthetic-response-scoring-agreement-search-2026-06-02.json",
+      "summary": "Stage search protocol ssr-synthetic-response-scoring-agreement-search-2026-06-02.",
+      "rationale": "The bundle needs an auditable search and screening record for synthetic-response scoring and label-provenance evidence."
+    },
+    {
+      "change_id": "create-bexte-zesch-synthetic-content-scoring-2025-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "bexte-zesch-synthetic-content-scoring-2025-source",
+      "file_path": "data/sources/bexte-zesch-synthetic-content-scoring-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/bexte-zesch-synthetic-content-scoring-2025-source.json",
+      "summary": "Stage Bexte and Zesch synthetic content-scoring source.",
+      "rationale": "The baseline needs full-text evidence on generated target-label noise and manual relabeling."
+    },
+    {
+      "change_id": "create-nebhi-adaptive-writing-aig-scoring-2025-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "nebhi-adaptive-writing-aig-scoring-2025-source",
+      "file_path": "data/sources/nebhi-adaptive-writing-aig-scoring-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/nebhi-adaptive-writing-aig-scoring-2025-source.json",
+      "summary": "Stage Nebhi et al. adaptive writing source.",
+      "rationale": "The baseline needs full-text evidence on LLM annotation agreement benchmarked against expert human ratings."
+    },
+    {
+      "change_id": "create-benedetto-simulated-exam-responses-2024-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "benedetto-simulated-exam-responses-2024-source",
+      "file_path": "data/sources/benedetto-simulated-exam-responses-2024-source.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/benedetto-simulated-exam-responses-2024-source.json",
+      "summary": "Stage Benedetto et al. simulated exam response source.",
+      "rationale": "The baseline needs boundary evidence on prompt-assigned skill labels and answer-accuracy evaluation for generated exam responses."
+    },
+    {
+      "change_id": "update-frohn-llm-cr-live-scoring-2025-source-access",
+      "change_type": "update_record",
+      "target_record_type": "source",
+      "target_record_id": "frohn-llm-cr-live-scoring-2025-source",
+      "file_path": "data/sources/frohn-llm-cr-live-scoring-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/frohn-llm-cr-live-scoring-2025-source.json",
+      "summary": "Add source-access metadata for Frohn et al.",
+      "rationale": "The bundle uses Frohn et al. as direct support and needs explicit full-text access metadata."
+    },
+    {
+      "change_id": "create-frohn-synthetic-prepilot-scoring-agreement-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "frohn-synthetic-prepilot-scoring-agreement-artifact",
+      "file_path": "data/artifacts/frohn-synthetic-prepilot-scoring-agreement-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/frohn-synthetic-prepilot-scoring-agreement-artifact.json",
+      "summary": "Stage Frohn et al. synthetic pre-pilot scoring agreement extract.",
+      "rationale": "The baseline needs evidence on labeled synthetic response use for pre-pilot LLM scorer validation."
+    },
+    {
+      "change_id": "create-wolfe-human-scored-simulated-essays-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "wolfe-human-scored-simulated-essays-artifact",
+      "file_path": "data/artifacts/wolfe-human-scored-simulated-essays-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/wolfe-human-scored-simulated-essays-artifact.json",
+      "summary": "Stage Wolfe and Barber human-scored simulated essay extract.",
+      "rationale": "The baseline needs evidence on expert scores, weighted kappa, and realism ratings for generated essays."
+    },
+    {
+      "change_id": "create-yoo-case-synthetic-rubric-labeling-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "yoo-case-synthetic-rubric-labeling-artifact",
+      "file_path": "data/artifacts/yoo-case-synthetic-rubric-labeling-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/yoo-case-synthetic-rubric-labeling-artifact.json",
+      "summary": "Stage Yoo et al. synthetic rubric-labeling extract.",
+      "rationale": "The baseline needs evidence on generated rubric-aligned labels used for AES training and the real-data evaluation boundary."
+    },
+    {
+      "change_id": "create-bexte-generated-answer-relabeling-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "bexte-generated-answer-relabeling-artifact",
+      "file_path": "data/artifacts/bexte-generated-answer-relabeling-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/bexte-generated-answer-relabeling-artifact.json",
+      "summary": "Stage Bexte and Zesch generated-answer relabeling extract.",
+      "rationale": "The baseline needs evidence on generated label noise and manual relabeling for content-scoring training."
+    },
+    {
+      "change_id": "create-nebhi-llm-annotated-synthetic-writing-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "nebhi-llm-annotated-synthetic-writing-artifact",
+      "file_path": "data/artifacts/nebhi-llm-annotated-synthetic-writing-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/nebhi-llm-annotated-synthetic-writing-artifact.json",
+      "summary": "Stage Nebhi et al. LLM-annotated synthetic writing extract.",
+      "rationale": "The baseline needs evidence on LLM annotator selection by agreement with expert human ratings."
+    },
+    {
+      "change_id": "create-benedetto-skill-level-simulation-evaluation-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "benedetto-skill-level-simulation-evaluation-artifact",
+      "file_path": "data/artifacts/benedetto-skill-level-simulation-evaluation-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/benedetto-skill-level-simulation-evaluation-artifact.json",
+      "summary": "Stage Benedetto et al. skill-level simulation evaluation extract.",
+      "rationale": "The baseline needs boundary evidence on prompt-assigned labels evaluated through generated answer accuracy."
+    },
+    {
+      "change_id": "create-frohn-synthetic-prepilot-scoring-agreement-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "frohn-synthetic-prepilot-scoring-agreement-finding-2026",
+      "file_path": "data/findings/frohn-synthetic-prepilot-scoring-agreement-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/frohn-synthetic-prepilot-scoring-agreement-finding-2026.json",
+      "summary": "Stage finding on Frohn et al. synthetic pre-pilot scoring agreement.",
+      "rationale": "The synthesis needs a bounded finding on labeled synthetic response use before real-response validation."
+    },
+    {
+      "change_id": "create-wolfe-human-scored-simulated-essays-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "wolfe-human-scored-simulated-essays-finding-2026",
+      "file_path": "data/findings/wolfe-human-scored-simulated-essays-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/wolfe-human-scored-simulated-essays-finding-2026.json",
+      "summary": "Stage finding on Wolfe and Barber expert-scored simulated essays.",
+      "rationale": "The synthesis needs direct evidence on human scoring agreement metrics for generated essays."
+    },
+    {
+      "change_id": "create-yoo-case-synthetic-rubric-labeling-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "yoo-case-synthetic-rubric-labeling-finding-2026",
+      "file_path": "data/findings/yoo-case-synthetic-rubric-labeling-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/yoo-case-synthetic-rubric-labeling-finding-2026.json",
+      "summary": "Stage finding on Yoo et al. synthetic rubric-labeled essays.",
+      "rationale": "The synthesis needs direct evidence on synthetic rubric labels used for training but not standalone validation."
+    },
+    {
+      "change_id": "create-bexte-generated-answer-label-noise-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "bexte-generated-answer-label-noise-finding-2026",
+      "file_path": "data/findings/bexte-generated-answer-label-noise-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/bexte-generated-answer-label-noise-finding-2026.json",
+      "summary": "Stage finding on generated target-label noise in Bexte and Zesch.",
+      "rationale": "The synthesis needs cautionary evidence that generated labels require audit or relabeling."
+    },
+    {
+      "change_id": "create-nebhi-majority-vote-synthetic-response-annotation-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "nebhi-majority-vote-synthetic-response-annotation-finding-2026",
+      "file_path": "data/findings/nebhi-majority-vote-synthetic-response-annotation-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/nebhi-majority-vote-synthetic-response-annotation-finding-2026.json",
+      "summary": "Stage finding on Nebhi et al. majority-vote LLM annotation.",
+      "rationale": "The synthesis needs evidence on LLM labelers benchmarked against expert human ratings before synthetic annotation."
+    },
+    {
+      "change_id": "create-benedetto-skill-level-simulation-evaluation-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "benedetto-skill-level-simulation-evaluation-finding-2026",
+      "file_path": "data/findings/benedetto-skill-level-simulation-evaluation-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/benedetto-skill-level-simulation-evaluation-finding-2026.json",
+      "summary": "Stage finding on Benedetto et al. prompt-assigned skill labels.",
+      "rationale": "The synthesis needs boundary evidence on generated target labels evaluated through answer accuracy."
+    },
+    {
+      "change_id": "create-ssr-synthetic-response-scoring-agreement-baseline-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-synthetic-response-scoring-agreement-baseline-claim",
+      "file_path": "data/claims/ssr-synthetic-response-scoring-agreement-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-synthetic-response-scoring-agreement-baseline-2026-06-02/ssr-synthetic-response-scoring-agreement-baseline-claim.json",
+      "summary": "Stage synthesis claim for synthetic response scoring agreement baseline.",
+      "rationale": "The review question needs one bounded claim tying label provenance, scoring agreement checks, and validation boundaries together."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-synthetic-response-scoring-agreement",
+      "note": "Creates the first staged literature-review baseline for scoring, labeling, and agreement evidence specifically within synthetic student response studies."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "synthesis_overreach"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_review_ids": [
+    "evidence-review-ssr-synthetic-response-scoring-agreement-source-fidelity-r1",
+    "evidence-review-ssr-synthetic-response-scoring-agreement-construct-mapping-r1",
+    "evidence-review-ssr-synthetic-response-scoring-agreement-method-classification-r1",
+    "evidence-review-ssr-synthetic-response-scoring-agreement-scorer-validation-relevance-r1",
+    "evidence-review-ssr-synthetic-response-scoring-agreement-synthesis-overreach-r1"
+  ],
+  "review_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-synthetic-response-scoring-agreement-baseline-2026-06-02-2026-06-02t19-40-47-165z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": []
+}

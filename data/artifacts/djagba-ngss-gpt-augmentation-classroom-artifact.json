@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "djagba-ngss-gpt-augmentation-classroom-artifact",
+  "name": "Djagba et al. NGSS Classroom GPT Augmentation Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "djagba-ngss-classroom-augmentation-2026-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "population_or_context": "High school NGSS-aligned physical science assessment with student scientific explanations and 11 binary-coded analytic rubric categories.",
+  "sample_size": "1,466 original high school responses; GPT-generated positive responses were added for severely imbalanced categories, including 83 for Category 5, 150 for Category 6, 72 for Category 7, and enough Category 9 responses to reach about 140 positives.",
+  "methods": "SciBERT classifiers were trained under original, fine-tuned, SMOTE, GPT-generated document-level augmentation, EASE, and ALP conditions using a fixed 80/20 train-test split.",
+  "endpoint_categories": [
+    "classroom_training_augmentation",
+    "class_imbalance",
+    "held_out_real_response_evaluation"
+  ],
+  "education_context": "High school science classroom assessment of NGSS-aligned scientific explanations using learning-progression analytic rubric categories.",
+  "response_origin": "Real high school responses plus GPT-generated synthetic student responses for rare positive rubric categories.",
+  "rubric_label_space": "Eleven binary-coded analytic categories covering scientific ideas and incomplete or inaccurate ideas.",
+  "label_source": "Original responses were scored on analytic categories; generated responses were targeted to positive categories and evaluated through downstream classifier performance against held-out real responses.",
+  "generation_model": "GPT-4 is reported as the document-level generation model; the PDF contains one internal example label that appears to say GPT-5, so model naming should be checked during review.",
+  "generation_method": "Use few-shot prompting with the original item and example student answers for a target characteristic, then generate similar student responses to increase minority-class coverage.",
+  "prompt_strategy": "Two-shot prompt with original item context, two student answer examples, student-role framing, and a request for new similar answers satisfying the analytic rubric criterion.",
+  "assessment_purpose": "in_term_or_classroom_assessment",
+  "decision_consequence": "feedback_or_instructional_support",
+  "operational_use": "training_augmentation",
+  "evaluation_method": "Held-out 80/20 real-response test split with accuracy, precision, recall, and F1; discussion frames improved scoring as supporting feedback and learning progression placement.",
+  "scorer_use": "Synthetic responses are used for training augmentation to address class imbalance in automated scoring.",
+  "real_response_comparator": "The augmented models are evaluated on held-out real student responses using the same train-test split as original-data models.",
+  "reported_metrics": "For Category 5, SB+GPT F1 = 86.80 compared with baseline F1 = 58.82; for Category 6, SB+GPT F1 = 91.20 compared with baseline F1 = 0.00. EASE and ALP often performed as well or better in the reported tables.",
+  "numeric_results_extracted": true,
+  "limitations": [
+    "Conference preprint rather than an operational scoring policy or deployment study.",
+    "The assessment consequence is classroom feedback/learning-progression support; grade-bearing use is not established.",
+    "The authors state that synthetic data requires additional validity work, generalization studies, and expert quality checks.",
+    "GPT augmentation is one of several augmentation strategies and was not always the strongest method."
+  ]
+}

@@ -1,0 +1,207 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-scoring-validation-use-baseline-2026-06-02",
+  "name": "Synthetic Response Scorer Validation Use Baseline",
+  "summary": "Staged first literature-review baseline for whether synthetic student or constructed responses are used to validate, benchmark, calibrate, or stress-test automated scorers.",
+  "intake_mode": "bootstrap",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-02T11:49:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-scoring-validation-use"
+    ],
+    "research_question": "What is the current evidence landscape for Use in Automated Scorer Validation in Synthetic Student Response Literature Review, and what belongs in the first public baseline for this review question?"
+  },
+  "source_ids": [
+    "frohn-llm-cr-live-scoring-2025-source",
+    "walsh-sjt-automated-scoring-2026-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source"
+  ],
+  "source_urls": [
+    "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs",
+    "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1756673/full",
+    "https://aclanthology.org/2025.acl-long.659/",
+    "https://arxiv.org/abs/2602.06772"
+  ],
+  "related_records": [],
+  "proposed_changes": [
+    {
+      "change_id": "create-ssr-scoring-validation-search-protocol",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "ssr-scoring-validation-use-search-2026-06-02",
+      "file_path": "data/search-protocols/ssr-scoring-validation-use-search-2026-06-02.json",
+      "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/ssr-scoring-validation-use-search-2026-06-02.json",
+      "summary": "Stage the targeted search and screening protocol for the scorer-validation use bootstrap.",
+      "rationale": "The literature baseline needs an auditable search pass, including included and deferred sources."
+    },
+    {
+      "change_id": "create-frohn-llm-cr-live-scoring-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "frohn-llm-cr-live-scoring-2025-source",
+      "file_path": "data/sources/frohn-llm-cr-live-scoring-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/frohn-llm-cr-live-scoring-2025-source.json",
+      "summary": "Add the Frohn et al. framework paper source.",
+      "rationale": "The source directly discusses synthetic responses for pre-pilot validation and challenge sets."
+    },
+    {
+      "change_id": "create-walsh-sjt-automated-scoring-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "walsh-sjt-automated-scoring-2026-source",
+      "file_path": "data/sources/walsh-sjt-automated-scoring-2026-source.json",
+      "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/walsh-sjt-automated-scoring-2026-source.json",
+      "summary": "Add the Walsh et al. Frontiers in Education source.",
+      "rationale": "The source reports a concrete synthetic demographic-response fairness pilot for an automated open-response scoring workflow."
+    },
+    {
+      "change_id": "create-yoo-dress-rubric-aes-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "yoo-dress-rubric-aes-2025-source",
+      "file_path": "data/sources/yoo-dress-rubric-aes-2025-source.json",
+      "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/yoo-dress-rubric-aes-2025-source.json",
+      "summary": "Add the Yoo et al. DREsS automated essay scoring source.",
+      "rationale": "The source provides a clear boundary case where synthetic essays support training but validation/test evidence remains real-response based."
+    },
+    {
+      "change_id": "create-wolfe-calibrating-realistic-essays-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "wolfe-calibrating-realistic-essays-2026-source",
+      "file_path": "data/sources/wolfe-calibrating-realistic-essays-2026-source.json",
+      "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/wolfe-calibrating-realistic-essays-2026-source.json",
+      "summary": "Add the Wolfe et al. arXiv preprint source.",
+      "rationale": "The source evaluates simulated essays with expert scores and realism ratings before augmentation use."
+    },
+    {
+      "change_id": "create-frohn-validation-framework-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "frohn-llm-cr-validation-framework-artifact",
+      "file_path": "data/artifacts/frohn-llm-cr-validation-framework-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/frohn-llm-cr-validation-framework-artifact.json",
+      "summary": "Stage the Frohn et al. validation framework extraction.",
+      "rationale": "The source's synthetic-response role must be separated from real-response pilot validation."
+    },
+    {
+      "change_id": "create-walsh-fairness-stress-test-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "walsh-sjt-fairness-stress-test-artifact",
+      "file_path": "data/artifacts/walsh-sjt-fairness-stress-test-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/walsh-sjt-fairness-stress-test-artifact.json",
+      "summary": "Stage the Walsh et al. fairness stress-test extraction.",
+      "rationale": "The source gives a concrete example of synthetic responses used to probe automated scorer behavior."
+    },
+    {
+      "change_id": "create-yoo-dress-training-boundary-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "yoo-dress-synthetic-training-boundary-artifact",
+      "file_path": "data/artifacts/yoo-dress-synthetic-training-boundary-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/yoo-dress-synthetic-training-boundary-artifact.json",
+      "summary": "Stage the DREsS synthetic training boundary extraction.",
+      "rationale": "The source prevents overclaiming synthetic training data as scorer-validation data."
+    },
+    {
+      "change_id": "create-wolfe-realistic-essays-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "wolfe-calibrating-realistic-essays-artifact",
+      "file_path": "data/artifacts/wolfe-calibrating-realistic-essays-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/wolfe-calibrating-realistic-essays-artifact.json",
+      "summary": "Stage the Wolfe et al. simulated essay calibration extraction.",
+      "rationale": "The source contributes adjacent evidence about generated response quality checks before scoring augmentation."
+    },
+    {
+      "change_id": "create-frohn-validation-framework-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "frohn-llm-cr-validation-framework-finding-2026",
+      "file_path": "data/findings/frohn-llm-cr-validation-framework-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/frohn-llm-cr-validation-framework-finding-2026.json",
+      "summary": "Stage a finding about synthetic pre-pilot validation and challenge-set use.",
+      "rationale": "The synthesis claim needs concrete support for synthetic-response validation workflow use."
+    },
+    {
+      "change_id": "create-walsh-fairness-stress-test-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "walsh-sjt-fairness-stress-test-finding-2026",
+      "file_path": "data/findings/walsh-sjt-fairness-stress-test-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/walsh-sjt-fairness-stress-test-finding-2026.json",
+      "summary": "Stage a finding about synthetic demographic response variants for fairness stress testing.",
+      "rationale": "The synthesis claim needs a direct empirical scorer-stress-test example."
+    },
+    {
+      "change_id": "create-yoo-training-boundary-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "yoo-dress-synthetic-training-boundary-finding-2026",
+      "file_path": "data/findings/yoo-dress-synthetic-training-boundary-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/yoo-dress-synthetic-training-boundary-finding-2026.json",
+      "summary": "Stage a finding about DREsS using synthetic essays for training while reserving real data for validation/test.",
+      "rationale": "The synthesis claim needs boundary evidence that adjacent synthetic-response studies should not be overread as validation evidence."
+    },
+    {
+      "change_id": "create-wolfe-realistic-essays-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "wolfe-calibrating-realistic-essays-finding-2026",
+      "file_path": "data/findings/wolfe-calibrating-realistic-essays-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/wolfe-calibrating-realistic-essays-finding-2026.json",
+      "summary": "Stage a finding about human calibration of GPT-generated essays for automated-scoring augmentation.",
+      "rationale": "The synthesis claim needs adjacent calibration evidence and its scorer-validation boundary."
+    },
+    {
+      "change_id": "create-ssr-scoring-validation-use-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-scoring-validation-use-baseline-claim",
+      "file_path": "data/claims/ssr-scoring-validation-use-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/ssr-scoring-validation-use-baseline-claim.json",
+      "summary": "Stage the first bounded synthesis claim for synthetic-response use in automated scorer validation.",
+      "rationale": "The review question needs a public-baseline candidate claim with an explicit support map and limitations."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-scoring-validation-use",
+      "note": "Creates the first staged literature-review baseline for scorer-validation use of synthetic responses."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "synthesis_overreach"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_review_ids": [
+    "evidence-review-ssr-scoring-validation-use-source-fidelity-r1",
+    "evidence-review-ssr-scoring-validation-use-construct-mapping-r1",
+    "evidence-review-ssr-scoring-validation-use-method-classification-r1",
+    "evidence-review-ssr-scoring-validation-use-scorer-validation-relevance-r1",
+    "evidence-review-ssr-scoring-validation-use-synthesis-overreach-r1"
+  ],
+  "review_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-scoring-validation-use-baseline-2026-06-02-2026-06-02t12-28-53-938z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces."
+  ]
+}

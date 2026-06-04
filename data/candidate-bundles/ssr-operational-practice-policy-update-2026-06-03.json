@@ -1,0 +1,225 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-operational-practice-policy-update-2026-06-03",
+  "name": "Operational Practice and Policy Boundary Update",
+  "summary": "Targeted surveillance update adding operational machine-scoring QA evidence for simulated responses and peer-reviewed GPT essay training-augmentation evidence, then tightening acceptable-use and stakes-boundary claims.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-03T13:17:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-acceptable-scoring-uses",
+      "ssr-assessment-stakes-boundaries"
+    ],
+    "research_question": "What primary operational, state, vendor, or program documentation describes acceptable synthetic or simulated response use in automated scoring workflows, and how does that change the boundary between high-stakes and lower-stakes uses?"
+  },
+  "source_ids": [
+    "new-meridian-standard-processes-2020-source",
+    "maine-science-assessment-2024-technical-report-source",
+    "zhang-gpt-essay-augmentation-2026-source",
+    "new-mexico-mssa-technical-report-2025-source"
+  ],
+  "source_urls": [
+    "https://files.eric.ed.gov/fulltext/ED606682.pdf",
+    "https://www.maine.gov/doe/sites/maine.gov.doe/files/inline-files/Assessment%20-%20Maine%20Science%20Assessment%202024%20Technical%20Report%20Redacted%20-%203.11.2025.pdf",
+    "https://www.jowr.org/jowr/article/view/1777",
+    "https://www.jowr.org/jowr/article/download/1777/1039/6929",
+    "https://newmexico.onlinehelp.cognia.org/wp-content/uploads/sites/10/2024/10/2024-2025_New_Mexico_MSSA_Technical_Report_ADA.pdf"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "ssr-acceptable-scoring-uses-baseline-claim",
+      "relationship": "updated_claim"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-assessment-stakes-boundaries-baseline-claim",
+      "relationship": "updated_claim"
+    },
+    {
+      "record_type": "candidate_bundle",
+      "record_id": "ssr-acceptable-scoring-uses-operational-augmentation-update-2026-06-03",
+      "relationship": "extends_operational_training_augmentation_boundary"
+    },
+    {
+      "record_type": "candidate_bundle",
+      "record_id": "ssr-assessment-stakes-boundaries-consequential-update-2026-06-03",
+      "relationship": "extends_stakes_boundary_evidence"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-new-meridian-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "new-meridian-standard-processes-2020-source",
+      "file_path": "data/sources/new-meridian-standard-processes-2020-source.json",
+      "staged_file_path": "data/staged-records/ssr-operational-practice-policy-update-2026-06-03/new-meridian-standard-processes-2020-source.json",
+      "summary": "Add New Meridian standard-process guidance as an operational simulated-response QA source.",
+      "rationale": "The source directly documents simulated responses as machine-scoring test-suite cases for validating scoring and scanning rules."
+    },
+    {
+      "change_id": "create-new-meridian-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "new-meridian-simulated-response-test-suite-artifact",
+      "file_path": "data/artifacts/new-meridian-simulated-response-test-suite-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-operational-practice-policy-update-2026-06-03/new-meridian-simulated-response-test-suite-artifact.json",
+      "summary": "Extract the New Meridian simulated-response test-suite workflow.",
+      "rationale": "A structured artifact is needed to classify the operational use as pre-pilot machine-scoring QA rather than training augmentation or scorer validation."
+    },
+    {
+      "change_id": "create-new-meridian-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "new-meridian-operational-simulated-response-test-suite-finding-2026",
+      "file_path": "data/findings/new-meridian-operational-simulated-response-test-suite-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-operational-practice-policy-update-2026-06-03/new-meridian-operational-simulated-response-test-suite-finding-2026.json",
+      "summary": "Add a finding that simulated responses are acceptable as operational machine-scoring test-suite material.",
+      "rationale": "The finding creates a source-backed acceptable-use boundary distinct from LLM-generated training augmentation."
+    },
+    {
+      "change_id": "create-maine-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "maine-science-assessment-2024-technical-report-source",
+      "file_path": "data/sources/maine-science-assessment-2024-technical-report-source.json",
+      "staged_file_path": "data/staged-records/ssr-operational-practice-policy-update-2026-06-03/maine-science-assessment-2024-technical-report-source.json",
+      "summary": "Add the Maine Science Assessment Spring 2024 technical report.",
+      "rationale": "The official state report documents simulated student response and machine-scored output review in an operational item-authoring QA workflow."
+    },
+    {
+      "change_id": "create-maine-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "maine-science-simulated-response-authoring-review-artifact",
+      "file_path": "data/artifacts/maine-science-simulated-response-authoring-review-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-operational-practice-policy-update-2026-06-03/maine-science-simulated-response-authoring-review-artifact.json",
+      "summary": "Extract Maine's simulated-response item authoring/review QA workflow.",
+      "rationale": "The artifact classifies the workflow as state operational rule-based machine-scoring QA and records the limits of the evidence."
+    },
+    {
+      "change_id": "create-maine-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "maine-science-operational-simulated-response-review-finding-2026",
+      "file_path": "data/findings/maine-science-operational-simulated-response-review-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-operational-practice-policy-update-2026-06-03/maine-science-operational-simulated-response-review-finding-2026.json",
+      "summary": "Add a state operational finding for simulated-response machine-scoring review.",
+      "rationale": "The finding corroborates that simulated-response QA appears in public state technical documentation, not only vendor process guidance."
+    },
+    {
+      "change_id": "create-zhang-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "zhang-gpt-essay-augmentation-2026-source",
+      "file_path": "data/sources/zhang-gpt-essay-augmentation-2026-source.json",
+      "staged_file_path": "data/staged-records/ssr-operational-practice-policy-update-2026-06-03/zhang-gpt-essay-augmentation-2026-source.json",
+      "summary": "Add the Zhang et al. Journal of Writing Research article.",
+      "rationale": "The article provides peer-reviewed direct evidence on GPT-generated essays for AI essay-scoring training augmentation with held-out student evaluation."
+    },
+    {
+      "change_id": "create-zhang-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "zhang-gpt-essay-training-augmentation-validity-artifact",
+      "file_path": "data/artifacts/zhang-gpt-essay-training-augmentation-validity-artifact.json",
+      "staged_file_path": "data/staged-records/ssr-operational-practice-policy-update-2026-06-03/zhang-gpt-essay-training-augmentation-validity-artifact.json",
+      "summary": "Extract Zhang et al.'s GPT essay training augmentation workflow and validation boundaries.",
+      "rationale": "The artifact records the response origin, label source, generation method, real-response comparator, metrics, and limitations required by the SSR domain pack."
+    },
+    {
+      "change_id": "create-zhang-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "zhang-gpt-essay-training-augmentation-validity-boundary-finding-2026",
+      "file_path": "data/findings/zhang-gpt-essay-training-augmentation-validity-boundary-finding-2026.json",
+      "staged_file_path": "data/staged-records/ssr-operational-practice-policy-update-2026-06-03/zhang-gpt-essay-training-augmentation-validity-boundary-finding-2026.json",
+      "summary": "Add a peer-reviewed training-augmentation boundary finding.",
+      "rationale": "The finding strengthens the research/development training-augmentation lane while preserving real-response evaluation and human-review limits."
+    },
+    {
+      "change_id": "create-operational-practice-search-protocol",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "ssr-operational-practice-policy-search-2026-06-03",
+      "file_path": "data/search-protocols/ssr-operational-practice-policy-search-2026-06-03.json",
+      "staged_file_path": "data/staged-records/ssr-operational-practice-policy-update-2026-06-03/ssr-operational-practice-policy-search-2026-06-03.json",
+      "summary": "Add the targeted operational-practice search protocol.",
+      "rationale": "The search protocol records how operational and policy-like sources were identified, included, deferred, or excluded."
+    },
+    {
+      "change_id": "update-acceptable-scoring-uses-claim",
+      "change_type": "update_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-acceptable-scoring-uses-baseline-claim",
+      "file_path": "data/claims/ssr-acceptable-scoring-uses-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-operational-practice-policy-update-2026-06-03/ssr-acceptable-scoring-uses-baseline-claim.json",
+      "summary": "Update acceptable-use synthesis with an operational simulated-response QA/test-suite category and Zhang et al. training-augmentation evidence.",
+      "rationale": "The new sources answer the user's policy/norms question by separating operational QA uses from training augmentation and final validation."
+    },
+    {
+      "change_id": "update-assessment-stakes-boundaries-claim",
+      "change_type": "update_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-assessment-stakes-boundaries-baseline-claim",
+      "file_path": "data/claims/ssr-assessment-stakes-boundaries-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-operational-practice-policy-update-2026-06-03/ssr-assessment-stakes-boundaries-baseline-claim.json",
+      "summary": "Update stakes-boundary synthesis with operational machine-scoring QA evidence and research training-augmentation evidence.",
+      "rationale": "The claim needs to distinguish high-stakes summative QA/test-suite uses, high-stakes training augmentation, and lower/no-consequence research augmentation."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-acceptable-scoring-uses",
+      "note": "Adds simulated-response machine-scoring QA/test suites as a distinct acceptable-use category, separate from LLM-generated training augmentation and final validation."
+    },
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-assessment-stakes-boundaries",
+      "note": "Clarifies that some simulated-response uses are operational even in summative programs, but they remain QA/pre-pilot checks rather than evidence for live scoring, cut scores, or subgroup fairness validation."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "applicability_boundary",
+    "synthesis_overreach"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_review_ids": [
+    "evidence-review-ssr-operational-practice-policy-update-source-fidelity-r1",
+    "evidence-review-ssr-operational-practice-policy-update-construct-mapping-r1",
+    "evidence-review-ssr-operational-practice-policy-update-method-classification-r1",
+    "evidence-review-ssr-operational-practice-policy-update-scorer-validation-relevance-r1",
+    "evidence-review-ssr-operational-practice-policy-update-applicability-boundary-r1",
+    "evidence-review-ssr-operational-practice-policy-update-synthesis-overreach-r1"
+  ],
+  "review_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-operational-practice-policy-update-2026-06-03-2026-06-03t13-26-26-193z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces.",
+    "applicability_boundary: Keep the staged applies_when, does_not_apply_when, and unknown_or_unreviewed_contexts language.",
+    "construct_mapping: Retain the staged artifact fields that separate response origin, label source, scorer use, and real-response comparator.",
+    "method_classification: Keep the no-LLM classifications for operational QA sources and the research/development classification for Zhang et al.",
+    "scorer_validation_relevance: Retain the staged does_not_apply_when and limitations that exclude synthetic-only final validation and live scoring claims.",
+    "source_fidelity: Keep the staged source access metadata, locators, and source-specific limitations.",
+    "synthesis_overreach: Retain the staged blockers and final-validation exclusions."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": []
+}

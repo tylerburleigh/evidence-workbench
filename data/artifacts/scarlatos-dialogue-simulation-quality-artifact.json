@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "scarlatos-dialogue-simulation-quality-artifact",
+  "name": "Scarlatos et al. Tutoring Dialogue Simulation Quality Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "scarlatos-simulated-students-dialogue-2026-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation"
+  ],
+  "population_or_context": "Simulated students in math tutoring dialogues compared with real tutoring dialogue data.",
+  "sample_size": "The arXiv abstract reports construction of a real-world math tutoring dialogue dataset; the staged pass does not extract exact turn or participant counts.",
+  "methods": "Extracted the multi-dimensional simulated-student evaluation framework spanning linguistic, behavioral, and cognitive fidelity, with automated and human validation.",
+  "endpoint_categories": [
+    "linguistic_fidelity",
+    "behavioral_fidelity",
+    "cognitive_fidelity",
+    "human_metric_validation"
+  ],
+  "education_context": "Math tutoring dialogue simulation for intelligent tutoring systems.",
+  "response_origin": "Prompt-based and post-training simulated students are evaluated against real-world math tutoring dialogue data.",
+  "rubric_label_space": "Dialogue-level fidelity metrics rather than a single correctness rubric.",
+  "label_source": "Real tutoring dialogues and human validation provide comparison evidence for automated metric behavior.",
+  "generation_model": "Prompt-based and post-training LLM simulated-student strategies are evaluated; exact model details require full-text review beyond this staged summary.",
+  "generation_method": "Prompt-based simulated students and post-training strategies, including SFT and DPO, are compared.",
+  "prompt_strategy": "Prompt-based simulation is compared with post-training approaches.",
+  "evaluation_method": "Quality is evaluated with metrics for linguistic, behavioral, and cognitive fidelity, benchmarked against real dialogue data and validated with human judgments.",
+  "scorer_use": "Tutoring dialogue simulator quality benchmarking; not automated scorer validation.",
+  "real_response_comparator": "Real-world math tutoring dialogues serve as the comparator for simulated-student fidelity.",
+  "reported_metrics": "The source reports a comprehensive metric framework and human validation; this staged pass does not extract exact metric values.",
+  "limitations": [
+    "The source is dialogue-simulation evidence rather than standalone assessment-response scoring evidence.",
+    "The staged pass captures the metric framework and top-line comparison, not every benchmark value.",
+    "The paper reports that prompt-based simulated students often fail to simulate diverse realistic students and post-training narrows but does not close the gap."
+  ],
+  "assessment_purpose": "formative_feedback",
+  "decision_consequence": "feedback_or_instructional_support",
+  "operational_use": "quality_evaluation"
+}

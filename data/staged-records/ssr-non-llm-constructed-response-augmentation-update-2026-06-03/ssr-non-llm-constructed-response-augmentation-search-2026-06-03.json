@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-non-llm-constructed-response-augmentation-search-2026-06-03",
+  "name": "Non-LLM Constructed-Response Augmentation Search",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-sparse-data-supplementation"
+  ],
+  "status": "included_sources_staged",
+  "systematicity_level": "targeted_bootstrap",
+  "search_started_at": "2026-06-03T15:15:00Z",
+  "search_completed_at": "2026-06-03T16:25:00Z",
+  "databases": [
+    "Google/web search",
+    "Crossref",
+    "Publisher pages",
+    "Existing repo records"
+  ],
+  "search_queries": [
+    {
+      "database": "Google/web search",
+      "query": "\"automatic short answer scoring\" \"data augmentation\"",
+      "searched_at": "2026-06-03T15:15:00Z",
+      "result_count": "top results screened"
+    },
+    {
+      "database": "Google/web search",
+      "query": "\"short answer grading\" \"data augmentation\" \"synthetic\"",
+      "searched_at": "2026-06-03T15:20:00Z",
+      "result_count": "top results screened"
+    },
+    {
+      "database": "Google/web search",
+      "query": "\"automatic short answer grading\" \"backtranslation\" \"augmentation\"",
+      "searched_at": "2026-06-03T15:25:00Z",
+      "result_count": "top results screened"
+    },
+    {
+      "database": "Google/web search",
+      "query": "\"SMOTE\" \"automatic short answer grading\"",
+      "searched_at": "2026-06-03T15:35:00Z",
+      "result_count": "top results screened"
+    },
+    {
+      "database": "Google/web search",
+      "query": "\"constructed response\" \"SMOTE\" \"automated scoring\"",
+      "searched_at": "2026-06-03T15:45:00Z",
+      "result_count": "top results screened"
+    },
+    {
+      "database": "Crossref",
+      "query": "DOI metadata checks for 10.1609/aaai.v34i09.7062, 10.1016/j.engappai.2023.106292, 10.21512/commit.v19i2.13423, and 10.1007/s10956-025-10217-0",
+      "searched_at": "2026-06-03T16:05:00Z",
+      "result_count": 4
+    }
+  ],
+  "inclusion_criteria": [
+    "Study uses generated, transformed, simulated, oversampled, or feature-space synthetic data derived from or representing student constructed responses.",
+    "Study concerns automatic scoring/grading or automated analysis of short answers, constructed responses, scientific models, or similarly open student work.",
+    "Synthetic data is used to address sparse, limited, or imbalanced training/evaluation data, or the paper explicitly studies that role.",
+    "Preference for non-LLM or pre-GPT examples, but later non-LLM/manual/feature-space examples may be included if they answer the same research-process question."
+  ],
+  "exclusion_criteria": [
+    "Pure essay-scoring examples already represented in the sparse-data baseline unless needed for contrast.",
+    "Reference-answer augmentation without synthetic or transformed student-response data.",
+    "General NLP augmentation papers without an educational constructed-response or ASAG task.",
+    "Operational policy documents without extractable research-process role."
+  ],
+  "dedupe_method": "Manual deduplication by title, DOI, and source URL.",
+  "screening_counts": {
+    "records_identified": "targeted search; not counted exhaustively",
+    "records_screened": 7,
+    "full_text_reviewed": 3,
+    "sources_included": 4
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "lun-2020-aaai-mda-asas",
+      "title": "Multiple Data Augmentation Strategies for Improving Performance on Automatic Short Answer Scoring",
+      "decision": "include",
+      "reason": "Direct pre-GPT/non-LLM short-answer scoring augmentation example with full-text extraction.",
+      "source_id": "lun-mda-asas-short-answer-augmentation-2020",
+      "doi": "10.1609/aaai.v34i09.7062",
+      "url": "https://doi.org/10.1609/aaai.v34i09.7062"
+    },
+    {
+      "candidate_id": "bonthu-2023-transfer-augmentation-asag",
+      "title": "Improving the Performance of Automatic Short Answer Grading Using Transfer Learning and Augmentation",
+      "decision": "include",
+      "reason": "Direct ASAG text-augmentation example, but extraction is limited to official abstract/search-indexed ScienceDirect text.",
+      "source_id": "bonthu-transfer-augmentation-asag-2023",
+      "doi": "10.1016/j.engappai.2023.106292",
+      "url": "https://doi.org/10.1016/j.engappai.2023.106292"
+    },
+    {
+      "candidate_id": "krisnawati-2025-cross-prompt-smote",
+      "title": "Cross-Prompt Based Automatic Short Answer Grading System",
+      "decision": "include",
+      "reason": "Direct short-answer grading example using manual response augmentation and SMOTE to address imbalanced classes.",
+      "source_id": "krisnawati-cross-prompt-asag-smote-2025",
+      "doi": "10.21512/commit.v19i2.13423",
+      "url": "https://doi.org/10.21512/commit.v19i2.13423"
+    },
+    {
+      "candidate_id": "li-2025-scientific-models-smote",
+      "title": "Utilizing Deep Learning AI to Analyze Scientific Models: Overcoming Challenges",
+      "decision": "include",
+      "reason": "Adjacent constructed-response/scientific-model example using SMOTE and image augmentation for imbalanced automated scoring categories.",
+      "source_id": "li-scientific-models-smote-2025",
+      "doi": "10.1007/s10956-025-10217-0",
+      "url": "https://doi.org/10.1007/s10956-025-10217-0"
+    },
+    {
+      "candidate_id": "ouahrani-bennouar-2024-reference-paraphrase",
+      "title": "Paraphrase Generation and Supervised Learning for Improved Automatic Short Answer Grading",
+      "decision": "exclude",
+      "reason": "Relevant adjacent ASAG augmentation work, but the synthetic material is multiple correct reference answers rather than synthetic student responses.",
+      "doi": "10.1007/s40593-024-00431-z",
+      "url": "https://eric.ed.gov/?id=EJ1453602"
+    },
+    {
+      "candidate_id": "tan-2022-gaussian-multiclass-smote-essay",
+      "title": "Improved Automated Essay Scoring Using Gaussian Multi-Class SMOTE for Dataset Sampling",
+      "decision": "exclude",
+      "reason": "Non-LLM synthetic sampling example, but this pass prioritized constructed-response and short-answer examples outside essay scoring."
+    },
+    {
+      "candidate_id": "yoon-2024-gpt-asag-augmentation",
+      "title": "Modeling Short Answer Grading Performance Improvement by GPT Augmentation Data",
+      "decision": "exclude",
+      "reason": "Potentially relevant GPT short-answer augmentation, but the current pass targeted older/non-LLM examples."
+    }
+  ],
+  "source_ids": [
+    "lun-mda-asas-short-answer-augmentation-2020",
+    "bonthu-transfer-augmentation-asag-2023",
+    "krisnawati-cross-prompt-asag-smote-2025",
+    "li-scientific-models-smote-2025"
+  ],
+  "screening_summary": "Targeted search identified multiple non-essay examples of synthetic or augmented constructed-response data used to supplement sparse or imbalanced datasets. The strongest direct text-response example is Lun et al. 2020; Krisnawati et al. 2025 adds manual and feature-space augmentation; Li et al. 2025 is adjacent non-text constructed-response evidence; Bonthu et al. 2023 is direct ASAG evidence but abstract-only in this extraction.",
+  "limitations": [
+    "This is a targeted bootstrap search, not a systematic review.",
+    "Bonthu et al. was not full-text extracted because direct publisher page retrieval was blocked.",
+    "Feature-space and image augmentation records should not be interpreted as generated textual student responses."
+  ]
+}

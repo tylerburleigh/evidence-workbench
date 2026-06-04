@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "lu-real-student-mcq-comparison-artifact",
+  "name": "Lu and Wang Real Student MCQ Comparison Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "lu-generative-students-item-evaluation-2024-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-real-response-comparison"
+  ],
+  "population_or_context": "Multiple-choice question item evaluation for Cambridge International AS and A Level Psychology questions.",
+  "sample_size": "45 GPT-4 simulated student profiles answer 20 multiple-choice questions, with comparison to real student responses in the same item-evaluation setting.",
+  "methods": "Extracted the real-response comparison elements for GPT-4 simulated student profiles, including profile-rule response alignment, real-response correlation, and difficult-item overlap.",
+  "endpoint_categories": [
+    "same_item_real_response_comparison",
+    "profile_response_alignment",
+    "difficult_item_overlap"
+  ],
+  "education_context": "Psychology multiple-choice question item evaluation in an assessment-design support workflow.",
+  "response_origin": "GPT-4-simulated student profiles generate multiple-choice responses used as preliminary item-evaluation evidence.",
+  "rubric_label_space": "Multiple-choice answer options and profile rules for mastered, confused, and unknown knowledge components.",
+  "label_source": "Generated profiles and responses provide simulated signals; real student responses provide the comparator for item-level behavior.",
+  "generation_model": "GPT-4.",
+  "generation_method": "LLM-simulated student profiles answer multiple-choice questions under profile-conditioned prompting.",
+  "prompt_strategy": "Profile examples, instructor role prediction prompts, and one-question-at-a-time prompting are used in the reported prompt architecture.",
+  "evaluation_method": "Profile-response alignment checks, correlation with real student responses, and difficult-item overlap checks.",
+  "scorer_use": "Question item evaluation support; not scorer training or automated scorer validation.",
+  "real_response_comparator": "Real student responses to the same item-evaluation setting are used for correlation and difficult-item overlap checks.",
+  "reported_metrics": "Table 3 reports percent correct, percent matching the profile confusion, and most common simulated answer for mastered, confused, and unknown profile rules.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_tables": [
+    {
+      "table": "Table 3",
+      "metric": "actual_vs_simulated_profile_rule_response_alignment",
+      "columns": [
+        "profile_rule",
+        "actual_percent_correct",
+        "simulated_percent_correct",
+        "actual_percent_matching_confusion",
+        "simulated_percent_matching_confusion",
+        "actual_most_common_answer",
+        "simulated_most_common_answer"
+      ],
+      "rows": [
+        {
+          "profile_rule": "rule_mastered",
+          "actual_percent_correct": 80,
+          "simulated_percent_correct": 60,
+          "actual_percent_matching_confusion": 0,
+          "simulated_percent_matching_confusion": 0,
+          "actual_most_common_answer": "correct",
+          "simulated_most_common_answer": "correct"
+        },
+        {
+          "profile_rule": "rule_confused",
+          "actual_percent_correct": 60,
+          "simulated_percent_correct": 20,
+          "actual_percent_matching_confusion": 20,
+          "simulated_percent_matching_confusion": 80,
+          "actual_most_common_answer": "correct",
+          "simulated_most_common_answer": "confused"
+        },
+        {
+          "profile_rule": "rule_unknown",
+          "actual_percent_correct": 0,
+          "simulated_percent_correct": 0,
+          "actual_percent_matching_confusion": 40,
+          "simulated_percent_matching_confusion": 40,
+          "actual_most_common_answer": "confused",
+          "simulated_most_common_answer": "irrelevant"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "The comparison is preliminary item-evaluation evidence, not a replacement for real student testing.",
+    "The task is multiple-choice psychology item evaluation, not open-response scoring.",
+    "The source reports useful real-response alignment signals but not a complete validation of synthetic student substitutes."
+  ],
+  "assessment_purpose": "summative_assessment",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "validation_or_benchmarking"
+}

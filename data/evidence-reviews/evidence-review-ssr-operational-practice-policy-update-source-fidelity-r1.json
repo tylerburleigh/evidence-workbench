@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-operational-practice-policy-update-source-fidelity-r1",
+  "name": "Source Fidelity review for Operational Practice and Policy Boundary Update bundle",
+  "candidate_bundle_id": "ssr-operational-practice-policy-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "skill_name": "evidence-review",
+  "reviewer_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. All three new sources are full-text verified with locators: New Meridian Standard Processes, Maine Science Assessment Spring 2024 technical report, and Zhang et al. 2026. The staged summaries and findings keep the reported workflows bounded to the source text.",
+  "reviewed_change_ids": [
+    "create-new-meridian-source",
+    "create-new-meridian-artifact",
+    "create-new-meridian-finding",
+    "create-maine-source",
+    "create-maine-artifact",
+    "create-maine-finding",
+    "create-zhang-source",
+    "create-zhang-artifact",
+    "create-zhang-finding",
+    "create-operational-practice-search-protocol",
+    "update-acceptable-scoring-uses-claim",
+    "update-assessment-stakes-boundaries-claim"
+  ],
+  "findings": [
+    {
+      "finding_id": "full-text-locators-verified-for-new-operational-practice-sources",
+      "severity": "note",
+      "category": "source_fidelity",
+      "claim_or_issue": "New Meridian, Maine, and Zhang et al. are extracted from full text with section/page locators and access attempts.",
+      "why_it_matters": "Operational and policy-adjacent claims need direct source grounding rather than abstract-only support.",
+      "recommended_action": "Keep the staged source access metadata, locators, and source-specific limitations.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-operational-practice-search-protocol"
+    }
+  ],
+  "created_at": "2026-06-03T13:22:00Z",
+  "updated_at": "2026-06-03T13:22:00Z"
+}

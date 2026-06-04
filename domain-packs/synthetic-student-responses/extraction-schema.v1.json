@@ -55,6 +55,27 @@
       "description": "Prompt ingredients including rubric text, examples, target labels, error types, persona framing, self-revision, or iterative refinement."
     },
     {
+      "id": "assessment_purpose",
+      "label": "Assessment Purpose",
+      "required": true,
+      "applies_to": ["artifact"],
+      "description": "Whether the study context is research/development, formative feedback, in-term/classroom assessment, summative assessment, admissions/selection, or not reported."
+    },
+    {
+      "id": "decision_consequence",
+      "label": "Decision Consequence",
+      "required": true,
+      "applies_to": ["artifact"],
+      "description": "The consequence level for the assessed learner, institution, or operational decision: no direct consequence, feedback/instructional support, grade/classroom decision, high-stakes individual decision, institutional/accountability decision, or not reported."
+    },
+    {
+      "id": "operational_use",
+      "label": "Operational Use",
+      "required": true,
+      "applies_to": ["artifact"],
+      "description": "The workflow role of the synthetic responses, such as generation-method mapping, quality evaluation, training augmentation, calibration/development, pre-pilot validation, stress testing, validation/benchmarking, live scoring/monitoring, or not scorer-facing."
+    },
+    {
       "id": "evaluation_method",
       "label": "Evaluation Method",
       "required": true,
@@ -74,6 +95,20 @@
       "required": true,
       "applies_to": ["artifact"],
       "description": "Whether the study compares synthetic responses to real student responses and whether those responses share items, rubrics, grade band, domain, and label source."
+    },
+    {
+      "id": "sparsity_or_imbalance_motivation",
+      "label": "Sparsity or Imbalance Motivation",
+      "required": false,
+      "applies_to": ["artifact", "finding"],
+      "description": "The sparse-data problem that motivated synthetic response use, such as limited labeled responses, underrepresented score bands, minority rubric classes, subgroup scarcity, or unavailable comparator data."
+    },
+    {
+      "id": "synthetic_data_research_role",
+      "label": "Synthetic Data Research Role",
+      "required": false,
+      "applies_to": ["artifact", "finding"],
+      "description": "The role synthetic data played in the research process, such as scorer training augmentation, class balancing, validation-set construction, benchmarking, calibration, robustness testing, rubric refinement, or feasibility evaluation."
     },
     {
       "id": "reported_metrics",

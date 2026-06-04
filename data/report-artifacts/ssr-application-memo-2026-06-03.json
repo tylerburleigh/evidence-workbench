@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "report_artifact",
+  "id": "ssr-application-memo-2026-06-03",
+  "name": "Synthetic Student Responses Application Memo",
+  "artifact_type": "methods_note",
+  "status": "current",
+  "domain_id": "synthetic-student-responses",
+  "scope_ids": [
+    "ssr-scoring-validation-use",
+    "ssr-quality-evaluation",
+    "ssr-model-generation-effects",
+    "ssr-prompt-engineering-effects",
+    "ssr-real-response-comparison",
+    "ssr-synthetic-response-scoring-agreement",
+    "ssr-acceptable-scoring-uses",
+    "ssr-assessment-stakes-boundaries",
+    "ssr-sparse-data-supplementation"
+  ],
+  "path": "research/syntheses/synthetic-student-responses-application-memo-2026-06-03.md",
+  "created_at": "2026-06-03",
+  "updated_at": "2026-06-03",
+  "summary": "Application memo translating the synthetic-student-responses literature review into practical guidance for using synthetic responses as development, augmentation, calibration, QA, and stress-test materials, updated with promoted model-choice and student-simulation validity evidence, desk-based off-the-shelf language-model selection criteria, and explicit limits on scorer-validation claims.",
+  "source_ids": [
+    "benedetto-simulated-exam-responses-2024-source",
+    "agent4edu-learner-response-generation-2025-source",
+    "srivatsa-llm-student-ability-simulation-2025-source",
+    "liu-llm-respondents-item-evaluation-2025-source",
+    "lu-generative-students-item-evaluation-2024-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "nguyen-cao-science-thinking-simulation-2026-source",
+    "scarlatos-simulated-students-dialogue-2026-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "zhang-gpt-essay-augmentation-2026-source",
+    "frohn-llm-cr-live-scoring-2025-source",
+    "bexte-zesch-synthetic-content-scoring-2025-source",
+    "do-misconception-faithfulness-2026-source",
+    "yuan-valid-student-simulation-framework-2026-source",
+    "martynova-human-learners-teacher-insights-2025-source"
+  ],
+  "claim_ids": [
+    "ssr-scoring-validation-use-baseline-claim",
+    "ssr-quality-evaluation-baseline-claim",
+    "ssr-model-generation-effects-baseline-claim",
+    "ssr-prompt-engineering-effects-baseline-claim",
+    "ssr-real-response-comparison-baseline-claim",
+    "ssr-synthetic-response-scoring-agreement-baseline-claim",
+    "ssr-acceptable-scoring-uses-baseline-claim",
+    "ssr-assessment-stakes-boundaries-baseline-claim",
+    "ssr-sparse-data-supplementation-baseline-claim"
+  ],
+  "finding_ids": [
+    "benedetto-skill-level-simulation-evaluation-finding-2026",
+    "agent4edu-model-generation-effects-finding-2026",
+    "srivatsa-model-prompt-irt-effects-finding-2026",
+    "srivatsa-grade-enforcement-prompt-effects-finding-2026",
+    "liu-llm-respondents-model-ensemble-finding-2026",
+    "lu-generative-students-prompt-architecture-finding-2026",
+    "wolfe-prompt-engineering-effects-finding-2026",
+    "nguyen-cao-science-thinking-realism-model-effects-finding-2026",
+    "scarlatos-post-training-effects-finding-2026",
+    "do-misconception-faithfulness-off-the-shelf-limit-finding-2026",
+    "yuan-epistemic-fidelity-model-choice-boundary-finding-2026",
+    "martynova-teacher-authenticity-failure-finding-2025"
+  ],
+  "publication_event_ids": [
+    "publish-ssr-model-choice-student-simulation-validity-update-2026-06-03-2026-06-03t20-20-40-207z"
+  ],
+  "contextual_sources_not_promoted": [],
+  "citation_audit": {
+    "status": "traceable",
+    "checked_at": "2026-06-03",
+    "method": "Graph-backed claims, source IDs, finding IDs, and the model-choice publication event are listed in the memo traceability section. Previously contextual arXiv sources have been promoted into graph records."
+  }
+}

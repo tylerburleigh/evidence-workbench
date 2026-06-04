@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-real-response-comparison-search-2026-06-02",
+  "name": "Real Response Comparison Search Pass",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-real-response-comparison"
+  ],
+  "status": "included_sources_staged",
+  "systematicity_level": "targeted_bootstrap",
+  "search_started_at": "2026-06-02T18:40:00Z",
+  "search_completed_at": "2026-06-02T18:50:00Z",
+  "databases": [
+    "Web search",
+    "arXiv",
+    "ACL Anthology",
+    "ERIC",
+    "Sciety/OSF metadata"
+  ],
+  "search_queries": [
+    {
+      "database": "Web search",
+      "query": "\"synthetic\" \"real student responses\" LLM education",
+      "searched_at": "2026-06-02T18:40:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"generated student answers\" \"real student\" comparison",
+      "searched_at": "2026-06-02T18:40:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"LLM respondent\" human response distribution item evaluation",
+      "searched_at": "2026-06-02T18:40:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"simulated students\" \"real tutoring dialogue\" comparison",
+      "searched_at": "2026-06-02T18:40:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"Can Large Language Models Emulate Human Performance\" educational assessments",
+      "searched_at": "2026-06-02T18:45:00Z",
+      "result_count": "reviewed abstract/metadata page; full text was not verified in this pass"
+    },
+    {
+      "database": "ACL Anthology",
+      "query": "\"Using LLMs to Simulate Students' Responses to Exam Questions\"",
+      "searched_at": "2026-06-02T18:45:00Z",
+      "result_count": "screened as scope-adjacent exam-question simulation evidence"
+    }
+  ],
+  "inclusion_criteria": [
+    "The source compares synthetic or simulated learner/student responses with real student response data, real response distributions, real response scores, or ground-truth real dialogue turns.",
+    "The comparator should share the same items, prompts, essays, questions, grade band, domain, or dialogue context closely enough to support an interpretable comparison.",
+    "Direct findings for the baseline require accessible full text and source locators beyond an abstract-only page."
+  ],
+  "exclusion_criteria": [
+    "Exclude sources that only generate synthetic responses without evaluating against real student responses or real respondent distributions.",
+    "Exclude sources where the comparator is item difficulty, model labels, or theoretical answer correctness rather than empirical real student responses, unless explicitly retained as boundary evidence.",
+    "Exclude abstract-only or paywalled sources from direct synthesis support until full text is obtained or the finding is explicitly limited to abstract-level discovery."
+  ],
+  "dedupe_method": "Deduplicated by title, DOI, arXiv identifier, venue metadata, and canonical source page.",
+  "screening_counts": {
+    "records_identified": "at least 35 web and primary-source records across targeted queries",
+    "records_screened": 11,
+    "full_text_reviewed": 7,
+    "sources_included": 7,
+    "sources_deferred_for_access_or_scope": 4
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "candidate-agent4edu-2025",
+      "title": "Agent4Edu: Generating Learner Response Data by Generative Agents for Intelligent Education Systems",
+      "decision": "include",
+      "reason": "Compares generated learner responses with human learner response data from EduData using consistency/discrepancy metrics.",
+      "source_id": "agent4edu-learner-response-generation-2025-source",
+      "doi": "10.48550/arXiv.2501.10332",
+      "url": "https://arxiv.org/abs/2501.10332"
+    },
+    {
+      "candidate_id": "candidate-wolfe-2026",
+      "title": "Calibrating Generative AI to Produce Realistic Essays for Data Augmentation",
+      "decision": "include",
+      "reason": "Uses real student essays as source/comparator and reports prompt-specific agreement, weighted kappa, score distribution, and human detection outcomes.",
+      "source_id": "wolfe-calibrating-realistic-essays-2026-source",
+      "doi": "10.48550/arXiv.2602.06772",
+      "url": "https://arxiv.org/abs/2602.06772"
+    },
+    {
+      "candidate_id": "candidate-lu-2024",
+      "title": "Generative Students: Using LLM-Simulated Student Profiles to Support Question Item Evaluation",
+      "decision": "include",
+      "reason": "Compares GPT-4 simulated student responses with real student responses to the same item-evaluation setting, including profile-rule response alignment and real-response item signals.",
+      "source_id": "lu-generative-students-item-evaluation-2024-source",
+      "doi": "10.1145/3657604.3662031",
+      "url": "https://arxiv.org/abs/2405.11591"
+    },
+    {
+      "candidate_id": "candidate-srivatsa-2025",
+      "title": "Can LLMs Reliably Simulate Real Students' Abilities in Mathematics and Reading Comprehension?",
+      "decision": "include",
+      "reason": "Directly compares LLM proxy-student NAEP item answers with real NAEP response patterns on an IRT ability scale.",
+      "source_id": "srivatsa-llm-student-ability-simulation-2025-source",
+      "doi": "10.18653/v1/2025.bea-1.75",
+      "url": "https://aclanthology.org/2025.bea-1.75/"
+    },
+    {
+      "candidate_id": "candidate-liu-2025",
+      "title": "Leveraging LLM Respondents for Item Evaluation: A Psychometric Analysis",
+      "decision": "include",
+      "reason": "Compares LLM respondent distributions and item calibrations with undergraduate human responses to the same College Algebra items.",
+      "source_id": "liu-llm-respondents-item-evaluation-2025-source",
+      "doi": "10.1111/bjet.13570",
+      "url": "https://arxiv.org/abs/2407.10899"
+    },
+    {
+      "candidate_id": "candidate-scarlatos-2026",
+      "title": "Simulated Students in Tutoring Dialogues: Substance or Illusion?",
+      "decision": "include",
+      "reason": "Benchmarks prompted and post-trained simulated-student dialogue turns against real math tutoring dialogue turns across fidelity metrics.",
+      "source_id": "scarlatos-simulated-students-dialogue-2026-source",
+      "doi": "10.48550/arXiv.2601.04025",
+      "url": "https://arxiv.org/abs/2601.04025"
+    },
+    {
+      "candidate_id": "candidate-duan-2026",
+      "title": "Who Am I? History-Aware Profiles for Student Simulation in Tutoring Dialogues",
+      "decision": "include",
+      "reason": "Compares history/profile-conditioned simulated student turns with ground-truth future real student dialogue turns and prior real response histories.",
+      "source_id": "duan-history-aware-profiles-student-simulation-2026-source",
+      "doi": "10.48550/arXiv.2605.30051",
+      "url": "https://arxiv.org/abs/2605.30051"
+    },
+    {
+      "candidate_id": "candidate-emulate-human-performance-2026",
+      "title": "Can Large Language Models Emulate Human Performance on Educational Assessments?",
+      "decision": "no_full_text",
+      "reason": "The abstract page appears directly relevant to human-vs-LLM assessment comparison, but full text was not verified in this pass, so it is not used as direct support.",
+      "doi": "10.31234/osf.io/btja8_v2",
+      "url": "https://osf.io/preprints/psyarxiv/btja8_v2"
+    },
+    {
+      "candidate_id": "candidate-casola-2024",
+      "title": "Using LLMs to Simulate Students' Responses to Exam Questions",
+      "decision": "exclude",
+      "reason": "Full-text exam-question simulation evidence, but the targeted pass did not identify an empirical real-student response distribution comparator strong enough for this node.",
+      "url": "https://aclanthology.org/2024.findings-emnlp.983/"
+    },
+    {
+      "candidate_id": "candidate-watts-2025",
+      "title": "A Framework for Designing an AI Chatbot to Support Scientific Argumentation",
+      "decision": "exclude",
+      "reason": "Uses real examples to condition synthetic inputs, but does not validate generated inputs against a real response distribution.",
+      "source_id": "watts-scientific-argumentation-chatbot-2025-source",
+      "doi": "10.3390/educsci15111507",
+      "url": "https://www.mdpi.com/2227-7102/15/11/1507"
+    },
+    {
+      "candidate_id": "candidate-yoo-2025",
+      "title": "DRESS: Dataset for Rubric-based Essay Scoring on ELL Writings",
+      "decision": "exclude",
+      "reason": "Useful boundary source for synthetic/corrupted writing and rubric scoring, but not a direct synthetic-versus-real response comparison source for this pass.",
+      "source_id": "yoo-dress-rubric-aes-2025-source",
+      "doi": "10.18653/v1/2025.acl-long.659",
+      "url": "https://aclanthology.org/2025.acl-long.659/"
+    }
+  ],
+  "source_ids": [
+    "agent4edu-learner-response-generation-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "lu-generative-students-item-evaluation-2024-source",
+    "srivatsa-llm-student-ability-simulation-2025-source",
+    "liu-llm-respondents-item-evaluation-2025-source",
+    "scarlatos-simulated-students-dialogue-2026-source",
+    "duan-history-aware-profiles-student-simulation-2026-source"
+  ],
+  "screening_summary": "Targeted bootstrap screening included seven full-text sources that compare generated learner/student responses with real student data: learner response records, real-source essays, real MCQ item responses, real NAEP response patterns, undergraduate College Algebra responses, and real tutoring dialogue turns. Abstract-only or comparator-mismatched sources were screened but not used as direct support.",
+  "limitations": [
+    "This was a targeted bootstrap pass, not a systematic review.",
+    "Included comparators vary substantially: same source essays, aggregate response distributions, IRT ability scales, item-parameter correlations, and dialogue-turn matching metrics.",
+    "Some included evidence is current preprint evidence and should be monitored for revision.",
+    "The pass intentionally does not use abstract-only sources as direct evidence."
+  ]
+}

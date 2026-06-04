@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "frohn-llm-cr-validation-framework-finding-2026",
+  "name": "Synthetic Responses Are Framed as Pre-pilot Validation and Challenge Data",
+  "source_id": "frohn-llm-cr-live-scoring-2025-source",
+  "artifact_id": "frohn-llm-cr-validation-framework-artifact",
+  "taxonomy_node_ids": [
+    "ssr-scoring-validation-use"
+  ],
+  "endpoint_category": "scorer_validation_use",
+  "direction": "supports_bounded_use",
+  "evidence_tier": "framework_guidance",
+  "confidence": "medium",
+  "statement": "Frohn et al. frame synthetic response datasets as useful for pre-pilot validation, balanced score-level coverage, and challenge sets for LLM-specific failure modes, while reserving authentic scoring-accuracy validation for pilot testing with real student responses.",
+  "population_or_context": "Commercial LLM scoring framework for constructed-response items.",
+  "time_horizon": "Conference paper retrieved on 2026-06-02.",
+  "quantitative_note": "The source gives validation metric examples but does not report a single empirical synthetic-data validation result.",
+  "caveats": [
+    "Framework guidance supports a workflow classification, not a study-level causal finding.",
+    "The paper explicitly separates synthetic pre-pilot checks from real-response pilot validation.",
+    "Specific scoring tasks require implementation-specific evidence."
+  ],
+  "evaluation_method": "Pre-pilot synthetic validation and challenge-set analysis followed by pilot validation against human-scored real student responses.",
+  "reported_metrics": "Example metrics include exact agreement, adjacent agreement, weighted kappa, F1, Matthews correlation coefficient, false-positive and false-negative rates, and score-distribution comparison.",
+  "limitations": [
+    "No empirical estimate from one deployed scorer is staged from this source.",
+    "Synthetic response use remains pre-pilot and diagnostic unless paired with real student response validation."
+  ],
+  "source_locator": {
+    "section": "Synthetic response dataset generation, validation framework, pilot testing, and live scoring monitoring sections",
+    "quote_or_paraphrase_note": "The staged finding paraphrases the workflow distinction between synthetic pre-pilot validation and real-response pilot validation.",
+    "verification_status": "located"
+  }
+}

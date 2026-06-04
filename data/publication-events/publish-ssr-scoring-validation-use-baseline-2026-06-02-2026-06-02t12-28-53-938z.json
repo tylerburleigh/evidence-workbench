@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-scoring-validation-use-baseline-2026-06-02-2026-06-02t12-28-53-938z",
+  "name": "Published Synthetic Response Scorer Validation Use Baseline",
+  "summary": "Staged first literature-review baseline for whether synthetic student or constructed responses are used to validate, benchmark, calibrate, or stress-test automated scorers.",
+  "candidate_bundle_id": "ssr-scoring-validation-use-baseline-2026-06-02",
+  "event_type": "publish",
+  "published_at": "2026-06-02T12:28:53.938Z",
+  "published_by": "codex-agent",
+  "published_targets": [
+    {
+      "record_type": "search_protocol",
+      "record_id": "ssr-scoring-validation-use-search-2026-06-02",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "frohn-llm-cr-live-scoring-2025-source",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "walsh-sjt-automated-scoring-2026-source",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "yoo-dress-rubric-aes-2025-source",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "wolfe-calibrating-realistic-essays-2026-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "frohn-llm-cr-validation-framework-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "walsh-sjt-fairness-stress-test-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "yoo-dress-synthetic-training-boundary-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "wolfe-calibrating-realistic-essays-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "frohn-llm-cr-validation-framework-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "walsh-sjt-fairness-stress-test-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "yoo-dress-synthetic-training-boundary-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "wolfe-calibrating-realistic-essays-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-scoring-validation-use-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "affected_claim_ids": [
+    "ssr-scoring-validation-use-baseline-claim"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-ssr-scoring-validation-use-construct-mapping-r1",
+    "evidence-review-ssr-scoring-validation-use-method-classification-r1",
+    "evidence-review-ssr-scoring-validation-use-scorer-validation-relevance-r1",
+    "evidence-review-ssr-scoring-validation-use-source-fidelity-r1",
+    "evidence-review-ssr-scoring-validation-use-synthesis-overreach-r1"
+  ],
+  "change_note": "Creates the first staged literature-review baseline for scorer-validation use of synthetic responses."
+}

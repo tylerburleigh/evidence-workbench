@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "do-misconception-faithfulness-off-the-shelf-limit-finding-2026",
+  "name": "Prompted Off-the-Shelf Simulators Lack Misconception Faithfulness",
+  "source_id": "do-misconception-faithfulness-2026-source",
+  "artifact_id": "do-misconception-faithfulness-artifact",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-model-generation-effects",
+    "ssr-prompt-engineering-effects"
+  ],
+  "endpoint_category": "misconception_faithfulness",
+  "direction": "reports_prompt_only_limit",
+  "evidence_tier": "preprint_full_text",
+  "confidence": "medium",
+  "statement": "Do, Sonkar, and Sachan report that seven prompted instruction-tuned LLM simulators show near-zero Selective Flip Score across mathematics misconception tasks, meaning they tend to correct answers under targeted, misaligned, and generic feedback rather than maintaining misconception-specific belief states.",
+  "population_or_context": "Mathematics misconception simulation using Malrule and EEDI datasets.",
+  "time_horizon": "arXiv preprint submitted 2026-05-12 and retrieved 2026-06-03.",
+  "quantitative_note": "Table 3 reports SFS values near zero across Llama, Qwen, and GPT-OSS models under base and reflective prompts; SFT then improves SFS by +0.555 on Malrule for Qwen3-4B and +0.447 on Malrule for Llama3-8B, with smaller gains on EEDI.",
+  "caveats": [
+    "The paper is a 2026 arXiv preprint.",
+    "The tasks are mathematics misconception tasks with structured misconception labels.",
+    "Post-training improvements are evidence about trainability, not an actionable requirement for this project.",
+    "The finding does not evaluate automated scoring or generated constructed-response labels."
+  ],
+  "evaluation_method": "Misconception-contrastive feedback protocol and Selective Flip Score across targeted, misaligned, and generic feedback.",
+  "reported_metrics": "Flip rates FT, FM, FG and Selective Flip Score for each model, dataset, and prompt strategy; post-training SFS changes for SFT, DPO, and GRPO.",
+  "numeric_results_extracted": true,
+  "source_locator": {
+    "section": "Abstract; Sections 4.1-4.3; Table 3; Section 5; Limitations",
+    "url": "https://arxiv.org/pdf/2605.12748",
+    "quote_or_paraphrase_note": "Extraction uses the model list, Table 3 SFS values, the model-capability/SFS discussion, SFT/DPO/GRPO results, and limitations.",
+    "verification_status": "verified"
+  },
+  "limitations": [
+    "Best used as a model-choice caution for interactive misconception simulation.",
+    "Does not establish a ranking for one-shot synthetic constructed responses.",
+    "Does not support synthetic-only scorer validation."
+  ]
+}

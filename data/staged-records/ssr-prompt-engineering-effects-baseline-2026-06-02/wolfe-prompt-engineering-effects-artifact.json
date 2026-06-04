@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "wolfe-prompt-engineering-effects-artifact",
+  "name": "Wolfe et al. Prompt Strategy Effects Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "wolfe-calibrating-realistic-essays-2026-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-prompt-engineering-effects"
+  ],
+  "population_or_context": "Simulated student essays generated for automated-scoring data augmentation.",
+  "sample_size": "96 real student essays and 288 simulated essays generated across three prompt strategies.",
+  "methods": "Extracted the prompt-strategy comparison and reported quality/realism outcomes for simulated essays generated from real student essays.",
+  "endpoint_categories": [
+    "prompt_strategy_comparison",
+    "score_preservation",
+    "human_realism_detection"
+  ],
+  "education_context": "Student essays scored with a four-point rubric.",
+  "response_origin": "LLM-generated simulated essays derived from real student essays, compared with the original real essays.",
+  "rubric_label_space": "Four-point essay scoring rubric.",
+  "label_source": "Original essays had professional scores; expert raters scored simulated essays and judged whether essays were simulated.",
+  "generation_model": "Large language model; the public preprint text reviewed here does not name a specific model version.",
+  "generation_method": "Prompt-based simulated essay generation from real essays.",
+  "prompt_strategy": "25 Examples, Predict Next, and Sentence prompting strategies are compared.",
+  "evaluation_method": "Expert scoring, score-distribution comparison, exact agreement, quadratic weighted kappa, and simulation-detection judgments.",
+  "scorer_use": "Data augmentation calibration for automated scoring, not direct scorer validation.",
+  "real_response_comparator": "Real student essays provide the source essays, score distribution, and professional-score comparator.",
+  "reported_metrics": "Table 2 reports average score, agreement with original student score, quadratic weighted kappa, and simulation-detection accuracy by prompt strategy.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_tables": [
+    {
+      "table": "Table 2",
+      "metric": "prompt_strategy_simulated_essay_results",
+      "columns": [
+        "prompt_strategy",
+        "average_score",
+        "student_score_agreement",
+        "quadratic_weighted_kappa",
+        "simulation_detection_accuracy"
+      ],
+      "rows": [
+        {
+          "prompt_strategy": "Original Essays",
+          "average_score": 1.53,
+          "student_score_agreement": "not_applicable",
+          "quadratic_weighted_kappa": 0.75,
+          "simulation_detection_accuracy": "not_applicable"
+        },
+        {
+          "prompt_strategy": "25 Examples",
+          "average_score": 2.51,
+          "student_score_agreement": 0.46,
+          "quadratic_weighted_kappa": 0.46,
+          "simulation_detection_accuracy": 0.18
+        },
+        {
+          "prompt_strategy": "Predict Next",
+          "average_score": 2.62,
+          "student_score_agreement": 0.72,
+          "quadratic_weighted_kappa": 0.74,
+          "simulation_detection_accuracy": 0.25
+        },
+        {
+          "prompt_strategy": "Sentence",
+          "average_score": 1.97,
+          "student_score_agreement": 0.33,
+          "quadratic_weighted_kappa": 0.34,
+          "simulation_detection_accuracy": 0.74
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "The source is a preprint.",
+    "The public text reviewed here does not name the exact generation model version.",
+    "The results are essay-specific and prompt-strategy-specific.",
+    "High realism or score agreement under one prompt strategy does not establish downstream automated-scorer validity."
+  ],
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "calibration_or_development"
+}

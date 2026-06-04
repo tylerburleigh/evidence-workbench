@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-assessment-stakes-boundaries-construct-mapping-r1",
+  "name": "Construct Mapping review for Ssr Assessment Stakes Boundaries bundle",
+  "candidate_bundle_id": "ssr-assessment-stakes-boundaries-baseline-2026-06-02",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "construct_mapping",
+  "reviewer_kind": "agent",
+  "skill_name": "evidence-review",
+  "reviewer_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The bundle distinguishes response origin, label source, real-response comparator, assessment purpose, decision consequence, and workflow role; it does not collapse synthetic-response realism, generated labels, formative feedback inputs, or automated scorer validity into one construct.",
+  "reviewed_change_ids": [
+    "create-standards-educational-psychological-testing-source",
+    "create-ets-responsible-ai-assessment-principles-source",
+    "create-usdoe-teal-formative-assessment-source",
+    "create-ssr-assessment-stakes-boundaries-search",
+    "create-standards-stakes-intended-use-boundary-finding",
+    "create-ets-ai-assessment-guardrails-finding",
+    "create-usdoe-formative-feedback-boundary-finding",
+    "create-frohn-stakes-prepilot-validation-boundary-finding",
+    "create-yoo-stakes-training-real-validation-boundary-finding",
+    "create-bexte-stakes-label-audit-training-boundary-finding",
+    "create-watts-stakes-formative-prototype-boundary-finding",
+    "create-walsh-stakes-high-stakes-stress-test-boundary-finding",
+    "create-ssr-assessment-stakes-boundaries-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "guidance-versus-direct-study-mapping-clear",
+      "severity": "note",
+      "category": "construct_mapping",
+      "claim_or_issue": "The claim combines contextual assessment guidance with direct synthetic-response studies.",
+      "why_it_matters": "Contextual guidance can define use boundaries, but direct study findings must carry any empirical synthetic-response claims.",
+      "recommended_action": "Keep support_role values as boundary_condition for guidance sources and direct_support only for synthetic-response studies.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-ssr-assessment-stakes-boundaries-baseline-claim"
+    }
+  ],
+  "created_at": "2026-06-02T22:42:10Z",
+  "updated_at": "2026-06-02T22:42:10Z"
+}

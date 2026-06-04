@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "wolfe-prompt-strategy-generation-finding-2026",
+  "name": "Wolfe et al. Compare Example-, Continuation-, and Sentence-level Prompt Strategies",
+  "source_id": "wolfe-calibrating-realistic-essays-2026-source",
+  "artifact_id": "wolfe-prompt-strategy-generation-artifact",
+  "taxonomy_node_ids": [
+    "ssr-generation-methods"
+  ],
+  "endpoint_category": "prompt_strategy_comparison",
+  "direction": "defines_generation_method",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Wolfe et al. generate simulated essays from real student essays using three prompt-engineering strategies: 25 examples, Predict Next, and Sentence prompting.",
+  "population_or_context": "Simulated essays for automated-scoring data augmentation.",
+  "time_horizon": "arXiv preprint retrieved and reviewed on 2026-06-02.",
+  "quantitative_note": "96 real essays and 288 simulated essays are staged from the prior reviewed extraction.",
+  "caveats": [
+    "The source is a preprint.",
+    "The public text staged here does not name the exact model version."
+  ],
+  "evaluation_method": "Expert scoring, score-distribution comparison, agreement metrics, and realism ratings.",
+  "reported_metrics": "Exact agreement, weighted kappa, score-distribution comparisons, and realism ratings.",
+  "limitations": [
+    "The generation methods are essay-specific.",
+    "The source is stronger for prompt-strategy comparison than for broad response-generation generalization."
+  ],
+  "source_locator": {
+    "section": "Methods and prompt-strategy sections",
+    "url": "https://arxiv.org/abs/2602.06772",
+    "quote_or_paraphrase_note": "The staged finding reuses the already-reviewed prompt-strategy extraction from the scorer-validation baseline.",
+    "verification_status": "located"
+  }
+}

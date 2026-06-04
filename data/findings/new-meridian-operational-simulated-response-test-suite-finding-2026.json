@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "new-meridian-operational-simulated-response-test-suite-finding-2026",
+  "name": "Operational Machine Scoring Guidance Uses Simulated Responses as Test-Suite Cases",
+  "source_id": "new-meridian-standard-processes-2020-source",
+  "artifact_id": "new-meridian-simulated-response-test-suite-artifact",
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses",
+    "ssr-assessment-stakes-boundaries"
+  ],
+  "endpoint_category": "operational_machine_scoring_quality_assurance",
+  "direction": "supports_with_strong_boundary",
+  "evidence_tier": "technical_guidance",
+  "confidence": "high",
+  "statement": "New Meridian's standard-process guidance provides direct operational support for one acceptable simulated-response use: machine-scoring test suites that validate scoring and scanning rules and procedures. This is a QA and implementation-check role, not evidence that synthetic responses can replace real student responses for automated scorer validation or live scoring decisions.",
+  "population_or_context": "New Meridian operational test forms and state assessment programs using New Meridian item bank content for ELA/literacy and mathematics.",
+  "time_horizon": "Full text retrieved and extracted on 2026-06-03.",
+  "quantitative_note": "No response counts or statistical performance metrics are reported for the simulated test-suite cases.",
+  "caveats": [
+    "The source concerns simulated test cases for rule-based machine scoring and scanning, not LLM-generated synthetic writing responses.",
+    "The source does not support synthetic-only automated scorer validation, fairness validation, cut scores, or live scoring decisions.",
+    "The process guidance does not specify how simulated responses are authored or reviewed."
+  ],
+  "evaluation_method": "Review of simulated test cases to verify correct application of machine-scoring and scanning rules.",
+  "reported_metrics": "No quantitative metrics reported.",
+  "numeric_results_extracted": "not_applicable",
+  "limitations": [
+    "Bounded to machine-scored item QA in New Meridian operational form processes.",
+    "Does not address generative AI response augmentation or automated essay scoring model training.",
+    "Should be treated as an operational QA use category rather than validation evidence for a statistical or LLM scorer."
+  ],
+  "source_locator": {
+    "section": "Scoring > Machine Scoring",
+    "page": "13",
+    "url": "https://files.eric.ed.gov/fulltext/ED606682.pdf",
+    "quote_or_paraphrase_note": "The finding paraphrases the definition of a test suite and the statement that New Meridian bank assets should include simulated responses to items.",
+    "verification_status": "verified"
+  }
+}

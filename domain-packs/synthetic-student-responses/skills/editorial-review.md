@@ -20,6 +20,7 @@ Use with `skills/editorial-review/SKILL.md`.
 - Do not publish a synthesis claim if any required review lane is missing or blocking.
 - Claims must be useful for a paper background section: concise, source-backed, and explicit about boundaries.
 - Keep scorer-validation claims separate from generation-quality claims unless both are supported.
+- Keep formative, summative, low-stakes, and high-stakes use boundaries explicit; do not let low-stakes development evidence support high-stakes deployment claims without direct support.
 - Mention limitations near conclusions, especially sample size, item type, grade band, subject domain, model version, prompt details, comparator data, and metric choice.
 - Avoid field-wide claims when evidence is from one task, one model family, one prompt pattern, or one dataset.
 

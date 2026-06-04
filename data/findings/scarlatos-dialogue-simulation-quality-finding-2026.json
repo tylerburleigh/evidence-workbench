@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "scarlatos-dialogue-simulation-quality-finding-2026",
+  "name": "Tutoring Dialogue Simulators Are Evaluated Across Linguistic, Behavioral, and Cognitive Fidelity",
+  "source_id": "scarlatos-simulated-students-dialogue-2026-source",
+  "artifact_id": "scarlatos-dialogue-simulation-quality-artifact",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation"
+  ],
+  "endpoint_category": "dialogue_fidelity_metrics",
+  "direction": "defines_quality_evaluation_method",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Scarlatos et al. define an evaluation framework for simulated students in tutoring dialogues with metrics spanning linguistic, behavioral, and cognitive fidelity, validated against human judgments and real math tutoring dialogue data.",
+  "population_or_context": "Math tutoring dialogue simulation.",
+  "time_horizon": "arXiv page submitted 2026-01-07, revised 2026-05-05, retrieved on 2026-06-02.",
+  "quantitative_note": "The staged abstract-level pass does not extract exact dataset or metric-count values.",
+  "caveats": [
+    "The evidence is tutoring-dialogue simulator evidence rather than standalone assessment-response evidence.",
+    "The staged extraction captures the evaluation framework and top-line comparison, not every benchmark value."
+  ],
+  "evaluation_method": "Automated and human-validated metrics for linguistic, behavioral, and cognitive fidelity against real tutoring dialogues.",
+  "reported_metrics": "Metric families for linguistic, behavioral, and cognitive fidelity; exact metric values are not extracted in this staged baseline.",
+  "limitations": [
+    "Prompt-based simulated students reportedly fail to simulate diverse realistic students, while post-training reduces but does not eliminate the gap.",
+    "The result is dialogue-specific and may not transfer to item-level or essay-response generation.",
+    "Full metric tables need extraction before stronger benchmark claims."
+  ],
+  "source_locator": {
+    "section": "arXiv HTML task definition, evaluation metrics, and results sections",
+    "url": "https://arxiv.org/html/2601.04025",
+    "quote_or_paraphrase_note": "The staged finding paraphrases the paper's real dialogue dataset, metric framework, prompt-based and post-training comparisons, and human validation summary.",
+    "verification_status": "verified"
+  }
+}

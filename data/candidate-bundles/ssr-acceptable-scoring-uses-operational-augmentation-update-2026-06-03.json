@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "ssr-acceptable-scoring-uses-operational-augmentation-update-2026-06-03",
+  "name": "Acceptable Use Operational Training Augmentation Update",
+  "summary": "Staged surveillance update to the acceptable-use claim after publication of direct operational state summative training-augmentation evidence and related lower-stakes augmentation and high-stakes detection evidence.",
+  "intake_mode": "surveillance",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-03T12:03:55Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-acceptable-scoring-uses"
+    ],
+    "research_question": "How should the broader acceptable-use claim change after direct operational state summative training-augmentation evidence and related formative, classroom, and high-stakes detection evidence were published?"
+  },
+  "source_ids": [
+    "new-mexico-mssa-technical-report-2025-source",
+    "wang-off-topic-spoken-responses-2019-source",
+    "rezayi-communication-skills-synthetic-training-2025-source",
+    "djagba-ngss-classroom-augmentation-2026-source"
+  ],
+  "source_urls": [
+    "https://newmexico.onlinehelp.cognia.org/resources-nm-mssa/",
+    "https://newmexico.onlinehelp.cognia.org/wp-content/uploads/sites/10/2024/10/2024-2025_New_Mexico_MSSA_Technical_Report_ADA.pdf",
+    "https://www.isca-archive.org/interspeech_2019/wang19p_interspeech.html",
+    "https://aclanthology.org/2025.bea-1.66/",
+    "https://arxiv.org/abs/2604.19754"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "ssr-assessment-stakes-boundaries-baseline-claim",
+      "relationship": "upstream_consequential_boundary_claim"
+    },
+    {
+      "record_type": "candidate_bundle",
+      "record_id": "ssr-assessment-stakes-boundaries-consequential-update-2026-06-03",
+      "relationship": "source_evidence_publication"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-scoring-validation-use-baseline-claim",
+      "relationship": "adjacent_validation_boundary"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-real-response-comparison-baseline-claim",
+      "relationship": "real_response_validation_context"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "update-acceptable-scoring-uses-claim",
+      "change_type": "update_record",
+      "target_record_type": "claim",
+      "target_record_id": "ssr-acceptable-scoring-uses-baseline-claim",
+      "file_path": "data/claims/ssr-acceptable-scoring-uses-baseline-claim.json",
+      "staged_file_path": "data/staged-records/ssr-acceptable-scoring-uses-operational-augmentation-update-2026-06-03/ssr-acceptable-scoring-uses-baseline-claim.json",
+      "summary": "Update the acceptable-use baseline to include controlled operational training augmentation as an acceptable but tightly governed use category.",
+      "rationale": "The New Mexico MSSA technical report adds direct operational state summative evidence for limited synthetic response training augmentation, while related sources clarify lower-stakes augmentation and high-stakes detection boundaries."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-acceptable-scoring-uses",
+      "note": "Adds a narrow controlled operational training-augmentation category to acceptable uses while preserving the boundary against synthetic-only validation, deployment readiness, subgroup fairness, cut-score, or live decision evidence."
+    },
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "ssr-assessment-stakes-boundaries",
+      "note": "Propagates the previously published consequential-use boundary into the broader acceptable-use taxonomy."
+    }
+  ],
+  "required_review_lanes": [
+    "source_fidelity",
+    "construct_mapping",
+    "method_classification",
+    "scorer_validation_relevance",
+    "applicability_boundary",
+    "synthesis_overreach"
+  ],
+  "review_requirement": {
+    "min_complete_reviews_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": false
+  },
+  "evidence_review_ids": [
+    "evidence-review-ssr-acceptable-scoring-uses-operational-augmentation-update-source-fidelity-r1",
+    "evidence-review-ssr-acceptable-scoring-uses-operational-augmentation-update-construct-mapping-r1",
+    "evidence-review-ssr-acceptable-scoring-uses-operational-augmentation-update-method-classification-r1",
+    "evidence-review-ssr-acceptable-scoring-uses-operational-augmentation-update-scorer-validation-relevance-r1",
+    "evidence-review-ssr-acceptable-scoring-uses-operational-augmentation-update-applicability-boundary-r1",
+    "evidence-review-ssr-acceptable-scoring-uses-operational-augmentation-update-synthesis-overreach-r1"
+  ],
+  "review_comment_ids": [],
+  "publication_event_ids": [
+    "publish-ssr-acceptable-scoring-uses-operational-augmentation-update-2026-06-03-2026-06-03t12-07-08-257z"
+  ],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces.",
+    "applicability_boundary: Keep the staged unknown_or_unreviewed_contexts and next action to search more operational technical reports and policy documentation.",
+    "construct_mapping: Retain the boundary-condition support role for Wang et al.",
+    "method_classification: Keep the staged source-specific labels and limitations rather than generalizing across generation methods.",
+    "scorer_validation_relevance: Retain the staged interpretive note and does_not_apply_when language.",
+    "source_fidelity: Keep the staged summary and limitations that restrict the direct claim to controlled operational training augmentation.",
+    "synthesis_overreach: Retain the staged blockers and final-validation exclusions."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": []
+}

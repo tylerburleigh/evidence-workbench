@@ -1,0 +1,167 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-validity-conditions-controlled-comparisons-search-2026-06-03",
+  "name": "Synthetic Student Response Validity Conditions Controlled-Comparison Search",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-model-generation-effects",
+    "ssr-prompt-engineering-effects",
+    "ssr-real-response-comparison",
+    "ssr-scoring-validation-use",
+    "ssr-acceptable-scoring-uses"
+  ],
+  "status": "complete",
+  "search_started_at": "2026-06-03T17:45:00Z",
+  "search_completed_at": "2026-06-03T18:35:00Z",
+  "databases": [
+    "web_search",
+    "SpringerLink",
+    "arXiv",
+    "ACL Anthology"
+  ],
+  "systematicity_level": "targeted_bootstrap",
+  "search_queries": [
+    {
+      "query": "\"synthetic student responses\" \"model\" comparison LLM education",
+      "database": "Web search",
+      "searched_at": "2026-06-03T17:45:00Z",
+      "notes": "Used to identify recent multi-model and simulation-fidelity studies."
+    },
+    {
+      "query": "\"simulated students\" \"model\" comparison LLM education \"student responses\"",
+      "database": "Web search",
+      "searched_at": "2026-06-03T17:45:00Z",
+      "notes": "Used to identify workflow comparisons and response authenticity papers."
+    },
+    {
+      "query": "\"LLM\" \"student simulation\" \"real student responses\" \"item difficulty\"",
+      "database": "Web search",
+      "searched_at": "2026-06-03T17:50:00Z",
+      "notes": "Used to identify scoring-adjacent and item-development studies using real-response comparators."
+    },
+    {
+      "query": "\"student simulation\" \"GPT\" \"Llama\" education fidelity",
+      "database": "Web search",
+      "searched_at": "2026-06-03T17:50:00Z",
+      "notes": "Used to identify model/workflow comparison studies."
+    },
+    {
+      "query": "\"SMART\" \"Simulated Students Aligned with Item Response Theory\"",
+      "database": "ACL Anthology",
+      "searched_at": "2026-06-03T18:00:00Z",
+      "notes": "Targeted lookup after discovery."
+    },
+    {
+      "query": "\"Embracing Imperfection\" \"Simulating Students\" \"LLM-based Agents\"",
+      "database": "ACL Anthology",
+      "searched_at": "2026-06-03T18:05:00Z",
+      "notes": "Targeted lookup after discovery."
+    },
+    {
+      "query": "\"Exploring the Capacity of Large Language Models to Simulate Students' Scientific Thinking\"",
+      "database": "SpringerLink",
+      "searched_at": "2026-06-03T18:10:00Z",
+      "notes": "Targeted lookup after discovery."
+    },
+    {
+      "query": "\"Developing Authentic Simulated Learners for Mathematics Teacher Learning\"",
+      "database": "arXiv",
+      "searched_at": "2026-06-03T18:15:00Z",
+      "notes": "Targeted lookup after discovery."
+    }
+  ],
+  "inclusion_criteria": [
+    "Primary source with full text or authoritative abstract/metadata available.",
+    "Study uses LLM-generated or otherwise synthetic student responses, utterances, or constructed responses.",
+    "Study includes at least one of: realism/fidelity metric, model/workflow comparison, prompt/workflow comparison, real-response comparator, human authenticity evaluation, or scoring-adjacent item-difficulty workflow.",
+    "Study helps answer whether synthetic student responses provide validity-relevant evidence, or helps bound that claim."
+  ],
+  "exclusion_criteria": [
+    "General LLM-in-education papers without generated student responses.",
+    "Pure multiple-choice-only simulated response papers unless directly tied to current scorer-validation or item-development boundaries.",
+    "Opinion pieces, blog posts, and secondary summaries.",
+    "Sources without enough accessible methodological detail for extraction."
+  ],
+  "dedupe_method": "Title, DOI, arXiv identifier, and ACL Anthology identifier were used to deduplicate records; targeted lookups were linked to the same source record when PDF and landing page both existed.",
+  "screening_counts": {
+    "records_identified": 9,
+    "records_screened": 9,
+    "included": 4,
+    "deferred": 3,
+    "excluded": 2
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "candidate-nguyen-cao-science-thinking-2026",
+      "title": "Exploring the Capacity of Large Language Models to Simulate Students' Scientific Thinking: Insights for Responsive Teaching",
+      "decision": "include",
+      "reason": "Direct multi-model open-ended student-idea realism comparison with explicit metrics and teacher perceptions.",
+      "source_id": "nguyen-cao-science-thinking-simulation-2026-source"
+    },
+    {
+      "candidate_id": "candidate-cao-nguyen-math-simulated-learners-2026",
+      "title": "Developing Authentic Simulated Learners for Mathematics Teacher Learning: Insights from Three Approaches with Large Language Models",
+      "decision": "include",
+      "reason": "Direct comparison of few-shot, fine-tuned, multi-agent, and DPO workflows for student-response authenticity.",
+      "source_id": "cao-nguyen-math-simulated-learners-2026-source"
+    },
+    {
+      "candidate_id": "candidate-scarlatos-smart-irt-2025",
+      "title": "SMART: Simulated Students Aligned with Item Response Theory for Question Difficulty Prediction",
+      "decision": "include",
+      "reason": "Synthetic open-ended responses are used in a scoring-adjacent item difficulty prediction workflow anchored to human-scored real responses and IRT.",
+      "source_id": "scarlatos-smart-irt-simulated-students-2025-source"
+    },
+    {
+      "candidate_id": "candidate-wu-embracing-imperfection-2025",
+      "title": "Embracing Imperfection: Simulating Students with Diverse Cognitive Levels Using LLM-based Agents",
+      "decision": "include",
+      "reason": "Constructed-response programming study directly addressing imperfect-response realism, cognitive-level variation, and error plausibility.",
+      "source_id": "wu-embracing-imperfection-student-agents-2025-source"
+    },
+    {
+      "candidate_id": "candidate-macneil-bug-distribution-2024",
+      "title": "Synthetic Students: A Comparative Study of Bug Distribution Between Synthetic and Computing Students",
+      "decision": "maybe",
+      "reason": "Highly relevant to bug-distribution realism and prompting effects, but full extraction was deferred pending full-text access verification and line-level extraction."
+    },
+    {
+      "candidate_id": "candidate-human-learners-teacher-insights-2025",
+      "title": "Can LLMs Effectively Simulate Human Learners? A Study of Teachers' Insights from Tutoring LLM Students",
+      "decision": "maybe",
+      "reason": "Relevant to stakeholder authenticity judgments, but less direct for automated scoring and model/workflow comparison than included sources."
+    },
+    {
+      "candidate_id": "candidate-llms-mistakes-like-students-2025",
+      "title": "Do LLMs Make Mistakes Like Students? Exploring Natural Alignments Between Language Models and Human Error Patterns",
+      "decision": "maybe",
+      "reason": "Relevant to human error-pattern realism, but initial screening suggested a stronger multiple-choice/distractor emphasis and lower fit to constructed-response scorer workflows."
+    },
+    {
+      "candidate_id": "candidate-synthetic-responses-item-difficulty-2026",
+      "title": "Synthetic Student Responses for Estimating Item Difficulty Parameters",
+      "decision": "exclude",
+      "reason": "Relevant to synthetic item responses and IRT but outside the current pass's focus on language or constructed-response realism unless a later item-difficulty-specific update is opened."
+    },
+    {
+      "candidate_id": "candidate-general-llm-tutor-feedback-papers",
+      "title": "General LLM tutor or feedback papers without synthetic student response evaluation",
+      "decision": "exclude",
+      "reason": "Did not meet the synthetic-response and comparator criteria."
+    }
+  ],
+  "screening_summary": "This was a targeted cross-node surveillance search rather than a new bootstrap question. The included sources were selected because they add direct evidence on realism metrics, model/workflow choice, real-response comparators, and scoring-adjacent item-development use. The strongest scoring-adjacent source is SMART; the other included sources mainly inform conditions for realism and model/workflow claims, not direct scorer validation.",
+  "source_ids": [
+    "nguyen-cao-science-thinking-simulation-2026-source",
+    "cao-nguyen-math-simulated-learners-2026-source",
+    "scarlatos-smart-irt-simulated-students-2025-source",
+    "wu-embracing-imperfection-student-agents-2025-source"
+  ],
+  "limitations": [
+    "The pass was targeted rather than exhaustive.",
+    "Most included evidence concerns realism/authenticity and item-development conditions, not final validation of operational automated scorers.",
+    "Several potentially relevant error-pattern and bug-distribution papers were deferred for deeper full-text extraction."
+  ]
+}

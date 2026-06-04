@@ -160,26 +160,112 @@
       "retirement_status": "active"
     },
     {
-      "id": "ssr-human-ai-scoring-agreement",
-      "name": "Human and AI Scoring Agreement",
+      "id": "ssr-synthetic-response-scoring-agreement",
+      "name": "Synthetic Response Scoring Agreement",
       "node_type": "review_question",
       "parent_id": "ssr-literature-review",
       "canonical_order": 7,
-      "summary": "How studies measure agreement between human scoring and automated scoring on real or synthetic student responses.",
+      "summary": "How synthetic student response studies use human labels, AI scores, model-generated labels, rubric scores, or scorer agreement to evaluate, label, validate, or benchmark generated responses.",
       "search_aliases": [
-        "human AI agreement synthetic student responses",
-        "automated scoring agreement generated responses",
-        "rubric scoring agreement LLM student answers"
+        "human AI scoring agreement synthetic student responses",
+        "automated scoring agreement generated student responses",
+        "rubric scoring agreement LLM generated student answers",
+        "human scored generated student essays",
+        "synthetic response label validation"
       ],
       "example_entities": [
-        "accuracy",
-        "Cohen kappa",
-        "quadratic weighted kappa",
-        "F1",
-        "calibration"
+        "human scores for generated responses",
+        "AI scores for synthetic responses",
+        "model-generated target labels",
+        "rubric-label agreement",
+        "quadratic weighted kappa on generated essays"
       ],
       "scope_notes": [
-        "Keep agreement metrics tied to the response origin and label source used in the study."
+        "Only include human-AI or scorer-agreement evidence when it is used to evaluate, label, validate, or benchmark synthetic or generated student responses.",
+        "Exclude generic automated-scoring agreement studies and LLM-as-judge studies unless the scored response corpus includes synthetic student responses.",
+        "Keep agreement metrics tied to response origin, label source, rubric label space, and whether real responses are part of the comparator."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "ssr-acceptable-scoring-uses",
+      "name": "Acceptable Uses in Automated Scoring",
+      "node_type": "review_question",
+      "parent_id": "ssr-literature-review",
+      "canonical_order": 8,
+      "summary": "Where synthetic student responses are appropriate, limited, or inappropriate in automated scoring research, development, validation, calibration, benchmarking, stress testing, and deployment-readiness workflows.",
+      "search_aliases": [
+        "acceptable uses synthetic student responses automated scoring",
+        "synthetic student responses automated scoring development validation",
+        "synthetic data automated scorer research development validation",
+        "LLM generated student answers scorer training validation boundaries",
+        "synthetic response challenge sets automated scoring"
+      ],
+      "example_entities": [
+        "training augmentation",
+        "pre-pilot validation",
+        "challenge sets",
+        "calibration and benchmarking",
+        "real-response validation boundary"
+      ],
+      "scope_notes": [
+        "Focus on use-case boundaries rather than whether one scorer agrees with one label set.",
+        "Distinguish research exploration, scorer development, training augmentation, calibration, stress testing, validation, and deployment-readiness claims.",
+        "Record when synthetic responses are acceptable only as supporting or pre-pilot evidence and when real student responses or independently human-scored data remain required.",
+        "Exclude generic scorer-validation evidence unless it makes an explicit claim about acceptable or unacceptable synthetic-response use."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "ssr-assessment-stakes-boundaries",
+      "name": "Assessment Stakes and Use Boundaries",
+      "node_type": "review_question",
+      "parent_id": "ssr-literature-review",
+      "canonical_order": 9,
+      "summary": "How acceptable uses of synthetic student responses vary across formative, in-term, summative, high-stakes, and low-stakes assessment contexts.",
+      "search_aliases": [
+        "synthetic student responses assessment stakes",
+        "synthetic responses formative summative automated scoring",
+        "synthetic student responses high stakes assessment validation",
+        "generated student answers low stakes formative feedback"
+      ],
+      "example_entities": [
+        "formative feedback",
+        "classroom assessment",
+        "summative assessment",
+        "admissions testing",
+        "deployment-readiness boundary"
+      ],
+      "scope_notes": [
+        "Classify assessment purpose separately from decision consequence.",
+        "Distinguish low-stakes formative support from high-stakes validation or deployment-readiness claims.",
+        "Treat synthetic responses as developmental or diagnostic evidence unless source-backed validation supports a stronger operational role."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "ssr-sparse-data-supplementation",
+      "name": "Use to Supplement Sparse or Imbalanced Response Data",
+      "node_type": "review_question",
+      "parent_id": "ssr-literature-review",
+      "canonical_order": 10,
+      "summary": "How synthetic student responses are used to supplement sparse, imbalanced, unavailable, or incomplete student-response datasets in automated scoring and assessment research.",
+      "search_aliases": [
+        "synthetic student responses sparse dataset augmentation",
+        "imbalanced automated scoring generated student answers",
+        "synthetic constructed response data augmentation",
+        "high scoring responses underrepresented automated scoring"
+      ],
+      "example_entities": [
+        "score-band balancing",
+        "minority-class response generation",
+        "small-sample scorer training",
+        "scorer robustness or validation datasets"
+      ],
+      "scope_notes": [
+        "Include studies where sparsity, imbalance, limited labeled data, or unavailable real responses motivates the synthetic response workflow.",
+        "Record the role synthetic data played in the research process, such as scorer training, augmentation, validation, benchmarking, calibration, stress testing, or rubric development.",
+        "Keep essay scoring, short-answer scoring, constructed response, and multimodal/modeling tasks distinguishable."
       ],
       "retirement_status": "active"
     }

@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "wolfe-calibrating-realistic-essays-finding-2026",
+  "name": "Human Scores and Realism Ratings Are Used to Calibrate GPT-generated Essays for Scoring Augmentation",
+  "source_id": "wolfe-calibrating-realistic-essays-2026-source",
+  "artifact_id": "wolfe-calibrating-realistic-essays-artifact",
+  "taxonomy_node_ids": [
+    "ssr-scoring-validation-use"
+  ],
+  "endpoint_category": "augmentation_quality_evaluation",
+  "direction": "adjacent_use",
+  "evidence_tier": "study_extracted",
+  "confidence": "medium",
+  "statement": "Wolfe et al. evaluate large-language-model simulated essays through expert scoring and realism ratings, finding prompt-strategy differences in score preservation and realism; the source supports synthetic-response calibration for automated-scoring augmentation rather than direct scorer validation on synthetic-only test data.",
+  "population_or_context": "Student essay responses for automated scoring data augmentation.",
+  "time_horizon": "arXiv preprint version retrieved on 2026-06-02.",
+  "quantitative_note": "The study reports 96 real essays and 288 simulated essays, with exact agreement, quadratically weighted kappa, score-distribution differences, and realism ratings.",
+  "caveats": [
+    "The source is a preprint.",
+    "The evaluated construct is generated essay realism and score preservation, not validation of one deployed scorer.",
+    "Downstream scorer validity still requires real or independently human-scored validation data."
+  ],
+  "evaluation_method": "Expert scoring of simulated essays, comparison with original essay scores, score-distribution analysis, and realism ratings.",
+  "reported_metrics": "Exact agreement, adjacent agreement, weighted kappa, score-distribution differences, and realism ratings.",
+  "limitations": [
+    "Does not establish that synthetic essays should replace real validation sets.",
+    "Findings are bounded to the compared prompt strategies and the unnamed large language model used in the public preprint."
+  ],
+  "source_locator": {
+    "section": "Abstract, methods, and results",
+    "url": "https://arxiv.org/abs/2602.06772",
+    "quote_or_paraphrase_note": "The staged finding paraphrases the simulated essay generation, expert scoring, agreement metrics, and realism-rating evaluation.",
+    "verification_status": "located"
+  }
+}

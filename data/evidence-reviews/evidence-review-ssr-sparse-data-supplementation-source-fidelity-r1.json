@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-sparse-data-supplementation-source-fidelity-r1",
+  "name": "Source Fidelity review for Ssr Sparse Data Supplementation bundle",
+  "candidate_bundle_id": "sparse-data-supplementation-baseline-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "source_fidelity",
+  "reviewer_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Source-fidelity review found the seven staged source records and core extracted facts consistent with the cited primary/open source pages, PDFs, arXiv records, and existing branch-local extractions. Bibliographic metadata, response types, augmentation roles, and main reported metrics are sufficiently bounded for a baseline claim. Martin and Graulich remains intentionally limited to abstract-level metric detail and is carried as an open full-text numeric-extraction follow-up rather than a blocker.",
+  "reviewed_change_ids": [
+    "create-search-protocol",
+    "create-source-fang",
+    "create-source-morris",
+    "create-source-martin-graulich",
+    "create-source-cochran",
+    "create-source-zhang",
+    "create-source-yoo",
+    "create-source-wolfe-barber",
+    "create-artifact-fang",
+    "create-artifact-morris",
+    "create-artifact-martin-graulich",
+    "create-artifact-cochran",
+    "create-artifact-zhang",
+    "create-artifact-yoo",
+    "create-artifact-wolfe-barber",
+    "create-finding-fang",
+    "create-finding-morris",
+    "create-finding-martin-graulich",
+    "create-finding-cochran",
+    "create-finding-zhang",
+    "create-finding-yoo",
+    "create-finding-wolfe-barber",
+    "create-claim-sparse-supplementation"
+  ],
+  "corrections_applied": [
+    {
+      "change_id": "create-finding-wolfe-barber",
+      "summary": "Converted the Wolfe and Barber finding source locator from an abstract-level string to a structured full-text locator."
+    },
+    {
+      "change_id": "create-artifact-martin-graulich",
+      "summary": "Set numeric_results_extracted to false so the abstract-level metric extraction is explicit."
+    },
+    {
+      "change_id": "create-finding-martin-graulich",
+      "summary": "Set numeric_results_extracted to false so full-text metric extraction remains visible as follow-up work."
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "source-fidelity-martin-graulich-full-text-follow-up",
+      "severity": "minor",
+      "category": "uncertainty",
+      "resolution_status": "open",
+      "applies_to_change_id": "create-finding-martin-graulich",
+      "claim_or_issue": "Martin and Graulich is supported for inclusion by the open abstract, but exact score-agreement values, sample sizes, model details, and prompt details are not yet extracted from full text.",
+      "why_it_matters": "The record can support a bounded non-essay augmentation example, but quantitative synthesis or method-specific comparison would overstate the current extraction depth.",
+      "recommended_action": "Extract full-text methods and results tables for Martin and Graulich before using the record in quantitative synthesis or detailed method comparisons."
+    }
+  ],
+  "skill_name": "evidence-review",
+  "created_at": "2026-06-03T14:44:07.057Z",
+  "updated_at": "2026-06-03T14:44:07.057Z"
+}

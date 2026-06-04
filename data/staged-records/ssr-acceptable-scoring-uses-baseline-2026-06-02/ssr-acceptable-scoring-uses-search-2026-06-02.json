@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-acceptable-scoring-uses-search-2026-06-02",
+  "name": "Acceptable Uses in Automated Scoring Search Pass",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses"
+  ],
+  "status": "included_sources_staged",
+  "systematicity_level": "targeted_bootstrap",
+  "search_started_at": "2026-06-02T20:05:00Z",
+  "search_completed_at": "2026-06-02T20:19:29Z",
+  "databases": [
+    "Web search",
+    "ACL Anthology",
+    "arXiv",
+    "Frontiers",
+    "EPFL Infoscience",
+    "ResearchGate primary full-text page",
+    "Existing synthetic-student-responses public graph"
+  ],
+  "search_queries": [
+    {
+      "database": "Web search",
+      "query": "\"synthetic student responses\" \"automated scoring\" \"validation\"",
+      "searched_at": "2026-06-02T20:06:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"LLM-generated\" \"student responses\" \"automated scoring\" \"validation\"",
+      "searched_at": "2026-06-02T20:07:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"synthetic data\" \"automated essay scoring\" \"student responses\" \"training\" validation",
+      "searched_at": "2026-06-02T20:07:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"generated student answers\" \"content scoring\" \"synthetic\" \"validation\"",
+      "searched_at": "2026-06-02T20:08:00Z",
+      "result_count": "screened first result page for targeted query"
+    },
+    {
+      "database": "Web search",
+      "query": "\"Leveraging Knowledge Profiles\" \"Realistic Student Response Generation\" automated grading model training",
+      "searched_at": "2026-06-02T20:10:00Z",
+      "result_count": "identified abstract-level/metadata candidate but not full text"
+    },
+    {
+      "database": "Web search",
+      "query": "\"Best of both worlds\" \"synthetic\" \"automated scoring\" \"situational judgment test\"",
+      "searched_at": "2026-06-02T20:11:00Z",
+      "result_count": "verified Frontiers full-text candidate"
+    },
+    {
+      "database": "Web search",
+      "query": "\"A Framework for Live Scoring Constructed Response Items\" synthetic responses pre-pilot validation",
+      "searched_at": "2026-06-02T20:12:00Z",
+      "result_count": "verified ResearchGate full-text candidate"
+    },
+    {
+      "database": "Web search",
+      "query": "\"Is Lunch Free Yet\" \"LLM-Generated Training Data\" content scoring",
+      "searched_at": "2026-06-02T20:13:00Z",
+      "result_count": "verified ACL Anthology full-text candidate"
+    }
+  ],
+  "inclusion_criteria": [
+    "The source must involve synthetic, simulated, generated, corrupted, or analogous student/learner/examinee responses, essays, writing responses, short answers, constructed responses, or open-response assessment responses.",
+    "Direct support must connect the synthetic responses to automated scoring research, scorer development, training augmentation, pre-pilot validation, calibration, benchmarking, label/annotation workflow, challenge/stress testing, fairness probing, or deployment-readiness boundaries.",
+    "Direct findings require full text, full-text HTML, PDF, or previously verified full-text source records with source locators beyond an abstract-only page.",
+    "The source must distinguish synthetic-response evidence from real-response or independently human-scored validation evidence."
+  ],
+  "exclusion_criteria": [
+    "Exclude automated scoring papers that score only authentic student responses and do not use synthetic responses.",
+    "Exclude synthetic-response generation work that does not connect generated responses to scorer research, scorer development, scoring labels, scorer evaluation, or scoring-system stress tests.",
+    "Exclude abstract-only or paywalled candidates from direct synthesis support until full text is obtained.",
+    "Exclude generic LLM-as-judge or human-AI scoring agreement work unless synthetic student responses are part of the scored corpus."
+  ],
+  "dedupe_method": "Deduplicated by title, DOI, arXiv identifier, ACL Anthology identifier, canonical source page, and existing public graph source_id.",
+  "screening_counts": {
+    "records_identified": "at least 35 records across targeted web, primary-source, and existing-graph queries",
+    "records_screened": 11,
+    "full_text_reviewed": 6,
+    "sources_included": 6,
+    "sources_deferred_for_access_or_scope": 5
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "candidate-frohn-2025",
+      "title": "A Framework for Live Scoring Constructed Response Items with Commercial LLMs",
+      "decision": "include",
+      "reason": "Direct full-text evidence on synthetic responses as pre-pilot scorer checks and challenge sets, with real student responses required for pilot validation.",
+      "source_id": "frohn-llm-cr-live-scoring-2025-source",
+      "url": "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs"
+    },
+    {
+      "candidate_id": "candidate-yoo-2025",
+      "title": "DREsS: Dataset for Rubric-based Essay Scoring on EFL Writing",
+      "decision": "include",
+      "reason": "Direct full-text evidence on a large synthetic training subset for AES while real classroom essays remain the validation/test evidence.",
+      "source_id": "yoo-dress-rubric-aes-2025-source",
+      "doi": "10.18653/v1/2025.acl-long.659",
+      "url": "https://aclanthology.org/2025.acl-long.659/"
+    },
+    {
+      "candidate_id": "candidate-bexte-zesch-2025",
+      "title": "Is Lunch Free Yet? Overcoming the Cold-Start Problem in Supervised Content Scoring using Zero-Shot LLM-Generated Training Data",
+      "decision": "include",
+      "reason": "Direct full-text evidence that generated target labels need audit or relabeling before they support content-scoring model development.",
+      "source_id": "bexte-zesch-synthetic-content-scoring-2025-source",
+      "doi": "10.18653/v1/2025.bea-1.11",
+      "url": "https://aclanthology.org/2025.bea-1.11/"
+    },
+    {
+      "candidate_id": "candidate-nebhi-2025",
+      "title": "End-to-End Automated Item Generation and Scoring for Adaptive English Writing Assessment with Large Language Models",
+      "decision": "include",
+      "reason": "Direct full-text evidence on LLM annotator selection against expert human ratings before large-scale synthetic response annotation and scoring-model integration.",
+      "source_id": "nebhi-adaptive-writing-aig-scoring-2025-source",
+      "doi": "10.18653/v1/2025.bea-1.73",
+      "url": "https://aclanthology.org/2025.bea-1.73/"
+    },
+    {
+      "candidate_id": "candidate-wolfe-2026",
+      "title": "Calibrating Generative AI to Produce Realistic Essays for Data Augmentation",
+      "decision": "include",
+      "reason": "Direct full-text evidence on expert-scored simulated essays as calibration and augmentation-suitability evidence, not synthetic-only scorer validation.",
+      "source_id": "wolfe-calibrating-realistic-essays-2026-source",
+      "doi": "10.48550/arXiv.2602.06772",
+      "url": "https://arxiv.org/abs/2602.06772"
+    },
+    {
+      "candidate_id": "candidate-walsh-2026",
+      "title": "Best of both worlds: combining LLMs and traditional ML for automated scoring of an open-response situational judgment test",
+      "decision": "include",
+      "reason": "Full-text adjacent evidence on synthetic demographic analogs for fairness stress testing in open-response automated scoring; included with SJT admissions-response boundary.",
+      "source_id": "walsh-sjt-automated-scoring-2026-source",
+      "doi": "10.3389/feduc.2026.1756673",
+      "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1756673/full"
+    },
+    {
+      "candidate_id": "candidate-ipci-2025",
+      "title": "Leveraging Knowledge Profiles and Generative AI for Realistic Student Response Generation",
+      "decision": "no_full_text",
+      "reason": "Highly relevant to synthetic response augmentation for automated grading, but this pass only verified repository/abstract-level access; not used as direct support.",
+      "source_id": "ipci-knowledge-profiles-response-generation-2025-source",
+      "doi": "10.1007/978-3-031-99264-3_18",
+      "url": "https://infoscience.epfl.ch/entities/publication/c186f403-251d-44b0-8b03-55bd9037d352"
+    },
+    {
+      "candidate_id": "candidate-aime-recursive-synthetic-responses-2025",
+      "title": "Using recursively generated synthetic responses to validate item-level variational encoder latent representations",
+      "decision": "no_full_text",
+      "reason": "AIME program listing suggests relevance to synthetic responses and validation, but no full paper was verified in this targeted pass.",
+      "url": "https://s3.amazonaws.com/xcdshared/ncme/AIME-Con%202025%20Conference%20Program.pdf"
+    },
+    {
+      "candidate_id": "candidate-jorgpt-dataset-2026",
+      "title": "A Multilingual Dataset of Student Answers, Human Grading, and Multi-LLM Evaluations for Automated Assessment Research Using JorGPT",
+      "decision": "exclude",
+      "reason": "Relevant to automated assessment benchmarking, but the reported dataset is authentic student answers rather than synthetic student responses.",
+      "url": "https://www.mdpi.com/2306-5729/11/3/59"
+    },
+    {
+      "candidate_id": "candidate-mendonca-2025",
+      "title": "Evaluating LLMs for Automated Scoring in Formative Assessments",
+      "decision": "exclude",
+      "reason": "Relevant to LLM automated scoring of real student responses, but not to synthetic student responses.",
+      "url": "https://www.mdpi.com/2076-3417/15/5/2787"
+    },
+    {
+      "candidate_id": "candidate-prompt-scoring-feedback-2026",
+      "title": "Leveraging prompt-based LLMs for automated scoring and feedback generation in higher education",
+      "decision": "exclude",
+      "reason": "Relevant to prompt-based LLM scoring/feedback, but the targeted pass did not verify synthetic student responses in the scored corpus.",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0360131525002799"
+    }
+  ],
+  "source_ids": [
+    "frohn-llm-cr-live-scoring-2025-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "bexte-zesch-synthetic-content-scoring-2025-source",
+    "nebhi-adaptive-writing-aig-scoring-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "walsh-sjt-automated-scoring-2026-source"
+  ],
+  "screening_summary": "Targeted bootstrap screening included six full-text sources where synthetic, simulated, generated, corrupted, or analogous responses are tied to automated scorer development, training augmentation, pre-pilot validation, label/annotation benchmarking, calibration, or fairness stress testing. Abstract-only and program-only candidates were screened but not used as direct support.",
+  "limitations": [
+    "This was a targeted bootstrap pass, not a systematic review.",
+    "Included sources use heterogeneous response settings: constructed responses, EFL essays, short-answer content scoring, adaptive English writing, simulated essays, and an adjacent open-response SJT setting.",
+    "Walsh et al. is included as bounded stress-test evidence from admissions SJT scoring rather than ordinary classroom student-response scoring.",
+    "Ipci et al. is not used as direct support because this pass verified only repository/abstract-level access."
+  ]
+}

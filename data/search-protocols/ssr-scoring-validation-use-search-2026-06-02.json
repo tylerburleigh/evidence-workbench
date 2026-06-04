@@ -1,0 +1,127 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "ssr-scoring-validation-use-search-2026-06-02",
+  "name": "Automated Scorer Validation Use Search Pass",
+  "domain_id": "synthetic-student-responses",
+  "taxonomy_node_ids": [
+    "ssr-scoring-validation-use"
+  ],
+  "status": "included_sources_staged",
+  "systematicity_level": "targeted_bootstrap",
+  "search_started_at": "2026-06-02T11:34:00Z",
+  "search_completed_at": "2026-06-02T11:48:00Z",
+  "databases": [
+    "Web search",
+    "ACL Anthology",
+    "arXiv",
+    "Frontiers in Education",
+    "NSF Public Access Repository",
+    "ResearchGate"
+  ],
+  "search_queries": [
+    {
+      "database": "Web search",
+      "query": "\"synthetic student responses\" automated scoring validation",
+      "searched_at": "2026-06-02T11:34:00Z",
+      "result_count": "screened first result page"
+    },
+    {
+      "database": "Web search",
+      "query": "\"synthetic responses\" \"automated scoring\" \"validation\" education",
+      "searched_at": "2026-06-02T11:36:00Z",
+      "result_count": "screened first result page"
+    },
+    {
+      "database": "Web search",
+      "query": "\"synthetic data\" \"automated essay scoring\" \"LLM\" \"student responses\"",
+      "searched_at": "2026-06-02T11:38:00Z",
+      "result_count": "screened first result page"
+    },
+    {
+      "database": "Web search",
+      "query": "\"A Framework for Live Scoring Constructed Response Items\" \"synthetic data\"",
+      "searched_at": "2026-06-02T11:41:00Z",
+      "result_count": "screened first result page"
+    }
+  ],
+  "inclusion_criteria": [
+    "The source discusses synthetic, simulated, generated, or altered student or constructed-response text.",
+    "The source connects those responses to automated scoring, LLM scoring, scorer calibration, scorer validation, benchmarking, fairness testing, or scoring-data augmentation.",
+    "The source provides enough public metadata and study description to stage a source-backed extraction record."
+  ],
+  "exclusion_criteria": [
+    "Exclude chatbot or tutoring studies that generate feedback but do not involve response scoring.",
+    "Exclude synthetic educational-data studies that do not concern text responses or constructed-response scoring.",
+    "Exclude sources that only mention synthetic data generically without a recoverable scorer-use or evaluation boundary."
+  ],
+  "dedupe_method": "Deduplicated by title, DOI, and canonical source URL; retained the most stable public source page where multiple mirrors appeared.",
+  "screening_counts": {
+    "records_identified": "at least 25 web results across targeted queries",
+    "records_screened": 10,
+    "full_text_reviewed": 6,
+    "sources_included": 4
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "candidate-frohn-2025",
+      "title": "A Framework for Live Scoring Constructed Response Items with Commercial LLMs",
+      "decision": "include",
+      "reason": "Explicitly frames synthetic response datasets as pre-pilot validation data and challenge sets for commercial LLM scoring workflows.",
+      "source_id": "frohn-llm-cr-live-scoring-2025-source",
+      "url": "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs"
+    },
+    {
+      "candidate_id": "candidate-walsh-2026",
+      "title": "Best of both worlds: combining LLMs and traditional ML for automated scoring of an open-response situational judgment test",
+      "decision": "include",
+      "reason": "Uses analogous synthetic responses with injected demographic information to pilot fairness analysis of LLM evaluation behavior.",
+      "source_id": "walsh-sjt-automated-scoring-2026-source",
+      "doi": "10.3389/feduc.2026.1756673",
+      "url": "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2026.1756673/full"
+    },
+    {
+      "candidate_id": "candidate-yoo-2025",
+      "title": "DREsS: Dataset for Rubric-based Essay Scoring on EFL Writing",
+      "decision": "include",
+      "reason": "Large synthetic essay component is used for training, while real data is reserved for validation and testing; this provides an important boundary for scorer-validation use.",
+      "source_id": "yoo-dress-rubric-aes-2025-source",
+      "doi": "10.18653/v1/2025.acl-long.659",
+      "url": "https://aclanthology.org/2025.acl-long.659/"
+    },
+    {
+      "candidate_id": "candidate-wolfe-2026",
+      "title": "Calibrating Generative AI to Produce Realistic Essays for Data Augmentation",
+      "decision": "include",
+      "reason": "Evaluates GPT-generated simulated essays with human scores and realism judgments before using them as automated-scoring augmentation data.",
+      "source_id": "wolfe-calibrating-realistic-essays-2026-source",
+      "doi": "10.48550/arXiv.2602.06772",
+      "url": "https://arxiv.org/abs/2602.06772"
+    },
+    {
+      "candidate_id": "candidate-djagba-2026",
+      "title": "Exploring Data Augmentation Strategies to Enhance AI Scoring of Scientific Explanations",
+      "decision": "maybe",
+      "reason": "Relevant to synthetic-response augmentation for science explanations, but not needed for the first compact scorer-validation baseline.",
+      "url": "https://arxiv.org/abs/2601.04567"
+    },
+    {
+      "candidate_id": "candidate-cochran-2025",
+      "title": "Improving Automated Evaluation of Student Text Responses Using GPT-3.5 for Text Data Augmentation",
+      "decision": "maybe",
+      "reason": "Adjacent augmentation study; deferred to a later generation-methods or augmentation-focused pass."
+    }
+  ],
+  "source_ids": [
+    "frohn-llm-cr-live-scoring-2025-source",
+    "walsh-sjt-automated-scoring-2026-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source"
+  ],
+  "screening_summary": "The first pass found direct support for synthetic responses as pre-pilot validation or challenge data and as a fairness stress-test input, plus adjacent automated-scoring augmentation studies that keep scorer accuracy validation anchored to real or human-scored responses.",
+  "limitations": [
+    "This was a targeted bootstrap search, not a systematic review.",
+    "Searches emphasized public web-accessible sources and may miss paywalled assessment conference papers or technical reports.",
+    "The initial baseline intentionally stages a small set of high-relevance sources rather than every adjacent augmentation paper."
+  ]
+}

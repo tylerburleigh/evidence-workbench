@@ -1,0 +1,213 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-sparse-data-supplementation-baseline-2026-06-03-2026-06-03t15-21-48-538z",
+  "name": "Published Sparse Data Supplementation Literature Baseline",
+  "summary": "Stages a targeted literature baseline on uses of synthetic student responses to supplement sparse, imbalanced, or subgroup-limited response datasets.",
+  "candidate_bundle_id": "sparse-data-supplementation-baseline-2026-06-03",
+  "event_type": "publish",
+  "published_at": "2026-06-03T15:21:48.538Z",
+  "published_by": "codex-agent",
+  "published_targets": [
+    {
+      "record_type": "search_protocol",
+      "record_id": "ssr-sparse-data-supplementation-search-2026-06-03",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "fang-gpt4-imbalanced-automatic-scoring-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "morris-naep-math-constructed-response-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "martin-graulich-science-assessment-2024",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "cochran-gpt35-student-text-augmentation-2023",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "zhang-gpt-generated-essay-augmentation-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "yoo-dress-rubric-essay-scoring-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "wolfe-barber-realistic-essay-augmentation-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "fang-gpt4-minority-science-response-augmentation-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "morris-coedit-naep-math-high-score-augmentation-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "martin-graulich-chemistry-reasoning-augmentation-2024",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "cochran-gpt35-small-student-text-augmentation-2023",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "zhang-gpt4-gpt4o-essay-sample-augmentation-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "yoo-case-efl-essay-augmentation-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "wolfe-barber-essay-realism-calibration-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "fang-gpt4-minority-class-scoring-finding-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "morris-coedit-high-score-math-finding-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "martin-graulich-chatbot-chemistry-finding-2024",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "cochran-gpt35-small-data-finding-2023",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "zhang-gpt-essay-augmentation-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "yoo-case-score-balance-finding-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "wolfe-barber-realism-validation-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-sparse-data-supplementation-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 23,
+    "by_record_type": {
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "source": {
+        "created": 7,
+        "updated": 0,
+        "total": 7
+      },
+      "artifact": {
+        "created": 7,
+        "updated": 0,
+        "total": 7
+      },
+      "finding": {
+        "created": 7,
+        "updated": 0,
+        "total": 7
+      },
+      "claim": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "ssr-sparse-data-supplementation-baseline-claim"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-ssr-sparse-data-supplementation-applicability-boundary-r1",
+    "evidence-review-ssr-sparse-data-supplementation-construct-mapping-r1",
+    "evidence-review-ssr-sparse-data-supplementation-method-classification-r1",
+    "evidence-review-ssr-sparse-data-supplementation-scorer-validation-relevance-r1",
+    "evidence-review-ssr-sparse-data-supplementation-search-protocol-r1",
+    "evidence-review-ssr-sparse-data-supplementation-source-fidelity-r1",
+    "evidence-review-ssr-sparse-data-supplementation-synthesis-overreach-r1"
+  ],
+  "review_corrections_applied": [
+    {
+      "change_id": "create-finding-wolfe-barber",
+      "summary": "Converted the Wolfe and Barber finding source locator from an abstract-level string to a structured full-text locator."
+    },
+    {
+      "change_id": "create-artifact-martin-graulich",
+      "summary": "Set numeric_results_extracted to false so the abstract-level metric extraction is explicit."
+    },
+    {
+      "change_id": "create-finding-martin-graulich",
+      "summary": "Set numeric_results_extracted to false so full-text metric extraction remains visible as follow-up work."
+    }
+  ],
+  "review_follow_up_actions": [
+    "source_fidelity: Extract full-text methods and results tables for Martin and Graulich before using the record in quantitative synthesis or detailed method comparisons."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [
+    {
+      "action_id": "extract-numeric-results-martin-graulich-chatbot-chemistry-finding-2024",
+      "action_type": "numeric_results_extraction",
+      "status": "open",
+      "priority": "medium",
+      "target_record_type": "finding",
+      "target_record_id": "martin-graulich-chatbot-chemistry-finding-2024",
+      "source_ids": [
+        "martin-graulich-science-assessment-2024"
+      ],
+      "taxonomy_node_ids": [
+        "ssr-sparse-data-supplementation"
+      ],
+      "metric_fields_present": [
+        "reported_metrics",
+        "quantitative_note"
+      ],
+      "reason": "finding martin-graulich-chatbot-chemistry-finding-2024 reports metric text but numeric_results_extracted is false.",
+      "recommended_action": "Extract table-level numeric results for Chatbot-Generated Chemistry Responses Expanded Training Heterogeneity before quantitative synthesis.",
+      "finding_id": "martin-graulich-chatbot-chemistry-finding-2024",
+      "artifact_id": "martin-graulich-chemistry-reasoning-augmentation-2024"
+    }
+  ],
+  "change_note": "Creates a first baseline claim for the new sparse-data supplementation review question."
+}

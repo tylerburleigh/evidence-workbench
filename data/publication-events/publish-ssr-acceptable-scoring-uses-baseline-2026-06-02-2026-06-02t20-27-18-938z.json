@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-acceptable-scoring-uses-baseline-2026-06-02-2026-06-02t20-27-18-938z",
+  "name": "Published Acceptable Synthetic Response Uses in Automated Scoring Baseline",
+  "summary": "Staged first literature-review baseline for acceptable, limited, and inappropriate uses of synthetic student responses in automated scoring research, development, validation, calibration, benchmarking, and stress testing.",
+  "candidate_bundle_id": "ssr-acceptable-scoring-uses-baseline-2026-06-02",
+  "event_type": "publish",
+  "published_at": "2026-06-02T20:27:18.938Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "search_protocol",
+      "record_id": "ssr-acceptable-scoring-uses-search-2026-06-02",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "frohn-acceptable-prepilot-use-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "yoo-acceptable-training-boundary-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "bexte-acceptable-cold-start-relabeling-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "nebhi-acceptable-llm-annotation-benchmark-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "wolfe-acceptable-augmentation-calibration-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "walsh-acceptable-fairness-stress-test-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "frohn-acceptable-prepilot-use-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "yoo-acceptable-training-boundary-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "bexte-acceptable-cold-start-relabeling-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "nebhi-acceptable-llm-annotation-benchmark-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "wolfe-acceptable-augmentation-calibration-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "walsh-acceptable-fairness-stress-test-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-acceptable-scoring-uses-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 14,
+    "by_record_type": {
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "artifact": {
+        "created": 6,
+        "updated": 0,
+        "total": 6
+      },
+      "finding": {
+        "created": 6,
+        "updated": 0,
+        "total": 6
+      },
+      "claim": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "ssr-acceptable-scoring-uses-baseline-claim"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-ssr-acceptable-scoring-uses-construct-mapping-r1",
+    "evidence-review-ssr-acceptable-scoring-uses-method-classification-r1",
+    "evidence-review-ssr-acceptable-scoring-uses-scorer-validation-relevance-r1",
+    "evidence-review-ssr-acceptable-scoring-uses-source-fidelity-r1",
+    "evidence-review-ssr-acceptable-scoring-uses-synthesis-overreach-r1"
+  ],
+  "review_corrections_applied": [],
+  "review_follow_up_actions": [
+    "scorer_validation_relevance: Keep the claim's replacement-validation limitation and support roles unchanged.",
+    "source_fidelity: Keep those candidates screened as no_full_text and exclude them from direct claim support until full text is obtained."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "change_note": "Creates the first staged literature-review baseline for acceptable and limited synthetic-response uses in automated scoring research and development."
+}

@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "nguyen-cao-science-thinking-realism-model-comparison-artifact",
+  "name": "Science Thinking Realism and Model Comparison Artifact",
+  "artifact_type": "study_extraction",
+  "status": "staged",
+  "source_ids": [
+    "nguyen-cao-science-thinking-simulation-2026-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-model-generation-effects",
+    "ssr-prompt-engineering-effects",
+    "ssr-real-response-comparison"
+  ],
+  "population_or_context": "OpenSciEd science lesson ideas across life sciences, physics, and chemistry, spanning elementary, middle, and high school lessons.",
+  "sample_size": "49 lesson plans; 30 simulated ideas per lesson per LLM; 8,820 generated ideas across six LLMs; six teacher interviews for utility perceptions.",
+  "methods": "Six LLMs generated possible student ideas from structured lesson-context prompts. The study evaluated semantic similarity to lesson/student ideas, grade-level language, knowledge scope, qualitative divergence, and teacher perceptions of usefulness.",
+  "endpoint_categories": [
+    "response_realism",
+    "model_generation_effects",
+    "prompt_conditioning",
+    "real_response_comparison"
+  ],
+  "numeric_results_extracted": true,
+  "education_context": "K-12 science instruction planning and responsive teaching with open-ended student scientific ideas.",
+  "response_origin": "LLM-generated simulated student ideas from six commercial and open/open-source model families.",
+  "rubric_label_space": "Realism and instructional-planning fit metrics rather than an automated scoring rubric.",
+  "label_source": "OpenSciEd lesson ideas based on pilot student data and teacher consultation provide the main comparator; teacher interviews provide use-case judgments.",
+  "generation_model": "GPT-5-mini, GPT-4o, Claude Sonnet 4, Gemini 2.5 Flash, Mistral 7B, and Llama-4-17B.",
+  "generation_method": "Structured prompting with learning standards, prior instruction, activity description, task description, grade level, domain, and instructions to include everyday, scientific, partial, and incorrect reasoning.",
+  "prompt_strategy": "Lesson-context prompt with explicit simulation instructions for language and reasoning style.",
+  "evaluation_method": "Cluster-level embedding cosine similarity, language appropriateness, knowledge-scope judgment, qualitative divergence analysis, and interviews with teachers.",
+  "scorer_use": "No automated scorer validation; simulated responses support teacher anticipation and instructional planning.",
+  "real_response_comparator": "Lesson ideas from OpenSciEd, which the paper describes as generated from pilot implementation and teacher consultation, serve as the comparator for generated student ideas.",
+  "reported_metrics": "Mean cosine similarity across generated and lesson ideas was 0.52 (SD = 0.07); larger/proprietary models exceeded Mistral-7B on similarity, and grade-level differences were observed.",
+  "limitations": [
+    "The use case is instructional planning, not automated score validation.",
+    "Semantic similarity and teacher-perceived realism do not establish interchangeability with real student responses.",
+    "The comparator is lesson-plan student ideas rather than a fully independent operational response sample for scoring validation."
+  ],
+  "assessment_purpose": "formative_feedback",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "quality_evaluation"
+}

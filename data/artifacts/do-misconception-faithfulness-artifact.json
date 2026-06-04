@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "do-misconception-faithfulness-artifact",
+  "name": "Do et al. Misconception Faithfulness and Model-Limit Extract",
+  "artifact_type": "study_extraction",
+  "status": "staged",
+  "source_ids": [
+    "do-misconception-faithfulness-2026-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-model-generation-effects",
+    "ssr-prompt-engineering-effects"
+  ],
+  "population_or_context": "Mathematics misconception simulation using Malrule arithmetic problems and EEDI multiple-choice misconception labels.",
+  "sample_size": "Seven instruction-tuned LLMs spanning 4B-120B parameters; Malrule original train/test 790/210 and EEDI original train/test 800/200; synthetic training sets of 7,096 and 6,038 instances are reported for post-training.",
+  "methods": "The study prompts LLMs to role-play students with an initial wrong answer caused by a latent misconception, then evaluates responses to targeted, misaligned, and generic feedback using Selective Flip Score. It compares base and reflective prompting and then SFT, DPO, and GRPO post-training pipelines.",
+  "endpoint_categories": [
+    "misconception_faithfulness",
+    "prompting_limit",
+    "model_capability_effect",
+    "post_training_effect"
+  ],
+  "numeric_results_extracted": true,
+  "education_context": "Mathematics misconception simulation for AI tutor and educator-training contexts.",
+  "response_origin": "LLMs generate simulated student replies to teacher feedback after being assigned an initial wrong answer and latent misconception context.",
+  "rubric_label_space": "Selective belief-update behavior rather than a scoring rubric; response categories include correct flips and other feedback-response behaviors.",
+  "label_source": "Misconception labels come from Malrule and EEDI; targeted, misaligned, and generic feedback conditions are constructed by the authors, with feedback generated under shared constraints.",
+  "generation_model": "Llama 3.1 8B Instruct, Llama 3.3 70B Instruct, Qwen3 4B, Qwen3 80B Instruct, Qwen3 80B Thinking, GPT-OSS 20B, and GPT-OSS 120B.",
+  "generation_method": "Prompted simulated-student role play under base and reflective prompts, followed by post-training experiments using SFT, DPO, and GRPO for selected models.",
+  "prompt_strategy": "Base prompt specifies persona and initial wrong answer; reflective prompt asks the model to consider whether feedback is relevant to its reasoning.",
+  "evaluation_method": "Selective Flip Score compares answer-flip rates under targeted feedback versus misaligned and generic controls, with qualitative response taxonomy and post-training comparisons.",
+  "scorer_use": "Student-simulator fidelity benchmarking; not automated scorer validation.",
+  "real_response_comparator": "Uses structured misconception datasets and EEDI real-world item/misconception labels; does not compare generated open responses against human-scored constructed responses.",
+  "reported_metrics": "Table 3 reports near-zero SFS across models, datasets, and prompting strategies; examples include Qwen3-80B Instruct SFS of +0.01 across listed cells and GPT-OSS-120B SFS from +0.00 to +0.02. SFT improves SFS by +0.555 on Malrule and +0.250 on EEDI for Qwen3-4B, and by +0.447 on Malrule and +0.090 on EEDI for Llama3-8B.",
+  "limitations": [
+    "The evaluation focuses on mathematics domains with structured misconception taxonomies.",
+    "Teacher feedback and response classifications are generated with LLM support for scalable evaluation.",
+    "SFS measures observable behavior, not latent belief states directly.",
+    "Post-training evidence should not be interpreted as an actionable recommendation for this project unless first-hand model training becomes in scope."
+  ],
+  "assessment_purpose": "formative_feedback",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "quality_evaluation"
+}

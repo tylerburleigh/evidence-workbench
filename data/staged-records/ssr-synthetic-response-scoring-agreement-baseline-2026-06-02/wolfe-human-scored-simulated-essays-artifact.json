@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "wolfe-human-scored-simulated-essays-artifact",
+  "name": "Wolfe and Barber Human-scored Simulated Essay Agreement Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "wolfe-calibrating-realistic-essays-2026-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-synthetic-response-scoring-agreement"
+  ],
+  "population_or_context": "Automated essay scoring data augmentation using LLM-simulated essays generated from real source essays.",
+  "sample_size": "96 real student essays and 288 simulated essays generated from three prompt-engineering strategies.",
+  "methods": "Extracted the expert scoring, score preservation, agreement metrics, weighted kappa, score distribution, and realism-judgment evaluation for simulated essays.",
+  "endpoint_categories": [
+    "expert_scoring",
+    "score_preservation",
+    "realism_rating"
+  ],
+  "education_context": "Student essay responses scored on a four-point rubric.",
+  "response_origin": "Simulated essays are generated from real student essays and evaluated against the original source essay scores and expert judgments.",
+  "rubric_label_space": "Four-point essay scoring rubric.",
+  "label_source": "Original real essays had professional ratings; expert raters scored and judged the simulated essays for score preservation and realism.",
+  "generation_model": "Large language model; the public preprint text reviewed here does not name a specific model version.",
+  "generation_method": "Prompt-based simulation from real source essays using three strategies.",
+  "prompt_strategy": "25 examples, Predict Next, and Sentence prompting strategies are compared.",
+  "evaluation_method": "Human scoring agreement between original and simulated essays, weighted kappa, exact and adjacent agreement, score-distribution comparison, and expert realism ratings.",
+  "scorer_use": "Generated essay calibration and data-augmentation suitability for automated scoring research.",
+  "real_response_comparator": "Each simulated essay is tied to a real source essay whose score supports score-preservation comparison.",
+  "reported_metrics": "Exact agreement, adjacent agreement, weighted kappa, average-score differences, score-distribution results, and realism ratings.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_tables": [
+    {
+      "table": "Table 2",
+      "metric": "real_essay_comparison_by_prompt_strategy",
+      "columns": [
+        "prompt_strategy",
+        "average_score",
+        "student_score_agreement",
+        "quadratic_weighted_kappa",
+        "simulation_detection_accuracy"
+      ],
+      "rows": [
+        {
+          "prompt_strategy": "Original Essays",
+          "average_score": 1.53,
+          "student_score_agreement": "not_applicable",
+          "quadratic_weighted_kappa": 0.75,
+          "simulation_detection_accuracy": "not_applicable"
+        },
+        {
+          "prompt_strategy": "25 Examples",
+          "average_score": 2.51,
+          "student_score_agreement": 0.46,
+          "quadratic_weighted_kappa": 0.46,
+          "simulation_detection_accuracy": 0.18
+        },
+        {
+          "prompt_strategy": "Predict Next",
+          "average_score": 2.62,
+          "student_score_agreement": 0.72,
+          "quadratic_weighted_kappa": 0.74,
+          "simulation_detection_accuracy": 0.25
+        },
+        {
+          "prompt_strategy": "Sentence",
+          "average_score": 1.97,
+          "student_score_agreement": 0.33,
+          "quadratic_weighted_kappa": 0.34,
+          "simulation_detection_accuracy": 0.74
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "The source is a preprint.",
+    "Real source essays condition the generated essays, so comparator independence is limited.",
+    "Human score preservation and realism do not establish downstream automated-scorer validity without separate scorer validation."
+  ],
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "calibration_or_development"
+}

@@ -1,0 +1,126 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-model-generation-effects-baseline-2026-06-02-2026-06-02t17-08-56-355z",
+  "name": "Published Model and Generation Effects Baseline",
+  "summary": "Staged first literature-review baseline for how synthetic student response quality varies across model choice, post-training, history conditioning, and generation workflows.",
+  "candidate_bundle_id": "ssr-model-generation-effects-baseline-2026-06-02",
+  "event_type": "publish",
+  "published_at": "2026-06-02T17:08:56.355Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "search_protocol",
+      "record_id": "ssr-model-generation-effects-search-2026-06-02",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "liu-llm-respondents-item-evaluation-2025-source",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "duan-history-aware-profiles-student-simulation-2026-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "agent4edu-model-generation-effects-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "srivatsa-model-prompt-irt-effects-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "scarlatos-post-training-effects-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "liu-llm-respondents-model-ensemble-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "duan-history-profile-rl-effects-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "agent4edu-model-generation-effects-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "srivatsa-model-prompt-irt-effects-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "scarlatos-post-training-effects-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "liu-llm-respondents-model-ensemble-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "duan-history-profile-rl-effects-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-model-generation-effects-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 14,
+    "by_record_type": {
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "source": {
+        "created": 2,
+        "updated": 0,
+        "total": 2
+      },
+      "artifact": {
+        "created": 5,
+        "updated": 0,
+        "total": 5
+      },
+      "finding": {
+        "created": 5,
+        "updated": 0,
+        "total": 5
+      },
+      "claim": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "ssr-model-generation-effects-baseline-claim"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-ssr-model-generation-effects-construct-mapping-r1",
+    "evidence-review-ssr-model-generation-effects-method-classification-r1",
+    "evidence-review-ssr-model-generation-effects-scorer-validation-relevance-r1",
+    "evidence-review-ssr-model-generation-effects-source-fidelity-r1",
+    "evidence-review-ssr-model-generation-effects-synthesis-overreach-r1"
+  ],
+  "review_corrections_applied": [],
+  "review_follow_up_actions": [],
+  "change_note": "Creates the first staged literature-review baseline for model and generation workflow effects in synthetic student response generation."
+}

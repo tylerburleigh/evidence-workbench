@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "ets-responsible-ai-assessment-principles-2024-source",
+  "name": "Responsible Use of AI in Assessment",
+  "source_type": "policy_report",
+  "authors": [
+    "ETS"
+  ],
+  "year": 2024,
+  "urls": [
+    "https://www.ets.org/Rebrand/pdf/ETS_Convening_executive_summary_for_the_AI_Guidelines.pdf"
+  ],
+  "summary": "ETS convening executive summary that presents responsible AI-in-assessment principles emphasizing validity, fairness, transparency, human oversight, and ongoing monitoring.",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-02T22:12:00Z",
+      "url": "https://www.ets.org/Rebrand/pdf/ETS_Convening_executive_summary_for_the_AI_Guidelines.pdf",
+      "result": "full_text_verified",
+      "notes": "Official ETS PDF retrieved and screened for AI assessment guardrails."
+    }
+  ]
+}

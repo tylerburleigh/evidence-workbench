@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "bexte-acceptable-cold-start-relabeling-artifact",
+  "name": "Bexte and Zesch Acceptable Cold-start Relabeling Extract",
+  "artifact_type": "literature_extract",
+  "status": "complete",
+  "source_ids": [
+    "bexte-zesch-synthetic-content-scoring-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-acceptable-scoring-uses"
+  ],
+  "population_or_context": "Supervised content scoring for short-answer student responses using the Student Response Analysis dataset.",
+  "sample_size": "For each of five labels, 100 answers were generated; experiments compare generated SRA-gen training data with original student-authored SRA answers.",
+  "methods": "Extracted generated target-label design, label-conformance analysis, model training on generated data, and manual relabeling of generated answers.",
+  "endpoint_categories": [
+    "cold_start_training",
+    "generated_label_audit",
+    "manual_relabeling"
+  ],
+  "education_context": "Short-answer content scoring with a five-label SRA label scale.",
+  "response_origin": "LLM-generated short answers are created in parallel to a student-authored SRA dataset and used as candidate training data for content-scoring models.",
+  "rubric_label_space": "Five-way short-answer content-scoring label scale.",
+  "label_source": "Initial labels are prompt-requested target labels; the study manually relabels generated answers to clean noisy labels.",
+  "generation_model": "DeepSeek-v2, a 4-bit quantized mixture-of-experts model with 15.7B parameters, accessed through Ollama 0.5.7.",
+  "generation_method": "Zero-shot answer generation requests 100 answers per desired label for each dataset question.",
+  "prompt_strategy": "The prompt includes the question and a description of the desired label; default model parameters are used.",
+  "evaluation_method": "Label-conformance analysis and macro-averaged F1 on original student answers, comparing as-generated labels, manually cleaned labels, and original SRA training data.",
+  "scorer_use": "Potentially acceptable for cold-start training support after label audit or manual relabeling; not acceptable as label-free scoring evidence or as a validation set.",
+  "real_response_comparator": "Original SRA student-authored answers provide the test set and comparison point for models trained on generated answers.",
+  "reported_metrics": "Macro-averaged F1 and label-conformance analysis; the paper reports up to 75% nonconformance to requested labels.",
+  "numeric_results_extracted": true,
+  "extracted_numeric_summary": {
+    "generated_answers_per_label": 100,
+    "label_count": 5,
+    "reported_max_label_nonconformance_share": 0.75,
+    "table_4_macro_averaged_f1": {
+      "sbert_fine_original_sra": 0.55,
+      "sbert_fine_sra_gen": 0.28,
+      "lr_original_sra": 0.46,
+      "lr_sra_gen": 0.25
+    }
+  },
+  "limitations": [
+    "Generated target labels are unreliable without audit.",
+    "Manual relabeling adds human labor and weakens claims of label-free synthetic training.",
+    "The evidence is bounded to one short-answer content-scoring setup and one generation workflow."
+  ],
+  "assessment_purpose": "in_term_or_classroom_assessment",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "training_augmentation"
+}

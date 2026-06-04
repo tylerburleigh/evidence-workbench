@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-validity-conditions-claim-hardening-scorer-validation-relevance-r1",
+  "name": "Scorer Validation Relevance review for Validity Conditions Claim Hardening Update bundle",
+  "candidate_bundle_id": "ssr-validity-conditions-claim-hardening-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "scorer_validation_relevance",
+  "reviewer_kind": "agent",
+  "skill_name": "evidence-review",
+  "reviewer_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The scorer-validation-use and acceptable-use claim updates add SMART as scoring-adjacent item-development evidence while retaining the boundary that synthetic responses alone do not validate operational scorers.",
+  "reviewed_change_ids": [
+    "update-quality-evaluation-claim",
+    "update-model-generation-effects-claim",
+    "update-prompt-engineering-effects-claim",
+    "update-real-response-comparison-claim",
+    "update-scoring-validation-use-claim",
+    "update-acceptable-scoring-uses-claim"
+  ],
+  "findings": [
+    {
+      "finding_id": "smart-remains-item-development-boundary-evidence",
+      "severity": "note",
+      "category": "scorer_relevance_gap",
+      "claim_or_issue": "SMART is included as an item-difficulty/difficulty-estimation workflow anchored to human-scored real responses, not as final scorer-validation evidence.",
+      "why_it_matters": "The user asked for validity-relevant evidence, which must stay distinct from direct scorer validation.",
+      "recommended_action": "Keep SMART's support_role as adjacent/direct bounded evidence according to the claim target, with explicit limitations.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "update-scoring-validation-use-claim"
+    }
+  ],
+  "created_at": "2026-06-03T19:39:00Z",
+  "updated_at": "2026-06-03T19:39:00Z"
+}

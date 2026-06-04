@@ -1,0 +1,150 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "ssr-quality-evaluation-baseline-claim",
+  "name": "Synthetic Response Quality Evaluation Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "ssr-quality-evaluation",
+  "current_stage": "synthesis_claim_supported",
+  "momentum": "baseline_staged",
+  "confidence": "medium",
+  "summary": "The first staged quality-evaluation baseline finds that synthetic student response quality is evaluated through multiple non-equivalent signals: distributional and embedding realism, downstream training utility, human-response consistency metrics, expert score preservation and realism ratings, profile-to-real-response item alignment, psychometric ability-scale alignment, and tutoring-dialogue fidelity metrics.",
+  "main_blockers": [
+    "The first pass is targeted rather than systematic.",
+    "Included evidence spans logical proofs, personalized learning records, essays, multiple-choice item evaluation, NAEP ability simulation, and tutoring dialogue, so one universal quality metric would be misleading.",
+    "Several staged sources expose top-line quality methods but need deeper table-level extraction before numeric synthesis."
+  ],
+  "best_current_signals": [
+    "Ipci et al. evaluate diversity, realism, embedding/PCA similarity, and downstream grading utility against authentic proof responses.",
+    "Agent4Edu evaluates learner-response simulation with consistency and discrepancy metrics against human learner responses.",
+    "Wolfe and Barber evaluate simulated essays with expert scores, agreement statistics, distribution comparisons, and realism ratings.",
+    "Lu and Wang evaluate generative students through profile alignment, real-response correlation, and overlap in difficult multiple-choice items.",
+    "Srivatsa et al. use IRT ability-scale alignment and report that tested LLM proxy students do not reliably reproduce real student ability patterns.",
+    "Scarlatos et al. define linguistic, behavioral, and cognitive fidelity metrics for simulated tutoring dialogue students and validate them with human judgments."
+  ],
+  "interpretive_note": "This baseline maps quality-evaluation families, not a ranking of generation methods. A method can look plausible under one signal, such as believability or distributional similarity, while failing a stricter comparator such as IRT ability alignment or downstream scorer utility.",
+  "limitations": [
+    "The staged source set is a compact bootstrap baseline, not an exhaustive review.",
+    "Quality constructs differ by task: item response, essay quality, dialogue fidelity, profile consistency, and automated-scoring utility are not interchangeable.",
+    "Some sources are preprints or rely on abstract-level summary in this staged pass.",
+    "This claim does not establish that synthetic responses can replace real or independently human-scored responses for validation."
+  ],
+  "update_notes": [
+    "Run a broader database search before treating this as a complete quality-evaluation section.",
+    "Extract numeric tables for Lu and Wang, Srivatsa et al., and Scarlatos et al. before any quantitative synthesis.",
+    "Separate real-response similarity, human believability, psychometric fidelity, and downstream scorer utility in later review bundles."
+  ],
+  "supporting_finding_ids": [
+    "ipci-quality-evaluation-finding-2026",
+    "agent4edu-quality-evaluation-finding-2026",
+    "wolfe-quality-evaluation-finding-2026",
+    "lu-generative-students-quality-evaluation-finding-2026",
+    "srivatsa-proxy-student-irt-evaluation-finding-2026",
+    "scarlatos-dialogue-simulation-quality-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "ipci-knowledge-profiles-response-generation-2025-source",
+    "agent4edu-learner-response-generation-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "lu-generative-students-item-evaluation-2024-source",
+    "srivatsa-llm-student-ability-simulation-2025-source",
+    "scarlatos-simulated-students-dialogue-2026-source"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Distributional realism and training utility",
+      "claim_field": "summary",
+      "conclusion": "Distributional similarity, embedding-space realism, response diversity, and downstream training utility are one family of quality-evaluation signals.",
+      "support_role": "direct_support",
+      "rationale": "Ipci et al. evaluate profile-based synthetic responses with diversity, realism, embedding/PCA comparison, and automated-grading training utility.",
+      "finding_ids": [
+        "ipci-quality-evaluation-finding-2026"
+      ],
+      "source_ids": [
+        "ipci-knowledge-profiles-response-generation-2025-source"
+      ],
+      "limitations": [
+        "This support is bounded to logical-proof response generation.",
+        "Downstream training utility is not equivalent to scorer-validation validity."
+      ]
+    },
+    {
+      "label": "Human response consistency and expert scoring",
+      "claim_field": "best_current_signals",
+      "conclusion": "Generated responses are also evaluated by comparing against human learner responses and expert essay scoring outcomes.",
+      "support_role": "direct_support",
+      "rationale": "Agent4Edu reports ACC, F1-score, and ROUGE-3 consistency metrics against human learner responses, while Wolfe and Barber use expert scoring, agreement, distribution, and realism checks for simulated essays.",
+      "finding_ids": [
+        "agent4edu-quality-evaluation-finding-2026",
+        "wolfe-quality-evaluation-finding-2026"
+      ],
+      "source_ids": [
+        "agent4edu-learner-response-generation-2025-source",
+        "wolfe-calibrating-realistic-essays-2026-source"
+      ],
+      "limitations": [
+        "The Agent4Edu setting is personalized learning simulation.",
+        "The Wolfe evidence is essay-specific and preprint-stage."
+      ]
+    },
+    {
+      "label": "Profile alignment and psychometric fidelity",
+      "claim_field": "interpretive_note",
+      "conclusion": "Profile-item alignment and psychometric ability alignment are different quality constructs and can produce different conclusions about synthetic student fidelity.",
+      "support_role": "boundary_condition",
+      "rationale": "Lu and Wang use profile alignment, real-response correlation, and difficult-item overlap for MCQ item evaluation, while Srivatsa et al. use IRT ability-scale alignment and report unreliable LLM proxy-student ability simulation.",
+      "finding_ids": [
+        "lu-generative-students-quality-evaluation-finding-2026",
+        "srivatsa-proxy-student-irt-evaluation-finding-2026"
+      ],
+      "source_ids": [
+        "lu-generative-students-item-evaluation-2024-source",
+        "srivatsa-llm-student-ability-simulation-2025-source"
+      ],
+      "limitations": [
+        "Both sources use item-response settings rather than essays or dialogue.",
+        "The staged pass does not extract full numeric tables."
+      ]
+    },
+    {
+      "label": "Dialogue fidelity metrics",
+      "claim_field": "summary",
+      "conclusion": "Tutoring dialogue simulation requires multi-dimensional fidelity metrics rather than only item-answer or score-preservation metrics.",
+      "support_role": "direct_support",
+      "rationale": "Scarlatos et al. define and validate metrics spanning linguistic, behavioral, and cognitive fidelity for simulated students in math tutoring dialogues.",
+      "finding_ids": [
+        "scarlatos-dialogue-simulation-quality-finding-2026"
+      ],
+      "source_ids": [
+        "scarlatos-simulated-students-dialogue-2026-source"
+      ],
+      "limitations": [
+        "The evidence is dialogue-specific.",
+        "The staged pass captures the framework and top-line result, not all benchmark values."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-02",
+  "assessment_purpose": [
+    "research_or_development",
+    "formative_feedback",
+    "in_term_or_classroom_assessment",
+    "summative_assessment"
+  ],
+  "decision_consequence": [
+    "no_direct_learner_consequence",
+    "feedback_or_instructional_support"
+  ],
+  "operational_use": "quality_evaluation",
+  "applicability": {
+    "applies_when": [
+      "The claim is used to compare quality-evaluation families and their construct boundaries."
+    ],
+    "does_not_apply_when": [
+      "One quality signal is treated as sufficient evidence of downstream scorer validity."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Operational acceptance thresholds for specific assessments."
+    ]
+  }
+}

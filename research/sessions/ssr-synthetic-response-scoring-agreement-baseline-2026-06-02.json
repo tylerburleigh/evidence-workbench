@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "ssr-synthetic-response-scoring-agreement-baseline-2026-06-02",
+  "mode": "bootstrap",
+  "started_at": "2026-06-02T19:05:00Z",
+  "completed_at": "2026-06-02T19:30:55Z",
+  "scope": {
+    "domain_id": "synthetic-student-responses",
+    "taxonomy_node_ids": [
+      "ssr-synthetic-response-scoring-agreement"
+    ],
+    "research_question": "Within synthetic student response research, how are human labels, AI scores, model-generated labels, rubric scores, or scorer agreement used to evaluate, label, validate, or benchmark generated responses, and what belongs in the first public baseline for this review question?"
+  },
+  "selected_via": "priority_queue_rank_1_after_scope_narrowing",
+  "outcome": "candidate_bundle",
+  "summary": "Created a staged first literature-review baseline for synthetic response scoring agreement, including a targeted search protocol, six scoring/labeling extracts, six findings, one bounded synthesis claim, and source-access metadata for direct-support sources.",
+  "candidate_bundle_id": "ssr-synthetic-response-scoring-agreement-baseline-2026-06-02",
+  "source_ids": [
+    "frohn-llm-cr-live-scoring-2025-source",
+    "wolfe-calibrating-realistic-essays-2026-source",
+    "yoo-dress-rubric-aes-2025-source",
+    "bexte-zesch-synthetic-content-scoring-2025-source",
+    "nebhi-adaptive-writing-aig-scoring-2025-source",
+    "benedetto-simulated-exam-responses-2024-source"
+  ],
+  "source_urls": [
+    "https://www.researchgate.net/publication/396937943_A_Framework_for_Live_Scoring_Constructed_Response_Items_with_Commercial_LLMs",
+    "https://arxiv.org/abs/2602.06772",
+    "https://aclanthology.org/2025.acl-long.659/",
+    "https://aclanthology.org/2025.bea-1.11/",
+    "https://aclanthology.org/2025.bea-1.73/",
+    "https://aclanthology.org/2024.findings-emnlp.663/"
+  ],
+  "next_recommended_mode": "manual",
+  "next_actions": [
+    "After publication, check the public review page and synthesis matrix for the narrowed wording.",
+    "Keep any later human-AI scoring-agreement work constrained to sources with verified synthetic student response corpora.",
+    "Use abstract-only screening decisions for discovery, not direct support, unless full text is obtained."
+  ]
+}

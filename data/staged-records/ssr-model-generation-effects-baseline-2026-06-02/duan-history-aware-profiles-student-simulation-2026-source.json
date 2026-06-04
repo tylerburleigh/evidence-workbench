@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "duan-history-aware-profiles-student-simulation-2026-source",
+  "name": "Who Am I? History-Aware Profiles for Student Simulation in Tutoring Dialogues",
+  "source_type": "preprint",
+  "authors": [
+    "Zhangqi Duan",
+    "Shuyan Huang",
+    "Alexander Scarlatos",
+    "Jaewook Lee",
+    "Simon Woodhead",
+    "Andrew Lan"
+  ],
+  "venue": "arXiv",
+  "year": 2026,
+  "published_on": "2026-05-28",
+  "doi": "10.48550/arXiv.2605.30051",
+  "urls": [
+    "https://arxiv.org/abs/2605.30051",
+    "https://arxiv.org/pdf/2605.30051"
+  ],
+  "summary": "arXiv preprint introducing history-conditioned student simulation with profile generation and a student simulator trained with SFT, DPO, and GRPO over real math tutoring dialogue and question-response histories.",
+  "retrieved_on": "2026-06-02",
+  "version_note": "arXiv v1 submitted 2026-05-28; treated as current preprint evidence."
+}

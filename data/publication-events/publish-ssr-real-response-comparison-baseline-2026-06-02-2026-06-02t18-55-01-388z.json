@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-real-response-comparison-baseline-2026-06-02-2026-06-02t18-55-01-388z",
+  "name": "Published Real Response Comparison Baseline",
+  "summary": "Staged first literature-review baseline for how synthetic student response studies compare generated outputs with real student response records, distributions, scores, and dialogue turns.",
+  "candidate_bundle_id": "ssr-real-response-comparison-baseline-2026-06-02",
+  "event_type": "publish",
+  "published_at": "2026-06-02T18:55:01.388Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "search_protocol",
+      "record_id": "ssr-real-response-comparison-search-2026-06-02",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "agent4edu-real-response-comparison-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "wolfe-real-essay-comparison-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "lu-real-student-mcq-comparison-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "srivatsa-naep-real-response-comparison-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "liu-human-respondent-irt-comparison-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "scarlatos-real-dialogue-comparison-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "duan-history-real-turn-comparison-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "agent4edu-real-response-comparison-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "wolfe-real-essay-comparison-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "lu-real-student-mcq-comparison-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "srivatsa-naep-real-response-comparison-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "liu-human-respondent-irt-comparison-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "scarlatos-real-dialogue-comparison-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "duan-history-real-turn-comparison-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-real-response-comparison-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 16,
+    "by_record_type": {
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "artifact": {
+        "created": 7,
+        "updated": 0,
+        "total": 7
+      },
+      "finding": {
+        "created": 7,
+        "updated": 0,
+        "total": 7
+      },
+      "claim": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "ssr-real-response-comparison-baseline-claim"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-ssr-real-response-comparison-construct-mapping-r1",
+    "evidence-review-ssr-real-response-comparison-method-classification-r1",
+    "evidence-review-ssr-real-response-comparison-scorer-validation-relevance-r1",
+    "evidence-review-ssr-real-response-comparison-source-fidelity-r1",
+    "evidence-review-ssr-real-response-comparison-synthesis-overreach-r1"
+  ],
+  "review_corrections_applied": [],
+  "review_follow_up_actions": [],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "change_note": "Creates the first staged literature-review baseline for comparisons between synthetic and real student responses."
+}

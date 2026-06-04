@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-non-llm-cr-augmentation-scorer-validation-relevance-r1",
+  "name": "Scorer Validation Relevance Review for Non-LLM CR Augmentation Update",
+  "candidate_bundle_id": "ssr-non-llm-constructed-response-augmentation-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "scorer_validation_relevance",
+  "reviewer_kind": "agent",
+  "reviewer_id": "codex-agent",
+  "skill_name": "synthetic-student-responses-evidence-review-adapter",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The update correctly classifies the role of synthetic data as scorer training augmentation, class balancing, robustness/fairness analysis, or limited-data experimentation. It does not claim these studies use synthetic responses as independent validation evidence for deployed scorers.",
+  "reviewed_change_ids": [
+    "create-search-protocol",
+    "create-source-lun",
+    "create-source-bonthu",
+    "create-source-krisnawati",
+    "create-source-li",
+    "create-artifact-lun",
+    "create-artifact-bonthu",
+    "create-artifact-krisnawati",
+    "create-artifact-li",
+    "create-finding-lun",
+    "create-finding-bonthu",
+    "create-finding-krisnawati",
+    "create-finding-li",
+    "update-claim-sparse-supplementation"
+  ],
+  "findings": [
+    {
+      "finding_id": "scorer-validation-training-not-validation",
+      "severity": "note",
+      "category": "role_boundary",
+      "applies_to_change_id": "update-claim-sparse-supplementation",
+      "claim_or_issue": "The included non-LLM examples primarily use synthetic data to train or balance scoring models, not to validate scorer validity independently.",
+      "why_it_matters": "The user's research question explicitly asks what role synthetic data played; overclaiming validation would distort the answer.",
+      "recommended_action": "Retain the distinction between training augmentation and scorer validation in the literature review.",
+      "resolution_status": "addressed"
+    }
+  ],
+  "created_at": "2026-06-03T16:35:15Z",
+  "updated_at": "2026-06-03T16:35:15Z"
+}

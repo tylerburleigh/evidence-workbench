@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_review",
+  "id": "evidence-review-ssr-validity-conditions-controlled-comparisons-update-scorer-validation-relevance-r1",
+  "name": "Scorer Validation Relevance review for Validity Conditions and Controlled Comparison Update bundle",
+  "candidate_bundle_id": "ssr-validity-conditions-controlled-comparisons-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "review_round": 1,
+  "review_lane": "scorer_validation_relevance",
+  "reviewer_kind": "agent",
+  "skill_name": "evidence-review",
+  "reviewer_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The bundle correctly treats SMART as scoring-adjacent item-difficulty evidence anchored to human-scored real responses and an LLM scoring model. It does not claim that any included study validates an operational automated scorer using synthetic responses alone.",
+  "reviewed_change_ids": [
+    "create-nguyen-cao-source",
+    "create-nguyen-cao-artifact",
+    "create-nguyen-cao-finding",
+    "create-cao-nguyen-source",
+    "create-cao-nguyen-artifact",
+    "create-cao-nguyen-finding",
+    "create-smart-source",
+    "create-smart-artifact",
+    "create-smart-finding",
+    "create-wu-source",
+    "create-wu-artifact",
+    "create-wu-finding",
+    "create-validity-conditions-search-protocol"
+  ],
+  "findings": [
+    {
+      "finding_id": "smart-is-scoring-adjacent-not-synthetic-only-validation",
+      "severity": "note",
+      "category": "scorer_relevance_gap",
+      "claim_or_issue": "SMART informs an item-difficulty prediction workflow using generated responses and an LLM scoring model, but it is not final scorer-validation evidence by itself.",
+      "why_it_matters": "The review must preserve the boundary between validity-relevant supporting evidence and final operational validation evidence.",
+      "recommended_action": "Retain the SMART caveat in the finding and carry it into the unified literature review.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-smart-finding"
+    }
+  ],
+  "created_at": "2026-06-03T19:08:00Z",
+  "updated_at": "2026-06-03T19:08:00Z"
+}

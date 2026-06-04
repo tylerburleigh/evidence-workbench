@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "wu-student100-cognitive-level-realism-artifact",
+  "name": "Student_100 Cognitive-Level Programming Simulation Artifact",
+  "artifact_type": "study_extraction",
+  "status": "staged",
+  "source_ids": [
+    "wu-embracing-imperfection-student-agents-2025-source"
+  ],
+  "taxonomy_node_ids": [
+    "ssr-quality-evaluation",
+    "ssr-model-generation-effects",
+    "ssr-prompt-engineering-effects",
+    "ssr-real-response-comparison"
+  ],
+  "population_or_context": "Python programming tasks and past learning records for students with diverse cognitive levels.",
+  "sample_size": "Student_100 dataset with 100 students and 5,000 learning records.",
+  "methods": "The framework builds student cognitive prototypes from past learning records, maps prototypes to new tasks, predicts likely behavior, and uses beam-search self-refinement to generate imperfect student-like programming solutions.",
+  "endpoint_categories": [
+    "response_realism",
+    "cognitive_level_alignment",
+    "error_pattern_realism",
+    "constructed_response_simulation"
+  ],
+  "numeric_results_extracted": true,
+  "education_context": "Programming education with constructed-response code solutions.",
+  "response_origin": "LLM-agent-generated code solutions conditioned on cognitive prototypes and past learning records.",
+  "rubric_label_space": "Programming solution correctness, cognitive-level alignment, and realism metrics rather than a production automated scoring rubric.",
+  "label_source": "Past learning records and task outcomes define cognitive profiles and expected mistakes; human evaluation is used as an additional check.",
+  "generation_model": "LLM-based agent framework; paper compares against baseline LLM prompting and reports experiments in controlled programming settings.",
+  "generation_method": "Training-free cognitive prototype construction, behavior prediction, and beam-search self-refinement designed to reproduce plausible mistakes.",
+  "prompt_strategy": "Prototype- and behavior-conditioned generation with iterative self-refinement rather than simple helpful-assistant prompting.",
+  "evaluation_method": "Simulation accuracy, realism assessment, component ablation, analysis by past-learning-record volume, and human evaluation.",
+  "scorer_use": "No automated scorer validation; the paper evaluates simulation quality for research and methodology.",
+  "real_response_comparator": "Past learning records from the Student_100 dataset serve as the basis for cognitive prototypes and likely mistake patterns.",
+  "reported_metrics": "The paper reports 100% improvement in simulation accuracy and realism over baselines and shows component ablations where removing cognitive prototypes, behavior prediction, or self-refinement decreases performance.",
+  "limitations": [
+    "Validation is constrained to programming domains.",
+    "The simulation focuses on textual and behavioral patterns without multimodal signals.",
+    "The authors state the work is early-stage and conducted in controlled experimental settings, not deployed teaching or assessment."
+  ],
+  "assessment_purpose": "research_or_development",
+  "decision_consequence": "no_direct_learner_consequence",
+  "operational_use": "quality_evaluation"
+}

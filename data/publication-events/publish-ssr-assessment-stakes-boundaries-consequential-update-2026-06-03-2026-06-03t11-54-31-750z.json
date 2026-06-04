@@ -1,0 +1,139 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-ssr-assessment-stakes-boundaries-consequential-update-2026-06-03-2026-06-03t11-54-31-750z",
+  "name": "Published Assessment Stakes Consequential Use Boundaries Update",
+  "summary": "Staged targeted surveillance update for consequential and lower-stakes synthetic-response use boundaries, adding direct operational state summative evidence and bounded high-stakes, formative, and classroom augmentation evidence.",
+  "candidate_bundle_id": "ssr-assessment-stakes-boundaries-consequential-update-2026-06-03",
+  "event_type": "publish",
+  "published_at": "2026-06-03T11:54:31.750Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "source",
+      "record_id": "new-mexico-mssa-technical-report-2025-source",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "wang-off-topic-spoken-responses-2019-source",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "rezayi-communication-skills-synthetic-training-2025-source",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "djagba-ngss-classroom-augmentation-2026-source",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "new-mexico-mssa-operational-synthetic-training-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "wang-high-stakes-synthetic-off-topic-detection-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "rezayi-formative-communication-skills-synthetic-training-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "djagba-ngss-gpt-augmentation-classroom-artifact",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "new-mexico-mssa-operational-synthetic-training-boundary-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "wang-high-stakes-off-topic-synthetic-detection-boundary-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "rezayi-formative-hybrid-synthetic-training-boundary-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "djagba-classroom-synthetic-augmentation-validity-boundary-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "search_protocol",
+      "record_id": "ssr-assessment-stakes-boundaries-consequential-search-2026-06-03",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "ssr-assessment-stakes-boundaries-baseline-claim",
+      "action": "updated"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 14,
+    "by_record_type": {
+      "source": {
+        "created": 4,
+        "updated": 0,
+        "total": 4
+      },
+      "artifact": {
+        "created": 4,
+        "updated": 0,
+        "total": 4
+      },
+      "finding": {
+        "created": 4,
+        "updated": 0,
+        "total": 4
+      },
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "claim": {
+        "created": 0,
+        "updated": 1,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "ssr-assessment-stakes-boundaries-baseline-claim",
+    "ssr-acceptable-scoring-uses-baseline-claim"
+  ],
+  "approving_evidence_review_ids": [
+    "evidence-review-ssr-assessment-stakes-boundaries-consequential-update-applicability-boundary-r1",
+    "evidence-review-ssr-assessment-stakes-boundaries-consequential-update-construct-mapping-r1",
+    "evidence-review-ssr-assessment-stakes-boundaries-consequential-update-method-classification-r1",
+    "evidence-review-ssr-assessment-stakes-boundaries-consequential-update-scorer-validation-relevance-r1",
+    "evidence-review-ssr-assessment-stakes-boundaries-consequential-update-source-fidelity-r1",
+    "evidence-review-ssr-assessment-stakes-boundaries-consequential-update-synthesis-overreach-r1"
+  ],
+  "review_corrections_applied": [],
+  "review_follow_up_actions": [
+    "applicability_boundary: Keep the staged does_not_apply_when and limitations language that excludes synthetic-only validation, cut scores, subgroup fairness, and live scoring decisions.",
+    "construct_mapping: Keep Wang et al. categorized as adjacent high-stakes detection/stress-test evidence, as staged.",
+    "method_classification: Keep generation_model and prompt_strategy bounded to reported facts, as staged.",
+    "scorer_validation_relevance: Retain the staged claim language that says this strengthens controlled high-stakes training augmentation but not synthetic-only final validation.",
+    "scorer_validation_relevance: Keep the support role as boundary condition or adjacent boundary evidence.",
+    "source_fidelity: Keep the staged claim limited to training augmentation and retain the next action to check validation-set composition before making stronger validation language.",
+    "source_fidelity: Keep the artifact language that reports GPT-4 while explicitly flagging the apparent GPT-5 label for review.",
+    "synthesis_overreach: Keep the staged limitation that the claim does not generalize one New Mexico MSSA report into a broad institutional accountability or vendor policy."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "change_note": "Changes the high-stakes boundary from mostly adjacent/diagnostic evidence to direct but tightly controlled operational training-augmentation evidence."
+}
