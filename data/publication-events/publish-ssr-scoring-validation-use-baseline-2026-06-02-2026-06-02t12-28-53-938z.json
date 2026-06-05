@@ -90,5 +90,6 @@
     "evidence-appraisal-ssr-scoring-validation-use-source-fidelity-r1",
     "evidence-appraisal-ssr-scoring-validation-use-synthesis-overreach-r1"
   ],
+  "appraisal_corrections_applied": [],
   "change_note": "Creates the first staged literature-review baseline for scorer-validation use of synthetic responses."
 }

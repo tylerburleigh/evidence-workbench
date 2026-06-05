@@ -37,7 +37,7 @@
       "target_record_id": "ssr-scoring-validation-use-search-2026-06-02",
       "file_path": "data/search-protocols/ssr-scoring-validation-use-search-2026-06-02.json",
       "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/ssr-scoring-validation-use-search-2026-06-02.json",
-      "summary": "Stage the targeted search and screening protocol for the scorer-validation use bootstrap.",
+      "summary": "Stage the targeted search and screening protocol for the scorer-validation use baseline-review pass.",
       "rationale": "The literature baseline needs an auditable search pass, including included and deferred sources."
     },
     {

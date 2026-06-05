@@ -181,9 +181,9 @@
     "nebhi-adaptive-writing-aig-scoring-2025-source",
     "benedetto-simulated-exam-responses-2024-source"
   ],
-  "screening_summary": "Targeted bootstrap screening included six full-text sources where generated student responses, essays, short answers, exam answers, or constructed responses are tied to human labels, expert scores, AI annotation, generated target labels, rubric score ranges, or scorer-agreement thresholds. Broad human-AI scoring agreement papers were excluded unless synthetic student responses were part of the scored response corpus.",
+  "screening_summary": "Targeted baseline-review screening included six full-text sources where generated student responses, essays, short answers, exam answers, or constructed responses are tied to human labels, expert scores, AI annotation, generated target labels, rubric score ranges, or scorer-agreement thresholds. Broad human-AI scoring agreement papers were excluded unless synthetic student responses were part of the scored response corpus.",
   "limitations": [
-    "This was a targeted bootstrap pass, not a systematic review.",
+    "This was a targeted baseline-review pass, not a systematic review.",
     "Included sources mix empirical datasets, data-augmentation studies, and one implementation framework, so support roles are separated in the claim.",
     "Scoring labels are heterogeneous: binary or five-way short-answer labels, ordinal essay rubrics, proficiency-aligned writing levels, target skill levels, and checklist-style constructed-response labels.",
     "Abstract-only candidates are screened but not used as direct support."

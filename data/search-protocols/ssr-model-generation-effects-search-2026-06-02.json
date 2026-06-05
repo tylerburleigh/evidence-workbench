@@ -151,9 +151,9 @@
     "liu-llm-respondents-item-evaluation-2025-source",
     "duan-history-aware-profiles-student-simulation-2026-source"
   ],
-  "screening_summary": "Targeted bootstrap screening included five sources with direct evidence on model/version sensitivity, model-prompt specificity, prompt-based versus post-trained dialogue simulators, multi-model LLM respondent ensembles, and history/profile/RL workflow effects. Prompt-only sources were treated as boundary evidence for the adjacent prompt-engineering node.",
+  "screening_summary": "Targeted baseline-review screening included five sources with direct evidence on model/version sensitivity, model-prompt specificity, prompt-based versus post-trained dialogue simulators, multi-model LLM respondent ensembles, and history/profile/RL workflow effects. Prompt-only sources were treated as boundary evidence for the adjacent prompt-engineering node.",
   "limitations": [
-    "This was a targeted bootstrap pass, not a systematic review.",
+    "This was a targeted baseline-review pass, not a systematic review.",
     "Included studies span learner-response prediction, multiple-choice item response, College Algebra item evaluation, NAEP ability simulation, and tutoring dialogue; model-effect claims must remain task- and metric-bound.",
     "The Duan et al. source was submitted to arXiv on 2026-05-28 and should be treated as current preprint evidence, not peer-reviewed consensus.",
     "The pass prioritized sources with accessible primary full text and may miss non-indexed or paywalled studies."

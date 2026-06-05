@@ -98,7 +98,7 @@
     "evidence-appraisal-ssr-model-choice-student-simulation-validity-update-source-fidelity-r1",
     "evidence-appraisal-ssr-model-choice-student-simulation-validity-update-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
+  "appraisal_corrections_applied": [],
   "appraisal_follow_up_actions": [
     "applicability_boundary: Retain the limitation that the evidence supports authenticity dimensions rather than model superiority.",
     "construct_mapping: Preserve the artifact fields that label scorer_use as not automated scorer validation.",

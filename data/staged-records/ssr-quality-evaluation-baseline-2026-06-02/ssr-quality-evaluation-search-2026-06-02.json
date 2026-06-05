@@ -128,6 +128,6 @@
     "srivatsa-llm-student-ability-simulation-2025-source",
     "scarlatos-simulated-students-dialogue-2026-source"
   ],
-  "screening_summary": "Targeted bootstrap screening included six sources covering embedding/statistical realism checks, downstream training utility, learner-response consistency metrics, expert essay realism and score preservation, profile-alignment comparisons to real MCQ responses, IRT ability-scale alignment with real NAEP populations, and dialogue-simulation metrics spanning linguistic, behavioral, and cognitive fidelity.",
+  "screening_summary": "Targeted baseline-review screening included six sources covering embedding/statistical realism checks, downstream training utility, learner-response consistency metrics, expert essay realism and score preservation, profile-alignment comparisons to real MCQ responses, IRT ability-scale alignment with real NAEP populations, and dialogue-simulation metrics spanning linguistic, behavioral, and cognitive fidelity.",
   "limitations": []
 }

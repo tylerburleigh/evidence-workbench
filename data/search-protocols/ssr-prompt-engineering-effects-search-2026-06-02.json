@@ -170,9 +170,9 @@
     "lu-generative-students-item-evaluation-2024-source",
     "watts-scientific-argumentation-chatbot-2025-source"
   ],
-  "screening_summary": "Targeted bootstrap screening included four prompt-focused sources: a direct simulated-essay prompt-strategy comparison, a direct grade-enforced proxy-student prompt comparison, a profile/example/role prompt-architecture source for MCQ item evaluation, and a boundary source on prompt-conditioned synthetic chatbot inputs. Access-limited or scope-adjacent sources were not used for direct synthesis support.",
+  "screening_summary": "Targeted baseline-review screening included four prompt-focused sources: a direct simulated-essay prompt-strategy comparison, a direct grade-enforced proxy-student prompt comparison, a profile/example/role prompt-architecture source for MCQ item evaluation, and a boundary source on prompt-conditioned synthetic chatbot inputs. Access-limited or scope-adjacent sources were not used for direct synthesis support.",
   "limitations": [
-    "This was a targeted bootstrap pass, not a systematic review.",
+    "This was a targeted baseline-review pass, not a systematic review.",
     "Prompt ingredients are not isolated uniformly across included sources; some evidence is prompt-family or prompt-architecture package evidence.",
     "Included studies span essays, NAEP multiple-choice ability simulation, psychology MCQ item evaluation, and scientific-argumentation chatbot inputs.",
     "The pass prioritized accessible primary full text. Access-limited candidates should be revisited before any direct finding is created from them."

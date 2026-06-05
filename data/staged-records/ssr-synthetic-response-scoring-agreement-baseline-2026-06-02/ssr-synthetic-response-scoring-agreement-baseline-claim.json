@@ -26,7 +26,7 @@
   "interpretive_note": "For this review question, the key extraction fields are response origin, label source, label space, scorer or annotator identity, access depth, and whether the label is used for synthetic training, pre-pilot validation, model-selection benchmarking, or real-response validation. A generated target label should be treated as a hypothesis until audited against human labels, real response data, or a transparent evaluation metric.",
   "limitations": [
     "This claim does not review human-AI scoring agreement writ large.",
-    "The staged source set is a compact bootstrap baseline, not an exhaustive review.",
+    "The staged source set is a compact baseline-review evidence set, not an exhaustive review.",
     "The claim does not establish that synthetic responses can replace real student responses for scoring validation.",
     "The included sources mix empirical studies and one framework paper, so support roles are separated in the support map.",
     "Abstract-only candidates should not support synthesis claims until full text is obtained or the abstract-only limitation is made explicit."

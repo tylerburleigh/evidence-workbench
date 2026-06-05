@@ -26,7 +26,7 @@ The synthesis draws on two published candidate bundles: `sparse-data-supplementa
 - 14 completed evidence-appraisal lanes across the two bundles, all accepted and non-blocking.
 - 2 non-blocking follow-up areas: obtain Martin and Graulich full text, and obtain Bonthu et al. full text before detailed quantitative or method-specific synthesis.
 
-Evidence-review gate:
+Evidence-appraisal gate:
 
 - `source_fidelity`: accepted.
 - `construct_mapping`: accepted.
@@ -228,7 +228,7 @@ Source IDs:
 - `krisnawati-cross-prompt-asag-smote-2025`
 - `li-scientific-models-smote-2025`
 
-Evidence review IDs:
+Evidence appraisal IDs:
 
 - `evidence-appraisal-ssr-sparse-data-supplementation-source-fidelity-r1`
 - `evidence-appraisal-ssr-sparse-data-supplementation-construct-mapping-r1`

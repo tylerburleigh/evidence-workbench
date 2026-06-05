@@ -115,7 +115,7 @@
     "evidence-appraisal-ssr-acceptable-scoring-uses-source-fidelity-r1",
     "evidence-appraisal-ssr-acceptable-scoring-uses-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
+  "appraisal_corrections_applied": [],
   "appraisal_follow_up_actions": [
     "scorer_validation_relevance: Keep the claim's replacement-validation limitation and support roles unchanged.",
     "source_fidelity: Keep those candidates screened as no_full_text and exclude them from direct claim support until full text is obtained."

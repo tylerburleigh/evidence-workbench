@@ -184,7 +184,7 @@ What should stay domain-specific for now:
 - The response-origin, label-source, rubric-space, comparator, and scorer-use distinctions.
 - Any policy language about synthetic responses in formative, in-term, summative, admissions, or high-stakes settings.
 
-The tool-level enhancement worth considering later is a synthesis inventory helper that can prefill counts, claim IDs, source IDs, review-lane status, and publication-event IDs. That should wait until this pattern repeats across domains. For now, the skill plus domain adapter plus Markdown report is the right level of structure.
+The tool-level enhancement worth considering later is a synthesis inventory helper that can prefill counts, claim IDs, source IDs, appraisal-lane status, and publication-event IDs. That should wait until this pattern repeats across domains. For now, the skill plus domain adapter plus Markdown report is the right level of structure.
 
 ## Next Actions
 
@@ -240,7 +240,7 @@ Publication events:
 - publish-ssr-validity-conditions-claim-hardening-update-2026-06-03-2026-06-03t19-42-15-556z
 - publish-ssr-model-choice-student-simulation-validity-update-2026-06-03-2026-06-03t20-20-40-207z
 
-Evidence review status:
+Evidence appraisal status:
 
 - SSR evidence-appraisal lane records matching `data/evidence-appraisals/evidence-appraisal-ssr-*.json`: 99 complete, 0 blocking.
-- Review lanes represented: source_fidelity, construct_mapping, method_classification, scorer_validation_relevance, synthesis_overreach, applicability_boundary, and search_protocol.
+- Appraisal lanes represented: source_fidelity, construct_mapping, method_classification, scorer_validation_relevance, synthesis_overreach, applicability_boundary, and search_protocol.

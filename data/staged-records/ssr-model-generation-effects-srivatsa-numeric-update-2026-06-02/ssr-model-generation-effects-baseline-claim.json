@@ -24,7 +24,7 @@
   ],
   "interpretive_note": "Model and generation effects should be expressed as task-bound sensitivity claims. A stronger model, a fine-tuned simulator, or a profile-conditioned workflow may improve one metric while still failing another, and prompt-only correctness can be misleading when generated responses overfit majority-class correct answers.",
   "limitations": [
-    "The staged source set is a compact bootstrap baseline, not an exhaustive review.",
+    "The staged source set is a compact baseline-review evidence set, not an exhaustive review.",
     "Evidence spans personalized learning response records, NAEP multiple-choice items, College Algebra item calibration, and math tutoring dialogues.",
     "The claim does not establish that synthetic responses can replace real student responses for validation, item calibration, or scorer benchmarking.",
     "Prompt-engineering-only evidence is intentionally deferred to the adjacent prompt-engineering-effects node unless it also compares broader model or workflow choices."

@@ -150,7 +150,7 @@
     "evidence-appraisal-ssr-prompt-engineering-effects-source-fidelity-r1",
     "evidence-appraisal-ssr-prompt-engineering-effects-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
+  "appraisal_corrections_applied": [],
   "appraisal_follow_up_actions": [],
   "source_access_follow_up_actions": [],
   "extraction_follow_up_actions": [],

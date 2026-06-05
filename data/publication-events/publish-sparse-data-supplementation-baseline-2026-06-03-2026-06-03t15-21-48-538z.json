@@ -167,7 +167,7 @@
     "evidence-appraisal-ssr-sparse-data-supplementation-source-fidelity-r1",
     "evidence-appraisal-ssr-sparse-data-supplementation-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [
+  "appraisal_corrections_applied": [
     {
       "change_id": "create-finding-wolfe-barber",
       "summary": "Converted the Wolfe and Barber finding source locator from an abstract-level string to a structured full-text locator."

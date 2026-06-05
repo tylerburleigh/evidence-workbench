@@ -3,7 +3,7 @@
   "record_type": "candidate_bundle",
   "id": "ssr-validity-conditions-controlled-comparisons-update-2026-06-03",
   "name": "Validity Conditions and Controlled Comparison Update",
-  "summary": "Targeted surveillance update for the cross-cutting question of when synthetic student responses provide validity-relevant evidence for automated scoring workflows, emphasizing realism metrics, model/workflow choice, and real-response comparators.",
+  "summary": "Targeted review update for the cross-cutting question of when synthetic student responses provide validity-relevant evidence for automated scoring workflows, emphasizing realism metrics, model/workflow choice, and real-response comparators.",
   "intake_mode": "review_update",
   "lifecycle_status": "published",
   "submitted_at": "2026-06-03T18:45:00Z",
@@ -197,7 +197,7 @@
       "file_path": "data/search-protocols/ssr-validity-conditions-controlled-comparisons-search-2026-06-03.json",
       "staged_file_path": "data/staged-records/ssr-validity-conditions-controlled-comparisons-update-2026-06-03/ssr-validity-conditions-controlled-comparisons-search-2026-06-03.json",
       "summary": "Add the targeted search protocol for validity conditions, realism, model/workflow comparison, and real-response comparators.",
-      "rationale": "The protocol documents why the update is cross-node surveillance rather than a new taxonomy question."
+      "rationale": "The protocol documents why the update is cross-node review update rather than a new taxonomy question."
     }
   ],
   "proposed_claim_implications": [

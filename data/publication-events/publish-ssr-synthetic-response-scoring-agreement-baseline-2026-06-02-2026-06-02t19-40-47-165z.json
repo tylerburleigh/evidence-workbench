@@ -140,7 +140,7 @@
     "evidence-appraisal-ssr-synthetic-response-scoring-agreement-source-fidelity-r1",
     "evidence-appraisal-ssr-synthetic-response-scoring-agreement-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
+  "appraisal_corrections_applied": [],
   "appraisal_follow_up_actions": [],
   "source_access_follow_up_actions": [],
   "extraction_follow_up_actions": [],

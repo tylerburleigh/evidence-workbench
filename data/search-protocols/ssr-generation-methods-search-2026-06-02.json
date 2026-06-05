@@ -110,9 +110,9 @@
     "yoo-dress-rubric-aes-2025-source",
     "wolfe-calibrating-realistic-essays-2026-source"
   ],
-  "screening_summary": "Targeted bootstrap screening included five sources spanning profile- and rubric-conditioned LLM generation, generative-agent learner simulation, Copilot prompt generation from quality and typo-conditioned examples, CASE corruption-based essay generation, and prompt-strategy variation for simulated essays.",
+  "screening_summary": "Targeted baseline-review screening included five sources spanning profile- and rubric-conditioned LLM generation, generative-agent learner simulation, Copilot prompt generation from quality and typo-conditioned examples, CASE corruption-based essay generation, and prompt-strategy variation for simulated essays.",
   "limitations": [
-    "This was a targeted bootstrap pass, not a systematic review.",
+    "This was a targeted baseline-review pass, not a systematic review.",
     "Screening prioritized web-accessible source pages and already available SSR baseline sources.",
     "Some extraction depends on abstracts, metadata, or article summaries where full prompt templates and implementation details are not fully available in the indexed source page."
   ]

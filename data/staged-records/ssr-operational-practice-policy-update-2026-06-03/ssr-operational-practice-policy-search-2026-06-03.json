@@ -154,7 +154,7 @@
   ],
   "screening_summary": "This targeted operational-practice pass found a clearer acceptable-use category that is distinct from LLM training augmentation: simulated responses are documented in operational machine-scoring workflows as scoring-rule, scanning-rule, and item-authoring QA/test-suite material. The pass also adds a peer-reviewed GPT essay augmentation study that strengthens the research-development training-augmentation lane while preserving real-response evaluation and human-review limitations.",
   "limitations": [
-    "This was a targeted surveillance pass, not a systematic review of all state technical reports or vendors.",
+    "This was a targeted review-update pass, not a systematic review of all state technical reports or vendors.",
     "The operational QA sources concern rule-based machine-scored items, not LLM-generated constructed responses or automated essay scoring validation.",
     "The Zhang et al. source is direct research evidence, not an operational policy or deployment report.",
     "The search does not resolve whether additional vendors or states allow LLM-generated responses for scorer training, validation, monitoring, or live scoring."

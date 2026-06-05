@@ -181,9 +181,9 @@
     "scarlatos-simulated-students-dialogue-2026-source",
     "duan-history-aware-profiles-student-simulation-2026-source"
   ],
-  "screening_summary": "Targeted bootstrap screening included seven full-text sources that compare generated learner/student responses with real student data: learner response records, real-source essays, real MCQ item responses, real NAEP response patterns, undergraduate College Algebra responses, and real tutoring dialogue turns. Abstract-only or comparator-mismatched sources were screened but not used as direct support.",
+  "screening_summary": "Targeted baseline-review screening included seven full-text sources that compare generated learner/student responses with real student data: learner response records, real-source essays, real MCQ item responses, real NAEP response patterns, undergraduate College Algebra responses, and real tutoring dialogue turns. Abstract-only or comparator-mismatched sources were screened but not used as direct support.",
   "limitations": [
-    "This was a targeted bootstrap pass, not a systematic review.",
+    "This was a targeted baseline-review pass, not a systematic review.",
     "Included comparators vary substantially: same source essays, aggregate response distributions, IRT ability scales, item-parameter correlations, and dialogue-turn matching metrics.",
     "Some included evidence is current preprint evidence and should be monitored for revision.",
     "The pass intentionally does not use abstract-only sources as direct evidence."

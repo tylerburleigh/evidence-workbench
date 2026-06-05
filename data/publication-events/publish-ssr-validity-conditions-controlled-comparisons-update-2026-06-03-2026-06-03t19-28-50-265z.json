@@ -3,7 +3,7 @@
   "record_type": "publication_event",
   "id": "publish-ssr-validity-conditions-controlled-comparisons-update-2026-06-03-2026-06-03t19-28-50-265z",
   "name": "Published Validity Conditions and Controlled Comparison Update",
-  "summary": "Targeted surveillance update for the cross-cutting question of when synthetic student responses provide validity-relevant evidence for automated scoring workflows, emphasizing realism metrics, model/workflow choice, and real-response comparators.",
+  "summary": "Targeted review update for the cross-cutting question of when synthetic student responses provide validity-relevant evidence for automated scoring workflows, emphasizing realism metrics, model/workflow choice, and real-response comparators.",
   "candidate_bundle_id": "ssr-validity-conditions-controlled-comparisons-update-2026-06-03",
   "event_type": "publish",
   "published_at": "2026-06-03T19:28:50.265Z",
@@ -116,7 +116,7 @@
     "evidence-appraisal-ssr-validity-conditions-controlled-comparisons-update-source-fidelity-r1",
     "evidence-appraisal-ssr-validity-conditions-controlled-comparisons-update-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
+  "appraisal_corrections_applied": [],
   "appraisal_follow_up_actions": [
     "applicability_boundary: Keep the current assessment_purpose, decision_consequence, operational_use, and limitations fields.",
     "construct_mapping: Retain the explicit scorer_use, real_response_comparator, and limitations fields in each staged artifact.",

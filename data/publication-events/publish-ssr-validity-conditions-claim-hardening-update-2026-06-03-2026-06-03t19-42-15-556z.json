@@ -66,7 +66,7 @@
     "evidence-appraisal-ssr-validity-conditions-claim-hardening-source-fidelity-r1",
     "evidence-appraisal-ssr-validity-conditions-claim-hardening-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
+  "appraisal_corrections_applied": [],
   "appraisal_follow_up_actions": [
     "applicability_boundary: Retain the current applicability and limitation language.",
     "construct_mapping: Retain the explicit limitations attached to each new support entry.",

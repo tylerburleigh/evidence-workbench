@@ -24,7 +24,7 @@
   ],
   "interpretive_note": "This baseline should be read as a map of scorer-validation relevance, not a conclusion that synthetic responses validate automated scorers on their own. The strongest current posture is to treat synthetic responses as diagnostic, calibration, stress-test, or augmentation material that must be tied back to real or independently human-scored validation data.",
   "limitations": [
-    "The staged sources are a compact bootstrap set, not an exhaustive literature review.",
+    "The staged sources are a compact baseline-review evidence set, not an exhaustive literature review.",
     "Some included evidence is framework guidance or preprint evidence rather than peer-reviewed empirical validation.",
     "Synthetic response origin, rubric label space, and label source vary across included studies and should not be collapsed into one construct.",
     "The claim does not establish validity for any specific automated scorer, grade band, subject area, item type, demographic subgroup, model, or prompt strategy."

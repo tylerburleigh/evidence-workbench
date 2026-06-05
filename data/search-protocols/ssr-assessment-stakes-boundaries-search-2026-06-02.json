@@ -185,9 +185,9 @@
     "watts-scientific-argumentation-chatbot-2025-source",
     "walsh-sjt-automated-scoring-2026-source"
   ],
-  "screening_summary": "Targeted bootstrap screening combined general assessment-stakes guidance with direct synthetic-response evidence from the existing public graph. The resulting baseline treats standards and formative-assessment guidance as boundary context, and treats synthetic-response studies as direct evidence only where they actually connect response origin to purpose, consequence, and operational use.",
+  "screening_summary": "Targeted baseline-review screening combined general assessment-stakes guidance with direct synthetic-response evidence from the existing public graph. The resulting baseline treats standards and formative-assessment guidance as boundary context, and treats synthetic-response studies as direct evidence only where they actually connect response origin to purpose, consequence, and operational use.",
   "limitations": [
-    "This was a targeted bootstrap pass, not a systematic review.",
+    "This was a targeted baseline-review pass, not a systematic review.",
     "Contextual guidance sources are not synthetic-response-specific and should not be used as direct evidence of synthetic-response scoring validity.",
     "Direct high-stakes synthetic-response evidence remains sparse and mostly diagnostic.",
     "The pass did not establish full-text access to all potentially relevant in-term or automated-grading generation studies."

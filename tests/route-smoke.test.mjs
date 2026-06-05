@@ -176,7 +176,8 @@ test("synthetic student response route smoke inventory covers configured review 
     "/scope/ssr-real-response-comparison",
     "/scope/ssr-synthetic-response-scoring-agreement",
     "/scope/ssr-acceptable-scoring-uses",
-    "/scope/ssr-assessment-stakes-boundaries"
+    "/scope/ssr-assessment-stakes-boundaries",
+    "/scope/ssr-sparse-data-supplementation"
   ]) {
     assert.ok(paths.has(path), `Missing route check for ${path}`);
   }
@@ -194,6 +195,11 @@ test("synthetic student response route smoke inventory covers configured review 
   ]);
   assertRouteHasText(routes, "/scope/ssr-synthetic-response-scoring-agreement", [
     "Synthetic Response Scoring Agreement",
+    "Claims",
+    "Bundle State"
+  ]);
+  assertRouteHasText(routes, "/scope/ssr-sparse-data-supplementation", [
+    "Use to Supplement Sparse or Imbalanced Response Data",
     "Claims",
     "Bundle State"
   ]);

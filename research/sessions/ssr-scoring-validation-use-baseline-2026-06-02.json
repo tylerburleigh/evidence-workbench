@@ -32,6 +32,6 @@
   "next_actions": [
     "Complete required evidence appraisals before approval.",
     "Review deferred adjacent augmentation sources before deciding whether the baseline is broad enough for publication.",
-    "Keep the next bootstrap scope to one review question, likely `ssr-generation-methods` after this bundle is reviewed."
+    "Keep the next baseline-review scope to one review question, likely `ssr-generation-methods` after this bundle is reviewed."
   ]
 }

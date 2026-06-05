@@ -120,7 +120,7 @@
     "evidence-appraisal-ssr-model-generation-effects-source-fidelity-r1",
     "evidence-appraisal-ssr-model-generation-effects-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
+  "appraisal_corrections_applied": [],
   "appraisal_follow_up_actions": [],
   "change_note": "Creates the first staged literature-review baseline for model and generation workflow effects in synthetic student response generation."
 }

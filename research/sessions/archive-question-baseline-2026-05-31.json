@@ -25,6 +25,6 @@
   "next_recommended_mode": "review_update",
   "next_actions": [
     "Validate this bundle with LIT_REVIEW_STUDIO_DOMAIN=sample-archive.",
-    "Use this fixture to detect accidental topic or review-lane assumptions."
+    "Use this fixture to detect accidental topic or appraisal-lane assumptions."
   ]
 }

@@ -217,7 +217,7 @@
     "construct_mapping: Maintain the response-origin and synthetic-data-form distinction in downstream synthesis text.",
     "method_classification: Keep generation_model and scorer_use fields separate in synthesis exports.",
     "scorer_validation_relevance: Retain the distinction between training augmentation and scorer validation in the literature review.",
-    "search_protocol: Leave systematicity_level as targeted_bootstrap and keep screening counts non-exhaustive.",
+    "search_protocol: Leave systematicity_level as targeted_baseline_review and keep screening counts non-exhaustive.",
     "source_fidelity: Retrieve full text before using Bonthu et al. for detailed method comparison or quantitative synthesis.",
     "source_fidelity: Use Li, Haudek, and Krajcik in all source, finding, and synthesis text.",
     "synthesis_overreach: Use language such as targeted pass, examples, or pattern rather than systematic prevalence claims.",

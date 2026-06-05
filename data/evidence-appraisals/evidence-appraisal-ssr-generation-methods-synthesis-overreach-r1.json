@@ -11,7 +11,7 @@
   "status": "complete",
   "verdict": "accept",
   "blocking": false,
-  "summary": "Accepted. The claim is medium-confidence, says the bootstrap found at least five method families, and carries explicit caveats about targeted search scope, task heterogeneity, inconsistent prompt/model detail, and lack of validation-inference proof. The support map distinguishes direct support from boundary-condition evidence.",
+  "summary": "Accepted. The claim is medium-confidence, says the baseline-review pass found at least five method families, and carries explicit caveats about targeted search scope, task heterogeneity, inconsistent prompt/model detail, and lack of validation-inference proof. The support map distinguishes direct support from boundary-condition evidence.",
   "appraised_change_ids": [
     "create-ssr-generation-methods-search-2026-06-02",
     "create-ipci-knowledge-profiles-response-generation-source",

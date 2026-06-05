@@ -53,7 +53,7 @@
     "evidence-appraisal-ssr-model-generation-effects-srivatsa-numeric-update-source-fidelity-r1",
     "evidence-appraisal-ssr-model-generation-effects-srivatsa-numeric-update-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
+  "appraisal_corrections_applied": [],
   "appraisal_follow_up_actions": [],
   "extraction_follow_up_actions": [],
   "change_note": "Resolves the deferred Srivatsa numeric extraction for the published model and generation effects baseline without changing the claim's no-universal-ranking boundary."

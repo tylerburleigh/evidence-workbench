@@ -120,7 +120,7 @@
   ],
   "screening_summary": "The first pass found direct support for synthetic responses as pre-pilot validation or challenge data and as a fairness stress-test input, plus adjacent automated-scoring augmentation studies that keep scorer accuracy validation anchored to real or human-scored responses.",
   "limitations": [
-    "This was a targeted bootstrap search, not a systematic review.",
+    "This was a targeted baseline-review search, not a systematic review.",
     "Searches emphasized public web-accessible sources and may miss paywalled assessment conference papers or technical reports.",
     "The initial baseline intentionally stages a small set of high-relevance sources rather than every adjacent augmentation paper."
   ]

@@ -37,7 +37,7 @@
       "finding_id": "quality-evaluation-table-extraction-deferred",
       "severity": "note",
       "category": "uncertainty",
-      "claim_or_issue": "Several sources expose full text and likely contain more precise numeric tables than this bootstrap bundle stages.",
+      "claim_or_issue": "Several sources expose full text and likely contain more precise numeric tables than this baseline-review bundle stages.",
       "why_it_matters": "Source fidelity is acceptable for the baseline map, but later quantitative synthesis should not rely on abstract-level metric summaries.",
       "recommended_action": "Keep the current medium-confidence, method-family synthesis and extract table-level values in a later manual pass before numeric comparison.",
       "resolution_status": "closed",
