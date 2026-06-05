@@ -25,7 +25,7 @@
   ],
   "interpretive_note": "Real-response comparison should record exactly what is shared between synthetic and real data: same item, same source essay, same student history, same aggregate population, or same dialogue turn. A positive correlation or metric gain is not equivalent to interchangeability with real student responses.",
   "limitations": [
-    "The staged source set is a compact bootstrap baseline, not an exhaustive review.",
+    "The staged source set is a compact baseline-review evidence set, not an exhaustive review.",
     "Evidence spans learner response logs, essays, multiple-choice items, IRT item calibration, NAEP response patterns, and tutoring dialogue turns.",
     "The claim does not establish that synthetic responses can replace real student responses for validation, item calibration, or scorer benchmarking.",
     "Abstract-only candidates should not support synthesis claims until full text is obtained or the abstract-only limitation is made explicit."

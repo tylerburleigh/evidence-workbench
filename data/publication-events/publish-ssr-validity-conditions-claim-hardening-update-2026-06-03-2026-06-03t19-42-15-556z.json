@@ -58,16 +58,16 @@
     "ssr-scoring-validation-use-baseline-claim",
     "ssr-acceptable-scoring-uses-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-validity-conditions-claim-hardening-applicability-boundary-r1",
-    "evidence-review-ssr-validity-conditions-claim-hardening-construct-mapping-r1",
-    "evidence-review-ssr-validity-conditions-claim-hardening-method-classification-r1",
-    "evidence-review-ssr-validity-conditions-claim-hardening-scorer-validation-relevance-r1",
-    "evidence-review-ssr-validity-conditions-claim-hardening-source-fidelity-r1",
-    "evidence-review-ssr-validity-conditions-claim-hardening-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-validity-conditions-claim-hardening-applicability-boundary-r1",
+    "evidence-appraisal-ssr-validity-conditions-claim-hardening-construct-mapping-r1",
+    "evidence-appraisal-ssr-validity-conditions-claim-hardening-method-classification-r1",
+    "evidence-appraisal-ssr-validity-conditions-claim-hardening-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-validity-conditions-claim-hardening-source-fidelity-r1",
+    "evidence-appraisal-ssr-validity-conditions-claim-hardening-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
-  "review_follow_up_actions": [
+  "appraisal_corrections_applied": [],
+  "appraisal_follow_up_actions": [
     "applicability_boundary: Retain the current applicability and limitation language.",
     "construct_mapping: Retain the explicit limitations attached to each new support entry.",
     "method_classification: Keep the staged task-bound language.",

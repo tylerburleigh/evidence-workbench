@@ -3,7 +3,7 @@
   "$id": "core/priority-queue.schema.json",
   "type": "object",
   "additionalProperties": true,
-  "required": ["schema_version", "queue_type", "domain_id", "taxonomy_version", "updated_at", "bootstrap_queue", "surveillance_queue"],
+  "required": ["schema_version", "queue_type", "domain_id", "taxonomy_version", "updated_at", "baseline_review_queue", "review_update_queue"],
   "properties": {
     "schema_version": { "const": "1.0.0" },
     "queue_type": { "const": "research_priority_queue" },
@@ -12,7 +12,7 @@
     "updated_at": { "type": "string", "minLength": 1 },
     "notes": { "type": "array", "items": { "type": "string" } },
     "selection_policy": { "type": "object" },
-    "bootstrap_queue": {
+    "baseline_review_queue": {
       "type": "array",
       "items": {
         "type": "object",
@@ -22,13 +22,13 @@
           "rank": { "type": "integer", "minimum": 1 },
           "taxonomy_node_id": { "type": "string", "minLength": 1 },
           "priority_tier": { "enum": ["now", "soon", "later"] },
-          "default_mode": { "enum": ["bootstrap"] },
+          "default_mode": { "enum": ["baseline_review"] },
           "rationale": { "type": "string", "minLength": 1 },
           "default_question": { "type": "string", "minLength": 1 }
         }
       }
     },
-    "surveillance_queue": {
+    "review_update_queue": {
       "type": "array",
       "items": {
         "type": "object",
@@ -38,7 +38,7 @@
           "rank": { "type": "integer", "minimum": 1 },
           "taxonomy_node_id": { "type": "string", "minLength": 1 },
           "priority_tier": { "enum": ["now", "soon", "later"] },
-          "default_mode": { "enum": ["surveillance"] },
+          "default_mode": { "enum": ["review_update"] },
           "rationale": { "type": "string", "minLength": 1 },
           "freshness_status": { "enum": ["stale", "unknown"] },
           "last_checked_at": { "type": "string", "minLength": 1 },

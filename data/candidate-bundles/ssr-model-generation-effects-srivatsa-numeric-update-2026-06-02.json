@@ -73,22 +73,22 @@
       "note": "Resolves the deferred Srivatsa numeric extraction for the published model and generation effects baseline without changing the claim's no-universal-ranking boundary."
     }
   ],
-  "required_review_lanes": [
+  "required_appraisal_lanes": [
     "source_fidelity",
     "method_classification",
     "synthesis_overreach"
   ],
-  "review_requirement": {
-    "min_complete_reviews_per_lane": 1,
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": false
   },
-  "evidence_review_ids": [
-    "evidence-review-ssr-model-generation-effects-srivatsa-numeric-update-source-fidelity-r1",
-    "evidence-review-ssr-model-generation-effects-srivatsa-numeric-update-method-classification-r1",
-    "evidence-review-ssr-model-generation-effects-srivatsa-numeric-update-synthesis-overreach-r1"
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-model-generation-effects-srivatsa-numeric-update-source-fidelity-r1",
+    "evidence-appraisal-ssr-model-generation-effects-srivatsa-numeric-update-method-classification-r1",
+    "evidence-appraisal-ssr-model-generation-effects-srivatsa-numeric-update-synthesis-overreach-r1"
   ],
-  "review_comment_ids": [],
+  "editorial_comment_ids": [],
   "publication_event_ids": [
     "publish-ssr-model-generation-effects-srivatsa-numeric-update-2026-06-02-2026-06-02t18-01-11-165z"
   ],

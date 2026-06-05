@@ -29,10 +29,10 @@
     {
       "id": "reviewed_baseline",
       "label": "Reviewed Baseline",
-      "description": "Required review lanes have accepted the bundle and the claim can be published.",
-      "minimum_support_expected": "Complete non-blocking evidence reviews for required lanes.",
+      "description": "Required appraisal lanes have accepted the bundle and the claim can be published.",
+      "minimum_support_expected": "Complete non-blocking evidence appraisals for required lanes.",
       "common_overclaim_risk": "Mistaking editorial publication for permanent certainty.",
-      "moves_to_next_stage": "Surveillance identifies a material update or stale coverage."
+      "moves_to_next_stage": "Review Update identifies a material update or stale coverage."
     }
   ]
 }

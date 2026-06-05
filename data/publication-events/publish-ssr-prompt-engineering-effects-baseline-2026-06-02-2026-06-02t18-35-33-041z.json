@@ -143,15 +143,15 @@
   "affected_claim_ids": [
     "ssr-prompt-engineering-effects-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-prompt-engineering-effects-construct-mapping-r1",
-    "evidence-review-ssr-prompt-engineering-effects-method-classification-r1",
-    "evidence-review-ssr-prompt-engineering-effects-scorer-validation-relevance-r1",
-    "evidence-review-ssr-prompt-engineering-effects-source-fidelity-r1",
-    "evidence-review-ssr-prompt-engineering-effects-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-prompt-engineering-effects-construct-mapping-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-method-classification-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-source-fidelity-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
-  "review_follow_up_actions": [],
+  "appraisal_corrections_applied": [],
+  "appraisal_follow_up_actions": [],
   "source_access_follow_up_actions": [],
   "extraction_follow_up_actions": [],
   "change_note": "Creates the first staged literature-review baseline for prompt engineering effects in synthetic student response generation."

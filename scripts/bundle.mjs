@@ -30,7 +30,7 @@ Usage:
 
 Notes:
   - validate checks staged files, record IDs/types, references, support maps, and published-file drift.
-  - approve requires a structurally valid bundle and clean evidence-review gates when configured.
+  - approve requires a structurally valid bundle and clean evidence-appraisal gates when configured.
   - publish copies staged JSON into data/, writes a publication event, marks the bundle published, and syncs planning state.
 `.trim();
 

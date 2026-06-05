@@ -18,7 +18,7 @@
     "arXiv",
     "ACL Anthology"
   ],
-  "systematicity_level": "targeted_bootstrap",
+  "systematicity_level": "targeted_baseline_review",
   "search_queries": [
     {
       "database": "Web search",

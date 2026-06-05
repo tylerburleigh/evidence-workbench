@@ -5,8 +5,8 @@
   "taxonomy_version": "1.0.0",
   "updated_at": "2026-06-03T20:20:40.212Z",
   "notes": [
-    "Bootstrap priority applies to uncovered review questions.",
-    "Surveillance priority applies to stale review questions with public baseline coverage and no active review bundle."
+    "Baseline Review priority applies to uncovered review questions.",
+    "Review Update priority applies to stale review questions with public baseline coverage and no active review bundle."
   ],
   "selection_policy": {
     "default_unit": "review_question",
@@ -14,6 +14,6 @@
     "when_request_is_vague": "Choose the highest-priority ready review question from the queue matching the requested mode.",
     "when_request_is_too_broad": "Narrow the work to one review question before starting."
   },
-  "bootstrap_queue": [],
-  "surveillance_queue": []
+  "baseline_review_queue": [],
+  "review_update_queue": []
 }

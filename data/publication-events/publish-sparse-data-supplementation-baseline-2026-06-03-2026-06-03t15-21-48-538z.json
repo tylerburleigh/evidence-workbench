@@ -158,16 +158,16 @@
   "affected_claim_ids": [
     "ssr-sparse-data-supplementation-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-sparse-data-supplementation-applicability-boundary-r1",
-    "evidence-review-ssr-sparse-data-supplementation-construct-mapping-r1",
-    "evidence-review-ssr-sparse-data-supplementation-method-classification-r1",
-    "evidence-review-ssr-sparse-data-supplementation-scorer-validation-relevance-r1",
-    "evidence-review-ssr-sparse-data-supplementation-search-protocol-r1",
-    "evidence-review-ssr-sparse-data-supplementation-source-fidelity-r1",
-    "evidence-review-ssr-sparse-data-supplementation-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-sparse-data-supplementation-applicability-boundary-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-construct-mapping-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-method-classification-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-search-protocol-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-source-fidelity-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [
+  "appraisal_corrections_applied": [
     {
       "change_id": "create-finding-wolfe-barber",
       "summary": "Converted the Wolfe and Barber finding source locator from an abstract-level string to a structured full-text locator."
@@ -181,7 +181,7 @@
       "summary": "Set numeric_results_extracted to false so full-text metric extraction remains visible as follow-up work."
     }
   ],
-  "review_follow_up_actions": [
+  "appraisal_follow_up_actions": [
     "source_fidelity: Extract full-text methods and results tables for Martin and Graulich before using the record in quantitative synthesis or detailed method comparisons."
   ],
   "source_access_follow_up_actions": [],

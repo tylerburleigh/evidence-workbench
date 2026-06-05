@@ -26,6 +26,6 @@
     "no_baseline": "This topic exists, but no public baseline has been published yet.",
     "no_recent_activity": "No recent activity has been recorded for this topic.",
     "no_findings": "No extracted findings have been published for this source yet.",
-    "missing_review": "This bundle is waiting for structured evidence review."
+    "missing_appraisal": "This bundle is waiting for structured evidence appraisal."
   }
 }

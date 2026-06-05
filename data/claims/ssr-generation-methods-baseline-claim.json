@@ -23,7 +23,7 @@
   ],
   "interpretive_note": "This baseline maps generation mechanisms, not universal best practices. Generation methods differ in what they condition on: profiles, examples, target quality, errors, memory state, real essay continuations, or procedural corruption.",
   "limitations": [
-    "The staged sources are a compact bootstrap set, not an exhaustive methods review.",
+    "The staged sources are a compact baseline-review evidence set, not an exhaustive methods review.",
     "The included methods use different tasks, response formats, and evaluation goals.",
     "Generation model versions and exact prompt templates are not consistently reported across sources.",
     "This claim does not establish that any generation method produces valid replacement data for scorer validation or classroom inference."

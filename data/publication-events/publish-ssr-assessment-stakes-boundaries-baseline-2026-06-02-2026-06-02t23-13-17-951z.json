@@ -103,19 +103,19 @@
   "affected_claim_ids": [
     "ssr-assessment-stakes-boundaries-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-assessment-stakes-boundaries-applicability-boundary-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-construct-mapping-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-method-classification-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-scorer-validation-relevance-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-source-fidelity-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-applicability-boundary-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-construct-mapping-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-method-classification-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-source-fidelity-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [
+  "appraisal_corrections_applied": [
     "Renamed the ETS source and screening decision from a loose working title to the PDF title, Responsible Use of AI in Assessment.",
     "Reworded the TEAL/LINCS source and finding as practice guidance rather than official policy guidance."
   ],
-  "review_follow_up_actions": [
+  "appraisal_follow_up_actions": [
     "applicability_boundary: Keep does_not_apply_when and summary language explicit that final validation requires real or independently human-scored response evidence.",
     "construct_mapping: Keep support_role values as boundary_condition for guidance sources and direct_support only for synthetic-response studies.",
     "scorer_validation_relevance: Keep the Watts support limited to formative prototype testing, as currently written.",

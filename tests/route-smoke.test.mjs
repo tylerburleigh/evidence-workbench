@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { buildRouteChecks } from "../scripts/smoke-public-routes.mjs";
-import { loadDomainWorkbenchData } from "../scripts/lib/workbench-data.mjs";
+import { loadDomainStudioData } from "../scripts/lib/studio-data.mjs";
 
 function routePaths(routes) {
   return new Set(routes.map((route) => route.path));
@@ -17,7 +17,7 @@ function assertRouteHasText(routes, path, expectedText) {
 }
 
 test("sample-research route smoke inventory covers public collections, detail routes, and admin review", async () => {
-  const data = await loadDomainWorkbenchData({ domainId: "sample-research" });
+  const data = await loadDomainStudioData({ domainId: "sample-research" });
   const routes = buildRouteChecks(data);
   const paths = routePaths(routes);
 
@@ -38,7 +38,7 @@ test("sample-research route smoke inventory covers public collections, detail ro
     "/findings/sample-finding-example-topic-context-2026",
     "/artifacts/sample-artifact-example-topic-2026",
     "/sources/sample-source-example-topic-2026",
-    "/admin/review/example-topic-bootstrap-2026-05-31"
+    "/admin/review/example-topic-baseline-review-2026-05-31"
   ]) {
     assert.ok(paths.has(path), `Missing route check for ${path}`);
   }
@@ -46,11 +46,11 @@ test("sample-research route smoke inventory covers public collections, detail ro
   assertRouteHasText(routes, "/claims/sample-claim-example-topic-baseline", ["Support Map", "Claim Details"]);
   assertRouteHasText(routes, "/findings/sample-finding-example-topic-context-2026", ["Details", "Links"]);
   assertRouteHasText(routes, "/artifacts/sample-artifact-example-topic-2026", ["Scope", "Sources"]);
-  assertRouteHasText(routes, "/admin/review/example-topic-bootstrap-2026-05-31", ["Actions", "Evidence Reviews"]);
+  assertRouteHasText(routes, "/admin/review/example-topic-baseline-review-2026-05-31", ["Actions", "Evidence Appraisals"]);
 });
 
-test("sample-archive route smoke inventory still covers unpublished review workspace routes", async () => {
-  const data = await loadDomainWorkbenchData({ domainId: "sample-archive" });
+test("sample-archive route smoke inventory still covers unpublished admin workspace routes", async () => {
+  const data = await loadDomainStudioData({ domainId: "sample-archive" });
   const routes = buildRouteChecks(data);
   const paths = routePaths(routes);
 
@@ -66,7 +66,7 @@ test("sample-archive route smoke inventory still covers unpublished review works
 });
 
 test("software supply-chain route smoke inventory covers downstream published graph", async () => {
-  const data = await loadDomainWorkbenchData({ domainId: "software-supply-chain" });
+  const data = await loadDomainStudioData({ domainId: "software-supply-chain" });
   const routes = buildRouteChecks(data);
   const paths = routePaths(routes);
 
@@ -135,22 +135,22 @@ test("software supply-chain route smoke inventory covers downstream published gr
   ]);
   assertRouteHasText(routes, "/admin/review/release-provenance-control-baseline-2026-06-01", [
     "Actions",
-    "Evidence Reviews"
+    "Evidence Appraisals"
   ]);
   assertRouteHasText(routes, "/admin/review/dependency-exposure-control-baseline-2026-06-01", [
     "Actions",
-    "Evidence Reviews"
+    "Evidence Appraisals"
   ]);
   assertRouteHasText(routes, "/admin/review/maintenance-signal-control-baseline-2026-06-01", [
     "Actions",
-    "Evidence Reviews"
+    "Evidence Appraisals"
   ]);
-  assertRouteHasText(routes, "/methods", ["Trust Model", "Evidence Ladder", "Review Process"]);
+  assertRouteHasText(routes, "/methods", ["Trust Model", "Evidence Ladder", "Appraisal Process"]);
   assertRouteHasText(routes, "/reports", ["Reports", "Source Access Audit", "Synthesis Matrix", "Report Artifacts"]);
 });
 
 test("synthetic student response route smoke inventory covers configured review questions and reports", async () => {
-  const data = await loadDomainWorkbenchData({ domainId: "synthetic-student-responses" });
+  const data = await loadDomainStudioData({ domainId: "synthetic-student-responses" });
   const routes = buildRouteChecks(data);
   const paths = routePaths(routes);
 
@@ -176,32 +176,20 @@ test("synthetic student response route smoke inventory covers configured review 
     "/scope/ssr-real-response-comparison",
     "/scope/ssr-synthetic-response-scoring-agreement",
     "/scope/ssr-acceptable-scoring-uses",
-    "/scope/ssr-assessment-stakes-boundaries"
+    "/scope/ssr-assessment-stakes-boundaries",
+    "/scope/ssr-sparse-data-supplementation"
   ]) {
     assert.ok(paths.has(path), `Missing route check for ${path}`);
   }
 
   assertRouteHasText(routes, "/reports", ["Reports", "Source Access Audit", "Synthesis Matrix", "Report Artifacts"]);
-  assertRouteHasText(routes, "/reports/ssr-background-lit-review-2026-06-03", [
-    "Synthetic Student Responses Background Literature Review",
-    "Traceability",
-    "Linked Sources",
-    "Linked Claims"
-  ]);
-  assertRouteHasText(routes, "/reports/ssr-synthesis-2026-06-03", [
-    "Synthetic Student Responses Synthesis",
-    "Traceability",
-    "Linked Sources",
-    "Linked Claims"
-  ]);
-  assertRouteHasText(routes, "/reports/ssr-application-memo-2026-06-03", [
-    "Synthetic Student Responses Application Memo",
-    "Traceability",
-    "Linked Sources",
-    "Linked Claims"
-  ]);
   assertRouteHasText(routes, "/scope/ssr-scoring-validation-use", [
     "Use in Automated Scorer Validation",
+    "Claims",
+    "Bundle State"
+  ]);
+  assertRouteHasText(routes, "/scope/ssr-real-response-comparison", [
+    "Comparison With Real Student Responses",
     "Claims",
     "Bundle State"
   ]);
@@ -210,9 +198,21 @@ test("synthetic student response route smoke inventory covers configured review 
     "Claims",
     "Bundle State"
   ]);
-  assertRouteHasText(routes, "/scope/ssr-acceptable-scoring-uses", [
-    "Acceptable Uses in Automated Scoring",
+  assertRouteHasText(routes, "/scope/ssr-sparse-data-supplementation", [
+    "Use to Supplement Sparse or Imbalanced Response Data",
     "Claims",
     "Bundle State"
+  ]);
+  assertRouteHasText(routes, "/reports/ssr-synthesis-2026-06-03", [
+    "Synthetic Student Responses Synthesis",
+    "Traceability"
+  ]);
+  assertRouteHasText(routes, "/reports/ssr-background-lit-review-2026-06-03", [
+    "Synthetic Student Responses Background Literature Review",
+    "Traceability"
+  ]);
+  assertRouteHasText(routes, "/reports/ssr-application-memo-2026-06-03", [
+    "Synthetic Student Responses Application Memo",
+    "Traceability"
   ]);
 });

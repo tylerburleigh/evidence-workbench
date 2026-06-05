@@ -4,7 +4,7 @@
   "id": "ssr-real-response-comparison-baseline-2026-06-02",
   "name": "Real Response Comparison Baseline",
   "summary": "Staged first literature-review baseline for how synthetic student response studies compare generated outputs with real student response records, distributions, scores, and dialogue turns.",
-  "intake_mode": "bootstrap",
+  "intake_mode": "baseline_review",
   "lifecycle_status": "published",
   "submitted_at": "2026-06-02T18:51:00Z",
   "submitted_by": "codex-agent",
@@ -220,26 +220,26 @@
       "note": "Creates the first staged literature-review baseline for comparisons between synthetic and real student responses."
     }
   ],
-  "required_review_lanes": [
+  "required_appraisal_lanes": [
     "source_fidelity",
     "construct_mapping",
     "method_classification",
     "scorer_validation_relevance",
     "synthesis_overreach"
   ],
-  "review_requirement": {
-    "min_complete_reviews_per_lane": 1,
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": false
   },
-  "evidence_review_ids": [
-    "evidence-review-ssr-real-response-comparison-source-fidelity-r1",
-    "evidence-review-ssr-real-response-comparison-construct-mapping-r1",
-    "evidence-review-ssr-real-response-comparison-method-classification-r1",
-    "evidence-review-ssr-real-response-comparison-scorer-validation-relevance-r1",
-    "evidence-review-ssr-real-response-comparison-synthesis-overreach-r1"
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-real-response-comparison-source-fidelity-r1",
+    "evidence-appraisal-ssr-real-response-comparison-construct-mapping-r1",
+    "evidence-appraisal-ssr-real-response-comparison-method-classification-r1",
+    "evidence-appraisal-ssr-real-response-comparison-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-real-response-comparison-synthesis-overreach-r1"
   ],
-  "review_comment_ids": [],
+  "editorial_comment_ids": [],
   "publication_event_ids": [
     "publish-ssr-real-response-comparison-baseline-2026-06-02-2026-06-02t18-55-01-388z"
   ],

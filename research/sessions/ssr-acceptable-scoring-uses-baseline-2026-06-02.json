@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "record_type": "research_session",
   "id": "ssr-acceptable-scoring-uses-baseline-2026-06-02",
-  "mode": "bootstrap",
+  "mode": "baseline_review",
   "started_at": "2026-06-02T20:05:00Z",
   "completed_at": "2026-06-02T20:19:29Z",
   "scope": {

@@ -4,7 +4,7 @@
   "id": "ssr-model-generation-effects-baseline-2026-06-02",
   "name": "Model and Generation Effects Baseline",
   "summary": "Staged first literature-review baseline for how synthetic student response quality varies across model choice, post-training, history conditioning, and generation workflows.",
-  "intake_mode": "bootstrap",
+  "intake_mode": "baseline_review",
   "lifecycle_status": "published",
   "submitted_at": "2026-06-02T16:55:00Z",
   "submitted_by": "codex-agent",
@@ -191,26 +191,26 @@
       "note": "Creates the first staged literature-review baseline for model and generation workflow effects in synthetic student response generation."
     }
   ],
-  "required_review_lanes": [
+  "required_appraisal_lanes": [
     "source_fidelity",
     "construct_mapping",
     "method_classification",
     "scorer_validation_relevance",
     "synthesis_overreach"
   ],
-  "review_requirement": {
-    "min_complete_reviews_per_lane": 1,
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": false
   },
-  "evidence_review_ids": [
-    "evidence-review-ssr-model-generation-effects-source-fidelity-r1",
-    "evidence-review-ssr-model-generation-effects-construct-mapping-r1",
-    "evidence-review-ssr-model-generation-effects-method-classification-r1",
-    "evidence-review-ssr-model-generation-effects-scorer-validation-relevance-r1",
-    "evidence-review-ssr-model-generation-effects-synthesis-overreach-r1"
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-model-generation-effects-source-fidelity-r1",
+    "evidence-appraisal-ssr-model-generation-effects-construct-mapping-r1",
+    "evidence-appraisal-ssr-model-generation-effects-method-classification-r1",
+    "evidence-appraisal-ssr-model-generation-effects-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-model-generation-effects-synthesis-overreach-r1"
   ],
-  "review_comment_ids": [],
+  "editorial_comment_ids": [],
   "publication_event_ids": [
     "publish-ssr-model-generation-effects-baseline-2026-06-02-2026-06-02t17-08-56-355z"
   ],

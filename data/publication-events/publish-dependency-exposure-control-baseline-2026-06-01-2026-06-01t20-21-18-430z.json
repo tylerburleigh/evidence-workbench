@@ -33,11 +33,11 @@
   "affected_claim_ids": [
     "dependency-exposure-control-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-dependency-exposure-control-control-fit-r1",
-    "evidence-review-dependency-exposure-control-operational-boundary-r1",
-    "evidence-review-dependency-exposure-control-risk-framing-r1",
-    "evidence-review-dependency-exposure-control-source-fidelity-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-dependency-exposure-control-control-fit-r1",
+    "evidence-appraisal-dependency-exposure-control-operational-boundary-r1",
+    "evidence-appraisal-dependency-exposure-control-risk-framing-r1",
+    "evidence-appraisal-dependency-exposure-control-source-fidelity-r1"
   ],
   "change_note": "Creates the first source-backed baseline for the dependency exposure control."
 }

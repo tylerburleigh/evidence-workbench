@@ -4,7 +4,7 @@
   "id": "ssr-generation-methods-baseline-2026-06-02",
   "name": "Synthetic Response Generation Methods Baseline",
   "summary": "Staged first literature-review baseline for methods used to generate synthetic student or learner responses.",
-  "intake_mode": "bootstrap",
+  "intake_mode": "baseline_review",
   "lifecycle_status": "published",
   "submitted_at": "2026-06-02T12:40:00Z",
   "submitted_by": "codex-agent",
@@ -196,26 +196,26 @@
       "note": "Creates the first staged literature-review baseline for synthetic response generation methods."
     }
   ],
-  "required_review_lanes": [
+  "required_appraisal_lanes": [
     "source_fidelity",
     "construct_mapping",
     "method_classification",
     "scorer_validation_relevance",
     "synthesis_overreach"
   ],
-  "review_requirement": {
-    "min_complete_reviews_per_lane": 1,
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": false
   },
-  "evidence_review_ids": [
-    "evidence-review-ssr-generation-methods-construct-mapping-r1",
-    "evidence-review-ssr-generation-methods-method-classification-r1",
-    "evidence-review-ssr-generation-methods-scorer-validation-relevance-r1",
-    "evidence-review-ssr-generation-methods-source-fidelity-r1",
-    "evidence-review-ssr-generation-methods-synthesis-overreach-r1"
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-generation-methods-construct-mapping-r1",
+    "evidence-appraisal-ssr-generation-methods-method-classification-r1",
+    "evidence-appraisal-ssr-generation-methods-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-generation-methods-source-fidelity-r1",
+    "evidence-appraisal-ssr-generation-methods-synthesis-overreach-r1"
   ],
-  "review_comment_ids": [],
+  "editorial_comment_ids": [],
   "publication_event_ids": [
     "publish-ssr-generation-methods-baseline-2026-06-02-2026-06-02t13-26-12-424z"
   ],

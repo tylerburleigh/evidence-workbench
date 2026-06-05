@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-ssr-assessment-stakes-boundaries-scorer-validation-relevance-r1",
+  "name": "Scorer Validation Relevance review for Ssr Assessment Stakes Boundaries bundle",
+  "candidate_bundle_id": "ssr-assessment-stakes-boundaries-baseline-2026-06-02",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "scorer_validation_relevance",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "appraiser_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The claim is relevant to scorer validation because it defines when synthetic responses can be used around validation, calibration, augmentation, and stress testing, while explicitly saying that lower-stakes formative examples and contextual guidance are not final scorer-validation evidence.",
+  "appraised_change_ids": [
+    "create-standards-educational-psychological-testing-source",
+    "create-ets-responsible-ai-assessment-principles-source",
+    "create-usdoe-teal-formative-assessment-source",
+    "create-ssr-assessment-stakes-boundaries-search",
+    "create-standards-stakes-intended-use-boundary-finding",
+    "create-ets-ai-assessment-guardrails-finding",
+    "create-usdoe-formative-feedback-boundary-finding",
+    "create-frohn-stakes-prepilot-validation-boundary-finding",
+    "create-yoo-stakes-training-real-validation-boundary-finding",
+    "create-bexte-stakes-label-audit-training-boundary-finding",
+    "create-watts-stakes-formative-prototype-boundary-finding",
+    "create-walsh-stakes-high-stakes-stress-test-boundary-finding",
+    "create-ssr-assessment-stakes-boundaries-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "watts-not-scorer-validation",
+      "severity": "note",
+      "category": "scorer_validation_relevance",
+      "claim_or_issue": "Watts et al. concerns formative chatbot prompt and feedback testing rather than automated scorer validation.",
+      "why_it_matters": "This source should not be used to support claims about scorer deployment readiness.",
+      "recommended_action": "Keep the Watts support limited to formative prototype testing, as currently written.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-watts-stakes-formative-prototype-boundary-finding"
+    }
+  ],
+  "created_at": "2026-06-02T22:42:30Z",
+  "updated_at": "2026-06-02T22:42:30Z"
+}

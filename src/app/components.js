@@ -218,22 +218,22 @@ export function SupportMap({ findings = [], sources = [], support }) {
   );
 }
 
-export function ReviewGateBadge({ report }) {
-  if (!report?.evidence_review_gate?.eligible) {
+export function AppraisalGateBadge({ report }) {
+  if (!report?.evidence_appraisal_gate?.eligible) {
     return <Badge>No gate</Badge>;
   }
 
-  if (report.evidence_review_gate.ready) {
+  if (report.evidence_appraisal_gate.ready) {
     return (
       <Badge tone="good">
-        <CheckCircle2 size={13} /> Review ready
+        <CheckCircle2 size={13} /> Appraisal ready
       </Badge>
     );
   }
 
   return (
     <Badge tone="warn">
-      <CircleAlert size={13} /> Review pending
+      <CircleAlert size={13} /> Appraisal pending
     </Badge>
   );
 }

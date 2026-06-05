@@ -2,7 +2,7 @@
 
 Use this directory for Markdown synthesis reports that summarize already-published evidence records across one domain or a bounded set of taxonomy scope units.
 
-Synthesis reports are not public evidence claims by themselves. They should trace every conclusion to published claim, finding, source, evidence-review, or publication-event IDs. When a report needs new evidence, create a candidate bundle through the bootstrap or surveillance workflow instead of editing the report into an unsupported claim.
+Synthesis reports are not public evidence claims by themselves. They should trace every conclusion to published claim, finding, source, evidence-appraisal, or publication-event IDs. When a report needs new evidence, create a candidate bundle through the baseline-review or review-update workflow instead of editing the report into an unsupported claim.
 
 Index report files with `data/report-artifacts/<report-id>.json` when they should appear in the app. The index record should include `domain_id`, `scope_ids`, `artifact_type`, `path`, `source_ids`, `claim_ids`, and citation-audit status where applicable.
 

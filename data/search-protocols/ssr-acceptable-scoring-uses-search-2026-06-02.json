@@ -8,7 +8,7 @@
     "ssr-acceptable-scoring-uses"
   ],
   "status": "included_sources_staged",
-  "systematicity_level": "targeted_bootstrap",
+  "systematicity_level": "targeted_baseline_review",
   "search_started_at": "2026-06-02T20:05:00Z",
   "search_completed_at": "2026-06-02T20:19:29Z",
   "databases": [
@@ -190,9 +190,9 @@
     "wolfe-calibrating-realistic-essays-2026-source",
     "walsh-sjt-automated-scoring-2026-source"
   ],
-  "screening_summary": "Targeted bootstrap screening included six full-text sources where synthetic, simulated, generated, corrupted, or analogous responses are tied to automated scorer development, training augmentation, pre-pilot validation, label/annotation benchmarking, calibration, or fairness stress testing. Abstract-only and program-only candidates were screened but not used as direct support.",
+  "screening_summary": "Targeted baseline-review screening included six full-text sources where synthetic, simulated, generated, corrupted, or analogous responses are tied to automated scorer development, training augmentation, pre-pilot validation, label/annotation benchmarking, calibration, or fairness stress testing. Abstract-only and program-only candidates were screened but not used as direct support.",
   "limitations": [
-    "This was a targeted bootstrap pass, not a systematic review.",
+    "This was a targeted baseline-review pass, not a systematic review.",
     "Included sources use heterogeneous response settings: constructed responses, EFL essays, short-answer content scoring, adaptive English writing, simulated essays, and an adjacent open-response SJT setting.",
     "Walsh et al. is included as bounded stress-test evidence from admissions SJT scoring rather than ordinary classroom student-response scoring.",
     "Ipci et al. is not used as direct support because this pass verified only repository/abstract-level access."

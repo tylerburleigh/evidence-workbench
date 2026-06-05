@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-ssr-scoring-validation-use-source-fidelity-r1",
+  "name": "Source Fidelity review for ssr-scoring-validation-use bundle",
+  "candidate_bundle_id": "ssr-scoring-validation-use-baseline-2026-06-02",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "source_fidelity",
+  "appraiser_kind": "agent",
+  "appraiser_id": "codex-agent",
+  "skill_name": "evidence-appraisal",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted after checking the staged bibliographic metadata, study counts, locators, and source-backed statements against the cited Frontiers, ACL Anthology, arXiv, and ResearchGate/public paper pages. Two source-fidelity mismatches in the DREsS and Wolfe records were corrected before this review was recorded.",
+  "appraised_change_ids": [
+    "create-ssr-scoring-validation-search-protocol",
+    "create-frohn-llm-cr-live-scoring-source",
+    "create-walsh-sjt-automated-scoring-source",
+    "create-yoo-dress-rubric-aes-source",
+    "create-wolfe-calibrating-realistic-essays-source",
+    "create-frohn-validation-framework-artifact",
+    "create-walsh-fairness-stress-test-artifact",
+    "create-yoo-dress-training-boundary-artifact",
+    "create-wolfe-realistic-essays-artifact",
+    "create-frohn-validation-framework-finding",
+    "create-walsh-fairness-stress-test-finding",
+    "create-yoo-training-boundary-finding",
+    "create-wolfe-realistic-essays-finding",
+    "create-ssr-scoring-validation-use-claim"
+  ],
+  "findings": [
+    {
+      "finding_id": "source-fidelity-corrections-applied",
+      "severity": "note",
+      "category": "source_mismatch",
+      "claim_or_issue": "Initial staged metadata overstated or mismatched the DREsS authors/counts and Wolfe authors/sample counts.",
+      "why_it_matters": "A literature synthesis claim depends on accurate bibliographic and extraction details before it can pass source fidelity review.",
+      "recommended_action": "Corrections were applied to the staged source, artifact, finding, and claim records before accepting this lane.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-yoo-dress-rubric-aes-source"
+    }
+  ],
+  "created_at": "2026-06-02T12:23:00Z",
+  "updated_at": "2026-06-02T12:23:00Z"
+}

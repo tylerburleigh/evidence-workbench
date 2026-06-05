@@ -25,7 +25,7 @@
     "Activity signals are not direct evidence of code quality or future maintenance reliability."
   ],
   "update_notes": [
-    "Use surveillance or a project-specific bootstrap bundle when reviewing a concrete repository, release history, security policy, issue response pattern, or maintainer signal."
+    "Use a review update or a project-specific baseline review bundle when reviewing a concrete repository, release history, security policy, issue response pattern, or maintainer signal."
   ],
   "supporting_finding_ids": [
     "openssf-scorecard-maintenance-signal-finding-2026"

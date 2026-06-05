@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-ssr-validity-conditions-controlled-comparisons-update-source-fidelity-r1",
+  "name": "Source Fidelity review for Validity Conditions and Controlled Comparison Update bundle",
+  "candidate_bundle_id": "ssr-validity-conditions-controlled-comparisons-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "source_fidelity",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "appraiser_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The four included sources are full-text or authoritative primary-source records with DOI/arXiv/ACL/Springer metadata, and the staged findings include section-level locators. The SMART extraction now includes recoverable Table 1 numeric results, so no numeric extraction follow-up is needed for publication.",
+  "appraised_change_ids": [
+    "create-nguyen-cao-source",
+    "create-nguyen-cao-artifact",
+    "create-nguyen-cao-finding",
+    "create-cao-nguyen-source",
+    "create-cao-nguyen-artifact",
+    "create-cao-nguyen-finding",
+    "create-smart-source",
+    "create-smart-artifact",
+    "create-smart-finding",
+    "create-wu-source",
+    "create-wu-artifact",
+    "create-wu-finding",
+    "create-validity-conditions-search-protocol"
+  ],
+  "findings": [
+    {
+      "finding_id": "validity-conditions-source-metadata-and-locators-verified",
+      "severity": "note",
+      "category": "source_mismatch",
+      "claim_or_issue": "Nguyen and Cao, Cao et al., SMART, and Wu et al. are grounded in primary source pages/PDFs with full-text access metadata and section locators.",
+      "why_it_matters": "The new validity-conditions synthesis depends on recent primary literature rather than secondary summaries.",
+      "recommended_action": "Keep the source URLs, DOI/arXiv/ACL metadata, and section-level locators in the staged records.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-validity-conditions-search-protocol"
+    }
+  ],
+  "created_at": "2026-06-03T19:05:00Z",
+  "updated_at": "2026-06-03T19:05:00Z"
+}

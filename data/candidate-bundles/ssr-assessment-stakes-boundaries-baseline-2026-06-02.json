@@ -4,7 +4,7 @@
   "id": "ssr-assessment-stakes-boundaries-baseline-2026-06-02",
   "name": "Assessment Stakes and Use Boundaries Baseline",
   "summary": "Staged first literature-review baseline for how acceptable synthetic-response uses vary across formative, in-term, summative, high-stakes, and lower-stakes assessment contexts.",
-  "intake_mode": "bootstrap",
+  "intake_mode": "baseline_review",
   "lifecycle_status": "published",
   "submitted_at": "2026-06-02T22:23:21Z",
   "submitted_by": "codex-agent",
@@ -192,7 +192,7 @@
       "note": "Creates the first staged baseline for how assessment stakes modify acceptable uses of synthetic student responses."
     }
   ],
-  "required_review_lanes": [
+  "required_appraisal_lanes": [
     "source_fidelity",
     "construct_mapping",
     "method_classification",
@@ -200,20 +200,20 @@
     "applicability_boundary",
     "synthesis_overreach"
   ],
-  "review_requirement": {
-    "min_complete_reviews_per_lane": 1,
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": false
   },
-  "evidence_review_ids": [
-    "evidence-review-ssr-assessment-stakes-boundaries-source-fidelity-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-construct-mapping-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-method-classification-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-scorer-validation-relevance-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-applicability-boundary-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-synthesis-overreach-r1"
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-source-fidelity-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-construct-mapping-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-method-classification-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-applicability-boundary-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-synthesis-overreach-r1"
   ],
-  "review_comment_ids": [],
+  "editorial_comment_ids": [],
   "publication_event_ids": [
     "publish-ssr-assessment-stakes-boundaries-baseline-2026-06-02-2026-06-02t23-13-17-951z"
   ],

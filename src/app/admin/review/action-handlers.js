@@ -13,9 +13,9 @@ function errorMessage(error) {
 }
 
 export function createAdminReviewActionHandlers({
-  addReviewComment,
+  addEditorialComment,
   approveCandidateBundle,
-  loadDomainWorkbenchData,
+  loadDomainStudioData,
   publishCandidateBundle,
   revalidateAdminPaths,
   updateCandidateBundleStatus,
@@ -23,7 +23,7 @@ export function createAdminReviewActionHandlers({
   publishedBy = "local-curator"
 }) {
   async function assertActiveDomainBundle(bundleId) {
-    const data = await loadDomainWorkbenchData();
+    const data = await loadDomainStudioData();
     const belongsToActiveDomain = data.collections.candidateBundles.some(({ record }) => record.id === bundleId);
     if (!belongsToActiveDomain) {
       throw new Error(`Bundle is not part of the active domain: ${bundleId}`);
@@ -52,12 +52,12 @@ export function createAdminReviewActionHandlers({
       return runBundleAction(
         formData,
         (bundleId) =>
-          addReviewComment(bundleId, {
+          addEditorialComment(bundleId, {
             body,
             authorKind: "human",
             authorId
           }),
-        "Review comment added."
+        "Editorial comment added."
       );
     },
 

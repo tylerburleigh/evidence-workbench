@@ -23,7 +23,7 @@
     "Operational assurance requires a later bundle with release-specific source material."
   ],
   "update_notes": [
-    "Use surveillance or a release-specific bootstrap bundle when reviewing a concrete project release."
+    "Use a review update or a release-specific baseline review bundle when reviewing a concrete project release."
   ],
   "supporting_finding_ids": [
     "slsa-build-provenance-control-model-finding-2026"

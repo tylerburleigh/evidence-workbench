@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "record_type": "research_session",
   "id": "ssr-model-generation-effects-baseline-2026-06-02",
-  "mode": "bootstrap",
+  "mode": "baseline_review",
   "started_at": "2026-06-02T16:34:00Z",
   "completed_at": "2026-06-02T16:55:00Z",
   "scope": {
@@ -32,7 +32,7 @@
   ],
   "next_recommended_mode": "manual",
   "next_actions": [
-    "Complete required evidence reviews before approval.",
+    "Complete required evidence appraisals before approval.",
     "Extract all per-model tables for Srivatsa et al. before quantitative model ranking.",
     "Monitor Duan et al. for peer-review status or later arXiv versions."
   ]

@@ -10,19 +10,19 @@ import {
 } from "../components.js";
 import {
   getConfidenceEntries,
-  getDefaultReviewLaneIds,
+  getDefaultAppraisalLaneIds,
   getPublicLabels,
   getStageLabel,
-  getWorkbenchData,
+  getStudioData,
   statusLabel
 } from "../../lib/public-data.js";
 
 export default async function MethodsPage() {
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const labels = getPublicLabels(data);
-  const defaultLaneIds = getDefaultReviewLaneIds(data);
+  const defaultLaneIds = getDefaultAppraisalLaneIds(data);
   const stages = data.domainPack.evidenceLadder.stages ?? [];
-  const lanes = data.domainPack.reviewLanes.lanes ?? [];
+  const lanes = data.domainPack.appraisalLanes.lanes ?? [];
   const confidenceEntries = getConfidenceEntries(data);
   const avoidList = data.domainPack.domain.public_claim_language?.avoid ?? [];
 
@@ -39,7 +39,7 @@ export default async function MethodsPage() {
 
       <div className="metrics">
         <Metric icon={Layers} label="Evidence stages" value={stages.length} />
-        <Metric icon={ClipboardCheck} label="Review lanes" value={lanes.length} />
+        <Metric icon={ClipboardCheck} label="Appraisal lanes" value={lanes.length} />
         <Metric icon={CheckCircle2} label="Default lanes" value={defaultLaneIds.size} />
         <Metric icon={ShieldCheck} label="Published claims" value={data.collections.claims.length} />
       </div>
@@ -99,7 +99,7 @@ export default async function MethodsPage() {
       </Section>
 
       <div className="split">
-        <Section title="Review Process" note={`${defaultLaneIds.size} default lane(s)`}>
+        <Section title="Appraisal Process" note={`${defaultLaneIds.size} default lane(s)`}>
           {lanes.length ? (
             <div className="support-list">
               {lanes.map((lane) => (
@@ -118,7 +118,7 @@ export default async function MethodsPage() {
               ))}
             </div>
           ) : (
-            <EmptyState>No review lanes are configured for this domain.</EmptyState>
+            <EmptyState>No appraisal lanes are configured for this domain.</EmptyState>
           )}
         </Section>
 

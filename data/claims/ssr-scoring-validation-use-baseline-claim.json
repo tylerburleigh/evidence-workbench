@@ -24,14 +24,14 @@
   ],
   "interpretive_note": "This baseline should be read as a map of scorer-validation relevance, not a conclusion that synthetic responses validate automated scorers on their own. The strongest current posture is to treat synthetic responses as diagnostic, calibration, stress-test, or augmentation material that must be tied back to real or independently human-scored validation data.",
   "limitations": [
-    "The staged sources are a compact bootstrap set, not an exhaustive literature review.",
+    "The staged sources are a compact baseline-review evidence set, not an exhaustive literature review.",
     "Some included evidence is framework guidance or preprint evidence rather than peer-reviewed empirical validation.",
     "Synthetic response origin, rubric label space, and label source vary across included studies and should not be collapsed into one construct.",
     "The claim does not establish validity for any specific automated scorer, grade band, subject area, item type, demographic subgroup, model, or prompt strategy."
   ],
   "update_notes": [
     "Run a broader database search before treating this as a complete paper section.",
-    "Add evidence reviews for source fidelity, construct mapping, method classification, scorer-validation relevance, and synthesis overreach before publication.",
+    "Add evidence appraisals for source fidelity, construct mapping, method classification, scorer-validation relevance, and synthesis overreach before publication.",
     "Use later bundles to separate generation-method evidence from scorer-validation evidence.",
     "2026-06-03 claim-hardening update added SMART as a scoring-adjacent item-development boundary finding."
   ],

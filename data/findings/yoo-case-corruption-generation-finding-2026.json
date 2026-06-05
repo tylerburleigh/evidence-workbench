@@ -14,7 +14,7 @@
   "confidence": "high",
   "statement": "Yoo et al. use the DREsS_CASE corruption method to generate 40,185 synthetic lower-quality essay samples for rubric-based EFL automated essay scoring training augmentation.",
   "population_or_context": "EFL rubric-based automated essay scoring.",
-  "time_horizon": "ACL 2025 paper already published in the workbench baseline and reviewed on 2026-06-02.",
+  "time_horizon": "ACL 2025 paper already published in the Lit Review Studio baseline and reviewed on 2026-06-02.",
   "quantitative_note": "40,185 synthetic DREsS_CASE samples.",
   "caveats": [
     "This is not an LLM generation method.",

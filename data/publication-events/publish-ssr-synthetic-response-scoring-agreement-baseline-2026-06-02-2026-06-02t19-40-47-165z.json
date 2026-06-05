@@ -133,15 +133,15 @@
   "affected_claim_ids": [
     "ssr-synthetic-response-scoring-agreement-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-synthetic-response-scoring-agreement-construct-mapping-r1",
-    "evidence-review-ssr-synthetic-response-scoring-agreement-method-classification-r1",
-    "evidence-review-ssr-synthetic-response-scoring-agreement-scorer-validation-relevance-r1",
-    "evidence-review-ssr-synthetic-response-scoring-agreement-source-fidelity-r1",
-    "evidence-review-ssr-synthetic-response-scoring-agreement-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-synthetic-response-scoring-agreement-construct-mapping-r1",
+    "evidence-appraisal-ssr-synthetic-response-scoring-agreement-method-classification-r1",
+    "evidence-appraisal-ssr-synthetic-response-scoring-agreement-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-synthetic-response-scoring-agreement-source-fidelity-r1",
+    "evidence-appraisal-ssr-synthetic-response-scoring-agreement-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
-  "review_follow_up_actions": [],
+  "appraisal_corrections_applied": [],
+  "appraisal_follow_up_actions": [],
   "source_access_follow_up_actions": [],
   "extraction_follow_up_actions": [],
   "change_note": "Creates the first staged literature-review baseline for scoring, labeling, and agreement evidence specifically within synthetic student response studies."

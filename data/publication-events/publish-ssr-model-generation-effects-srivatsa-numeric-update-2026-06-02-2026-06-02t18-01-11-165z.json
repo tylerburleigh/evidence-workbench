@@ -48,13 +48,13 @@
   "affected_claim_ids": [
     "ssr-model-generation-effects-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-model-generation-effects-srivatsa-numeric-update-method-classification-r1",
-    "evidence-review-ssr-model-generation-effects-srivatsa-numeric-update-source-fidelity-r1",
-    "evidence-review-ssr-model-generation-effects-srivatsa-numeric-update-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-model-generation-effects-srivatsa-numeric-update-method-classification-r1",
+    "evidence-appraisal-ssr-model-generation-effects-srivatsa-numeric-update-source-fidelity-r1",
+    "evidence-appraisal-ssr-model-generation-effects-srivatsa-numeric-update-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
-  "review_follow_up_actions": [],
+  "appraisal_corrections_applied": [],
+  "appraisal_follow_up_actions": [],
   "extraction_follow_up_actions": [],
   "change_note": "Resolves the deferred Srivatsa numeric extraction for the published model and generation effects baseline without changing the claim's no-universal-ranking boundary."
 }

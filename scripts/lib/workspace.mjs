@@ -98,8 +98,8 @@ export async function withFileLock(lockPath, fn) {
   }
 }
 
-export async function loadWorkbenchConfig() {
-  const configPath = path.join(workspaceRoot, "workbench.config.json");
+export async function loadStudioConfig() {
+  const configPath = path.join(workspaceRoot, "lit-review-studio.config.json");
   if (!(await fileExists(configPath))) {
     return { active_domain: "sample-research" };
   }
@@ -108,12 +108,12 @@ export async function loadWorkbenchConfig() {
 }
 
 export async function resolveActiveDomainId() {
-  const override = process.env.WORKBENCH_DOMAIN;
+  const override = process.env.LIT_REVIEW_STUDIO_DOMAIN;
   if (typeof override === "string" && override.trim().length > 0) {
     return override.trim();
   }
 
-  const config = await loadWorkbenchConfig();
+  const config = await loadStudioConfig();
   return config.active_domain;
 }
 
@@ -127,7 +127,7 @@ export async function loadDomainPack(domainId) {
   const taxonomy = await readJson(path.join(root, domain.taxonomy_file ?? "taxonomy.v1.json"));
   const evidenceLadder = await readJson(path.join(root, domain.evidence_ladder_file ?? "evidence-ladder.v1.json"));
   const extractionSchema = await readJson(path.join(root, domain.extraction_schema_file ?? "extraction-schema.v1.json"));
-  const reviewLanes = await readJson(path.join(root, domain.review_lanes_file ?? "review-lanes.v1.json"));
+  const appraisalLanes = await readJson(path.join(root, domain.appraisal_lanes_file ?? "appraisal-lanes.v1.json"));
   const publicCopy = await readJson(path.join(root, domain.public_copy_file ?? "public-copy.v1.json"));
 
   return {
@@ -137,9 +137,9 @@ export async function loadDomainPack(domainId) {
     taxonomy,
     evidenceLadder,
     extractionSchema,
-    reviewLanes,
+    appraisalLanes,
     publicCopy,
-    reviewLaneIds: new Set((reviewLanes.lanes ?? []).map((lane) => lane.id)),
+    appraisalLaneIds: new Set((appraisalLanes.lanes ?? []).map((lane) => lane.id)),
     taxonomyNodeIds: new Set((taxonomy.nodes ?? []).map((node) => node.id))
   };
 }

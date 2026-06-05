@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "record_type": "research_session",
   "id": "ssr-real-response-comparison-baseline-2026-06-02",
-  "mode": "bootstrap",
+  "mode": "baseline_review",
   "started_at": "2026-06-02T18:40:00Z",
   "completed_at": "2026-06-02T18:51:00Z",
   "scope": {
@@ -36,7 +36,7 @@
   ],
   "next_recommended_mode": "manual",
   "next_actions": [
-    "Complete required evidence reviews before approval.",
+    "Complete required evidence appraisals before approval.",
     "Separate comparator types by independence and item/domain alignment in a later pass.",
     "Resolve full-text access for abstract-only assessment-emulation evidence before direct use."
   ]

@@ -7,13 +7,13 @@ import {
   getReportArtifactById,
   getReportArtifactMarkdown,
   getSourceById,
-  getWorkbenchData
+  getStudioData
 } from "../../../lib/public-data.js";
 import { MarkdownReport } from "./markdown-report.js";
 
 export default async function ReportArtifactPage({ params }) {
   const { reportId } = await params;
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const report = getReportArtifactById(data, reportId);
 
   if (!report) {

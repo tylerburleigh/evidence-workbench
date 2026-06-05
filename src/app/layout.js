@@ -1,18 +1,18 @@
 import { Database } from "lucide-react";
 import Link from "next/link";
-import { getReportArtifacts, getScopePluralLabel, getWorkbenchData } from "../lib/public-data.js";
+import { getReportArtifacts, getScopePluralLabel, getStudioData } from "../lib/public-data.js";
 import "./globals.css";
 import { PrimaryNav } from "./primary-nav.js";
 
 export const dynamic = "force-dynamic";
 
 export const metadata = {
-  title: "Evidence Workbench",
+  title: "Lit Review Studio",
   description: "Traceable evidence browser"
 };
 
 export default async function RootLayout({ children }) {
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const scopeLabel = getScopePluralLabel(data);
   const literatureReview = getReportArtifacts(data).find((report) => report.artifact_type === "literature_review");
 

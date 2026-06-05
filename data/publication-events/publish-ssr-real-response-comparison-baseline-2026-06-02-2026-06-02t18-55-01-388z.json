@@ -118,15 +118,15 @@
   "affected_claim_ids": [
     "ssr-real-response-comparison-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-real-response-comparison-construct-mapping-r1",
-    "evidence-review-ssr-real-response-comparison-method-classification-r1",
-    "evidence-review-ssr-real-response-comparison-scorer-validation-relevance-r1",
-    "evidence-review-ssr-real-response-comparison-source-fidelity-r1",
-    "evidence-review-ssr-real-response-comparison-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-real-response-comparison-construct-mapping-r1",
+    "evidence-appraisal-ssr-real-response-comparison-method-classification-r1",
+    "evidence-appraisal-ssr-real-response-comparison-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-real-response-comparison-source-fidelity-r1",
+    "evidence-appraisal-ssr-real-response-comparison-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
-  "review_follow_up_actions": [],
+  "appraisal_corrections_applied": [],
+  "appraisal_follow_up_actions": [],
   "source_access_follow_up_actions": [],
   "extraction_follow_up_actions": [],
   "change_note": "Creates the first staged literature-review baseline for comparisons between synthetic and real student responses."

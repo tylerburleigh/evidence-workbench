@@ -23,10 +23,10 @@ The synthesis draws on two published candidate bundles: `sparse-data-supplementa
 - 11 published study artifacts.
 - 11 published findings.
 - 1 published synthesis claim: `ssr-sparse-data-supplementation-baseline-claim`.
-- 14 completed evidence-review lanes across the two bundles, all accepted and non-blocking.
+- 14 completed evidence-appraisal lanes across the two bundles, all accepted and non-blocking.
 - 2 non-blocking follow-up areas: obtain Martin and Graulich full text, and obtain Bonthu et al. full text before detailed quantitative or method-specific synthesis.
 
-Evidence-review gate:
+Evidence-appraisal gate:
 
 - `source_fidelity`: accepted.
 - `construct_mapping`: accepted.
@@ -90,7 +90,7 @@ Trace: `zhang-gpt-essay-augmentation-finding-2026`; `fang-gpt4-minority-class-sc
 
 Some synthetic responses inherit labels from the generation target, the source example, a corruption process, or a prompt condition. That can be useful for training augmentation, but it is not the same as independent human scoring of every generated response. The synthesis should keep response origin, label source, and rubric label space separate.
 
-Trace: `ssr-sparse-data-supplementation-baseline-claim`; evidence-review lanes `construct_mapping` and `synthesis_overreach`.
+Trace: `ssr-sparse-data-supplementation-baseline-claim`; evidence-appraisal lanes `construct_mapping` and `synthesis_overreach`.
 
 ## Role Taxonomy for This Bundle
 
@@ -228,22 +228,22 @@ Source IDs:
 - `krisnawati-cross-prompt-asag-smote-2025`
 - `li-scientific-models-smote-2025`
 
-Evidence review IDs:
+Evidence appraisal IDs:
 
-- `evidence-review-ssr-sparse-data-supplementation-source-fidelity-r1`
-- `evidence-review-ssr-sparse-data-supplementation-construct-mapping-r1`
-- `evidence-review-ssr-sparse-data-supplementation-method-classification-r1`
-- `evidence-review-ssr-sparse-data-supplementation-scorer-validation-relevance-r1`
-- `evidence-review-ssr-sparse-data-supplementation-applicability-boundary-r1`
-- `evidence-review-ssr-sparse-data-supplementation-synthesis-overreach-r1`
-- `evidence-review-ssr-sparse-data-supplementation-search-protocol-r1`
-- `evidence-review-ssr-non-llm-cr-augmentation-source-fidelity-r1`
-- `evidence-review-ssr-non-llm-cr-augmentation-construct-mapping-r1`
-- `evidence-review-ssr-non-llm-cr-augmentation-method-classification-r1`
-- `evidence-review-ssr-non-llm-cr-augmentation-scorer-validation-relevance-r1`
-- `evidence-review-ssr-non-llm-cr-augmentation-applicability-boundary-r1`
-- `evidence-review-ssr-non-llm-cr-augmentation-synthesis-overreach-r1`
-- `evidence-review-ssr-non-llm-cr-augmentation-search-protocol-r1`
+- `evidence-appraisal-ssr-sparse-data-supplementation-source-fidelity-r1`
+- `evidence-appraisal-ssr-sparse-data-supplementation-construct-mapping-r1`
+- `evidence-appraisal-ssr-sparse-data-supplementation-method-classification-r1`
+- `evidence-appraisal-ssr-sparse-data-supplementation-scorer-validation-relevance-r1`
+- `evidence-appraisal-ssr-sparse-data-supplementation-applicability-boundary-r1`
+- `evidence-appraisal-ssr-sparse-data-supplementation-synthesis-overreach-r1`
+- `evidence-appraisal-ssr-sparse-data-supplementation-search-protocol-r1`
+- `evidence-appraisal-ssr-non-llm-cr-augmentation-source-fidelity-r1`
+- `evidence-appraisal-ssr-non-llm-cr-augmentation-construct-mapping-r1`
+- `evidence-appraisal-ssr-non-llm-cr-augmentation-method-classification-r1`
+- `evidence-appraisal-ssr-non-llm-cr-augmentation-scorer-validation-relevance-r1`
+- `evidence-appraisal-ssr-non-llm-cr-augmentation-applicability-boundary-r1`
+- `evidence-appraisal-ssr-non-llm-cr-augmentation-synthesis-overreach-r1`
+- `evidence-appraisal-ssr-non-llm-cr-augmentation-search-protocol-r1`
 
 Publication events:
 

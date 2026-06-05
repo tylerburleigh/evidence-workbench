@@ -4,7 +4,7 @@
   "id": "ssr-quality-evaluation-baseline-2026-06-02",
   "name": "Synthetic Response Quality Evaluation Baseline",
   "summary": "Staged first literature-review baseline for how synthetic student or learner responses are evaluated for realism, fidelity, alignment, and downstream utility.",
-  "intake_mode": "bootstrap",
+  "intake_mode": "baseline_review",
   "lifecycle_status": "published",
   "submitted_at": "2026-06-02T14:08:00Z",
   "submitted_by": "codex-agent",
@@ -223,26 +223,26 @@
       "note": "Creates the first staged literature-review baseline for quality evaluation of synthetic student responses."
     }
   ],
-  "required_review_lanes": [
+  "required_appraisal_lanes": [
     "source_fidelity",
     "construct_mapping",
     "method_classification",
     "scorer_validation_relevance",
     "synthesis_overreach"
   ],
-  "review_requirement": {
-    "min_complete_reviews_per_lane": 1,
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": false
   },
-  "evidence_review_ids": [
-    "evidence-review-ssr-quality-evaluation-source-fidelity-r1",
-    "evidence-review-ssr-quality-evaluation-construct-mapping-r1",
-    "evidence-review-ssr-quality-evaluation-method-classification-r1",
-    "evidence-review-ssr-quality-evaluation-scorer-validation-relevance-r1",
-    "evidence-review-ssr-quality-evaluation-synthesis-overreach-r1"
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-quality-evaluation-source-fidelity-r1",
+    "evidence-appraisal-ssr-quality-evaluation-construct-mapping-r1",
+    "evidence-appraisal-ssr-quality-evaluation-method-classification-r1",
+    "evidence-appraisal-ssr-quality-evaluation-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-quality-evaluation-synthesis-overreach-r1"
   ],
-  "review_comment_ids": [],
+  "editorial_comment_ids": [],
   "publication_event_ids": [
     "publish-ssr-quality-evaluation-baseline-2026-06-02-2026-06-02t14-22-41-559z"
   ],

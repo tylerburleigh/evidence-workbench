@@ -7,11 +7,11 @@ function usage(exitCode = 0) {
   const message = `
 Usage:
   npm run research:planning -- status
-  npm run research:planning -- next [--mode bootstrap|surveillance]
+  npm run research:planning -- next [--mode baseline_review|review_update]
   npm run research:planning -- sync
 
 Notes:
-  - status exposes normalized queues as queues.bootstrap and queues.surveillance.
+  - status exposes normalized queues as queues.baseline_review and queues.review_update.
   - next returns the highest-priority queue item for the requested mode, or the recommended next item.
   - sync rewrites research/state/coverage-status.v1.json and research/backlog/priority-queue.v1.json.
 `.trim();
@@ -45,8 +45,8 @@ async function main() {
       break;
     case "next": {
       const mode = values.mode;
-      if (mode && !["bootstrap", "surveillance"].includes(mode)) {
-        throw new Error("--mode must be bootstrap or surveillance.");
+      if (mode && !["baseline_review", "review_update"].includes(mode)) {
+        throw new Error("--mode must be baseline_review or review_update.");
       }
 
       const status = await readPlanningStatus();

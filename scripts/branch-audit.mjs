@@ -21,7 +21,7 @@ const categories = [
       /^README\.md$/,
       /^package\.json$/,
       /^package-lock\.json$/,
-      /^workbench\.config\.json$/,
+      /^lit-review-studio\.config\.json$/,
       /^next\.config\./
     ]
   },

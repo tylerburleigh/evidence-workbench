@@ -3,7 +3,7 @@
   "record_type": "publication_event",
   "id": "publish-ssr-operational-practice-policy-update-2026-06-03-2026-06-03t13-26-26-193z",
   "name": "Published Operational Practice and Policy Boundary Update",
-  "summary": "Targeted surveillance update adding operational machine-scoring QA evidence for simulated responses and peer-reviewed GPT essay training-augmentation evidence, then tightening acceptable-use and stakes-boundary claims.",
+  "summary": "Targeted review update adding operational machine-scoring QA evidence for simulated responses and peer-reviewed GPT essay training-augmentation evidence, then tightening acceptable-use and stakes-boundary claims.",
   "candidate_bundle_id": "ssr-operational-practice-policy-update-2026-06-03",
   "event_type": "publish",
   "published_at": "2026-06-03T13:26:26.193Z",
@@ -104,16 +104,16 @@
     "ssr-acceptable-scoring-uses-baseline-claim",
     "ssr-assessment-stakes-boundaries-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-operational-practice-policy-update-applicability-boundary-r1",
-    "evidence-review-ssr-operational-practice-policy-update-construct-mapping-r1",
-    "evidence-review-ssr-operational-practice-policy-update-method-classification-r1",
-    "evidence-review-ssr-operational-practice-policy-update-scorer-validation-relevance-r1",
-    "evidence-review-ssr-operational-practice-policy-update-source-fidelity-r1",
-    "evidence-review-ssr-operational-practice-policy-update-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-operational-practice-policy-update-applicability-boundary-r1",
+    "evidence-appraisal-ssr-operational-practice-policy-update-construct-mapping-r1",
+    "evidence-appraisal-ssr-operational-practice-policy-update-method-classification-r1",
+    "evidence-appraisal-ssr-operational-practice-policy-update-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-operational-practice-policy-update-source-fidelity-r1",
+    "evidence-appraisal-ssr-operational-practice-policy-update-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
-  "review_follow_up_actions": [
+  "appraisal_corrections_applied": [],
+  "appraisal_follow_up_actions": [
     "applicability_boundary: Keep the staged applies_when, does_not_apply_when, and unknown_or_unreviewed_contexts language.",
     "construct_mapping: Retain the staged artifact fields that separate response origin, label source, scorer use, and real-response comparator.",
     "method_classification: Keep the no-LLM classifications for operational QA sources and the research/development classification for Zhang et al.",

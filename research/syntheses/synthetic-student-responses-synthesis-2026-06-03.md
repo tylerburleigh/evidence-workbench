@@ -15,7 +15,7 @@ Current published inventory:
 - 43 unique source records referenced across current synthesis/report artifacts, including 40 from baseline claim support maps and 3 model-choice student-simulation validity update sources.
 - 18 synthetic-student-response publication events.
 - 237 published graph targets across those events.
-- 99 SSR evidence-review lane records, all complete, with 0 blocking review records.
+- 99 SSR evidence-appraisal lane records, all complete, with 0 blocking review records.
 - Claim-level applicability facets remain populated for the nine original baseline claims; the sparse-data supplementation bundle adds artifact and finding facets plus a qualitative claim boundary.
 
 Applicability facet mentions across the nine baseline claims that carry claim-level facets:
@@ -173,7 +173,7 @@ This synthesis fits inside the tool's intended workflow. The report is a descrip
 
 What transcends this research use case:
 
-- The synthesis-review skill is broadly useful for any domain after baseline coverage exists.
+- The evidence-synthesis skill is broadly useful for any domain after baseline coverage exists.
 - Applicability facets are broadly useful infrastructure because many domains need to separate population, setting, purpose, consequence, and operational role.
 - A reusable synthesis inventory pattern is broadly useful: list covered scope units, classify answer quality, summarize cross-cutting conclusions, name gaps, and trace every conclusion.
 
@@ -184,7 +184,7 @@ What should stay domain-specific for now:
 - The response-origin, label-source, rubric-space, comparator, and scorer-use distinctions.
 - Any policy language about synthetic responses in formative, in-term, summative, admissions, or high-stakes settings.
 
-The tool-level enhancement worth considering later is a synthesis inventory helper that can prefill counts, claim IDs, source IDs, review-lane status, and publication-event IDs. That should wait until this pattern repeats across domains. For now, the skill plus domain adapter plus Markdown report is the right level of structure.
+The tool-level enhancement worth considering later is a synthesis inventory helper that can prefill counts, claim IDs, source IDs, appraisal-lane status, and publication-event IDs. That should wait until this pattern repeats across domains. For now, the skill plus domain adapter plus Markdown report is the right level of structure.
 
 ## Next Actions
 
@@ -196,7 +196,7 @@ The tool-level enhancement worth considering later is a synthesis inventory help
 6. Open a targeted bundle for subgroup fairness validation versus diagnostic fairness stress testing.
 7. Consider a numeric extraction pass only after deciding which task families are comparable enough to quantify.
 8. If manuscript reviewers need a stronger direct scorer-validation claim, open a targeted bundle on fixed-scorer real-only, synthetic-only, and mixed validation-set comparisons.
-9. Defer broad tool automation until at least one more domain uses the synthesis-review workflow and reveals the same inventory needs.
+9. Defer broad tool automation until at least one more domain uses the evidence-synthesis workflow and reveals the same inventory needs.
 
 ## Traceability
 
@@ -240,7 +240,7 @@ Publication events:
 - publish-ssr-validity-conditions-claim-hardening-update-2026-06-03-2026-06-03t19-42-15-556z
 - publish-ssr-model-choice-student-simulation-validity-update-2026-06-03-2026-06-03t20-20-40-207z
 
-Evidence review status:
+Evidence appraisal status:
 
-- SSR evidence-review lane records matching `data/evidence-reviews/evidence-review-ssr-*.json`: 99 complete, 0 blocking.
-- Review lanes represented: source_fidelity, construct_mapping, method_classification, scorer_validation_relevance, synthesis_overreach, applicability_boundary, and search_protocol.
+- SSR evidence-appraisal lane records matching `data/evidence-appraisals/evidence-appraisal-ssr-*.json`: 99 complete, 0 blocking.
+- Appraisal lanes represented: source_fidelity, construct_mapping, method_classification, scorer_validation_relevance, synthesis_overreach, applicability_boundary, and search_protocol.

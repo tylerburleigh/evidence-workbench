@@ -108,15 +108,15 @@
   "affected_claim_ids": [
     "ssr-acceptable-scoring-uses-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-acceptable-scoring-uses-construct-mapping-r1",
-    "evidence-review-ssr-acceptable-scoring-uses-method-classification-r1",
-    "evidence-review-ssr-acceptable-scoring-uses-scorer-validation-relevance-r1",
-    "evidence-review-ssr-acceptable-scoring-uses-source-fidelity-r1",
-    "evidence-review-ssr-acceptable-scoring-uses-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-acceptable-scoring-uses-construct-mapping-r1",
+    "evidence-appraisal-ssr-acceptable-scoring-uses-method-classification-r1",
+    "evidence-appraisal-ssr-acceptable-scoring-uses-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-acceptable-scoring-uses-source-fidelity-r1",
+    "evidence-appraisal-ssr-acceptable-scoring-uses-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
-  "review_follow_up_actions": [
+  "appraisal_corrections_applied": [],
+  "appraisal_follow_up_actions": [
     "scorer_validation_relevance: Keep the claim's replacement-validation limitation and support roles unchanged.",
     "source_fidelity: Keep those candidates screened as no_full_text and exclude them from direct claim support until full text is obtained."
   ],

@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-example-topic-source-fidelity-r1",
+  "name": "Source Fidelity Review For Example Topic Bundle",
+  "candidate_bundle_id": "example-topic-baseline-review-2026-05-31",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "source_fidelity",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The fixture source, artifact, finding, and claim records use matching IDs and intentionally synthetic metadata.",
+  "appraised_change_ids": [
+    "create-sample-source",
+    "create-sample-artifact",
+    "create-sample-finding",
+    "create-sample-claim"
+  ],
+  "findings": [],
+  "created_at": "2026-05-31T12:05:00Z",
+  "updated_at": "2026-05-31T22:53:10.228Z"
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-ssr-validity-conditions-claim-hardening-method-classification-r1",
+  "name": "Method Classification review for Validity Conditions Claim Hardening Update bundle",
+  "candidate_bundle_id": "ssr-validity-conditions-claim-hardening-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "method_classification",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "appraiser_id": "codex-agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The claim updates classify the new evidence as task-bound model/workflow and prompt/workflow sensitivity, with no cross-task model ranking or universal prompt prescription.",
+  "appraised_change_ids": [
+    "update-quality-evaluation-claim",
+    "update-model-generation-effects-claim",
+    "update-prompt-engineering-effects-claim",
+    "update-real-response-comparison-claim",
+    "update-scoring-validation-use-claim",
+    "update-acceptable-scoring-uses-claim"
+  ],
+  "findings": [
+    {
+      "finding_id": "claim-hardening-keeps-model-workflow-framing",
+      "severity": "note",
+      "category": "method_misclassification",
+      "claim_or_issue": "New support is framed as model/workflow sensitivity rather than a pure model-family effect.",
+      "why_it_matters": "Several included studies vary prompts, workflows, training, and comparators together.",
+      "recommended_action": "Keep the staged task-bound language.",
+      "resolution_status": "closed"
+    }
+  ],
+  "created_at": "2026-06-03T19:38:00Z",
+  "updated_at": "2026-06-03T19:38:00Z"
+}

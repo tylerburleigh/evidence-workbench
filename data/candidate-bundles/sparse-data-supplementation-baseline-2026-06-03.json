@@ -4,7 +4,7 @@
   "id": "sparse-data-supplementation-baseline-2026-06-03",
   "name": "Sparse Data Supplementation Literature Baseline",
   "summary": "Stages a targeted literature baseline on uses of synthetic student responses to supplement sparse, imbalanced, or subgroup-limited response datasets.",
-  "intake_mode": "bootstrap",
+  "intake_mode": "baseline_review",
   "lifecycle_status": "published",
   "submitted_at": "2026-06-03T14:30:00Z",
   "submitted_by": "codex-agent",
@@ -274,7 +274,7 @@
       "note": "Creates a first baseline claim for the new sparse-data supplementation review question."
     }
   ],
-  "required_review_lanes": [
+  "required_appraisal_lanes": [
     "source_fidelity",
     "construct_mapping",
     "method_classification",
@@ -283,21 +283,21 @@
     "synthesis_overreach",
     "search_protocol"
   ],
-  "review_requirement": {
-    "min_complete_reviews_per_lane": 1,
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": false
   },
-  "evidence_review_ids": [
-    "evidence-review-ssr-sparse-data-supplementation-construct-mapping-r1",
-    "evidence-review-ssr-sparse-data-supplementation-source-fidelity-r1",
-    "evidence-review-ssr-sparse-data-supplementation-method-classification-r1",
-    "evidence-review-ssr-sparse-data-supplementation-scorer-validation-relevance-r1",
-    "evidence-review-ssr-sparse-data-supplementation-applicability-boundary-r1",
-    "evidence-review-ssr-sparse-data-supplementation-synthesis-overreach-r1",
-    "evidence-review-ssr-sparse-data-supplementation-search-protocol-r1"
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-sparse-data-supplementation-construct-mapping-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-source-fidelity-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-method-classification-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-applicability-boundary-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-synthesis-overreach-r1",
+    "evidence-appraisal-ssr-sparse-data-supplementation-search-protocol-r1"
   ],
-  "review_comment_ids": [],
+  "editorial_comment_ids": [],
   "publication_event_ids": [
     "publish-sparse-data-supplementation-baseline-2026-06-03-2026-06-03t15-21-48-538z"
   ],

@@ -3,8 +3,8 @@
   "record_type": "candidate_bundle",
   "id": "ssr-assessment-stakes-boundaries-consequential-update-2026-06-03",
   "name": "Assessment Stakes Consequential Use Boundaries Update",
-  "summary": "Staged targeted surveillance update for consequential and lower-stakes synthetic-response use boundaries, adding direct operational state summative evidence and bounded high-stakes, formative, and classroom augmentation evidence.",
-  "intake_mode": "surveillance",
+  "summary": "Staged targeted review update for consequential and lower-stakes synthetic-response use boundaries, adding direct operational state summative evidence and bounded high-stakes, formative, and classroom augmentation evidence.",
+  "intake_mode": "review_update",
   "lifecycle_status": "published",
   "submitted_at": "2026-06-03T11:20:00Z",
   "submitted_by": "codex-agent",
@@ -200,7 +200,7 @@
       "note": "After review, consider a separate acceptable-use update because the New Mexico report may add operational training augmentation to the acceptable-use taxonomy."
     }
   ],
-  "required_review_lanes": [
+  "required_appraisal_lanes": [
     "source_fidelity",
     "construct_mapping",
     "method_classification",
@@ -208,20 +208,20 @@
     "applicability_boundary",
     "synthesis_overreach"
   ],
-  "review_requirement": {
-    "min_complete_reviews_per_lane": 1,
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": false
   },
-  "evidence_review_ids": [
-    "evidence-review-ssr-assessment-stakes-boundaries-consequential-update-source-fidelity-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-consequential-update-construct-mapping-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-consequential-update-method-classification-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-consequential-update-scorer-validation-relevance-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-consequential-update-applicability-boundary-r1",
-    "evidence-review-ssr-assessment-stakes-boundaries-consequential-update-synthesis-overreach-r1"
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-consequential-update-source-fidelity-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-consequential-update-construct-mapping-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-consequential-update-method-classification-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-consequential-update-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-consequential-update-applicability-boundary-r1",
+    "evidence-appraisal-ssr-assessment-stakes-boundaries-consequential-update-synthesis-overreach-r1"
   ],
-  "review_comment_ids": [],
+  "editorial_comment_ids": [],
   "publication_event_ids": [
     "publish-ssr-assessment-stakes-boundaries-consequential-update-2026-06-03-2026-06-03t11-54-31-750z"
   ],

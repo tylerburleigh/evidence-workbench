@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-ssr-non-llm-cr-augmentation-construct-mapping-r1",
+  "name": "Construct Mapping Review for Non-LLM CR Augmentation Update",
+  "candidate_bundle_id": "ssr-non-llm-constructed-response-augmentation-update-2026-06-03",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "construct_mapping",
+  "appraiser_kind": "agent",
+  "appraiser_id": "codex-agent",
+  "skill_name": "synthetic-student-responses-evidence-appraisal-adapter",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "The staged records map the construct carefully: Lun and Bonthu are short-answer text augmentation, Krisnawati combines manually simulated text responses with feature-space SMOTE, and Li/Haudek/Krajcik is adjacent non-text constructed-response evidence. The claim update explicitly separates generated textual student responses from manual simulation, feature vectors, and image augmentation.",
+  "appraised_change_ids": [
+    "create-search-protocol",
+    "create-source-lun",
+    "create-source-bonthu",
+    "create-source-krisnawati",
+    "create-source-li",
+    "create-artifact-lun",
+    "create-artifact-bonthu",
+    "create-artifact-krisnawati",
+    "create-artifact-li",
+    "create-finding-lun",
+    "create-finding-bonthu",
+    "create-finding-krisnawati",
+    "create-finding-li",
+    "update-claim-sparse-supplementation"
+  ],
+  "findings": [
+    {
+      "finding_id": "construct-mapping-feature-space-boundary",
+      "severity": "note",
+      "category": "construct_boundary",
+      "applies_to_change_id": "update-claim-sparse-supplementation",
+      "claim_or_issue": "SMOTE/image augmentation examples are relevant to sparse constructed-response scoring data but are not generated readable student prose.",
+      "why_it_matters": "The literature review should not imply that every included synthetic-data method creates synthetic student text.",
+      "recommended_action": "Maintain the response-origin and synthetic-data-form distinction in downstream synthesis text.",
+      "resolution_status": "addressed"
+    }
+  ],
+  "created_at": "2026-06-03T16:35:05Z",
+  "updated_at": "2026-06-03T16:35:05Z"
+}

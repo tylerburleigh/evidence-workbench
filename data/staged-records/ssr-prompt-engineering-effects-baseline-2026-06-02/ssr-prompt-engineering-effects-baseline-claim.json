@@ -23,7 +23,7 @@
   ],
   "interpretive_note": "Prompt engineering should be tracked as an experimental method variable. The same prompt strategy can improve one target signal while weakening another, and prompt-conditioned inputs may be useful for stress testing without being validated substitutes for real student responses.",
   "limitations": [
-    "The staged source set is a compact bootstrap baseline, not an exhaustive review.",
+    "The staged source set is a compact baseline-review evidence set, not an exhaustive review.",
     "Evidence spans essays, multiple-choice ability simulation, multiple-choice item evaluation, and chatbot inputs.",
     "The claim does not establish that synthetic responses can replace real student responses for validation, item calibration, or scorer benchmarking.",
     "Access-limited candidates should not support synthesis claims until full text is obtained or the abstract-only limitation is made explicit."

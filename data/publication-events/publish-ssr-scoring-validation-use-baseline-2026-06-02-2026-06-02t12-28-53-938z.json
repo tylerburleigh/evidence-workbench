@@ -83,12 +83,13 @@
   "affected_claim_ids": [
     "ssr-scoring-validation-use-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-scoring-validation-use-construct-mapping-r1",
-    "evidence-review-ssr-scoring-validation-use-method-classification-r1",
-    "evidence-review-ssr-scoring-validation-use-scorer-validation-relevance-r1",
-    "evidence-review-ssr-scoring-validation-use-source-fidelity-r1",
-    "evidence-review-ssr-scoring-validation-use-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-scoring-validation-use-construct-mapping-r1",
+    "evidence-appraisal-ssr-scoring-validation-use-method-classification-r1",
+    "evidence-appraisal-ssr-scoring-validation-use-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-scoring-validation-use-source-fidelity-r1",
+    "evidence-appraisal-ssr-scoring-validation-use-synthesis-overreach-r1"
   ],
+  "appraisal_corrections_applied": [],
   "change_note": "Creates the first staged literature-review baseline for scorer-validation use of synthetic responses."
 }

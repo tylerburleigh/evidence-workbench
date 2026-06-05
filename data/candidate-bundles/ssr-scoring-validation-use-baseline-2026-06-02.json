@@ -4,7 +4,7 @@
   "id": "ssr-scoring-validation-use-baseline-2026-06-02",
   "name": "Synthetic Response Scorer Validation Use Baseline",
   "summary": "Staged first literature-review baseline for whether synthetic student or constructed responses are used to validate, benchmark, calibrate, or stress-test automated scorers.",
-  "intake_mode": "bootstrap",
+  "intake_mode": "baseline_review",
   "lifecycle_status": "published",
   "submitted_at": "2026-06-02T11:49:00Z",
   "submitted_by": "codex-agent",
@@ -37,7 +37,7 @@
       "target_record_id": "ssr-scoring-validation-use-search-2026-06-02",
       "file_path": "data/search-protocols/ssr-scoring-validation-use-search-2026-06-02.json",
       "staged_file_path": "data/staged-records/ssr-scoring-validation-use-baseline-2026-06-02/ssr-scoring-validation-use-search-2026-06-02.json",
-      "summary": "Stage the targeted search and screening protocol for the scorer-validation use bootstrap.",
+      "summary": "Stage the targeted search and screening protocol for the scorer-validation use baseline-review pass.",
       "rationale": "The literature baseline needs an auditable search pass, including included and deferred sources."
     },
     {
@@ -178,26 +178,26 @@
       "note": "Creates the first staged literature-review baseline for scorer-validation use of synthetic responses."
     }
   ],
-  "required_review_lanes": [
+  "required_appraisal_lanes": [
     "source_fidelity",
     "construct_mapping",
     "method_classification",
     "scorer_validation_relevance",
     "synthesis_overreach"
   ],
-  "review_requirement": {
-    "min_complete_reviews_per_lane": 1,
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": false
   },
-  "evidence_review_ids": [
-    "evidence-review-ssr-scoring-validation-use-source-fidelity-r1",
-    "evidence-review-ssr-scoring-validation-use-construct-mapping-r1",
-    "evidence-review-ssr-scoring-validation-use-method-classification-r1",
-    "evidence-review-ssr-scoring-validation-use-scorer-validation-relevance-r1",
-    "evidence-review-ssr-scoring-validation-use-synthesis-overreach-r1"
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-scoring-validation-use-source-fidelity-r1",
+    "evidence-appraisal-ssr-scoring-validation-use-construct-mapping-r1",
+    "evidence-appraisal-ssr-scoring-validation-use-method-classification-r1",
+    "evidence-appraisal-ssr-scoring-validation-use-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-scoring-validation-use-synthesis-overreach-r1"
   ],
-  "review_comment_ids": [],
+  "editorial_comment_ids": [],
   "publication_event_ids": [
     "publish-ssr-scoring-validation-use-baseline-2026-06-02-2026-06-02t12-28-53-938z"
   ],

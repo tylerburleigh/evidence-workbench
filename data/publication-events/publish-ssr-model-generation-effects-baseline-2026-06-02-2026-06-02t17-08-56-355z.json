@@ -113,14 +113,14 @@
   "affected_claim_ids": [
     "ssr-model-generation-effects-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-model-generation-effects-construct-mapping-r1",
-    "evidence-review-ssr-model-generation-effects-method-classification-r1",
-    "evidence-review-ssr-model-generation-effects-scorer-validation-relevance-r1",
-    "evidence-review-ssr-model-generation-effects-source-fidelity-r1",
-    "evidence-review-ssr-model-generation-effects-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-model-generation-effects-construct-mapping-r1",
+    "evidence-appraisal-ssr-model-generation-effects-method-classification-r1",
+    "evidence-appraisal-ssr-model-generation-effects-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-model-generation-effects-source-fidelity-r1",
+    "evidence-appraisal-ssr-model-generation-effects-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
-  "review_follow_up_actions": [],
+  "appraisal_corrections_applied": [],
+  "appraisal_follow_up_actions": [],
   "change_note": "Creates the first staged literature-review baseline for model and generation workflow effects in synthetic student response generation."
 }

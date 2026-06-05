@@ -128,13 +128,13 @@
   "affected_claim_ids": [
     "ssr-quality-evaluation-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-quality-evaluation-construct-mapping-r1",
-    "evidence-review-ssr-quality-evaluation-method-classification-r1",
-    "evidence-review-ssr-quality-evaluation-scorer-validation-relevance-r1",
-    "evidence-review-ssr-quality-evaluation-source-fidelity-r1",
-    "evidence-review-ssr-quality-evaluation-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-quality-evaluation-construct-mapping-r1",
+    "evidence-appraisal-ssr-quality-evaluation-method-classification-r1",
+    "evidence-appraisal-ssr-quality-evaluation-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-quality-evaluation-source-fidelity-r1",
+    "evidence-appraisal-ssr-quality-evaluation-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
+  "appraisal_corrections_applied": [],
   "change_note": "Creates the first staged literature-review baseline for quality evaluation of synthetic student responses."
 }

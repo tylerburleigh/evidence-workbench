@@ -113,22 +113,22 @@
   "affected_claim_ids": [
     "ssr-sparse-data-supplementation-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-non-llm-cr-augmentation-applicability-boundary-r1",
-    "evidence-review-ssr-non-llm-cr-augmentation-construct-mapping-r1",
-    "evidence-review-ssr-non-llm-cr-augmentation-method-classification-r1",
-    "evidence-review-ssr-non-llm-cr-augmentation-scorer-validation-relevance-r1",
-    "evidence-review-ssr-non-llm-cr-augmentation-search-protocol-r1",
-    "evidence-review-ssr-non-llm-cr-augmentation-source-fidelity-r1",
-    "evidence-review-ssr-non-llm-cr-augmentation-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-non-llm-cr-augmentation-applicability-boundary-r1",
+    "evidence-appraisal-ssr-non-llm-cr-augmentation-construct-mapping-r1",
+    "evidence-appraisal-ssr-non-llm-cr-augmentation-method-classification-r1",
+    "evidence-appraisal-ssr-non-llm-cr-augmentation-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-non-llm-cr-augmentation-search-protocol-r1",
+    "evidence-appraisal-ssr-non-llm-cr-augmentation-source-fidelity-r1",
+    "evidence-appraisal-ssr-non-llm-cr-augmentation-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
-  "review_follow_up_actions": [
+  "appraisal_corrections_applied": [],
+  "appraisal_follow_up_actions": [
     "applicability_boundary: Keep operational-use claims in separate policy/practice nodes.",
     "construct_mapping: Maintain the response-origin and synthetic-data-form distinction in downstream synthesis text.",
     "method_classification: Keep generation_model and scorer_use fields separate in synthesis exports.",
     "scorer_validation_relevance: Retain the distinction between training augmentation and scorer validation in the literature review.",
-    "search_protocol: Leave systematicity_level as targeted_bootstrap and keep screening counts non-exhaustive.",
+    "search_protocol: Leave systematicity_level as targeted_baseline_review and keep screening counts non-exhaustive.",
     "source_fidelity: Retrieve full text before using Bonthu et al. for detailed method comparison or quantitative synthesis.",
     "source_fidelity: Use Li, Haudek, and Krajcik in all source, finding, and synthesis text.",
     "synthesis_overreach: Use language such as targeted pass, examples, or pattern rather than systematic prevalence claims."

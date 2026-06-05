@@ -4,7 +4,7 @@
   "id": "ssr-prompt-engineering-effects-baseline-2026-06-02",
   "name": "Prompt Engineering Effects Baseline",
   "summary": "Staged first literature-review baseline for how prompt design, examples, grade conditioning, role framing, and prompt-conditioned inputs affect synthetic student response generation.",
-  "intake_mode": "bootstrap",
+  "intake_mode": "baseline_review",
   "lifecycle_status": "published",
   "submitted_at": "2026-06-02T18:24:00Z",
   "submitted_by": "codex-agent",
@@ -271,26 +271,26 @@
       "note": "Adds full-text access metadata for ten existing SSR source records where open full text had already been used or verified."
     }
   ],
-  "required_review_lanes": [
+  "required_appraisal_lanes": [
     "source_fidelity",
     "construct_mapping",
     "method_classification",
     "scorer_validation_relevance",
     "synthesis_overreach"
   ],
-  "review_requirement": {
-    "min_complete_reviews_per_lane": 1,
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": false
   },
-  "evidence_review_ids": [
-    "evidence-review-ssr-prompt-engineering-effects-source-fidelity-r1",
-    "evidence-review-ssr-prompt-engineering-effects-construct-mapping-r1",
-    "evidence-review-ssr-prompt-engineering-effects-method-classification-r1",
-    "evidence-review-ssr-prompt-engineering-effects-scorer-validation-relevance-r1",
-    "evidence-review-ssr-prompt-engineering-effects-synthesis-overreach-r1"
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-prompt-engineering-effects-source-fidelity-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-construct-mapping-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-method-classification-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-prompt-engineering-effects-synthesis-overreach-r1"
   ],
-  "review_comment_ids": [],
+  "editorial_comment_ids": [],
   "publication_event_ids": [
     "publish-ssr-prompt-engineering-effects-baseline-2026-06-02-2026-06-02t18-35-33-041z"
   ],

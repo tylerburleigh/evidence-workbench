@@ -8,7 +8,7 @@
     "ssr-sparse-data-supplementation"
   ],
   "status": "included_sources_staged",
-  "systematicity_level": "targeted_bootstrap",
+  "systematicity_level": "targeted_baseline_review",
   "search_started_at": "2026-06-03T15:15:00Z",
   "search_completed_at": "2026-06-03T16:25:00Z",
   "databases": [
@@ -140,7 +140,7 @@
   ],
   "screening_summary": "Targeted search identified multiple non-essay examples of synthetic or augmented constructed-response data used to supplement sparse or imbalanced datasets. The strongest direct text-response example is Lun et al. 2020; Krisnawati et al. 2025 adds manual and feature-space augmentation; Li et al. 2025 is adjacent non-text constructed-response evidence; Bonthu et al. 2023 is direct ASAG evidence but abstract-only in this extraction.",
   "limitations": [
-    "This is a targeted bootstrap search, not a systematic review.",
+    "This is a targeted baseline-review search, not a systematic review.",
     "Bonthu et al. was not full-text extracted because direct publisher page retrieval was blocked.",
     "Feature-space and image augmentation records should not be interpreted as generated textual student responses."
   ]

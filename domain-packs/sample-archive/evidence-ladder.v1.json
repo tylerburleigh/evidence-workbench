@@ -21,10 +21,10 @@
     {
       "id": "reviewed_archive_claim",
       "label": "Reviewed Archive Claim",
-      "description": "A claim has passed configured review lanes for source fidelity, scope fit, and context boundaries.",
-      "minimum_support_expected": "Complete non-blocking reviews for required lanes.",
+      "description": "A claim has passed configured appraisal lanes for source fidelity, scope fit, and context boundaries.",
+      "minimum_support_expected": "Complete non-blocking appraisals for required lanes.",
       "common_overclaim_risk": "Confusing reviewed fixture coverage with complete knowledge.",
-      "moves_to_next_stage": "Continue surveillance for new archived materials."
+      "moves_to_next_stage": "Continue review updates for new archived materials."
     }
   ]
 }

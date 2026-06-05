@@ -102,6 +102,6 @@
   "citation_audit": {
     "status": "traceable",
     "checked_at": "2026-06-03",
-    "method": "Traceability section lists claim IDs, source IDs, publication event IDs, and evidence-review status after the consequential-use, acceptable-use, operational-practice policy, sparse-data supplementation, non-LLM constructed-response augmentation, validity-conditions controlled-comparison, claim-support hardening, and model-choice student-simulation validity updates."
+    "method": "Traceability section lists claim IDs, source IDs, publication event IDs, and evidence-appraisal status after the consequential-use, acceptable-use, operational-practice policy, sparse-data supplementation, non-LLM constructed-response augmentation, validity-conditions controlled-comparison, claim-support hardening, and model-choice student-simulation validity updates."
   }
 }

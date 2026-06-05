@@ -27,7 +27,7 @@
   ],
   "interpretive_note": "This baseline maps quality-evaluation families, not a ranking of generation methods. A method can look plausible under one signal, such as believability or distributional similarity, while failing a stricter comparator such as IRT ability alignment or downstream scorer utility.",
   "limitations": [
-    "The staged source set is a compact bootstrap baseline, not an exhaustive review.",
+    "The staged source set is a compact baseline-review evidence set, not an exhaustive review.",
     "Quality constructs differ by task: item response, essay quality, dialogue fidelity, profile consistency, and automated-scoring utility are not interchangeable.",
     "Some sources are preprints or rely on abstract-level summary in this staged pass.",
     "This claim does not establish that synthetic responses can replace real or independently human-scored responses for validation."

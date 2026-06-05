@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "record_type": "research_session",
   "id": "sparse-data-supplementation-baseline-2026-06-03",
-  "mode": "bootstrap",
+  "mode": "baseline_review",
   "started_at": "2026-06-03T13:50:00Z",
   "completed_at": "2026-06-03T14:35:00Z",
   "scope": {
@@ -36,7 +36,7 @@
   ],
   "next_recommended_mode": "manual",
   "next_actions": [
-    "Run required evidence-review lanes.",
+    "Run required evidence-appraisal lanes.",
     "Perform full-text follow-up extraction for Martin and Graulich.",
     "Expand citation chaining for older non-LLM augmentation and additional constructed-response examples."
   ]

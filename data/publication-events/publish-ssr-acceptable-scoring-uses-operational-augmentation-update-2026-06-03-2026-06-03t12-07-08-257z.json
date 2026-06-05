@@ -3,7 +3,7 @@
   "record_type": "publication_event",
   "id": "publish-ssr-acceptable-scoring-uses-operational-augmentation-update-2026-06-03-2026-06-03t12-07-08-257z",
   "name": "Published Acceptable Use Operational Training Augmentation Update",
-  "summary": "Staged surveillance update to the acceptable-use claim after publication of direct operational state summative training-augmentation evidence and related lower-stakes augmentation and high-stakes detection evidence.",
+  "summary": "Staged review update to the acceptable-use claim after publication of direct operational state summative training-augmentation evidence and related lower-stakes augmentation and high-stakes detection evidence.",
   "candidate_bundle_id": "ssr-acceptable-scoring-uses-operational-augmentation-update-2026-06-03",
   "event_type": "publish",
   "published_at": "2026-06-03T12:07:08.257Z",
@@ -29,16 +29,16 @@
     "ssr-acceptable-scoring-uses-baseline-claim",
     "ssr-assessment-stakes-boundaries-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-acceptable-scoring-uses-operational-augmentation-update-applicability-boundary-r1",
-    "evidence-review-ssr-acceptable-scoring-uses-operational-augmentation-update-construct-mapping-r1",
-    "evidence-review-ssr-acceptable-scoring-uses-operational-augmentation-update-method-classification-r1",
-    "evidence-review-ssr-acceptable-scoring-uses-operational-augmentation-update-scorer-validation-relevance-r1",
-    "evidence-review-ssr-acceptable-scoring-uses-operational-augmentation-update-source-fidelity-r1",
-    "evidence-review-ssr-acceptable-scoring-uses-operational-augmentation-update-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-acceptable-scoring-uses-operational-augmentation-update-applicability-boundary-r1",
+    "evidence-appraisal-ssr-acceptable-scoring-uses-operational-augmentation-update-construct-mapping-r1",
+    "evidence-appraisal-ssr-acceptable-scoring-uses-operational-augmentation-update-method-classification-r1",
+    "evidence-appraisal-ssr-acceptable-scoring-uses-operational-augmentation-update-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-acceptable-scoring-uses-operational-augmentation-update-source-fidelity-r1",
+    "evidence-appraisal-ssr-acceptable-scoring-uses-operational-augmentation-update-synthesis-overreach-r1"
   ],
-  "review_corrections_applied": [],
-  "review_follow_up_actions": [
+  "appraisal_corrections_applied": [],
+  "appraisal_follow_up_actions": [
     "applicability_boundary: Keep the staged unknown_or_unreviewed_contexts and next action to search more operational technical reports and policy documentation.",
     "construct_mapping: Retain the boundary-condition support role for Wang et al.",
     "method_classification: Keep the staged source-specific labels and limitations rather than generalizing across generation methods.",

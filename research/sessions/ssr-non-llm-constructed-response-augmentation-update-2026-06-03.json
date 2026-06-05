@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "record_type": "research_session",
   "id": "ssr-non-llm-constructed-response-augmentation-update-2026-06-03",
-  "mode": "surveillance",
+  "mode": "review_update",
   "started_at": "2026-06-03T15:10:00Z",
   "completed_at": "2026-06-03T16:40:00Z",
   "scope": {

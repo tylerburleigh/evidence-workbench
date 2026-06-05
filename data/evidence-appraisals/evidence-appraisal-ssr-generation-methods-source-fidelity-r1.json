@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-ssr-generation-methods-source-fidelity-r1",
+  "name": "Source Fidelity review for Ssr Generation Methods bundle",
+  "candidate_bundle_id": "ssr-generation-methods-baseline-2026-06-02",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "source_fidelity",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted after checking the staged bibliographic metadata, source locators, method statements, and quantitative notes against the cited EPFL Infoscience, arXiv, ETS/MDPI, ACL Anthology, and previously published source records. Agent4Edu full-text details for dataset size, model versions, and top-line metrics were corrected before this review was recorded.",
+  "appraised_change_ids": [
+    "create-ssr-generation-methods-search-2026-06-02",
+    "create-ipci-knowledge-profiles-response-generation-source",
+    "create-agent4edu-learner-response-generation-source",
+    "create-watts-scientific-argumentation-chatbot-source",
+    "create-ipci-profile-based-generation-artifact",
+    "create-agent4edu-generative-agent-artifact",
+    "create-watts-copilot-synthetic-inputs-artifact",
+    "create-yoo-case-corruption-generation-artifact",
+    "create-wolfe-prompt-strategy-generation-artifact",
+    "create-ipci-profile-based-generation-finding",
+    "create-agent4edu-generative-agent-finding",
+    "create-watts-copilot-synthetic-inputs-finding",
+    "create-yoo-case-corruption-generation-finding",
+    "create-wolfe-prompt-strategy-generation-finding",
+    "create-ssr-generation-methods-baseline-claim"
+  ],
+  "findings": [
+    {
+      "finding_id": "agent4edu-full-text-corrections-applied",
+      "severity": "note",
+      "category": "source_mismatch",
+      "claim_or_issue": "The initial Agent4Edu artifact and finding described the extraction as abstract-level and left model/version and metric details unstaged, even though the arXiv HTML exposes those details.",
+      "why_it_matters": "Source-fidelity review should use the most specific accessible source locator before accepting method and metric claims.",
+      "recommended_action": "Corrections were applied to the Agent4Edu artifact and finding to stage EduData size, GPT-3.5-turbo/GPT-4-turbo model details, learner-simulation metrics, and the arXiv HTML source locator.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-agent4edu-generative-agent-artifact"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "appraiser_id": "codex-agent",
+  "created_at": "2026-06-02T13:25:49.588Z",
+  "updated_at": "2026-06-02T13:25:49.588Z"
+}

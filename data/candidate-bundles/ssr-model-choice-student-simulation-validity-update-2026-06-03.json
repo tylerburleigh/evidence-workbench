@@ -4,7 +4,7 @@
   "id": "ssr-model-choice-student-simulation-validity-update-2026-06-03",
   "name": "Model Choice and Student-Simulation Validity Update",
   "summary": "Targeted literature-only update promoting newer model-choice and student-simulation validity sources into the SSR evidence graph, with fine-tuning evidence treated as a boundary rather than an action recommendation.",
-  "intake_mode": "surveillance",
+  "intake_mode": "review_update",
   "lifecycle_status": "published",
   "submitted_at": "2026-06-03T20:05:00Z",
   "submitted_by": "codex-agent",
@@ -173,7 +173,7 @@
       "note": "After publication, update the application memo to remove contextual-source caveats and make the desk-based model-choice criteria more explicit."
     }
   ],
-  "required_review_lanes": [
+  "required_appraisal_lanes": [
     "source_fidelity",
     "construct_mapping",
     "method_classification",
@@ -181,20 +181,20 @@
     "applicability_boundary",
     "synthesis_overreach"
   ],
-  "review_requirement": {
-    "min_complete_reviews_per_lane": 1,
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": false
   },
-  "evidence_review_ids": [
-    "evidence-review-ssr-model-choice-student-simulation-validity-update-source-fidelity-r1",
-    "evidence-review-ssr-model-choice-student-simulation-validity-update-construct-mapping-r1",
-    "evidence-review-ssr-model-choice-student-simulation-validity-update-method-classification-r1",
-    "evidence-review-ssr-model-choice-student-simulation-validity-update-scorer-validation-relevance-r1",
-    "evidence-review-ssr-model-choice-student-simulation-validity-update-applicability-boundary-r1",
-    "evidence-review-ssr-model-choice-student-simulation-validity-update-synthesis-overreach-r1"
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-model-choice-student-simulation-validity-update-source-fidelity-r1",
+    "evidence-appraisal-ssr-model-choice-student-simulation-validity-update-construct-mapping-r1",
+    "evidence-appraisal-ssr-model-choice-student-simulation-validity-update-method-classification-r1",
+    "evidence-appraisal-ssr-model-choice-student-simulation-validity-update-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-model-choice-student-simulation-validity-update-applicability-boundary-r1",
+    "evidence-appraisal-ssr-model-choice-student-simulation-validity-update-synthesis-overreach-r1"
   ],
-  "review_comment_ids": [],
+  "editorial_comment_ids": [],
   "publication_event_ids": [
     "publish-ssr-model-choice-student-simulation-validity-update-2026-06-03-2026-06-03t20-20-40-207z"
   ],

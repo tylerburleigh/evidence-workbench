@@ -12,8 +12,8 @@
   "selection_policy": {
     "default_unit": "review_question",
     "stale_after_days": 120,
-    "max_scope_units_per_bootstrap_run": 1,
-    "max_scope_units_per_surveillance_run": 1,
+    "max_scope_units_per_baseline_review_run": 1,
+    "max_scope_units_per_review_update_run": 1,
     "when_request_is_too_broad": "Decompose to one review question-level pass before creating records."
   },
   "nodes": [
@@ -35,14 +35,14 @@
       "stale_reason": "Latest publication check is 0 days old; stale after 120 days.",
       "last_session_id": "ssr-scoring-validation-use-baseline-2026-06-02",
       "last_session_at": "2026-06-02T11:49:00Z",
-      "last_session_mode": "bootstrap",
+      "last_session_mode": "baseline_review",
       "last_session_outcome": "candidate_bundle",
       "last_candidate_bundle_id": "ssr-validity-conditions-claim-hardening-update-2026-06-03",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-ssr-validity-conditions-claim-hardening-update-2026-06-03-2026-06-03t19-42-15-556z",
       "last_published_at": "2026-06-03T19:42:15.556Z",
       "default_research_question": "What changed for Use in Automated Scorer Validation since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest publication check is 0 days old; stale after 120 days. Next surveillance is due at 2026-10-01T19:42:15.556Z."
+      "notes": "Latest publication check is 0 days old; stale after 120 days. Next review update is due at 2026-10-01T19:42:15.556Z."
     },
     {
       "taxonomy_node_id": "ssr-generation-methods",
@@ -62,14 +62,14 @@
       "stale_reason": "Latest publication check is 1 days old; stale after 120 days.",
       "last_session_id": "ssr-generation-methods-baseline-2026-06-02",
       "last_session_at": "2026-06-02T13:05:00Z",
-      "last_session_mode": "bootstrap",
+      "last_session_mode": "baseline_review",
       "last_session_outcome": "candidate_bundle",
       "last_candidate_bundle_id": "ssr-generation-methods-baseline-2026-06-02",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-ssr-generation-methods-baseline-2026-06-02-2026-06-02t13-26-12-424z",
       "last_published_at": "2026-06-02T13:26:12.424Z",
       "default_research_question": "What changed for Synthetic Response Generation Methods since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest publication check is 1 days old; stale after 120 days. Next surveillance is due at 2026-09-30T13:26:12.424Z."
+      "notes": "Latest publication check is 1 days old; stale after 120 days. Next review update is due at 2026-09-30T13:26:12.424Z."
     },
     {
       "taxonomy_node_id": "ssr-quality-evaluation",
@@ -89,14 +89,14 @@
       "stale_reason": "Latest published_bundle check is 0 days old; stale after 120 days.",
       "last_session_id": "ssr-quality-evaluation-baseline-2026-06-02",
       "last_session_at": "2026-06-02T14:22:00Z",
-      "last_session_mode": "bootstrap",
+      "last_session_mode": "baseline_review",
       "last_session_outcome": "candidate_bundle",
       "last_candidate_bundle_id": "ssr-model-choice-student-simulation-validity-update-2026-06-03",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-ssr-model-choice-student-simulation-validity-update-2026-06-03-2026-06-03t20-20-40-207z",
       "last_published_at": "2026-06-03T20:20:40.207Z",
       "default_research_question": "What changed for Synthetic Response Quality Evaluation since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest published_bundle check is 0 days old; stale after 120 days. Next surveillance is due at 2026-10-01T20:25:00.000Z."
+      "notes": "Latest published_bundle check is 0 days old; stale after 120 days. Next review update is due at 2026-10-01T20:25:00.000Z."
     },
     {
       "taxonomy_node_id": "ssr-model-generation-effects",
@@ -123,7 +123,7 @@
       "last_publication_event_id": "publish-ssr-model-choice-student-simulation-validity-update-2026-06-03-2026-06-03t20-20-40-207z",
       "last_published_at": "2026-06-03T20:20:40.207Z",
       "default_research_question": "What changed for Model and Generation Effects since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest published_bundle check is 0 days old; stale after 120 days. Next surveillance is due at 2026-10-01T20:25:00.000Z."
+      "notes": "Latest published_bundle check is 0 days old; stale after 120 days. Next review update is due at 2026-10-01T20:25:00.000Z."
     },
     {
       "taxonomy_node_id": "ssr-prompt-engineering-effects",
@@ -143,14 +143,14 @@
       "stale_reason": "Latest published_bundle check is 0 days old; stale after 120 days.",
       "last_session_id": "ssr-prompt-engineering-effects-baseline-2026-06-02",
       "last_session_at": "2026-06-02T18:24:00Z",
-      "last_session_mode": "bootstrap",
+      "last_session_mode": "baseline_review",
       "last_session_outcome": "candidate_bundle",
       "last_candidate_bundle_id": "ssr-model-choice-student-simulation-validity-update-2026-06-03",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-ssr-model-choice-student-simulation-validity-update-2026-06-03-2026-06-03t20-20-40-207z",
       "last_published_at": "2026-06-03T20:20:40.207Z",
       "default_research_question": "What changed for Prompt Engineering Effects since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest published_bundle check is 0 days old; stale after 120 days. Next surveillance is due at 2026-10-01T20:25:00.000Z."
+      "notes": "Latest published_bundle check is 0 days old; stale after 120 days. Next review update is due at 2026-10-01T20:25:00.000Z."
     },
     {
       "taxonomy_node_id": "ssr-real-response-comparison",
@@ -170,14 +170,14 @@
       "stale_reason": "Latest published_bundle check is 0 days old; stale after 120 days.",
       "last_session_id": "ssr-real-response-comparison-baseline-2026-06-02",
       "last_session_at": "2026-06-02T18:51:00Z",
-      "last_session_mode": "bootstrap",
+      "last_session_mode": "baseline_review",
       "last_session_outcome": "candidate_bundle",
       "last_candidate_bundle_id": "ssr-model-choice-student-simulation-validity-update-2026-06-03",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-ssr-model-choice-student-simulation-validity-update-2026-06-03-2026-06-03t20-20-40-207z",
       "last_published_at": "2026-06-03T20:20:40.207Z",
       "default_research_question": "What changed for Comparison With Real Student Responses since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest published_bundle check is 0 days old; stale after 120 days. Next surveillance is due at 2026-10-01T20:25:00.000Z."
+      "notes": "Latest published_bundle check is 0 days old; stale after 120 days. Next review update is due at 2026-10-01T20:25:00.000Z."
     },
     {
       "taxonomy_node_id": "ssr-synthetic-response-scoring-agreement",
@@ -197,14 +197,14 @@
       "stale_reason": "Latest publication check is 1 days old; stale after 120 days.",
       "last_session_id": "ssr-synthetic-response-scoring-agreement-baseline-2026-06-02",
       "last_session_at": "2026-06-02T19:30:55Z",
-      "last_session_mode": "bootstrap",
+      "last_session_mode": "baseline_review",
       "last_session_outcome": "candidate_bundle",
       "last_candidate_bundle_id": "ssr-synthetic-response-scoring-agreement-baseline-2026-06-02",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-ssr-synthetic-response-scoring-agreement-baseline-2026-06-02-2026-06-02t19-40-47-165z",
       "last_published_at": "2026-06-02T19:40:47.165Z",
       "default_research_question": "What changed for Synthetic Response Scoring Agreement since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest publication check is 1 days old; stale after 120 days. Next surveillance is due at 2026-09-30T19:40:47.165Z."
+      "notes": "Latest publication check is 1 days old; stale after 120 days. Next review update is due at 2026-09-30T19:40:47.165Z."
     },
     {
       "taxonomy_node_id": "ssr-acceptable-scoring-uses",
@@ -224,14 +224,14 @@
       "stale_reason": "Latest publication check is 0 days old; stale after 120 days.",
       "last_session_id": "ssr-acceptable-scoring-uses-baseline-2026-06-02",
       "last_session_at": "2026-06-02T20:19:29Z",
-      "last_session_mode": "bootstrap",
+      "last_session_mode": "baseline_review",
       "last_session_outcome": "candidate_bundle",
       "last_candidate_bundle_id": "ssr-validity-conditions-claim-hardening-update-2026-06-03",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-ssr-validity-conditions-claim-hardening-update-2026-06-03-2026-06-03t19-42-15-556z",
       "last_published_at": "2026-06-03T19:42:15.556Z",
       "default_research_question": "What changed for Acceptable Uses in Automated Scoring since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest publication check is 0 days old; stale after 120 days. Next surveillance is due at 2026-10-01T19:42:15.556Z."
+      "notes": "Latest publication check is 0 days old; stale after 120 days. Next review update is due at 2026-10-01T19:42:15.556Z."
     },
     {
       "taxonomy_node_id": "ssr-assessment-stakes-boundaries",
@@ -251,14 +251,14 @@
       "stale_reason": "Latest publication check is 0 days old; stale after 120 days.",
       "last_session_id": "ssr-assessment-stakes-boundaries-baseline-2026-06-02",
       "last_session_at": "2026-06-02T22:23:21Z",
-      "last_session_mode": "bootstrap",
+      "last_session_mode": "baseline_review",
       "last_session_outcome": "candidate_bundle",
       "last_candidate_bundle_id": "ssr-operational-practice-policy-update-2026-06-03",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-ssr-operational-practice-policy-update-2026-06-03-2026-06-03t13-26-26-193z",
       "last_published_at": "2026-06-03T13:26:26.193Z",
       "default_research_question": "What changed for Assessment Stakes and Use Boundaries since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest publication check is 0 days old; stale after 120 days. Next surveillance is due at 2026-10-01T13:26:26.193Z."
+      "notes": "Latest publication check is 0 days old; stale after 120 days. Next review update is due at 2026-10-01T13:26:26.193Z."
     },
     {
       "taxonomy_node_id": "ssr-sparse-data-supplementation",
@@ -278,14 +278,14 @@
       "stale_reason": "Latest publication check is 0 days old; stale after 120 days.",
       "last_session_id": "ssr-non-llm-constructed-response-augmentation-update-2026-06-03",
       "last_session_at": "2026-06-03T16:40:00Z",
-      "last_session_mode": "surveillance",
+      "last_session_mode": "review_update",
       "last_session_outcome": "candidate_bundle",
       "last_candidate_bundle_id": "ssr-non-llm-constructed-response-augmentation-update-2026-06-03",
       "last_candidate_bundle_status": "published",
       "last_publication_event_id": "publish-ssr-non-llm-constructed-response-augmentation-update-2026-06-03-2026-06-03t16-43-08-294z",
       "last_published_at": "2026-06-03T16:43:08.294Z",
       "default_research_question": "What changed for Use to Supplement Sparse or Imbalanced Response Data since the last meaningful review or publication, and does any change justify a public update?",
-      "notes": "Latest publication check is 0 days old; stale after 120 days. Next surveillance is due at 2026-10-01T16:43:08.294Z."
+      "notes": "Latest publication check is 0 days old; stale after 120 days. Next review update is due at 2026-10-01T16:43:08.294Z."
     }
   ]
 }

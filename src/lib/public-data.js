@@ -1,10 +1,10 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { loadDomainWorkbenchData } from "../../scripts/lib/workbench-data.mjs";
+import { loadDomainStudioData } from "../../scripts/lib/studio-data.mjs";
 import { isUnderPath, workspaceRoot } from "../../scripts/lib/workspace.mjs";
 
-export async function getWorkbenchData() {
-  return loadDomainWorkbenchData();
+export async function getStudioData() {
+  return loadDomainStudioData();
 }
 
 export function getPublicLabels(data) {
@@ -47,8 +47,8 @@ export function getConfidenceEntries(data) {
   );
 }
 
-export function getDefaultReviewLaneIds(data) {
-  return new Set(data.domainPack.domain.default_review_lanes ?? []);
+export function getDefaultAppraisalLaneIds(data) {
+  return new Set(data.domainPack.domain.default_appraisal_lanes ?? []);
 }
 
 export function getScopeNodes(data) {
@@ -120,15 +120,15 @@ export function getBundleReport(data, bundleId) {
   return data.bundleReports.find((report) => report.bundle_id === bundleId);
 }
 
-export function getEvidenceReviewsForBundle(data, bundleId) {
-  return data.collections.evidenceReviews
+export function getEvidenceAppraisalsForBundle(data, bundleId) {
+  return data.collections.evidenceAppraisals
     .map(({ record }) => record)
-    .filter((review) => review.candidate_bundle_id === bundleId)
-    .sort((left, right) => left.review_lane.localeCompare(right.review_lane) || left.id.localeCompare(right.id));
+    .filter((appraisal) => appraisal.candidate_bundle_id === bundleId)
+    .sort((left, right) => left.appraisal_lane.localeCompare(right.appraisal_lane) || left.id.localeCompare(right.id));
 }
 
-export function getReviewCommentsForBundle(data, bundleId) {
-  return data.collections.reviewComments
+export function getEditorialCommentsForBundle(data, bundleId) {
+  return data.collections.editorialComments
     .map(({ record }) => record)
     .filter((comment) => comment.candidate_bundle_id === bundleId)
     .sort((left, right) => String(left.created_at ?? "").localeCompare(String(right.created_at ?? "")));
@@ -325,14 +325,14 @@ export function getAttentionItems(data) {
 
   for (const { record, report, scopeNodes } of queue) {
     const closed = ["published", "rejected"].includes(record.lifecycle_status);
-    const reviewGateReady = !report?.evidence_review_gate?.eligible || Boolean(report.evidence_review_gate.ready);
+    const appraisalGateReady = !report?.evidence_appraisal_gate?.eligible || Boolean(report.evidence_appraisal_gate.ready);
     const validationReady = Boolean(report?.validation?.ready);
     const promotionReady = Boolean(report?.promotion?.ready);
 
     if (!closed) {
       items.push({
         id: `bundle-${record.id}`,
-        severity: validationReady && reviewGateReady && promotionReady ? "info" : "warn",
+        severity: validationReady && appraisalGateReady && promotionReady ? "info" : "warn",
         label: "Bundle",
         title: record.name,
         body: report?.readiness?.message ?? record.summary,
@@ -341,7 +341,7 @@ export function getAttentionItems(data) {
       });
     }
 
-    if (!closed && (!validationReady || !reviewGateReady || !promotionReady)) {
+    if (!closed && (!validationReady || !appraisalGateReady || !promotionReady)) {
       items.push({
         id: `blocked-${record.id}`,
         severity: "warn",
@@ -349,7 +349,7 @@ export function getAttentionItems(data) {
         title: `${record.name} has blocked checks`,
         body: [
           validationReady ? undefined : "Validation blocked",
-          reviewGateReady ? undefined : "Review gate blocked",
+          appraisalGateReady ? undefined : "Appraisal gate blocked",
           promotionReady ? undefined : "Promotion blocked"
         ]
           .filter(Boolean)

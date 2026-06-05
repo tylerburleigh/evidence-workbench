@@ -17,7 +17,7 @@ import {
   getFindingsForSource,
   getReportsForSource,
   getSourceById,
-  getWorkbenchData
+  getStudioData
 } from "../../../lib/public-data.js";
 
 function UsedInList({ empty, items, renderBadge, renderKicker, type }) {
@@ -42,7 +42,7 @@ function UsedInList({ empty, items, renderBadge, renderKicker, type }) {
 
 export default async function SourceDetailPage({ params }) {
   const { sourceId } = await params;
-  const data = await getWorkbenchData();
+  const data = await getStudioData();
   const source = getSourceById(data, sourceId);
   if (!source) {
     notFound();

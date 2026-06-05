@@ -21,7 +21,7 @@
     "arXiv",
     "ACL Anthology"
   ],
-  "systematicity_level": "targeted_bootstrap",
+  "systematicity_level": "targeted_baseline_review",
   "search_queries": [
     {
       "query": "\"synthetic student responses\" \"model\" comparison LLM education",
@@ -152,7 +152,7 @@
       "reason": "Did not meet the synthetic-response and comparator criteria."
     }
   ],
-  "screening_summary": "This was a targeted cross-node surveillance search rather than a new bootstrap question. The included sources were selected because they add direct evidence on realism metrics, model/workflow choice, real-response comparators, and scoring-adjacent item-development use. The strongest scoring-adjacent source is SMART; the other included sources mainly inform conditions for realism and model/workflow claims, not direct scorer validation.",
+  "screening_summary": "This was a targeted cross-node review update search rather than a new baseline-review question. The included sources were selected because they add direct evidence on realism metrics, model/workflow choice, real-response comparators, and scoring-adjacent item-development use. The strongest scoring-adjacent source is SMART; the other included sources mainly inform conditions for realism and model/workflow claims, not direct scorer validation.",
   "source_ids": [
     "nguyen-cao-science-thinking-simulation-2026-source",
     "cao-nguyen-math-simulated-learners-2026-source",

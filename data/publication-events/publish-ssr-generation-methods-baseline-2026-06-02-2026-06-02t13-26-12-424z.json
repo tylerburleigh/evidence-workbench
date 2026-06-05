@@ -88,12 +88,13 @@
   "affected_claim_ids": [
     "ssr-generation-methods-baseline-claim"
   ],
-  "approving_evidence_review_ids": [
-    "evidence-review-ssr-generation-methods-construct-mapping-r1",
-    "evidence-review-ssr-generation-methods-method-classification-r1",
-    "evidence-review-ssr-generation-methods-scorer-validation-relevance-r1",
-    "evidence-review-ssr-generation-methods-source-fidelity-r1",
-    "evidence-review-ssr-generation-methods-synthesis-overreach-r1"
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-ssr-generation-methods-construct-mapping-r1",
+    "evidence-appraisal-ssr-generation-methods-method-classification-r1",
+    "evidence-appraisal-ssr-generation-methods-scorer-validation-relevance-r1",
+    "evidence-appraisal-ssr-generation-methods-source-fidelity-r1",
+    "evidence-appraisal-ssr-generation-methods-synthesis-overreach-r1"
   ],
+  "appraisal_corrections_applied": [],
   "change_note": "Creates the first staged literature-review baseline for synthetic response generation methods."
 }

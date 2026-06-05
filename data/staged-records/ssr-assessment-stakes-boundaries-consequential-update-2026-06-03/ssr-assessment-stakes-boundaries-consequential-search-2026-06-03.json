@@ -8,7 +8,7 @@
     "ssr-assessment-stakes-boundaries"
   ],
   "status": "included_sources_staged",
-  "systematicity_level": "targeted_bootstrap",
+  "systematicity_level": "targeted_baseline_review",
   "search_started_at": "2026-06-03T10:40:00Z",
   "search_completed_at": "2026-06-03T11:18:00Z",
   "databases": [
@@ -183,7 +183,7 @@
   ],
   "screening_summary": "This targeted update searched explicitly for consequential assessment contexts. The strongest new evidence is the New Mexico MSSA technical report, which changes the prior high-stakes boundary from mostly adjacent/diagnostic evidence to direct but tightly controlled operational training-augmentation evidence. The other included sources clarify high-stakes detection/stress-testing, formative professional education, and classroom/in-term augmentation boundaries.",
   "limitations": [
-    "This is a targeted surveillance pass, not a systematic review.",
+    "This is a targeted review-update pass, not a systematic review.",
     "The search focused on English-language accessible full texts and official reports.",
     "The New Mexico report is a single operational state-assessment source and should not be generalized into a universal high-stakes policy.",
     "The included lower-stakes studies support training augmentation and feedback-oriented development, not synthetic-only validation or grade-bearing deployment."
