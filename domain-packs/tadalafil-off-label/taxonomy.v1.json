@@ -1,0 +1,207 @@
+{
+  "taxonomy_id": "tadalafil-off-label-taxonomy",
+  "taxonomy_version": "1.0.0",
+  "domain_id": "tadalafil-off-label",
+  "nodes": [
+    {
+      "id": "tad-neuropsych-effects",
+      "name": "Neuropsychological Effects",
+      "node_type": "category",
+      "canonical_order": 1,
+      "summary": "Cognition, mild cognitive impairment, mood, and well-being outcomes related to tadalafil or closely bounded PDE5-inhibitor evidence.",
+      "search_aliases": ["tadalafil cognition", "Cialis cognition", "PDE5 inhibitor cognition"],
+      "example_entities": ["memory", "executive function", "mood", "quality of life"],
+      "scope_notes": [
+        "Keep healthy-adult cognition, clinical cognitive impairment, and mood/well-being evidence separate unless a study directly measures multiple domains.",
+        "Do not infer clinical cognitive benefit from vasodilation or animal data without human outcome evidence."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "tad-cardiometabolic-effects",
+      "name": "Cardiometabolic And Physical Effects",
+      "node_type": "category",
+      "canonical_order": 2,
+      "summary": "Cardiovascular, endothelial, blood-pressure, exercise, physical-function, and longevity-relevant outcomes.",
+      "search_aliases": ["tadalafil cardiovascular", "tadalafil endothelial function", "tadalafil exercise"],
+      "example_entities": ["flow-mediated dilation", "blood pressure", "exercise capacity", "vascular function"],
+      "scope_notes": [
+        "Separate validated clinical outcomes from surrogate biomarkers.",
+        "Treat pulmonary-hypertension and erectile-dysfunction populations as indirect for healthy men age 30 to 50 unless the claim is explicitly scoped to those populations."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "tad-safety-directness",
+      "name": "Safety And Evidence Directness",
+      "node_type": "category",
+      "canonical_order": 3,
+      "summary": "Adverse effects, contraindications, interactions, dose/exposure directness, and translational mechanisms needed to interpret off-label evidence.",
+      "search_aliases": ["tadalafil adverse effects", "Cialis contraindications", "tadalafil drug interactions"],
+      "example_entities": ["nitrates", "alpha blockers", "hypotension", "vision loss", "hearing loss", "CYP3A4 interactions"],
+      "scope_notes": [
+        "Safety review must use current regulatory labeling and clinical evidence rather than only benefit-oriented study reports.",
+        "Mechanistic findings should be tagged as mechanism unless human clinical endpoints are directly measured."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "tad-cognition-healthy-adults",
+      "name": "Cognition In Healthy Adults",
+      "node_type": "review_question",
+      "parent_id": "tad-neuropsych-effects",
+      "canonical_order": 1,
+      "summary": "Human evidence on tadalafil and cognitive performance, attention, memory, executive function, or brain-perfusion proxies in healthy or mostly healthy adults, with special interest in men age 30 to 50.",
+      "search_aliases": [
+        "tadalafil cognitive function healthy adults",
+        "Cialis memory attention executive function",
+        "PDE5 inhibitor cognitive performance humans"
+      ],
+      "example_entities": ["memory", "reaction time", "attention", "executive function", "cerebral blood flow"],
+      "scope_notes": [
+        "Primary target population: healthy men age 30 to 50.",
+        "Include non-tadalafil PDE5-inhibitor studies only as adjacent evidence and mark drug-class transfer limits.",
+        "Do not merge acute dosing and chronic daily use without dose-duration labeling."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "tad-mci-cognitive-decline",
+      "name": "Mild Cognitive Impairment And Cognitive Decline",
+      "node_type": "review_question",
+      "parent_id": "tad-neuropsych-effects",
+      "canonical_order": 2,
+      "summary": "Evidence on tadalafil or PDE5 inhibitors for mild cognitive impairment, dementia-risk populations, cognitive decline, or neurovascular cognitive outcomes.",
+      "search_aliases": [
+        "tadalafil mild cognitive impairment",
+        "PDE5 inhibitor mild cognitive impairment",
+        "tadalafil dementia risk cognition"
+      ],
+      "example_entities": ["MCI", "dementia risk", "cerebrovascular disease", "neurovascular coupling"],
+      "scope_notes": [
+        "Separate MCI or dementia-risk populations from healthy-adult cognition.",
+        "Observational association evidence must not be written as treatment efficacy.",
+        "Capture age, baseline cognitive status, comorbidities, and indication for PDE5-inhibitor use."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "tad-mood-wellbeing-quality-life",
+      "name": "Mood, Well-Being, And Quality Of Life",
+      "node_type": "review_question",
+      "parent_id": "tad-neuropsych-effects",
+      "canonical_order": 3,
+      "summary": "Evidence on tadalafil-associated mood, subjective well-being, anxiety/depression measures, vitality, sleep-adjacent outcomes, or quality of life beyond sexual-function endpoints.",
+      "search_aliases": [
+        "tadalafil mood wellbeing",
+        "Cialis quality of life depression anxiety",
+        "PDE5 inhibitor well-being"
+      ],
+      "example_entities": ["depression scales", "anxiety scales", "vitality", "quality of life", "life satisfaction"],
+      "scope_notes": [
+        "Distinguish direct mood/well-being measures from indirect improvements mediated by ED, BPH, or relationship outcomes.",
+        "Record whether instruments are validated and whether sexual-function improvement confounds the outcome."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "tad-cardiovascular-endothelial-bp",
+      "name": "Cardiovascular Health And Endothelial Function",
+      "node_type": "review_question",
+      "parent_id": "tad-cardiometabolic-effects",
+      "canonical_order": 4,
+      "summary": "Evidence on tadalafil and cardiovascular outcomes, endothelial function, vascular stiffness, blood pressure, perfusion, metabolic-vascular markers, or vascular risk.",
+      "search_aliases": [
+        "tadalafil endothelial function",
+        "tadalafil blood pressure vascular stiffness",
+        "Cialis cardiovascular health"
+      ],
+      "example_entities": ["flow-mediated dilation", "arterial stiffness", "blood pressure", "vascular inflammation", "microvascular function"],
+      "scope_notes": [
+        "Separate clinical cardiovascular outcomes from surrogate vascular markers.",
+        "Always capture baseline cardiovascular risk and concurrent antihypertensive, nitrate, alpha-blocker, or alcohol exposure when reported."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "tad-exercise-physical-function",
+      "name": "Exercise Capacity And Physical Function",
+      "node_type": "review_question",
+      "parent_id": "tad-cardiometabolic-effects",
+      "canonical_order": 5,
+      "summary": "Evidence on tadalafil effects on exercise capacity, physical performance, altitude physiology, recovery, fatigue, or functional status.",
+      "search_aliases": ["tadalafil exercise capacity", "tadalafil physical performance", "PDE5 inhibitor exercise performance"],
+      "example_entities": ["VO2 max", "time to exhaustion", "six-minute walk", "altitude", "fatigue"],
+      "scope_notes": [
+        "Distinguish healthy performance studies from pulmonary-hypertension functional-outcome evidence.",
+        "Record altitude, training status, dose timing, and exercise protocol."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "tad-longevity-healthspan-biomarkers",
+      "name": "Longevity, Healthspan, And Biomarkers",
+      "node_type": "review_question",
+      "parent_id": "tad-cardiometabolic-effects",
+      "canonical_order": 6,
+      "summary": "Evidence on tadalafil and longevity-relevant outcomes such as mortality, morbidity, inflammation, endothelial aging, metabolic health, or validated healthspan proxies.",
+      "search_aliases": ["tadalafil longevity", "PDE5 inhibitor mortality aging", "tadalafil healthspan biomarkers"],
+      "example_entities": ["mortality", "morbidity", "inflammation", "endothelial aging", "metabolic health"],
+      "scope_notes": [
+        "Treat longevity as unsupported unless sources measure mortality, morbidity, aging-related endpoints, or validated surrogate pathways.",
+        "Do not let biomarker movement imply healthspan benefit unless the source or surrounding evidence validates the endpoint."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "tad-safety-interactions-adverse-events",
+      "name": "Safety, Interactions, And Adverse Events",
+      "node_type": "review_question",
+      "parent_id": "tad-safety-directness",
+      "canonical_order": 7,
+      "summary": "Evidence and current labeling on tadalafil risks, adverse effects, contraindications, drug interactions, dose limits, and risk-benefit interpretation for off-label use.",
+      "search_aliases": [
+        "tadalafil adverse events contraindications",
+        "Cialis nitrates alpha blockers hypotension",
+        "tadalafil vision hearing priapism CYP3A4"
+      ],
+      "example_entities": [
+        "nitrates",
+        "riociguat",
+        "alpha blockers",
+        "antihypertensives",
+        "hypotension",
+        "NAION",
+        "hearing loss",
+        "priapism",
+        "renal impairment",
+        "hepatic impairment"
+      ],
+      "scope_notes": [
+        "Use the latest labeling as the baseline safety reference before interpreting off-label benefit.",
+        "Capture absolute risk, event seriousness, dose/exposure, interacting medicines, and patient risk factors when available.",
+        "Do not publish benefit claims without nearby safety caveats."
+      ],
+      "retirement_status": "active"
+    },
+    {
+      "id": "tad-mechanistic-translational-evidence",
+      "name": "Mechanistic And Translational Evidence",
+      "node_type": "review_question",
+      "parent_id": "tad-safety-directness",
+      "canonical_order": 8,
+      "summary": "Mechanistic evidence on PDE5 inhibition, nitric oxide/cGMP signaling, cerebral or vascular perfusion, mitochondrial, inflammatory, or tissue-level pathways relevant to off-label hypotheses.",
+      "search_aliases": [
+        "tadalafil mechanism nitric oxide cGMP",
+        "PDE5 inhibition cerebral blood flow mechanism",
+        "tadalafil translational mechanism"
+      ],
+      "example_entities": ["NO-cGMP signaling", "cerebral blood flow", "endothelial function", "mitochondria", "inflammation"],
+      "scope_notes": [
+        "Mechanistic evidence can support plausibility, not clinical efficacy, unless directly tied to human outcomes.",
+        "Tag animal, in vitro, and non-tadalafil PDE5-inhibitor evidence as indirect."
+      ],
+      "retirement_status": "active"
+    }
+  ]
+}

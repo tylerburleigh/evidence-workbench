@@ -1,0 +1,127 @@
+{
+  "id": "tadalafil-off-label",
+  "name": "Tadalafil Off-Label Effects Review",
+  "summary": "A literature-review domain for off-label tadalafil/Cialis effects and risks across cognition, mild cognitive impairment, mood, well-being, cardiovascular health, exercise physiology, and longevity-relevant outcomes, with a target-interest population of mostly healthy men age 30 to 50.",
+  "default_scope_unit": "review_question",
+  "taxonomy_file": "taxonomy.v1.json",
+  "evidence_ladder_file": "evidence-ladder.v1.json",
+  "extraction_schema_file": "extraction-schema.v1.json",
+  "appraisal_lanes_file": "appraisal-lanes.v1.json",
+  "public_copy_file": "public-copy.v1.json",
+  "default_appraisal_lanes": [
+    "source_fidelity",
+    "population_directness",
+    "exposure_directness",
+    "endpoint_validity",
+    "safety_risk_framing",
+    "synthesis_overreach"
+  ],
+  "planning": {
+    "stale_after_days": 90
+  },
+  "source_access_policy": {
+    "minimum_finding_access_depth": "abstract_only",
+    "insufficient_finding_access_action": "warn",
+    "follow_up_priority": "high",
+    "enforce_inferred_access_depth": true,
+    "notes": "Clinical and safety findings should use full text when available; abstract-only findings must mark the access limitation and source locator."
+  },
+  "applicability_facets": [
+    {
+      "id": "population_band",
+      "label": "Population Band",
+      "description": "Population directness relative to the primary user-interest group and adjacent clinical populations.",
+      "applies_to": ["artifact", "finding", "claim", "search_protocol"],
+      "values": [
+        { "id": "healthy_men_30_50", "label": "Healthy men 30-50" },
+        { "id": "healthy_adults_mixed_sex", "label": "Healthy adults, mixed sex" },
+        { "id": "mild_cognitive_impairment", "label": "Mild cognitive impairment" },
+        { "id": "older_adults", "label": "Older adults" },
+        { "id": "cardiovascular_or_metabolic_condition", "label": "Cardiovascular/metabolic condition" },
+        { "id": "erectile_dysfunction_or_bph", "label": "ED or BPH" },
+        { "id": "pulmonary_hypertension", "label": "Pulmonary hypertension" },
+        { "id": "mixed_or_unclear", "label": "Mixed or unclear" }
+      ]
+    },
+    {
+      "id": "study_design_class",
+      "label": "Study Design Class",
+      "description": "Evidence design used to judge causal strength and directness.",
+      "applies_to": ["artifact", "finding", "claim", "search_protocol"],
+      "values": [
+        { "id": "randomized_trial", "label": "Randomized trial" },
+        { "id": "crossover_trial", "label": "Crossover trial" },
+        { "id": "observational_cohort", "label": "Observational cohort" },
+        { "id": "case_control_or_case_series", "label": "Case-control/series" },
+        { "id": "case_report_or_pharmacovigilance", "label": "Case report/pharmacovigilance" },
+        { "id": "human_mechanistic", "label": "Human mechanistic" },
+        { "id": "animal_or_in_vitro", "label": "Animal or in vitro" },
+        { "id": "review_or_meta_analysis", "label": "Review/meta-analysis" },
+        { "id": "regulatory_label_or_guidance", "label": "Regulatory label/guidance" }
+      ]
+    },
+    {
+      "id": "effect_domain",
+      "label": "Effect Domain",
+      "description": "Primary outcome domain under review.",
+      "applies_to": ["artifact", "finding", "claim", "search_protocol"],
+      "values": [
+        { "id": "cognition", "label": "Cognition" },
+        { "id": "mild_cognitive_impairment", "label": "Mild cognitive impairment" },
+        { "id": "mood_wellbeing", "label": "Mood/well-being" },
+        { "id": "cardiovascular", "label": "Cardiovascular" },
+        { "id": "exercise_physical_function", "label": "Exercise/physical function" },
+        { "id": "longevity_healthspan", "label": "Longevity/healthspan" },
+        { "id": "safety_risk", "label": "Safety/risk" },
+        { "id": "mechanism", "label": "Mechanism" }
+      ]
+    }
+  ],
+  "public_claim_language": {
+    "default_posture": "bounded_clinical_evidence_summary",
+    "avoid": [
+      "presenting off-label tadalafil use as medical advice or as a recommendation to start, stop, or change treatment",
+      "treating ED, BPH, pulmonary-hypertension, or older-disease-population evidence as directly applicable to healthy men age 30 to 50 without an explicit directness caveat",
+      "claiming cognitive, mood, cardiovascular, or longevity benefit from mechanistic nitric-oxide/cGMP reasoning alone",
+      "generalizing sildenafil or other PDE5-inhibitor evidence to tadalafil without pharmacokinetic, dose, or population justification",
+      "separating possible benefits from the contraindication and interaction profile",
+      "using surrogate biomarkers as longevity or healthspan outcomes unless the source directly validates that interpretation"
+    ]
+  },
+  "regulatory_safety_baseline": {
+    "checked_on": "2026-06-05",
+    "sources": [
+      {
+        "label": "DailyMed CIALIS prescribing information",
+        "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcd8f8ab-81a2-4891-83db-24a0b0e25895"
+      },
+      {
+        "label": "FDA questions and answers for Cialis",
+        "url": "https://www.fda.gov/drugs/postmarket-drug-safety-information-patients-and-providers/questions-and-answers-cialis-tadalafil"
+      }
+    ],
+    "baseline_notes": [
+      "Contraindications, hypotension interactions, cardiovascular-status warnings, visual and hearing adverse-event warnings, renal/hepatic dosing limits, and common adverse reactions should be checked against current labeling during safety appraisal.",
+      "A benefit-oriented off-label claim cannot pass editorial review unless safety and interaction boundaries are visible near the claim."
+    ]
+  },
+  "synthesis_matrix": {
+    "title": "Tadalafil Evidence Synthesis Matrix",
+    "description": "Compare tadalafil studies by population, dose/exposure, comparator, endpoint domain, effect direction, quantitative result, safety signal, and directness to the target population.",
+    "row_source": "artifacts",
+    "empty_state": "No tadalafil study artifacts have been published for this review yet.",
+    "columns": [
+      { "id": "study", "label": "Study", "path": "source.name" },
+      { "id": "year", "label": "Year", "path": "source.year" },
+      { "id": "scope", "label": "Review Question", "path": "scope_nodes.name" },
+      { "id": "population", "label": "Population", "path": "artifact.population_profile" },
+      { "id": "exposure", "label": "Tadalafil Exposure", "path": "artifact.tadalafil_exposure" },
+      { "id": "comparator", "label": "Comparator", "path": "artifact.comparator_context" },
+      { "id": "endpoint", "label": "Endpoint Domain", "path": "artifact.endpoint_domain" },
+      { "id": "effect", "label": "Effect Direction", "path": "artifact.effect_summary" },
+      { "id": "safety", "label": "Safety Findings", "path": "artifact.safety_findings" },
+      { "id": "directness", "label": "Directness", "path": "artifact.directness_to_target_population" },
+      { "id": "limitations", "label": "Limitations", "path": "artifact.confounding_and_bias_limits" }
+    ]
+  }
+}

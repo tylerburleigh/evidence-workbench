@@ -1,0 +1,54 @@
+{
+  "id": "tadalafil-off-label-evidence-ladder",
+  "domain_id": "tadalafil-off-label",
+  "stages": [
+    {
+      "id": "source_identified",
+      "label": "Source Identified",
+      "description": "A potentially relevant source has been identified for one tadalafil review question.",
+      "minimum_support_expected": "Recoverable source metadata, source URL or DOI/PMID when available, and an initial relevance reason.",
+      "common_overclaim_risk": "Treating source existence or study title as evidence of benefit or safety.",
+      "moves_to_next_stage": "Screening decision and extracted study artifact or exclusion reason."
+    },
+    {
+      "id": "study_extracted",
+      "label": "Study Extracted",
+      "description": "A study, label, review, or mechanistic source has been converted into a structured artifact with population, exposure, comparator, endpoint, and limitations.",
+      "minimum_support_expected": "Artifact fields include population_profile, tadalafil_exposure, study_design, comparator_context, safety_findings, directness_to_target_population, and confounding_and_bias_limits.",
+      "common_overclaim_risk": "Ignoring that ED/BPH/PAH or older clinical populations may be indirect for healthy men age 30 to 50.",
+      "moves_to_next_stage": "Atomic findings with source locators and endpoint-specific results."
+    },
+    {
+      "id": "finding_extracted",
+      "label": "Finding Extracted",
+      "description": "A source-backed atomic finding states one endpoint result, direction, directness, and safety or limitation context.",
+      "minimum_support_expected": "Finding has a source locator, endpoint_measure, effect_estimate or explicit qualitative result, and directness_to_target_population.",
+      "common_overclaim_risk": "Converting a surrogate, mechanistic, or observational association into a clinical recommendation.",
+      "moves_to_next_stage": "Support map linking findings to a bounded claim."
+    },
+    {
+      "id": "safety_boundary_appraised",
+      "label": "Safety Boundary Appraised",
+      "description": "Contraindications, interactions, adverse events, dose limits, and population risk factors have been reviewed alongside possible benefits.",
+      "minimum_support_expected": "Safety appraisal references current labeling and any source-specific adverse-event data relevant to the claim.",
+      "common_overclaim_risk": "Publishing a benefit statement while hiding nitrate, riociguat, alpha-blocker, antihypertensive, alcohol, renal/hepatic, vision, hearing, or priapism risk boundaries.",
+      "moves_to_next_stage": "Claim support map includes both benefit and risk caveats."
+    },
+    {
+      "id": "claim_supported",
+      "label": "Claim Supported",
+      "description": "A public synthesis claim is backed by concrete findings, sources, and explicit directness boundaries.",
+      "minimum_support_expected": "Claim includes supporting_evidence, supporting_finding_ids, supporting_source_ids, population_profile, tadalafil_exposure, endpoint_domain, safety_findings, and limitations.",
+      "common_overclaim_risk": "Claim language exceeds direct human evidence or implies off-label medical advice.",
+      "moves_to_next_stage": "Required appraisal lanes accept the staged bundle."
+    },
+    {
+      "id": "reviewed_baseline",
+      "label": "Reviewed Baseline",
+      "description": "Required appraisal lanes have accepted source fidelity, population directness, exposure directness, endpoint validity, safety framing, and synthesis boundaries.",
+      "minimum_support_expected": "Complete non-blocking evidence appraisals for required lanes.",
+      "common_overclaim_risk": "Treating a baseline as final or as a prescribing recommendation.",
+      "moves_to_next_stage": "Review updates monitor new evidence and label changes."
+    }
+  ]
+}

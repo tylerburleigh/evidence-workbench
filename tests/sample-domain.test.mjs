@@ -60,16 +60,25 @@ const domainSkillAdapters = {
     "review-update.md": "review-update",
     "evidence-appraisal.md": "evidence-appraisal",
     "editorial-decision.md": "editorial-decision"
+  },
+  "tadalafil-off-label": {
+    "baseline-review.md": "baseline-review",
+    "review-update.md": "review-update",
+    "evidence-appraisal.md": "evidence-appraisal",
+    "editorial-decision.md": "editorial-decision",
+    "evidence-synthesis.md": "evidence-synthesis"
   }
 };
 
-test("active domain pack is loaded from neutral sample fixture", async () => {
+test("active domain pack is loaded from tadalafil project config", async () => {
   const domainPack = await loadActiveDomainPack();
 
-  assert.equal(domainPack.domain.id, "sample-research");
-  assert.ok(domainPack.taxonomyNodeIds.has("example-topic"));
+  assert.equal(domainPack.domain.id, "tadalafil-off-label");
+  assert.ok(domainPack.taxonomyNodeIds.has("tad-cognition-healthy-adults"));
+  assert.ok(domainPack.taxonomyNodeIds.has("tad-safety-interactions-adverse-events"));
   assert.ok(domainPack.appraisalLaneIds.has("source_fidelity"));
-  assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "limitations"));
+  assert.ok(domainPack.appraisalLaneIds.has("safety_risk_framing"));
+  assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "tadalafil_exposure"));
 });
 
 test("second fixture pack uses different scope units and appraisal lanes", async () => {
@@ -112,6 +121,28 @@ test("synthetic student response scaffold loads review questions and synthesis c
     ["finding"]
   );
   assert.ok(domainPack.domain.synthesis_matrix.columns.some((column) => column.id === "prompt_strategy"));
+});
+
+test("tadalafil off-label scaffold loads review questions, safety lanes, and synthesis config", async () => {
+  const domainPack = await loadDomainPack("tadalafil-off-label");
+
+  assert.equal(domainPack.domain.default_scope_unit, "review_question");
+  assert.equal(domainPack.domain.planning.stale_after_days, 90);
+  assert.ok(domainPack.taxonomyNodeIds.has("tad-cognition-healthy-adults"));
+  assert.ok(domainPack.taxonomyNodeIds.has("tad-mci-cognitive-decline"));
+  assert.ok(domainPack.taxonomyNodeIds.has("tad-longevity-healthspan-biomarkers"));
+  assert.ok(domainPack.taxonomyNodeIds.has("tad-safety-interactions-adverse-events"));
+  assert.ok(domainPack.appraisalLaneIds.has("population_directness"));
+  assert.ok(domainPack.appraisalLaneIds.has("exposure_directness"));
+  assert.ok(domainPack.appraisalLaneIds.has("safety_risk_framing"));
+  assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "population_profile"));
+  assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "tadalafil_exposure"));
+  assert.equal(domainPack.extractionSchema.validation.enforce_required_fields, true);
+  assert.deepEqual(
+    domainPack.extractionSchema.fields.find((field) => field.id === "source_locator")?.applies_to,
+    ["finding"]
+  );
+  assert.ok(domainPack.domain.synthesis_matrix.columns.some((column) => column.id === "safety"));
 });
 
 test("active domain can be overridden without editing config", async () => {
@@ -251,4 +282,9 @@ test("domain skill adapters map fixture packs to core workflows", async () => {
   assert.match(syntheticBaselineReview, /response_origin/);
   assert.match(syntheticBaselineReview, /label_source/);
   assert.match(syntheticBaselineReview, /response origin/);
+
+  const tadalafilBaselineReview = await readFixtureText("domain-packs/tadalafil-off-label/skills/baseline-review.md");
+  assert.match(tadalafilBaselineReview, /population_profile/);
+  assert.match(tadalafilBaselineReview, /tadalafil_exposure/);
+  assert.match(tadalafilBaselineReview, /nitrates/);
 });

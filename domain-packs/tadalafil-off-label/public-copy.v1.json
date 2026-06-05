@@ -1,0 +1,34 @@
+{
+  "id": "tadalafil-off-label-public-copy",
+  "domain_id": "tadalafil-off-label",
+  "labels": {
+    "evidence_layer": "Evidence",
+    "interpretation_layer": "Interpretation",
+    "context_layer": "Clinical Context",
+    "topic": "Review Question",
+    "claim": "Synthesis Claim",
+    "finding": "Extracted Finding",
+    "artifact": "Study Artifact"
+  },
+  "stage_labels": {
+    "source_identified": "Source identified",
+    "study_extracted": "Study extracted",
+    "finding_extracted": "Finding extracted",
+    "safety_boundary_appraised": "Safety boundary appraised",
+    "claim_supported": "Claim supported",
+    "reviewed_baseline": "Reviewed baseline"
+  },
+  "confidence_labels": {
+    "low": "Low confidence",
+    "moderate": "Moderate confidence",
+    "high": "High confidence"
+  },
+  "empty_states": {
+    "no_topic": "No tadalafil review question exists for this route.",
+    "no_baseline": "This tadalafil review question exists, but no public baseline has been published yet.",
+    "no_recent_activity": "No recent activity has been recorded for this tadalafil review question.",
+    "no_findings": "No extracted findings have been published for this source yet.",
+    "missing_appraisal": "This bundle is waiting for structured clinical evidence appraisal.",
+    "no_synthesis_rows": "No tadalafil synthesis rows have been published yet."
+  }
+}

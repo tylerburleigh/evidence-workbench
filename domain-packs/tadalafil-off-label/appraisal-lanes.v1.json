@@ -1,0 +1,54 @@
+{
+  "id": "tadalafil-off-label-appraisal-lanes",
+  "domain_id": "tadalafil-off-label",
+  "lanes": [
+    {
+      "id": "source_fidelity",
+      "label": "Source Fidelity",
+      "description": "Checks whether metadata, population, exposure, endpoint, result, safety, and locator fields match the cited source.",
+      "required_by_default": true
+    },
+    {
+      "id": "population_directness",
+      "label": "Population Directness",
+      "description": "Checks whether claims correctly distinguish healthy men age 30 to 50 from ED/BPH, PAH, older-adult, MCI, cardiovascular, or mixed clinical populations.",
+      "required_by_default": true
+    },
+    {
+      "id": "exposure_directness",
+      "label": "Exposure Directness",
+      "description": "Checks dose, timing, duration, daily versus as-needed use, tadalafil versus other PDE5 inhibitors, and drug-class transfer assumptions.",
+      "required_by_default": true
+    },
+    {
+      "id": "endpoint_validity",
+      "label": "Endpoint Validity",
+      "description": "Checks whether endpoints are valid for the claim, especially cognitive instruments, mood scales, cardiovascular surrogates, exercise protocols, longevity proxies, and adverse-event capture.",
+      "required_by_default": true
+    },
+    {
+      "id": "safety_risk_framing",
+      "label": "Safety And Risk Framing",
+      "description": "Checks that contraindications, interactions, adverse events, dose limits, and cardiovascular-status warnings are visible and current.",
+      "required_by_default": true
+    },
+    {
+      "id": "confounding_bias",
+      "label": "Confounding And Bias",
+      "description": "Checks confounding by indication, healthy-user effects, reverse causation, missing comparator groups, selective outcome reporting, and small-study limitations.",
+      "required_by_default": false
+    },
+    {
+      "id": "synthesis_overreach",
+      "label": "Synthesis Overreach",
+      "description": "Checks whether public claims exceed the support map, imply off-label medical advice, or convert mechanistic, surrogate, observational, or adjacent-drug evidence into unsupported benefit claims.",
+      "required_by_default": true
+    },
+    {
+      "id": "search_protocol",
+      "label": "Search Protocol",
+      "description": "Checks search queries, databases, dates, inclusion/exclusion criteria, screening decisions, deduplication, and included source IDs when a search protocol is staged.",
+      "required_by_default": false
+    }
+  ]
+}

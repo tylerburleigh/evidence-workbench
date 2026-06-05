@@ -1,0 +1,93 @@
+{
+  "id": "tadalafil-off-label-extraction-fields",
+  "domain_id": "tadalafil-off-label",
+  "validation": {
+    "enforce_required_fields": true
+  },
+  "fields": [
+    {
+      "id": "population_profile",
+      "label": "Population Profile",
+      "required": true,
+      "applies_to": ["artifact", "finding", "claim"],
+      "description": "Age, sex, health status, indication for tadalafil/PDE5-inhibitor exposure, baseline disease risk, and directness to mostly healthy men age 30 to 50."
+    },
+    {
+      "id": "tadalafil_exposure",
+      "label": "Tadalafil Exposure",
+      "required": true,
+      "applies_to": ["artifact", "finding", "claim"],
+      "description": "Drug name, tadalafil versus other PDE5 inhibitor, dose, timing, frequency, duration, route, and whether exposure is acute, daily, intermittent, or unclear."
+    },
+    {
+      "id": "indication_context",
+      "label": "Indication Context",
+      "required": true,
+      "applies_to": ["artifact", "finding"],
+      "description": "Whether use is on-label, off-label, experimental, observational medication exposure, or mechanistic/nonclinical."
+    },
+    {
+      "id": "study_design",
+      "label": "Study Design",
+      "required": true,
+      "applies_to": ["artifact"],
+      "description": "Design, randomization/blinding status, comparator, sample size, follow-up duration, and whether the source is a study, review, label, pharmacovigilance report, or mechanism paper."
+    },
+    {
+      "id": "comparator_context",
+      "label": "Comparator Context",
+      "required": true,
+      "applies_to": ["artifact", "finding"],
+      "description": "Placebo, baseline, active comparator, non-use, within-person comparison, external comparator, or no comparator."
+    },
+    {
+      "id": "endpoint_domain",
+      "label": "Endpoint Domain",
+      "required": true,
+      "applies_to": ["artifact", "finding", "claim"],
+      "description": "Cognition, MCI/cognitive decline, mood/well-being, cardiovascular, exercise/physical function, longevity/healthspan, safety, or mechanism."
+    },
+    {
+      "id": "endpoint_measure",
+      "label": "Endpoint Measure",
+      "required": true,
+      "applies_to": ["finding"],
+      "description": "The specific measured outcome, instrument, biomarker, clinical endpoint, adverse event, or mechanistic endpoint."
+    },
+    {
+      "id": "effect_estimate",
+      "label": "Effect Estimate",
+      "required": true,
+      "applies_to": ["finding"],
+      "description": "Quantitative result when available, or a tightly bounded qualitative/null/mixed result; include uncertainty intervals and p values when reported."
+    },
+    {
+      "id": "safety_findings",
+      "label": "Safety Findings",
+      "required": true,
+      "applies_to": ["artifact", "finding", "claim"],
+      "description": "Adverse events, discontinuations, contraindications, interaction risks, dose limits, renal/hepatic caveats, and serious-signal boundaries relevant to the record."
+    },
+    {
+      "id": "directness_to_target_population",
+      "label": "Directness To Target Population",
+      "required": true,
+      "applies_to": ["artifact", "finding", "claim"],
+      "description": "How directly the evidence applies to mostly healthy men age 30 to 50, and which age, sex, diagnosis, indication, dose, duration, or setting differences weaken transfer."
+    },
+    {
+      "id": "confounding_and_bias_limits",
+      "label": "Confounding And Bias Limits",
+      "required": true,
+      "applies_to": ["artifact", "finding", "claim"],
+      "description": "Design limitations, confounding by indication, selection bias, measurement limits, multiplicity, surrogate-endpoint limits, missing safety capture, or incomplete reporting."
+    },
+    {
+      "id": "source_locator",
+      "label": "Source Locator",
+      "required": true,
+      "applies_to": ["finding"],
+      "description": "The page, section, table, figure, appendix, registry field, label section, or URL location used to verify the extracted finding."
+    }
+  ]
+}
