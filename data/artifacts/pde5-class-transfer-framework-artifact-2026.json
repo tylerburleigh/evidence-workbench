@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "pde5-class-transfer-framework-artifact-2026",
+  "name": "PDE5 Class Transfer Framework Extract",
+  "artifact_type": "evidence_directness_framework",
+  "status": "complete",
+  "source_ids": [
+    "dailymed-cialis-label-2026-03",
+    "dailymed-viagra-label-2020-01",
+    "dailymed-vardenafil-label-2026-01",
+    "dailymed-stendra-label-2024-07",
+    "ncbi-livertox-pde5-inhibitors-overview-2017",
+    "seftel-pde5-differentiation-2004",
+    "bischoff-pde-selectivity-2004"
+  ],
+  "taxonomy_node_ids": [
+    "tad-pde5-class-transfer-agent-directness"
+  ],
+  "population_or_context": "Project-level framework for classifying tadalafil-direct, adjacent non-tadalafil PDE5, mixed PDE5, and class-level evidence.",
+  "sample_size": "Not applicable; evidence directness framework.",
+  "methods": "Rules derived from shared PDE5 mechanism, label-based pharmacokinetic differences, label-based safety boundaries, and comparative pharmacology review evidence.",
+  "endpoint_categories": [
+    "agent_directness",
+    "evidence_directness",
+    "mechanism",
+    "safety"
+  ],
+  "numeric_results_extracted": "not_applicable",
+  "population_profile": "Intended for synthesis across healthy men age 30 to 50 and adjacent ED/BPH, cardiovascular, MCI, mood/well-being, exercise, and longevity-relevant evidence.",
+  "tadalafil_exposure": "Framework keeps direct tadalafil evidence separate from sildenafil, vardenafil, avanafil, mixed PDE5, and unspecified class evidence.",
+  "pde5_agent": "mixed_pde5_inhibitors",
+  "agent_directness_to_tadalafil": "pde5_class_level",
+  "class_transfer_limits": "Tadalafil claims should use non-tadalafil PDE5 evidence only as adjacent plausibility or class-boundary support unless the synthesis explicitly justifies transfer across molecule, dose, frequency, timing, half-life, PDE selectivity, population, comparator, endpoint, and safety context.",
+  "indication_context": "Evidence-directness framework for off-label review, not a treatment recommendation.",
+  "study_design": "Curated framework artifact generated from staged baseline sources.",
+  "comparator_context": "Compares evidence directness categories rather than treatment effects.",
+  "endpoint_domain": "mechanism",
+  "safety_findings": "Framework requires safety caveats to travel with any adjacent PDE5 evidence, especially nitrate/GC-stimulator contraindications, hypotension interactions, CYP3A4 restrictions, agent-specific warnings, and tadalafil daily-exposure issues.",
+  "directness_to_target_population": "Direct for project synthesis rules; indirect for any individual clinical outcome.",
+  "confounding_and_bias_limits": "The framework does not prove interchangeability or class efficacy; it only defines how adjacent evidence may be labeled and limited.",
+  "population_band": "mixed_or_unclear",
+  "study_design_class": "review_or_meta_analysis",
+  "effect_domain": "mechanism"
+}

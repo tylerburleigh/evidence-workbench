@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-pde5-class-transfer-agent-directness-safety-risk-framing-r1",
+  "name": "Safety Risk Framing appraisal for Tad Pde5 Class Transfer Agent Directness bundle",
+  "candidate_bundle_id": "pde5-class-transfer-framework-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "safety_risk_framing",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The framework treats shared PDE5 safety boundaries as conservative class cautions while preserving agent-specific timing and product-label differences. It foregrounds nitrates, GC stimulators, hypotension interactions, alcohol, CYP3A4, vardenafil QT precautions, tadalafil daily exposure, and emergency nitrate supervision rather than implying substitutability.",
+  "appraised_change_ids": [
+    "create-pde5-class-transfer-search-protocol",
+    "create-dailymed-viagra-label-source",
+    "create-dailymed-vardenafil-label-source",
+    "create-dailymed-stendra-label-source",
+    "create-livertox-pde5-overview-source",
+    "create-seftel-pde5-differentiation-source",
+    "create-bischoff-pde-selectivity-source",
+    "create-pde5-label-comparison-artifact",
+    "create-pde5-mechanism-selectivity-artifact",
+    "create-pde5-transfer-framework-artifact",
+    "create-pde5-shared-mechanism-finding",
+    "create-pde5-pk-non-equivalence-finding",
+    "create-pde5-selectivity-non-equivalence-finding",
+    "create-pde5-safety-boundary-transfer-finding",
+    "create-pde5-class-transfer-framework-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "class-safety-boundaries-not-substitution",
+      "severity": "note",
+      "category": "safety_limitation",
+      "claim_or_issue": "The framework allows class safety hard stops to transfer as cautions but not as agent timing equivalence.",
+      "why_it_matters": "Tadalafil's 48-hour nitrate boundary should not be diluted by shorter-acting agent labels.",
+      "recommended_action": "No correction required; keep timing and product-label language agent-specific.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-pde5-safety-boundary-transfer-finding"
+    },
+    {
+      "finding_id": "emergency-nitrate-language-bounded",
+      "severity": "note",
+      "category": "missing_caveat",
+      "claim_or_issue": "The claim frames nitrate timing as a safety boundary requiring medical supervision, not permission for unsupervised nitrate co-use.",
+      "why_it_matters": "Nitrate/PDE5 co-use is a high-severity interaction and must not be normalized in public synthesis.",
+      "recommended_action": "No correction required; retain hard-stop wording near any PDE5 benefit discussion.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-pde5-class-transfer-framework-claim"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T11:40:30.749Z",
+  "updated_at": "2026-06-06T11:40:30.749Z"
+}

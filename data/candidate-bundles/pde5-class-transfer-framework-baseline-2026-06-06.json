@@ -1,0 +1,255 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "pde5-class-transfer-framework-baseline-2026-06-06",
+  "name": "PDE5 Class Transfer And Agent Directness Framework Baseline",
+  "summary": "Stages a targeted baseline framework for deciding when sildenafil, vardenafil, avanafil, mixed PDE5-inhibitor, or class-level evidence may inform tadalafil claims and when it must remain adjacent. The bundle adds a search protocol, six new sources, three artifacts, four findings, and one bounded framework claim.",
+  "intake_mode": "baseline_review",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-06T11:40:15Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "tadalafil-off-label",
+    "taxonomy_node_ids": [
+      "tad-pde5-class-transfer-agent-directness"
+    ],
+    "research_question": "When can non-tadalafil PDE5 inhibitor evidence be used to inform tadalafil-focused off-label claims, and what transfer limits must remain explicit?"
+  },
+  "source_ids": [
+    "dailymed-cialis-label-2026-03",
+    "dailymed-viagra-label-2020-01",
+    "dailymed-vardenafil-label-2026-01",
+    "dailymed-stendra-label-2024-07",
+    "ncbi-livertox-pde5-inhibitors-overview-2017",
+    "seftel-pde5-differentiation-2004",
+    "bischoff-pde-selectivity-2004"
+  ],
+  "source_urls": [
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcd8f8ab-81a2-4891-83db-24a0b0e25895",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ae2079a2-f3a9-4739-9611-0742b71e4761",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5876e062-e604-42a7-99c3-5da30b8dac06",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fa7d93e3-b69b-4e02-8146-89760cd8e9d6",
+    "https://www.ncbi.nlm.nih.gov/books/NBK548192/",
+    "https://pubmed.ncbi.nlm.nih.gov/15115191/",
+    "https://pubmed.ncbi.nlm.nih.gov/15224129/"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "tad-safety-interactions-baseline-claim",
+      "relationship": "extends_safety_boundaries_to_class_transfer"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "tad-cognition-healthy-adults-baseline-claim",
+      "relationship": "sets_adjacent_pde5_interpretation_rules"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-pde5-class-transfer-search-protocol",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "pde5-class-transfer-framework-search-2026-06-06",
+      "file_path": "data/search-protocols/pde5-class-transfer-framework-search-2026-06-06.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/pde5-class-transfer-framework-search-2026-06-06.json",
+      "summary": "Stage targeted search protocol for PDE5 class-transfer framework.",
+      "rationale": "The expanded project needs transparent search and source-selection logic for agent-transfer rules."
+    },
+    {
+      "change_id": "create-dailymed-viagra-label-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "dailymed-viagra-label-2020-01",
+      "file_path": "data/sources/dailymed-viagra-label-2020-01.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/dailymed-viagra-label-2020-01.json",
+      "summary": "Add DailyMed VIAGRA label source.",
+      "rationale": "Sildenafil is the main adjacent PDE5 comparator and needs official pharmacokinetic, selectivity, and safety labeling."
+    },
+    {
+      "change_id": "create-dailymed-vardenafil-label-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "dailymed-vardenafil-label-2026-01",
+      "file_path": "data/sources/dailymed-vardenafil-label-2026-01.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/dailymed-vardenafil-label-2026-01.json",
+      "summary": "Add DailyMed vardenafil label source.",
+      "rationale": "Vardenafil evidence already appears as adjacent cognition evidence and requires current agent-transfer boundaries."
+    },
+    {
+      "change_id": "create-dailymed-stendra-label-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "dailymed-stendra-label-2024-07",
+      "file_path": "data/sources/dailymed-stendra-label-2024-07.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/dailymed-stendra-label-2024-07.json",
+      "summary": "Add DailyMed STENDRA avanafil label source.",
+      "rationale": "Avanafil is an approved ED PDE5 comparator with distinct half-life, nitrate timing, and selectivity language."
+    },
+    {
+      "change_id": "create-livertox-pde5-overview-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "ncbi-livertox-pde5-inhibitors-overview-2017",
+      "file_path": "data/sources/ncbi-livertox-pde5-inhibitors-overview-2017.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/ncbi-livertox-pde5-inhibitors-overview-2017.json",
+      "summary": "Add NCBI Bookshelf PDE5 inhibitor class overview source.",
+      "rationale": "Class mechanism and approved-agent context need a stable source outside individual labels."
+    },
+    {
+      "change_id": "create-seftel-pde5-differentiation-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "seftel-pde5-differentiation-2004",
+      "file_path": "data/sources/seftel-pde5-differentiation-2004.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/seftel-pde5-differentiation-2004.json",
+      "summary": "Add comparative PDE5 inhibitor differentiation review source.",
+      "rationale": "The review directly discusses mechanism, duration, food effects, and common adverse events across sildenafil, tadalafil, and vardenafil."
+    },
+    {
+      "change_id": "create-bischoff-pde-selectivity-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "bischoff-pde-selectivity-2004",
+      "file_path": "data/sources/bischoff-pde-selectivity-2004.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/bischoff-pde-selectivity-2004.json",
+      "summary": "Add comparative PDE selectivity review source.",
+      "rationale": "PDE6/PDE11 and other selectivity differences are central limits on class transfer."
+    },
+    {
+      "change_id": "create-pde5-label-comparison-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "pde5-comparative-label-pk-safety-artifact-2026",
+      "file_path": "data/artifacts/pde5-comparative-label-pk-safety-artifact-2026.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/pde5-comparative-label-pk-safety-artifact-2026.json",
+      "summary": "Add comparative label extraction artifact for PDE5 pharmacokinetics and safety boundaries.",
+      "rationale": "Agent-transfer rules must preserve drug-specific label differences."
+    },
+    {
+      "change_id": "create-pde5-mechanism-selectivity-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "pde5-mechanism-selectivity-transfer-artifact-2026",
+      "file_path": "data/artifacts/pde5-mechanism-selectivity-transfer-artifact-2026.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/pde5-mechanism-selectivity-transfer-artifact-2026.json",
+      "summary": "Add PDE5 mechanism and selectivity extraction artifact.",
+      "rationale": "Shared mechanism and off-target selectivity differences define what can and cannot transfer across agents."
+    },
+    {
+      "change_id": "create-pde5-transfer-framework-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "pde5-class-transfer-framework-artifact-2026",
+      "file_path": "data/artifacts/pde5-class-transfer-framework-artifact-2026.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/pde5-class-transfer-framework-artifact-2026.json",
+      "summary": "Add project-level PDE5 class-transfer framework artifact.",
+      "rationale": "Future synthesis needs reusable rules for tadalafil-direct, adjacent, mixed, and class-level evidence."
+    },
+    {
+      "change_id": "create-pde5-shared-mechanism-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "pde5-shared-mechanism-plausibility-finding-2026",
+      "file_path": "data/findings/pde5-shared-mechanism-plausibility-finding-2026.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/pde5-shared-mechanism-plausibility-finding-2026.json",
+      "summary": "Add finding that shared PDE5 mechanism supports plausibility but not outcome equivalence.",
+      "rationale": "This prevents class-mechanism evidence from becoming a tadalafil benefit claim."
+    },
+    {
+      "change_id": "create-pde5-pk-non-equivalence-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "pde5-pharmacokinetic-non-equivalence-finding-2026",
+      "file_path": "data/findings/pde5-pharmacokinetic-non-equivalence-finding-2026.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/pde5-pharmacokinetic-non-equivalence-finding-2026.json",
+      "summary": "Add finding that PDE5 inhibitors are not pharmacokinetically interchangeable for tadalafil claims.",
+      "rationale": "Tadalafil's long half-life and daily-use context are central to agent transfer."
+    },
+    {
+      "change_id": "create-pde5-selectivity-non-equivalence-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "pde5-selectivity-non-equivalence-finding-2026",
+      "file_path": "data/findings/pde5-selectivity-non-equivalence-finding-2026.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/pde5-selectivity-non-equivalence-finding-2026.json",
+      "summary": "Add finding that PDE isoenzyme selectivity differences limit transfer.",
+      "rationale": "PDE6/PDE11 and other off-target differences affect mechanism and adverse-effect interpretation."
+    },
+    {
+      "change_id": "create-pde5-safety-boundary-transfer-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "pde5-safety-boundary-transfer-finding-2026",
+      "file_path": "data/findings/pde5-safety-boundary-transfer-finding-2026.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/pde5-safety-boundary-transfer-finding-2026.json",
+      "summary": "Add finding that class safety boundaries transfer more reliably than benefit claims but timing remains agent-specific.",
+      "rationale": "Shared class contraindications must remain visible without erasing agent-specific nitrate timing."
+    },
+    {
+      "change_id": "create-pde5-class-transfer-framework-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "pde5-class-transfer-framework-baseline-claim",
+      "file_path": "data/claims/pde5-class-transfer-framework-baseline-claim.json",
+      "staged_file_path": "data/staged-records/pde5-class-transfer-framework-baseline-2026-06-06/pde5-class-transfer-framework-baseline-claim.json",
+      "summary": "Add bounded PDE5 class-transfer framework baseline claim.",
+      "rationale": "The broadened project needs a published rule-set before adding more sildenafil, vardenafil, avanafil, or mixed PDE5 evidence."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "tad-pde5-class-transfer-agent-directness",
+      "note": "Creates the first submitted framework for PDE5 class-transfer and agent-directness decisions."
+    },
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "tad-cognition-healthy-adults",
+      "note": "Provides formal context for adjacent vardenafil cognition evidence already published in the cognition baseline."
+    }
+  ],
+  "required_appraisal_lanes": [
+    "source_fidelity",
+    "population_directness",
+    "exposure_directness",
+    "endpoint_validity",
+    "safety_risk_framing",
+    "synthesis_overreach"
+  ],
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-tad-pde5-class-transfer-agent-directness-endpoint-validity-r1",
+    "evidence-appraisal-tad-pde5-class-transfer-agent-directness-exposure-directness-r1",
+    "evidence-appraisal-tad-pde5-class-transfer-agent-directness-population-directness-r1",
+    "evidence-appraisal-tad-pde5-class-transfer-agent-directness-safety-risk-framing-r1",
+    "evidence-appraisal-tad-pde5-class-transfer-agent-directness-source-fidelity-r1",
+    "evidence-appraisal-tad-pde5-class-transfer-agent-directness-synthesis-overreach-r1"
+  ],
+  "editorial_comment_ids": [],
+  "publication_event_ids": [
+    "publish-pde5-class-transfer-framework-baseline-2026-06-06-2026-06-06t11-42-18-245z"
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces.",
+    "endpoint_validity: No correction required; keep outcome-specific endpoints in separate review-question baselines.",
+    "endpoint_validity: No correction required; preserve this boundary in public copy.",
+    "exposure_directness: No correction required; apply the same metadata discipline to future sildenafil, vardenafil, avanafil, and mixed-PDE5 records.",
+    "exposure_directness: Keep exposure qualifiers attached to every future transfer statement.",
+    "population_directness: Keep directness language explicit in public synthesis and future outcome-specific baselines.",
+    "population_directness: Use this framework as the default, then refine directness during each outcome-specific baseline.",
+    "safety_risk_framing: No correction required; keep timing and product-label language agent-specific.",
+    "safety_risk_framing: No correction required; retain hard-stop wording near any PDE5 benefit discussion.",
+    "source_fidelity: No correction required; re-check label dates during future safety or transfer updates.",
+    "source_fidelity: Keep the full-text follow-up actions open before increasing confidence in detailed review-derived transfer rules.",
+    "synthesis_overreach: No correction required; use this claim as a gate for future adjacent PDE5 syntheses.",
+    "synthesis_overreach: No correction required; maintain this posture in public summaries."
+  ]
+}

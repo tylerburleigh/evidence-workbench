@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "bischoff-pde-selectivity-2004",
+  "name": "Potency, selectivity, and consequences of nonselectivity of PDE inhibition",
+  "source_type": "comparative_selectivity_review",
+  "authors": [
+    "Bischoff E"
+  ],
+  "venue": "International Journal of Impotence Research",
+  "year": 2004,
+  "published_on": "2004-06",
+  "doi": "10.1038/sj.ijir.3901208",
+  "pmid": "15224129",
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/15224129/"
+  ],
+  "summary": "Comparative review of PDE inhibitor potency and selectivity, including differences among sildenafil, vardenafil, and tadalafil for PDE1, PDE6, and PDE11 that can affect transfer of adverse-effect and mechanistic assumptions.",
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T11:38:00Z",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esummary.fcgi?db=pubmed&id=15224129&retmode=json",
+      "result": "NCBI E-utilities metadata accessed and web-search abstract snippet reviewed; browser access to PubMed was blocked by bot check.",
+      "notes": "Used abstract-level statements that sildenafil, vardenafil, and tadalafil are selective PDE5 inhibitors with different non-PDE5 selectivity profiles, including tadalafil PDE11 and sildenafil/vardenafil PDE6 considerations."
+    }
+  ]
+}

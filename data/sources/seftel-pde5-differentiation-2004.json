@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "seftel-pde5-differentiation-2004",
+  "name": "Phosphodiesterase type 5 inhibitor differentiation based on selectivity, pharmacokinetic, and efficacy profiles",
+  "source_type": "comparative_pharmacology_review",
+  "authors": [
+    "Seftel AD"
+  ],
+  "venue": "Clinical Cardiology",
+  "year": 2004,
+  "published_on": "2004-04",
+  "doi": "10.1002/clc.4960271305",
+  "pmid": "15115191",
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/15115191/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC6654274/"
+  ],
+  "summary": "Comparative review describing shared PDE5/NO-cGMP mechanism and differentiating sildenafil, tadalafil, and vardenafil by selectivity, pharmacokinetics, duration of action, food effects, and common vasodilatory adverse events.",
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T11:37:00Z",
+      "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=15115191&retmode=xml",
+      "result": "NCBI E-utilities abstract and metadata accessed; browser access to PubMed/PMC was blocked by bot check.",
+      "notes": "Used abstract statements on shared mechanism, approximately 4-hour sildenafil/vardenafil duration, tadalafil responsiveness up to 36 hours, high-fat food effects, and common vasodilatory adverse events."
+    }
+  ]
+}

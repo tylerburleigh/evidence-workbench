@@ -1,0 +1,180 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "pde5-class-transfer-framework-search-2026-06-06",
+  "name": "PDE5 class-transfer and agent-directness framework targeted baseline search",
+  "domain_id": "tadalafil-off-label",
+  "taxonomy_node_ids": [
+    "tad-pde5-class-transfer-agent-directness"
+  ],
+  "status": "complete",
+  "systematicity_level": "targeted_baseline_review",
+  "search_started_at": "2026-06-06T11:32:00Z",
+  "search_completed_at": "2026-06-06T11:40:00Z",
+  "databases": [
+    "DailyMed",
+    "PubMed",
+    "NCBI E-utilities",
+    "NCBI Bookshelf",
+    "Web search"
+  ],
+  "search_queries": [
+    {
+      "database": "DailyMed",
+      "query": "CIALIS VIAGRA vardenafil STENDRA prescribing information half-life PDE5 PDE6 PDE11 nitrates GC stimulators",
+      "searched_at": "2026-06-06T11:32:00Z",
+      "result_count": "targeted current-label lookup"
+    },
+    {
+      "database": "PubMed",
+      "query": "phosphodiesterase type 5 inhibitor differentiation selectivity pharmacokinetic efficacy profiles sildenafil tadalafil vardenafil",
+      "searched_at": "2026-06-06T11:36:00Z",
+      "result_count": "targeted exact-title result"
+    },
+    {
+      "database": "PubMed",
+      "query": "potency selectivity consequences nonselectivity PDE inhibition tadalafil sildenafil vardenafil PDE6 PDE11",
+      "searched_at": "2026-06-06T11:37:00Z",
+      "result_count": "targeted exact-title result"
+    },
+    {
+      "database": "NCBI Bookshelf",
+      "query": "PDE5 inhibitors LiverTox sildenafil tadalafil vardenafil avanafil nitric oxide cGMP",
+      "searched_at": "2026-06-06T11:38:00Z",
+      "result_count": 1
+    },
+    {
+      "database": "Web search",
+      "query": "PDE5 inhibitors pharmacology clinical applications half-life sildenafil tadalafil vardenafil avanafil review",
+      "searched_at": "2026-06-06T11:39:00Z",
+      "result_count": "screened for newer open review context; labels and NCBI sources prioritized"
+    }
+  ],
+  "inclusion_criteria": [
+    "Current or latest accessible official U.S. labels for tadalafil, sildenafil, vardenafil, and avanafil.",
+    "Sources that compare PDE5 inhibitor pharmacokinetics, duration, selectivity, or common adverse-effect patterns.",
+    "Class-level sources that describe shared PDE5/NO-cGMP mechanism.",
+    "Sources useful for deciding evidence-transfer rules rather than clinical benefit."
+  ],
+  "exclusion_criteria": [
+    "Commercial comparison pages when official labels or indexed reviews were available.",
+    "Outcome-specific PDE5 studies that do not address agent transfer, pharmacokinetic comparability, selectivity, or class safety boundaries.",
+    "Non-U.S. PDE5 agents reserved for a later broader-class update.",
+    "Animal or in vitro studies not needed for the first agent-transfer framework unless summarized by comparative pharmacology reviews."
+  ],
+  "dedupe_method": "Manual deduplication by label setid, PMID/DOI, source purpose, and whether the source adds a distinct transfer rule.",
+  "screening_counts": {
+    "records_identified": "targeted search, not exhaustively counted",
+    "records_screened": 13,
+    "full_text_reviewed": 5,
+    "abstracts_or_metadata_reviewed": 3,
+    "sources_included": 7
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "dailymed-cialis-2026-03",
+      "title": "DailyMed - CIALIS tadalafil tablet, film coated",
+      "decision": "include",
+      "reason": "Existing published source; needed for tadalafil half-life, PDE11/PDE6 selectivity, nitrate timing, daily exposure, and safety boundaries.",
+      "source_id": "dailymed-cialis-label-2026-03",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcd8f8ab-81a2-4891-83db-24a0b0e25895"
+    },
+    {
+      "candidate_id": "dailymed-viagra-2020-01",
+      "title": "DailyMed - VIAGRA sildenafil citrate tablet, film coated",
+      "decision": "include",
+      "reason": "Official sildenafil comparator label for half-life, nitrate contraindication, PDE6 selectivity, adverse reactions, and interaction boundaries.",
+      "source_id": "dailymed-viagra-label-2020-01",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ae2079a2-f3a9-4739-9611-0742b71e4761"
+    },
+    {
+      "candidate_id": "dailymed-vardenafil-2026-01",
+      "title": "DailyMed - VARDENAFIL tablet, film coated",
+      "decision": "include",
+      "reason": "Current vardenafil comparator label for half-life, nitrate timing, PDE selectivity, QT warning, and interaction boundaries.",
+      "source_id": "dailymed-vardenafil-label-2026-01",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=5876e062-e604-42a7-99c3-5da30b8dac06"
+    },
+    {
+      "candidate_id": "dailymed-stendra-2024-07",
+      "title": "DailyMed - STENDRA avanafil tablet",
+      "decision": "include",
+      "reason": "Official avanafil comparator label for short half-life, rapid dosing window, PDE selectivity, 12-hour nitrate boundary, and interaction warnings.",
+      "source_id": "dailymed-stendra-label-2024-07",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=fa7d93e3-b69b-4e02-8146-89760cd8e9d6"
+    },
+    {
+      "candidate_id": "livertox-pde5-class-2017",
+      "title": "Phosphodiesterase Type 5 (PDE5) Inhibitors - LiverTox overview",
+      "decision": "include",
+      "reason": "Accessible NCBI class overview for shared NO/cGMP/PDE5 mechanism and approved agent list.",
+      "source_id": "ncbi-livertox-pde5-inhibitors-overview-2017",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK548192/"
+    },
+    {
+      "candidate_id": "seftel-pde5-differentiation-2004",
+      "title": "Phosphodiesterase type 5 inhibitor differentiation based on selectivity, pharmacokinetic, and efficacy profiles",
+      "decision": "include",
+      "reason": "Indexed comparative review directly differentiating sildenafil, tadalafil, and vardenafil by mechanism, pharmacokinetics, duration, food effects, and common adverse events.",
+      "source_id": "seftel-pde5-differentiation-2004",
+      "doi": "10.1002/clc.4960271305",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15115191/"
+    },
+    {
+      "candidate_id": "bischoff-pde-selectivity-2004",
+      "title": "Potency, selectivity, and consequences of nonselectivity of PDE inhibition",
+      "decision": "include",
+      "reason": "Indexed comparative selectivity review used to define PDE6/PDE11 and other off-target transfer caveats.",
+      "source_id": "bischoff-pde-selectivity-2004",
+      "doi": "10.1038/sj.ijir.3901208",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15224129/"
+    },
+    {
+      "candidate_id": "andersson-pde5-pharmacology-2018",
+      "title": "PDE5 inhibitors - pharmacology and clinical applications 20 years after sildenafil discovery",
+      "decision": "maybe",
+      "reason": "Useful modern pharmacology review, but not staged in this first framework because accessible labels plus NCBI overview and comparative reviews already support the transfer rules.",
+      "doi": "10.1111/bph.14205",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29667180/"
+    },
+    {
+      "candidate_id": "avanafil-initial-data-2013",
+      "title": "Avanafil for the treatment of erectile dysfunction: initial data and clinical key properties",
+      "decision": "maybe",
+      "reason": "Potentially useful for avanafil details, but STENDRA label already provides the necessary avanafil comparator facts for this first framework.",
+      "doi": "10.1177/1756287212466282",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23372609/"
+    },
+    {
+      "candidate_id": "commercial-pde5-comparison-pages",
+      "title": "Commercial PDE5 inhibitor comparison pages",
+      "decision": "exclude",
+      "reason": "Not needed when official labels and indexed reviews are available."
+    }
+  ],
+  "source_ids": [
+    "dailymed-cialis-label-2026-03",
+    "dailymed-viagra-label-2020-01",
+    "dailymed-vardenafil-label-2026-01",
+    "dailymed-stendra-label-2024-07",
+    "ncbi-livertox-pde5-inhibitors-overview-2017",
+    "seftel-pde5-differentiation-2004",
+    "bischoff-pde-selectivity-2004"
+  ],
+  "screening_summary": "Targeted searches found enough current label and indexed comparative pharmacology evidence to stage a project-level framework for PDE5 agent transfer. The framework keeps tadalafil-specific claims separate from adjacent sildenafil, vardenafil, avanafil, mixed PDE5, and class-level evidence.",
+  "limitations": [
+    "Targeted baseline rather than systematic pharmacology review.",
+    "Comparative review extraction is abstract-level for Seftel 2004 and Bischoff 2004.",
+    "Non-U.S. PDE5 inhibitors and PAH-specific labels were not staged.",
+    "Outcome-specific transfer rules still need review-question-specific baselines."
+  ],
+  "population_band": "mixed_or_unclear",
+  "study_design_class": [
+    "regulatory_label_or_guidance",
+    "review_or_meta_analysis"
+  ],
+  "effect_domain": "mechanism",
+  "pde5_agent": "mixed_pde5_inhibitors",
+  "agent_directness_to_tadalafil": "pde5_class_level",
+  "class_transfer_limits": "Search was designed to create project-level transfer rules. Included non-tadalafil evidence is class-level or adjacent comparator evidence, not direct tadalafil outcome evidence."
+}

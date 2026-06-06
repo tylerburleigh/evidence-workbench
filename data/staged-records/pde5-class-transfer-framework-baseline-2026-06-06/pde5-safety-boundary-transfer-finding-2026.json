@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "pde5-safety-boundary-transfer-finding-2026",
+  "name": "Class safety boundaries transfer more reliably than benefit claims but timing stays agent-specific",
+  "source_id": "dailymed-cialis-label-2026-03",
+  "artifact_id": "pde5-comparative-label-pk-safety-artifact-2026",
+  "taxonomy_node_ids": [
+    "tad-pde5-class-transfer-agent-directness"
+  ],
+  "endpoint_category": "safety",
+  "direction": "class_boundary_with_agent_specific_timing",
+  "evidence_tier": "comparative_regulatory_label_extract",
+  "confidence": "high",
+  "statement": "Across tadalafil, sildenafil, vardenafil, and avanafil labels, nitrate and GC-stimulator co-use are class-level hard-stop safety boundaries, and hypotension cautions with alpha-blockers, antihypertensives, and alcohol are broadly shared. However, nitrate waiting intervals and other restrictions are agent-specific: CIALIS uses at least 48 hours after tadalafil before emergency nitrate consideration, while STENDRA uses at least 12 hours after avanafil, VIAGRA states safety at 24 hours is unknown, and vardenafil labeling reports no added nitrate blood-pressure/heart-rate changes at 24 hours in a healthy-subject study.",
+  "population_or_context": "Regulatory safety-boundary comparison for off-label tadalafil evidence synthesis.",
+  "time_horizon": "Label checks current to June 6, 2026.",
+  "quantitative_note": "Nitrate timing differs by agent label: tadalafil at least 48 hours; avanafil at least 12 hours; sildenafil unknown at 24 hours; vardenafil study did not detect additional nitrate effects at 24 hours.",
+  "source_locator": {
+    "section": "DailyMed CIALIS, VIAGRA, vardenafil, and STENDRA contraindications, warnings, drug-interaction, and pharmacodynamics sections",
+    "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcd8f8ab-81a2-4891-83db-24a0b0e25895",
+    "quote_or_paraphrase_note": "Compared label contraindications and nitrate/vasodilator timing language across the four agents.",
+    "verification_status": "verified"
+  },
+  "caveats": [
+    "Emergency nitrate language is not permission for unsupervised co-use.",
+    "Healthy-volunteer pharmacodynamic timing does not cover acute coronary syndromes, dehydration, alcohol, or polypharmacy.",
+    "Agent-specific labels should be checked again before any future safety update."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Label evidence is direct for medication safety rules and indirect for absolute risk in mostly healthy men age 30 to 50 using PDE5 inhibitors off label.",
+  "tadalafil_exposure": "Mixed PDE5 inhibitor safety-label comparison with tadalafil-specific 48-hour nitrate boundary and daily-exposure cautions.",
+  "pde5_agent": "mixed_pde5_inhibitors",
+  "agent_directness_to_tadalafil": "pde5_class_level",
+  "class_transfer_limits": "Class safety hard stops can transfer as cautionary boundaries, but timing, washout, dose restrictions, and product-specific warnings must remain agent-specific and cannot be averaged across PDE5 inhibitors.",
+  "indication_context": "Regulatory label safety comparison.",
+  "comparator_context": "Cross-label comparison rather than randomized comparative safety trial.",
+  "endpoint_domain": "safety",
+  "endpoint_measure": "Contraindications, nitrate timing, hypotension warnings, alpha-blocker/antihypertensive/alcohol cautions, and product-specific restrictions.",
+  "effect_estimate": "Qualitative class boundary with agent-specific nitrate timing differences.",
+  "safety_findings": "Shared class risks include nitrate/GC-stimulator contraindications and vasodilatory hypotension interactions; tadalafil-specific duration and daily-use issues require tadalafil-specific safety framing.",
+  "directness_to_target_population": "High for safety-boundary synthesis; low to moderate for individual risk estimates in healthy off-label users.",
+  "confounding_and_bias_limits": "Regulatory labels are not head-to-head safety studies and may differ by product history, indication, and available clinical pharmacology evidence.",
+  "population_band": "mixed_or_unclear",
+  "study_design_class": "regulatory_label_or_guidance",
+  "effect_domain": "safety_risk"
+}

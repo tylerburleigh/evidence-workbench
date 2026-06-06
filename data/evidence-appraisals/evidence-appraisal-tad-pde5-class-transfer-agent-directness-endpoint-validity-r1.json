@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-pde5-class-transfer-agent-directness-endpoint-validity-r1",
+  "name": "Endpoint Validity appraisal for Tad Pde5 Class Transfer Agent Directness bundle",
+  "candidate_bundle_id": "pde5-class-transfer-framework-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "endpoint_validity",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The endpoints are valid for an evidence-directness framework: mechanism, pharmacokinetics, PDE selectivity, label safety boundaries, and agent classification. The claim does not convert those framework endpoints into clinical outcome claims.",
+  "appraised_change_ids": [
+    "create-pde5-class-transfer-search-protocol",
+    "create-dailymed-viagra-label-source",
+    "create-dailymed-vardenafil-label-source",
+    "create-dailymed-stendra-label-source",
+    "create-livertox-pde5-overview-source",
+    "create-seftel-pde5-differentiation-source",
+    "create-bischoff-pde-selectivity-source",
+    "create-pde5-label-comparison-artifact",
+    "create-pde5-mechanism-selectivity-artifact",
+    "create-pde5-transfer-framework-artifact",
+    "create-pde5-shared-mechanism-finding",
+    "create-pde5-pk-non-equivalence-finding",
+    "create-pde5-selectivity-non-equivalence-finding",
+    "create-pde5-safety-boundary-transfer-finding",
+    "create-pde5-class-transfer-framework-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "framework-endpoints-appropriate",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "claim_or_issue": "Mechanism, half-life, nitrate timing, PDE selectivity, and label warning endpoints are appropriate for class-transfer rules.",
+      "why_it_matters": "The bundle is not trying to answer whether tadalafil improves any off-label outcome.",
+      "recommended_action": "No correction required; keep outcome-specific endpoints in separate review-question baselines.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-pde5-transfer-framework-artifact"
+    },
+    {
+      "finding_id": "no-benefit-endpoint-claim",
+      "severity": "note",
+      "category": "claim_overreach",
+      "claim_or_issue": "The framework claim avoids using pharmacology endpoints as proof of cognition, mood, cardiovascular, exercise, MCI, or longevity benefit.",
+      "why_it_matters": "Mechanistic endpoints are a common source of overreach in off-label synthesis.",
+      "recommended_action": "No correction required; preserve this boundary in public copy.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-pde5-class-transfer-framework-claim"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T11:40:30.466Z",
+  "updated_at": "2026-06-06T11:40:30.466Z"
+}

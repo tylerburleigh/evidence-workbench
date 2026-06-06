@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-pde5-class-transfer-agent-directness-synthesis-overreach-r1",
+  "name": "Synthesis Overreach appraisal for Tad Pde5 Class Transfer Agent Directness bundle",
+  "candidate_bundle_id": "pde5-class-transfer-framework-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "synthesis_overreach",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The staged claim is a framework claim, not a benefit claim or substitution claim. It explicitly states that non-tadalafil PDE5 evidence remains adjacent or class-level unless molecule, dose, timing, half-life, selectivity, population, comparator, endpoint, and safety context are bridged.",
+  "appraised_change_ids": [
+    "create-pde5-class-transfer-search-protocol",
+    "create-dailymed-viagra-label-source",
+    "create-dailymed-vardenafil-label-source",
+    "create-dailymed-stendra-label-source",
+    "create-livertox-pde5-overview-source",
+    "create-seftel-pde5-differentiation-source",
+    "create-bischoff-pde-selectivity-source",
+    "create-pde5-label-comparison-artifact",
+    "create-pde5-mechanism-selectivity-artifact",
+    "create-pde5-transfer-framework-artifact",
+    "create-pde5-shared-mechanism-finding",
+    "create-pde5-pk-non-equivalence-finding",
+    "create-pde5-selectivity-non-equivalence-finding",
+    "create-pde5-safety-boundary-transfer-finding",
+    "create-pde5-class-transfer-framework-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "no-class-collapse",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "claim_or_issue": "The claim does not collapse tadalafil, sildenafil, vardenafil, avanafil, and mixed PDE5 evidence into an agent-neutral conclusion.",
+      "why_it_matters": "The project broadened to PDE5 only on the condition that tadalafil-specific claims remain separable.",
+      "recommended_action": "No correction required; use this claim as a gate for future adjacent PDE5 syntheses.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-pde5-class-transfer-framework-claim"
+    },
+    {
+      "finding_id": "framework-not-medical-advice",
+      "severity": "note",
+      "category": "claim_overreach",
+      "claim_or_issue": "The claim does not advise starting, switching, substituting, or combining PDE5 inhibitors.",
+      "why_it_matters": "The framework should guide evidence interpretation, not clinical use.",
+      "recommended_action": "No correction required; maintain this posture in public summaries.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-pde5-class-transfer-framework-claim"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T11:40:30.934Z",
+  "updated_at": "2026-06-06T11:40:30.934Z"
+}

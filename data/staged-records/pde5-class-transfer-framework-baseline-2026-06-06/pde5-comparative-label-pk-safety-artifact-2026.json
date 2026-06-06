@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "pde5-comparative-label-pk-safety-artifact-2026",
+  "name": "PDE5 Comparative Label Pharmacokinetic And Safety Boundary Extract",
+  "artifact_type": "comparative_regulatory_label_extract",
+  "status": "complete",
+  "source_ids": [
+    "dailymed-cialis-label-2026-03",
+    "dailymed-viagra-label-2020-01",
+    "dailymed-vardenafil-label-2026-01",
+    "dailymed-stendra-label-2024-07"
+  ],
+  "taxonomy_node_ids": [
+    "tad-pde5-class-transfer-agent-directness"
+  ],
+  "population_or_context": "Regulatory labels for tadalafil, sildenafil, vardenafil, and avanafil ED/BPH-adjacent use; used to define class-transfer boundaries for mostly healthy men age 30 to 50.",
+  "sample_size": "Not applicable; comparative extraction from four U.S. prescribing labels.",
+  "methods": "Structured comparison of current or latest accessible DailyMed label sections covering dosing, contraindications, warnings, pharmacodynamics, pharmacokinetics, PDE selectivity, nitrate timing, and common adverse reactions.",
+  "endpoint_categories": [
+    "pharmacokinetics",
+    "drug_interactions",
+    "safety",
+    "agent_directness"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Labels are primarily ED/BPH male prescribing information and healthy-volunteer clinical pharmacology data; direct for drug-specific safety boundaries and indirect for off-label cognition, mood, exercise, cardiovascular, or longevity uses in mostly healthy men age 30 to 50.",
+  "tadalafil_exposure": "Mixed PDE5 inhibitor label comparison: CIALIS tadalafil 2.5 to 20 mg including daily and as-needed use; VIAGRA sildenafil 25 to 100 mg as needed; vardenafil 2.5 to 20 mg as needed; STENDRA avanafil 50 to 200 mg as needed.",
+  "pde5_agent": "mixed_pde5_inhibitors",
+  "agent_directness_to_tadalafil": "pde5_class_level",
+  "class_transfer_limits": "Drug-label transfer is strongest for shared class contraindications such as nitrates/GC stimulators and weakest for timing, duration, daily exposure, food effects, PDE selectivity, QT warnings, and adverse-event patterns. Tadalafil-specific conclusions require tadalafil records because tadalafil has materially longer half-life and daily-use labeling.",
+  "indication_context": "On-label ED/BPH regulatory safety context used as a framework for off-label evidence interpretation.",
+  "study_design": "Comparative label synthesis, not a clinical trial or systematic review.",
+  "comparator_context": "Cross-agent comparison of regulatory label statements rather than randomized head-to-head comparison.",
+  "endpoint_domain": "safety",
+  "safety_findings": "All four ED PDE5 labels contraindicate organic nitrate use and GC-stimulator co-use and warn about hypotension with alpha-blockers/antihypertensives or alcohol; agent-specific labels differ in nitrate waiting intervals, pharmacokinetic half-life, CYP3A4 dose restrictions, vardenafil QT precautions, and PDE6/PDE11 selectivity language.",
+  "directness_to_target_population": "High for medication-specific safety rules and agent-transfer boundaries; low to moderate for estimating absolute off-label risk in mostly healthy men age 30 to 50.",
+  "confounding_and_bias_limits": "Labels are authoritative for approved use but are not designed to compare off-label cognition, mood, performance, cardiovascular prevention, or longevity outcomes across agents.",
+  "population_band": "mixed_or_unclear",
+  "study_design_class": "regulatory_label_or_guidance",
+  "effect_domain": "safety_risk"
+}

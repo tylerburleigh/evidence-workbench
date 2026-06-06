@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "pde5-pharmacokinetic-non-equivalence-finding-2026",
+  "name": "PDE5 inhibitors are not pharmacokinetically interchangeable for tadalafil claims",
+  "source_id": "seftel-pde5-differentiation-2004",
+  "artifact_id": "pde5-comparative-label-pk-safety-artifact-2026",
+  "taxonomy_node_ids": [
+    "tad-pde5-class-transfer-agent-directness"
+  ],
+  "endpoint_category": "pharmacokinetics",
+  "direction": "transfer_requires_exposure_adjustment",
+  "evidence_tier": "comparative_pharmacology_review_plus_labels",
+  "confidence": "high",
+  "statement": "Tadalafil has materially longer exposure than the shorter-acting ED PDE5 inhibitors: CIALIS labeling reports a 17.5-hour mean terminal half-life, while VIAGRA reports sildenafil and active metabolite half-lives of about 4 hours, vardenafil labeling reports about 4 to 5 hours, and STENDRA reports avanafil about 5 hours. Therefore, acute sildenafil, vardenafil, or avanafil findings should not be treated as equivalent to tadalafil daily or long-duration exposure.",
+  "population_or_context": "Comparative pharmacokinetic evidence used for agent-directness classification.",
+  "time_horizon": "Label checks current to June 6, 2026.",
+  "quantitative_note": "Tadalafil 17.5-hour mean terminal half-life; sildenafil about 4 hours; vardenafil about 4 to 5 hours; avanafil about 5 hours. Seftel 2004 also contrasts shorter sildenafil/vardenafil duration with tadalafil responsiveness up to 36 hours.",
+  "source_locator": {
+    "section": "Seftel abstract and DailyMed clinical pharmacology sections 12.3",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15115191/",
+    "quote_or_paraphrase_note": "E-utilities abstract and labels were used to extract duration, half-life, and food-effect differences.",
+    "verification_status": "verified"
+  },
+  "caveats": [
+    "Duration of responsiveness is not the same as plasma half-life.",
+    "CYP3A4 inhibitors can change exposure and washout timing.",
+    "Daily tadalafil exposure differs from as-needed tadalafil and from as-needed non-tadalafil PDE5 inhibitors."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Label pharmacokinetic data include healthy volunteers and ED/BPH prescribing contexts; direct for exposure comparison, indirect for off-label endpoint outcomes.",
+  "tadalafil_exposure": "Tadalafil label exposure includes 2.5 to 20 mg and daily/as-needed contexts; adjacent agents are sildenafil 25 to 100 mg, vardenafil 2.5 to 20 mg, and avanafil 50 to 200 mg as-needed label contexts.",
+  "pde5_agent": "mixed_pde5_inhibitors",
+  "agent_directness_to_tadalafil": "pde5_class_level",
+  "class_transfer_limits": "Transfer from shorter-acting agents to tadalafil is weak for outcomes sensitive to exposure duration, delayed adverse effects, daily dosing, accumulation, nitrate timing, or continuous NO/cGMP modulation.",
+  "indication_context": "Regulatory pharmacokinetic and comparative review evidence, not an off-label clinical outcome study.",
+  "comparator_context": "Cross-agent pharmacokinetic comparison rather than randomized head-to-head clinical comparison.",
+  "endpoint_domain": "mechanism",
+  "endpoint_measure": "Half-life, duration of responsiveness, food effects, and exposure timing.",
+  "effect_estimate": "Qualitative and numeric: tadalafil has much longer terminal half-life than sildenafil, vardenafil, or avanafil.",
+  "safety_findings": "Longer tadalafil exposure supports longer nitrate separation and extra caution with daily tadalafil, CYP3A4 inhibitors, alpha-blockers, antihypertensives, and alcohol.",
+  "directness_to_target_population": "High for exposure-transfer rules; low for estimating benefit in healthy men age 30 to 50.",
+  "confounding_and_bias_limits": "Label pharmacokinetics and review summaries do not establish equivalence for off-label endpoints or adverse-event rates.",
+  "population_band": "mixed_or_unclear",
+  "study_design_class": "regulatory_label_or_guidance",
+  "effect_domain": "mechanism"
+}

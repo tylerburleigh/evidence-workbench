@@ -153,9 +153,9 @@
       ],
       "retirement_status": "active"
     },
-    {
-      "id": "tad-safety-interactions-adverse-events",
-      "name": "Safety, Interactions, And Adverse Events",
+  {
+    "id": "tad-safety-interactions-adverse-events",
+    "name": "Safety, Interactions, And Adverse Events",
       "node_type": "review_question",
       "parent_id": "tad-safety-directness",
       "canonical_order": 7,
@@ -181,15 +181,42 @@
         "Use the latest labeling as the baseline safety reference before interpreting off-label benefit.",
         "Capture absolute risk, event seriousness, dose/exposure, interacting medicines, and patient risk factors when available.",
         "Do not publish benefit claims without nearby safety caveats."
-      ],
-      "retirement_status": "active"
-    },
-    {
-      "id": "tad-mechanistic-translational-evidence",
-      "name": "Mechanistic And Translational Evidence",
-      "node_type": "review_question",
-      "parent_id": "tad-safety-directness",
-      "canonical_order": 8,
+    ],
+    "retirement_status": "active"
+  },
+  {
+    "id": "tad-pde5-class-transfer-agent-directness",
+    "name": "PDE5 Class Transfer And Agent Directness",
+    "node_type": "review_question",
+    "parent_id": "tad-safety-directness",
+    "canonical_order": 8,
+    "summary": "Framework evidence for when sildenafil, vardenafil, avanafil, mixed PDE5-inhibitor, or class-level evidence may inform tadalafil claims, and when tadalafil-specific evidence is required.",
+    "search_aliases": [
+      "PDE5 inhibitor class transfer tadalafil sildenafil vardenafil avanafil",
+      "PDE5 inhibitors pharmacokinetics selectivity tadalafil sildenafil vardenafil avanafil",
+      "tadalafil sildenafil vardenafil avanafil half life PDE selectivity"
+    ],
+    "example_entities": [
+      "agent directness",
+      "class transfer",
+      "half-life",
+      "PDE selectivity",
+      "nitrate timing",
+      "dose and duration"
+    ],
+    "scope_notes": [
+      "Use this node to set transfer rules, not to claim a clinical benefit.",
+      "Class-level mechanism can support plausibility only when population, exposure, endpoint, and safety contexts remain explicit.",
+      "Non-tadalafil PDE5 evidence remains adjacent unless molecule-specific pharmacokinetics, dose, timing, selectivity, and endpoint directness justify transfer."
+    ],
+    "retirement_status": "active"
+  },
+  {
+    "id": "tad-mechanistic-translational-evidence",
+    "name": "Mechanistic And Translational Evidence",
+    "node_type": "review_question",
+    "parent_id": "tad-safety-directness",
+    "canonical_order": 9,
       "summary": "Mechanistic evidence on PDE5 inhibition, nitric oxide/cGMP signaling, cerebral or vascular perfusion, mitochondrial, inflammatory, or tissue-level pathways relevant to off-label hypotheses.",
       "search_aliases": [
         "tadalafil mechanism nitric oxide cGMP",

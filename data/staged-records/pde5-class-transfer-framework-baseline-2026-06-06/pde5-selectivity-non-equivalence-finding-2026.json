@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "pde5-selectivity-non-equivalence-finding-2026",
+  "name": "PDE isoenzyme selectivity differences limit adverse-effect and mechanism transfer",
+  "source_id": "bischoff-pde-selectivity-2004",
+  "artifact_id": "pde5-mechanism-selectivity-transfer-artifact-2026",
+  "taxonomy_node_ids": [
+    "tad-pde5-class-transfer-agent-directness"
+  ],
+  "endpoint_category": "pde_selectivity",
+  "direction": "agent_specific_selectivity_limits_transfer",
+  "evidence_tier": "comparative_selectivity_review_plus_labels",
+  "confidence": "moderate",
+  "statement": "The PDE5 inhibitors share the target enzyme but differ in off-target PDE selectivity. CIALIS labeling notes tadalafil is much more selective for PDE5 than PDE6 but only 14-fold more potent for PDE5 than PDE11A1; VIAGRA and vardenafil labels highlight PDE6-related visual physiology; STENDRA labeling reports avanafil is more than 100-fold more potent for PDE5 than PDE6 and more than 10,000-fold more potent than several other PDEs including PDE11.",
+  "population_or_context": "Mechanistic and label selectivity evidence for deciding when adverse-effect, ocular, musculoskeletal, vascular, or tissue-specific findings can transfer across agents.",
+  "time_horizon": "Label checks current to June 6, 2026.",
+  "quantitative_note": "Tadalafil: 700-fold more potent for PDE5 than PDE6 and 14-fold versus PDE11A1 in label. Sildenafil: about 10-fold as potent for PDE5 compared with PDE6 in label. Vardenafil: more than 15-fold relative to PDE6 and more than 300-fold relative to PDE11 in label. Avanafil: greater than 100-fold relative to PDE6 and greater than 10,000-fold relative to PDE1, PDE3, PDE9, and PDE11 in label.",
+  "source_locator": {
+    "section": "Bischoff abstract; DailyMed clinical pharmacology mechanism/selectivity sections",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15224129/",
+    "quote_or_paraphrase_note": "E-utilities metadata and search abstract snippet were combined with label selectivity values from CIALIS, VIAGRA, vardenafil, and STENDRA.",
+    "verification_status": "verified"
+  },
+  "caveats": [
+    "In vitro selectivity does not directly quantify clinical adverse-event risk.",
+    "Label selectivity values do not prove one agent is globally safer for off-label use.",
+    "Different endpoints may depend on different tissues and PDE isoenzymes."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Mechanistic and label evidence, not a healthy-user clinical endpoint study.",
+  "tadalafil_exposure": "Mixed PDE5 inhibitor selectivity; tadalafil is direct only for the tadalafil/PDE11 and PDE6 comparison.",
+  "pde5_agent": "mixed_pde5_inhibitors",
+  "agent_directness_to_tadalafil": "pde5_class_level",
+  "class_transfer_limits": "Do not transfer visual, musculoskeletal, ocular, retinal, or tissue-specific mechanistic findings across agents without checking PDE6/PDE11 and other isoenzyme selectivity plus exposure context.",
+  "indication_context": "Mechanistic pharmacology and regulatory label selectivity evidence.",
+  "comparator_context": "Cross-agent PDE isoenzyme selectivity comparison.",
+  "endpoint_domain": "mechanism",
+  "endpoint_measure": "Relative potency/selectivity for PDE5 versus PDE6, PDE11, and other phosphodiesterases.",
+  "effect_estimate": "Qualitative with label selectivity ratios showing agent differences.",
+  "safety_findings": "Selectivity differences support keeping visual and musculoskeletal safety caveats agent-specific unless a class source directly evaluates the outcome.",
+  "directness_to_target_population": "High for agent-transfer rules; low for estimating clinical event rates in healthy men age 30 to 50.",
+  "confounding_and_bias_limits": "Review-level and in vitro/selectivity data can be overinterpreted if mapped directly to clinical outcomes.",
+  "population_band": "mixed_or_unclear",
+  "study_design_class": "review_or_meta_analysis",
+  "effect_domain": "mechanism"
+}

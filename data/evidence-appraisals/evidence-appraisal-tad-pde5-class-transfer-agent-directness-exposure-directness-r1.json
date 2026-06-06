@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-pde5-class-transfer-agent-directness-exposure-directness-r1",
+  "name": "Exposure Directness appraisal for Tad Pde5 Class Transfer Agent Directness bundle",
+  "candidate_bundle_id": "pde5-class-transfer-framework-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "exposure_directness",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The bundle cleanly uses pde5_agent=mixed_pde5_inhibitors and agent_directness_to_tadalafil=pde5_class_level for the framework records, while the claim states that tadalafil remains the primary target. It preserves dose, half-life, daily versus as-needed exposure, nitrate timing, CYP3A4, PDE6/PDE11 selectivity, and class_transfer_limits as required barriers to automatic transfer.",
+  "appraised_change_ids": [
+    "create-pde5-class-transfer-search-protocol",
+    "create-dailymed-viagra-label-source",
+    "create-dailymed-vardenafil-label-source",
+    "create-dailymed-stendra-label-source",
+    "create-livertox-pde5-overview-source",
+    "create-seftel-pde5-differentiation-source",
+    "create-bischoff-pde-selectivity-source",
+    "create-pde5-label-comparison-artifact",
+    "create-pde5-mechanism-selectivity-artifact",
+    "create-pde5-transfer-framework-artifact",
+    "create-pde5-shared-mechanism-finding",
+    "create-pde5-pk-non-equivalence-finding",
+    "create-pde5-selectivity-non-equivalence-finding",
+    "create-pde5-safety-boundary-transfer-finding",
+    "create-pde5-class-transfer-framework-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "agent-metadata-consistent",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "claim_or_issue": "The staged framework records consistently classify mixed PDE5 evidence as class-level rather than direct tadalafil evidence.",
+      "why_it_matters": "The broadened project depends on preventing hidden class collapse.",
+      "recommended_action": "No correction required; apply the same metadata discipline to future sildenafil, vardenafil, avanafil, and mixed-PDE5 records.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-pde5-class-transfer-framework-claim"
+    },
+    {
+      "finding_id": "tadalafil-exposure-noninterchangeability-visible",
+      "severity": "note",
+      "category": "safety_limitation",
+      "claim_or_issue": "The bundle makes tadalafil's longer half-life, daily-use context, and 48-hour nitrate boundary explicit.",
+      "why_it_matters": "These exposure differences are the central reason adjacent PDE5 evidence cannot be treated as direct tadalafil evidence.",
+      "recommended_action": "Keep exposure qualifiers attached to every future transfer statement.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-pde5-pk-non-equivalence-finding"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T11:40:30.557Z",
+  "updated_at": "2026-06-06T11:40:30.557Z"
+}

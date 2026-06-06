@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "pde5-shared-mechanism-plausibility-finding-2026",
+  "name": "Shared PDE5 inhibition supports plausibility but not outcome equivalence",
+  "source_id": "ncbi-livertox-pde5-inhibitors-overview-2017",
+  "artifact_id": "pde5-mechanism-selectivity-transfer-artifact-2026",
+  "taxonomy_node_ids": [
+    "tad-pde5-class-transfer-agent-directness"
+  ],
+  "endpoint_category": "mechanism",
+  "direction": "class_plausibility_not_clinical_equivalence",
+  "evidence_tier": "class_overview_and_regulatory_label_pharmacology",
+  "confidence": "moderate",
+  "statement": "Sildenafil, tadalafil, vardenafil, and avanafil share PDE5 inhibition and NO/cGMP-mediated vasodilatory pharmacology, so non-tadalafil PDE5 evidence can support class-level plausibility; it cannot by itself establish tadalafil-specific clinical effects for cognition, mood, cardiovascular prevention, exercise, or longevity.",
+  "population_or_context": "Class-level PDE5 inhibitor pharmacology applied to off-label tadalafil evidence synthesis.",
+  "time_horizon": "Baseline framework current to June 6, 2026 source check.",
+  "quantitative_note": "Not applicable; mechanism finding.",
+  "source_locator": {
+    "section": "NCBI Bookshelf PDE5 inhibitors overview and label mechanism sections",
+    "url": "https://www.ncbi.nlm.nih.gov/books/NBK548192/",
+    "quote_or_paraphrase_note": "Overview describes PDE5 inhibitors as blocking cGMP breakdown and prolonging nitric-oxide mediated vasodilation; labels describe agent-specific PDE5 inhibition.",
+    "verification_status": "verified"
+  },
+  "caveats": [
+    "Mechanistic plausibility is not clinical efficacy.",
+    "The same class mechanism can produce both hypothesized benefits and safety risks.",
+    "Outcome transfer depends on dose, timing, population, and endpoint context."
+  ],
+  "numeric_results_extracted": "not_applicable",
+  "population_profile": "Mechanism applies broadly to PDE5 inhibitor users but does not directly measure mostly healthy men age 30 to 50 using tadalafil off label.",
+  "tadalafil_exposure": "Class-level PDE5 exposure including tadalafil, sildenafil, vardenafil, and avanafil; no specific tadalafil dose tested in this finding.",
+  "pde5_agent": "mixed_pde5_inhibitors",
+  "agent_directness_to_tadalafil": "pde5_class_level",
+  "class_transfer_limits": "Use as background plausibility only unless a tadalafil-specific or molecule-bridged clinical source measures the target endpoint under comparable exposure conditions.",
+  "indication_context": "Mechanistic class overview and label pharmacology, not off-label treatment evidence.",
+  "comparator_context": "No clinical comparator; class mechanism comparison.",
+  "endpoint_domain": "mechanism",
+  "endpoint_measure": "Shared PDE5 inhibition and NO/cGMP pathway pharmacology.",
+  "effect_estimate": "Qualitative: shared PDE5 mechanism supports plausibility but not agent equivalence.",
+  "safety_findings": "The shared mechanism also supports vasodilatory interaction concerns with nitrates, GC stimulators, alpha-blockers, antihypertensives, and alcohol.",
+  "directness_to_target_population": "High for class-mechanism classification; low for healthy-user clinical outcome inference.",
+  "confounding_and_bias_limits": "Mechanistic summaries can overstate clinical transfer when outcomes depend on tissue distribution, exposure duration, or disease context.",
+  "population_band": "mixed_or_unclear",
+  "study_design_class": "review_or_meta_analysis",
+  "effect_domain": "mechanism"
+}

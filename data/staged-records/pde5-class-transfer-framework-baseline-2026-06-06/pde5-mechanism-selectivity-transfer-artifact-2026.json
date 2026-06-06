@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "pde5-mechanism-selectivity-transfer-artifact-2026",
+  "name": "PDE5 Mechanism And Selectivity Transfer Extract",
+  "artifact_type": "mechanistic_comparative_pharmacology_extract",
+  "status": "complete",
+  "source_ids": [
+    "ncbi-livertox-pde5-inhibitors-overview-2017",
+    "seftel-pde5-differentiation-2004",
+    "bischoff-pde-selectivity-2004",
+    "dailymed-cialis-label-2026-03",
+    "dailymed-viagra-label-2020-01",
+    "dailymed-vardenafil-label-2026-01",
+    "dailymed-stendra-label-2024-07"
+  ],
+  "taxonomy_node_ids": [
+    "tad-pde5-class-transfer-agent-directness"
+  ],
+  "population_or_context": "Class-level and drug-specific pharmacology sources used to decide when non-tadalafil PDE5 evidence can inform tadalafil off-label hypotheses.",
+  "sample_size": "Not applicable; mechanistic and comparative pharmacology synthesis.",
+  "methods": "Integrated current label mechanism/selectivity sections with NCBI class overview and comparative pharmacology review abstracts.",
+  "endpoint_categories": [
+    "mechanism",
+    "pde_selectivity",
+    "pharmacokinetics",
+    "agent_directness"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Human label pharmacology and review-level mechanism evidence; direct for class mechanism plausibility and agent-specific selectivity limits, indirect for clinical outcomes in healthy off-label users.",
+  "tadalafil_exposure": "Mixed PDE5 inhibitor pharmacology; tadalafil-specific exposure differs because tadalafil supports daily use and has a 17.5-hour mean terminal half-life in healthy subjects.",
+  "pde5_agent": "mixed_pde5_inhibitors",
+  "agent_directness_to_tadalafil": "pde5_class_level",
+  "class_transfer_limits": "Shared PDE5 inhibition supports mechanistic plausibility only. Transfer to tadalafil weakens when the outcome depends on half-life, dosing schedule, tissue exposure, PDE6/PDE11 selectivity, active metabolites, onset/food effects, or drug-specific safety labeling.",
+  "indication_context": "Mechanistic and regulatory pharmacology framework, not clinical efficacy evidence.",
+  "study_design": "Narrative synthesis of labels, NCBI class overview, and comparative pharmacology reviews.",
+  "comparator_context": "Agent-to-agent pharmacology comparison; no direct clinical outcome comparator.",
+  "endpoint_domain": "mechanism",
+  "safety_findings": "Mechanism supports shared vasodilatory and nitrate/GC-stimulator interaction concern, while selectivity differences support preserving agent-specific adverse-effect caveats.",
+  "directness_to_target_population": "High for determining class plausibility and transfer limits; low for estimating cognitive, mood, cardiovascular-prevention, exercise, or longevity benefit in healthy men.",
+  "confounding_and_bias_limits": "Mechanistic similarity can overstate clinical transfer; review abstracts and labels do not establish outcome equivalence across drugs, doses, populations, or durations.",
+  "population_band": "mixed_or_unclear",
+  "study_design_class": "review_or_meta_analysis",
+  "effect_domain": "mechanism"
+}

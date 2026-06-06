@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "dailymed-viagra-label-2020-01",
+  "name": "DailyMed VIAGRA sildenafil citrate tablet prescribing information",
+  "source_type": "regulatory_label",
+  "authors": [
+    "Pfizer Laboratories Div Pfizer Inc",
+    "U.S. National Library of Medicine DailyMed"
+  ],
+  "venue": "DailyMed",
+  "year": 2020,
+  "published_on": "2020-01-17",
+  "urls": [
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ae2079a2-f3a9-4739-9611-0742b71e4761"
+  ],
+  "summary": "U.S. VIAGRA label updated January 17, 2020, covering sildenafil dosing, contraindications, warnings, adverse reactions, drug interactions, mechanism, PDE6 selectivity, blood-pressure effects, and pharmacokinetics.",
+  "access_status": "full_text_verified",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T11:33:00Z",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=ae2079a2-f3a9-4739-9611-0742b71e4761",
+      "result": "Full prescribing information accessed through DailyMed.",
+      "notes": "Used label sections 2, 4, 5, 6, 7, and 12 for class-transfer extraction."
+    }
+  ]
+}

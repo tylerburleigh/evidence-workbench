@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-pde5-class-transfer-agent-directness-population-directness-r1",
+  "name": "Population Directness appraisal for Tad Pde5 Class Transfer Agent Directness bundle",
+  "candidate_bundle_id": "pde5-class-transfer-framework-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "population_directness",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The framework is direct for project-level evidence classification and deliberately indirect for clinical outcomes in mostly healthy men age 30 to 50. The staged claim does not treat ED/BPH labels, class mechanism, or comparative reviews as direct healthy-user cognitive, mood, exercise, cardiovascular-prevention, MCI, or longevity evidence.",
+  "appraised_change_ids": [
+    "create-pde5-class-transfer-search-protocol",
+    "create-dailymed-viagra-label-source",
+    "create-dailymed-vardenafil-label-source",
+    "create-dailymed-stendra-label-source",
+    "create-livertox-pde5-overview-source",
+    "create-seftel-pde5-differentiation-source",
+    "create-bischoff-pde-selectivity-source",
+    "create-pde5-label-comparison-artifact",
+    "create-pde5-mechanism-selectivity-artifact",
+    "create-pde5-transfer-framework-artifact",
+    "create-pde5-shared-mechanism-finding",
+    "create-pde5-pk-non-equivalence-finding",
+    "create-pde5-selectivity-non-equivalence-finding",
+    "create-pde5-safety-boundary-transfer-finding",
+    "create-pde5-class-transfer-framework-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "framework-directness-not-outcome-directness",
+      "severity": "note",
+      "category": "missing_caveat",
+      "claim_or_issue": "The framework is direct for classifying agent evidence but not for estimating clinical benefit or harm in mostly healthy men age 30 to 50.",
+      "why_it_matters": "This distinction prevents regulatory label or mechanistic evidence from being mistaken for outcome evidence.",
+      "recommended_action": "Keep directness language explicit in public synthesis and future outcome-specific baselines.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-pde5-class-transfer-framework-claim"
+    },
+    {
+      "finding_id": "outcome-specific-transfer-still-required",
+      "severity": "minor",
+      "category": "uncertainty",
+      "claim_or_issue": "The bundle does not create endpoint-specific transfer rules for cognition, MCI, mood, exercise, cardiovascular prevention, or longevity.",
+      "why_it_matters": "Different outcomes may require different transfer standards even when the agent-transfer framework is stable.",
+      "recommended_action": "Use this framework as the default, then refine directness during each outcome-specific baseline.",
+      "resolution_status": "open",
+      "applies_to_change_id": "create-pde5-class-transfer-framework-claim"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T11:40:30.657Z",
+  "updated_at": "2026-06-06T11:40:30.657Z"
+}

@@ -1,0 +1,160 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "pde5-class-transfer-framework-baseline-claim",
+  "name": "PDE5 Class Transfer Framework Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "tad-pde5-class-transfer-agent-directness",
+  "current_stage": "claim_supported",
+  "momentum": "baseline_submitted",
+  "confidence": "moderate",
+  "summary": "For this project, tadalafil remains the primary claim target. Sildenafil, vardenafil, avanafil, mixed PDE5-inhibitor, or unspecified PDE5-class evidence can support tadalafil claims only as explicitly labeled adjacent or class-level evidence unless the synthesis justifies transfer across molecule, dose, timing, frequency, duration, half-life, PDE selectivity, population, comparator, endpoint, and safety context. Shared PDE5/NO-cGMP pharmacology supports plausibility and class safety boundaries, especially nitrate and GC-stimulator contraindications, but it does not establish tadalafil-specific cognitive, mood, cardiovascular, exercise, MCI, or longevity effects. Tadalafil is particularly non-interchangeable for exposure-sensitive claims because its label reports a 17.5-hour mean terminal half-life, daily-use contexts, and a 48-hour nitrate boundary, while sildenafil, vardenafil, and avanafil are shorter-acting as-needed ED agents in their labels.",
+  "main_blockers": [
+    "No head-to-head clinical evidence in this bundle validates transfer of cognition, mood, exercise, cardiovascular-prevention, MCI, or longevity outcomes from sildenafil/vardenafil/avanafil to tadalafil.",
+    "Mechanistic and label similarities can be overread as class-equivalence if half-life, dose, timing, selectivity, and safety boundaries are not carried into synthesis.",
+    "Comparative review extraction is abstract-level for Seftel 2004 and Bischoff 2004 in this first baseline."
+  ],
+  "best_current_signals": [
+    "NCBI class overview and labels support a shared PDE5/NO-cGMP mechanism, making non-tadalafil PDE5 evidence useful for plausibility rather than direct tadalafil efficacy.",
+    "Current labels show shared class hard-stop safety boundaries around nitrates and GC stimulators, with broad hypotension cautions for alpha-blockers, antihypertensives, and alcohol.",
+    "Label pharmacokinetics show tadalafil has materially longer exposure than sildenafil, vardenafil, or avanafil, so timing-sensitive findings do not transfer cleanly.",
+    "Label and comparative selectivity evidence show meaningful PDE6/PDE11 and other isoenzyme differences, so ocular, musculoskeletal, and tissue-specific assumptions need agent-specific caveats."
+  ],
+  "interpretive_note": "This is an evidence-directness framework, not a clinical recommendation and not evidence of off-label benefit.",
+  "applicability": {
+    "applies_when": [
+      "Classifying non-tadalafil PDE5 evidence in a tadalafil-focused review question.",
+      "Deciding whether sildenafil, vardenafil, avanafil, or mixed PDE5 evidence may support plausibility, safety boundaries, or direct tadalafil claims.",
+      "Writing synthesis rows and public claims that must separate tadalafil-specific evidence from adjacent PDE5-class evidence."
+    ],
+    "does_not_apply_when": [
+      "Making individualized prescribing, dosing, substitution, or emergency nitrate decisions.",
+      "Assuming a clinical effect of tadalafil from class mechanism alone.",
+      "Treating non-tadalafil PDE5 evidence as equivalent to tadalafil when endpoint, exposure, or safety context differs."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Non-U.S. PDE5 inhibitors such as udenafil or mirodenafil.",
+      "Pulmonary arterial hypertension dosing and chronic sildenafil/tadalafil PAH labels as a separate transfer question.",
+      "Combination stacks involving nitrates/nitrites, stimulants, alcohol, heat stress, or unregulated PDE5 products.",
+      "Outcome-specific transfer rules for cognition, MCI, mood, exercise, cardiovascular prevention, or longevity before those baselines are staged."
+    ]
+  },
+  "limitations": [
+    "Targeted baseline framework rather than a systematic pharmacology review.",
+    "DailyMed labels are authoritative for U.S. products but are not head-to-head comparative clinical trials.",
+    "Two comparative review sources are abstract-level in this first pass.",
+    "Framework does not estimate absolute risk or clinical benefit in healthy men age 30 to 50.",
+    "Framework will need refinement as outcome-specific PDE5 evidence is staged."
+  ],
+  "update_notes": [
+    "Use pde5_agent, agent_directness_to_tadalafil, and class_transfer_limits in all future tadalafil/PDE5 records.",
+    "Default non-tadalafil human evidence to adjacent_non_tadalafil_pde5 unless a source-specific bridge justifies stronger transfer.",
+    "Default mixed PDE5 meta-analyses or observational sources to pde5_class_level unless molecule-specific strata are extractable."
+  ],
+  "supporting_finding_ids": [
+    "pde5-shared-mechanism-plausibility-finding-2026",
+    "pde5-pharmacokinetic-non-equivalence-finding-2026",
+    "pde5-selectivity-non-equivalence-finding-2026",
+    "pde5-safety-boundary-transfer-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "dailymed-cialis-label-2026-03",
+    "dailymed-viagra-label-2020-01",
+    "dailymed-vardenafil-label-2026-01",
+    "dailymed-stendra-label-2024-07",
+    "ncbi-livertox-pde5-inhibitors-overview-2017",
+    "seftel-pde5-differentiation-2004",
+    "bischoff-pde-selectivity-2004"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Shared class mechanism supports plausibility only",
+      "claim_field": "summary",
+      "conclusion": "PDE5 inhibitors share NO/cGMP/PDE5 pharmacology, but that mechanism does not prove tadalafil-specific off-label outcomes.",
+      "support_role": "background",
+      "rationale": "Class mechanism is useful for hypothesis generation and safety boundary transfer, but outcome claims need endpoint-specific evidence.",
+      "finding_ids": [
+        "pde5-shared-mechanism-plausibility-finding-2026"
+      ],
+      "source_ids": [
+        "ncbi-livertox-pde5-inhibitors-overview-2017"
+      ],
+      "limitations": [
+        "Mechanism does not establish clinical efficacy.",
+        "Population and endpoint directness still have to be checked."
+      ]
+    },
+    {
+      "label": "Pharmacokinetics block simple agent substitution",
+      "claim_field": "class_transfer_limits",
+      "conclusion": "Tadalafil's longer half-life and daily-use context make shorter-acting sildenafil, vardenafil, or avanafil findings non-equivalent for exposure-sensitive claims.",
+      "support_role": "boundary_condition",
+      "rationale": "Dose timing, washout, duration, and continuous exposure affect both benefit hypotheses and safety framing.",
+      "finding_ids": [
+        "pde5-pharmacokinetic-non-equivalence-finding-2026"
+      ],
+      "source_ids": [
+        "seftel-pde5-differentiation-2004",
+        "dailymed-cialis-label-2026-03",
+        "dailymed-viagra-label-2020-01",
+        "dailymed-vardenafil-label-2026-01",
+        "dailymed-stendra-label-2024-07"
+      ],
+      "limitations": [
+        "Label PK is not direct off-label outcome evidence.",
+        "CYP3A4 interactions can change exposure."
+      ]
+    },
+    {
+      "label": "PDE selectivity limits adverse-effect and mechanism transfer",
+      "claim_field": "class_transfer_limits",
+      "conclusion": "PDE6/PDE11 and other isoenzyme selectivity differences require agent-specific caveats, especially for ocular, musculoskeletal, and tissue-specific mechanistic claims.",
+      "support_role": "qualifies",
+      "rationale": "A shared PDE5 target does not mean identical off-target pharmacology.",
+      "finding_ids": [
+        "pde5-selectivity-non-equivalence-finding-2026"
+      ],
+      "source_ids": [
+        "bischoff-pde-selectivity-2004",
+        "dailymed-cialis-label-2026-03",
+        "dailymed-viagra-label-2020-01",
+        "dailymed-vardenafil-label-2026-01",
+        "dailymed-stendra-label-2024-07"
+      ],
+      "limitations": [
+        "Selectivity data do not directly quantify clinical event rates.",
+        "Off-target relevance depends on endpoint and tissue context."
+      ]
+    },
+    {
+      "label": "Class safety boundaries transfer as cautions, not timing equivalence",
+      "claim_field": "safety_findings",
+      "conclusion": "Nitrate and GC-stimulator contraindications are class-level boundaries, but nitrate timing and other restrictions remain agent-specific.",
+      "support_role": "boundary_condition",
+      "rationale": "Safety rules should be conservative and should not average across drugs with different half-lives and label language.",
+      "finding_ids": [
+        "pde5-safety-boundary-transfer-finding-2026"
+      ],
+      "source_ids": [
+        "dailymed-cialis-label-2026-03",
+        "dailymed-viagra-label-2020-01",
+        "dailymed-vardenafil-label-2026-01",
+        "dailymed-stendra-label-2024-07"
+      ],
+      "limitations": [
+        "Labels are not head-to-head trials.",
+        "Emergency nitrate decisions require medical supervision."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-06",
+  "population_profile": "Framework applies to the project target of mostly healthy men age 30 to 50, but the supporting pharmacology and label evidence is mostly ED/BPH regulatory and class-level evidence rather than direct off-label healthy-user outcome evidence.",
+  "tadalafil_exposure": "Tadalafil remains the target exposure for tadalafil claims; sildenafil, vardenafil, avanafil, mixed PDE5, and unspecified class sources are adjacent unless transfer is explicitly justified.",
+  "pde5_agent": "mixed_pde5_inhibitors",
+  "agent_directness_to_tadalafil": "pde5_class_level",
+  "class_transfer_limits": "Transfer is acceptable for class plausibility and conservative safety-boundary context, but not for direct tadalafil efficacy or no-effect claims unless molecule, dose, timing, frequency, duration, half-life, PDE selectivity, population, comparator, endpoint, and safety context are explicitly bridged.",
+  "endpoint_domain": "mechanism",
+  "safety_findings": "Class-level safety hard stops include nitrates and GC stimulators, with broad hypotension cautions around alpha-blockers, antihypertensives, and alcohol. Tadalafil-specific safety framing must preserve its longer half-life, 48-hour nitrate boundary, CYP3A4/renal/hepatic limits, and daily continuous-exposure cautions.",
+  "directness_to_target_population": "Direct for evidence-classification rules; indirect for any clinical outcome or individualized safety estimate in healthy men age 30 to 50.",
+  "confounding_and_bias_limits": "Framework synthesis uses labels, NCBI class overview, and comparative review abstracts; it is vulnerable to overgeneralization if future claim summaries omit agent fields or class-transfer limits."
+}
