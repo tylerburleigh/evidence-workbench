@@ -27,7 +27,7 @@
     "safety"
   ],
   "numeric_results_extracted": "not_applicable",
-  "population_profile": "Intended for synthesis across healthy men age 30 to 50 and adjacent ED/BPH, cardiovascular, MCI, mood/well-being, exercise, and longevity-relevant evidence.",
+  "population_profile": "Intended for synthesis across healthy men age 30 to 50 and adjacent ED/BPH, cardiovascular, mood/well-being, exercise, and longevity-relevant evidence.",
   "tadalafil_exposure": "Framework keeps direct tadalafil evidence separate from sildenafil, vardenafil, avanafil, mixed PDE5, and unspecified class evidence.",
   "pde5_agent": "mixed_pde5_inhibitors",
   "agent_directness_to_tadalafil": "pde5_class_level",

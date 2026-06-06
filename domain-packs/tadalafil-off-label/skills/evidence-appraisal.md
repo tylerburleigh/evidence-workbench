@@ -19,7 +19,7 @@ Use with `skills/evidence-appraisal/SKILL.md`.
 ## Domain Rules
 
 - `source_fidelity`: verify bibliographic metadata, population, drug exposure, comparator, endpoint, quantitative result, adverse events, and source locator against the cited source.
-- `population_directness`: verify whether the evidence applies to healthy men age 30 to 50, MCI, older adults, ED/BPH, PAH, cardiovascular disease, or mixed populations.
+- `population_directness`: verify whether the evidence applies to healthy men age 30 to 50, cognitive-impairment populations, older adults, ED/BPH, PAH, cardiovascular disease, or mixed populations.
 - `exposure_directness`: verify tadalafil dose, timing, duration, daily versus as-needed use, `pde5_agent`, `agent_directness_to_tadalafil`, and any transfer from other PDE5 inhibitors.
 - `endpoint_validity`: verify whether cognitive tests, mood scales, vascular markers, exercise protocols, longevity proxies, and safety endpoints actually support the claim.
 - `safety_risk_framing`: verify current contraindications and warnings, especially nitrates, riociguat, alpha blockers, antihypertensives, alcohol, cardiovascular status, renal/hepatic impairment, vision loss, hearing loss, priapism, and common adverse reactions.

@@ -3,7 +3,7 @@
   "queue_type": "research_priority_queue",
   "domain_id": "tadalafil-off-label",
   "taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-06T11:42:18.247Z",
+  "updated_at": "2026-06-06T12:11:48.961Z",
   "notes": [
     "Baseline Review priority applies to uncovered review questions.",
     "Review Update priority applies to stale review questions with public baseline coverage and no active review bundle."
@@ -17,14 +17,6 @@
   "baseline_review_queue": [
     {
       "rank": 1,
-      "taxonomy_node_id": "tad-mci-cognitive-decline",
-      "priority_tier": "now",
-      "default_mode": "baseline_review",
-      "rationale": "This review question lacks a public baseline and is ready for a bounded baseline review pass.",
-      "default_question": "What is the current evidence landscape for Mild Cognitive Impairment And Cognitive Decline in Tadalafil Off-Label Effects Review, and what belongs in the first public baseline for this review question?"
-    },
-    {
-      "rank": 2,
       "taxonomy_node_id": "tad-mood-wellbeing-quality-life",
       "priority_tier": "now",
       "default_mode": "baseline_review",
@@ -32,7 +24,7 @@
       "default_question": "What is the current evidence landscape for Mood, Well-Being, And Quality Of Life in Tadalafil Off-Label Effects Review, and what belongs in the first public baseline for this review question?"
     },
     {
-      "rank": 3,
+      "rank": 2,
       "taxonomy_node_id": "tad-cardiovascular-endothelial-bp",
       "priority_tier": "now",
       "default_mode": "baseline_review",
@@ -40,15 +32,15 @@
       "default_question": "What is the current evidence landscape for Cardiovascular Health And Endothelial Function in Tadalafil Off-Label Effects Review, and what belongs in the first public baseline for this review question?"
     },
     {
-      "rank": 4,
+      "rank": 3,
       "taxonomy_node_id": "tad-exercise-physical-function",
-      "priority_tier": "soon",
+      "priority_tier": "now",
       "default_mode": "baseline_review",
       "rationale": "This review question lacks a public baseline and is ready for a bounded baseline review pass.",
       "default_question": "What is the current evidence landscape for Exercise Capacity And Physical Function in Tadalafil Off-Label Effects Review, and what belongs in the first public baseline for this review question?"
     },
     {
-      "rank": 5,
+      "rank": 4,
       "taxonomy_node_id": "tad-longevity-healthspan-biomarkers",
       "priority_tier": "soon",
       "default_mode": "baseline_review",
@@ -56,7 +48,7 @@
       "default_question": "What is the current evidence landscape for Longevity, Healthspan, And Biomarkers in Tadalafil Off-Label Effects Review, and what belongs in the first public baseline for this review question?"
     },
     {
-      "rank": 6,
+      "rank": 5,
       "taxonomy_node_id": "tad-mechanistic-translational-evidence",
       "priority_tier": "soon",
       "default_mode": "baseline_review",

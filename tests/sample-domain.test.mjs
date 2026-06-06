@@ -129,7 +129,7 @@ test("tadalafil off-label scaffold loads review questions, safety lanes, and syn
   assert.equal(domainPack.domain.default_scope_unit, "review_question");
   assert.equal(domainPack.domain.planning.stale_after_days, 90);
   assert.ok(domainPack.taxonomyNodeIds.has("tad-cognition-healthy-adults"));
-  assert.ok(domainPack.taxonomyNodeIds.has("tad-mci-cognitive-decline"));
+  assert.ok(domainPack.taxonomyNodeIds.has("tad-mood-wellbeing-quality-life"));
   assert.ok(domainPack.taxonomyNodeIds.has("tad-longevity-healthspan-biomarkers"));
   assert.ok(domainPack.taxonomyNodeIds.has("tad-safety-interactions-adverse-events"));
   assert.ok(domainPack.appraisalLaneIds.has("population_directness"));

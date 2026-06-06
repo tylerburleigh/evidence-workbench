@@ -8,9 +8,9 @@
   "current_stage": "claim_supported",
   "momentum": "baseline_submitted",
   "confidence": "moderate",
-  "summary": "For this project, tadalafil remains the primary claim target. Sildenafil, vardenafil, avanafil, mixed PDE5-inhibitor, or unspecified PDE5-class evidence can support tadalafil claims only as explicitly labeled adjacent or class-level evidence unless the synthesis justifies transfer across molecule, dose, timing, frequency, duration, half-life, PDE selectivity, population, comparator, endpoint, and safety context. Shared PDE5/NO-cGMP pharmacology supports plausibility and class safety boundaries, especially nitrate and GC-stimulator contraindications, but it does not establish tadalafil-specific cognitive, mood, cardiovascular, exercise, MCI, or longevity effects. Tadalafil is particularly non-interchangeable for exposure-sensitive claims because its label reports a 17.5-hour mean terminal half-life, daily-use contexts, and a 48-hour nitrate boundary, while sildenafil, vardenafil, and avanafil are shorter-acting as-needed ED agents in their labels.",
+  "summary": "For this project, tadalafil remains the primary claim target. Sildenafil, vardenafil, avanafil, mixed PDE5-inhibitor, or unspecified PDE5-class evidence can support tadalafil claims only as explicitly labeled adjacent or class-level evidence unless the synthesis justifies transfer across molecule, dose, timing, frequency, duration, half-life, PDE selectivity, population, comparator, endpoint, and safety context. Shared PDE5/NO-cGMP pharmacology supports plausibility and class safety boundaries, especially nitrate and GC-stimulator contraindications, but it does not establish tadalafil-specific cognitive, mood, cardiovascular, exercise, or longevity effects. Tadalafil is particularly non-interchangeable for exposure-sensitive claims because its label reports a 17.5-hour mean terminal half-life, daily-use contexts, and a 48-hour nitrate boundary, while sildenafil, vardenafil, and avanafil are shorter-acting as-needed ED agents in their labels.",
   "main_blockers": [
-    "No head-to-head clinical evidence in this bundle validates transfer of cognition, mood, exercise, cardiovascular-prevention, MCI, or longevity outcomes from sildenafil/vardenafil/avanafil to tadalafil.",
+    "No head-to-head clinical evidence in this bundle validates transfer of cognition, mood, exercise, cardiovascular-prevention, or longevity outcomes from sildenafil/vardenafil/avanafil to tadalafil.",
     "Mechanistic and label similarities can be overread as class-equivalence if half-life, dose, timing, selectivity, and safety boundaries are not carried into synthesis.",
     "Comparative review extraction is abstract-level for Seftel 2004 and Bischoff 2004 in this first baseline."
   ],
@@ -36,7 +36,7 @@
       "Non-U.S. PDE5 inhibitors such as udenafil or mirodenafil.",
       "Pulmonary arterial hypertension dosing and chronic sildenafil/tadalafil PAH labels as a separate transfer question.",
       "Combination stacks involving nitrates/nitrites, stimulants, alcohol, heat stress, or unregulated PDE5 products.",
-      "Outcome-specific transfer rules for cognition, MCI, mood, exercise, cardiovascular prevention, or longevity before those baselines are staged."
+      "Outcome-specific transfer rules for cognition, mood, exercise, cardiovascular prevention, or longevity before those baselines are staged."
     ]
   },
   "limitations": [

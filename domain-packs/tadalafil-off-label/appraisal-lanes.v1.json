@@ -11,7 +11,7 @@
     {
       "id": "population_directness",
       "label": "Population Directness",
-      "description": "Checks whether claims correctly distinguish healthy men age 30 to 50 from ED/BPH, PAH, older-adult, MCI, cardiovascular, or mixed clinical populations.",
+      "description": "Checks whether claims correctly distinguish healthy men age 30 to 50 from ED/BPH, PAH, older-adult, cognitive-impairment, cardiovascular, or mixed clinical populations.",
       "required_by_default": true
     },
     {

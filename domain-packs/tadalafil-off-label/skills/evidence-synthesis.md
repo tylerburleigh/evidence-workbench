@@ -21,7 +21,7 @@ Use with `skills/evidence-synthesis/SKILL.md`.
 - Compare evidence by `population_profile`, `tadalafil_exposure`, `pde5_agent`, `agent_directness_to_tadalafil`, `class_transfer_limits`, `study_design`, `comparator_context`, `endpoint_domain`, `effect_estimate`, `safety_findings`, `directness_to_target_population`, and `confounding_and_bias_limits`.
 - Synthesize benefits and risks together; do not create a benefit-only summary for off-label use.
 - Separate clinical outcomes from surrogate biomarkers, mechanistic plausibility, nonhuman evidence, and adjacent PDE5-inhibitor class evidence; never let sildenafil-heavy or mixed PDE5 evidence silently become a tadalafil conclusion.
-- Treat mild cognitive impairment and healthy-adult cognitive enhancement as different questions unless sources directly bridge them.
+- Treat clinical cognitive-impairment or dementia-risk evidence as indirect to healthy-adult cognition unless sources directly bridge the populations and endpoints.
 - State when the target population of mostly healthy men age 30 to 50 is unstudied or only indirectly represented.
 
 ## Output Checks

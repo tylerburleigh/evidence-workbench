@@ -1,7 +1,7 @@
 {
   "id": "tadalafil-off-label",
   "name": "Tadalafil Off-Label Effects Review",
-  "summary": "A literature-review domain for off-label tadalafil/Cialis effects and risks across cognition, mild cognitive impairment, mood, well-being, cardiovascular health, exercise physiology, and longevity-relevant outcomes, with a target-interest population of mostly healthy men age 30 to 50. Tadalafil remains the primary claim target; sildenafil, vardenafil, avanafil, or mixed PDE5-inhibitor evidence is admissible only as explicitly labeled adjacent evidence unless transfer to tadalafil is justified.",
+  "summary": "A literature-review domain for off-label tadalafil/Cialis effects and risks across cognition, mood, well-being, cardiovascular health, exercise physiology, and longevity-relevant outcomes, with a target-interest population of mostly healthy men age 30 to 50. Tadalafil remains the primary claim target; sildenafil, vardenafil, avanafil, or mixed PDE5-inhibitor evidence is admissible only as explicitly labeled adjacent evidence unless transfer to tadalafil is justified.",
   "default_scope_unit": "review_question",
   "taxonomy_file": "taxonomy.v1.json",
   "evidence_ladder_file": "evidence-ladder.v1.json",

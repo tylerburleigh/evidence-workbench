@@ -8,11 +8,11 @@
       "name": "Neuropsychological Effects",
       "node_type": "category",
       "canonical_order": 1,
-      "summary": "Cognition, mild cognitive impairment, mood, and well-being outcomes related to tadalafil or closely bounded PDE5-inhibitor evidence.",
+      "summary": "Cognition, mood, and well-being outcomes related to tadalafil or closely bounded PDE5-inhibitor evidence.",
       "search_aliases": ["tadalafil cognition", "Cialis cognition", "PDE5 inhibitor cognition"],
       "example_entities": ["memory", "executive function", "mood", "quality of life"],
       "scope_notes": [
-        "Keep healthy-adult cognition, clinical cognitive impairment, and mood/well-being evidence separate unless a study directly measures multiple domains.",
+        "Keep healthy-adult cognition and mood/well-being evidence separate unless a study directly measures multiple domains.",
         "Do not infer clinical cognitive benefit from vasodilation or animal data without human outcome evidence."
       ],
       "retirement_status": "active"
@@ -66,31 +66,11 @@
       "retirement_status": "active"
     },
     {
-      "id": "tad-mci-cognitive-decline",
-      "name": "Mild Cognitive Impairment And Cognitive Decline",
-      "node_type": "review_question",
-      "parent_id": "tad-neuropsych-effects",
-      "canonical_order": 2,
-      "summary": "Evidence on tadalafil or PDE5 inhibitors for mild cognitive impairment, dementia-risk populations, cognitive decline, or neurovascular cognitive outcomes.",
-      "search_aliases": [
-        "tadalafil mild cognitive impairment",
-        "PDE5 inhibitor mild cognitive impairment",
-        "tadalafil dementia risk cognition"
-      ],
-      "example_entities": ["MCI", "dementia risk", "cerebrovascular disease", "neurovascular coupling"],
-      "scope_notes": [
-        "Separate MCI or dementia-risk populations from healthy-adult cognition.",
-        "Observational association evidence must not be written as treatment efficacy.",
-        "Capture age, baseline cognitive status, comorbidities, and indication for PDE5-inhibitor use."
-      ],
-      "retirement_status": "active"
-    },
-    {
       "id": "tad-mood-wellbeing-quality-life",
       "name": "Mood, Well-Being, And Quality Of Life",
       "node_type": "review_question",
       "parent_id": "tad-neuropsych-effects",
-      "canonical_order": 3,
+      "canonical_order": 2,
       "summary": "Evidence on tadalafil-associated mood, subjective well-being, anxiety/depression measures, vitality, sleep-adjacent outcomes, or quality of life beyond sexual-function endpoints.",
       "search_aliases": [
         "tadalafil mood wellbeing",
@@ -109,7 +89,7 @@
       "name": "Cardiovascular Health And Endothelial Function",
       "node_type": "review_question",
       "parent_id": "tad-cardiometabolic-effects",
-      "canonical_order": 4,
+      "canonical_order": 3,
       "summary": "Evidence on tadalafil and cardiovascular outcomes, endothelial function, vascular stiffness, blood pressure, perfusion, metabolic-vascular markers, or vascular risk.",
       "search_aliases": [
         "tadalafil endothelial function",
@@ -128,7 +108,7 @@
       "name": "Exercise Capacity And Physical Function",
       "node_type": "review_question",
       "parent_id": "tad-cardiometabolic-effects",
-      "canonical_order": 5,
+      "canonical_order": 4,
       "summary": "Evidence on tadalafil effects on exercise capacity, physical performance, altitude physiology, recovery, fatigue, or functional status.",
       "search_aliases": ["tadalafil exercise capacity", "tadalafil physical performance", "PDE5 inhibitor exercise performance"],
       "example_entities": ["VO2 max", "time to exhaustion", "six-minute walk", "altitude", "fatigue"],
@@ -143,7 +123,7 @@
       "name": "Longevity, Healthspan, And Biomarkers",
       "node_type": "review_question",
       "parent_id": "tad-cardiometabolic-effects",
-      "canonical_order": 6,
+      "canonical_order": 5,
       "summary": "Evidence on tadalafil and longevity-relevant outcomes such as mortality, morbidity, inflammation, endothelial aging, metabolic health, or validated healthspan proxies.",
       "search_aliases": ["tadalafil longevity", "PDE5 inhibitor mortality aging", "tadalafil healthspan biomarkers"],
       "example_entities": ["mortality", "morbidity", "inflammation", "endothelial aging", "metabolic health"],
@@ -154,11 +134,11 @@
       "retirement_status": "active"
     },
   {
-    "id": "tad-safety-interactions-adverse-events",
-    "name": "Safety, Interactions, And Adverse Events",
+      "id": "tad-safety-interactions-adverse-events",
+      "name": "Safety, Interactions, And Adverse Events",
       "node_type": "review_question",
       "parent_id": "tad-safety-directness",
-      "canonical_order": 7,
+      "canonical_order": 6,
       "summary": "Evidence and current labeling on tadalafil risks, adverse effects, contraindications, drug interactions, dose limits, and risk-benefit interpretation for off-label use.",
       "search_aliases": [
         "tadalafil adverse events contraindications",
@@ -189,7 +169,7 @@
     "name": "PDE5 Class Transfer And Agent Directness",
     "node_type": "review_question",
     "parent_id": "tad-safety-directness",
-    "canonical_order": 8,
+    "canonical_order": 7,
     "summary": "Framework evidence for when sildenafil, vardenafil, avanafil, mixed PDE5-inhibitor, or class-level evidence may inform tadalafil claims, and when tadalafil-specific evidence is required.",
     "search_aliases": [
       "PDE5 inhibitor class transfer tadalafil sildenafil vardenafil avanafil",
@@ -216,7 +196,7 @@
     "name": "Mechanistic And Translational Evidence",
     "node_type": "review_question",
     "parent_id": "tad-safety-directness",
-    "canonical_order": 9,
+    "canonical_order": 8,
       "summary": "Mechanistic evidence on PDE5 inhibition, nitric oxide/cGMP signaling, cerebral or vascular perfusion, mitochondrial, inflammatory, or tissue-level pathways relevant to off-label hypotheses.",
       "search_aliases": [
         "tadalafil mechanism nitric oxide cGMP",

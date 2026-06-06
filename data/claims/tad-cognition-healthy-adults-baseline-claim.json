@@ -27,7 +27,7 @@
     ],
     "does_not_apply_when": [
       "Reviewing tadalafil for erectile dysfunction, BPH, pulmonary arterial hypertension, or cerebral small vessel disease treatment decisions.",
-      "Making claims about long-term dementia prevention or MCI treatment, which require separate review questions."
+      "Making claims about long-term dementia prevention or cognitive-impairment treatment, which are outside this healthy-adult cognition baseline and the current active review-question scope."
     ],
     "unknown_or_unreviewed_contexts": [
       "Low-dose daily tadalafil in healthy men age 30 to 50 with formal cognitive testing.",
@@ -43,7 +43,7 @@
   ],
   "update_notes": [
     "Run a dedicated safety baseline before publishing any benefit-oriented off-label tadalafil summary.",
-    "Run separate MCI/cognitive-decline review before using CSVD or dementia-risk evidence for MCI conclusions."
+    "Do not use CSVD or dementia-risk evidence for cognitive-impairment treatment conclusions under the current active project scope."
   ],
   "supporting_finding_ids": [
     "pauls-pastis-cognition-null-finding-2023",

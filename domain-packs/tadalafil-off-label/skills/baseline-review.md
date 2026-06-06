@@ -21,7 +21,7 @@ Use with `skills/baseline-review/SKILL.md`.
 
 - Scope unit: `review_question`.
 - Required extraction fields: `population_profile`, `tadalafil_exposure`, `pde5_agent`, `agent_directness_to_tadalafil`, `class_transfer_limits`, `indication_context`, `study_design`, `comparator_context`, `endpoint_domain`, `endpoint_measure`, `effect_estimate`, `safety_findings`, `directness_to_target_population`, `confounding_and_bias_limits`, `source_locator`.
-- Primary target-interest population is mostly healthy men age 30 to 50; mark ED, BPH, PAH, MCI, older-adult, cardiovascular, or mixed clinical populations as indirect unless the review question is specifically about that population.
+- Primary target-interest population is mostly healthy men age 30 to 50; mark ED, BPH, PAH, cognitive-impairment, older-adult, cardiovascular, or mixed clinical populations as indirect unless the review question is specifically about that population.
 - Keep tadalafil-specific evidence separate from sildenafil, vardenafil, avanafil, or class-level PDE5-inhibitor evidence unless the source justifies transfer; fill `pde5_agent`, `agent_directness_to_tadalafil`, and `class_transfer_limits` for every artifact, finding, and claim.
 - Always record dose, frequency, acute versus chronic exposure, duration, comparator, and endpoint instrument.
 - For safety, check current labeling boundaries including nitrates, riociguat/guanylate-cyclase stimulators, alpha blockers, antihypertensives, alcohol, cardiovascular status, renal/hepatic impairment, vision loss, hearing loss, priapism, and common adverse reactions.
