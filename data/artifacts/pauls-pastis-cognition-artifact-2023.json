@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "pauls-pastis-cognition-artifact-2023",
+  "name": "PASTIS Neuropsychological Outcomes Trial Extract",
+  "artifact_type": "randomized_crossover_trial_extract",
+  "status": "complete",
+  "source_ids": [
+    "pauls-pastis-cognition-2023"
+  ],
+  "taxonomy_node_ids": [
+    "tad-cognition-healthy-adults"
+  ],
+  "population_or_context": "Older adults with symptomatic cerebral small vessel disease; indirect for mostly healthy men age 30 to 50.",
+  "sample_size": "55 completed participants; mean age 66.8 years, range 52-87; 15 female and 40 male.",
+  "methods": "Double-blind randomized placebo-controlled crossover trial secondary outcome analysis. Participants received tadalafil 20 mg and placebo at two visits at least 7 days apart, with cognitive testing before and 3-5 hours after dosing.",
+  "endpoint_categories": [
+    "cognition",
+    "safety_risk"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Older people with symptomatic cerebral small vessel disease, median MoCA 26; not a healthy-adult cognitive-enhancement population and not directly representative of mostly healthy men age 30 to 50.",
+  "tadalafil_exposure": "Single oral tadalafil 20 mg dose, compared with placebo in crossover order.",
+  "indication_context": "Experimental off-label vascular cognitive impairment/small vessel disease research context.",
+  "study_design": "Phase 2 double-blind randomized placebo-controlled crossover trial secondary neuropsychological outcome analysis.",
+  "comparator_context": "Within-participant placebo comparison across two visits separated by at least 7 days.",
+  "endpoint_domain": "cognition",
+  "safety_findings": "The paper reports no serious adverse reactions to the trial intervention; the study was not designed as a comprehensive safety review for off-label use in healthy adults.",
+  "directness_to_target_population": "Indirect: tadalafil-specific and human, but older symptomatic SVD population with acute dosing, not healthy men age 30 to 50 and not chronic low-dose use.",
+  "confounding_and_bias_limits": "Secondary cognitive endpoints, small sample, brief single-dose exposure, limited neuropsychological battery, and indirect disease population limit inference for healthy-adult cognition.",
+  "population_band": "older_adults",
+  "study_design_class": "crossover_trial",
+  "effect_domain": "cognition"
+}

@@ -5,7 +5,7 @@
   "name": "Tadalafil Cognition In Healthy Adults Baseline Review",
   "summary": "Stages the first baseline for tadalafil and cognition in healthy adults: a targeted search protocol, three sources, three study artifacts, three findings, and one bounded insufficient-evidence claim.",
   "intake_mode": "baseline_review",
-  "lifecycle_status": "approved",
+  "lifecycle_status": "published",
   "submitted_at": "2026-06-05T23:35:00Z",
   "submitted_by": "codex-agent",
   "revision_number": 1,
@@ -168,31 +168,13 @@
     "evidence-appraisal-tad-cognition-healthy-adults-synthesis-overreach-r1"
   ],
   "editorial_comment_ids": [],
-  "publication_event_ids": [],
-  "source_access_follow_up_actions": [
-    {
-      "action_id": "resolve-vardenafil-full-text-access",
-      "action_type": "source_access_resolution",
-      "status": "open",
-      "priority": "medium",
-      "target_record_type": "source",
-      "target_record_id": "reneerkens-vardenafil-healthy-adults-cognition-2013",
-      "source_ids": [
-        "reneerkens-vardenafil-healthy-adults-cognition-2013"
-      ],
-      "taxonomy_node_ids": [
-        "tad-cognition-healthy-adults"
-      ],
-      "access_status": "abstract_only_available",
-      "access_depth": "abstract_only",
-      "required_access_depth": "abstract_only",
-      "reason": "The adjacent vardenafil source is currently abstract-only in the staged extraction.",
-      "recommended_action": "Retrieve and appraise full text before using this adjacent finding for anything beyond low-confidence boundary evidence."
-    }
+  "publication_event_ids": [
+    "publish-tad-cognition-healthy-adults-baseline-2026-06-05-2026-06-06t10-44-10-777z"
   ],
+  "source_access_follow_up_actions": [],
   "extraction_follow_up_actions": [
     {
-      "action_id": "extract-vardenafil-numeric-results",
+      "action_id": "extract-numeric-results-reneerkens-vardenafil-healthy-adults-null-finding-2013",
       "action_type": "numeric_results_extraction",
       "status": "open",
       "priority": "medium",
@@ -205,16 +187,23 @@
         "tad-cognition-healthy-adults"
       ],
       "metric_fields_present": [
-        "effect_estimate"
+        "quantitative_note"
       ],
+      "reason": "finding reneerkens-vardenafil-healthy-adults-null-finding-2013 reports metric text but numeric_results_extracted is false.",
+      "recommended_action": "Extract table-level numeric results for Adjacent vardenafil study found no prominent cognitive effect in healthy adults before quantitative synthesis.",
       "finding_id": "reneerkens-vardenafil-healthy-adults-null-finding-2013",
-      "reason": "The abstract does not provide numeric effect sizes for the cognitive tasks.",
-      "recommended_action": "Use full text to extract sample size, task-level results, and adverse-event counts if this adjacent evidence remains in the support map."
+      "artifact_id": "reneerkens-vardenafil-healthy-adults-artifact-2013"
     }
   ],
   "next_actions": [
-    "Run evidence appraisal for source_fidelity, population_directness, exposure_directness, endpoint_validity, safety_risk_framing, and synthesis_overreach.",
-    "Consider adding the ETLAS-2 cognitive sub-study as a revision or as part of the MCI/cognitive-decline review.",
-    "Run a dedicated safety baseline before publishing broad off-label tadalafil benefit summaries."
+    "Publication complete. Review downstream pages if this change affects shared surfaces.",
+    "endpoint_validity: Continue excluding imaging trends from cognition benefit wording unless a separate endpoint-specific support map is created.",
+    "exposure_directness: Keep low-dose daily healthy-adult cognition in unknown_or_unreviewed_contexts unless direct evidence is added.",
+    "population_directness: Preserve the low-confidence, insufficient-direct-evidence framing unless a direct healthy-adult tadalafil study is added.",
+    "safety_risk_framing: Complete the safety/interactions baseline before publishing broad benefit-oriented tadalafil summaries.",
+    "source_fidelity: No further action required for this issue; the staged source now uses NCT00123456.",
+    "source_fidelity: Keep the vardenafil evidence low confidence unless full text is retrieved in a later revision.",
+    "synthesis_overreach: Keep the claim summary and any public excerpt tied to insufficient direct evidence, not benefit or no-effect certainty.",
+    "Resolve 1 structured extraction follow-up action(s) before quantitative synthesis."
   ]
 }

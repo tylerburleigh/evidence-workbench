@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "olmestig-etlas2-main-cognition-safety-finding-2025",
+  "name": "ETLAS-2 found no cognition difference and more adverse events with daily tadalafil in CSVD",
+  "source_id": "olmestig-etlas2-main-2025",
+  "artifact_id": "olmestig-etlas2-main-artifact-2025",
+  "taxonomy_node_ids": [
+    "tad-cognition-healthy-adults"
+  ],
+  "endpoint_category": "cognition",
+  "direction": "no_cognitive_difference_with_safety_signal",
+  "evidence_tier": "randomized_phase_2_trial",
+  "confidence": "moderate",
+  "statement": "In ETLAS-2, daily tadalafil 20 mg for 3 months in older CSVD patients did not differ from placebo on cognition, mental well-being, or blood pressure, while adverse events were reported more often with tadalafil and adherence was lower.",
+  "population_or_context": "Older CSVD patients with prior stroke or transient ischemic attack; indirect for healthy men age 30 to 50.",
+  "time_horizon": "Three months of daily treatment.",
+  "quantitative_note": "Adverse events occurred in 76% with tadalafil versus 36% with placebo; no differences were observed in cognition, mental well-being, or blood pressure in the PubMed abstract.",
+  "source_locator": {
+    "section": "PubMed Abstract Results and Conclusions",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40718899/",
+    "quote_or_paraphrase_note": "Abstract reports no differences in cognition, mental well-being, or blood pressure and higher adverse-event frequency with tadalafil.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "The trial population was older and clinically affected by CSVD.",
+    "The study does not test healthy-adult cognitive enhancement.",
+    "The dose, 20 mg daily, is higher than common low-dose daily ED/BPH tadalafil regimens."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "CSVD patients with previous stroke or transient ischemic attack; mean age 68.0 years.",
+  "tadalafil_exposure": "Tadalafil 20 mg daily for 3 months.",
+  "indication_context": "Experimental off-label CSVD trial.",
+  "comparator_context": "Placebo-controlled parallel trial.",
+  "endpoint_domain": "cognition",
+  "endpoint_measure": "Secondary cognition, mental well-being, blood pressure, adherence, and adverse-event outcomes.",
+  "effect_estimate": "No differences observed in cognition, mental well-being, or blood pressure; adverse events 76% tadalafil versus 36% placebo.",
+  "safety_findings": "Higher adverse-event frequency and lower adherence in the tadalafil group; this safety signal argues against benefit-only off-label framing.",
+  "directness_to_target_population": "Indirect to healthy men 30-50 because the participants were older patients with CSVD and prior stroke/TIA.",
+  "confounding_and_bias_limits": "Phase II feasibility-primary trial; secondary cognitive outcomes; indirect population and higher-dose daily exposure.",
+  "population_band": "older_adults",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cognition"
+}

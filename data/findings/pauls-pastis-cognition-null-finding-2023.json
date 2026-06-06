@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "pauls-pastis-cognition-null-finding-2023",
+  "name": "Single-dose tadalafil did not significantly improve neuropsychological performance in PASTIS",
+  "source_id": "pauls-pastis-cognition-2023",
+  "artifact_id": "pauls-pastis-cognition-artifact-2023",
+  "taxonomy_node_ids": [
+    "tad-cognition-healthy-adults"
+  ],
+  "endpoint_category": "cognition",
+  "direction": "no_significant_overall_benefit",
+  "evidence_tier": "randomized_trial_secondary_outcome",
+  "confidence": "moderate",
+  "statement": "In the PASTIS neuropsychological secondary outcomes analysis, a single 20 mg tadalafil dose did not produce significant treatment effects on the tested cognitive outcomes in older people with symptomatic small vessel disease; Digit Span Forward showed only a trend-level effect.",
+  "population_or_context": "Older symptomatic SVD participants; indirect for healthy men age 30 to 50.",
+  "time_horizon": "Cognitive testing before and 3-5 hours after single-dose administration.",
+  "quantitative_note": "No significant treatment effects across neuropsychological tests; Digit Span Forward treatment effect 0.37 with CI 0.01 to 0.72 and P=0.0521.",
+  "source_locator": {
+    "section": "Abstract, Results, Table 2, and Discussion",
+    "url": "https://www.sciencedirect.com/science/article/pii/S2666245023000314",
+    "quote_or_paraphrase_note": "Source reports no significant treatment effects in any neuropsychological tests and a trend on Digit Span Forward.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "This finding is not direct evidence in healthy adults.",
+    "The PASTIS cognitive outcomes were secondary and the trial was powered for cerebral blood-flow endpoints.",
+    "Single-dose exposure cannot rule in or rule out longer-term cognitive effects."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Older adults with symptomatic cerebral small vessel disease; median MoCA 26; not healthy men age 30 to 50.",
+  "tadalafil_exposure": "Single oral tadalafil 20 mg dose.",
+  "indication_context": "Experimental off-label trial for SVD-related cognitive and cerebral blood-flow hypotheses.",
+  "comparator_context": "Randomized crossover placebo comparison.",
+  "endpoint_domain": "cognition",
+  "endpoint_measure": "CANTAB reaction-time measures, speed of information processing, Digit Span Forward/Backward, semantic fluency, and related neuropsychological tests.",
+  "effect_estimate": "No significant treatment effects across tested cognitive outcomes; Digit Span Forward treatment effect 0.37, CI 0.01 to 0.72, P=0.0521.",
+  "safety_findings": "No serious adverse reactions were reported in the paper, but the finding should not be used as a broad safety conclusion for off-label use.",
+  "directness_to_target_population": "Tadalafil-specific human evidence, but low directness for healthy 30-50 men because the population was older and had symptomatic SVD and the exposure was acute 20 mg dosing.",
+  "confounding_and_bias_limits": "Secondary endpoints, limited sample size, disease population, brief follow-up, and a trial not powered primarily for cognitive outcomes.",
+  "population_band": "older_adults",
+  "study_design_class": "crossover_trial",
+  "effect_domain": "cognition"
+}

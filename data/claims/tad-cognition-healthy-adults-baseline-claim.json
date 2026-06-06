@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "tad-cognition-healthy-adults-baseline-claim",
+  "name": "Tadalafil Cognition In Healthy Adults Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "tad-cognition-healthy-adults",
+  "current_stage": "claim_supported",
+  "momentum": "baseline_submitted",
+  "confidence": "low",
+  "summary": "A targeted baseline search did not identify direct human evidence that tadalafil improves cognition in healthy men age 30 to 50. The staged tadalafil-specific cognition evidence is indirect and comes from older cerebral small vessel disease populations, where acute and 3-month tadalafil trials did not show overall cognitive benefit; adjacent healthy-adult PDE5-inhibitor evidence with vardenafil also does not support a clear cognitive-enhancement claim.",
+  "main_blockers": [
+    "No staged direct tadalafil cognitive-performance trial in healthy men age 30 to 50.",
+    "The tadalafil-specific trials are in older CSVD or SVD populations, not healthy adults.",
+    "Adjacent healthy-adult evidence uses vardenafil, not tadalafil, and was extracted from the PubMed abstract only."
+  ],
+  "best_current_signals": [
+    "PASTIS provides tadalafil-specific randomized crossover evidence for acute cognitive testing, but in older symptomatic SVD participants and with no significant overall cognitive benefit.",
+    "ETLAS-2 provides tadalafil-specific randomized 3-month exposure evidence in older CSVD patients and reports no cognition, mental well-being, or blood-pressure differences plus more adverse events.",
+    "A healthy-adult vardenafil study is adjacent class evidence and does not show prominent cognitive benefit."
+  ],
+  "interpretive_note": "This claim supports an insufficient-evidence baseline for healthy-adult cognitive enhancement. It should not be read as proof that tadalafil cannot affect cognition, and it should not be converted into off-label use advice.",
+  "applicability": {
+    "applies_when": [
+      "Asked whether current staged evidence supports tadalafil as a cognitive enhancer in mostly healthy men age 30 to 50.",
+      "Interpreting tadalafil-specific human cognition trials in light of population and exposure directness."
+    ],
+    "does_not_apply_when": [
+      "Reviewing tadalafil for erectile dysfunction, BPH, pulmonary arterial hypertension, or cerebral small vessel disease treatment decisions.",
+      "Making claims about long-term dementia prevention or MCI treatment, which require separate review questions."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Low-dose daily tadalafil in healthy men age 30 to 50 with formal cognitive testing.",
+      "Long-term use beyond 3 months in healthy adults.",
+      "Subgroups with endothelial dysfunction but no diagnosed cerebrovascular disease."
+    ]
+  },
+  "limitations": [
+    "This was a targeted baseline search, not a full systematic review.",
+    "The claim relies on indirect tadalafil evidence from older CSVD/SVD populations and adjacent non-tadalafil healthy-adult PDE5 evidence.",
+    "Search results may miss unpublished, non-indexed, non-English, or newly posted studies.",
+    "Safety appraisal is incomplete; the staged evidence already indicates adverse-event and contraindication boundaries must remain near any off-label interpretation."
+  ],
+  "update_notes": [
+    "Run a dedicated safety baseline before publishing any benefit-oriented off-label tadalafil summary.",
+    "Run separate MCI/cognitive-decline review before using CSVD or dementia-risk evidence for MCI conclusions."
+  ],
+  "supporting_finding_ids": [
+    "pauls-pastis-cognition-null-finding-2023",
+    "olmestig-etlas2-main-cognition-safety-finding-2025",
+    "reneerkens-vardenafil-healthy-adults-null-finding-2013"
+  ],
+  "supporting_source_ids": [
+    "pauls-pastis-cognition-2023",
+    "olmestig-etlas2-main-2025",
+    "reneerkens-vardenafil-healthy-adults-cognition-2013"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Tadalafil acute cognition evidence is indirect and null overall",
+      "claim_field": "summary",
+      "conclusion": "Single-dose tadalafil did not significantly improve the neuropsychological test battery in older SVD participants.",
+      "support_role": "qualifies",
+      "rationale": "The PASTIS finding is tadalafil-specific and cognitive, but it is acute and in an older symptomatic SVD population rather than healthy men age 30 to 50.",
+      "finding_ids": [
+        "pauls-pastis-cognition-null-finding-2023"
+      ],
+      "source_ids": [
+        "pauls-pastis-cognition-2023"
+      ],
+      "limitations": [
+        "Secondary cognitive outcomes and indirect population.",
+        "Single-dose exposure does not resolve chronic dosing questions."
+      ]
+    },
+    {
+      "label": "Tadalafil 3-month CSVD evidence remains indirect and includes tolerability signal",
+      "claim_field": "summary",
+      "conclusion": "Three months of daily tadalafil in older CSVD patients did not show cognition, mental well-being, or blood-pressure differences and produced more adverse events than placebo.",
+      "support_role": "qualifies",
+      "rationale": "ETLAS-2 provides repeated tadalafil exposure in humans but remains a disease-population trial with higher-dose daily use and safety/tolerability findings.",
+      "finding_ids": [
+        "olmestig-etlas2-main-cognition-safety-finding-2025"
+      ],
+      "source_ids": [
+        "olmestig-etlas2-main-2025"
+      ],
+      "limitations": [
+        "Older CSVD population, not healthy adults.",
+        "Feasibility-primary phase II trial."
+      ]
+    },
+    {
+      "label": "Healthy-adult PDE5 cognition evidence is adjacent, not tadalafil-specific",
+      "claim_field": "directness_to_target_population",
+      "conclusion": "A healthy-adult vardenafil study does not support a clear PDE5 cognitive-enhancement signal, but it cannot be treated as direct tadalafil evidence.",
+      "support_role": "adjacent_evidence",
+      "rationale": "The source directly studies healthy adults and cognition, but uses vardenafil rather than tadalafil and was extracted from the abstract.",
+      "finding_ids": [
+        "reneerkens-vardenafil-healthy-adults-null-finding-2013"
+      ],
+      "source_ids": [
+        "reneerkens-vardenafil-healthy-adults-cognition-2013"
+      ],
+      "limitations": [
+        "Non-tadalafil PDE5 inhibitor.",
+        "Abstract-only extraction pending source-fidelity appraisal."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-05",
+  "population_profile": "Target question is mostly healthy men age 30 to 50, but staged tadalafil-specific evidence is from older SVD/CSVD populations; healthy-adult staged evidence is adjacent vardenafil only.",
+  "tadalafil_exposure": "No direct healthy-adult tadalafil exposure study staged; indirect sources include single 20 mg tadalafil and 20 mg daily for 3 months in older SVD/CSVD populations.",
+  "endpoint_domain": "cognition",
+  "safety_findings": "ETLAS-2 reports more adverse events with tadalafil than placebo in older CSVD patients; current labeling contraindications and interaction risks still need a dedicated safety baseline before benefit-oriented claims.",
+  "directness_to_target_population": "Low directness for healthy men age 30 to 50 because tadalafil-specific cognition evidence is older disease-population evidence and healthy-adult evidence is not tadalafil-specific.",
+  "confounding_and_bias_limits": "Targeted search only; indirect populations; secondary cognitive endpoints; abstract-only adjacent class evidence; no staged direct healthy-adult tadalafil trial.",
+  "population_band": [
+    "healthy_men_30_50",
+    "older_adults",
+    "healthy_adults_mixed_sex"
+  ],
+  "study_design_class": [
+    "randomized_trial",
+    "crossover_trial"
+  ],
+  "effect_domain": "cognition"
+}

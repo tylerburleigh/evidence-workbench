@@ -1,0 +1,149 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-tad-cognition-healthy-adults-baseline-2026-06-05-2026-06-06t10-44-10-777z",
+  "name": "Published Tadalafil Cognition In Healthy Adults Baseline Review",
+  "summary": "Stages the first baseline for tadalafil and cognition in healthy adults: a targeted search protocol, three sources, three study artifacts, three findings, and one bounded insufficient-evidence claim.",
+  "candidate_bundle_id": "tad-cognition-healthy-adults-baseline-2026-06-05",
+  "event_type": "publish",
+  "published_at": "2026-06-06T10:44:10.777Z",
+  "published_by": "codex-agent",
+  "published_targets": [
+    {
+      "record_type": "search_protocol",
+      "record_id": "tad-cognition-healthy-adults-search-2026-06-05",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "pauls-pastis-cognition-2023",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "pauls-pastis-cognition-artifact-2023",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "pauls-pastis-cognition-null-finding-2023",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "olmestig-etlas2-main-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "olmestig-etlas2-main-artifact-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "olmestig-etlas2-main-cognition-safety-finding-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "reneerkens-vardenafil-healthy-adults-cognition-2013",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "reneerkens-vardenafil-healthy-adults-artifact-2013",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "reneerkens-vardenafil-healthy-adults-null-finding-2013",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "tad-cognition-healthy-adults-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 11,
+    "by_record_type": {
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "source": {
+        "created": 3,
+        "updated": 0,
+        "total": 3
+      },
+      "artifact": {
+        "created": 3,
+        "updated": 0,
+        "total": 3
+      },
+      "finding": {
+        "created": 3,
+        "updated": 0,
+        "total": 3
+      },
+      "claim": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "tad-cognition-healthy-adults-baseline-claim"
+  ],
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-tad-cognition-healthy-adults-endpoint-validity-r1",
+    "evidence-appraisal-tad-cognition-healthy-adults-exposure-directness-r1",
+    "evidence-appraisal-tad-cognition-healthy-adults-population-directness-r1",
+    "evidence-appraisal-tad-cognition-healthy-adults-safety-risk-framing-r1",
+    "evidence-appraisal-tad-cognition-healthy-adults-source-fidelity-r1",
+    "evidence-appraisal-tad-cognition-healthy-adults-synthesis-overreach-r1"
+  ],
+  "appraisal_corrections_applied": [
+    {
+      "change_id": "create-pauls-pastis-source",
+      "summary": "Corrected the PASTIS ClinicalTrials.gov registry ID from NCT02450253 to NCT00123456 to match the PubMed abstract and PMC article text."
+    }
+  ],
+  "appraisal_follow_up_actions": [
+    "endpoint_validity: Continue excluding imaging trends from cognition benefit wording unless a separate endpoint-specific support map is created.",
+    "exposure_directness: Keep low-dose daily healthy-adult cognition in unknown_or_unreviewed_contexts unless direct evidence is added.",
+    "population_directness: Preserve the low-confidence, insufficient-direct-evidence framing unless a direct healthy-adult tadalafil study is added.",
+    "safety_risk_framing: Complete the safety/interactions baseline before publishing broad benefit-oriented tadalafil summaries.",
+    "source_fidelity: No further action required for this issue; the staged source now uses NCT00123456.",
+    "source_fidelity: Keep the vardenafil evidence low confidence unless full text is retrieved in a later revision.",
+    "synthesis_overreach: Keep the claim summary and any public excerpt tied to insufficient direct evidence, not benefit or no-effect certainty."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [
+    {
+      "action_id": "extract-numeric-results-reneerkens-vardenafil-healthy-adults-null-finding-2013",
+      "action_type": "numeric_results_extraction",
+      "status": "open",
+      "priority": "medium",
+      "target_record_type": "finding",
+      "target_record_id": "reneerkens-vardenafil-healthy-adults-null-finding-2013",
+      "source_ids": [
+        "reneerkens-vardenafil-healthy-adults-cognition-2013"
+      ],
+      "taxonomy_node_ids": [
+        "tad-cognition-healthy-adults"
+      ],
+      "metric_fields_present": [
+        "quantitative_note"
+      ],
+      "reason": "finding reneerkens-vardenafil-healthy-adults-null-finding-2013 reports metric text but numeric_results_extracted is false.",
+      "recommended_action": "Extract table-level numeric results for Adjacent vardenafil study found no prominent cognitive effect in healthy adults before quantitative synthesis.",
+      "finding_id": "reneerkens-vardenafil-healthy-adults-null-finding-2013",
+      "artifact_id": "reneerkens-vardenafil-healthy-adults-artifact-2013"
+    }
+  ],
+  "change_note": "Creates the first submitted baseline claim for tadalafil cognition in healthy adults."
+}

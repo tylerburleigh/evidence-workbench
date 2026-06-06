@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "reneerkens-vardenafil-healthy-adults-null-finding-2013",
+  "name": "Adjacent vardenafil study found no prominent cognitive effect in healthy adults",
+  "source_id": "reneerkens-vardenafil-healthy-adults-cognition-2013",
+  "artifact_id": "reneerkens-vardenafil-healthy-adults-artifact-2013",
+  "taxonomy_node_ids": [
+    "tad-cognition-healthy-adults"
+  ],
+  "endpoint_category": "cognition",
+  "direction": "adjacent_class_no_prominent_benefit",
+  "evidence_tier": "adjacent_pde5_human_trial_abstract",
+  "confidence": "low",
+  "statement": "In healthy adults, the adjacent PDE5 inhibitor vardenafil did not show prominent cognitive performance benefits in the PubMed abstract; participants made more mistakes on a reaction-time task after 20 mg vardenafil and reported headache and weakness more often.",
+  "population_or_context": "Healthy adults; adjacent drug-class evidence rather than tadalafil evidence.",
+  "time_horizon": "Acute oral vardenafil treatment session; exact timing not extracted from abstract.",
+  "quantitative_note": "No numeric effect sizes extracted from abstract.",
+  "source_locator": {
+    "section": "PubMed Abstract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23427190/",
+    "quote_or_paraphrase_note": "Abstract states no prominent cognition effects, more mistakes on reaction-time task after 20 mg, and more headache/weakness.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "This is not tadalafil evidence.",
+    "The extraction is abstract-only and needs full-text verification.",
+    "It supports caution about PDE5 class cognitive-enhancement claims, not a tadalafil-specific conclusion."
+  ],
+  "numeric_results_extracted": false,
+  "population_profile": "Healthy young adults; sex distribution and age range not extracted from abstract.",
+  "tadalafil_exposure": "No tadalafil; vardenafil 10-20 mg oral treatment.",
+  "indication_context": "Experimental healthy-volunteer cognitive-performance study.",
+  "comparator_context": "Placebo comparison.",
+  "endpoint_domain": "cognition",
+  "endpoint_measure": "Memory, executive functioning, EEG, simple reaction time, and complaint questionnaires.",
+  "effect_estimate": "No prominent cognitive effects in abstract; more mistakes on simple reaction-time task after 20 mg vardenafil.",
+  "safety_findings": "Headache and feeling weak were reported more after vardenafil treatment in the abstract.",
+  "directness_to_target_population": "Healthy-adult population is relevant, but drug exposure is not tadalafil; therefore directness is low for tadalafil in healthy men age 30 to 50.",
+  "confounding_and_bias_limits": "Abstract-only extraction; adjacent drug-class inference; full trial methods and exact participant characteristics not verified.",
+  "population_band": "healthy_adults_mixed_sex",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cognition"
+}
