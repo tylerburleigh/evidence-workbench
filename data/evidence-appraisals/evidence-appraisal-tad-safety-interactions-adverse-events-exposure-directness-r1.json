@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-safety-interactions-adverse-events-exposure-directness-r1",
+  "name": "Exposure Directness appraisal for Tad Safety Interactions Adverse Events bundle",
+  "candidate_bundle_id": "tad-safety-interactions-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "exposure_directness",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The staged records identify tadalafil as the PDE5 agent, mark direct_tadalafil agent directness, and state that class transfer from sildenafil, vardenafil, avanafil, or mixed PDE5 evidence is not being used. Dose, timing, daily versus as-needed exposure, nitrate challenge timing, alpha-blocker co-exposure, CYP3A4 exposure changes, and renal/hepatic dosing limits are visible enough for a baseline safety claim.",
+  "appraised_change_ids": [
+    "create-tad-safety-search-protocol",
+    "create-dailymed-cialis-label-source",
+    "create-cialis-label-safety-artifact",
+    "create-cialis-label-contraindications-finding",
+    "create-cialis-label-adverse-events-finding",
+    "create-kloner-nitrate-source",
+    "create-nitrate-interaction-artifact",
+    "create-nitrate-interaction-finding",
+    "create-kloner-alpha-blocker-source",
+    "create-alpha-blocker-interaction-artifact",
+    "create-alpha-blocker-interaction-finding",
+    "create-antihypertensive-pooled-source",
+    "create-antihypertensive-pooled-artifact",
+    "create-antihypertensive-pooled-finding",
+    "create-dong-bph-meta-source",
+    "create-dong-bph-meta-artifact",
+    "create-dong-bph-sae-finding",
+    "create-tad-safety-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "pde5-agent-fields-direct-tadalafil",
+      "severity": "note",
+      "category": "taxonomy_mapping",
+      "claim_or_issue": "All staged safety artifacts, findings, search protocol, and claim use pde5_agent tadalafil with direct_tadalafil agent directness.",
+      "why_it_matters": "The broadened PDE5 project must not silently collapse tadalafil evidence with other PDE5 inhibitors.",
+      "recommended_action": "No correction required; keep class_transfer_limits populated when future sildenafil, vardenafil, avanafil, or mixed PDE5 evidence is added.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-tad-safety-baseline-claim"
+    },
+    {
+      "finding_id": "dose-timing-boundaries-visible",
+      "severity": "note",
+      "category": "safety_limitation",
+      "claim_or_issue": "The staged records preserve key exposure details: tadalafil 20 mg daily for nitrate timing, tadalafil 10 or 20 mg with alpha-blockers, CIALIS 2.5 to 20 mg label dosing, and daily BPH exposure ranges.",
+      "why_it_matters": "Safety interpretation changes materially with dose, exposure duration, co-medications, and timing since last dose.",
+      "recommended_action": "Keep dose/timing qualifiers attached to nitrate, alpha-blocker, CYP3A4, renal/hepatic, and alcohol cautions in public synthesis.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-nitrate-interaction-artifact"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T11:26:04.088Z",
+  "updated_at": "2026-06-06T11:26:04.088Z"
+}

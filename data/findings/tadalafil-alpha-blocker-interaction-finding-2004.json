@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "tadalafil-alpha-blocker-interaction-finding-2004",
+  "name": "Tadalafil augmented doxazosin hypotension more than tamsulosin in healthy men",
+  "source_id": "kloner-alpha-blocker-interaction-2004",
+  "artifact_id": "tadalafil-alpha-blocker-interaction-artifact-2004",
+  "taxonomy_node_ids": [
+    "tad-safety-interactions-adverse-events"
+  ],
+  "endpoint_category": "safety",
+  "direction": "interaction_risk_varies_by_alpha_blocker",
+  "evidence_tier": "randomized_crossover_clinical_pharmacology",
+  "confidence": "moderate",
+  "statement": "In healthy normotensive men, tadalafil 20 mg significantly augmented the standing systolic blood-pressure effect of doxazosin 8 mg, while tadalafil 10 or 20 mg had little hemodynamic interaction with tamsulosin 0.4 mg in the abstract.",
+  "population_or_context": "Healthy normotensive men receiving alpha-blockers under study conditions.",
+  "time_horizon": "Blood pressure and heart rate recorded before dosing and for 24 hours after dosing.",
+  "quantitative_note": "Doxazosin plus tadalafil produced a 9.8 mm Hg greater mean maximal standing systolic BP decrease versus doxazosin plus placebo; standing SBP below 85 mm Hg occurred in 28% with doxazosin plus tadalafil versus 6% with doxazosin plus placebo. With tamsulosin, mean maximal standing SBP decreases were similar to placebo and no subject had standing SBP below 85 mm Hg.",
+  "source_locator": {
+    "section": "PubMed abstract Materials and Methods, Results, and Conclusions",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15540759/",
+    "quote_or_paraphrase_note": "Abstract reports BP outlier and mean maximal standing SBP differences for doxazosin and tamsulosin.",
+    "verification_status": "verified"
+  },
+  "caveats": [
+    "The label still advises caution with alpha-blockers as a class.",
+    "This finding does not prove all tamsulosin combinations are safe in patients with BPH, older age, dehydration, or antihypertensive polypharmacy.",
+    "The studies were small and abstract-only extraction was used."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Healthy normotensive men; reasonably direct for healthy men age 30 to 50 but less direct for BPH patients or people using alpha-blockers for hypertension.",
+  "tadalafil_exposure": "Tadalafil 20 mg with doxazosin 8 mg; tadalafil 10 or 20 mg with tamsulosin 0.4 mg.",
+  "indication_context": "Clinical pharmacology interaction study relevant to ED/BPH and off-label users taking alpha-blockers.",
+  "comparator_context": "Alpha-blocker plus placebo crossover comparisons.",
+  "endpoint_domain": "safety",
+  "endpoint_measure": "Standing systolic BP mean maximal decrease and standing SBP below 85 mm Hg outliers.",
+  "effect_estimate": "Doxazosin interaction: +9.8 mm Hg mean maximal standing SBP decrease and 28% versus 6% SBP below 85 mm Hg outliers; tamsulosin interaction: mean differences 1.7 and 2.3 mm Hg, no SBP below 85 mm Hg.",
+  "safety_findings": "Alpha-blocker co-use risk is not uniform; doxazosin showed a clinically relevant hypotension signal with tadalafil, supporting label recommendations for stability and lowest-dose initiation.",
+  "directness_to_target_population": "Moderate to high for healthy men using alpha-blockers; limited for men with cardiovascular disease, BPH, volume depletion, alcohol use, or multi-drug antihypertensive exposure.",
+  "confounding_and_bias_limits": "Small sample; healthy volunteer setting; abstract-only extraction; not powered for rare syncope or injury outcomes.",
+  "population_band": "healthy_men_30_50",
+  "study_design_class": "crossover_trial",
+  "effect_domain": "safety_risk",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil safety or interaction evidence; transfer from other PDE5 inhibitors is not needed, but monitored trial or clinical-population context limits off-label healthy-user risk estimates."
+}

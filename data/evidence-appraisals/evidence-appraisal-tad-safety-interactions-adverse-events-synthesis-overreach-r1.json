@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-safety-interactions-adverse-events-synthesis-overreach-r1",
+  "name": "Synthesis Overreach appraisal for Tad Safety Interactions Adverse Events bundle",
+  "candidate_bundle_id": "tad-safety-interactions-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "synthesis_overreach",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The baseline claim stays within the staged support map: it is a safety-boundary claim, not advice to use tadalafil off label and not a blanket safety finding. It separates current labeling, clinical pharmacology interaction evidence, pooled ED/BPH safety data, and BPH meta-analysis evidence; it also avoids class-wide PDE5 conclusions beyond direct tadalafil records.",
+  "appraised_change_ids": [
+    "create-tad-safety-search-protocol",
+    "create-dailymed-cialis-label-source",
+    "create-cialis-label-safety-artifact",
+    "create-cialis-label-contraindications-finding",
+    "create-cialis-label-adverse-events-finding",
+    "create-kloner-nitrate-source",
+    "create-nitrate-interaction-artifact",
+    "create-nitrate-interaction-finding",
+    "create-kloner-alpha-blocker-source",
+    "create-alpha-blocker-interaction-artifact",
+    "create-alpha-blocker-interaction-finding",
+    "create-antihypertensive-pooled-source",
+    "create-antihypertensive-pooled-artifact",
+    "create-antihypertensive-pooled-finding",
+    "create-dong-bph-meta-source",
+    "create-dong-bph-meta-artifact",
+    "create-dong-bph-sae-finding",
+    "create-tad-safety-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "claim-does-not-overstate-safety",
+      "severity": "note",
+      "category": "claim_overreach",
+      "claim_or_issue": "The claim could be overread if later shortened to 'tadalafil is well tolerated' without the contraindication, interaction, population, and source-depth caveats.",
+      "why_it_matters": "The staged evidence supports risk-boundary framing, not individualized safety clearance or off-label-use advice.",
+      "recommended_action": "Keep public synthesis language anchored to contraindications, interactions, and directness limits.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-tad-safety-baseline-claim"
+    },
+    {
+      "finding_id": "no-agent-class-collapse",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "claim_or_issue": "The safety bundle does not use sildenafil, vardenafil, avanafil, or mixed PDE5 evidence to make tadalafil claims.",
+      "why_it_matters": "The broadened project permits adjacent PDE5 evidence, but tadalafil-specific safety conclusions need agent-specific support unless transfer limits are explicit.",
+      "recommended_action": "No correction required; preserve agent-directness fields in any future synthesis rows.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-tad-safety-baseline-claim"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T11:26:04.472Z",
+  "updated_at": "2026-06-06T11:26:04.472Z"
+}

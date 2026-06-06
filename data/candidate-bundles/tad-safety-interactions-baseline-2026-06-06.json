@@ -5,7 +5,7 @@
   "name": "Tadalafil Safety, Interactions, And Adverse Events Baseline Review",
   "summary": "Stages the first safety baseline for off-label tadalafil interpretation: a targeted search protocol, five sources, five extraction artifacts, six findings, and one bounded claim covering contraindications, interaction risks, common adverse events, rare serious signals, and directness limits for mostly healthy men age 30 to 50.",
   "intake_mode": "baseline_review",
-  "lifecycle_status": "submitted",
+  "lifecycle_status": "published",
   "submitted_at": "2026-06-06T10:50:46Z",
   "submitted_by": "codex-agent",
   "revision_number": 1,
@@ -244,31 +244,33 @@
     "block_on_open_critical_findings": true,
     "block_on_open_major_findings": true
   },
-  "evidence_appraisal_ids": [],
-  "editorial_comment_ids": [],
-  "publication_event_ids": [],
-  "source_access_follow_up_actions": [],
-  "extraction_follow_up_actions": [
-    {
-      "action_id": "extract-full-label-table-values-for-cialis-safety",
-      "action_type": "numeric_results_extraction",
-      "status": "open",
-      "priority": "low",
-      "target_record_type": "artifact",
-      "target_record_id": "cialis-label-safety-artifact-2026",
-      "source_ids": [
-        "dailymed-cialis-label-2026-03"
-      ],
-      "taxonomy_node_ids": [
-        "tad-safety-interactions-adverse-events"
-      ],
-      "reason": "The staged baseline extracts the most relevant adverse-reaction rows but does not reproduce every label table.",
-      "recommended_action": "Crosscheck all CIALIS label adverse-reaction tables before quantitative adverse-event synthesis."
-    }
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-tad-safety-interactions-adverse-events-endpoint-validity-r1",
+    "evidence-appraisal-tad-safety-interactions-adverse-events-exposure-directness-r1",
+    "evidence-appraisal-tad-safety-interactions-adverse-events-population-directness-r1",
+    "evidence-appraisal-tad-safety-interactions-adverse-events-safety-risk-framing-r1",
+    "evidence-appraisal-tad-safety-interactions-adverse-events-source-fidelity-r1",
+    "evidence-appraisal-tad-safety-interactions-adverse-events-synthesis-overreach-r1"
   ],
+  "editorial_comment_ids": [],
+  "publication_event_ids": [
+    "publish-tad-safety-interactions-baseline-2026-06-06-2026-06-06t11-26-31-422z"
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
   "next_actions": [
-    "Run evidence appraisal for the submitted safety bundle.",
-    "After appraisal, use this safety baseline as required context for cardiovascular, exercise, mood, MCI, and longevity reviews.",
-    "Consider a later pharmacovigilance/case-signal review for rare vision, hearing, priapism, seizure, and transient global amnesia reports."
+    "Publication complete. Review downstream pages if this change affects shared surfaces.",
+    "endpoint_validity: Keep the endpoint language tied to hemodynamic interaction risk, not broad cardiovascular-outcome benefit or harm estimates.",
+    "endpoint_validity: Preserve the staged caveat that rare-event signals and absolute-risk estimates remain uncertain until deeper full-text extraction or pharmacovigilance review is added.",
+    "exposure_directness: No correction required; keep class_transfer_limits populated when future sildenafil, vardenafil, avanafil, or mixed PDE5 evidence is added.",
+    "exposure_directness: Keep dose/timing qualifiers attached to nitrate, alpha-blocker, CYP3A4, renal/hepatic, and alcohol cautions in public synthesis.",
+    "population_directness: Keep the claim wording focused on safety boundaries and selected trial-population context rather than blanket healthy-user safety.",
+    "population_directness: Maintain the staged distinction between drug-interaction rules and population-specific event-rate inference.",
+    "safety_risk_framing: No correction required; keep this ordering in public summaries and future benefit-adjacent syntheses.",
+    "safety_risk_framing: Keep the existing limitation visible and stage PAH-specific labeling only if the project later evaluates PAH-dose or cardiopulmonary evidence.",
+    "source_fidelity: No correction required; keep the label revision date visible in future safety updates.",
+    "source_fidelity: Keep source-depth caveats in the claim and prioritize full-text extraction before increasing certainty or deriving finer-grained absolute-risk estimates.",
+    "synthesis_overreach: Keep public synthesis language anchored to contraindications, interactions, and directness limits.",
+    "synthesis_overreach: No correction required; preserve agent-directness fields in any future synthesis rows."
   ]
 }

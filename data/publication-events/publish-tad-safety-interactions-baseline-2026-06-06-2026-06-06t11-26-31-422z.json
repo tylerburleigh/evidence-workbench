@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-tad-safety-interactions-baseline-2026-06-06-2026-06-06t11-26-31-422z",
+  "name": "Published Tadalafil Safety, Interactions, And Adverse Events Baseline Review",
+  "summary": "Stages the first safety baseline for off-label tadalafil interpretation: a targeted search protocol, five sources, five extraction artifacts, six findings, and one bounded claim covering contraindications, interaction risks, common adverse events, rare serious signals, and directness limits for mostly healthy men age 30 to 50.",
+  "candidate_bundle_id": "tad-safety-interactions-baseline-2026-06-06",
+  "event_type": "publish",
+  "published_at": "2026-06-06T11:26:31.422Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "search_protocol",
+      "record_id": "tad-safety-interactions-search-2026-06-06",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "dailymed-cialis-label-2026-03",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "cialis-label-safety-artifact-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "cialis-label-contraindications-interactions-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "cialis-label-adverse-events-finding-2026",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "kloner-tadalafil-nitrate-interaction-2003",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "tadalafil-nitrate-interaction-artifact-2003",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "tadalafil-nitrate-interaction-duration-finding-2003",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "kloner-alpha-blocker-interaction-2004",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "tadalafil-alpha-blocker-interaction-artifact-2004",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "tadalafil-alpha-blocker-interaction-finding-2004",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "kloner-antihypertensive-safety-pooled-2022",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "tadalafil-antihypertensive-safety-artifact-2022",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "tadalafil-antihypertensive-mace-hypotension-finding-2022",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "dong-tadalafil-bph-safety-meta-analysis-2013",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "tadalafil-bph-safety-meta-artifact-2013",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "tadalafil-bph-serious-adverse-events-finding-2013",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "tad-safety-interactions-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 18,
+    "by_record_type": {
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "source": {
+        "created": 5,
+        "updated": 0,
+        "total": 5
+      },
+      "artifact": {
+        "created": 5,
+        "updated": 0,
+        "total": 5
+      },
+      "finding": {
+        "created": 6,
+        "updated": 0,
+        "total": 6
+      },
+      "claim": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "tad-safety-interactions-baseline-claim",
+    "tad-cognition-healthy-adults-baseline-claim"
+  ],
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-tad-safety-interactions-adverse-events-endpoint-validity-r1",
+    "evidence-appraisal-tad-safety-interactions-adverse-events-exposure-directness-r1",
+    "evidence-appraisal-tad-safety-interactions-adverse-events-population-directness-r1",
+    "evidence-appraisal-tad-safety-interactions-adverse-events-safety-risk-framing-r1",
+    "evidence-appraisal-tad-safety-interactions-adverse-events-source-fidelity-r1",
+    "evidence-appraisal-tad-safety-interactions-adverse-events-synthesis-overreach-r1"
+  ],
+  "appraisal_corrections_applied": [],
+  "appraisal_follow_up_actions": [
+    "endpoint_validity: Keep the endpoint language tied to hemodynamic interaction risk, not broad cardiovascular-outcome benefit or harm estimates.",
+    "endpoint_validity: Preserve the staged caveat that rare-event signals and absolute-risk estimates remain uncertain until deeper full-text extraction or pharmacovigilance review is added.",
+    "exposure_directness: No correction required; keep class_transfer_limits populated when future sildenafil, vardenafil, avanafil, or mixed PDE5 evidence is added.",
+    "exposure_directness: Keep dose/timing qualifiers attached to nitrate, alpha-blocker, CYP3A4, renal/hepatic, and alcohol cautions in public synthesis.",
+    "population_directness: Keep the claim wording focused on safety boundaries and selected trial-population context rather than blanket healthy-user safety.",
+    "population_directness: Maintain the staged distinction between drug-interaction rules and population-specific event-rate inference.",
+    "safety_risk_framing: No correction required; keep this ordering in public summaries and future benefit-adjacent syntheses.",
+    "safety_risk_framing: Keep the existing limitation visible and stage PAH-specific labeling only if the project later evaluates PAH-dose or cardiopulmonary evidence.",
+    "source_fidelity: No correction required; keep the label revision date visible in future safety updates.",
+    "source_fidelity: Keep source-depth caveats in the claim and prioritize full-text extraction before increasing certainty or deriving finer-grained absolute-risk estimates.",
+    "synthesis_overreach: Keep public synthesis language anchored to contraindications, interactions, and directness limits.",
+    "synthesis_overreach: No correction required; preserve agent-directness fields in any future synthesis rows."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "change_note": "Creates the first submitted baseline claim for tadalafil safety, interactions, and adverse events."
+}

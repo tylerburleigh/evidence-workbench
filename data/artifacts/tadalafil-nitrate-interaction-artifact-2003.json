@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "tadalafil-nitrate-interaction-artifact-2003",
+  "name": "Tadalafil-Nitroglycerin Time-Course Interaction Extract",
+  "artifact_type": "randomized_crossover_clinical_pharmacology_extract",
+  "status": "complete",
+  "source_ids": [
+    "kloner-tadalafil-nitrate-interaction-2003"
+  ],
+  "taxonomy_node_ids": [
+    "tad-safety-interactions-adverse-events"
+  ],
+  "population_or_context": "150 male subjects in a clinical pharmacology crossover study; direct for interaction pharmacology and indirect for broad healthy-user absolute risk.",
+  "sample_size": 150,
+  "methods": "Subjects received seven consecutive daily doses of tadalafil 20 mg or placebo, then sublingual nitroglycerin 0.4 mg at defined intervals after the last dose; after washout, subjects crossed over.",
+  "endpoint_categories": [
+    "drug_interactions",
+    "blood_pressure",
+    "safety"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Male clinical pharmacology participants; relevant to men age 30 to 50 because the interaction is pharmacodynamic, but full age and comorbidity distribution was not extracted from full text.",
+  "tadalafil_exposure": "Tadalafil 20 mg daily for seven consecutive days before repeated sublingual nitroglycerin challenges.",
+  "indication_context": "Clinical pharmacology safety interaction study, not therapeutic off-label use.",
+  "study_design": "Double-blind randomized placebo-controlled crossover multicenter study.",
+  "comparator_context": "Placebo crossover comparison with nitroglycerin at 4, 8, 24, 48, 72, and 96 hours after final tadalafil/placebo dose.",
+  "endpoint_domain": "safety",
+  "safety_findings": "Standing systolic blood pressure below 85 mm Hg and larger blood-pressure decreases were more frequent with tadalafil plus nitroglycerin at 4, 8, and 24 hours, but not 48 hours and beyond.",
+  "directness_to_target_population": "High for nitrate co-use risk because the interaction is drug-mechanism based; not a direct estimate of real-world event rates in healthy off-label users.",
+  "confounding_and_bias_limits": "Abstract-only extraction; controlled nitroglycerin challenges in monitored participants do not represent emergency nitrate use, alcohol co-use, dehydration, or unrecognized cardiovascular disease.",
+  "population_band": "healthy_men_30_50",
+  "study_design_class": "crossover_trial",
+  "effect_domain": "safety_risk",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil safety or interaction evidence; transfer from other PDE5 inhibitors is not needed, but monitored trial or clinical-population context limits off-label healthy-user risk estimates."
+}

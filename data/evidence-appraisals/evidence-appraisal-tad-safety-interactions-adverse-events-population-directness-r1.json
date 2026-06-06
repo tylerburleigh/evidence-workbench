@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-safety-interactions-adverse-events-population-directness-r1",
+  "name": "Population Directness appraisal for Tad Safety Interactions Adverse Events bundle",
+  "candidate_bundle_id": "tad-safety-interactions-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "population_directness",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The staged records correctly distinguish safety-rule directness from absolute-risk directness. Label and nitrate interaction boundaries are highly relevant to any tadalafil exposure; healthy male clinical pharmacology alpha-blocker evidence is reasonably direct for the target male 30 to 50 context; pooled ED/BPH and BPH meta-analysis evidence is explicitly labeled indirect for mostly healthy off-label users.",
+  "appraised_change_ids": [
+    "create-tad-safety-search-protocol",
+    "create-dailymed-cialis-label-source",
+    "create-cialis-label-safety-artifact",
+    "create-cialis-label-contraindications-finding",
+    "create-cialis-label-adverse-events-finding",
+    "create-kloner-nitrate-source",
+    "create-nitrate-interaction-artifact",
+    "create-nitrate-interaction-finding",
+    "create-kloner-alpha-blocker-source",
+    "create-alpha-blocker-interaction-artifact",
+    "create-alpha-blocker-interaction-finding",
+    "create-antihypertensive-pooled-source",
+    "create-antihypertensive-pooled-artifact",
+    "create-antihypertensive-pooled-finding",
+    "create-dong-bph-meta-source",
+    "create-dong-bph-meta-artifact",
+    "create-dong-bph-sae-finding",
+    "create-tad-safety-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "absolute-risk-directness-limited",
+      "severity": "minor",
+      "category": "missing_caveat",
+      "claim_or_issue": "The included ED/BPH pooled and BPH meta-analysis safety data do not directly estimate absolute adverse-event rates for mostly healthy men age 30 to 50 using tadalafil for cognition, mood, exercise, cardiovascular health, or longevity purposes.",
+      "why_it_matters": "A no-detected-excess-risk result in selected clinical trial populations can be overread as safety proof for younger off-label users.",
+      "recommended_action": "Keep the claim wording focused on safety boundaries and selected trial-population context rather than blanket healthy-user safety.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-tad-safety-baseline-claim"
+    },
+    {
+      "finding_id": "interaction-pharmacology-transfers-more-directly-than-event-rates",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "claim_or_issue": "Nitrate and alpha-blocker interaction mechanics are more population-transferable than the pooled estimates of MACE, hypotension, or serious adverse events.",
+      "why_it_matters": "The appraisal should not treat all safety evidence as having the same population directness.",
+      "recommended_action": "Maintain the staged distinction between drug-interaction rules and population-specific event-rate inference.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-nitrate-interaction-finding"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T11:26:04.188Z",
+  "updated_at": "2026-06-06T11:26:04.188Z"
+}

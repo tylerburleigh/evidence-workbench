@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-safety-interactions-adverse-events-source-fidelity-r1",
+  "name": "Source Fidelity appraisal for Tad Safety Interactions Adverse Events bundle",
+  "candidate_bundle_id": "tad-safety-interactions-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "source_fidelity",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The staged source metadata, locators, label date, PMID/DOI fields, population/exposure descriptions, and extracted numeric safety statements match the accessible source records used for this baseline. DailyMed confirms the CIALIS label was updated March 3, 2026 and revised 3/2026; PubMed/NCBI metadata support the clinical pharmacology, pooled safety, and BPH meta-analysis records. Several non-label sources remain abstract-only extractions, which is recorded as a non-blocking source-depth limitation.",
+  "appraised_change_ids": [
+    "create-tad-safety-search-protocol",
+    "create-dailymed-cialis-label-source",
+    "create-cialis-label-safety-artifact",
+    "create-cialis-label-contraindications-finding",
+    "create-cialis-label-adverse-events-finding",
+    "create-kloner-nitrate-source",
+    "create-nitrate-interaction-artifact",
+    "create-nitrate-interaction-finding",
+    "create-kloner-alpha-blocker-source",
+    "create-alpha-blocker-interaction-artifact",
+    "create-alpha-blocker-interaction-finding",
+    "create-antihypertensive-pooled-source",
+    "create-antihypertensive-pooled-artifact",
+    "create-antihypertensive-pooled-finding",
+    "create-dong-bph-meta-source",
+    "create-dong-bph-meta-artifact",
+    "create-dong-bph-sae-finding",
+    "create-tad-safety-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "label-date-and-boundaries-verified",
+      "severity": "note",
+      "category": "source_mismatch",
+      "claim_or_issue": "The DailyMed CIALIS source is current to the staged March 2026 label revision and supports the contraindication, warning, dosing, interaction, and adverse-event sections used in the extraction.",
+      "why_it_matters": "Safety-boundary claims should be anchored to current labeling before benefit-oriented off-label evidence is interpreted.",
+      "recommended_action": "No correction required; keep the label revision date visible in future safety updates.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-dailymed-cialis-label-source"
+    },
+    {
+      "finding_id": "abstract-only-sources-kept-bounded",
+      "severity": "minor",
+      "category": "uncertainty",
+      "claim_or_issue": "The nitrate, alpha-blocker, pooled antihypertensive, and BPH meta-analysis extractions rely primarily on abstracts or summary pages for this baseline, even where deeper full text may be available.",
+      "why_it_matters": "Abstract-only extraction is adequate for a first safety boundary but can miss eligibility criteria, event definitions, dose subgroup detail, and conflicts or protocol limits.",
+      "recommended_action": "Keep source-depth caveats in the claim and prioritize full-text extraction before increasing certainty or deriving finer-grained absolute-risk estimates.",
+      "resolution_status": "open",
+      "applies_to_change_id": "create-tad-safety-baseline-claim"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T11:26:04.379Z",
+  "updated_at": "2026-06-06T11:26:04.379Z"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "tadalafil-bph-serious-adverse-events-finding-2013",
+  "name": "BPH tadalafil meta-analysis did not detect excess serious adverse events",
+  "source_id": "dong-tadalafil-bph-safety-meta-analysis-2013",
+  "artifact_id": "tadalafil-bph-safety-meta-artifact-2013",
+  "taxonomy_node_ids": [
+    "tad-safety-interactions-adverse-events"
+  ],
+  "endpoint_category": "safety",
+  "direction": "no_significant_serious_adverse_event_difference",
+  "evidence_tier": "meta_analysis_of_randomized_trials",
+  "confidence": "moderate",
+  "statement": "A meta-analysis of eight randomized controlled trials in men with LUTS/BPH found no significant difference in serious adverse events after tadalafil treatment versus placebo, but the result is indirect for healthy off-label users.",
+  "population_or_context": "Men with LUTS/BPH in randomized tadalafil monotherapy trials.",
+  "time_horizon": "Trial durations not extracted in this first baseline; source focused on randomized controlled trials.",
+  "quantitative_note": "Serious adverse events: risk ratio = 1.00, p = 1.00 in the abstract.",
+  "source_locator": {
+    "section": "PubMed abstract Results and NCBI DARE summary",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23816815/",
+    "quote_or_paraphrase_note": "Abstract reports no significant difference in serious adverse event incidence after tadalafil treatment.",
+    "verification_status": "verified"
+  },
+  "caveats": [
+    "Serious adverse-event neutrality in BPH RCTs does not eliminate common adverse effects or rare serious risks.",
+    "The BPH population is older and clinically selected.",
+    "Abstract-only extraction does not capture event types, dose-level subgroup safety, or trial-level exclusions."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Men with LUTS/BPH; indirect for healthy men age 30 to 50 but useful for daily tadalafil safety context.",
+  "tadalafil_exposure": "Tadalafil monotherapy 2.5, 5, 10, or 20 mg in placebo-controlled BPH RCTs.",
+  "indication_context": "BPH treatment evidence, not off-label enhancement.",
+  "comparator_context": "Placebo-controlled meta-analysis.",
+  "endpoint_domain": "safety",
+  "endpoint_measure": "Serious adverse event incidence.",
+  "effect_estimate": "Risk ratio 1.00, p = 1.00 for serious adverse events.",
+  "safety_findings": "No significant serious-adverse-event difference detected in BPH randomized trials, with substantial directness limits for healthy off-label use.",
+  "directness_to_target_population": "Low to moderate for mostly healthy men age 30 to 50 because exposure overlaps but population and indication differ.",
+  "confounding_and_bias_limits": "Potential trial selection bias, abstract-only extraction, older evidence base, and lack of detailed event taxonomy in staged record.",
+  "population_band": "erectile_dysfunction_or_bph",
+  "study_design_class": "review_or_meta_analysis",
+  "effect_domain": "safety_risk",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil safety or interaction evidence; transfer from other PDE5 inhibitors is not needed, but monitored trial or clinical-population context limits off-label healthy-user risk estimates."
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "cialis-label-contraindications-interactions-finding-2026",
+  "name": "CIALIS label defines hard contraindications and interaction boundaries",
+  "source_id": "dailymed-cialis-label-2026-03",
+  "artifact_id": "cialis-label-safety-artifact-2026",
+  "taxonomy_node_ids": [
+    "tad-safety-interactions-adverse-events"
+  ],
+  "endpoint_category": "safety",
+  "direction": "risk_boundary",
+  "evidence_tier": "regulatory_label",
+  "confidence": "high",
+  "statement": "The current CIALIS label contraindicates tadalafil with organic nitrates and guanylate-cyclase stimulators such as riociguat, requires at least 48 hours after tadalafil before medically necessary nitrate administration is considered, and warns about additive blood-pressure effects with alpha-blockers, antihypertensives, and substantial alcohol plus exposure increases with potent CYP3A4 inhibitors.",
+  "population_or_context": "Men using CIALIS for ED/BPH and broader tadalafil users exposed to the same pharmacology; direct for off-label safety boundaries.",
+  "time_horizon": "Current label revised March 2026; interaction boundaries apply at the time of tadalafil exposure and during daily continuous exposure.",
+  "quantitative_note": "Label states tadalafil 20 mg caused mean maximal supine blood-pressure decrease versus placebo of 1.6/0.8 mm Hg in healthy subjects; strong CYP3A4 inhibitor ketoconazole 400 mg increased tadalafil 20 mg AUC by 312%; rifampin 600 mg reduced tadalafil 10 mg AUC by 88%.",
+  "source_locator": {
+    "section": "Contraindications 4.1 and 4.3; Warnings 5.1, 5.2, 5.6, 5.9, 5.10; Drug Interactions 7.1 and 7.2",
+    "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcd8f8ab-81a2-4891-83db-24a0b0e25895",
+    "quote_or_paraphrase_note": "Label states nitrate and riociguat contraindications, 48-hour nitrate boundary, alpha-blocker/antihypertensive/alcohol blood-pressure cautions, and CYP3A4 exposure effects.",
+    "verification_status": "verified"
+  },
+  "caveats": [
+    "Regulatory label boundaries are not individualized medical clearance.",
+    "The label is built mainly around ED/BPH CIALIS dosing, not every tadalafil product or PAH dosing context.",
+    "Healthy off-label users may still have unrecognized cardiovascular, ocular, renal, hepatic, or drug-interaction risk factors."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Label applies to men prescribed CIALIS for ED/BPH and to tadalafil exposure generally for interaction boundaries; target healthy men age 30 to 50 are not the primary efficacy population but are pharmacologically relevant.",
+  "tadalafil_exposure": "CIALIS tadalafil 2.5 to 20 mg oral dosing, including as-needed and daily exposure.",
+  "indication_context": "On-label regulatory safety boundary used for off-label risk framing.",
+  "comparator_context": "Regulatory contraindication and warning statements, with clinical pharmacology placebo comparisons where provided.",
+  "endpoint_domain": "safety",
+  "endpoint_measure": "Contraindications, interaction precautions, cardiovascular exclusions, renal/hepatic dose limits, and pharmacokinetic exposure effects.",
+  "effect_estimate": "Contraindicated with nitrates and GC stimulators; at least 48 hours after tadalafil before life-threatening nitrate use is considered under monitoring; ketoconazole 400 mg increased AUC 312%; rifampin reduced AUC 88%.",
+  "safety_findings": "Hard stop with nitrates and riociguat; caution/dose limits with alpha-blockers, antihypertensives, alcohol, strong CYP3A4 inhibitors, renal/hepatic impairment, high-risk cardiovascular conditions, and daily continuous exposure.",
+  "directness_to_target_population": "High for safety rule transfer because it is drug-exposure based; moderate for absolute event-risk estimation in mostly healthy men age 30 to 50.",
+  "confounding_and_bias_limits": "Label warnings combine clinical pharmacology, trial exclusions, postmarketing surveillance, and regulatory risk management; they do not estimate individualized absolute risk for off-label enhancement.",
+  "population_band": "mixed_or_unclear",
+  "study_design_class": "regulatory_label_or_guidance",
+  "effect_domain": "safety_risk",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil/CIALIS safety evidence; transfer from other PDE5 inhibitors is not needed for this boundary, but product labeling, dose, indication, and off-label population differences still limit absolute-risk estimates."
+}

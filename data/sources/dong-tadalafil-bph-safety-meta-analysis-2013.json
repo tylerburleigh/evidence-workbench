@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "dong-tadalafil-bph-safety-meta-analysis-2013",
+  "name": "Efficacy and safety of tadalafil monotherapy for lower urinary tract symptoms secondary to benign prostatic hyperplasia: a meta-analysis.",
+  "source_type": "meta_analysis",
+  "authors": [
+    "Dong Y",
+    "Hao L",
+    "Shi Z",
+    "Wang G",
+    "Zhang Z",
+    "Han C"
+  ],
+  "venue": "Urologia Internationalis",
+  "year": 2013,
+  "published_on": "2013-06-25",
+  "doi": "10.1159/000351405",
+  "pmid": "23816815",
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/23816815/",
+    "https://www.ncbi.nlm.nih.gov/books/NBK154335/"
+  ],
+  "summary": "Meta-analysis of eight randomized controlled trials comparing tadalafil monotherapy with placebo for LUTS/BPH, reporting efficacy outcomes and serious adverse events.",
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T10:48:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23816815/",
+      "result": "PubMed abstract and NCBI DARE summary accessed.",
+      "notes": "Used abstract and DARE summary for serious-adverse-event extraction."
+    }
+  ]
+}

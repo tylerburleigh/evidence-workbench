@@ -3,7 +3,7 @@
   "queue_type": "research_priority_queue",
   "domain_id": "tadalafil-off-label",
   "taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-06T11:18:32.840Z",
+  "updated_at": "2026-06-06T11:26:31.423Z",
   "notes": [
     "Baseline Review priority applies to uncovered review questions.",
     "Review Update priority applies to stale review questions with public baseline coverage and no active review bundle."

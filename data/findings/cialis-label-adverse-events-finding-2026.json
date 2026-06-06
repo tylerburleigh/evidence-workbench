@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "cialis-label-adverse-events-finding-2026",
+  "name": "CIALIS label adverse reactions range from common nuisance events to rare serious postmarketing signals",
+  "source_id": "dailymed-cialis-label-2026-03",
+  "artifact_id": "cialis-label-safety-artifact-2026",
+  "taxonomy_node_ids": [
+    "tad-safety-interactions-adverse-events"
+  ],
+  "endpoint_category": "safety",
+  "direction": "mixed_adverse_event_profile",
+  "evidence_tier": "regulatory_label",
+  "confidence": "high",
+  "statement": "The CIALIS label reports common adverse reactions such as headache, dyspepsia, back pain, myalgia, nasal congestion, flushing, and limb pain, while also warning about rare or postmarketing events including NAION/sudden vision loss, sudden hearing decrease or loss, priapism, serious cardiovascular events, seizure or seizure recurrence, transient global amnesia, and hypersensitivity reactions.",
+  "population_or_context": "ED/BPH clinical trial populations and postmarketing tadalafil users; used as safety context for off-label healthy men.",
+  "time_horizon": "Placebo-controlled trials of 12 to 24 weeks plus postmarketing reporting.",
+  "quantitative_note": "As-needed ED trials: discontinuation due to adverse events was 3.1% with tadalafil 10/20 mg versus 1.4% placebo; headache was 15% with tadalafil 20 mg versus 5% placebo, dyspepsia 10% versus 1%, and back pain 6% versus 3%. Once-daily BPH/ED-BPH trials: discontinuation due to adverse events was 3.6% with tadalafil versus 1.6% placebo; headache 4.1% versus 2.3%, dyspepsia 2.4% versus 0.2%, back pain 2.4% versus 1.4%, and dizziness 1.0% versus 0.5%.",
+  "source_locator": {
+    "section": "Adverse Reactions 6.1 and Postmarketing Experience 6.2",
+    "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcd8f8ab-81a2-4891-83db-24a0b0e25895",
+    "quote_or_paraphrase_note": "Extracted adverse-reaction tables and postmarketing event categories from label sections 6.1 and 6.2.",
+    "verification_status": "verified"
+  },
+  "caveats": [
+    "Clinical-trial adverse-event rates may not match real-world rates.",
+    "Postmarketing reports are voluntary and cannot establish incidence or causality.",
+    "Rare events may be especially sensitive to baseline cardiovascular, ocular, hematologic, or medication risk factors."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Label clinical trials primarily enrolled men with ED and/or BPH; postmarketing users are heterogeneous. Mostly healthy men age 30 to 50 may have lower baseline risk for some rare events but may also combine tadalafil with alcohol, stimulants, antihypertensives, recreational nitrates, or other off-label exposures not captured in trials.",
+  "tadalafil_exposure": "As-needed tadalafil 10 or 20 mg and once-daily tadalafil 2.5 or 5 mg in label trial summaries; postmarketing events across broader exposure patterns.",
+  "indication_context": "On-label ED/BPH safety data and postmarketing adverse-event reporting used for off-label context.",
+  "comparator_context": "Placebo-controlled clinical trial adverse-event rates for common reactions; no comparator or denominator for postmarketing events.",
+  "endpoint_domain": "safety",
+  "endpoint_measure": "Treatment-emergent adverse reactions, discontinuations due to adverse events, and postmarketing serious adverse-event categories.",
+  "effect_estimate": "Common adverse events were more frequent with tadalafil than placebo in several label tables; rare serious postmarketing signals are listed without reliable incidence estimates or proven causality.",
+  "safety_findings": "Common events are usually headache, dyspepsia, back pain, myalgia, nasal congestion, flushing, and limb pain; serious warning signals include prolonged erection/priapism, sudden vision loss/NAION, sudden hearing loss, cardiovascular events, seizure-related reports, transient global amnesia, and hypersensitivity reactions.",
+  "directness_to_target_population": "Moderate for common adverse-event expectations and high for warning awareness; low to moderate for absolute rates in healthy men age 30 to 50 using tadalafil off label.",
+  "confounding_and_bias_limits": "Trial populations differ from off-label healthy users; postmarketing signals have uncertain denominator, comorbidities, sexual activity timing, and co-medication confounding.",
+  "population_band": "mixed_or_unclear",
+  "study_design_class": "regulatory_label_or_guidance",
+  "effect_domain": "safety_risk",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil/CIALIS safety evidence; transfer from other PDE5 inhibitors is not needed for this boundary, but product labeling, dose, indication, and off-label population differences still limit absolute-risk estimates."
+}

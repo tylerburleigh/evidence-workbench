@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-safety-interactions-adverse-events-endpoint-validity-r1",
+  "name": "Endpoint Validity appraisal for Tad Safety Interactions Adverse Events bundle",
+  "candidate_bundle_id": "tad-safety-interactions-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "endpoint_validity",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The staged endpoints are valid for a safety-boundary baseline: label contraindications and adverse reactions, blood-pressure interaction outcomes, hypotension-related treatment-emergent adverse events, MACE, and serious adverse events. The claim does not convert surrogate hemodynamic endpoints, voluntary postmarketing signals, or no-detected-SAE results into proof of safety for off-label healthy users.",
+  "appraised_change_ids": [
+    "create-tad-safety-search-protocol",
+    "create-dailymed-cialis-label-source",
+    "create-cialis-label-safety-artifact",
+    "create-cialis-label-contraindications-finding",
+    "create-cialis-label-adverse-events-finding",
+    "create-kloner-nitrate-source",
+    "create-nitrate-interaction-artifact",
+    "create-nitrate-interaction-finding",
+    "create-kloner-alpha-blocker-source",
+    "create-alpha-blocker-interaction-artifact",
+    "create-alpha-blocker-interaction-finding",
+    "create-antihypertensive-pooled-source",
+    "create-antihypertensive-pooled-artifact",
+    "create-antihypertensive-pooled-finding",
+    "create-dong-bph-meta-source",
+    "create-dong-bph-meta-artifact",
+    "create-dong-bph-sae-finding",
+    "create-tad-safety-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "bp-endpoints-valid-for-interaction-boundaries",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "claim_or_issue": "Standing blood-pressure outliers and mean maximal standing systolic blood-pressure decreases are surrogate endpoints, but they are valid for nitrate and alpha-blocker interaction boundary claims.",
+      "why_it_matters": "These endpoints support caution and contraindication logic without requiring clinical event endpoints for the same narrow interaction question.",
+      "recommended_action": "Keep the endpoint language tied to hemodynamic interaction risk, not broad cardiovascular-outcome benefit or harm estimates.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-nitrate-interaction-finding"
+    },
+    {
+      "finding_id": "rare-event-endpoints-remain-uncertain",
+      "severity": "minor",
+      "category": "uncertainty",
+      "claim_or_issue": "Postmarketing serious signals, MACE, and serious adverse events are not deeply characterized enough in this baseline to estimate rare-event incidence for healthy off-label users.",
+      "why_it_matters": "Low observed or unquantified event rates can be misread as absence of risk when denominators, event definitions, and follow-up are incomplete.",
+      "recommended_action": "Preserve the staged caveat that rare-event signals and absolute-risk estimates remain uncertain until deeper full-text extraction or pharmacovigilance review is added.",
+      "resolution_status": "open",
+      "applies_to_change_id": "create-cialis-label-adverse-events-finding"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T11:26:03.998Z",
+  "updated_at": "2026-06-06T11:26:03.998Z"
+}

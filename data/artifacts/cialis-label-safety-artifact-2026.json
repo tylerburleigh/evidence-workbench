@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "cialis-label-safety-artifact-2026",
+  "name": "CIALIS Label Safety Boundary Extract",
+  "artifact_type": "regulatory_label_extract",
+  "status": "complete",
+  "source_ids": [
+    "dailymed-cialis-label-2026-03"
+  ],
+  "taxonomy_node_ids": [
+    "tad-safety-interactions-adverse-events"
+  ],
+  "population_or_context": "Labeled ED and BPH use in men; used as safety boundary context for off-label tadalafil questions in mostly healthy men age 30 to 50.",
+  "sample_size": "Clinical trials section reports tadalafil exposure in over 9000 men worldwide; label also includes postmarketing reports of uncertain denominator.",
+  "methods": "Structured extraction from current U.S. prescribing information revised March 2026.",
+  "endpoint_categories": [
+    "safety",
+    "drug_interactions",
+    "adverse_events",
+    "dose_limits"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Label populations are primarily men treated for ED and/or BPH, with some clinical pharmacology healthy-subject data; direct for medication safety boundaries but indirect for off-label cognition, longevity, exercise, or mood enhancement in healthy men age 30 to 50.",
+  "tadalafil_exposure": "CIALIS oral tadalafil 2.5 mg, 5 mg, 10 mg, or 20 mg; as-needed dosing up to once per day in most patients and once-daily dosing for ED/BPH; continuous exposure is highlighted for daily use.",
+  "indication_context": "On-label ED and BPH prescribing information used as regulatory safety context for off-label interpretation.",
+  "study_design": "Regulatory label summarizing clinical trials, clinical pharmacology studies, contraindications, warnings, precautions, adverse reactions, postmarketing experience, and special populations.",
+  "comparator_context": "Placebo-controlled trial rates where provided; regulatory contraindication and warning statements otherwise have no comparator.",
+  "endpoint_domain": "safety",
+  "safety_findings": "Contraindicated with organic nitrates and guanylate-cyclase stimulators such as riociguat; caution or dose limits with alpha-blockers, antihypertensives, substantial alcohol, potent CYP3A4 inhibitors, renal impairment, hepatic impairment, bleeding disorders/active peptic ulceration, NAION risk factors, hearing loss, and priapism risk factors. Common adverse reactions include headache, dyspepsia, back pain, myalgia, nasal congestion, flushing, and limb pain.",
+  "directness_to_target_population": "High directness for current safety rules around tadalafil exposure; lower directness for estimating absolute risk in mostly healthy men age 30 to 50 using tadalafil off label because trial populations and indications differ.",
+  "confounding_and_bias_limits": "Label trial rates may not reflect real-world use, combined off-label stacking, unmeasured rare events, or long-term enhancement use; postmarketing events have uncertain denominators and cannot establish causality.",
+  "population_band": "mixed_or_unclear",
+  "study_design_class": "regulatory_label_or_guidance",
+  "effect_domain": "safety_risk",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil/CIALIS safety evidence; transfer from other PDE5 inhibitors is not needed for this boundary, but product labeling, dose, indication, and off-label population differences still limit absolute-risk estimates."
+}

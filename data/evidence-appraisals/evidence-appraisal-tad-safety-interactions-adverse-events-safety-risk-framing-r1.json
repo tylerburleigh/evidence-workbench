@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-safety-interactions-adverse-events-safety-risk-framing-r1",
+  "name": "Safety Risk Framing appraisal for Tad Safety Interactions Adverse Events bundle",
+  "candidate_bundle_id": "tad-safety-interactions-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "safety_risk_framing",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The staged claim leads with contraindications and interaction boundaries rather than a generic tolerated/safe framing. It keeps organic nitrates, guanylate-cyclase stimulators, alpha-blockers, antihypertensives, alcohol, CYP3A4 modifiers, renal/hepatic impairment, cardiovascular-status exclusions, common adverse reactions, and rare serious warning signals visible near the conclusion.",
+  "appraised_change_ids": [
+    "create-tad-safety-search-protocol",
+    "create-dailymed-cialis-label-source",
+    "create-cialis-label-safety-artifact",
+    "create-cialis-label-contraindications-finding",
+    "create-cialis-label-adverse-events-finding",
+    "create-kloner-nitrate-source",
+    "create-nitrate-interaction-artifact",
+    "create-nitrate-interaction-finding",
+    "create-kloner-alpha-blocker-source",
+    "create-alpha-blocker-interaction-artifact",
+    "create-alpha-blocker-interaction-finding",
+    "create-antihypertensive-pooled-source",
+    "create-antihypertensive-pooled-artifact",
+    "create-antihypertensive-pooled-finding",
+    "create-dong-bph-meta-source",
+    "create-dong-bph-meta-artifact",
+    "create-dong-bph-sae-finding",
+    "create-tad-safety-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "risk-boundaries-visible",
+      "severity": "note",
+      "category": "safety_limitation",
+      "claim_or_issue": "The claim foregrounds hard stops and caution zones before discussing selected trial evidence that did not detect added MACE, hypotension, or serious-adverse-event risk.",
+      "why_it_matters": "Safety baselines for off-label review should not let reassuring trial summaries obscure contraindications or high-severity interactions.",
+      "recommended_action": "No correction required; keep this ordering in public summaries and future benefit-adjacent syntheses.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-tad-safety-baseline-claim"
+    },
+    {
+      "finding_id": "pah-product-label-not-staged",
+      "severity": "minor",
+      "category": "missing_caveat",
+      "claim_or_issue": "Pulmonary arterial hypertension product labeling and dosing are noted as outside the staged baseline.",
+      "why_it_matters": "Different tadalafil products and dosing contexts can change safety framing, even when the active ingredient is tadalafil.",
+      "recommended_action": "Keep the existing limitation visible and stage PAH-specific labeling only if the project later evaluates PAH-dose or cardiopulmonary evidence.",
+      "resolution_status": "open",
+      "applies_to_change_id": "create-tad-safety-baseline-claim"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T11:26:04.285Z",
+  "updated_at": "2026-06-06T11:26:04.285Z"
+}

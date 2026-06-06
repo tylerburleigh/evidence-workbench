@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "tadalafil-bph-safety-meta-artifact-2013",
+  "name": "Tadalafil BPH Randomized-Trial Safety Meta-Analysis Extract",
+  "artifact_type": "meta_analysis_extract",
+  "status": "complete",
+  "source_ids": [
+    "dong-tadalafil-bph-safety-meta-analysis-2013"
+  ],
+  "taxonomy_node_ids": [
+    "tad-safety-interactions-adverse-events"
+  ],
+  "population_or_context": "Men with LUTS/BPH in randomized controlled trials of tadalafil monotherapy versus placebo.",
+  "sample_size": "Eight randomized controlled trials; aggregate participant count not extracted from abstract.",
+  "methods": "Meta-analysis of randomized controlled trials comparing tadalafil doses 2.5, 5, 10, and 20 mg with placebo for LUTS/BPH.",
+  "endpoint_categories": [
+    "safety",
+    "serious_adverse_events",
+    "bph"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Men with LUTS/BPH, typically older than the target healthy male 30 to 50 population; relevant to daily tadalafil exposure but indirect for off-label enhancement.",
+  "tadalafil_exposure": "Tadalafil monotherapy at 2.5, 5, 10, or 20 mg in BPH randomized trials.",
+  "indication_context": "On-label/near-label BPH treatment evidence used for daily-use safety context.",
+  "study_design": "Meta-analysis of randomized controlled trials.",
+  "comparator_context": "Placebo-controlled tadalafil monotherapy comparisons.",
+  "endpoint_domain": "safety",
+  "safety_findings": "No significant difference in serious adverse event incidence was detected after tadalafil treatment in the abstract; common adverse-event extraction was not the focus of this staged artifact.",
+  "directness_to_target_population": "Moderate for daily tadalafil exposure; low for mostly healthy men age 30 to 50 because BPH populations are older and symptomatic.",
+  "confounding_and_bias_limits": "Abstract-only extraction; older meta-analysis; aggregate serious-adverse-event result may mask event types, dose-duration differences, and trial exclusion criteria.",
+  "population_band": "erectile_dysfunction_or_bph",
+  "study_design_class": "review_or_meta_analysis",
+  "effect_domain": "safety_risk",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil safety or interaction evidence; transfer from other PDE5 inhibitors is not needed, but monitored trial or clinical-population context limits off-label healthy-user risk estimates."
+}
