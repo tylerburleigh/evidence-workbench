@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-tad-mood-wellbeing-quality-life-baseline-2026-06-06-2026-06-06t12-37-59-580z",
+  "name": "Published Tadalafil Mood, Well-Being, And Quality Of Life Baseline Review",
+  "summary": "Stages the first baseline for tadalafil mood, well-being, and quality of life: a targeted search protocol, four new sources, five artifacts, five findings, and one bounded insufficient-direct-evidence claim.",
+  "candidate_bundle_id": "tad-mood-wellbeing-quality-life-baseline-2026-06-06",
+  "event_type": "publish",
+  "published_at": "2026-06-06T12:37:59.580Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "search_protocol",
+      "record_id": "tad-mood-wellbeing-search-2026-06-06",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "seftel-tadalafil-confidence-sear-2009",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "porst-tadalafil-ed-psychosocial-2012",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "choi-tadalafil-depression-ed-pilot-2019",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "brock-tadalafil-bph-no-ed-qol-2013",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "seftel-tadalafil-confidence-sear-artifact-2009",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "porst-tadalafil-ed-psychosocial-artifact-2012",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "choi-tadalafil-depression-ed-pilot-artifact-2019",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "brock-tadalafil-bph-no-ed-qol-artifact-2013",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "olmestig-etlas2-mental-wellbeing-artifact-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "seftel-tadalafil-sear-confidence-finding-2009",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "porst-tadalafil-ed-sear-psychosocial-finding-2012",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "choi-tadalafil-ed-depression-pilot-finding-2019",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "brock-tadalafil-bph-no-ed-qol-finding-2013",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "olmestig-etlas2-mental-wellbeing-null-finding-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "tad-mood-wellbeing-quality-life-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 16,
+    "by_record_type": {
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "source": {
+        "created": 4,
+        "updated": 0,
+        "total": 4
+      },
+      "artifact": {
+        "created": 5,
+        "updated": 0,
+        "total": 5
+      },
+      "finding": {
+        "created": 5,
+        "updated": 0,
+        "total": 5
+      },
+      "claim": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "tad-mood-wellbeing-quality-life-baseline-claim"
+  ],
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-tad-mood-wellbeing-quality-life-endpoint-validity-r1",
+    "evidence-appraisal-tad-mood-wellbeing-quality-life-exposure-directness-r1",
+    "evidence-appraisal-tad-mood-wellbeing-quality-life-population-directness-r1",
+    "evidence-appraisal-tad-mood-wellbeing-quality-life-safety-risk-framing-r1",
+    "evidence-appraisal-tad-mood-wellbeing-quality-life-source-fidelity-r1",
+    "evidence-appraisal-tad-mood-wellbeing-quality-life-synthesis-overreach-r1"
+  ],
+  "appraisal_corrections_applied": [],
+  "appraisal_follow_up_actions": [
+    "endpoint_validity: No correction required.",
+    "exposure_directness: No correction required.",
+    "exposure_directness: No correction required; keep exposure qualifiers attached to future mood/well-being synthesis.",
+    "population_directness: No correction required; preserve this directness language in public copy.",
+    "population_directness: No correction required.",
+    "safety_risk_framing: No correction required.",
+    "safety_risk_framing: Keep safety caveats in public copy and rely on the dedicated safety baseline for contraindication and interaction boundaries.",
+    "source_fidelity: No correction required.",
+    "source_fidelity: Keep the Seftel full-text follow-up open and retrieve full reports before quantitative synthesis or detailed subdomain comparison.",
+    "synthesis_overreach: No correction required.",
+    "synthesis_overreach: No correction required; preserve this boundary in public summaries."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "change_note": "Creates the first submitted baseline claim for tadalafil mood, well-being, and quality of life."
+}

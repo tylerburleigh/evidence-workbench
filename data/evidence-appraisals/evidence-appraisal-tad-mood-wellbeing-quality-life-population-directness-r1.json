@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-mood-wellbeing-quality-life-population-directness-r1",
+  "name": "Population Directness appraisal for Tad Mood Wellbeing Quality Life bundle",
+  "candidate_bundle_id": "tad-mood-wellbeing-quality-life-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "population_directness",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The staged claim is explicit that the target population is mostly healthy men age 30 to 50 and that every included human efficacy signal is indirect: ED, BPH/LUTS, ED with depressive symptoms, or older CSVD. The claim does not treat those populations as direct healthy-user evidence.",
+  "appraised_change_ids": [
+    "create-tad-mood-search-protocol",
+    "create-seftel-tadalafil-confidence-source",
+    "create-porst-tadalafil-psychosocial-source",
+    "create-choi-tadalafil-depression-source",
+    "create-brock-tadalafil-bph-qol-source",
+    "create-seftel-tadalafil-confidence-artifact",
+    "create-porst-tadalafil-psychosocial-artifact",
+    "create-choi-tadalafil-depression-artifact",
+    "create-brock-tadalafil-bph-qol-artifact",
+    "create-etlas2-mental-wellbeing-artifact",
+    "create-seftel-tadalafil-confidence-finding",
+    "create-porst-tadalafil-psychosocial-finding",
+    "create-choi-tadalafil-depression-finding",
+    "create-brock-tadalafil-bph-qol-finding",
+    "create-etlas2-mental-wellbeing-finding",
+    "create-tad-mood-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "no-direct-healthy-user-evidence-overstated",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "claim_or_issue": "The claim states that no direct healthy-men mood/well-being evidence was staged.",
+      "why_it_matters": "This protects the baseline from being read as support for tadalafil mood enhancement in healthy men age 30 to 50.",
+      "recommended_action": "No correction required; preserve this directness language in public copy.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-tad-mood-baseline-claim"
+    },
+    {
+      "finding_id": "disease-population-signals-labeled-indirect",
+      "severity": "note",
+      "category": "missing_caveat",
+      "claim_or_issue": "ED psychosocial, ED/depression, BPH/LUTS, and CSVD signals are each labeled as indirect for the primary target population.",
+      "why_it_matters": "ED and BPH symptom relief can alter quality-of-life scores without proving a direct mood or well-being effect in healthy users.",
+      "recommended_action": "No correction required.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-tad-mood-baseline-claim"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T12:37:24.226Z",
+  "updated_at": "2026-06-06T12:37:24.226Z"
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "brock-tadalafil-bph-no-ed-qol-2013",
+  "name": "Tadalafil once daily in the treatment of lower urinary tract symptoms (LUTS) suggestive of benign prostatic hyperplasia (BPH) in men without erectile dysfunction.",
+  "source_type": "pooled_randomized_trial_analysis",
+  "authors": [
+    "Brock G",
+    "Broderick G",
+    "Roehrborn CG",
+    "Xu L",
+    "Wong D",
+    "Viktrup L"
+  ],
+  "venue": "BJU International",
+  "year": 2013,
+  "published_on": "2013-08-13",
+  "doi": "10.1111/bju.12251",
+  "pmid": "23937669",
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/23937669/"
+  ],
+  "summary": "Pooled analysis of three randomized placebo-controlled tadalafil 5 mg once-daily BPH/LUTS trials, including a subgroup of men without erectile dysfunction and patient-reported IPSS quality-of-life and BPH Impact Index outcomes.",
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T12:19:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23937669/",
+      "result": "PubMed abstract and metadata accessed through NCBI E-utilities.",
+      "notes": "Extraction uses PubMed abstract-level pooled subgroup results."
+    }
+  ]
+}

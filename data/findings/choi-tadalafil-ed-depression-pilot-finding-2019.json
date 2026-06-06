@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "choi-tadalafil-ed-depression-pilot-finding-2019",
+  "name": "Small uncontrolled ED pilot reported PHQ-9 improvement after daily tadalafil",
+  "source_id": "choi-tadalafil-depression-ed-pilot-2019",
+  "artifact_id": "choi-tadalafil-depression-ed-pilot-artifact-2019",
+  "taxonomy_node_ids": [
+    "tad-mood-wellbeing-quality-life"
+  ],
+  "endpoint_category": "mood_wellbeing",
+  "direction": "uncontrolled_depression_score_improvement",
+  "evidence_tier": "open_label_pilot",
+  "confidence": "low",
+  "statement": "A 10-participant open-label pilot in men with ED and depressive symptoms reported statistically significant PHQ-9 improvement after 8 weeks of tadalafil 5 mg daily, but the single-arm design cannot separate tadalafil, expectancy, regression to the mean, or ED improvement effects.",
+  "population_or_context": "Men with ED and PHQ-9 score at least 5.",
+  "time_horizon": "8 weeks.",
+  "quantitative_note": "Mean PHQ-9 change was 3.60+/-3.27 and PHQ-15 change was 2.00+/-2.98; PHQ-9 improvement was reported as statistically significant (P<0.05).",
+  "source_locator": {
+    "section": "PubMed Abstract Methods and Results",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31807426/",
+    "quote_or_paraphrase_note": "Abstract reports n=10, tadalafil 5 mg daily for 8 weeks, PHQ-9/PHQ-15 changes, and non-significant BDNF change.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "No placebo or active comparator.",
+    "Very small sample.",
+    "Participants had ED and depressive symptoms; not a healthy population."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Ten men with ED and depressive symptoms; indirect for healthy men age 30 to 50.",
+  "tadalafil_exposure": "Tadalafil 5 mg once daily for 8 weeks.",
+  "indication_context": "ED treatment with exploratory depression endpoint.",
+  "comparator_context": "Within-person baseline comparison only.",
+  "endpoint_domain": "mood/well-being",
+  "endpoint_measure": "Korean PHQ-9, PHQ-15, serum BDNF.",
+  "effect_estimate": "PHQ-9 mean change 3.60+/-3.27 after treatment; reported P<0.05.",
+  "safety_findings": "Detailed adverse-event extraction was not available from the abstract.",
+  "directness_to_target_population": "Very low directness because the sample had ED and depressive symptoms and was uncontrolled.",
+  "confounding_and_bias_limits": "Single-arm open-label design, n=10, no control group, and ED improvement may mediate mood score changes.",
+  "population_band": "erectile_dysfunction_or_bph",
+  "study_design_class": "case_control_or_case_series",
+  "effect_domain": "mood_wellbeing",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil exposure; no class transfer, but causal and population transfer are weak."
+}

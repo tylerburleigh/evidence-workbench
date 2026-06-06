@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-mood-wellbeing-quality-life-endpoint-validity-r1",
+  "name": "Endpoint Validity appraisal for Tad Mood Wellbeing Quality Life bundle",
+  "candidate_bundle_id": "tad-mood-wellbeing-quality-life-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "endpoint_validity",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The staged endpoints are valid for a bounded mood/well-being/QOL baseline because each endpoint is named and constrained: SEAR and treatment satisfaction are ED-linked psychosocial measures, PHQ-9 is a depression-symptom score in an uncontrolled pilot, IPSS-QoL/BII are urinary symptom-bother measures, and ETLAS-2 mental well-being is a non-ED/BPH null boundary. The claim does not collapse these into general well-being efficacy.",
+  "appraised_change_ids": [
+    "create-tad-mood-search-protocol",
+    "create-seftel-tadalafil-confidence-source",
+    "create-porst-tadalafil-psychosocial-source",
+    "create-choi-tadalafil-depression-source",
+    "create-brock-tadalafil-bph-qol-source",
+    "create-seftel-tadalafil-confidence-artifact",
+    "create-porst-tadalafil-psychosocial-artifact",
+    "create-choi-tadalafil-depression-artifact",
+    "create-brock-tadalafil-bph-qol-artifact",
+    "create-etlas2-mental-wellbeing-artifact",
+    "create-seftel-tadalafil-confidence-finding",
+    "create-porst-tadalafil-psychosocial-finding",
+    "create-choi-tadalafil-depression-finding",
+    "create-brock-tadalafil-bph-qol-finding",
+    "create-etlas2-mental-wellbeing-finding",
+    "create-tad-mood-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "ed-psychosocial-not-general-mood",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "claim_or_issue": "SEAR, sexual satisfaction, and ED treatment satisfaction are correctly treated as ED-linked psychosocial outcomes rather than broad mood scales.",
+      "why_it_matters": "This prevents sexual-function-mediated outcomes from being overstated as direct mood enhancement.",
+      "recommended_action": "No correction required.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-seftel-tadalafil-confidence-finding"
+    },
+    {
+      "finding_id": "bph-qol-symptom-specific",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "claim_or_issue": "IPSS-QoL and BII are correctly framed as urinary symptom-specific quality-of-life measures.",
+      "why_it_matters": "BPH symptom-bother improvement is relevant to QOL but not direct evidence for broad subjective well-being in healthy users.",
+      "recommended_action": "No correction required.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-brock-tadalafil-bph-qol-finding"
+    },
+    {
+      "finding_id": "phq9-signal-causal-limit-visible",
+      "severity": "note",
+      "category": "missing_comparator",
+      "claim_or_issue": "The PHQ-9 improvement finding is explicitly described as uncontrolled and low confidence.",
+      "why_it_matters": "A depression-symptom endpoint is valid, but a single-arm pilot cannot support causal antidepressant efficacy.",
+      "recommended_action": "No correction required.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-choi-tadalafil-depression-finding"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T12:37:31.974Z",
+  "updated_at": "2026-06-06T12:37:31.974Z"
+}

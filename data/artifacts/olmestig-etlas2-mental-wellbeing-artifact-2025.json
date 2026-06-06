@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "olmestig-etlas2-mental-wellbeing-artifact-2025",
+  "name": "ETLAS-2 Mental Well-Being Extract",
+  "artifact_type": "randomized_parallel_trial_extract",
+  "status": "complete",
+  "source_ids": [
+    "olmestig-etlas2-main-2025"
+  ],
+  "taxonomy_node_ids": [
+    "tad-mood-wellbeing-quality-life"
+  ],
+  "population_or_context": "Patients with cerebral small vessel disease and prior stroke or transient ischemic attack; mean age about 68 years.",
+  "sample_size": "76 included; 71 initiated treatment.",
+  "methods": "Randomized placebo-controlled double-blind phase II trial of tadalafil 20 mg daily for 3 months versus placebo; secondary outcomes included cognition, mental well-being, blood pressure, and adverse events.",
+  "endpoint_categories": [
+    "mood_wellbeing",
+    "cognition",
+    "safety_risk"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Older CSVD patients with previous stroke or transient ischemic attack; not healthy men age 30 to 50.",
+  "tadalafil_exposure": "Tadalafil 20 mg daily for 3 months.",
+  "indication_context": "Experimental off-label CSVD disease-modification/vascular trial.",
+  "study_design": "Randomized placebo-controlled double-blind parallel phase II clinical trial.",
+  "comparator_context": "Daily placebo for 3 months.",
+  "endpoint_domain": "mood/well-being",
+  "safety_findings": "Adverse events occurred in 76% with tadalafil versus 36% with placebo, and adherence was lower with tadalafil.",
+  "directness_to_target_population": "Indirect because participants were older CSVD patients and tadalafil dose was 20 mg daily.",
+  "confounding_and_bias_limits": "Mental well-being was a secondary outcome in a feasibility-primary phase II disease-population trial.",
+  "population_band": "older_adults",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "mood_wellbeing",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; population, dose, disease context, and secondary-outcome status limit transfer to healthy mood or well-being claims."
+}

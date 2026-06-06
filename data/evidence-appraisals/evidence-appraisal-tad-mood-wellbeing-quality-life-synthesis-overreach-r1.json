@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-mood-wellbeing-quality-life-synthesis-overreach-r1",
+  "name": "Synthesis Overreach appraisal for Tad Mood Wellbeing Quality Life bundle",
+  "candidate_bundle_id": "tad-mood-wellbeing-quality-life-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "synthesis_overreach",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The claim synthesis stays within the support map: it reports insufficient direct healthy-user evidence, preserves indirect ED/BPH/CSVD context, treats positive findings as symptom-mediated or uncontrolled, and uses ETLAS-2 plus safety findings as boundaries. It does not recommend off-label use or present tadalafil as a general mood, vitality, sleep, or well-being agent.",
+  "appraised_change_ids": [
+    "create-tad-mood-search-protocol",
+    "create-seftel-tadalafil-confidence-source",
+    "create-porst-tadalafil-psychosocial-source",
+    "create-choi-tadalafil-depression-source",
+    "create-brock-tadalafil-bph-qol-source",
+    "create-seftel-tadalafil-confidence-artifact",
+    "create-porst-tadalafil-psychosocial-artifact",
+    "create-choi-tadalafil-depression-artifact",
+    "create-brock-tadalafil-bph-qol-artifact",
+    "create-etlas2-mental-wellbeing-artifact",
+    "create-seftel-tadalafil-confidence-finding",
+    "create-porst-tadalafil-psychosocial-finding",
+    "create-choi-tadalafil-depression-finding",
+    "create-brock-tadalafil-bph-qol-finding",
+    "create-etlas2-mental-wellbeing-finding",
+    "create-tad-mood-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "insufficient-direct-evidence-posture-maintained",
+      "severity": "note",
+      "category": "claim_overreach",
+      "claim_or_issue": "The public claim posture is insufficient direct evidence for healthy men, not evidence of efficacy or proof of no effect.",
+      "why_it_matters": "This is the correct synthesis for a baseline built from indirect ED/BPH/CSVD evidence.",
+      "recommended_action": "No correction required.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-tad-mood-baseline-claim"
+    },
+    {
+      "finding_id": "symptom-mediated-benefit-boundary-visible",
+      "severity": "note",
+      "category": "interpretation_overreach",
+      "claim_or_issue": "The synthesis repeatedly distinguishes ED/BPH symptom-mediated quality-of-life effects from direct mood or broad well-being benefit.",
+      "why_it_matters": "The most tempting overreach in this topic is converting sexual or urinary symptom relief into a general wellness claim.",
+      "recommended_action": "No correction required; preserve this boundary in public summaries.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-tad-mood-baseline-claim"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T12:37:42.096Z",
+  "updated_at": "2026-06-06T12:37:42.096Z"
+}

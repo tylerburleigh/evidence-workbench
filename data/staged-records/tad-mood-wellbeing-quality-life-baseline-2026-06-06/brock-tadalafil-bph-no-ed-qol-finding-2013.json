@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "brock-tadalafil-bph-no-ed-qol-finding-2013",
+  "name": "Tadalafil improved urinary symptom quality-of-life measures in BPH/LUTS men without ED",
+  "source_id": "brock-tadalafil-bph-no-ed-qol-2013",
+  "artifact_id": "brock-tadalafil-bph-no-ed-qol-artifact-2013",
+  "taxonomy_node_ids": [
+    "tad-mood-wellbeing-quality-life"
+  ],
+  "endpoint_category": "quality_of_life",
+  "direction": "improvement_in_symptom_specific_quality_of_life",
+  "evidence_tier": "pooled_randomized_trial_analysis",
+  "confidence": "moderate",
+  "statement": "In a pooled analysis of BPH/LUTS randomized trials, tadalafil 5 mg once daily improved IPSS quality-of-life and BPH Impact Index scores versus placebo in men without ED, but these are urinary symptom-specific quality-of-life outcomes in older BPH patients.",
+  "population_or_context": "Men at least 45 years old with BPH/LUTS; subgroup without ED.",
+  "time_horizon": "12 weeks.",
+  "quantitative_note": "In men without ED, IPSS-QoL improved -1.0 with tadalafil versus -0.7 with placebo and BII improved -1.4 versus -1.0; both P<0.05.",
+  "source_locator": {
+    "section": "PubMed Abstract Results",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23937669/",
+    "quote_or_paraphrase_note": "Abstract reports IPSS, IPSS-QoL, and BII subgroup results for men without ED.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "BPH/LUTS population, not healthy men.",
+    "Quality-of-life outcomes are urinary symptom-specific.",
+    "Pooled post hoc subgroup analysis."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Men with BPH/LUTS, age at least 45, including subgroup without ED.",
+  "tadalafil_exposure": "Tadalafil 5 mg once daily for 12 weeks.",
+  "indication_context": "BPH/LUTS treatment context.",
+  "comparator_context": "Placebo.",
+  "endpoint_domain": "mood/well-being",
+  "endpoint_measure": "IPSS quality-of-life subscore and BPH Impact Index.",
+  "effect_estimate": "IPSS-QoL -1.0 vs -0.7 and BII -1.4 vs -1.0 for tadalafil versus placebo in men without ED; both P<0.05.",
+  "safety_findings": "Abstract reports tadalafil was safe and well tolerated, with adverse-event profile consistent with men with ED.",
+  "directness_to_target_population": "Low because participants had BPH/LUTS and were older than the primary target population.",
+  "confounding_and_bias_limits": "Quality of life likely reflects urinary symptom relief rather than broad well-being or mood.",
+  "population_band": "erectile_dysfunction_or_bph",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "mood_wellbeing",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; no class transfer, but endpoint transfer from urinary symptom burden to broad well-being is limited."
+}

@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "tad-mood-wellbeing-quality-life-baseline-2026-06-06",
+  "mode": "baseline_review",
+  "started_at": "2026-06-06T12:12:30Z",
+  "completed_at": "2026-06-06T12:25:30Z",
+  "scope": {
+    "domain_id": "tadalafil-off-label",
+    "taxonomy_node_ids": [
+      "tad-mood-wellbeing-quality-life"
+    ],
+    "research_question": "What is the current evidence landscape for tadalafil and mood, well-being, depression symptoms, vitality, sleep-adjacent outcomes, or quality of life in mostly healthy men age 30 to 50?"
+  },
+  "selected_via": "priority_queue_rank_1_after_mci_scope_drop",
+  "outcome": "candidate_bundle",
+  "summary": "Created a submitted baseline-review bundle for tadalafil mood, well-being, and quality of life. Targeted searching found no direct healthy-men mood/well-being trial; the staged claim is bounded to insufficient direct evidence and supported by indirect tadalafil ED psychosocial trials, one small uncontrolled ED/depression pilot, BPH/LUTS symptom-specific quality-of-life evidence, ETLAS-2 mental well-being null evidence, and the existing safety baseline.",
+  "candidate_bundle_id": "tad-mood-wellbeing-quality-life-baseline-2026-06-06",
+  "source_ids": [
+    "seftel-tadalafil-confidence-sear-2009",
+    "porst-tadalafil-ed-psychosocial-2012",
+    "choi-tadalafil-depression-ed-pilot-2019",
+    "brock-tadalafil-bph-no-ed-qol-2013",
+    "olmestig-etlas2-main-2025",
+    "dailymed-cialis-label-2026-03"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/19536128/",
+    "https://pubmed.ncbi.nlm.nih.gov/22790642/",
+    "https://pubmed.ncbi.nlm.nih.gov/31807426/",
+    "https://pubmed.ncbi.nlm.nih.gov/23937669/",
+    "https://pubmed.ncbi.nlm.nih.gov/40718899/",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcd8f8ab-81a2-4891-83db-24a0b0e25895"
+  ],
+  "next_recommended_mode": "baseline_review",
+  "next_actions": [
+    "Run evidence appraisal for the submitted mood/well-being bundle.",
+    "After appraisal and editorial approval, publish this baseline before using mood/well-being evidence in broader synthesis.",
+    "Next planned baseline is cardiovascular health and endothelial function."
+  ]
+}

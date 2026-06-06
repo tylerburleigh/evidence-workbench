@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "tad-mood-wellbeing-quality-life-baseline-claim",
+  "name": "Tadalafil Mood, Well-Being, And Quality Of Life Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "tad-mood-wellbeing-quality-life",
+  "current_stage": "claim_supported",
+  "momentum": "baseline_submitted",
+  "confidence": "low",
+  "summary": "A targeted baseline search did not identify direct human evidence that tadalafil improves mood, subjective well-being, vitality, sleep, or broad quality of life in mostly healthy men age 30 to 50. Tadalafil-specific human evidence does show improved ED-linked confidence, self-esteem, relationship, sexual satisfaction, treatment satisfaction, and symptom-specific urinary quality-of-life measures in ED or BPH/LUTS populations, plus a very small uncontrolled ED/depression pilot reporting PHQ-9 improvement. These signals are indirect for healthy users because they are largely disease- or symptom-mediated. In the most relevant non-ED/BPH tadalafil trial staged here, ETLAS-2 reported no mental well-being difference in older CSVD patients and more adverse events with tadalafil than placebo.",
+  "main_blockers": [
+    "No staged direct tadalafil mood, well-being, or broad quality-of-life trial in mostly healthy men age 30 to 50.",
+    "Most positive psychosocial and quality-of-life evidence is in ED or BPH/LUTS populations and appears tied to sexual or urinary symptom improvement.",
+    "The only direct depression-symptom source staged is an uncontrolled 10-person ED pilot.",
+    "Safety and tolerability boundaries remain material, especially for off-label use outside ED/BPH indications."
+  ],
+  "best_current_signals": [
+    "Placebo-controlled ED trials show tadalafil improves SEAR confidence, self-esteem, relationship, satisfaction, and treatment-satisfaction measures, but these are ED-linked outcomes.",
+    "A pooled BPH/LUTS analysis in men without ED found modest improvement in IPSS-QoL and BPH Impact Index, supporting symptom-specific quality-of-life improvement rather than general well-being.",
+    "A small open-label ED/depression pilot reported PHQ-9 improvement after tadalafil 5 mg daily, but without a comparator.",
+    "ETLAS-2 provides a non-ED/BPH tadalafil RCT boundary: no mental well-being difference and higher adverse-event frequency in older CSVD patients."
+  ],
+  "interpretive_note": "This baseline should not be read as evidence that tadalafil is a mood enhancer or a general well-being intervention for healthy men. The current public claim is that direct evidence is insufficient, and the positive evidence found is mostly symptom-contextual.",
+  "applicability": {
+    "applies_when": [
+      "Asked whether current staged evidence supports tadalafil for mood, well-being, depression symptoms, vitality, sleep-adjacent outcomes, or broad quality of life in mostly healthy men age 30 to 50.",
+      "Interpreting ED, BPH/LUTS, or CSVD tadalafil quality-of-life and mental well-being endpoints in a tadalafil-focused off-label review.",
+      "Distinguishing symptom-mediated quality-of-life improvement from direct mood or well-being benefit."
+    ],
+    "does_not_apply_when": [
+      "Making individualized prescribing decisions for ED, BPH, depression, anxiety, post-prostatectomy rehabilitation, or CSVD.",
+      "Estimating antidepressant efficacy, sleep effects, or global quality-of-life effects in healthy users.",
+      "Treating sildenafil, vardenafil, avanafil, or mixed-PDE5 evidence as tadalafil-specific without the published class-transfer framework."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Low-dose daily tadalafil in healthy men age 30 to 50 with validated mood, anxiety, vitality, sleep, or general quality-of-life instruments.",
+      "Tadalafil in men with depressive or anxiety disorders without ED.",
+      "Long-term mood or well-being outcomes beyond 3 months in non-ED/BPH populations.",
+      "Whether any mood change is independent of sexual performance, urinary symptom relief, relationship effects, or expectancy."
+    ]
+  },
+  "limitations": [
+    "Targeted baseline review rather than full systematic review.",
+    "Most staged evidence was extracted from abstracts, not full trial reports.",
+    "ED-specific instruments such as SEAR and treatment satisfaction do not equal general mood or well-being scales.",
+    "BPH quality-of-life measures are symptom-bother measures, not broad life satisfaction.",
+    "No staged source directly tests the primary healthy-men age 30-50 population."
+  ],
+  "update_notes": [
+    "Future updates should prioritize direct healthy-user mood/well-being trials, if any emerge.",
+    "Do not upgrade ED/BPH symptom-mediated quality-of-life signals into broad mood or well-being claims without direct endpoint support.",
+    "Keep the tadalafil safety baseline attached to any public mood/well-being summary."
+  ],
+  "supporting_finding_ids": [
+    "seftel-tadalafil-sear-confidence-finding-2009",
+    "porst-tadalafil-ed-sear-psychosocial-finding-2012",
+    "choi-tadalafil-ed-depression-pilot-finding-2019",
+    "brock-tadalafil-bph-no-ed-qol-finding-2013",
+    "olmestig-etlas2-mental-wellbeing-null-finding-2025",
+    "cialis-label-contraindications-interactions-finding-2026",
+    "cialis-label-adverse-events-finding-2026"
+  ],
+  "supporting_source_ids": [
+    "seftel-tadalafil-confidence-sear-2009",
+    "porst-tadalafil-ed-psychosocial-2012",
+    "choi-tadalafil-depression-ed-pilot-2019",
+    "brock-tadalafil-bph-no-ed-qol-2013",
+    "olmestig-etlas2-main-2025",
+    "dailymed-cialis-label-2026-03"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "ED psychosocial improvement is tadalafil-specific but symptom-linked",
+      "claim_field": "summary",
+      "conclusion": "Tadalafil improved ED-linked satisfaction, confidence, self-esteem, and relationship measures versus placebo in Seftel 2009.",
+      "support_role": "qualifies",
+      "rationale": "The result is randomized and tadalafil-specific, but the psychosocial measures were ED-linked and correlated with erectile-function improvement.",
+      "finding_ids": [
+        "seftel-tadalafil-sear-confidence-finding-2009"
+      ],
+      "source_ids": [
+        "seftel-tadalafil-confidence-sear-2009"
+      ],
+      "limitations": [
+        "ED population.",
+        "Sexual-function mediation likely.",
+        "Abstract-level extraction."
+      ]
+    },
+    {
+      "label": "Second placebo-controlled ED trial supports the same boundary",
+      "claim_field": "best_current_signals",
+      "conclusion": "Porst 2012 found improved SEAR total score and ED treatment satisfaction with tadalafil versus placebo.",
+      "support_role": "supports",
+      "rationale": "This provides another tadalafil-specific randomized ED psychosocial signal, while reinforcing that the endpoint context is ED treatment.",
+      "finding_ids": [
+        "porst-tadalafil-ed-sear-psychosocial-finding-2012"
+      ],
+      "source_ids": [
+        "porst-tadalafil-ed-psychosocial-2012"
+      ],
+      "limitations": [
+        "ED population.",
+        "Mean age 52.",
+        "ED-specific instruments."
+      ]
+    },
+    {
+      "label": "Depression signal is small and uncontrolled",
+      "claim_field": "best_current_signals",
+      "conclusion": "Choi 2019 reported PHQ-9 improvement after tadalafil 5 mg daily in 10 men with ED and depressive symptoms.",
+      "support_role": "qualifies",
+      "rationale": "This is the most direct depression-symptom source found, but the design cannot support causal mood-efficacy claims.",
+      "finding_ids": [
+        "choi-tadalafil-ed-depression-pilot-finding-2019"
+      ],
+      "source_ids": [
+        "choi-tadalafil-depression-ed-pilot-2019"
+      ],
+      "limitations": [
+        "No placebo comparator.",
+        "n=10.",
+        "ED and depressive-symptom clinical population."
+      ]
+    },
+    {
+      "label": "Non-sexual quality-of-life signal is urinary symptom-specific",
+      "claim_field": "best_current_signals",
+      "conclusion": "Brock 2013 found IPSS-QoL and BPH Impact Index improvement in BPH/LUTS men without ED.",
+      "support_role": "qualifies",
+      "rationale": "This separates a non-ED symptom-QOL pathway from ED-mediated quality-of-life improvement, but it remains a BPH/LUTS endpoint.",
+      "finding_ids": [
+        "brock-tadalafil-bph-no-ed-qol-finding-2013"
+      ],
+      "source_ids": [
+        "brock-tadalafil-bph-no-ed-qol-2013"
+      ],
+      "limitations": [
+        "BPH/LUTS population.",
+        "Older men.",
+        "Symptom-specific QOL rather than broad well-being."
+      ]
+    },
+    {
+      "label": "Non-ED/BPH tadalafil RCT does not show mental well-being benefit",
+      "claim_field": "summary",
+      "conclusion": "ETLAS-2 reported no mental well-being difference and more adverse events with tadalafil than placebo.",
+      "support_role": "counterexample",
+      "rationale": "This source helps prevent generalizing ED/BPH psychosocial improvements to broader mood or well-being effects.",
+      "finding_ids": [
+        "olmestig-etlas2-mental-wellbeing-null-finding-2025"
+      ],
+      "source_ids": [
+        "olmestig-etlas2-main-2025"
+      ],
+      "limitations": [
+        "Older CSVD population.",
+        "20 mg daily dose.",
+        "Mental well-being was secondary."
+      ]
+    },
+    {
+      "label": "Safety boundaries remain attached to mood/well-being interpretations",
+      "claim_field": "safety_findings",
+      "conclusion": "Current tadalafil labeling and the published safety baseline define contraindication, interaction, warning, and adverse-event boundaries that must accompany benefit-oriented interpretations.",
+      "support_role": "boundary_condition",
+      "rationale": "Mood and well-being evidence is indirect and cannot be separated from off-label safety caveats.",
+      "finding_ids": [
+        "cialis-label-contraindications-interactions-finding-2026",
+        "cialis-label-adverse-events-finding-2026"
+      ],
+      "source_ids": [
+        "dailymed-cialis-label-2026-03"
+      ],
+      "limitations": [
+        "Label boundaries do not quantify mood-specific risk-benefit in healthy users."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-06",
+  "population_profile": "Target question is mostly healthy men age 30 to 50, but staged mood/well-being evidence is from ED, BPH/LUTS, ED with depressive symptoms, and older CSVD populations.",
+  "tadalafil_exposure": "Staged tadalafil exposures include 5 mg once daily for 8-12 weeks in ED/BPH contexts and 20 mg daily for 3 months in CSVD.",
+  "endpoint_domain": "mood/well-being",
+  "safety_findings": "Current tadalafil safety baseline remains required context; ETLAS-2 reported more adverse events with tadalafil than placebo, and ED/BPH abstracts do not fully resolve off-label healthy-user safety.",
+  "directness_to_target_population": "Low directness for healthy men age 30 to 50 because no staged source directly studies that population or broad mood/well-being endpoints independent of ED, BPH/LUTS, depression, or CSVD.",
+  "confounding_and_bias_limits": "Symptom relief, sexual-function improvement, relationship effects, expectancy, ED/BPH indication, older disease populations, and abstract-only extraction limit causal claims about broad mood or well-being.",
+  "population_band": [
+    "healthy_men_30_50",
+    "erectile_dysfunction_or_bph",
+    "older_adults"
+  ],
+  "study_design_class": [
+    "randomized_trial",
+    "case_control_or_case_series"
+  ],
+  "effect_domain": "mood_wellbeing",
+  "pde5_agent": [
+    "tadalafil"
+  ],
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "This baseline uses tadalafil-specific human evidence. It does not rely on sildenafil, vardenafil, avanafil, or mixed-PDE5 evidence; future adjacent evidence must follow the published PDE5 class-transfer framework."
+}

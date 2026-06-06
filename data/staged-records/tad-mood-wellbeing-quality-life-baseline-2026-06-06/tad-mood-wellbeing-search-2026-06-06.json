@@ -1,0 +1,191 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "tad-mood-wellbeing-search-2026-06-06",
+  "name": "Tadalafil Mood, Well-Being, And Quality Of Life Baseline Search",
+  "domain_id": "tadalafil-off-label",
+  "taxonomy_node_ids": [
+    "tad-mood-wellbeing-quality-life"
+  ],
+  "status": "included_sources_staged",
+  "systematicity_level": "targeted_baseline_review",
+  "search_started_at": "2026-06-06T12:12:30Z",
+  "search_completed_at": "2026-06-06T12:25:00Z",
+  "databases": [
+    "PubMed",
+    "PubMed Central",
+    "Nature",
+    "DailyMed",
+    "Web search"
+  ],
+  "search_queries": [
+    {
+      "database": "Web search",
+      "query": "tadalafil mood depression well-being quality of life randomized trial PubMed",
+      "searched_at": "2026-06-06T12:12:30Z",
+      "result_count": "screened top results",
+      "url": "https://www.google.com/search?q=tadalafil+mood+depression+well-being+quality+of+life+randomized+trial+PubMed"
+    },
+    {
+      "database": "Web search",
+      "query": "tadalafil self-esteem relationship questionnaire erectile dysfunction randomized placebo PubMed",
+      "searched_at": "2026-06-06T12:13:00Z",
+      "result_count": "screened top results",
+      "url": "https://www.google.com/search?q=tadalafil+self-esteem+relationship+questionnaire+erectile+dysfunction+randomized+placebo+PubMed"
+    },
+    {
+      "database": "PubMed",
+      "query": "tadalafil depression erectile dysfunction",
+      "searched_at": "2026-06-06T12:15:00Z",
+      "result_count": 48,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tadalafil+depression+erectile+dysfunction"
+    },
+    {
+      "database": "PubMed",
+      "query": "tadalafil self-esteem relationship questionnaire",
+      "searched_at": "2026-06-06T12:15:30Z",
+      "result_count": 14,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tadalafil+self-esteem+relationship+questionnaire"
+    },
+    {
+      "database": "PubMed",
+      "query": "tadalafil lower urinary tract symptoms quality of life IPSS QoL randomized trial",
+      "searched_at": "2026-06-06T12:16:00Z",
+      "result_count": "screened top results",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tadalafil+lower+urinary+tract+symptoms+quality+of+life+IPSS+QoL+randomized+trial"
+    },
+    {
+      "database": "PubMed",
+      "query": "tadalafil mental well-being quality of life cerebral small vessel disease trial",
+      "searched_at": "2026-06-06T12:16:30Z",
+      "result_count": "screened top results",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tadalafil+mental+well-being+quality+of+life+cerebral+small+vessel+disease+trial"
+    }
+  ],
+  "inclusion_criteria": [
+    "Human tadalafil or closely relevant PDE5-inhibitor evidence with mood, depressive-symptom, anxiety, self-esteem, relationship, subjective well-being, treatment satisfaction, vitality, sleep-adjacent, or quality-of-life endpoints.",
+    "Prefer tadalafil-specific randomized, controlled, or prospectively measured evidence.",
+    "Include ED/BPH/CSVD evidence only when endpoint directness and population limits remain explicit.",
+    "Include existing project sources when they directly report mental well-being or quality-of-life endpoints."
+  ],
+  "exclusion_criteria": [
+    "Animal, in vitro, or mechanism-only evidence without human mood, well-being, or quality-of-life outcomes.",
+    "Sources measuring only erectile function, urinary flow, or cardiovascular biomarkers without patient-reported mood/well-being/QOL endpoints.",
+    "Non-tadalafil PDE5 evidence unless it materially changes the class-transfer boundary.",
+    "Reddit, lay commentary, marketing pages, or unsupported anecdotal reports."
+  ],
+  "dedupe_method": "PMID/DOI/title dedupe; when overlapping tadalafil ED psychosocial studies existed, representative randomized tadalafil-specific sources were staged rather than every secondary analysis.",
+  "screening_counts": {
+    "records_identified": "at least 70 across targeted PubMed and web searches",
+    "records_screened": 18,
+    "full_text_reviewed": 1,
+    "sources_included": 5
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "seftel-tadalafil-confidence-sear-2009",
+      "title": "Improvements in confidence, sexual relationship and satisfaction measures: results of a randomized trial of tadalafil 5 mg taken once daily.",
+      "decision": "include",
+      "reason": "Tadalafil-specific placebo-controlled ED trial with SEAR, self-esteem, relationship, confidence, and satisfaction endpoints.",
+      "source_id": "seftel-tadalafil-confidence-sear-2009",
+      "doi": "10.1038/ijir.2009.22",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19536128/"
+    },
+    {
+      "candidate_id": "porst-tadalafil-ed-psychosocial-2012",
+      "title": "Effects of once-daily tadalafil on treatment satisfaction, psychosocial outcomes, spontaneous erections, and measures of endothelial function in men with erectile dysfunction but naive to phosphodiesterase type 5 inhibitors.",
+      "decision": "include",
+      "reason": "Tadalafil-specific placebo-controlled ED trial with SEAR total score, treatment satisfaction, and adverse-event context.",
+      "source_id": "porst-tadalafil-ed-psychosocial-2012",
+      "doi": "10.2164/jandrol.111.015289",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22790642/"
+    },
+    {
+      "candidate_id": "choi-tadalafil-depression-ed-pilot-2019",
+      "title": "An open-label, single-arm pilot study to evaluate the efficacy of daily low dose tadalafil on depression in patients with erectile dysfunction.",
+      "decision": "include",
+      "reason": "Direct tadalafil depression-symptom endpoint, but low confidence because n=10 and no control group.",
+      "source_id": "choi-tadalafil-depression-ed-pilot-2019",
+      "doi": "10.21037/tau.2019.08.24",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31807426/"
+    },
+    {
+      "candidate_id": "brock-tadalafil-bph-no-ed-qol-2013",
+      "title": "Tadalafil once daily in the treatment of lower urinary tract symptoms suggestive of benign prostatic hyperplasia in men without erectile dysfunction.",
+      "decision": "include",
+      "reason": "Tadalafil-specific randomized-trial pooled analysis with non-ED subgroup and IPSS-QoL/BPH Impact Index outcomes, useful to separate non-sexual symptom-QOL from broad well-being.",
+      "source_id": "brock-tadalafil-bph-no-ed-qol-2013",
+      "doi": "10.1111/bju.12251",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23937669/"
+    },
+    {
+      "candidate_id": "olmestig-etlas2-main-2025",
+      "title": "Tadalafil Treatment in Patients With Cerebral Small Vessel Disease: The ETLAS-2 Randomized Clinical Trial.",
+      "decision": "include",
+      "reason": "Existing project source directly reports no mental well-being difference and higher adverse-event frequency in a placebo-controlled tadalafil trial outside ED/BPH.",
+      "source_id": "olmestig-etlas2-main-2025",
+      "doi": "10.1161/STROKEAHA.125.051602",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40718899/"
+    },
+    {
+      "candidate_id": "patel-post-prostatectomy-qol-2015",
+      "title": "Effects of tadalafil treatment after bilateral nerve-sparing radical prostatectomy: quality of life, psychosocial outcomes, and treatment satisfaction results from a randomized, placebo-controlled phase IV study.",
+      "decision": "maybe",
+      "reason": "Tadalafil-specific QoL/psychosocial RCT in a highly specific post-prostatectomy population; not staged because the first baseline already includes stronger ED, BPH-without-ED, depression-pilot, and CSVD boundary sources.",
+      "doi": "10.1186/s12894-015-0022-9",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25879460/"
+    },
+    {
+      "candidate_id": "hatzimouratidis-pde5-ed-psychosocial-2014",
+      "title": "Psychosocial outcomes after initial treatment of erectile dysfunction with tadalafil once daily, tadalafil on demand or sildenafil citrate on demand.",
+      "decision": "maybe",
+      "reason": "Useful active-comparator ED psychosocial source, but not staged in this tadalafil baseline because placebo-controlled tadalafil ED sources were more direct for causal inference.",
+      "doi": "10.1038/ijir.2014.15",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24784894/"
+    },
+    {
+      "candidate_id": "mccabe-ed-psychosocial-review-2014",
+      "title": "A systematic review of the psychosocial outcomes associated with erectile dysfunction.",
+      "decision": "exclude",
+      "reason": "Background on ED psychosocial burden rather than tadalafil/PDE5 treatment effect evidence.",
+      "doi": "10.1111/jsm.12374",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/24251371/"
+    },
+    {
+      "candidate_id": "taylor-antidepressant-sexual-dysfunction-review-2013",
+      "title": "Strategies for managing sexual dysfunction induced by antidepressant medication.",
+      "decision": "exclude",
+      "reason": "Relevant to antidepressant-induced sexual dysfunction management but not a tadalafil mood/well-being effect source for this baseline.",
+      "doi": "10.1002/14651858.CD003382.pub3",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23728643/"
+    }
+  ],
+  "source_ids": [
+    "seftel-tadalafil-confidence-sear-2009",
+    "porst-tadalafil-ed-psychosocial-2012",
+    "choi-tadalafil-depression-ed-pilot-2019",
+    "brock-tadalafil-bph-no-ed-qol-2013",
+    "olmestig-etlas2-main-2025"
+  ],
+  "screening_summary": "The targeted search found no direct tadalafil trial of mood, well-being, or broad quality of life in mostly healthy men age 30 to 50. Included sources were representative tadalafil-specific human evidence in ED, BPH/LUTS without ED, ED with depressive symptoms, and CSVD mental well-being, each staged with population and endpoint directness limits.",
+  "limitations": [
+    "Targeted baseline search rather than a full systematic review.",
+    "Full-text extraction was not completed for most abstract-indexed sources.",
+    "ED and BPH quality-of-life outcomes may be mediated by symptom relief rather than direct mood or well-being effects.",
+    "New non-tadalafil PDE5 evidence was not staged because the project-level PDE5 transfer framework already requires adjacent evidence to remain labeled."
+  ],
+  "population_band": [
+    "healthy_men_30_50",
+    "erectile_dysfunction_or_bph",
+    "older_adults"
+  ],
+  "study_design_class": [
+    "randomized_trial",
+    "case_control_or_case_series"
+  ],
+  "effect_domain": "mood_wellbeing",
+  "pde5_agent": [
+    "tadalafil"
+  ],
+  "agent_directness_to_tadalafil": "direct_tadalafil"
+}

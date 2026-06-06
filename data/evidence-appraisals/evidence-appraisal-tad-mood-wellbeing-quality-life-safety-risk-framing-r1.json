@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-mood-wellbeing-quality-life-safety-risk-framing-r1",
+  "name": "Safety Risk Framing appraisal for Tad Mood Wellbeing Quality Life bundle",
+  "candidate_bundle_id": "tad-mood-wellbeing-quality-life-baseline-2026-06-06",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "safety_risk_framing",
+  "appraiser_kind": "agent",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The mood/well-being claim incorporates the published safety baseline and does not present tadalafil as an off-label mood or well-being intervention. It carries ETLAS-2 adverse-event imbalance, notes limited adverse-event extraction from ED/BPH abstracts, and keeps current label contraindication and interaction boundaries near the interpretation.",
+  "appraised_change_ids": [
+    "create-tad-mood-search-protocol",
+    "create-seftel-tadalafil-confidence-source",
+    "create-porst-tadalafil-psychosocial-source",
+    "create-choi-tadalafil-depression-source",
+    "create-brock-tadalafil-bph-qol-source",
+    "create-seftel-tadalafil-confidence-artifact",
+    "create-porst-tadalafil-psychosocial-artifact",
+    "create-choi-tadalafil-depression-artifact",
+    "create-brock-tadalafil-bph-qol-artifact",
+    "create-etlas2-mental-wellbeing-artifact",
+    "create-seftel-tadalafil-confidence-finding",
+    "create-porst-tadalafil-psychosocial-finding",
+    "create-choi-tadalafil-depression-finding",
+    "create-brock-tadalafil-bph-qol-finding",
+    "create-etlas2-mental-wellbeing-finding",
+    "create-tad-mood-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "safety-baseline-linked",
+      "severity": "note",
+      "category": "safety_limitation",
+      "claim_or_issue": "The claim support map includes current CIALIS label safety findings from the published safety baseline.",
+      "why_it_matters": "Benefit-oriented off-label interpretations must keep contraindications, hypotension interactions, and adverse-event warnings visible.",
+      "recommended_action": "No correction required.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-tad-mood-baseline-claim"
+    },
+    {
+      "finding_id": "ed-bph-abstract-safety-limited",
+      "severity": "minor",
+      "category": "uncertainty",
+      "claim_or_issue": "The ED/BPH abstracts do not provide full adverse-event tables for this first mood baseline.",
+      "why_it_matters": "Mood/well-being synthesis should not imply safety clearance in healthy off-label users from abstract-level tolerability language.",
+      "recommended_action": "Keep safety caveats in public copy and rely on the dedicated safety baseline for contraindication and interaction boundaries.",
+      "resolution_status": "open",
+      "applies_to_change_id": "create-tad-mood-baseline-claim"
+    }
+  ],
+  "skill_name": "evidence-appraisal",
+  "created_at": "2026-06-06T12:37:38.677Z",
+  "updated_at": "2026-06-06T12:37:38.677Z"
+}

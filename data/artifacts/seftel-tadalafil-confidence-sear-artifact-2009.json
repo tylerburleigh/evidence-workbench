@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "seftel-tadalafil-confidence-sear-artifact-2009",
+  "name": "Seftel 2009 Tadalafil ED Psychosocial Outcomes Extract",
+  "artifact_type": "randomized_parallel_trial_extract",
+  "status": "complete",
+  "source_ids": [
+    "seftel-tadalafil-confidence-sear-2009"
+  ],
+  "taxonomy_node_ids": [
+    "tad-mood-wellbeing-quality-life"
+  ],
+  "population_or_context": "Men with erectile dysfunction after a 4-week run-in; not a healthy enhancement population.",
+  "sample_size": "342 randomized: tadalafil 5 mg once daily N=264; placebo N=78.",
+  "methods": "Randomized placebo-controlled 12-week tadalafil 5 mg once-daily ED efficacy study with sexual satisfaction and psychosocial outcomes.",
+  "endpoint_categories": [
+    "mood_wellbeing",
+    "quality_of_life",
+    "sexual_function"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Men with erectile dysfunction; indirect for mostly healthy men age 30 to 50 because the psychosocial endpoints were measured in an ED treatment context.",
+  "tadalafil_exposure": "Tadalafil 5 mg once daily for 12 weeks.",
+  "indication_context": "On-label erectile-dysfunction treatment context; used here only as indirect mood/well-being and quality-of-life evidence.",
+  "study_design": "Randomized placebo-controlled parallel trial with 12-week treatment after placebo run-in.",
+  "comparator_context": "Placebo.",
+  "endpoint_domain": "mood/well-being",
+  "safety_findings": "Abstract does not provide detailed adverse-event extraction; interpret alongside the published tadalafil safety baseline and current labeling.",
+  "directness_to_target_population": "Indirect: tadalafil-specific human evidence, but population had ED and outcomes were tightly tied to sexual function and relationship context.",
+  "confounding_and_bias_limits": "Psychosocial and satisfaction improvements correlated with erectile-function improvement, limiting inference about independent mood or well-being effects.",
+  "population_band": "erectile_dysfunction_or_bph",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "mood_wellbeing",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; no cross-agent transfer, but endpoint and population transfer to healthy mood/well-being claims is weak because benefits were measured in ED-related psychosocial instruments."
+}

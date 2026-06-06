@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "choi-tadalafil-depression-ed-pilot-artifact-2019",
+  "name": "Choi 2019 Tadalafil ED Depression Pilot Extract",
+  "artifact_type": "open_label_single_arm_study_extract",
+  "status": "complete",
+  "source_ids": [
+    "choi-tadalafil-depression-ed-pilot-2019"
+  ],
+  "taxonomy_node_ids": [
+    "tad-mood-wellbeing-quality-life"
+  ],
+  "population_or_context": "Ten men with at least 3 months of ED and PHQ-9 score at least 5.",
+  "sample_size": 10,
+  "methods": "Prospective open-label single-arm tadalafil 5 mg once-daily pilot study with PHQ-9, PHQ-15, and serum BDNF before/after 8 weeks.",
+  "endpoint_categories": [
+    "mood_wellbeing",
+    "depression",
+    "sexual_function",
+    "mechanism"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Men with ED and baseline depressive symptoms; indirect for healthy men age 30 to 50 without ED or depression.",
+  "tadalafil_exposure": "Tadalafil 5 mg once daily for 8 weeks.",
+  "indication_context": "ED treatment plus exploratory depression outcome; off-label as an antidepressant interpretation.",
+  "study_design": "Open-label single-arm pilot study without placebo or active comparator.",
+  "comparator_context": "Within-person baseline comparison only; no placebo control.",
+  "endpoint_domain": "mood/well-being",
+  "safety_findings": "Abstract does not report detailed adverse-event extraction; safety must be interpreted through the published tadalafil safety baseline.",
+  "directness_to_target_population": "Very indirect: small ED/depression clinical sample, no healthy participants, no control group.",
+  "confounding_and_bias_limits": "No comparator, n=10, regression to the mean and sexual-function-mediated mood changes cannot be separated.",
+  "population_band": "erectile_dysfunction_or_bph",
+  "study_design_class": "case_control_or_case_series",
+  "effect_domain": "mood_wellbeing",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil exposure; no cross-agent transfer, but causal transfer to mood benefit is weak because the study was uncontrolled and ED-specific."
+}

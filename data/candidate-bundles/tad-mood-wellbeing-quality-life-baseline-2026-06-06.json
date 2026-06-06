@@ -1,0 +1,262 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "tad-mood-wellbeing-quality-life-baseline-2026-06-06",
+  "name": "Tadalafil Mood, Well-Being, And Quality Of Life Baseline Review",
+  "summary": "Stages the first baseline for tadalafil mood, well-being, and quality of life: a targeted search protocol, four new sources, five artifacts, five findings, and one bounded insufficient-direct-evidence claim.",
+  "intake_mode": "baseline_review",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-06T12:25:30Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "tadalafil-off-label",
+    "taxonomy_node_ids": [
+      "tad-mood-wellbeing-quality-life"
+    ],
+    "research_question": "What is the current evidence landscape for tadalafil and mood, well-being, depression symptoms, vitality, sleep-adjacent outcomes, or quality of life in mostly healthy men age 30 to 50?"
+  },
+  "source_ids": [
+    "seftel-tadalafil-confidence-sear-2009",
+    "porst-tadalafil-ed-psychosocial-2012",
+    "choi-tadalafil-depression-ed-pilot-2019",
+    "brock-tadalafil-bph-no-ed-qol-2013",
+    "olmestig-etlas2-main-2025",
+    "dailymed-cialis-label-2026-03"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/19536128/",
+    "https://pubmed.ncbi.nlm.nih.gov/22790642/",
+    "https://pubmed.ncbi.nlm.nih.gov/31807426/",
+    "https://pubmed.ncbi.nlm.nih.gov/23937669/",
+    "https://pubmed.ncbi.nlm.nih.gov/40718899/",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcd8f8ab-81a2-4891-83db-24a0b0e25895"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "tad-safety-interactions-baseline-claim",
+      "relationship": "required_safety_context"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "pde5-class-transfer-framework-baseline-claim",
+      "relationship": "agent_directness_framework"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "tad-cognition-healthy-adults-baseline-claim",
+      "relationship": "shares_etlas2_population_directness_boundary"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-tad-mood-search-protocol",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "tad-mood-wellbeing-search-2026-06-06",
+      "file_path": "data/search-protocols/tad-mood-wellbeing-search-2026-06-06.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/tad-mood-wellbeing-search-2026-06-06.json",
+      "summary": "Stage targeted search and screening protocol for mood/well-being baseline.",
+      "rationale": "The baseline claim depends on making the absence of direct healthy-user evidence and the ED/BPH/CSVD screening boundaries transparent."
+    },
+    {
+      "change_id": "create-seftel-tadalafil-confidence-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "seftel-tadalafil-confidence-sear-2009",
+      "file_path": "data/sources/seftel-tadalafil-confidence-sear-2009.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/seftel-tadalafil-confidence-sear-2009.json",
+      "summary": "Add Seftel 2009 tadalafil ED psychosocial RCT source.",
+      "rationale": "This is a representative tadalafil-specific placebo-controlled source for SEAR confidence, self-esteem, relationship, and satisfaction outcomes."
+    },
+    {
+      "change_id": "create-porst-tadalafil-psychosocial-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "porst-tadalafil-ed-psychosocial-2012",
+      "file_path": "data/sources/porst-tadalafil-ed-psychosocial-2012.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/porst-tadalafil-ed-psychosocial-2012.json",
+      "summary": "Add Porst 2012 tadalafil ED psychosocial RCT source.",
+      "rationale": "This placebo-controlled trial gives a quantified SEAR total-score psychosocial signal and adverse-event context."
+    },
+    {
+      "change_id": "create-choi-tadalafil-depression-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "choi-tadalafil-depression-ed-pilot-2019",
+      "file_path": "data/sources/choi-tadalafil-depression-ed-pilot-2019.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/choi-tadalafil-depression-ed-pilot-2019.json",
+      "summary": "Add Choi 2019 tadalafil ED depression pilot source.",
+      "rationale": "This is the most direct staged tadalafil depression-symptom source, but it must be bounded as uncontrolled and very small."
+    },
+    {
+      "change_id": "create-brock-tadalafil-bph-qol-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "brock-tadalafil-bph-no-ed-qol-2013",
+      "file_path": "data/sources/brock-tadalafil-bph-no-ed-qol-2013.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/brock-tadalafil-bph-no-ed-qol-2013.json",
+      "summary": "Add Brock 2013 tadalafil BPH/LUTS without-ED quality-of-life source.",
+      "rationale": "This source separates non-sexual symptom-specific quality-of-life evidence from ED-mediated psychosocial outcomes."
+    },
+    {
+      "change_id": "create-seftel-tadalafil-confidence-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "seftel-tadalafil-confidence-sear-artifact-2009",
+      "file_path": "data/artifacts/seftel-tadalafil-confidence-sear-artifact-2009.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/seftel-tadalafil-confidence-sear-artifact-2009.json",
+      "summary": "Add structured Seftel 2009 psychosocial trial artifact.",
+      "rationale": "Population, exposure, endpoint, and sexual-function mediation must be explicit before the source can support a mood/well-being claim."
+    },
+    {
+      "change_id": "create-porst-tadalafil-psychosocial-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "porst-tadalafil-ed-psychosocial-artifact-2012",
+      "file_path": "data/artifacts/porst-tadalafil-ed-psychosocial-artifact-2012.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/porst-tadalafil-ed-psychosocial-artifact-2012.json",
+      "summary": "Add structured Porst 2012 psychosocial trial artifact.",
+      "rationale": "This record captures the quantified SEAR signal and directness limits."
+    },
+    {
+      "change_id": "create-choi-tadalafil-depression-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "choi-tadalafil-depression-ed-pilot-artifact-2019",
+      "file_path": "data/artifacts/choi-tadalafil-depression-ed-pilot-artifact-2019.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/choi-tadalafil-depression-ed-pilot-artifact-2019.json",
+      "summary": "Add structured Choi 2019 depression pilot artifact.",
+      "rationale": "The depression endpoint is relevant but needs explicit uncontrolled-design and small-sample limits."
+    },
+    {
+      "change_id": "create-brock-tadalafil-bph-qol-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "brock-tadalafil-bph-no-ed-qol-artifact-2013",
+      "file_path": "data/artifacts/brock-tadalafil-bph-no-ed-qol-artifact-2013.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/brock-tadalafil-bph-no-ed-qol-artifact-2013.json",
+      "summary": "Add structured Brock 2013 BPH/LUTS quality-of-life artifact.",
+      "rationale": "The baseline needs to distinguish urinary symptom-specific QOL from broad well-being."
+    },
+    {
+      "change_id": "create-etlas2-mental-wellbeing-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "olmestig-etlas2-mental-wellbeing-artifact-2025",
+      "file_path": "data/artifacts/olmestig-etlas2-mental-wellbeing-artifact-2025.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/olmestig-etlas2-mental-wellbeing-artifact-2025.json",
+      "summary": "Add structured ETLAS-2 mental well-being artifact.",
+      "rationale": "ETLAS-2 provides a direct tadalafil non-ED/BPH boundary for mental well-being and tolerability."
+    },
+    {
+      "change_id": "create-seftel-tadalafil-confidence-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "seftel-tadalafil-sear-confidence-finding-2009",
+      "file_path": "data/findings/seftel-tadalafil-sear-confidence-finding-2009.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/seftel-tadalafil-sear-confidence-finding-2009.json",
+      "summary": "Add finding that tadalafil improved ED-linked SEAR and satisfaction measures.",
+      "rationale": "This finding supports a positive but symptom-mediated ED psychosocial signal."
+    },
+    {
+      "change_id": "create-porst-tadalafil-psychosocial-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "porst-tadalafil-ed-sear-psychosocial-finding-2012",
+      "file_path": "data/findings/porst-tadalafil-ed-sear-psychosocial-finding-2012.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/porst-tadalafil-ed-sear-psychosocial-finding-2012.json",
+      "summary": "Add finding that tadalafil improved SEAR total score in ED patients.",
+      "rationale": "This quantified psychosocial finding anchors the ED-linked benefit boundary."
+    },
+    {
+      "change_id": "create-choi-tadalafil-depression-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "choi-tadalafil-ed-depression-pilot-finding-2019",
+      "file_path": "data/findings/choi-tadalafil-ed-depression-pilot-finding-2019.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/choi-tadalafil-ed-depression-pilot-finding-2019.json",
+      "summary": "Add finding that a small uncontrolled ED pilot reported PHQ-9 improvement.",
+      "rationale": "This keeps the depression signal visible while preventing causal overstatement."
+    },
+    {
+      "change_id": "create-brock-tadalafil-bph-qol-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "brock-tadalafil-bph-no-ed-qol-finding-2013",
+      "file_path": "data/findings/brock-tadalafil-bph-no-ed-qol-finding-2013.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/brock-tadalafil-bph-no-ed-qol-finding-2013.json",
+      "summary": "Add finding that tadalafil improved BPH/LUTS symptom-specific QOL in men without ED.",
+      "rationale": "This finding helps separate urinary symptom-specific quality of life from sexual-function-mediated outcomes."
+    },
+    {
+      "change_id": "create-etlas2-mental-wellbeing-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "olmestig-etlas2-mental-wellbeing-null-finding-2025",
+      "file_path": "data/findings/olmestig-etlas2-mental-wellbeing-null-finding-2025.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/olmestig-etlas2-mental-wellbeing-null-finding-2025.json",
+      "summary": "Add finding that ETLAS-2 reported no mental well-being difference and more adverse events.",
+      "rationale": "This counterbalances ED/BPH quality-of-life signals with a non-ED/BPH tadalafil mental well-being boundary."
+    },
+    {
+      "change_id": "create-tad-mood-baseline-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "tad-mood-wellbeing-quality-life-baseline-claim",
+      "file_path": "data/claims/tad-mood-wellbeing-quality-life-baseline-claim.json",
+      "staged_file_path": "data/staged-records/tad-mood-wellbeing-quality-life-baseline-2026-06-06/tad-mood-wellbeing-quality-life-baseline-claim.json",
+      "summary": "Add bounded baseline claim for tadalafil mood, well-being, and quality of life.",
+      "rationale": "The first public baseline should emphasize insufficient direct healthy-user evidence while preserving symptom-mediated ED/BPH signals and safety boundaries."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "tad-mood-wellbeing-quality-life",
+      "note": "Creates the first submitted baseline claim for tadalafil mood, well-being, and quality of life."
+    }
+  ],
+  "required_appraisal_lanes": [
+    "source_fidelity",
+    "population_directness",
+    "exposure_directness",
+    "endpoint_validity",
+    "safety_risk_framing",
+    "synthesis_overreach"
+  ],
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-tad-mood-wellbeing-quality-life-source-fidelity-r1",
+    "evidence-appraisal-tad-mood-wellbeing-quality-life-population-directness-r1",
+    "evidence-appraisal-tad-mood-wellbeing-quality-life-exposure-directness-r1",
+    "evidence-appraisal-tad-mood-wellbeing-quality-life-endpoint-validity-r1",
+    "evidence-appraisal-tad-mood-wellbeing-quality-life-safety-risk-framing-r1",
+    "evidence-appraisal-tad-mood-wellbeing-quality-life-synthesis-overreach-r1"
+  ],
+  "editorial_comment_ids": [],
+  "publication_event_ids": [
+    "publish-tad-mood-wellbeing-quality-life-baseline-2026-06-06-2026-06-06t12-37-59-580z"
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces.",
+    "endpoint_validity: No correction required.",
+    "exposure_directness: No correction required.",
+    "exposure_directness: No correction required; keep exposure qualifiers attached to future mood/well-being synthesis.",
+    "population_directness: No correction required; preserve this directness language in public copy.",
+    "population_directness: No correction required.",
+    "safety_risk_framing: No correction required.",
+    "safety_risk_framing: Keep safety caveats in public copy and rely on the dedicated safety baseline for contraindication and interaction boundaries.",
+    "source_fidelity: No correction required.",
+    "source_fidelity: Keep the Seftel full-text follow-up open and retrieve full reports before quantitative synthesis or detailed subdomain comparison.",
+    "synthesis_overreach: No correction required.",
+    "synthesis_overreach: No correction required; preserve this boundary in public summaries."
+  ]
+}

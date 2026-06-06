@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "porst-tadalafil-ed-psychosocial-2012",
+  "name": "Effects of once-daily tadalafil on treatment satisfaction, psychosocial outcomes, spontaneous erections, and measures of endothelial function in men with erectile dysfunction but naive to phosphodiesterase type 5 inhibitors.",
+  "source_type": "randomized_trial",
+  "authors": [
+    "Porst H",
+    "Brock GB",
+    "Kula K",
+    "Moncada I",
+    "Montorsi F",
+    "Basson BR",
+    "Kinchen K",
+    "Aversa A"
+  ],
+  "venue": "Journal of Andrology",
+  "year": 2012,
+  "published_on": "2012-07-12",
+  "doi": "10.2164/jandrol.111.015289",
+  "pmid": "22790642",
+  "registry_ids": [
+    "NCT00836693"
+  ],
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/22790642/",
+    "https://clinicaltrials.gov/study/NCT00836693"
+  ],
+  "summary": "Randomized placebo-controlled 12-week once-daily tadalafil trial in PDE5-inhibitor-naive men with erectile dysfunction, reporting treatment satisfaction, SEAR psychosocial outcomes, spontaneous erections, endothelial measures, and adverse events.",
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T12:18:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22790642/",
+      "result": "PubMed abstract and metadata accessed.",
+      "notes": "Extraction uses PubMed abstract-level results."
+    }
+  ]
+}

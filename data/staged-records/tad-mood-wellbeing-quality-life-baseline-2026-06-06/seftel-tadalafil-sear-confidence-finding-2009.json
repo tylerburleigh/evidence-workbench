@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "seftel-tadalafil-sear-confidence-finding-2009",
+  "name": "Tadalafil improved ED-linked satisfaction and SEAR psychosocial measures in Seftel 2009",
+  "source_id": "seftel-tadalafil-confidence-sear-2009",
+  "artifact_id": "seftel-tadalafil-confidence-sear-artifact-2009",
+  "taxonomy_node_ids": [
+    "tad-mood-wellbeing-quality-life"
+  ],
+  "endpoint_category": "mood_wellbeing",
+  "direction": "improvement_in_ed_linked_psychosocial_measures",
+  "evidence_tier": "randomized_trial",
+  "confidence": "moderate",
+  "statement": "In men with ED, tadalafil 5 mg once daily improved treatment and sexual satisfaction and SEAR domains including sexual relationship, confidence, self-esteem, and overall relationship versus placebo, but the abstract reports these improvements correlated with erectile-function improvement.",
+  "population_or_context": "Men with erectile dysfunction; indirect for healthy men age 30 to 50.",
+  "time_horizon": "12 weeks.",
+  "quantitative_note": "Treatment satisfaction domain scores were 75 and 73 for tadalafil-treated participants and partners versus 51 and 55 for placebo, P<0.001; SEAR and satisfaction outcomes improved versus placebo, P<0.001.",
+  "source_locator": {
+    "section": "Article abstract",
+    "url": "https://www.nature.com/articles/ijir200922",
+    "quote_or_paraphrase_note": "Abstract reports SEAR and satisfaction improvements and correlation with IIEF-EF score change.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Population had ED rather than being healthy enhancement users.",
+    "Psychosocial improvements appear tied to improved erectile function.",
+    "Full-text extraction was not completed for this first baseline."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Men with erectile dysfunction; no direct evidence for healthy men age 30 to 50.",
+  "tadalafil_exposure": "Tadalafil 5 mg once daily for 12 weeks.",
+  "indication_context": "On-label ED treatment; indirect off-label mood/well-being evidence.",
+  "comparator_context": "Placebo.",
+  "endpoint_domain": "mood/well-being",
+  "endpoint_measure": "Treatment satisfaction domain of Sexual Life Quality Questionnaire; Self-Esteem And Relationship questionnaire; IIEF satisfaction domains; sexual encounter profile satisfaction questions.",
+  "effect_estimate": "Tadalafil improved treatment/sexual satisfaction and SEAR outcomes versus placebo, with P<0.001 for reported comparisons.",
+  "safety_findings": "Abstract does not provide detailed adverse-event extraction; safety caveats must come from the published safety baseline.",
+  "directness_to_target_population": "Low directness because the effects were measured in ED patients and were linked to erectile-function improvement.",
+  "confounding_and_bias_limits": "Sexual-function improvement is a likely mediator and prevents interpreting this as a direct mood or general well-being effect.",
+  "population_band": "erectile_dysfunction_or_bph",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "mood_wellbeing",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; no PDE5 class transfer needed, but endpoint transfer is limited to ED-linked psychosocial outcomes."
+}

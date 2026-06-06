@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "olmestig-etlas2-mental-wellbeing-null-finding-2025",
+  "name": "ETLAS-2 observed no mental well-being difference with daily tadalafil in CSVD",
+  "source_id": "olmestig-etlas2-main-2025",
+  "artifact_id": "olmestig-etlas2-mental-wellbeing-artifact-2025",
+  "taxonomy_node_ids": [
+    "tad-mood-wellbeing-quality-life"
+  ],
+  "endpoint_category": "mood_wellbeing",
+  "direction": "no_mental_wellbeing_difference_with_safety_signal",
+  "evidence_tier": "randomized_phase_2_trial",
+  "confidence": "moderate",
+  "statement": "In older CSVD patients, ETLAS-2 reported no difference in mental well-being after 3 months of tadalafil 20 mg daily versus placebo, while adverse events were more frequent and adherence was lower with tadalafil.",
+  "population_or_context": "Older CSVD patients with prior stroke or transient ischemic attack.",
+  "time_horizon": "3 months.",
+  "quantitative_note": "Abstract states no differences were observed in cognition, mental well-being, or blood pressure; adverse events occurred in 76% with tadalafil versus 36% with placebo.",
+  "source_locator": {
+    "section": "PubMed Abstract Results",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40718899/",
+    "quote_or_paraphrase_note": "Abstract reports no mental well-being difference and adverse-event imbalance.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Older CSVD/post-stroke population.",
+    "Mental well-being was a secondary outcome.",
+    "Tadalafil dose was 20 mg daily, higher than common low-dose daily ED/BPH regimens."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "CSVD patients with previous stroke or transient ischemic attack; mean age about 68.",
+  "tadalafil_exposure": "Tadalafil 20 mg daily for 3 months.",
+  "indication_context": "Experimental off-label CSVD trial.",
+  "comparator_context": "Placebo.",
+  "endpoint_domain": "mood/well-being",
+  "endpoint_measure": "Mental well-being, reported in the source as assessed alongside depression, fatigue, and WHO-5 well-being measures.",
+  "effect_estimate": "No mental well-being difference observed; adverse events 76% tadalafil versus 36% placebo.",
+  "safety_findings": "Higher adverse-event frequency and lower adherence with tadalafil.",
+  "directness_to_target_population": "Low directness because participants were older CSVD patients, not mostly healthy men age 30 to 50.",
+  "confounding_and_bias_limits": "Secondary outcome in a feasibility-primary phase II trial; disease population and high daily dose limit transfer.",
+  "population_band": "older_adults",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "mood_wellbeing",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; population, dose, and disease-context limits prevent broad transfer to healthy well-being."
+}

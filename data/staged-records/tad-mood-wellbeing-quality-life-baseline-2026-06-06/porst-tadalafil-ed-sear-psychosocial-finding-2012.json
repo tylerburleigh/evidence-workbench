@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "porst-tadalafil-ed-sear-psychosocial-finding-2012",
+  "name": "Tadalafil improved SEAR psychosocial score in PDE5-naive ED patients in Porst 2012",
+  "source_id": "porst-tadalafil-ed-psychosocial-2012",
+  "artifact_id": "porst-tadalafil-ed-psychosocial-artifact-2012",
+  "taxonomy_node_ids": [
+    "tad-mood-wellbeing-quality-life"
+  ],
+  "endpoint_category": "mood_wellbeing",
+  "direction": "improvement_in_ed_linked_psychosocial_measures",
+  "evidence_tier": "randomized_trial",
+  "confidence": "moderate",
+  "statement": "In PDE5-inhibitor-naive men with ED, once-daily tadalafil improved ED treatment satisfaction and SEAR psychosocial outcomes versus placebo, while endothelial measures and nocturnal erections did not differ between groups.",
+  "population_or_context": "Men with erectile dysfunction, mean age 52 years.",
+  "time_horizon": "12 weeks.",
+  "quantitative_note": "Least-squares mean difference in SEAR total score change from baseline was 11.8 points (95% CI 5.4 to 18.2; P<0.001) versus placebo.",
+  "source_locator": {
+    "section": "PubMed Abstract Results",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22790642/",
+    "quote_or_paraphrase_note": "Abstract reports SEAR total score effect estimate and treatment satisfaction improvement.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "ED treatment population rather than healthy users.",
+    "Mean age was older than the primary 30-50 target range.",
+    "Psychosocial effects were measured in ED-specific instruments."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "PDE5-inhibitor-naive men with ED; indirect for mostly healthy men age 30 to 50.",
+  "tadalafil_exposure": "Tadalafil 5 mg once daily, with possible down-titration to 2.5 mg, for 12 weeks.",
+  "indication_context": "On-label ED treatment; indirect for off-label well-being claims.",
+  "comparator_context": "Placebo.",
+  "endpoint_domain": "mood/well-being",
+  "endpoint_measure": "SEAR total score and Erectile Dysfunction Inventory of Treatment Satisfaction.",
+  "effect_estimate": "SEAR total score least-squares mean difference 11.8 points versus placebo, 95% CI 5.4 to 18.2; P<0.001.",
+  "safety_findings": "Tadalafil was described as well tolerated; adverse events included back pain, headache, and dyspepsia.",
+  "directness_to_target_population": "Low-to-moderate for tadalafil exposure but low for the healthy target population because participants had ED.",
+  "confounding_and_bias_limits": "ED-specific instruments and improved erections make it difficult to isolate a direct effect on mood or general well-being.",
+  "population_band": "erectile_dysfunction_or_bph",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "mood_wellbeing",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; transfer limit is ED-linked endpoint specificity rather than agent identity."
+}
