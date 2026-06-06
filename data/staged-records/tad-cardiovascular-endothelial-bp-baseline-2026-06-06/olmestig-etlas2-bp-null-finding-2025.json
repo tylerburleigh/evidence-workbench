@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "olmestig-etlas2-bp-null-finding-2025",
+  "name": "ETLAS-2 found no blood-pressure difference with tadalafil in CSVD and more adverse events",
+  "source_id": "olmestig-etlas2-main-2025",
+  "artifact_id": "olmestig-etlas2-bp-artifact-2025",
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp",
+    "tad-cognition-healthy-adults"
+  ],
+  "endpoint_category": "cardiovascular",
+  "direction": "no_blood_pressure_difference_with_tolerability_signal",
+  "evidence_tier": "randomized_trial",
+  "confidence": "moderate_for_csvd_low_for_healthy_users",
+  "statement": "In older CSVD patients treated with tadalafil 20 mg daily for 3 months, ETLAS-2 reported no blood-pressure difference versus placebo, lower adherence, and more adverse events with tadalafil.",
+  "population_or_context": "Patients with cerebral small vessel disease and previous stroke or transient ischemic attack; mean age 68.",
+  "time_horizon": "3 months.",
+  "quantitative_note": "Adverse events occurred in 76% with tadalafil versus 36% with placebo; the abstract states no differences were observed in blood pressure.",
+  "source_locator": {
+    "section": "PubMed Abstract Results",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/40718899/",
+    "quote_or_paraphrase_note": "Abstract reports no blood-pressure difference, lower adherence, and higher adverse-event frequency.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Older cerebrovascular disease population.",
+    "Feasibility phase II design.",
+    "20 mg daily dose is higher than common 5 mg daily ED/BPH regimen."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Older CSVD patients with prior stroke/TIA; low directness for healthy men age 30 to 50.",
+  "tadalafil_exposure": "Tadalafil 20 mg daily for 3 months.",
+  "indication_context": "Experimental CSVD trial.",
+  "comparator_context": "Placebo.",
+  "endpoint_domain": "cardiovascular",
+  "endpoint_measure": "Blood pressure, adherence, and adverse events.",
+  "effect_estimate": "No blood-pressure difference reported in abstract; adverse events 76% with tadalafil versus 36% with placebo.",
+  "safety_findings": "Higher adverse-event frequency and lower adherence with tadalafil.",
+  "directness_to_target_population": "Low for healthy men age 30 to 50 due to age, CSVD, prior stroke/TIA, and dose.",
+  "confounding_and_bias_limits": "Feasibility trial, secondary BP endpoint, older disease population, and adherence imbalance.",
+  "population_band": "older_adults",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; transfer limit is CSVD population and high daily dose."
+}

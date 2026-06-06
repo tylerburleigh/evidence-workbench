@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "galie-tadalafil-pah-phirst-artifact-2009",
+  "name": "Galie 2009 PHIRST Tadalafil Pulmonary Arterial Hypertension Extract",
+  "artifact_type": "randomized_parallel_trial_extract",
+  "status": "complete",
+  "source_ids": [
+    "galie-tadalafil-pah-phirst-2009"
+  ],
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp",
+    "tad-exercise-physical-function"
+  ],
+  "population_or_context": "Patients with idiopathic or associated pulmonary arterial hypertension, treatment-naive or on background bosentan.",
+  "sample_size": "405 randomized to placebo or tadalafil 2.5, 10, 20, or 40 mg once daily.",
+  "methods": "Sixteen-week double-blind placebo-controlled dose-ranging PHIRST trial assessing 6-minute walk distance, WHO functional class, clinical worsening, health-related quality of life, and adverse events.",
+  "endpoint_categories": [
+    "cardiovascular",
+    "pulmonary_vascular",
+    "exercise_capacity",
+    "quality_of_life",
+    "safety"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Patients with pulmonary arterial hypertension; not healthy men age 30 to 50.",
+  "tadalafil_exposure": "Tadalafil 2.5, 10, 20, or 40 mg once daily for 16 weeks; 40 mg dose met the prespecified statistical threshold.",
+  "indication_context": "Pulmonary arterial hypertension disease-treatment evidence; now an approved tadalafil indication, not healthy off-label prevention.",
+  "study_design": "Multicenter randomized double-blind placebo-controlled dose-ranging trial.",
+  "comparator_context": "Placebo.",
+  "endpoint_domain": "cardiovascular",
+  "safety_findings": "Most common treatment-related adverse events with tadalafil were headache, myalgia, and flushing in the abstract.",
+  "directness_to_target_population": "Low for healthy men age 30 to 50; high only for PAH-specific pulmonary vascular disease context.",
+  "confounding_and_bias_limits": "Disease-specific pulmonary vascular endpoint, high 40 mg daily dose, some background bosentan use, and limited transfer to systemic vascular prevention.",
+  "population_band": "pulmonary_hypertension",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence, but indication and dose make transfer to healthy systemic cardiovascular health inappropriate without separate evidence."
+}

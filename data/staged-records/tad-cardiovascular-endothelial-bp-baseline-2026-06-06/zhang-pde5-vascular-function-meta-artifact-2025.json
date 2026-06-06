@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "zhang-pde5-vascular-function-meta-artifact-2025",
+  "name": "Zhang 2025 PDE5 Inhibitor Vascular Function Meta-Analysis Extract",
+  "artifact_type": "systematic_review_meta_analysis_extract",
+  "status": "complete",
+  "source_ids": [
+    "zhang-pde5-vascular-function-meta-2025"
+  ],
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp",
+    "tad-pde5-class-transfer-agent-directness"
+  ],
+  "population_or_context": "Randomized controlled trials of PDE5 inhibitors versus placebo across mixed populations and vascular endpoints.",
+  "sample_size": "63 studies involving 3242 subjects.",
+  "methods": "Systematic review and meta-analysis of RCTs published from 1998 to 2022, pooling mean differences for blood pressure, carotid intima-media thickness, pulse wave velocity, flow-mediated dilation, peak systolic velocity, endothelial progenitor cells, endothelial microparticles, augmentation index, brachial artery diameter, and reactive hyperemia index.",
+  "endpoint_categories": [
+    "cardiovascular",
+    "blood_pressure",
+    "endothelial_function",
+    "arterial_stiffness"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Mixed RCT populations and PDE5 agents; not specific to healthy men age 30 to 50 or tadalafil-only exposure.",
+  "tadalafil_exposure": "Mixed PDE5 inhibitors including tadalafil and non-tadalafil agents; tadalafil-specific subgroup details were not extracted in this baseline.",
+  "indication_context": "Class-level vascular-function evidence used as adjacent evidence for tadalafil hypotheses.",
+  "study_design": "Systematic review and meta-analysis of randomized placebo-controlled trials.",
+  "comparator_context": "Placebo.",
+  "endpoint_domain": "cardiovascular",
+  "safety_findings": "Abstract focuses on vascular efficacy parameters, not detailed adverse events; safety must be interpreted from tadalafil-specific safety baseline.",
+  "directness_to_target_population": "Low to moderate: RCT evidence on vascular endpoints, but mixed agents, mixed populations, and surrogate outcomes limit direct transfer.",
+  "confounding_and_bias_limits": "Class-level pooling, heterogeneity across drugs, doses, indications and endpoints, surrogate outcomes, and no proof of cardiovascular event prevention.",
+  "population_band": "cardiovascular_or_metabolic_condition",
+  "study_design_class": "review_or_meta_analysis",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "mixed_pde5_inhibitors",
+  "agent_directness_to_tadalafil": "pde5_class_level",
+  "class_transfer_limits": "Class evidence supports PDE5 vascular plausibility but cannot erase tadalafil-specific dose, half-life, safety, indication, population, and endpoint limits."
+}

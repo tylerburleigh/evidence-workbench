@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "porst-tadalafil-ed-endothelial-artifact-2012",
+  "name": "Porst 2012 Tadalafil ED Endothelial Measures Extract",
+  "artifact_type": "randomized_parallel_trial_extract",
+  "status": "complete",
+  "source_ids": [
+    "porst-tadalafil-ed-psychosocial-2012"
+  ],
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp"
+  ],
+  "population_or_context": "PDE5-inhibitor-naive men with erectile dysfunction; mean age 52 years.",
+  "sample_size": "215 randomized: tadalafil once daily N=146; placebo N=69.",
+  "methods": "Randomized placebo-controlled 12-week trial of tadalafil 5 mg once daily, with possible down-titration to 2.5 mg; endothelial endpoints included biomarkers and peripheral arterial tonometric measures.",
+  "endpoint_categories": [
+    "cardiovascular",
+    "endothelial_function",
+    "safety"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Men with ED, mean age 52; indirect for mostly healthy men age 30 to 50.",
+  "tadalafil_exposure": "Tadalafil 5 mg once daily with possible down-titration to 2.5 mg for 12 weeks.",
+  "indication_context": "On-label erectile-dysfunction treatment context with exploratory endothelial measures.",
+  "study_design": "Randomized placebo-controlled parallel trial in PDE5-inhibitor-naive ED patients.",
+  "comparator_context": "Placebo.",
+  "endpoint_domain": "cardiovascular",
+  "safety_findings": "Abstract reports tadalafil was well tolerated and lists back pain, headache, and dyspepsia as adverse events.",
+  "directness_to_target_population": "Low-to-moderate for tadalafil exposure and common daily dose, low for healthy target population because participants had ED.",
+  "confounding_and_bias_limits": "ED population, exploratory endothelial measures, abstract-level extraction, and no clinical cardiovascular outcomes.",
+  "population_band": "erectile_dysfunction_or_bph",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; transfer limit is ED population, dose-duration context, and surrogate endpoint specificity."
+}

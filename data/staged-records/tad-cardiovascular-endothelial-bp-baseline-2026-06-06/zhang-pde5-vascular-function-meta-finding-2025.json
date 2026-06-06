@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "zhang-pde5-vascular-function-meta-finding-2025",
+  "name": "PDE5 inhibitor RCT meta-analysis found modest vascular surrogate improvements versus placebo",
+  "source_id": "zhang-pde5-vascular-function-meta-2025",
+  "artifact_id": "zhang-pde5-vascular-function-meta-artifact-2025",
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp",
+    "tad-pde5-class-transfer-agent-directness"
+  ],
+  "endpoint_category": "cardiovascular",
+  "direction": "class_level_surrogate_vascular_improvement",
+  "evidence_tier": "systematic_review_meta_analysis",
+  "confidence": "moderate_for_class_surrogates_low_for_tadalafil_healthy_use",
+  "statement": "A 2025 systematic review/meta-analysis of randomized trials found that PDE5 inhibitors as a class improved several vascular surrogate parameters versus placebo, including modest blood-pressure reductions and higher flow-mediated dilation, but it does not establish tadalafil-specific cardiovascular event prevention in healthy users.",
+  "population_or_context": "Mixed PDE5 inhibitor RCT populations and vascular endpoints.",
+  "time_horizon": "RCTs published from 1998 to 2022.",
+  "quantitative_note": "Pooled estimates included SBP MD -2.80 mm Hg (95% CI -4.24 to -1.37), DBP MD -1.80 mm Hg (95% CI -2.37 to -1.22), PWV MD -0.75 cm/s (95% CI -1.01 to -0.49), FMD MD +2.47% (95% CI 1.24 to 3.71), and PSV MD +3.70 cm/s (95% CI 3.52 to 3.88).",
+  "source_locator": {
+    "section": "PubMed Abstract Results",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/41469737/",
+    "quote_or_paraphrase_note": "Abstract reports included study count and pooled mean differences for vascular parameters.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Class-level evidence, not tadalafil-specific extraction.",
+    "Mixed populations, agents, doses, and endpoints.",
+    "Surrogate vascular markers do not prove lower MI, stroke, mortality, or longevity benefit."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Mixed RCT populations; not direct for mostly healthy men age 30 to 50.",
+  "tadalafil_exposure": "Mixed PDE5 inhibitors including tadalafil and non-tadalafil agents; tadalafil-specific subgroup not extracted here.",
+  "indication_context": "Class-level vascular-function synthesis used as adjacent evidence.",
+  "comparator_context": "Placebo.",
+  "endpoint_domain": "cardiovascular",
+  "endpoint_measure": "Blood pressure, carotid intima-media thickness, pulse wave velocity, peak systolic velocity, flow-mediated dilation, endothelial progenitor cells, endothelial microparticles, augmentation index, brachial artery diameter, and reactive hyperemia index.",
+  "effect_estimate": "PDE5 inhibitors improved several pooled surrogate vascular parameters, with modest SBP/DBP reductions and FMD increase.",
+  "safety_findings": "Abstract does not synthesize tadalafil-specific safety; apply existing tadalafil safety and interaction baseline before using class efficacy signals.",
+  "directness_to_target_population": "Low to moderate for broad PDE5 vascular surrogate plausibility; low for tadalafil-specific healthy-user clinical benefit.",
+  "confounding_and_bias_limits": "Class pooling, heterogeneity, surrogate endpoints, possible publication/reporting bias, and no direct event-prevention conclusion.",
+  "population_band": "cardiovascular_or_metabolic_condition",
+  "study_design_class": "review_or_meta_analysis",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "mixed_pde5_inhibitors",
+  "agent_directness_to_tadalafil": "pde5_class_level",
+  "class_transfer_limits": "Supports PDE5 vascular plausibility only; tadalafil-specific conclusions still require tadalafil-specific dose, population, endpoint, and safety evidence."
+}

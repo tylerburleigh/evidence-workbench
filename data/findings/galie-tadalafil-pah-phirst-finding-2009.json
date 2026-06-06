@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "galie-tadalafil-pah-phirst-finding-2009",
+  "name": "Tadalafil 40 mg improved exercise capacity and clinical worsening in PAH PHIRST",
+  "source_id": "galie-tadalafil-pah-phirst-2009",
+  "artifact_id": "galie-tadalafil-pah-phirst-artifact-2009",
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp",
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_category": "cardiovascular",
+  "direction": "pah_disease_specific_clinical_benefit",
+  "evidence_tier": "randomized_trial",
+  "confidence": "high_for_pah_low_for_healthy_users",
+  "statement": "In patients with pulmonary arterial hypertension, tadalafil 40 mg once daily for 16 weeks improved 6-minute walk distance, delayed clinical worsening, reduced clinical worsening incidence, and improved health-related quality of life, but this is PAH disease-treatment evidence rather than healthy cardiovascular prevention evidence.",
+  "population_or_context": "Patients with idiopathic or associated pulmonary arterial hypertension, treatment-naive or on background bosentan.",
+  "time_horizon": "16 weeks.",
+  "quantitative_note": "Tadalafil 40 mg produced a placebo-corrected 6MWD treatment effect of 33 m (95% CI 15 to 50), improved time to clinical worsening (P=0.041), and reduced clinical-worsening incidence by 68% relative risk reduction (P=0.038).",
+  "source_locator": {
+    "section": "PubMed Abstract Methods and Results",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/19470885/",
+    "quote_or_paraphrase_note": "Abstract reports PHIRST dose-response, 6MWD effect, clinical worsening, quality of life, and common adverse events.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Disease-specific PAH population.",
+    "40 mg daily dose differs from common ED/BPH low-dose daily exposure.",
+    "Does not establish benefit for systemic vascular health, blood pressure, or event prevention in healthy users."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Patients with PAH; low directness for healthy men age 30 to 50.",
+  "tadalafil_exposure": "Tadalafil 2.5, 10, 20, or 40 mg once daily for 16 weeks; 40 mg met the prespecified statistical threshold.",
+  "indication_context": "PAH disease-treatment evidence; not healthy off-label prevention.",
+  "comparator_context": "Placebo.",
+  "endpoint_domain": "cardiovascular",
+  "endpoint_measure": "6-minute walk distance, clinical worsening, WHO functional class, health-related quality of life, and adverse events.",
+  "effect_estimate": "Placebo-corrected 6MWD +33 m; clinical worsening relative risk reduction 68%; WHO functional class change not statistically significant.",
+  "safety_findings": "Most common treatment-related adverse events reported with tadalafil were headache, myalgia, and flushing.",
+  "directness_to_target_population": "High for PAH, low for mostly healthy men age 30 to 50.",
+  "confounding_and_bias_limits": "Disease-specific indication, background bosentan subgroup, high dose, and outcomes tied to PAH exercise limitation rather than general cardiovascular health.",
+  "population_band": "pulmonary_hypertension",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence, but indication and dose sharply limit transfer to healthy users."
+}

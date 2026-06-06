@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "pattanaik-tadalafil-fmd-placebo-like-finding-2019",
+  "name": "Tadalafil did not outperform placebo for FMD in a double-blind ED endothelial dysfunction RCT",
+  "source_id": "pattanaik-tadalafil-ed-endothelial-rct-2019",
+  "artifact_id": "pattanaik-tadalafil-ed-endothelial-artifact-2019",
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp"
+  ],
+  "endpoint_category": "cardiovascular",
+  "direction": "no_between_group_fmd_advantage",
+  "evidence_tier": "randomized_trial",
+  "confidence": "moderate",
+  "statement": "In a double-blind ED/endothelial dysfunction RCT, both tadalafil and placebo groups improved on brachial artery flow-mediated dilation after 4 weeks, and the between-group FMD change was not significant; adverse events were more frequent with tadalafil.",
+  "population_or_context": "Men with ED and baseline FMD below 15%.",
+  "time_horizon": "4 weeks.",
+  "quantitative_note": "FMD changed from 11.222 to 13.827 with tadalafil and from 11.617 to 14.027 with placebo; mean change tadalafil versus placebo was 2.426 versus 2.829, P=0.528. Adverse reactions were 14 with tadalafil versus 5 with placebo, P<0.001.",
+  "source_locator": {
+    "section": "PubMed Abstract Results",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/30638829/",
+    "quote_or_paraphrase_note": "Abstract reports pre/post FMD values, between-group P value, and adverse-reaction counts.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "ED population and short follow-up.",
+    "Exact dose was not specified in the abstract extract.",
+    "The trial does not address long-term cardiovascular outcomes."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Men with ED and endothelial dysfunction; indirect for mostly healthy men age 30 to 50.",
+  "tadalafil_exposure": "Low-dose tadalafil for 4 weeks; exact dose not specified in abstract extract.",
+  "indication_context": "ED/endothelial dysfunction treatment trial.",
+  "comparator_context": "Placebo.",
+  "endpoint_domain": "cardiovascular",
+  "endpoint_measure": "Brachial artery flow-mediated dilation.",
+  "effect_estimate": "Mean FMD change 2.426 with tadalafil versus 2.829 with placebo; P=0.528.",
+  "safety_findings": "Adverse reactions were more frequent with tadalafil than placebo in the abstract.",
+  "directness_to_target_population": "Low to moderate for tadalafil endothelial surrogate effects in ED; low for healthy 30-50 cardiovascular benefit.",
+  "confounding_and_bias_limits": "Large placebo response, short duration, ED selection, dose ambiguity at abstract level, and no event outcomes.",
+  "population_band": "erectile_dysfunction_or_bph",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; transfer limit is ED population, short duration, and null between-group result."
+}

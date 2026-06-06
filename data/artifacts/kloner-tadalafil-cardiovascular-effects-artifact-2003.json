@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "kloner-tadalafil-cardiovascular-effects-artifact-2003",
+  "name": "Kloner 2003 Tadalafil Cardiovascular Effects Extract",
+  "artifact_type": "pooled_safety_analysis_extract",
+  "status": "complete",
+  "source_ids": [
+    "kloner-cardiovascular-effects-tadalafil-2003"
+  ],
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp",
+    "tad-safety-interactions-adverse-events"
+  ],
+  "population_or_context": "More than 4000 subjects receiving tadalafil in clinical pharmacology, phase 2, phase 3, and open-label studies, including healthy subjects, men with mild ED, and cardiovascular-disease subgroups.",
+  "sample_size": ">4000 tadalafil-exposed subjects across >60 studies.",
+  "methods": "Pooled safety and cardiovascular-effects analysis reporting blood-pressure changes in healthy subjects and mild ED, nitrate coadministration hemodynamics, myocardial infarction incidence, stroke incidence, and cardiovascular safety interpretation.",
+  "endpoint_categories": [
+    "cardiovascular",
+    "blood_pressure",
+    "safety"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Mixed tadalafil clinical-development population including healthy men and ED/cardiovascular disease groups; partly direct for healthy male BP effects but dated and not an off-label outcome trial.",
+  "tadalafil_exposure": "Tadalafil exposure across clinical pharmacology and ED studies, including daily tadalafil 20 mg for 26 weeks in healthy male subjects or mild ED.",
+  "indication_context": "Clinical pharmacology and ED development safety evidence.",
+  "study_design": "Pooled safety analysis and cardiovascular-effects review of clinical trials and open-label studies.",
+  "comparator_context": "Placebo and expected population rates depending on analysis.",
+  "endpoint_domain": "cardiovascular",
+  "safety_findings": "Nitrate coadministration produced clinically important BP lowering in some contexts; tadalafil remained contraindicated with nitrates.",
+  "directness_to_target_population": "Moderate for BP effects in healthy male subjects, low for off-label cardiovascular benefit because outcomes were safety surveillance rather than prevention efficacy.",
+  "confounding_and_bias_limits": "Older pooled analysis, clinical-development populations, selected trial eligibility, event-rate comparison limitations, and abstract-level extraction.",
+  "population_band": "healthy_men_30_50",
+  "study_design_class": "review_or_meta_analysis",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; transfer limit is safety-pool design and lack of clinical cardiovascular benefit endpoint."
+}

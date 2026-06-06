@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "pattanaik-tadalafil-ed-endothelial-artifact-2019",
+  "name": "Pattanaik 2019 Tadalafil ED Endothelial Dysfunction RCT Extract",
+  "artifact_type": "randomized_parallel_trial_extract",
+  "status": "complete",
+  "source_ids": [
+    "pattanaik-tadalafil-ed-endothelial-rct-2019"
+  ],
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp"
+  ],
+  "population_or_context": "Men with erectile dysfunction and brachial artery flow-mediated dilation below 15%.",
+  "sample_size": "89 randomized; 82 completed.",
+  "methods": "Double-blind randomized placebo-controlled 4-week trial comparing low-dose tadalafil with placebo; endpoints were IIEF-5 and brachial artery flow-mediated dilation measured by blinded observer.",
+  "endpoint_categories": [
+    "cardiovascular",
+    "endothelial_function",
+    "safety"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Men with ED and endothelial dysfunction; not a healthy off-label population.",
+  "tadalafil_exposure": "Low-dose tadalafil for 4 weeks; abstract does not specify exact dose in the displayed extract.",
+  "indication_context": "ED/endothelial dysfunction treatment study.",
+  "study_design": "Double-blind randomized placebo-controlled parallel trial.",
+  "comparator_context": "Placebo.",
+  "endpoint_domain": "cardiovascular",
+  "safety_findings": "Adverse events were significantly more frequent with tadalafil than placebo in the abstract.",
+  "directness_to_target_population": "Low to moderate for men with ED/endothelial dysfunction; low for mostly healthy men age 30 to 50.",
+  "confounding_and_bias_limits": "Large placebo response, short duration, ED population, abstract-level dose ambiguity, and no clinical cardiovascular outcomes.",
+  "population_band": "erectile_dysfunction_or_bph",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; transfer limit is population, short follow-up, and placebo-like FMD response."
+}

@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "rosano-tadalafil-cv-risk-endothelial-2005",
+  "name": "Chronic treatment with tadalafil improves endothelial function in men with increased cardiovascular risk.",
+  "source_type": "randomized_trial",
+  "authors": [
+    "Rosano GM",
+    "Aversa A",
+    "Vitale C",
+    "Fabbri A",
+    "Fini M",
+    "Spera G"
+  ],
+  "venue": "European Urology",
+  "year": 2005,
+  "published_on": "2005-02",
+  "doi": "10.1016/j.eururo.2004.10.002",
+  "pmid": "15661417",
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/15661417/"
+  ],
+  "summary": "Small randomized placebo-controlled trial testing tadalafil 20 mg every other day for 4 weeks in men with erectile dysfunction and increased cardiovascular risk, with brachial artery flow-mediated dilation and endothelial biomarkers measured at baseline, week 4, and follow-up.",
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T12:43:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15661417/",
+      "result": "PubMed abstract and metadata accessed via NCBI E-utilities.",
+      "notes": "Extraction uses abstract-level numeric results."
+    }
+  ]
+}

@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-tad-cardiovascular-endothelial-bp-baseline-2026-06-06-2026-06-06t12-59-35-392z",
+  "name": "Published Tadalafil Cardiovascular, Endothelial Function, And Blood Pressure Baseline Review",
+  "summary": "Stages the first cardiovascular/endothelial/BP baseline: a targeted search protocol, seven new sources, nine artifacts, nine findings, and one bounded claim emphasizing vascular surrogate evidence, disease-population directness limits, class-transfer limits, and safety boundaries.",
+  "candidate_bundle_id": "tad-cardiovascular-endothelial-bp-baseline-2026-06-06",
+  "event_type": "publish",
+  "published_at": "2026-06-06T12:59:35.392Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "search_protocol",
+      "record_id": "tad-cardiovascular-endothelial-bp-search-2026-06-06",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "rosano-tadalafil-cv-risk-endothelial-2005",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "pattanaik-tadalafil-ed-endothelial-rct-2019",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "larios-tadalafil-obesity-hemodynamics-2022",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "fryk-makrotad-tadalafil-t2d-2023",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "zhang-pde5-vascular-function-meta-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "galie-tadalafil-pah-phirst-2009",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "kloner-cardiovascular-effects-tadalafil-2003",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "rosano-tadalafil-cv-risk-endothelial-artifact-2005",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "porst-tadalafil-ed-endothelial-artifact-2012",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "pattanaik-tadalafil-ed-endothelial-artifact-2019",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "larios-tadalafil-obesity-hemodynamics-artifact-2022",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "fryk-makrotad-t2d-microcirculation-artifact-2023",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "zhang-pde5-vascular-function-meta-artifact-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "galie-tadalafil-pah-phirst-artifact-2009",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "kloner-tadalafil-cardiovascular-effects-artifact-2003",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "olmestig-etlas2-bp-artifact-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "rosano-tadalafil-fmd-improvement-finding-2005",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "porst-tadalafil-endothelial-null-finding-2012",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "pattanaik-tadalafil-fmd-placebo-like-finding-2019",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "larios-tadalafil-obesity-bp-stiffness-finding-2022",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "fryk-makrotad-t2d-microcirculation-finding-2023",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "zhang-pde5-vascular-function-meta-finding-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "galie-tadalafil-pah-phirst-finding-2009",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "kloner-tadalafil-bp-cv-effects-finding-2003",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "olmestig-etlas2-bp-null-finding-2025",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "tad-cardiovascular-endothelial-bp-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 27,
+    "by_record_type": {
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "source": {
+        "created": 7,
+        "updated": 0,
+        "total": 7
+      },
+      "artifact": {
+        "created": 9,
+        "updated": 0,
+        "total": 9
+      },
+      "finding": {
+        "created": 9,
+        "updated": 0,
+        "total": 9
+      },
+      "claim": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "tad-cardiovascular-endothelial-bp-baseline-claim"
+  ],
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-tad-cardiovascular-endothelial-bp-endpoint-validity-r1",
+    "evidence-appraisal-tad-cardiovascular-endothelial-bp-exposure-directness-r1",
+    "evidence-appraisal-tad-cardiovascular-endothelial-bp-population-directness-r1",
+    "evidence-appraisal-tad-cardiovascular-endothelial-bp-safety-risk-framing-r1",
+    "evidence-appraisal-tad-cardiovascular-endothelial-bp-source-fidelity-r1",
+    "evidence-appraisal-tad-cardiovascular-endothelial-bp-synthesis-overreach-r1"
+  ],
+  "appraisal_corrections_applied": [],
+  "appraisal_follow_up_actions": [
+    "endpoint_validity: No correction required.",
+    "exposure_directness: No correction required.",
+    "exposure_directness: Retrieve full text before dose-specific endothelial synthesis.",
+    "population_directness: No correction required; preserve this as a main blocker.",
+    "population_directness: No correction required.",
+    "safety_risk_framing: No correction required.",
+    "safety_risk_framing: Use the dedicated safety baseline for public safety caveats and retrieve full trial reports before comparative AE synthesis.",
+    "source_fidelity: No correction required.",
+    "source_fidelity: Retrieve full reports before any quantitative vascular synthesis or detailed endpoint-subdomain comparison.",
+    "synthesis_overreach: No correction required.",
+    "synthesis_overreach: No correction required; preserve these boundaries in public summaries."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "change_note": "Creates the first submitted baseline claim for tadalafil cardiovascular, endothelial function, and blood pressure evidence."
+}

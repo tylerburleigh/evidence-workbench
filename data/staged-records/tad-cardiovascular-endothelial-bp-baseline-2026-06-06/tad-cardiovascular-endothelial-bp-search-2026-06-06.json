@@ -1,0 +1,208 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "tad-cardiovascular-endothelial-bp-search-2026-06-06",
+  "name": "Tadalafil Cardiovascular, Endothelial Function, And Blood Pressure Baseline Search",
+  "domain_id": "tadalafil-off-label",
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp"
+  ],
+  "status": "included_sources_staged",
+  "systematicity_level": "targeted_baseline_review",
+  "search_started_at": "2026-06-06T12:38:30Z",
+  "search_completed_at": "2026-06-06T12:51:00Z",
+  "databases": [
+    "PubMed/NCBI E-utilities",
+    "Web search"
+  ],
+  "search_queries": [
+    {
+      "database": "PubMed",
+      "query": "tadalafil endothelial function randomized trial flow-mediated dilation men erectile dysfunction",
+      "searched_at": "2026-06-06T12:39:00Z",
+      "result_count": "Targeted web/PubMed result set; key PMIDs 15661417, 16943794, 22790642, 30638829.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tadalafil+endothelial+function+randomized+trial+flow-mediated+dilation"
+    },
+    {
+      "database": "PubMed",
+      "query": "tadalafil blood pressure vascular stiffness obesity randomized placebo",
+      "searched_at": "2026-06-06T12:39:30Z",
+      "result_count": "Key PMID 36043781.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tadalafil+blood+pressure+vascular+stiffness+obesity+randomized+placebo"
+    },
+    {
+      "database": "PubMed",
+      "query": "tadalafil type 2 diabetes microcirculation endothelial function randomized placebo MAKROTAD",
+      "searched_at": "2026-06-06T12:40:00Z",
+      "result_count": "Key PMID 37256099.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tadalafil+type+2+diabetes+microcirculation+endothelial+function+MAKROTAD"
+    },
+    {
+      "database": "PubMed",
+      "query": "phosphodiesterase type 5 inhibitors vascular function systematic review meta-analysis randomized controlled trials blood pressure FMD",
+      "searched_at": "2026-06-06T12:40:30Z",
+      "result_count": "Key PMID 41469737.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=phosphodiesterase+type+5+inhibitors+vascular+function+meta-analysis+randomized+controlled+trials"
+    },
+    {
+      "database": "PubMed",
+      "query": "tadalafil therapy pulmonary arterial hypertension PHIRST randomized placebo 40 mg",
+      "searched_at": "2026-06-06T12:41:00Z",
+      "result_count": 7,
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tadalafil+therapy+pulmonary+arterial+hypertension+PHIRST+randomized+placebo+40+mg"
+    },
+    {
+      "database": "PubMed",
+      "query": "cardiovascular effects of tadalafil blood pressure healthy male subjects 26 weeks",
+      "searched_at": "2026-06-06T12:41:30Z",
+      "result_count": "Key PMID 14609622.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=cardiovascular+effects+of+tadalafil+blood+pressure+healthy+male+subjects+26+weeks"
+    },
+    {
+      "database": "PubMed",
+      "query": "tadalafil cerebral small vessel disease blood pressure randomized ETLAS-2",
+      "searched_at": "2026-06-06T12:42:00Z",
+      "result_count": "Existing project source; key PMID 40718899.",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tadalafil+cerebral+small+vessel+disease+blood+pressure+ETLAS-2"
+    }
+  ],
+  "inclusion_criteria": [
+    "Human randomized trial, clinical pharmacology, pooled safety, or systematic-review evidence involving tadalafil or clearly marked PDE5 class vascular effects.",
+    "Outcomes include endothelial function, flow-mediated dilation, blood pressure, arterial stiffness, microcirculation, vascular biomarkers, pulmonary vascular disease outcomes, cardiovascular events, or hemodynamic safety.",
+    "Preference for tadalafil-specific evidence; class-level evidence included only as adjacent plausibility with agent-directness limits.",
+    "Include safety and interaction records when needed to frame blood-pressure lowering and vascular claims."
+  ],
+  "exclusion_criteria": [
+    "Animal, in vitro, or mechanistic-only papers without human cardiovascular or vascular endpoints for this baseline.",
+    "ED efficacy trials without endothelial, blood-pressure, hemodynamic, or cardiovascular safety endpoints.",
+    "Pulmonary-hypertension sources without tadalafil-specific randomized or structured follow-up evidence.",
+    "Non-tadalafil PDE5 trials unless synthesized at class level and explicitly bounded."
+  ],
+  "dedupe_method": "PMID/DOI dedupe plus existing-record reuse for Porst 2012, ETLAS-2 2025, and safety records.",
+  "screening_counts": {
+    "records_identified": "At least 65 across targeted PubMed/web queries.",
+    "records_screened": 24,
+    "full_text_reviewed": "0 full texts; PubMed abstracts and metadata were used, with PMC availability noted where present.",
+    "sources_included": 9
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "PMID:15661417",
+      "title": "Chronic treatment with tadalafil improves endothelial function in men with increased cardiovascular risk.",
+      "decision": "include",
+      "reason": "Small tadalafil-specific randomized trial with quantified FMD and endothelial biomarker improvements in cardiovascular-risk men.",
+      "source_id": "rosano-tadalafil-cv-risk-endothelial-2005",
+      "doi": "10.1016/j.eururo.2004.10.002",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15661417/"
+    },
+    {
+      "candidate_id": "PMID:16943794",
+      "title": "Relationship between chronic tadalafil administration and improvement of endothelial function in men with erectile dysfunction: a pilot study.",
+      "decision": "maybe",
+      "reason": "Relevant open-label randomized crossover ED pilot, but not staged in this first baseline because Rosano 2005 and later blinded/null ED trials provide a clearer positive/null contrast.",
+      "doi": "10.1038/sj.ijir.3901513",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16943794/"
+    },
+    {
+      "candidate_id": "PMID:22790642",
+      "title": "Effects of once-daily tadalafil on treatment satisfaction, psychosocial outcomes, spontaneous erections, and measures of endothelial function in men with erectile dysfunction but naive to phosphodiesterase type 5 inhibitors.",
+      "decision": "include",
+      "reason": "Existing source directly reports no significant endothelial dysfunction parameter differences after 12 weeks of common low-dose daily tadalafil in ED.",
+      "source_id": "porst-tadalafil-ed-psychosocial-2012",
+      "doi": "10.2164/jandrol.111.015289",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22790642/"
+    },
+    {
+      "candidate_id": "PMID:30638829",
+      "title": "Endothelial Dysfunction in Patients With Erectile Dysfunction: A Double-Blind, Randomized-Control Trial Using Tadalafil.",
+      "decision": "include",
+      "reason": "Tadalafil-specific double-blind placebo-controlled FMD trial showing no between-group FMD advantage and more adverse events.",
+      "source_id": "pattanaik-tadalafil-ed-endothelial-rct-2019",
+      "doi": "10.1016/j.esxm.2018.11.008",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30638829/"
+    },
+    {
+      "candidate_id": "PMID:36043781",
+      "title": "Tadalafil Improves Haemodynamics and Arterial Stiffness but Not Flow-Mediated Dilation in Grade 1 Obesity.",
+      "decision": "include",
+      "reason": "Tadalafil-specific acute placebo-controlled evidence for BP and arterial stiffness effects outside ED, with null FMD.",
+      "source_id": "larios-tadalafil-obesity-hemodynamics-2022",
+      "doi": "10.2174/1570161120666220827154417",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36043781/"
+    },
+    {
+      "candidate_id": "PMID:37256099",
+      "title": "Feasibility of high-dose tadalafil and effects on insulin resistance in well-controlled patients with type 2 diabetes (MAKROTAD).",
+      "decision": "include",
+      "reason": "Tadalafil-specific randomized crossover cardiometabolic trial with microcirculation/endothelial-function signal, neutral primary insulin-resistance endpoint, and high-dose tolerability caveats.",
+      "source_id": "fryk-makrotad-tadalafil-t2d-2023",
+      "doi": "10.1016/j.eclinm.2023.101985",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37256099/"
+    },
+    {
+      "candidate_id": "PMID:41469737",
+      "title": "Associations between phosphodiesterase type 5 inhibitors and vascular function: a systematic review and meta-analysis on randomized-controlled trials.",
+      "decision": "include",
+      "reason": "Current PDE5 class-level synthesis of RCT vascular surrogate outcomes; useful adjacent evidence when class-transfer limits remain explicit.",
+      "source_id": "zhang-pde5-vascular-function-meta-2025",
+      "doi": "10.1186/s13643-025-03042-4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41469737/"
+    },
+    {
+      "candidate_id": "PMID:19470885",
+      "title": "Tadalafil therapy for pulmonary arterial hypertension.",
+      "decision": "include",
+      "reason": "Landmark tadalafil-specific PAH randomized trial establishing disease-specific pulmonary vascular benefit but low directness for healthy systemic cardiovascular prevention.",
+      "source_id": "galie-tadalafil-pah-phirst-2009",
+      "doi": "10.1161/CIRCULATIONAHA.108.839274",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19470885/"
+    },
+    {
+      "candidate_id": "PMID:14609622",
+      "title": "Cardiovascular effects of tadalafil.",
+      "decision": "include",
+      "reason": "Tadalafil-specific pooled cardiovascular safety/BP source with healthy-subject BP and nitrate-interaction context.",
+      "source_id": "kloner-cardiovascular-effects-tadalafil-2003",
+      "doi": "10.1016/s0002-9149(03)00074-2",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14609622/"
+    },
+    {
+      "candidate_id": "PMID:40718899",
+      "title": "Tadalafil Treatment in Patients With Cerebral Small Vessel Disease: The ETLAS-2 Randomized Clinical Trial.",
+      "decision": "include",
+      "reason": "Existing source provides a newer non-ED/BPH tadalafil trial with explicit no blood-pressure difference and tolerability signal.",
+      "source_id": "olmestig-etlas2-main-2025",
+      "doi": "10.1161/STROKEAHA.125.051602",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40718899/"
+    },
+    {
+      "candidate_id": "PMID:35099113",
+      "title": "Analysis of integrated clinical safety data of tadalafil in patients receiving concomitant antihypertensive medications.",
+      "decision": "include",
+      "reason": "Already published safety source reused for antihypertensive and MACE boundary context; no new cardiovascular-efficacy record staged.",
+      "source_id": "kloner-antihypertensive-safety-pooled-2022",
+      "doi": "10.1111/jch.14435",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35099113/"
+    }
+  ],
+  "source_ids": [
+    "rosano-tadalafil-cv-risk-endothelial-2005",
+    "porst-tadalafil-ed-psychosocial-2012",
+    "pattanaik-tadalafil-ed-endothelial-rct-2019",
+    "larios-tadalafil-obesity-hemodynamics-2022",
+    "fryk-makrotad-tadalafil-t2d-2023",
+    "zhang-pde5-vascular-function-meta-2025",
+    "galie-tadalafil-pah-phirst-2009",
+    "kloner-cardiovascular-effects-tadalafil-2003",
+    "olmestig-etlas2-main-2025",
+    "kloner-antihypertensive-safety-pooled-2022"
+  ],
+  "screening_summary": "The targeted baseline found tadalafil-specific human evidence for vascular surrogate effects, but no direct trial showing long-term cardiovascular event reduction, longevity, or preventive benefit in mostly healthy men age 30 to 50. Positive signals are strongest for surrogate endothelial markers in small cardiovascular-risk or metabolic disease studies, acute blood-pressure/arterial-stiffness changes in obesity, and disease-specific PAH outcomes at 40 mg daily. Null or limiting evidence includes later ED trials with no between-group endothelial advantage and ETLAS-2 with no blood-pressure difference plus more adverse events. A current PDE5 class meta-analysis supports vascular plausibility but remains adjacent rather than tadalafil-specific proof.",
+  "limitations": [
+    "Targeted baseline, not a full systematic review.",
+    "Most extraction is abstract-level; full text is needed before quantitative synthesis of endothelial/microcirculation subdomains.",
+    "No direct healthy male 30-50 cardiovascular prevention trial was identified.",
+    "Most endpoints are surrogate vascular markers, not MI, stroke, mortality, or validated healthspan outcomes.",
+    "PAH evidence is disease-specific and high-dose; it should not be generalized to healthy systemic cardiovascular health."
+  ]
+}

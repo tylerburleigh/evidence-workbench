@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "galie-tadalafil-pah-phirst-2009",
+  "name": "Tadalafil therapy for pulmonary arterial hypertension.",
+  "source_type": "randomized_trial",
+  "authors": [
+    "Galie N",
+    "Brundage BH",
+    "Ghofrani HA",
+    "Oudiz RJ",
+    "Simonneau G",
+    "Safdar Z",
+    "Shapiro S",
+    "White RJ",
+    "Chan M",
+    "Beardsworth A",
+    "Frumkin L",
+    "Barst RJ",
+    "PHIRST Study Group"
+  ],
+  "venue": "Circulation",
+  "year": 2009,
+  "published_on": "2009-05-26",
+  "doi": "10.1161/CIRCULATIONAHA.108.839274",
+  "pmid": "19470885",
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/19470885/"
+  ],
+  "summary": "PHIRST randomized double-blind placebo-controlled 16-week dose-ranging trial in 405 pulmonary arterial hypertension patients comparing tadalafil 2.5, 10, 20, or 40 mg once daily with placebo on 6-minute walk distance, clinical worsening, WHO functional class, quality of life, and adverse events.",
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T12:45:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19470885/",
+      "result": "PubMed abstract and metadata accessed via NCBI E-utilities.",
+      "notes": "Extraction uses abstract-level numeric results."
+    }
+  ]
+}

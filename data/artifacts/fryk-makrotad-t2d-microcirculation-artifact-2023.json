@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "fryk-makrotad-t2d-microcirculation-artifact-2023",
+  "name": "Fryk 2023 MAKROTAD Type 2 Diabetes Microcirculation Extract",
+  "artifact_type": "randomized_crossover_trial_extract",
+  "status": "complete",
+  "source_ids": [
+    "fryk-makrotad-tadalafil-t2d-2023"
+  ],
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp"
+  ],
+  "population_or_context": "Men without apparent erectile dysfunction age 40-70 and postmenopausal women age 55-70 with well-controlled type 2 diabetes, BMI 27-40 kg/m2.",
+  "sample_size": "23 enrolled; 18 included in full analysis set.",
+  "methods": "Single-center double-blind randomized placebo-controlled two-period crossover phase 2 trial of tadalafil 20 mg daily and placebo for 6 weeks each, separated by 8-week washout; primary endpoint was whole-body insulin resistance, with microcirculation, endothelial function, HbA1c, metabolic markers, and tolerability as secondary or phenotyping outcomes.",
+  "endpoint_categories": [
+    "cardiovascular",
+    "microcirculation",
+    "endothelial_function",
+    "metabolic"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Adults with well-controlled type 2 diabetes and overweight/obesity; partially overlaps men over 40 but not mostly healthy men age 30 to 50.",
+  "tadalafil_exposure": "Tadalafil 20 mg once daily for 6 weeks in crossover design.",
+  "indication_context": "Experimental metabolic-vascular trial in type 2 diabetes.",
+  "study_design": "Double-blind randomized placebo-controlled crossover phase 2 trial.",
+  "comparator_context": "Placebo crossover comparison.",
+  "endpoint_domain": "cardiovascular",
+  "safety_findings": "Muscle pain, dyspepsia, and headache were more frequent with high-dose tadalafil; no serious-adverse-event difference appeared between treatments in the abstract.",
+  "directness_to_target_population": "Low to moderate: direct tadalafil exposure but high-dose daily use in type 2 diabetes rather than healthy 30-50 users.",
+  "confounding_and_bias_limits": "Small feasibility trial, secondary endpoints, crossover design, selected well-controlled T2D population, and no cardiovascular clinical outcomes.",
+  "population_band": "cardiovascular_or_metabolic_condition",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; transfer limit is high-dose T2D metabolic-vascular context and secondary endpoint status."
+}

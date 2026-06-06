@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "olmestig-etlas2-bp-artifact-2025",
+  "name": "Olmestig 2025 ETLAS-2 Blood Pressure and CSVD Vascular Extract",
+  "artifact_type": "randomized_parallel_trial_extract",
+  "status": "complete",
+  "source_ids": [
+    "olmestig-etlas2-main-2025"
+  ],
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp",
+    "tad-cognition-healthy-adults"
+  ],
+  "population_or_context": "Older patients with cerebral small vessel disease and previous stroke or transient ischemic attack.",
+  "sample_size": "76 included; 71 initiated treatment.",
+  "methods": "ETLAS-2 randomized placebo-controlled double-blind phase II trial of tadalafil 20 mg daily for 3 months; secondary outcomes included blood pressure, cognition, imaging markers, mental well-being, and adverse events.",
+  "endpoint_categories": [
+    "cardiovascular",
+    "blood_pressure",
+    "cerebrovascular",
+    "safety"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Older CSVD patients, mean age 68, with prior stroke/TIA; indirect for healthy men age 30 to 50.",
+  "tadalafil_exposure": "Tadalafil 20 mg daily for 3 months.",
+  "indication_context": "Experimental cerebral small vessel disease trial.",
+  "study_design": "Randomized placebo-controlled double-blind parallel phase II trial.",
+  "comparator_context": "Placebo.",
+  "endpoint_domain": "cardiovascular",
+  "safety_findings": "Adverse events occurred in 76% with tadalafil versus 36% with placebo, and adherence was lower with tadalafil.",
+  "directness_to_target_population": "Low for healthy men age 30 to 50 because participants were older with CSVD and prior stroke/TIA.",
+  "confounding_and_bias_limits": "Feasibility trial, older cerebrovascular disease population, higher dose than common 5 mg daily ED/BPH use, and secondary BP endpoint.",
+  "population_band": "older_adults",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; transfer limit is CSVD population, dose, adherence, and endpoint context."
+}

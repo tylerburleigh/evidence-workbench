@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "larios-tadalafil-obesity-hemodynamics-artifact-2022",
+  "name": "Larios-Cardenas 2022 Tadalafil Obesity Hemodynamics Extract",
+  "artifact_type": "randomized_parallel_trial_extract",
+  "status": "complete",
+  "source_ids": [
+    "larios-tadalafil-obesity-hemodynamics-2022"
+  ],
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp"
+  ],
+  "population_or_context": "Participants with grade 1 obesity.",
+  "sample_size": "80 participants: 41 placebo and 39 tadalafil.",
+  "methods": "Randomized double-blind placebo-controlled acute trial evaluating a single tadalafil 20 mg dose on flow-mediated dilation, blood pressure, augmentation index, central systolic blood pressure, and brachial-ankle pulse wave velocity.",
+  "endpoint_categories": [
+    "cardiovascular",
+    "blood_pressure",
+    "arterial_stiffness",
+    "endothelial_function"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Adults with grade 1 obesity and elevated cardiometabolic risk; indirect for mostly healthy men age 30 to 50.",
+  "tadalafil_exposure": "Single oral tadalafil 20 mg dose.",
+  "indication_context": "Experimental acute vascular-physiology study in obesity.",
+  "study_design": "Randomized double-blind placebo-controlled parallel trial.",
+  "comparator_context": "Placebo and within-person pre/post change.",
+  "endpoint_domain": "cardiovascular",
+  "safety_findings": "Abstract does not provide detailed adverse-event data; single-dose hemodynamic lowering should be interpreted with safety-interaction caveats.",
+  "directness_to_target_population": "Moderate for acute tadalafil exposure, low for long-term healthy-user cardiovascular health because participants had grade 1 obesity and endpoints were acute surrogate markers.",
+  "confounding_and_bias_limits": "Single-dose study, surrogate markers, obesity population, and no long-term clinical outcomes.",
+  "population_band": "cardiovascular_or_metabolic_condition",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; transfer limit is acute single-dose exposure and obesity-specific vascular physiology."
+}

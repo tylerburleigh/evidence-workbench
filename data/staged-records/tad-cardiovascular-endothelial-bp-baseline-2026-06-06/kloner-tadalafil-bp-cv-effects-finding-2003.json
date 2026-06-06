@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "kloner-tadalafil-bp-cv-effects-finding-2003",
+  "name": "Tadalafil had small standalone BP effects in healthy subjects but nitrate coadministration remained a major risk",
+  "source_id": "kloner-cardiovascular-effects-tadalafil-2003",
+  "artifact_id": "kloner-tadalafil-cardiovascular-effects-artifact-2003",
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp",
+    "tad-safety-interactions-adverse-events"
+  ],
+  "endpoint_category": "cardiovascular",
+  "direction": "small_standalone_bp_effect_with_interaction_risk",
+  "evidence_tier": "pooled_safety_analysis",
+  "confidence": "moderate_for_safety_low_for_benefit",
+  "statement": "Across tadalafil clinical-development data, standalone tadalafil produced small blood-pressure changes in healthy subjects and 26-week daily 20 mg BP changes similar to placebo in healthy males or mild ED, but nitrate coadministration produced clinically important hypotension signals and remains contraindicated.",
+  "population_or_context": "Healthy subjects, mild ED, CAD subgroups, and broader tadalafil clinical-development populations.",
+  "time_horizon": "Clinical pharmacology and trial database including daily 20 mg for 26 weeks.",
+  "quantitative_note": "Daily tadalafil 20 mg for 26 weeks in healthy male subjects or mild ED had BP changes similar to placebo; MI incidence was 0.43 per 100 patient-years with tadalafil versus 0.6 per 100 patient-years with placebo in the pooled database; sublingual nitroglycerin after tadalafil caused more standing SBP below 85 mm Hg in some studies.",
+  "source_locator": {
+    "section": "PubMed Abstract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/14609622/",
+    "quote_or_paraphrase_note": "Abstract reports standalone BP effects, daily 20 mg 26-week BP comparison, MI/stroke incidence, and nitrate interaction data.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Older pooled safety analysis.",
+    "Designed for cardiovascular safety, not cardiovascular benefit.",
+    "Trial populations may exclude higher-risk real-world users."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Includes healthy male subjects and mild ED, but also mixed clinical-development populations.",
+  "tadalafil_exposure": "Tadalafil across clinical pharmacology and ED studies, including daily tadalafil 20 mg for 26 weeks.",
+  "indication_context": "Clinical pharmacology and ED safety evidence.",
+  "comparator_context": "Placebo and expected background rates.",
+  "endpoint_domain": "cardiovascular",
+  "endpoint_measure": "Blood pressure, myocardial infarction incidence, stroke incidence, and nitrate interaction hemodynamics.",
+  "effect_estimate": "Standalone BP changes small/similar to placebo in healthy/mild ED daily 20 mg; MI 0.43 per 100 patient-years with tadalafil versus 0.6 placebo in pooled database.",
+  "safety_findings": "Organic nitrate coadministration can produce significant hypotension; tadalafil should not be combined with nitrates.",
+  "directness_to_target_population": "Moderate for standalone BP safety in healthy men; low for cardiovascular benefit or prevention.",
+  "confounding_and_bias_limits": "Pooled safety design, industry-era development data, selected subjects, and no randomized event-prevention test.",
+  "population_band": "healthy_men_30_50",
+  "study_design_class": "review_or_meta_analysis",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; benefit transfer is limited because the record evaluates cardiovascular effects and safety rather than preventive efficacy."
+}

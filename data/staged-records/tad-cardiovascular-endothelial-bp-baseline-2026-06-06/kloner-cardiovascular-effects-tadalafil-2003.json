@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "kloner-cardiovascular-effects-tadalafil-2003",
+  "name": "Cardiovascular effects of tadalafil.",
+  "source_type": "pooled_safety_analysis",
+  "authors": [
+    "Kloner RA",
+    "Mitchell M",
+    "Emmick JT"
+  ],
+  "venue": "American Journal of Cardiology",
+  "year": 2003,
+  "published_on": "2003-11-06",
+  "doi": "10.1016/s0002-9149(03)00074-2",
+  "pmid": "14609622",
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/14609622/"
+  ],
+  "summary": "Review and pooled safety analysis of more than 4000 tadalafil-exposed subjects from clinical pharmacology, phase 2, phase 3, and open-label studies, reporting blood-pressure effects in healthy subjects and mild ED, nitrate interaction hemodynamics, myocardial infarction and stroke incidence rates, and cardiovascular safety interpretation.",
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T12:45:20Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14609622/",
+      "result": "PubMed abstract and metadata accessed via NCBI E-utilities.",
+      "notes": "Extraction uses abstract-level pooled safety and blood-pressure statements."
+    }
+  ]
+}

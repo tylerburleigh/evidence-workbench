@@ -1,0 +1,266 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "tad-cardiovascular-endothelial-bp-baseline-claim",
+  "name": "Tadalafil Cardiovascular, Endothelial Function, And Blood Pressure Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "tad-cardiovascular-endothelial-bp",
+  "current_stage": "claim_supported",
+  "momentum": "baseline_submitted",
+  "confidence": "low_to_moderate",
+  "summary": "A targeted cardiovascular/endothelial baseline found plausible and sometimes positive tadalafil vascular signals, but not direct evidence that tadalafil improves long-term cardiovascular health, prevents cardiovascular events, or extends healthspan in mostly healthy men age 30 to 50. Tadalafil-specific evidence includes a small older trial in men with ED and increased cardiovascular risk showing improved brachial flow-mediated dilation, later ED trials showing no between-group endothelial-function advantage, an acute grade-1-obesity trial showing lower blood pressure and arterial stiffness but unchanged FMD, a small high-dose type 2 diabetes crossover trial with mixed microcirculation/metabolic signals, and ETLAS-2 showing no blood-pressure difference with more adverse events in older CSVD patients. Tadalafil 40 mg has disease-specific pulmonary arterial hypertension efficacy, but that does not generalize to healthy systemic cardiovascular prevention. A 2025 PDE5-inhibitor meta-analysis supports class-level vascular surrogate plausibility, yet it remains mixed-agent adjacent evidence and cannot substitute for tadalafil-specific healthy-user outcomes.",
+  "main_blockers": [
+    "No staged direct randomized trial in mostly healthy men age 30 to 50 testing tadalafil for cardiovascular prevention, endothelial aging, blood-pressure control, MI/stroke prevention, mortality, or longevity.",
+    "Most positive evidence uses surrogate markers such as FMD, PWV, BP, microcirculation, or biomarkers rather than clinical cardiovascular outcomes.",
+    "Disease populations, ED selection, obesity, type 2 diabetes, PAH, CSVD, dose differences, and short follow-up limit transfer to healthy off-label users.",
+    "Blood-pressure lowering is not automatically beneficial and can become harmful with nitrates, riociguat, alpha-blockers, antihypertensives, alcohol, dehydration, heat stress, or occult cardiovascular disease."
+  ],
+  "best_current_signals": [
+    "Small tadalafil-specific randomized evidence in ED/increased cardiovascular-risk men suggests brachial FMD and endothelial biomarker improvement after 20 mg every other day for 4 weeks.",
+    "More recent ED endothelial-function trials temper that signal: Porst 2012 reported no significant endothelial-parameter differences, and Pattanaik 2019 found no FMD advantage over placebo.",
+    "A single-dose obesity trial found acute reductions in SBP, DBP, central SBP, augmentation index, and baPWV, but no FMD change.",
+    "MAKROTAD suggests high-dose tadalafil may influence microcirculation/endothelial/metabolic markers in T2D, but the primary insulin-resistance endpoint was neutral and tolerability was worse for common PDE5 adverse effects.",
+    "PHIRST supports tadalafil's pulmonary vascular efficacy in PAH at 40 mg daily, but this is a disease-specific high-dose indication.",
+    "The 2025 PDE5 class meta-analysis found modest vascular surrogate improvements versus placebo, useful for plausibility but not for tadalafil-specific healthy-user clinical claims."
+  ],
+  "interpretive_note": "This baseline supports a vascular-surrogate plausibility statement, not a recommendation to use tadalafil for cardiovascular health. For mostly healthy men age 30 to 50, the evidence is best read as hypothesis-generating unless future trials measure clinically meaningful cardiovascular or validated healthspan outcomes with tadalafil-specific exposure and safety monitoring.",
+  "applicability": {
+    "applies_when": [
+      "Interpreting tadalafil or PDE5-inhibitor evidence about endothelial function, vascular stiffness, blood pressure, microcirculation, pulmonary vascular outcomes, or cardiovascular safety in an off-label review.",
+      "Separating vascular surrogate effects from cardiovascular event prevention or longevity claims.",
+      "Deciding whether PDE5 class evidence can cautiously inform tadalafil hypotheses under the class-transfer framework."
+    ],
+    "does_not_apply_when": [
+      "Making individualized cardiovascular, ED, BPH, PAH, diabetes, or CSVD treatment decisions.",
+      "Claiming tadalafil prevents MI, stroke, hypertension, atherosclerosis progression, or mortality in healthy users.",
+      "Using PAH efficacy evidence as proof of systemic cardiovascular benefit in healthy men."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Long-term daily low-dose tadalafil in healthy men age 30 to 50 with normal BP and no ED/BPH.",
+      "Tadalafil effects on coronary plaque progression, hard ASCVD events, arrhythmias, kidney outcomes, or mortality outside disease-specific trials.",
+      "Combination with exercise, sauna/heat stress, alcohol, stimulants, antihypertensives, alpha-blockers, nitrates/nitrites, or performance-enhancement stacks.",
+      "Whether surrogate vascular improvements translate into longevity or healthspan benefit."
+    ]
+  },
+  "limitations": [
+    "Targeted baseline review rather than systematic review.",
+    "Mostly abstract-level extraction for this pass.",
+    "Evidence is heterogeneous by population, dose, duration, endpoint, and PDE5 agent.",
+    "Surrogate outcomes dominate; clinical cardiovascular event evidence is not established for healthy users.",
+    "Existing safety baseline remains required context for all blood-pressure and vascular-effect interpretations."
+  ],
+  "update_notes": [
+    "Run evidence appraisal before approval.",
+    "Retrieve full texts for Rosano 2005, Larios-Cardenas 2022, MAKROTAD 2023, and Zhang 2025 before any quantitative vascular synthesis.",
+    "Consider a future healthspan/longevity baseline that includes PDE5 observational mortality or morbidity studies only after applying the class-transfer framework."
+  ],
+  "supporting_finding_ids": [
+    "rosano-tadalafil-fmd-improvement-finding-2005",
+    "porst-tadalafil-endothelial-null-finding-2012",
+    "pattanaik-tadalafil-fmd-placebo-like-finding-2019",
+    "larios-tadalafil-obesity-bp-stiffness-finding-2022",
+    "fryk-makrotad-t2d-microcirculation-finding-2023",
+    "zhang-pde5-vascular-function-meta-finding-2025",
+    "galie-tadalafil-pah-phirst-finding-2009",
+    "kloner-tadalafil-bp-cv-effects-finding-2003",
+    "olmestig-etlas2-bp-null-finding-2025",
+    "cialis-label-contraindications-interactions-finding-2026",
+    "tadalafil-nitrate-interaction-duration-finding-2003",
+    "tadalafil-alpha-blocker-interaction-finding-2004",
+    "tadalafil-antihypertensive-mace-hypotension-finding-2022"
+  ],
+  "supporting_source_ids": [
+    "rosano-tadalafil-cv-risk-endothelial-2005",
+    "porst-tadalafil-ed-psychosocial-2012",
+    "pattanaik-tadalafil-ed-endothelial-rct-2019",
+    "larios-tadalafil-obesity-hemodynamics-2022",
+    "fryk-makrotad-tadalafil-t2d-2023",
+    "zhang-pde5-vascular-function-meta-2025",
+    "galie-tadalafil-pah-phirst-2009",
+    "kloner-cardiovascular-effects-tadalafil-2003",
+    "olmestig-etlas2-main-2025",
+    "dailymed-cialis-label-2026-03",
+    "kloner-tadalafil-nitrate-interaction-2003",
+    "kloner-alpha-blocker-interaction-2004",
+    "kloner-antihypertensive-safety-pooled-2022"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Small direct tadalafil trial supports surrogate endothelial improvement",
+      "claim_field": "best_current_signals",
+      "conclusion": "Rosano 2005 reported improved brachial FMD and endothelial biomarkers after 4 weeks of tadalafil in men with ED and increased cardiovascular risk.",
+      "support_role": "supports",
+      "rationale": "This is the clearest staged tadalafil-specific positive endothelial-function signal, but it remains small and surrogate-based.",
+      "finding_ids": [
+        "rosano-tadalafil-fmd-improvement-finding-2005"
+      ],
+      "source_ids": [
+        "rosano-tadalafil-cv-risk-endothelial-2005"
+      ],
+      "limitations": [
+        "Small sample.",
+        "ED/CV-risk population.",
+        "No clinical cardiovascular outcomes."
+      ]
+    },
+    {
+      "label": "Later ED endothelial trials temper the positive FMD story",
+      "claim_field": "summary",
+      "conclusion": "Porst 2012 and Pattanaik 2019 did not show a tadalafil-specific between-group advantage on endothelial measures in ED populations.",
+      "support_role": "qualifies",
+      "rationale": "The baseline should not treat the older small positive FMD trial as settled evidence.",
+      "finding_ids": [
+        "porst-tadalafil-endothelial-null-finding-2012",
+        "pattanaik-tadalafil-fmd-placebo-like-finding-2019"
+      ],
+      "source_ids": [
+        "porst-tadalafil-ed-psychosocial-2012",
+        "pattanaik-tadalafil-ed-endothelial-rct-2019"
+      ],
+      "limitations": [
+        "ED populations.",
+        "Surrogate endpoints.",
+        "Pattanaik dose is abstract-level ambiguous."
+      ]
+    },
+    {
+      "label": "Obesity acute-hemodynamic study supports short-term BP and stiffness effects",
+      "claim_field": "best_current_signals",
+      "conclusion": "A single tadalafil 20 mg dose lowered BP and arterial stiffness markers in grade 1 obesity but did not change FMD.",
+      "support_role": "supports",
+      "rationale": "This is a direct tadalafil cardiovascular physiology signal outside ED, but it is acute and does not establish long-term benefit.",
+      "finding_ids": [
+        "larios-tadalafil-obesity-bp-stiffness-finding-2022"
+      ],
+      "source_ids": [
+        "larios-tadalafil-obesity-hemodynamics-2022"
+      ],
+      "limitations": [
+        "Single-dose design.",
+        "Obesity population.",
+        "No cardiovascular event outcomes."
+      ]
+    },
+    {
+      "label": "Type 2 diabetes crossover trial gives mixed metabolic-vascular signal",
+      "claim_field": "best_current_signals",
+      "conclusion": "MAKROTAD was neutral for insulin resistance but reported HbA1c reduction and qualitative microcirculation/endothelial-function improvement with more common adverse effects.",
+      "support_role": "qualifies",
+      "rationale": "This supports cardiometabolic plausibility but also shows endpoint and tolerability limits.",
+      "finding_ids": [
+        "fryk-makrotad-t2d-microcirculation-finding-2023"
+      ],
+      "source_ids": [
+        "fryk-makrotad-tadalafil-t2d-2023"
+      ],
+      "limitations": [
+        "Small full analysis set.",
+        "T2D rather than healthy users.",
+        "High-dose 20 mg daily exposure."
+      ]
+    },
+    {
+      "label": "PDE5 class meta-analysis supports plausibility but not tadalafil-specific healthy-user benefit",
+      "claim_field": "best_current_signals",
+      "conclusion": "The 2025 PDE5 RCT meta-analysis found modest improvements in several vascular surrogate markers, but it is mixed-agent class evidence.",
+      "support_role": "adjacent_evidence",
+      "rationale": "This aligns with the broader PDE5 transfer framework: useful for plausibility, insufficient for molecule-specific claims.",
+      "finding_ids": [
+        "zhang-pde5-vascular-function-meta-finding-2025"
+      ],
+      "source_ids": [
+        "zhang-pde5-vascular-function-meta-2025"
+      ],
+      "limitations": [
+        "Mixed PDE5 agents.",
+        "Mixed populations and endpoints.",
+        "Surrogate outcomes."
+      ]
+    },
+    {
+      "label": "PAH efficacy is real but disease-specific",
+      "claim_field": "applicability",
+      "conclusion": "PHIRST showed tadalafil 40 mg benefits in PAH, but this should not be generalized to healthy systemic cardiovascular prevention.",
+      "support_role": "boundary_condition",
+      "rationale": "PAH demonstrates pulmonary vascular drug activity while defining a sharp indication and dose boundary.",
+      "finding_ids": [
+        "galie-tadalafil-pah-phirst-finding-2009"
+      ],
+      "source_ids": [
+        "galie-tadalafil-pah-phirst-2009"
+      ],
+      "limitations": [
+        "PAH population.",
+        "40 mg daily dose.",
+        "Exercise limitation endpoint specific to pulmonary vascular disease."
+      ]
+    },
+    {
+      "label": "Healthy/BP and CSVD data do not show broad BP-control benefit",
+      "claim_field": "summary",
+      "conclusion": "Kloner 2003 suggests standalone BP effects are small/similar to placebo in healthy or mild ED contexts, and ETLAS-2 found no BP difference in older CSVD patients.",
+      "support_role": "qualifies",
+      "rationale": "These findings prevent converting acute BP lowering or class averages into a stable BP-management claim.",
+      "finding_ids": [
+        "kloner-tadalafil-bp-cv-effects-finding-2003",
+        "olmestig-etlas2-bp-null-finding-2025"
+      ],
+      "source_ids": [
+        "kloner-cardiovascular-effects-tadalafil-2003",
+        "olmestig-etlas2-main-2025"
+      ],
+      "limitations": [
+        "Kloner is an older pooled safety analysis.",
+        "ETLAS-2 is older CSVD and high-dose daily tadalafil."
+      ]
+    },
+    {
+      "label": "Safety baseline remains mandatory around vascular claims",
+      "claim_field": "safety_findings",
+      "conclusion": "Current labeling and tadalafil interaction studies require hard nitrate/riociguat avoidance and caution with alpha-blockers, antihypertensives, alcohol, cardiovascular disease, renal/hepatic impairment, and exposure-modifying drugs.",
+      "support_role": "boundary_condition",
+      "rationale": "Any vascular or blood-pressure effect can become a risk under interacting exposures or vulnerable cardiovascular status.",
+      "finding_ids": [
+        "cialis-label-contraindications-interactions-finding-2026",
+        "tadalafil-nitrate-interaction-duration-finding-2003",
+        "tadalafil-alpha-blocker-interaction-finding-2004",
+        "tadalafil-antihypertensive-mace-hypotension-finding-2022"
+      ],
+      "source_ids": [
+        "dailymed-cialis-label-2026-03",
+        "kloner-tadalafil-nitrate-interaction-2003",
+        "kloner-alpha-blocker-interaction-2004",
+        "kloner-antihypertensive-safety-pooled-2022"
+      ],
+      "limitations": [
+        "Safety sources are mostly ED/BPH or clinical pharmacology populations.",
+        "Rare serious event incidence is not estimated by this baseline."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-06",
+  "population_profile": "Primary target is mostly healthy men age 30 to 50, but staged cardiovascular evidence is mostly ED, increased cardiovascular-risk, obesity, type 2 diabetes, PAH, CSVD, clinical-development, and PDE5 class meta-analysis evidence.",
+  "tadalafil_exposure": "Tadalafil exposures include 5 mg daily for 12 weeks, 20 mg every other day for 4 weeks, single-dose 20 mg, 20 mg daily for 6 weeks or 3 months, and PAH 40 mg daily for 16 weeks; adjacent evidence includes mixed PDE5 inhibitor exposure.",
+  "endpoint_domain": "cardiovascular",
+  "safety_findings": "Blood-pressure lowering and vasodilation must be framed with existing tadalafil safety boundaries: contraindicated nitrates and riociguat, caution with alpha-blockers, antihypertensives, substantial alcohol, CYP3A4 inhibitors, renal/hepatic impairment, cardiovascular disease, and common adverse effects such as headache, flushing, myalgia, dyspepsia, and back pain. ETLAS-2 reported adverse events in 76% with tadalafil versus 36% placebo.",
+  "directness_to_target_population": "Low overall for healthy men age 30 to 50 and clinical cardiovascular benefit. Directness is moderate for tadalafil vascular surrogate effects in selected disease/risk populations and for standalone BP safety in healthy subjects, but low for long-term prevention, longevity, or event reduction.",
+  "confounding_and_bias_limits": "Surrogate endpoints, ED/disease-population selection, short follow-up, dose heterogeneity, class-level pooling, abstract-level extraction, and lack of hard cardiovascular outcomes limit causal and clinical interpretation.",
+  "population_band": [
+    "healthy_men_30_50",
+    "erectile_dysfunction_or_bph",
+    "cardiovascular_or_metabolic_condition",
+    "older_adults"
+  ],
+  "study_design_class": [
+    "randomized_trial",
+    "crossover_trial",
+    "review_or_meta_analysis"
+  ],
+  "effect_domain": "cardiovascular",
+  "pde5_agent": [
+    "tadalafil",
+    "mixed_pde5_inhibitors"
+  ],
+  "agent_directness_to_tadalafil": "mixed_tadalafil_and_adjacent_pde5",
+  "class_transfer_limits": "The baseline uses direct tadalafil evidence as primary. PDE5 class meta-analysis evidence is adjacent plausibility only and cannot override tadalafil-specific half-life, dosing, safety, population, endpoint, and indication differences."
+}

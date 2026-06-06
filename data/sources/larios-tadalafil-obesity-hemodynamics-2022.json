@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "larios-tadalafil-obesity-hemodynamics-2022",
+  "name": "Tadalafil Improves Haemodynamics and Arterial Stiffness but Not Flow-Mediated Dilation in Grade 1 Obesity. A Single-dose, Placebo-controlled Clinical Trial.",
+  "source_type": "randomized_trial",
+  "authors": [
+    "Larios-Cardenas M",
+    "Gonzalez-Radillo OI",
+    "Trujillo-Quiros J",
+    "Cardona-Muller D",
+    "Barocio-Pantoja M",
+    "Cardona-Munoz EG",
+    "Grover-Paez F"
+  ],
+  "venue": "Current Vascular Pharmacology",
+  "year": 2022,
+  "published_on": "2022",
+  "doi": "10.2174/1570161120666220827154417",
+  "pmid": "36043781",
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/36043781/"
+  ],
+  "summary": "Randomized double-blind placebo-controlled acute trial in 80 participants with grade 1 obesity, testing a single tadalafil 20 mg dose against placebo on flow-mediated dilation, blood pressure, augmentation index, and brachial-ankle pulse wave velocity.",
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T12:44:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36043781/",
+      "result": "PubMed abstract and metadata accessed via NCBI E-utilities.",
+      "notes": "Extraction uses abstract-level numeric results."
+    }
+  ]
+}

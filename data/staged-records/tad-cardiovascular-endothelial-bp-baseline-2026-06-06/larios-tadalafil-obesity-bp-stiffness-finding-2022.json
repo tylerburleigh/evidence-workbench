@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "larios-tadalafil-obesity-bp-stiffness-finding-2022",
+  "name": "Single-dose tadalafil lowered blood pressure and arterial stiffness markers in grade 1 obesity but did not change FMD",
+  "source_id": "larios-tadalafil-obesity-hemodynamics-2022",
+  "artifact_id": "larios-tadalafil-obesity-hemodynamics-artifact-2022",
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp"
+  ],
+  "endpoint_category": "cardiovascular",
+  "direction": "acute_bp_and_stiffness_improvement_without_fmd_change",
+  "evidence_tier": "randomized_trial",
+  "confidence": "low_to_moderate",
+  "statement": "In participants with grade 1 obesity, a single tadalafil 20 mg dose acutely lowered peripheral and central blood pressure, augmentation index, and brachial-ankle pulse wave velocity, but did not modify flow-mediated dilation.",
+  "population_or_context": "Adults with grade 1 obesity.",
+  "time_horizon": "Acute single-dose assessment.",
+  "quantitative_note": "SBP changed from 130.6+/-17.1 to 125.0+/-12.7 mm Hg (P=0.011), DBP from 82.7+/-18.2 to 76.5+/-11.8 mm Hg (P<=0.001), central SBP from 116.33+/-19.16 to 109.90+/-15.05 mm Hg (P=0.001), augmentation index from 69.1+/-17.1 to 65.7+/-14.4 (P=0.012), and brachial-ankle pulse wave velocity from 1229.7+/-218.4 to 1164.0+/-181.7 (P=0.001).",
+  "source_locator": {
+    "section": "PubMed Abstract Results",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/36043781/",
+    "quote_or_paraphrase_note": "Abstract reports blood pressure, augmentation index, pulse wave velocity, and FMD results.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Single-dose acute physiology study.",
+    "Obesity population rather than mostly healthy users.",
+    "Blood-pressure lowering can be beneficial or risky depending on baseline BP, interacting drugs, alcohol, heat stress, and volume status."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Adults with grade 1 obesity; indirect for mostly healthy men age 30 to 50.",
+  "tadalafil_exposure": "Single oral tadalafil 20 mg dose.",
+  "indication_context": "Experimental acute vascular physiology trial.",
+  "comparator_context": "Placebo and within-person pre/post change.",
+  "endpoint_domain": "cardiovascular",
+  "endpoint_measure": "Peripheral and central blood pressure, augmentation index, brachial-ankle pulse wave velocity, and flow-mediated dilation.",
+  "effect_estimate": "Acute reductions in SBP, DBP, central SBP, augmentation index, and baPWV; no FMD modification.",
+  "safety_findings": "Abstract does not report adverse events; hemodynamic lowering should be framed with nitrate, alpha-blocker, antihypertensive, alcohol, and cardiovascular-status cautions.",
+  "directness_to_target_population": "Moderate for acute hemodynamic response; low for long-term healthy-user cardiovascular benefit.",
+  "confounding_and_bias_limits": "Acute single dose, surrogate endpoints, no clinical event outcomes, and obesity-specific physiology.",
+  "population_band": "cardiovascular_or_metabolic_condition",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; transfer limit is acute dose timing and obesity context."
+}

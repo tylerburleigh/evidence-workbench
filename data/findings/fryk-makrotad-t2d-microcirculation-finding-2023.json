@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "fryk-makrotad-t2d-microcirculation-finding-2023",
+  "name": "High-dose tadalafil improved some microcirculation and metabolic markers but not insulin resistance in MAKROTAD",
+  "source_id": "fryk-makrotad-tadalafil-t2d-2023",
+  "artifact_id": "fryk-makrotad-t2d-microcirculation-artifact-2023",
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp",
+    "tad-longevity-healthspan-biomarkers"
+  ],
+  "endpoint_category": "cardiovascular",
+  "direction": "mixed_metabolic_vascular_signal",
+  "evidence_tier": "randomized_crossover_trial",
+  "confidence": "low_to_moderate",
+  "statement": "In a small type 2 diabetes crossover trial, tadalafil 20 mg daily for 6 weeks did not improve whole-body insulin resistance versus placebo, but the abstract reports improved microcirculation/endothelial function signals, lower HbA1c, and more muscle pain, dyspepsia, and headache.",
+  "population_or_context": "Adults with well-controlled type 2 diabetes and BMI 27-40 kg/m2.",
+  "time_horizon": "6 weeks per treatment period with 8-week washout.",
+  "quantitative_note": "Full analysis set N=18; tadalafil effect on insulin resistance was neutral. HbA1c mean difference was -2.50 mmol/mol (95% CI -4.20 to -0.78; P=0.005).",
+  "source_locator": {
+    "section": "PubMed Abstract Findings and Interpretation",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/37256099/",
+    "quote_or_paraphrase_note": "Abstract reports neutral insulin-resistance primary result, HbA1c estimate, microcirculation/endothelial-function interpretation, and adverse-event pattern.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Small feasibility trial.",
+    "Type 2 diabetes and overweight/obesity population rather than healthy users.",
+    "Microcirculation and endothelial-function details require full-text extraction before quantitative synthesis."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Adults with well-controlled T2D; partly overlaps men over 40 but is not mostly healthy 30-50 evidence.",
+  "tadalafil_exposure": "Tadalafil 20 mg once daily for 6 weeks.",
+  "indication_context": "Experimental metabolic-vascular tadalafil trial in T2D.",
+  "comparator_context": "Placebo crossover comparison.",
+  "endpoint_domain": "cardiovascular",
+  "endpoint_measure": "Whole-body insulin resistance, HbA1c, microcirculation, endothelial function, and tolerability.",
+  "effect_estimate": "Neutral for whole-body insulin resistance; HbA1c mean difference -2.50 mmol/mol; qualitative abstract-level improvement in microcirculation/endothelial function.",
+  "safety_findings": "Muscle pain, dyspepsia, and headache were more frequent with high-dose tadalafil; no serious-adverse-event difference appeared between treatments.",
+  "directness_to_target_population": "Low to moderate for cardiometabolic-risk populations; low for healthy men age 30 to 50.",
+  "confounding_and_bias_limits": "Small trial, secondary endpoint interpretation, full-text quantitative details not extracted, and no cardiovascular clinical outcomes.",
+  "population_band": "cardiovascular_or_metabolic_condition",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; transfer limit is T2D high-dose metabolic-vascular setting."
+}

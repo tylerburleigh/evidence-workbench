@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "zhang-pde5-vascular-function-meta-2025",
+  "name": "Associations between phosphodiesterase type 5 inhibitors and vascular function: a systematic review and meta-analysis on randomized-controlled trials.",
+  "source_type": "systematic_review_meta_analysis",
+  "authors": [
+    "Zhang Y",
+    "Peng H",
+    "Xin S",
+    "Mao J",
+    "Zhang J",
+    "Li H",
+    "Luan Y",
+    "Liu X",
+    "Wang T",
+    "Liu J",
+    "Zhang H",
+    "Song W"
+  ],
+  "venue": "Systematic Reviews",
+  "year": 2025,
+  "published_on": "2025-12-30",
+  "doi": "10.1186/s13643-025-03042-4",
+  "pmid": "41469737",
+  "pmcid": "PMC12860173",
+  "registry_ids": [
+    "PROSPERO CRD42023387924"
+  ],
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/41469737/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC12860173/"
+  ],
+  "summary": "Systematic review and meta-analysis of randomized controlled trials published from 1998 to 2022 comparing PDE5 inhibitors with placebo on vascular parameters including blood pressure, pulse wave velocity, carotid intima-media thickness, flow-mediated dilation, peak systolic velocity, endothelial progenitor cells, and related markers.",
+  "access_status": "full_text_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T12:42:30Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41469737/",
+      "result": "PubMed abstract and metadata accessed via NCBI E-utilities; PMC full text identified.",
+      "notes": "Extraction uses abstract-level pooled estimates."
+    }
+  ]
+}

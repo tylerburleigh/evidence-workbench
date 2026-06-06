@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "rosano-tadalafil-cv-risk-endothelial-artifact-2005",
+  "name": "Rosano 2005 Tadalafil Cardiovascular-Risk Endothelial Function Extract",
+  "artifact_type": "randomized_parallel_trial_extract",
+  "status": "complete",
+  "source_ids": [
+    "rosano-tadalafil-cv-risk-endothelial-2005"
+  ],
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp"
+  ],
+  "population_or_context": "Men with erectile dysfunction and increased cardiovascular risk.",
+  "sample_size": "32 randomized to tadalafil 20 mg every other day or placebo.",
+  "methods": "Randomized placebo-controlled 4-week trial with follow-up 2 weeks after discontinuation; endpoints included brachial artery flow-mediated dilation, plasma nitrite/nitrate, and endothelin-1.",
+  "endpoint_categories": [
+    "cardiovascular",
+    "endothelial_function",
+    "biomarkers"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Men with ED and increased cardiovascular risk; not a mostly healthy 30-50 population.",
+  "tadalafil_exposure": "Tadalafil 20 mg every other day for 4 weeks, with assessment at 4 weeks and 2-week follow-up.",
+  "indication_context": "Experimental endothelial-function trial in ED/increased cardiovascular-risk context.",
+  "study_design": "Small randomized placebo-controlled parallel trial.",
+  "comparator_context": "Placebo and within-person baseline.",
+  "endpoint_domain": "cardiovascular",
+  "safety_findings": "Abstract does not provide detailed adverse-event rates; safety must be interpreted using the dedicated tadalafil safety baseline.",
+  "directness_to_target_population": "Low to moderate: direct tadalafil exposure and vascular markers, but participants had ED and increased cardiovascular risk.",
+  "confounding_and_bias_limits": "Small sample, short duration, surrogate endothelial endpoints, abstract-level extraction, and no clinical cardiovascular-outcome assessment.",
+  "population_band": "cardiovascular_or_metabolic_condition",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; transfer limit is population and surrogate endpoint rather than agent identity."
+}

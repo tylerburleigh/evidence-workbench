@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "rosano-tadalafil-fmd-improvement-finding-2005",
+  "name": "Tadalafil improved brachial flow-mediated dilation in a small cardiovascular-risk ED trial",
+  "source_id": "rosano-tadalafil-cv-risk-endothelial-2005",
+  "artifact_id": "rosano-tadalafil-cv-risk-endothelial-artifact-2005",
+  "taxonomy_node_ids": [
+    "tad-cardiovascular-endothelial-bp"
+  ],
+  "endpoint_category": "cardiovascular",
+  "direction": "improvement_in_surrogate_endothelial_marker",
+  "evidence_tier": "randomized_trial",
+  "confidence": "low_to_moderate",
+  "statement": "In a small randomized trial of men with ED and increased cardiovascular risk, tadalafil 20 mg every other day improved brachial artery flow-mediated dilation and shifted nitrite/nitrate and endothelin-1 biomarkers versus baseline, with benefit sustained 2 weeks after stopping.",
+  "population_or_context": "Men with ED and increased cardiovascular risk.",
+  "time_horizon": "4 weeks of treatment plus 2-week follow-up.",
+  "quantitative_note": "FMD improved with tadalafil from 4.2+/-3.2% to 9.3+/-3.7% at 4 weeks (P<0.01 vs baseline), while placebo was unchanged from 4.1+/-2.8% to 4.0+/-3.4%; tadalafil FMD remained 9.1+/-3.9% at 6 weeks.",
+  "source_locator": {
+    "section": "PubMed Abstract Results",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/15661417/",
+    "quote_or_paraphrase_note": "Abstract reports FMD, nitrite/nitrate, and endothelin-1 changes after tadalafil and placebo.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Small sample and short duration.",
+    "ED and increased cardiovascular-risk population, not healthy users.",
+    "Surrogate endothelial markers do not establish cardiovascular event reduction."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Men with ED and increased cardiovascular risk; indirect for mostly healthy men age 30 to 50.",
+  "tadalafil_exposure": "Tadalafil 20 mg every other day for 4 weeks.",
+  "indication_context": "Experimental endothelial-function trial in ED/increased cardiovascular risk.",
+  "comparator_context": "Placebo and within-person baseline.",
+  "endpoint_domain": "cardiovascular",
+  "endpoint_measure": "Brachial artery flow-mediated dilation, plasma nitrite/nitrate, and endothelin-1.",
+  "effect_estimate": "FMD changed from 4.2+/-3.2% to 9.3+/-3.7% with tadalafil, versus no placebo change; sustained 9.1+/-3.9% at 6 weeks.",
+  "safety_findings": "Abstract-level extract does not report adverse-event rates; use tadalafil safety baseline for interaction and tolerability boundaries.",
+  "directness_to_target_population": "Low to moderate for tadalafil vascular surrogate effects; low for healthy 30-50 clinical cardiovascular benefit.",
+  "confounding_and_bias_limits": "Small trial, surrogate endpoints, ED/CV-risk population, short follow-up, and no clinical cardiovascular endpoints.",
+  "population_band": "cardiovascular_or_metabolic_condition",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cardiovascular",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; no class transfer needed, but population and surrogate endpoint transfer is limited."
+}
