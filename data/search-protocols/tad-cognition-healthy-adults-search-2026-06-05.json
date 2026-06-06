@@ -154,5 +154,10 @@
     "randomized_trial",
     "crossover_trial"
   ],
-  "effect_domain": "cognition"
+  "effect_domain": "cognition",
+  "pde5_agent": [
+    "tadalafil",
+    "vardenafil"
+  ],
+  "agent_directness_to_tadalafil": "mixed_tadalafil_and_adjacent_pde5"
 }

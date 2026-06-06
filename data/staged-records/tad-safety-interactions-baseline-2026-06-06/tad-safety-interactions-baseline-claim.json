@@ -174,5 +174,8 @@
     "crossover_trial",
     "review_or_meta_analysis"
   ],
-  "effect_domain": "safety_risk"
+  "effect_domain": "safety_risk",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Claim is tadalafil-specific; pooled class transfer is not used. Broader PDE5 similarities do not override tadalafil-specific label timing, dose, daily-exposure, nitrate, alpha-blocker, CYP3A4, renal/hepatic, and population limits."
 }

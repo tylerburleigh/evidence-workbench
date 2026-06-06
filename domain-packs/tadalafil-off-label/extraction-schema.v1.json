@@ -20,6 +20,27 @@
       "description": "Drug name, tadalafil versus other PDE5 inhibitor, dose, timing, frequency, duration, route, and whether exposure is acute, daily, intermittent, or unclear."
     },
     {
+      "id": "pde5_agent",
+      "label": "PDE5 Agent",
+      "required": true,
+      "applies_to": ["artifact", "finding", "claim"],
+      "description": "Specific PDE5 inhibitor or inhibitor set studied or synthesized: tadalafil, sildenafil, vardenafil, avanafil, mixed PDE5 inhibitors, or unspecified PDE5 class."
+    },
+    {
+      "id": "agent_directness_to_tadalafil",
+      "label": "Agent Directness To Tadalafil",
+      "required": true,
+      "applies_to": ["artifact", "finding", "claim"],
+      "description": "Whether the record is direct tadalafil evidence, mixed tadalafil plus adjacent PDE5 evidence, adjacent non-tadalafil PDE5 evidence, class-level evidence, or unclear."
+    },
+    {
+      "id": "class_transfer_limits",
+      "label": "Class Transfer Limits",
+      "required": true,
+      "applies_to": ["artifact", "finding", "claim"],
+      "description": "Pharmacokinetic, dose, exposure-pattern, PDE selectivity, indication, population, comparator, endpoint, or safety reasons that limit transfer from PDE5-class or non-tadalafil evidence to tadalafil claims."
+    },
+    {
       "id": "indication_context",
       "label": "Indication Context",
       "required": true,

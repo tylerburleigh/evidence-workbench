@@ -30,5 +30,8 @@
   "confounding_and_bias_limits": "Secondary cognitive endpoints, small sample, brief single-dose exposure, limited neuropsychological battery, and indirect disease population limit inference for healthy-adult cognition.",
   "population_band": "older_adults",
   "study_design_class": "crossover_trial",
-  "effect_domain": "cognition"
+  "effect_domain": "cognition",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; no cross-agent PDE5 transfer is needed, but population, dose, duration, indication, comparator, and endpoint limits still constrain application to mostly healthy men age 30 to 50."
 }

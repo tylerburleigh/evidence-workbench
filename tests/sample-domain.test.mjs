@@ -137,12 +137,19 @@ test("tadalafil off-label scaffold loads review questions, safety lanes, and syn
   assert.ok(domainPack.appraisalLaneIds.has("safety_risk_framing"));
   assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "population_profile"));
   assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "tadalafil_exposure"));
+  assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "pde5_agent"));
+  assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "agent_directness_to_tadalafil"));
+  assert.ok(domainPack.extractionSchema.fields.some((field) => field.id === "class_transfer_limits"));
+  assert.ok(domainPack.domain.applicability_facets.some((facet) => facet.id === "pde5_agent"));
+  assert.ok(domainPack.domain.applicability_facets.some((facet) => facet.id === "agent_directness_to_tadalafil"));
   assert.equal(domainPack.extractionSchema.validation.enforce_required_fields, true);
   assert.deepEqual(
     domainPack.extractionSchema.fields.find((field) => field.id === "source_locator")?.applies_to,
     ["finding"]
   );
   assert.ok(domainPack.domain.synthesis_matrix.columns.some((column) => column.id === "safety"));
+  assert.ok(domainPack.domain.synthesis_matrix.columns.some((column) => column.id === "agent"));
+  assert.ok(domainPack.domain.synthesis_matrix.columns.some((column) => column.id === "transfer_limits"));
 });
 
 test("active domain can be overridden without editing config", async () => {

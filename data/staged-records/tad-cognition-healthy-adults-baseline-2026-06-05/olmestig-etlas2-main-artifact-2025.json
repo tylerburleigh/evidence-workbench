@@ -31,5 +31,8 @@
   "confounding_and_bias_limits": "Feasibility-primary phase II trial; indirect population; not designed to test healthy-adult cognitive enhancement.",
   "population_band": "older_adults",
   "study_design_class": "randomized_trial",
-  "effect_domain": "cognition"
+  "effect_domain": "cognition",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil evidence; no cross-agent PDE5 transfer is needed, but population, dose, duration, indication, comparator, and endpoint limits still constrain application to mostly healthy men age 30 to 50."
 }

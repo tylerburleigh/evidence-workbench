@@ -40,5 +40,8 @@
   "confounding_and_bias_limits": "Potential trial selection bias, abstract-only extraction, older evidence base, and lack of detailed event taxonomy in staged record.",
   "population_band": "erectile_dysfunction_or_bph",
   "study_design_class": "review_or_meta_analysis",
-  "effect_domain": "safety_risk"
+  "effect_domain": "safety_risk",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil safety or interaction evidence; transfer from other PDE5 inhibitors is not needed, but monitored trial or clinical-population context limits off-label healthy-user risk estimates."
 }

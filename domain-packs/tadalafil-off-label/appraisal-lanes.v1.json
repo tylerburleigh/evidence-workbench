@@ -17,7 +17,7 @@
     {
       "id": "exposure_directness",
       "label": "Exposure Directness",
-      "description": "Checks dose, timing, duration, daily versus as-needed use, tadalafil versus other PDE5 inhibitors, and drug-class transfer assumptions.",
+      "description": "Checks dose, timing, duration, daily versus as-needed use, pde5_agent, agent_directness_to_tadalafil, and whether class-transfer limits justify any use of non-tadalafil PDE5-inhibitor evidence in tadalafil claims.",
       "required_by_default": true
     },
     {
@@ -41,7 +41,7 @@
     {
       "id": "synthesis_overreach",
       "label": "Synthesis Overreach",
-      "description": "Checks whether public claims exceed the support map, imply off-label medical advice, or convert mechanistic, surrogate, observational, or adjacent-drug evidence into unsupported benefit claims.",
+      "description": "Checks whether public claims exceed the support map, imply off-label medical advice, collapse agent-specific evidence, or convert mechanistic, surrogate, observational, or adjacent-drug evidence into unsupported tadalafil benefit claims.",
       "required_by_default": true
     },
     {

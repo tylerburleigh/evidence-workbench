@@ -19,7 +19,7 @@ Use with `skills/review-update/SKILL.md`.
 
 - Scope the update to one `review_question`.
 - Search for new trials, observational studies, systematic reviews, pharmacovigilance signals, prescribing-information changes, and mechanistic studies only when they can materially affect a public claim or its boundaries.
-- Treat preprints, conference abstracts, animal studies, and non-tadalafil PDE5-inhibitor sources as lower-directness evidence unless they materially change plausibility or risk interpretation.
+- Treat preprints, conference abstracts, animal studies, and non-tadalafil PDE5-inhibitor sources as lower-directness evidence unless they materially change plausibility or risk interpretation; update `pde5_agent`, `agent_directness_to_tadalafil`, and `class_transfer_limits` whenever a new source affects agent transfer.
 - Preserve negative, null, mixed, or safety-limiting evidence if it changes the synthesis boundary.
 - Label changes or safety communications can justify an update even without a new benefit study.
 - Record review-update searches, databases, dates, screening decisions, and included/excluded sources in a `search_protocol` record when source discovery is performed.

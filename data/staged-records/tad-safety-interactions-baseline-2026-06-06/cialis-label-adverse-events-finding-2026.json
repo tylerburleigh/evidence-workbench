@@ -40,5 +40,8 @@
   "confounding_and_bias_limits": "Trial populations differ from off-label healthy users; postmarketing signals have uncertain denominator, comorbidities, sexual activity timing, and co-medication confounding.",
   "population_band": "mixed_or_unclear",
   "study_design_class": "regulatory_label_or_guidance",
-  "effect_domain": "safety_risk"
+  "effect_domain": "safety_risk",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "class_transfer_limits": "Direct tadalafil/CIALIS safety evidence; transfer from other PDE5 inhibitors is not needed for this boundary, but product labeling, dose, indication, and off-label population differences still limit absolute-risk estimates."
 }

@@ -1,7 +1,7 @@
 {
   "id": "tadalafil-off-label",
   "name": "Tadalafil Off-Label Effects Review",
-  "summary": "A literature-review domain for off-label tadalafil/Cialis effects and risks across cognition, mild cognitive impairment, mood, well-being, cardiovascular health, exercise physiology, and longevity-relevant outcomes, with a target-interest population of mostly healthy men age 30 to 50.",
+  "summary": "A literature-review domain for off-label tadalafil/Cialis effects and risks across cognition, mild cognitive impairment, mood, well-being, cardiovascular health, exercise physiology, and longevity-relevant outcomes, with a target-interest population of mostly healthy men age 30 to 50. Tadalafil remains the primary claim target; sildenafil, vardenafil, avanafil, or mixed PDE5-inhibitor evidence is admissible only as explicitly labeled adjacent evidence unless transfer to tadalafil is justified.",
   "default_scope_unit": "review_question",
   "taxonomy_file": "taxonomy.v1.json",
   "evidence_ladder_file": "evidence-ladder.v1.json",
@@ -41,6 +41,33 @@
         { "id": "erectile_dysfunction_or_bph", "label": "ED or BPH" },
         { "id": "pulmonary_hypertension", "label": "Pulmonary hypertension" },
         { "id": "mixed_or_unclear", "label": "Mixed or unclear" }
+      ]
+    },
+    {
+      "id": "pde5_agent",
+      "label": "PDE5 Agent",
+      "description": "Specific PDE5 inhibitor studied, labeled, or synthesized so tadalafil-specific and adjacent class evidence remain separable.",
+      "applies_to": ["artifact", "finding", "claim", "search_protocol"],
+      "values": [
+        { "id": "tadalafil", "label": "Tadalafil" },
+        { "id": "sildenafil", "label": "Sildenafil" },
+        { "id": "vardenafil", "label": "Vardenafil" },
+        { "id": "avanafil", "label": "Avanafil" },
+        { "id": "mixed_pde5_inhibitors", "label": "Mixed PDE5 inhibitors" },
+        { "id": "pde5_class_unspecified", "label": "PDE5 class, unspecified" }
+      ]
+    },
+    {
+      "id": "agent_directness_to_tadalafil",
+      "label": "Agent Directness To Tadalafil",
+      "description": "Whether the agent exposure directly supports tadalafil claims or only informs them as adjacent PDE5-class evidence.",
+      "applies_to": ["artifact", "finding", "claim", "search_protocol"],
+      "values": [
+        { "id": "direct_tadalafil", "label": "Direct tadalafil" },
+        { "id": "mixed_tadalafil_and_adjacent_pde5", "label": "Mixed tadalafil and adjacent PDE5" },
+        { "id": "adjacent_non_tadalafil_pde5", "label": "Adjacent non-tadalafil PDE5" },
+        { "id": "pde5_class_level", "label": "PDE5 class-level" },
+        { "id": "unclear_or_not_reported", "label": "Unclear or not reported" }
       ]
     },
     {
@@ -84,6 +111,7 @@
       "treating ED, BPH, pulmonary-hypertension, or older-disease-population evidence as directly applicable to healthy men age 30 to 50 without an explicit directness caveat",
       "claiming cognitive, mood, cardiovascular, or longevity benefit from mechanistic nitric-oxide/cGMP reasoning alone",
       "generalizing sildenafil or other PDE5-inhibitor evidence to tadalafil without pharmacokinetic, dose, or population justification",
+      "collapsing tadalafil-specific findings, sildenafil-heavy findings, vardenafil findings, avanafil findings, and mixed PDE5-inhibitor findings into a single agent-neutral conclusion",
       "separating possible benefits from the contraindication and interaction profile",
       "using surrogate biomarkers as longevity or healthspan outcomes unless the source directly validates that interpretation"
     ]
@@ -107,13 +135,15 @@
   },
   "synthesis_matrix": {
     "title": "Tadalafil Evidence Synthesis Matrix",
-    "description": "Compare tadalafil studies by population, dose/exposure, comparator, endpoint domain, effect direction, quantitative result, safety signal, and directness to the target population.",
+    "description": "Compare tadalafil and adjacent PDE5-inhibitor studies by agent, agent directness, population, dose/exposure, comparator, endpoint domain, effect direction, quantitative result, safety signal, and transfer limits.",
     "row_source": "artifacts",
     "empty_state": "No tadalafil study artifacts have been published for this review yet.",
     "columns": [
       { "id": "study", "label": "Study", "path": "source.name" },
       { "id": "year", "label": "Year", "path": "source.year" },
       { "id": "scope", "label": "Review Question", "path": "scope_nodes.name" },
+      { "id": "agent", "label": "PDE5 Agent", "path": "artifact.pde5_agent" },
+      { "id": "agent_directness", "label": "Agent Directness", "path": "artifact.agent_directness_to_tadalafil" },
       { "id": "population", "label": "Population", "path": "artifact.population_profile" },
       { "id": "exposure", "label": "Tadalafil Exposure", "path": "artifact.tadalafil_exposure" },
       { "id": "comparator", "label": "Comparator", "path": "artifact.comparator_context" },
@@ -121,6 +151,7 @@
       { "id": "effect", "label": "Effect Direction", "path": "artifact.effect_summary" },
       { "id": "safety", "label": "Safety Findings", "path": "artifact.safety_findings" },
       { "id": "directness", "label": "Directness", "path": "artifact.directness_to_target_population" },
+      { "id": "transfer_limits", "label": "Transfer Limits", "path": "artifact.class_transfer_limits" },
       { "id": "limitations", "label": "Limitations", "path": "artifact.confounding_and_bias_limits" }
     ]
   }

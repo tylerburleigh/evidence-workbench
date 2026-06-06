@@ -30,5 +30,8 @@
   "confounding_and_bias_limits": "Non-tadalafil evidence; abstract-only extraction; full design and sample details need full-text verification before high-confidence use.",
   "population_band": "healthy_adults_mixed_sex",
   "study_design_class": "randomized_trial",
-  "effect_domain": "cognition"
+  "effect_domain": "cognition",
+  "pde5_agent": "vardenafil",
+  "agent_directness_to_tadalafil": "adjacent_non_tadalafil_pde5",
+  "class_transfer_limits": "Adjacent vardenafil evidence only; do not transfer to tadalafil without accounting for different molecule, pharmacokinetics, dose, exposure timing, PDE selectivity, endpoint, and source-depth limits."
 }
