@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "tadalafil-antihypertensive-safety-artifact-2022",
+  "name": "Tadalafil Antihypertensive Medication Pooled Safety Extract",
+  "artifact_type": "pooled_safety_analysis_extract",
+  "status": "complete",
+  "source_ids": [
+    "kloner-antihypertensive-safety-pooled-2022"
+  ],
+  "taxonomy_node_ids": [
+    "tad-safety-interactions-adverse-events"
+  ],
+  "population_or_context": "Patients from phase II-IV ED and/or BPH tadalafil studies, stratified by concomitant antihypertensive medication use; alpha-blockers excluded from this pooled antihypertensive analysis.",
+  "sample_size": "15,030 patients in all placebo-controlled studies and 22,825 patients in all studies.",
+  "methods": "Integrated pooled safety analysis by indication, antihypertensive use, and number of antihypertensive medications.",
+  "endpoint_categories": [
+    "safety",
+    "hypotension",
+    "cardiovascular_events",
+    "drug_interactions"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "ED and/or BPH trial populations, including patients on antihypertensive medications; indirect for healthy men age 30 to 50 and does not cover alpha-blocker co-use.",
+  "tadalafil_exposure": "Tadalafil exposure across phase II-IV ED/BPH studies, including as-needed and daily regimens as represented in pooled datasets.",
+  "indication_context": "On-label ED/BPH clinical safety analysis relevant to off-label cardiovascular interaction framing.",
+  "study_design": "Pooled analysis of placebo-controlled and all-study clinical trial datasets.",
+  "comparator_context": "Tadalafil versus placebo within placebo-controlled trials, stratified by antihypertensive medication use.",
+  "endpoint_domain": "safety",
+  "safety_findings": "Hypotension-related TEAE incidence was 0.6% to 1.5% and MACE incidence was 0.0% to 1.0% across all indications in placebo-controlled studies; no significant tadalafil-placebo MACE differences were reported with or without antihypertensive medication use.",
+  "directness_to_target_population": "Moderate for men age 30 to 50 who take common antihypertensives, but limited by ED/BPH trial selection and exclusion of alpha-blockers.",
+  "confounding_and_bias_limits": "Pooled across heterogeneous studies; industry involvement; trial populations may exclude high-risk patients; abstract-only extraction for first baseline.",
+  "population_band": "cardiovascular_or_metabolic_condition",
+  "study_design_class": "review_or_meta_analysis",
+  "effect_domain": "safety_risk"
+}

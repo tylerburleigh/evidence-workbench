@@ -3,7 +3,7 @@
   "queue_type": "research_priority_queue",
   "domain_id": "tadalafil-off-label",
   "taxonomy_version": "1.0.0",
-  "updated_at": "2026-06-06T10:44:10.779Z",
+  "updated_at": "2026-06-06T10:59:24.932Z",
   "notes": [
     "Baseline Review priority applies to uncovered review questions.",
     "Review Update priority applies to stale review questions with public baseline coverage and no active review bundle."
@@ -57,14 +57,6 @@
     },
     {
       "rank": 6,
-      "taxonomy_node_id": "tad-safety-interactions-adverse-events",
-      "priority_tier": "soon",
-      "default_mode": "baseline_review",
-      "rationale": "This review question lacks a public baseline and is ready for a bounded baseline review pass.",
-      "default_question": "What is the current evidence landscape for Safety, Interactions, And Adverse Events in Tadalafil Off-Label Effects Review, and what belongs in the first public baseline for this review question?"
-    },
-    {
-      "rank": 7,
       "taxonomy_node_id": "tad-mechanistic-translational-evidence",
       "priority_tier": "soon",
       "default_mode": "baseline_review",

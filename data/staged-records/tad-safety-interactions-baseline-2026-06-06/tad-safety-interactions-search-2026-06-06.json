@@ -1,0 +1,169 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "tad-safety-interactions-search-2026-06-06",
+  "name": "Tadalafil safety, interactions, and adverse events targeted baseline search",
+  "domain_id": "tadalafil-off-label",
+  "taxonomy_node_ids": [
+    "tad-safety-interactions-adverse-events"
+  ],
+  "status": "complete",
+  "systematicity_level": "targeted_baseline_review",
+  "search_started_at": "2026-06-06T10:44:00Z",
+  "search_completed_at": "2026-06-06T10:50:46Z",
+  "databases": [
+    "DailyMed",
+    "PubMed",
+    "PubMed Central",
+    "Web search"
+  ],
+  "search_queries": [
+    {
+      "database": "DailyMed",
+      "query": "CIALIS tadalafil prescribing information contraindications nitrates riociguat alpha blockers alcohol CYP3A4 adverse reactions",
+      "searched_at": "2026-06-06T10:44:00Z",
+      "result_count": 1
+    },
+    {
+      "database": "PubMed",
+      "query": "tadalafil nitrates interaction 24 hours 48 hours Kloner",
+      "searched_at": "2026-06-06T10:45:00Z",
+      "result_count": "targeted exact-title result set"
+    },
+    {
+      "database": "PubMed",
+      "query": "tadalafil alpha blocker doxazosin tamsulosin hemodynamic interaction healthy men",
+      "searched_at": "2026-06-06T10:46:00Z",
+      "result_count": "targeted exact-title result set"
+    },
+    {
+      "database": "PubMed",
+      "query": "tadalafil antihypertensive medications pooled safety hypotension major adverse cardiovascular events",
+      "searched_at": "2026-06-06T10:47:00Z",
+      "result_count": "targeted web and PubMed result set"
+    },
+    {
+      "database": "PubMed",
+      "query": "tadalafil adverse events systematic review meta-analysis benign prostatic hyperplasia serious adverse events",
+      "searched_at": "2026-06-06T10:48:00Z",
+      "result_count": "targeted web and PubMed result set"
+    }
+  ],
+  "inclusion_criteria": [
+    "Current official tadalafil/CIALIS regulatory labeling for contraindications, warnings, precautions, drug interactions, dose limits, and adverse reactions.",
+    "Human clinical pharmacology studies directly measuring tadalafil drug-interaction blood-pressure endpoints.",
+    "Pooled clinical trial or meta-analysis evidence that reports hypotension, major adverse cardiovascular events, adverse events, or serious adverse events.",
+    "Prioritize tadalafil-specific sources over PDE5-inhibitor class sources."
+  ],
+  "exclusion_criteria": [
+    "Commercial drug-information pages when current official labeling was available.",
+    "Nonhuman or in vitro sources for this first safety baseline.",
+    "Benefit-oriented ED, BPH, PAH, cognition, or exercise studies without extractable safety or interaction data.",
+    "Individual case reports reserved for a later rare-signal review unless needed to define current label warnings."
+  ],
+  "dedupe_method": "Manual deduplication by title, PMID/DOI, label setid, and source purpose.",
+  "screening_counts": {
+    "records_identified": "targeted search, not exhaustively counted",
+    "records_screened": 9,
+    "full_text_reviewed": 2,
+    "abstracts_or_label_sections_reviewed": 5,
+    "sources_included": 5
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "dailymed-cialis-2026-03",
+      "title": "DailyMed - CIALIS tadalafil tablet, film coated",
+      "decision": "include",
+      "reason": "Current U.S. label revised March 2026; authoritative for contraindications, warnings, interactions, dose limits, adverse reactions, and postmarketing signals.",
+      "source_id": "dailymed-cialis-label-2026-03",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcd8f8ab-81a2-4891-83db-24a0b0e25895"
+    },
+    {
+      "candidate_id": "kloner-nitrate-2003",
+      "title": "Time course of the interaction between tadalafil and nitrates.",
+      "decision": "include",
+      "reason": "Randomized crossover clinical pharmacology study directly measuring tadalafil 20 mg and sublingual nitroglycerin timing.",
+      "source_id": "kloner-tadalafil-nitrate-interaction-2003",
+      "doi": "10.1016/j.jacc.2003.09.023",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14642699/"
+    },
+    {
+      "candidate_id": "kloner-alpha-blocker-2004",
+      "title": "Interaction between the phosphodiesterase 5 inhibitor, tadalafil and 2 alpha-blockers, doxazosin and tamsulosin in healthy normotensive men.",
+      "decision": "include",
+      "reason": "Randomized crossover clinical pharmacology studies in healthy men that directly compare alpha-blocker hemodynamic interaction patterns.",
+      "source_id": "kloner-alpha-blocker-interaction-2004",
+      "doi": "10.1097/01.ju.0000142687.75577.e4",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15540759/"
+    },
+    {
+      "candidate_id": "kloner-antihypertensive-pooled-2022",
+      "title": "Analysis of integrated clinical safety data of tadalafil in patients receiving concomitant antihypertensive medications.",
+      "decision": "include",
+      "reason": "Large pooled analysis of 72 phase II-IV ED/BPH studies reporting hypotension-related TEAEs and MACE by antihypertensive co-use.",
+      "source_id": "kloner-antihypertensive-safety-pooled-2022",
+      "doi": "10.1111/jch.14435",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35099113/"
+    },
+    {
+      "candidate_id": "dong-bph-meta-2013",
+      "title": "Efficacy and safety of tadalafil monotherapy for lower urinary tract symptoms secondary to benign prostatic hyperplasia: a meta-analysis.",
+      "decision": "include",
+      "reason": "Randomized-trial meta-analysis reporting serious adverse events for daily-use BPH populations.",
+      "source_id": "dong-tadalafil-bph-safety-meta-analysis-2013",
+      "doi": "10.1159/000351405",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23816815/"
+    },
+    {
+      "candidate_id": "kloner-cv-safety-update-2006",
+      "title": "Cardiovascular safety update of Tadalafil: retrospective analysis of data from placebo-controlled and open-label clinical trials of Tadalafil with as needed, three times-per-week or once-a-day dosing.",
+      "decision": "maybe",
+      "reason": "Relevant broad cardiovascular safety source, but not staged in this first bundle because the 2022 pooled analysis gives a more current hypotension/MACE lens and the label covers high-risk exclusions.",
+      "doi": "10.1016/j.amjcard.2005.12.073",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16765134/"
+    },
+    {
+      "candidate_id": "tadalafil-case-reports-rare-neuro-vision-hearing",
+      "title": "Individual case reports and pharmacovigilance reports for rare tadalafil-associated events",
+      "decision": "maybe",
+      "reason": "Potentially useful for a rare-signal review, but too heterogeneous for the first baseline claim and already represented by current label postmarketing warnings."
+    },
+    {
+      "candidate_id": "commercial-interaction-checkers",
+      "title": "Commercial drug interaction checkers for tadalafil",
+      "decision": "exclude",
+      "reason": "Useful clinically but not needed for source-backed baseline when official label and primary interaction studies are available."
+    },
+    {
+      "candidate_id": "pde5-class-general-reviews",
+      "title": "General PDE5-inhibitor class safety reviews",
+      "decision": "exclude",
+      "reason": "The first baseline prioritizes tadalafil-specific labeling and tadalafil-specific human studies."
+    }
+  ],
+  "source_ids": [
+    "dailymed-cialis-label-2026-03",
+    "kloner-tadalafil-nitrate-interaction-2003",
+    "kloner-alpha-blocker-interaction-2004",
+    "kloner-antihypertensive-safety-pooled-2022",
+    "dong-tadalafil-bph-safety-meta-analysis-2013"
+  ],
+  "screening_summary": "Targeted searches identified current CIALIS labeling plus tadalafil-specific interaction and pooled safety evidence sufficient for a first baseline. The staged claim emphasizes hard contraindications, dose/exposure modifiers, common adverse reactions, rare serious warnings, and directness limits for mostly healthy men age 30 to 50.",
+  "limitations": [
+    "Targeted baseline search rather than a full systematic review.",
+    "The included trial and pooled safety sources mostly involve ED/BPH populations, not healthy off-label enhancement users.",
+    "Rare adverse events are primarily represented through label warnings and postmarketing summaries rather than case-level causality review.",
+    "Pulmonary arterial hypertension dosing and safety were not separately reviewed."
+  ],
+  "population_band": [
+    "healthy_men_30_50",
+    "erectile_dysfunction_or_bph",
+    "cardiovascular_or_metabolic_condition"
+  ],
+  "study_design_class": [
+    "regulatory_label_or_guidance",
+    "crossover_trial",
+    "review_or_meta_analysis"
+  ],
+  "effect_domain": "safety_risk"
+}

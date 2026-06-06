@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "id": "tadalafil-antihypertensive-mace-hypotension-finding-2022",
+  "name": "Pooled ED/BPH studies did not show increased hypotension or MACE with antihypertensive co-use",
+  "source_id": "kloner-antihypertensive-safety-pooled-2022",
+  "artifact_id": "tadalafil-antihypertensive-safety-artifact-2022",
+  "taxonomy_node_ids": [
+    "tad-safety-interactions-adverse-events"
+  ],
+  "endpoint_category": "safety",
+  "direction": "no_detected_added_risk_in_selected_trial_populations",
+  "evidence_tier": "pooled_safety_analysis",
+  "confidence": "moderate",
+  "statement": "A pooled analysis of 72 phase II-IV ED/BPH studies found no evidence that tadalafil alongside non-alpha-blocker antihypertensive medications increased hypotension-related adverse events or major adverse cardiovascular events compared with antihypertensive medications alone in the studied populations.",
+  "population_or_context": "ED and/or BPH trial participants, stratified by antihypertensive medication use.",
+  "time_horizon": "Phase II-IV clinical study exposure periods pooled by the authors.",
+  "quantitative_note": "In all placebo-controlled studies, hypotension-related TEAEs ranged from 0.6% to 1.5% and MACE from 0.0% to 1.0% across indications. Tadalafil increased hypotension-related TEAEs only in the ED as-needed group without antihypertensive medication (p = .0070), while no significant difference was reported among patients receiving one or more antihypertensive medications (p >= .7386). MACE incidence did not differ significantly between tadalafil and placebo groups with or without antihypertensive medications (p >= .2238).",
+  "source_locator": {
+    "section": "PubMed abstract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35099113/",
+    "quote_or_paraphrase_note": "Abstract reports pooled sample sizes, hypotension-related TEAE and MACE incidence ranges, p values, and conclusion.",
+    "verification_status": "verified"
+  },
+  "caveats": [
+    "The analysis excludes alpha-blockers from the antihypertensive co-use question.",
+    "No detected added risk in selected ED/BPH trials is not proof of safety in high-risk cardiovascular patients or off-label enhancement users.",
+    "Industry conflicts are disclosed in the source."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Patients with ED and/or BPH, including antihypertensive medication users; indirect for mostly healthy men age 30 to 50 except where they share antihypertensive exposure.",
+  "tadalafil_exposure": "Tadalafil regimens across phase II-IV ED/BPH studies.",
+  "indication_context": "On-label ED/BPH pooled safety analysis used as off-label interaction context.",
+  "comparator_context": "Placebo-controlled tadalafil versus placebo comparisons, stratified by antihypertensive medication use.",
+  "endpoint_domain": "safety",
+  "endpoint_measure": "Hypotension-related treatment-emergent adverse events and major adverse cardiovascular events.",
+  "effect_estimate": "No significant tadalafil-placebo difference in hypotension-related TEAEs among participants receiving at least one antihypertensive medication (p >= .7386) and no significant MACE difference with or without antihypertensive medication use (p >= .2238).",
+  "safety_findings": "Common non-alpha-blocker antihypertensive co-use did not show an added hypotension or MACE signal in pooled trial populations, but this does not override label cautions or alpha-blocker/nitrate contraindication boundaries.",
+  "directness_to_target_population": "Moderate for men age 30 to 50 taking common antihypertensives, low to moderate for healthy off-label users without ED/BPH.",
+  "confounding_and_bias_limits": "Pooled heterogeneous trials, trial selection/exclusion criteria, industry involvement, abstract-only extraction, and incomplete directness for off-label populations.",
+  "population_band": "cardiovascular_or_metabolic_condition",
+  "study_design_class": "review_or_meta_analysis",
+  "effect_domain": "safety_risk"
+}

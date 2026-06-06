@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "tad-safety-interactions-baseline-2026-06-06",
+  "mode": "baseline_review",
+  "started_at": "2026-06-06T10:44:00Z",
+  "completed_at": "2026-06-06T10:50:46Z",
+  "scope": {
+    "domain_id": "tadalafil-off-label",
+    "taxonomy_node_ids": [
+      "tad-safety-interactions-adverse-events"
+    ],
+    "research_question": "What safety, adverse-event, contraindication, and drug-interaction boundaries should frame off-label tadalafil use in mostly healthy men age 30 to 50?"
+  },
+  "selected_via": "published_cognition_baseline_next_action",
+  "outcome": "candidate_bundle",
+  "summary": "Created a submitted baseline-review bundle for tadalafil safety, interactions, and adverse events. The staged claim is anchored in current CIALIS labeling plus tadalafil-specific nitrate, alpha-blocker, antihypertensive, and BPH safety evidence, with explicit directness limits for mostly healthy men age 30 to 50 using tadalafil off label.",
+  "candidate_bundle_id": "tad-safety-interactions-baseline-2026-06-06",
+  "source_ids": [
+    "dailymed-cialis-label-2026-03",
+    "kloner-tadalafil-nitrate-interaction-2003",
+    "kloner-alpha-blocker-interaction-2004",
+    "kloner-antihypertensive-safety-pooled-2022",
+    "dong-tadalafil-bph-safety-meta-analysis-2013"
+  ],
+  "source_urls": [
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcd8f8ab-81a2-4891-83db-24a0b0e25895",
+    "https://pubmed.ncbi.nlm.nih.gov/14642699/",
+    "https://pubmed.ncbi.nlm.nih.gov/15540759/",
+    "https://pubmed.ncbi.nlm.nih.gov/35099113/",
+    "https://pubmed.ncbi.nlm.nih.gov/23816815/"
+  ],
+  "next_recommended_mode": "manual",
+  "next_actions": [
+    "Run evidence appraisal for the submitted safety bundle.",
+    "After appraisal and editorial approval, publish this safety baseline before starting benefit-oriented cardiovascular, exercise, MCI, mood, or longevity reviews.",
+    "Consider a later rare-signal pharmacovigilance review for vision, hearing, priapism, transient global amnesia, seizure, and postmarketing cardiovascular reports."
+  ]
+}

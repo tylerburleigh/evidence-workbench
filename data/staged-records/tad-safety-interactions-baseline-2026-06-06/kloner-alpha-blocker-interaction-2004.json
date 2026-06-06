@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "kloner-alpha-blocker-interaction-2004",
+  "name": "Interaction between the phosphodiesterase 5 inhibitor, tadalafil and 2 alpha-blockers, doxazosin and tamsulosin in healthy normotensive men.",
+  "source_type": "randomized_crossover_clinical_pharmacology",
+  "authors": [
+    "Kloner RA",
+    "Jackson G",
+    "Emmick JT",
+    "Mitchell MI",
+    "Bedding A",
+    "Warner MR",
+    "Pereira A"
+  ],
+  "venue": "Journal of Urology",
+  "year": 2004,
+  "published_on": "2004-11",
+  "doi": "10.1097/01.ju.0000142687.75577.e4",
+  "pmid": "15540759",
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/15540759/",
+    "https://www.sciencedirect.com/science/article/pii/S0022534705608981"
+  ],
+  "summary": "Two double-blind placebo-controlled randomized crossover clinical pharmacology studies in healthy normotensive men evaluating tadalafil with doxazosin 8 mg and tamsulosin 0.4 mg.",
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T10:46:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15540759/",
+      "result": "PubMed abstract and metadata accessed through web search.",
+      "notes": "Used abstract for staged extraction."
+    }
+  ]
+}

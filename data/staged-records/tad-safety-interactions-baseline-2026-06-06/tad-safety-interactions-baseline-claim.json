@@ -1,0 +1,178 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "tad-safety-interactions-baseline-claim",
+  "name": "Tadalafil Safety, Interactions, And Adverse Events Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "tad-safety-interactions-adverse-events",
+  "current_stage": "claim_supported",
+  "momentum": "baseline_submitted",
+  "confidence": "moderate",
+  "summary": "The safety baseline for off-label tadalafil should start with interaction and contraindication boundaries, not with a generic 'well tolerated' label. Current CIALIS labeling contraindicates tadalafil with organic nitrates and guanylate-cyclase stimulators such as riociguat; warns about additive blood-pressure effects with alpha-blockers, antihypertensives, and substantial alcohol; requires dose limits or caution with potent CYP3A4 inhibitors and renal/hepatic impairment; and lists common adverse reactions plus rare serious warning signals including priapism, sudden vision loss/NAION, sudden hearing loss, serious cardiovascular events, seizure-related reports, transient global amnesia, and hypersensitivity reactions. In selected ED/BPH trial populations, pooled and meta-analytic evidence does not show clear excess MACE or serious adverse events, and common non-alpha-blocker antihypertensive co-use did not show added hypotension/MACE risk, but those findings are indirect for mostly healthy men age 30 to 50 using tadalafil for off-label cognition, mood, exercise, cardiovascular, or longevity purposes.",
+  "main_blockers": [
+    "No staged direct safety cohort for mostly healthy men age 30 to 50 using tadalafil off label for enhancement or longevity purposes.",
+    "Rare serious adverse-event signals are mostly label/postmarketing warnings with uncertain denominator and causality.",
+    "Trial safety sources are primarily ED/BPH populations and may exclude higher-risk cardiovascular patients or complex co-medication patterns."
+  ],
+  "best_current_signals": [
+    "Current label gives high-confidence hard-stop and caution boundaries for nitrates, GC stimulators, alpha-blockers, antihypertensives, alcohol, CYP3A4 inhibitors, renal/hepatic impairment, cardiovascular status, NAION, hearing loss, and priapism.",
+    "A randomized crossover nitrate study supports the 48-hour nitrate boundary because interaction was detected through 24 hours but not at 48 hours and beyond.",
+    "A healthy-male alpha-blocker study shows meaningful doxazosin hypotension augmentation but little interaction with tamsulosin in a small controlled setting.",
+    "A large pooled ED/BPH safety analysis found no added hypotension-related TEAE or MACE signal among patients taking non-alpha-blocker antihypertensive medications.",
+    "A BPH randomized-trial meta-analysis found no significant serious-adverse-event difference versus placebo, while label tables still show more common adverse reactions and discontinuations."
+  ],
+  "interpretive_note": "This claim is a safety framing baseline, not medical advice and not a clearance statement. It should travel with every off-label benefit review because tadalafil's most important preventable risks arise from interactions, contraindicated co-use, individual cardiovascular status, and exposure-modifying conditions rather than from average trial tolerability alone.",
+  "applicability": {
+    "applies_when": [
+      "Framing off-label tadalafil risk for mostly healthy men age 30 to 50.",
+      "Interpreting benefit-oriented tadalafil evidence in cognition, mood, exercise, cardiovascular, MCI, or longevity contexts.",
+      "Screening whether a tadalafil claim needs nearby safety caveats about nitrates, riociguat, alpha-blockers, antihypertensives, alcohol, CYP3A4 inhibitors, cardiovascular disease, renal/hepatic impairment, vision/hearing events, or priapism."
+    ],
+    "does_not_apply_when": [
+      "Making individualized prescribing decisions or emergency chest-pain decisions.",
+      "Reviewing pulmonary arterial hypertension dosing and safety as a separate clinical indication.",
+      "Estimating precise rare-event incidence from postmarketing reports."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Long-term daily tadalafil use in healthy men age 30 to 50 for longevity, exercise, mood, or cognition without ED/BPH.",
+      "Combination with recreational nitrites, stimulants, high alcohol intake, dehydration, sauna/heat stress, or multi-drug performance stacks.",
+      "Case-level causality for NAION, sudden hearing loss, transient global amnesia, seizure, or priapism outside label-level warning language.",
+      "Tadalafil safety in men with occult coronary disease who use the drug off label without cardiovascular evaluation."
+    ]
+  },
+  "limitations": [
+    "Targeted baseline review rather than systematic safety review.",
+    "Current label is authoritative for boundaries but does not quantify individualized risk.",
+    "Included trial and pooled safety evidence is mostly ED/BPH and clinical pharmacology evidence, not healthy enhancement-use evidence.",
+    "Full-text extraction was not completed for every abstract-indexed source in this first pass.",
+    "Pulmonary arterial hypertension product labeling and dosing were not separately staged."
+  ],
+  "update_notes": [
+    "Run evidence appraisal before approval.",
+    "Use this baseline as required safety context before publishing broad cardiovascular, exercise, MCI, mood, or longevity summaries.",
+    "Consider a later rare-signal pharmacovigilance review focused on vision, hearing, priapism, transient global amnesia, seizure, and cardiovascular postmarketing cases."
+  ],
+  "supporting_finding_ids": [
+    "cialis-label-contraindications-interactions-finding-2026",
+    "cialis-label-adverse-events-finding-2026",
+    "tadalafil-nitrate-interaction-duration-finding-2003",
+    "tadalafil-alpha-blocker-interaction-finding-2004",
+    "tadalafil-antihypertensive-mace-hypotension-finding-2022",
+    "tadalafil-bph-serious-adverse-events-finding-2013"
+  ],
+  "supporting_source_ids": [
+    "dailymed-cialis-label-2026-03",
+    "kloner-tadalafil-nitrate-interaction-2003",
+    "kloner-alpha-blocker-interaction-2004",
+    "kloner-antihypertensive-safety-pooled-2022",
+    "dong-tadalafil-bph-safety-meta-analysis-2013"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Current label defines safety boundaries",
+      "claim_field": "summary",
+      "conclusion": "CIALIS labeling supplies high-confidence contraindication, warning, interaction, dose-limit, common-adverse-event, and postmarketing-signal boundaries for tadalafil.",
+      "support_role": "direct_support",
+      "rationale": "The safety baseline must begin with current regulatory labeling before interpreting off-label benefits.",
+      "finding_ids": [
+        "cialis-label-contraindications-interactions-finding-2026",
+        "cialis-label-adverse-events-finding-2026"
+      ],
+      "source_ids": [
+        "dailymed-cialis-label-2026-03"
+      ],
+      "limitations": [
+        "Label data do not produce individualized risk estimates.",
+        "Postmarketing signals cannot establish incidence or causality."
+      ]
+    },
+    {
+      "label": "Nitrate contraindication has direct time-course support",
+      "claim_field": "safety_findings",
+      "conclusion": "A randomized crossover study found tadalafil-nitroglycerin hemodynamic interaction through 24 hours but not at 48 hours and beyond, supporting strict nitrate separation.",
+      "support_role": "boundary_condition",
+      "rationale": "Nitrate co-use is the most consequential preventable tadalafil interaction and must remain a hard safety caveat.",
+      "finding_ids": [
+        "tadalafil-nitrate-interaction-duration-finding-2003"
+      ],
+      "source_ids": [
+        "kloner-tadalafil-nitrate-interaction-2003"
+      ],
+      "limitations": [
+        "Controlled clinical pharmacology setting.",
+        "Emergency nitrate use remains a supervised medical scenario even after 48 hours."
+      ]
+    },
+    {
+      "label": "Alpha-blocker interaction risk differs by agent",
+      "claim_field": "safety_findings",
+      "conclusion": "A healthy-male study found tadalafil augmented doxazosin hypotension, while tamsulosin showed little hemodynamic interaction in the abstract.",
+      "support_role": "qualifies",
+      "rationale": "This explains why label-level alpha-blocker stability, lowest-dose initiation, and BPH combination caution matter.",
+      "finding_ids": [
+        "tadalafil-alpha-blocker-interaction-finding-2004"
+      ],
+      "source_ids": [
+        "kloner-alpha-blocker-interaction-2004"
+      ],
+      "limitations": [
+        "Small studies.",
+        "Does not generalize to all alpha-blockers or unstable patients."
+      ]
+    },
+    {
+      "label": "Selected trial populations do not show broad added antihypertensive/MACE signal",
+      "claim_field": "best_current_signals",
+      "conclusion": "Pooled ED/BPH data did not show increased hypotension-related TEAEs or MACE with tadalafil among patients receiving non-alpha-blocker antihypertensive medications.",
+      "support_role": "qualifies",
+      "rationale": "This prevents overstating antihypertensive co-use risk while preserving label cautions and population limits.",
+      "finding_ids": [
+        "tadalafil-antihypertensive-mace-hypotension-finding-2022"
+      ],
+      "source_ids": [
+        "kloner-antihypertensive-safety-pooled-2022"
+      ],
+      "limitations": [
+        "ED/BPH populations.",
+        "Alpha-blockers excluded from the pooled antihypertensive question.",
+        "Industry involvement and pooled-study heterogeneity."
+      ]
+    },
+    {
+      "label": "Daily-use BPH trials do not eliminate common or rare risks",
+      "claim_field": "directness_to_target_population",
+      "conclusion": "A BPH RCT meta-analysis found no significant serious-adverse-event difference versus placebo, but this does not prove safety for healthy off-label daily use.",
+      "support_role": "qualifies",
+      "rationale": "The finding is relevant to daily exposure but should remain bounded by older BPH population directness and label adverse-event tables.",
+      "finding_ids": [
+        "tadalafil-bph-serious-adverse-events-finding-2013"
+      ],
+      "source_ids": [
+        "dong-tadalafil-bph-safety-meta-analysis-2013"
+      ],
+      "limitations": [
+        "Older BPH population.",
+        "Abstract-only extraction.",
+        "Serious adverse events only, not common adverse-event burden."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-06",
+  "population_profile": "Primary target is mostly healthy men age 30 to 50 using tadalafil off label, but staged safety evidence is mostly regulatory labeling, healthy-male interaction pharmacology, and ED/BPH trial populations.",
+  "tadalafil_exposure": "CIALIS/tadalafil oral exposure from 2.5 to 20 mg, including as-needed and once-daily use; key risks depend on continuous exposure, interacting drugs, alcohol, renal/hepatic impairment, and cardiovascular status.",
+  "endpoint_domain": "safety",
+  "safety_findings": "Hard contraindications: organic nitrates and guanylate-cyclase stimulators such as riociguat. Major cautions: alpha-blockers, antihypertensives, substantial alcohol, potent CYP3A4 inhibitors, renal/hepatic impairment, cardiovascular disease or sexual-activity risk, NAION/vision loss, hearing loss, priapism, bleeding disorders/active peptic ulceration, and unstudied PDE5/ED-therapy combinations. Common adverse reactions include headache, dyspepsia, back pain, myalgia, nasal congestion, flushing, and limb pain.",
+  "directness_to_target_population": "High for pharmacologic contraindications and interaction boundaries; moderate for common adverse-event expectations; low to moderate for absolute serious-event risk in healthy men age 30 to 50 using tadalafil off label because most clinical safety evidence comes from ED/BPH populations.",
+  "confounding_and_bias_limits": "Targeted search; label and trial populations differ from off-label users; rare event denominators are uncertain; full-text extraction incomplete for some primary studies; trial exclusions may remove high-risk cardiovascular, renal, hepatic, ocular, or co-medicated users.",
+  "population_band": [
+    "healthy_men_30_50",
+    "erectile_dysfunction_or_bph",
+    "cardiovascular_or_metabolic_condition"
+  ],
+  "study_design_class": [
+    "regulatory_label_or_guidance",
+    "crossover_trial",
+    "review_or_meta_analysis"
+  ],
+  "effect_domain": "safety_risk"
+}

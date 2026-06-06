@@ -1,0 +1,274 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "tad-safety-interactions-baseline-2026-06-06",
+  "name": "Tadalafil Safety, Interactions, And Adverse Events Baseline Review",
+  "summary": "Stages the first safety baseline for off-label tadalafil interpretation: a targeted search protocol, five sources, five extraction artifacts, six findings, and one bounded claim covering contraindications, interaction risks, common adverse events, rare serious signals, and directness limits for mostly healthy men age 30 to 50.",
+  "intake_mode": "baseline_review",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-06T10:50:46Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "tadalafil-off-label",
+    "taxonomy_node_ids": [
+      "tad-safety-interactions-adverse-events"
+    ],
+    "research_question": "What safety, adverse-event, contraindication, and drug-interaction boundaries should frame off-label tadalafil use in mostly healthy men age 30 to 50?"
+  },
+  "source_ids": [
+    "dailymed-cialis-label-2026-03",
+    "kloner-tadalafil-nitrate-interaction-2003",
+    "kloner-alpha-blocker-interaction-2004",
+    "kloner-antihypertensive-safety-pooled-2022",
+    "dong-tadalafil-bph-safety-meta-analysis-2013"
+  ],
+  "source_urls": [
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcd8f8ab-81a2-4891-83db-24a0b0e25895",
+    "https://pubmed.ncbi.nlm.nih.gov/14642699/",
+    "https://pubmed.ncbi.nlm.nih.gov/15540759/",
+    "https://pubmed.ncbi.nlm.nih.gov/35099113/",
+    "https://pubmed.ncbi.nlm.nih.gov/23816815/"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "tad-cognition-healthy-adults-baseline-claim",
+      "relationship": "safety_context_for_off_label_cognition_interpretation"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-tad-safety-search-protocol",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "tad-safety-interactions-search-2026-06-06",
+      "file_path": "data/search-protocols/tad-safety-interactions-search-2026-06-06.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/tad-safety-interactions-search-2026-06-06.json",
+      "summary": "Stage targeted search and screening protocol for tadalafil safety and interactions baseline.",
+      "rationale": "The safety baseline depends on current regulatory labeling plus primary clinical pharmacology and pooled safety sources."
+    },
+    {
+      "change_id": "create-dailymed-cialis-label-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "dailymed-cialis-label-2026-03",
+      "file_path": "data/sources/dailymed-cialis-label-2026-03.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/dailymed-cialis-label-2026-03.json",
+      "summary": "Add current DailyMed CIALIS prescribing information source.",
+      "rationale": "Current labeling is the baseline reference for contraindications, interactions, dose limits, and postmarketing adverse-event boundaries."
+    },
+    {
+      "change_id": "create-cialis-label-safety-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "cialis-label-safety-artifact-2026",
+      "file_path": "data/artifacts/cialis-label-safety-artifact-2026.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/cialis-label-safety-artifact-2026.json",
+      "summary": "Add structured extraction artifact for CIALIS label safety boundaries.",
+      "rationale": "The label must be decomposed into usable safety and interaction findings before supporting a public claim."
+    },
+    {
+      "change_id": "create-cialis-label-contraindications-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "cialis-label-contraindications-interactions-finding-2026",
+      "file_path": "data/findings/cialis-label-contraindications-interactions-finding-2026.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/cialis-label-contraindications-interactions-finding-2026.json",
+      "summary": "Add label finding for contraindications, cardiovascular exclusions, and key interaction boundaries.",
+      "rationale": "Off-label tadalafil interpretation needs the current hard-stop and caution boundaries near any benefit-oriented evidence."
+    },
+    {
+      "change_id": "create-cialis-label-adverse-events-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "cialis-label-adverse-events-finding-2026",
+      "file_path": "data/findings/cialis-label-adverse-events-finding-2026.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/cialis-label-adverse-events-finding-2026.json",
+      "summary": "Add label finding for common adverse events and rare serious postmarketing signals.",
+      "rationale": "The baseline must distinguish common nuisance adverse effects from rare but high-severity events with uncertain causality."
+    },
+    {
+      "change_id": "create-kloner-nitrate-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "kloner-tadalafil-nitrate-interaction-2003",
+      "file_path": "data/sources/kloner-tadalafil-nitrate-interaction-2003.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/kloner-tadalafil-nitrate-interaction-2003.json",
+      "summary": "Add tadalafil-nitrate clinical pharmacology interaction source.",
+      "rationale": "The nitrate contraindication is central to tadalafil safety because tadalafil has a long half-life and a time-dependent nitroglycerin interaction."
+    },
+    {
+      "change_id": "create-nitrate-interaction-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "tadalafil-nitrate-interaction-artifact-2003",
+      "file_path": "data/artifacts/tadalafil-nitrate-interaction-artifact-2003.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/tadalafil-nitrate-interaction-artifact-2003.json",
+      "summary": "Add structured extraction artifact for tadalafil and sublingual nitroglycerin timing.",
+      "rationale": "The finding needs dose, timing, comparator, and blood-pressure endpoint extraction."
+    },
+    {
+      "change_id": "create-nitrate-interaction-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tadalafil-nitrate-interaction-duration-finding-2003",
+      "file_path": "data/findings/tadalafil-nitrate-interaction-duration-finding-2003.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/tadalafil-nitrate-interaction-duration-finding-2003.json",
+      "summary": "Add finding that tadalafil-nitroglycerin hypotensive interaction persisted through 24 hours but not 48 hours and beyond.",
+      "rationale": "This supports the label's 48-hour nitrate boundary and prevents casual co-use framing."
+    },
+    {
+      "change_id": "create-kloner-alpha-blocker-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "kloner-alpha-blocker-interaction-2004",
+      "file_path": "data/sources/kloner-alpha-blocker-interaction-2004.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/kloner-alpha-blocker-interaction-2004.json",
+      "summary": "Add tadalafil alpha-blocker interaction clinical pharmacology source.",
+      "rationale": "Alpha-blocker interaction risk is a common real-world boundary for men using tadalafil for ED or BPH-adjacent reasons."
+    },
+    {
+      "change_id": "create-alpha-blocker-interaction-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "tadalafil-alpha-blocker-interaction-artifact-2004",
+      "file_path": "data/artifacts/tadalafil-alpha-blocker-interaction-artifact-2004.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/tadalafil-alpha-blocker-interaction-artifact-2004.json",
+      "summary": "Add structured extraction artifact for tadalafil with doxazosin and tamsulosin.",
+      "rationale": "The source shows clinically meaningful heterogeneity across alpha-blockers that the label generalizes into caution language."
+    },
+    {
+      "change_id": "create-alpha-blocker-interaction-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tadalafil-alpha-blocker-interaction-finding-2004",
+      "file_path": "data/findings/tadalafil-alpha-blocker-interaction-finding-2004.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/tadalafil-alpha-blocker-interaction-finding-2004.json",
+      "summary": "Add finding that tadalafil augmented doxazosin hypotension more than tamsulosin in healthy men.",
+      "rationale": "This finding explains why alpha-blocker stability and lowest-dose initiation matter for off-label safety framing."
+    },
+    {
+      "change_id": "create-antihypertensive-pooled-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "kloner-antihypertensive-safety-pooled-2022",
+      "file_path": "data/sources/kloner-antihypertensive-safety-pooled-2022.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/kloner-antihypertensive-safety-pooled-2022.json",
+      "summary": "Add pooled tadalafil safety analysis in patients receiving antihypertensive medications.",
+      "rationale": "This is a large modern pooled safety source for hypotension-related adverse events and major cardiovascular adverse events with antihypertensive co-use, excluding alpha-blockers."
+    },
+    {
+      "change_id": "create-antihypertensive-pooled-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "tadalafil-antihypertensive-safety-artifact-2022",
+      "file_path": "data/artifacts/tadalafil-antihypertensive-safety-artifact-2022.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/tadalafil-antihypertensive-safety-artifact-2022.json",
+      "summary": "Add structured extraction artifact for pooled antihypertensive safety analysis.",
+      "rationale": "The analysis must be extracted with population and exclusion caveats before informing a broad off-label safety baseline."
+    },
+    {
+      "change_id": "create-antihypertensive-pooled-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tadalafil-antihypertensive-mace-hypotension-finding-2022",
+      "file_path": "data/findings/tadalafil-antihypertensive-mace-hypotension-finding-2022.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/tadalafil-antihypertensive-mace-hypotension-finding-2022.json",
+      "summary": "Add finding that pooled ED/BPH studies did not show increased hypotension or MACE with antihypertensive co-use.",
+      "rationale": "This finding tempers the interaction discussion for common antihypertensives while preserving directness and exclusion limits."
+    },
+    {
+      "change_id": "create-dong-bph-meta-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "dong-tadalafil-bph-safety-meta-analysis-2013",
+      "file_path": "data/sources/dong-tadalafil-bph-safety-meta-analysis-2013.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/dong-tadalafil-bph-safety-meta-analysis-2013.json",
+      "summary": "Add tadalafil BPH randomized-trial meta-analysis source with serious-adverse-event finding.",
+      "rationale": "BPH trials inform daily dosing safety around 5 mg, but the older clinical population is indirect for mostly healthy men age 30 to 50."
+    },
+    {
+      "change_id": "create-dong-bph-meta-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "tadalafil-bph-safety-meta-artifact-2013",
+      "file_path": "data/artifacts/tadalafil-bph-safety-meta-artifact-2013.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/tadalafil-bph-safety-meta-artifact-2013.json",
+      "summary": "Add structured extraction artifact for BPH meta-analysis safety outcomes.",
+      "rationale": "Daily-use safety signals need to be separated from ED as-needed exposure and from younger healthy off-label use."
+    },
+    {
+      "change_id": "create-dong-bph-sae-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "tadalafil-bph-serious-adverse-events-finding-2013",
+      "file_path": "data/findings/tadalafil-bph-serious-adverse-events-finding-2013.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/tadalafil-bph-serious-adverse-events-finding-2013.json",
+      "summary": "Add finding that serious adverse events were not significantly different in BPH tadalafil RCT meta-analysis.",
+      "rationale": "This supports a limited daily-dose tolerability boundary without converting it into safety proof for off-label enhancement."
+    },
+    {
+      "change_id": "create-tad-safety-baseline-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "tad-safety-interactions-baseline-claim",
+      "file_path": "data/claims/tad-safety-interactions-baseline-claim.json",
+      "staged_file_path": "data/staged-records/tad-safety-interactions-baseline-2026-06-06/tad-safety-interactions-baseline-claim.json",
+      "summary": "Add bounded baseline claim for tadalafil safety and interactions.",
+      "rationale": "The public baseline should emphasize contraindications, interaction boundaries, common adverse reactions, rare serious signals, and evidence-directness limits before benefit-oriented off-label claims."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "tad-safety-interactions-adverse-events",
+      "note": "Creates the first submitted baseline claim for tadalafil safety, interactions, and adverse events."
+    },
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "tad-cognition-healthy-adults",
+      "note": "Provides the nearby safety context requested by the published cognition baseline."
+    }
+  ],
+  "required_appraisal_lanes": [
+    "source_fidelity",
+    "population_directness",
+    "exposure_directness",
+    "endpoint_validity",
+    "safety_risk_framing",
+    "synthesis_overreach"
+  ],
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "evidence_appraisal_ids": [],
+  "editorial_comment_ids": [],
+  "publication_event_ids": [],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [
+    {
+      "action_id": "extract-full-label-table-values-for-cialis-safety",
+      "action_type": "numeric_results_extraction",
+      "status": "open",
+      "priority": "low",
+      "target_record_type": "artifact",
+      "target_record_id": "cialis-label-safety-artifact-2026",
+      "source_ids": [
+        "dailymed-cialis-label-2026-03"
+      ],
+      "taxonomy_node_ids": [
+        "tad-safety-interactions-adverse-events"
+      ],
+      "reason": "The staged baseline extracts the most relevant adverse-reaction rows but does not reproduce every label table.",
+      "recommended_action": "Crosscheck all CIALIS label adverse-reaction tables before quantitative adverse-event synthesis."
+    }
+  ],
+  "next_actions": [
+    "Run evidence appraisal for the submitted safety bundle.",
+    "After appraisal, use this safety baseline as required context for cardiovascular, exercise, mood, MCI, and longevity reviews.",
+    "Consider a later pharmacovigilance/case-signal review for rare vision, hearing, priapism, seizure, and transient global amnesia reports."
+  ]
+}
