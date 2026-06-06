@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_category": "exercise_physical_function",
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "ceci-tadalafil-exercise-oxidative-damage-finding-2015",
+  "name": "Short tadalafil exposure worsened oxidative and muscle-damage markers after exhaustive exercise",
+  "source_id": "ceci-tadalafil-exercise-oxidative-damage-2015",
+  "artifact_id": "ceci-tadalafil-exercise-oxidative-damage-artifact-2015",
+  "direction": "potential_recovery_risk_signal",
+  "evidence_tier": "randomized_crossover_trial",
+  "confidence": "moderate_for_biomarker_signal_low_for_clinical_harm",
+  "statement": "In healthy males, tadalafil exposure before exhaustive exercise decreased antioxidant capacity at rest and produced higher oxidative-damage and muscle-damage marker responses than placebo after exercise.",
+  "population_or_context": "Healthy males undergoing exhaustive exercise.",
+  "time_horizon": "Two tadalafil doses before exercise with recovery sampling up to 60 minutes.",
+  "quantitative_note": "Tadalafil per se changed GSH/GSSG -36%, CK +75%, LDH +36%, MDA +41%, and protein carbonyls +50% (all P<0.05); exercise further increased these biomarkers, with higher values in the tadalafil group versus placebo.",
+  "source_locator": {
+    "section": "PubMed Abstract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/25381629/",
+    "quote_or_paraphrase_note": "Abstract reports biomarker changes and conclusion that tadalafil made subjects more susceptible to exhaustive-exercise oxidative stress.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Biomarker outcomes only.",
+    "Clinical injury, soreness, and training adaptation were not established.",
+    "Sample size not extracted from abstract."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Healthy males; relevant to safety/recovery hypotheses for active users.",
+  "tadalafil_exposure": "Tadalafil 20 mg/day given as two tablets separated by 36 hours before exhaustive exercise.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Experimental exercise recovery and oxidative-stress physiology.",
+  "comparator_context": "Placebo crossover.",
+  "endpoint_measure": "GSH/GSSG, CK, LDH, MDA, protein carbonyls, IL-6, antioxidant status after exhaustive exercise.",
+  "effect_estimate": "Biomarker profile favored more oxidative/muscle-damage signal with tadalafil, not recovery benefit.",
+  "safety_findings": "Potential caution signal for strenuous/exhaustive exercise contexts; clinical event rates not reported.",
+  "directness_to_target_population": "Moderate for healthy active men under exhaustive exercise, low for clinical injury risk or everyday workouts.",
+  "confounding_and_bias_limits": "Biomarker endpoints, short time horizon, abstract-only sample details, and no direct performance/recovery outcome.",
+  "population_band": "healthy_men_30_50",
+  "study_design_class": "crossover_trial",
+  "class_transfer_limits": "Direct tadalafil evidence, but high acute dosing and exhaustive protocol limit generalization."
+}

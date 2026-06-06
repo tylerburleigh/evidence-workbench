@@ -1,0 +1,280 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "tad-exercise-physical-function-search-2026-06-06",
+  "name": "Tadalafil Exercise Capacity And Physical Function Search 2026-06-06",
+  "domain_id": "tadalafil-off-label",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "status": "included_sources_staged",
+  "systematicity_level": "targeted_baseline_review",
+  "search_started_at": "2026-06-06T13:45:00Z",
+  "search_completed_at": "2026-06-06T14:33:00Z",
+  "databases": [
+    "PubMed",
+    "NCBI E-utilities",
+    "Web search"
+  ],
+  "search_queries": [
+    {
+      "database": "PubMed/Web",
+      "query": "tadalafil exercise capacity healthy subjects randomized trial PubMed",
+      "searched_at": "2026-06-06T13:48:00Z",
+      "result_count": "Targeted top results screened",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tadalafil+exercise+capacity+healthy+subjects+randomized+trial"
+    },
+    {
+      "database": "PubMed/Web",
+      "query": "tadalafil exercise performance healthy men randomized trial PubMed",
+      "searched_at": "2026-06-06T13:50:00Z",
+      "result_count": "Targeted top results screened",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tadalafil+exercise+performance+healthy+men+randomized+trial"
+    },
+    {
+      "database": "PubMed/Web",
+      "query": "tadalafil exercise muscle damage redox healthy men PubMed",
+      "searched_at": "2026-06-06T14:00:00Z",
+      "result_count": "Targeted top results screened",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tadalafil+exercise+muscle+damage+redox+healthy+men"
+    },
+    {
+      "database": "PubMed/Web",
+      "query": "tadalafil Duchenne Becker muscular dystrophy 6-minute walk randomized trial PubMed",
+      "searched_at": "2026-06-06T14:08:00Z",
+      "result_count": "Targeted top results screened",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tadalafil+Duchenne+Becker+muscular+dystrophy+6-minute+walk"
+    },
+    {
+      "database": "PubMed/Web",
+      "query": "tadalafil COPD pulmonary hypertension 6-minute walk randomized trial PubMed",
+      "searched_at": "2026-06-06T14:12:00Z",
+      "result_count": "Targeted top results screened",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=tadalafil+COPD+pulmonary+hypertension+6-minute+walk+randomized"
+    },
+    {
+      "database": "PubMed/Web",
+      "query": "PDE5 sildenafil hypoxia exercise performance systematic review PubMed",
+      "searched_at": "2026-06-06T14:16:00Z",
+      "result_count": "Targeted top results screened",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/?term=PDE5+sildenafil+hypoxia+exercise+performance+systematic+review"
+    }
+  ],
+  "inclusion_criteria": [
+    "Human tadalafil studies measuring exercise capacity, physical performance, functional status, muscle perfusion, body composition, or exercise-linked recovery biomarkers.",
+    "Disease-specific tadalafil functional-outcome trials when they define transfer boundaries for PAH, COPD-PH, CAD, or muscular dystrophy.",
+    "Non-tadalafil PDE5 evidence only when it addresses exercise performance and is explicitly marked adjacent under the class-transfer framework.",
+    "Current safety/interaction sources needed to interpret exertion, blood pressure, nitrate, and cardiovascular boundaries."
+  ],
+  "exclusion_criteria": [
+    "ED intercourse-performance studies without exercise, physical-function, body-composition, recovery, or safety-exertion endpoints.",
+    "Animal or in vitro-only studies unless paired with a human physical-function signal.",
+    "Combination altitude-illness prevention studies where tadalafil monotherapy exercise performance cannot be isolated.",
+    "Anecdotal bodybuilding, pump, or forum reports."
+  ],
+  "dedupe_method": "Deduplicated by PMID/DOI and existing source id.",
+  "screening_counts": {
+    "records_identified": "Targeted search, not a systematic count",
+    "records_screened": 28,
+    "full_text_reviewed": 0,
+    "sources_included": 16
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "pmid-17614028",
+      "title": "The long-acting phosphodiesterase inhibitor tadalafil does not influence athletes' VO2max, aerobic, and anaerobic thresholds in normoxia.",
+      "decision": "include",
+      "source_id": "diluigi-tadalafil-vo2max-athletes-2008",
+      "doi": "10.1055/s-2007-965131",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17614028/"
+    },
+    {
+      "candidate_id": "pmid-17586581",
+      "title": "Effect of tadalafil on anaerobic performance indices in healthy athletes.",
+      "decision": "include",
+      "source_id": "guidetti-tadalafil-anaerobic-athletes-2008",
+      "doi": "10.1136/bjsm.2007.037630",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17586581/"
+    },
+    {
+      "candidate_id": "pmid-22318947",
+      "title": "The phosphodiesterases type 5 inhibitor tadalafil reduces the activation of the hypothalamus-pituitary-adrenal axis in men during cycle ergometric exercise.",
+      "decision": "include",
+      "source_id": "diluigi-tadalafil-hpa-exercise-2012",
+      "doi": "10.1152/ajpendo.00573.2011",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22318947/"
+    },
+    {
+      "candidate_id": "pmid-25381629",
+      "title": "Effects of tadalafil administration on plasma markers of exercise-induced muscle damage, IL6 and antioxidant status capacity.",
+      "decision": "include",
+      "source_id": "ceci-tadalafil-exercise-oxidative-damage-2015",
+      "doi": "10.1007/s00421-014-3040-5",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25381629/"
+    },
+    {
+      "candidate_id": "pmid-34639267",
+      "title": "Effect of Tadalafil Administration on Redox Homeostasis and Polyamine Levels in Healthy Men with High Level of Physical Activity.",
+      "decision": "include",
+      "source_id": "duranti-tadalafil-redox-polyamines-athletes-2021",
+      "doi": "10.3390/ijerph18199962",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34639267/"
+    },
+    {
+      "candidate_id": "pmid-28133708",
+      "title": "Tadalafil improves lean mass and endothelial function in nonobese men with mild ED/LUTS.",
+      "decision": "include",
+      "source_id": "aversa-tadalafil-lean-mass-ed-luts-2017",
+      "doi": "10.1007/s12020-016-1208-y",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28133708/"
+    },
+    {
+      "candidate_id": "pmid-23197572",
+      "title": "Tadalafil alleviates muscle ischemia in patients with Becker muscular dystrophy.",
+      "decision": "include",
+      "source_id": "martin-tadalafil-becker-muscle-ischemia-2012",
+      "doi": "10.1126/scitranslmed.3004327",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23197572/"
+    },
+    {
+      "candidate_id": "pmid-28972192",
+      "title": "A phase 3 randomized placebo-controlled trial of tadalafil for Duchenne muscular dystrophy.",
+      "decision": "include",
+      "source_id": "victor-tadalafil-dmd-phase3-2017",
+      "doi": "10.1212/WNL.0000000000004570",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28972192/"
+    },
+    {
+      "candidate_id": "pmid-35506072",
+      "title": "Tadalafil for veterans with chronic obstructive pulmonary disease-pulmonary hypertension.",
+      "decision": "include",
+      "source_id": "maron-tadalafil-copd-ph-2022",
+      "doi": "10.1002/pul2.12043",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35506072/"
+    },
+    {
+      "candidate_id": "pmid-16236035",
+      "title": "The effect of tadalafil on the time to exercise-induced myocardial ischaemia in subjects with coronary artery disease.",
+      "decision": "include",
+      "source_id": "patterson-tadalafil-cad-exercise-ischemia-2005",
+      "doi": "10.1111/j.1365-2125.2005.02479.x",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16236035/"
+    },
+    {
+      "candidate_id": "pmid-31191974",
+      "title": "Sildenafil does not reliably improve exercise performance in hypoxia: a systematic review.",
+      "decision": "include",
+      "source_id": "carter-sildenafil-hypoxia-exercise-review-2019",
+      "doi": "10.1136/bmjsem-2019-000526",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/31191974/"
+    },
+    {
+      "candidate_id": "pmid-19470885",
+      "title": "Tadalafil therapy for pulmonary arterial hypertension.",
+      "decision": "include",
+      "source_id": "galie-tadalafil-pah-phirst-2009",
+      "doi": "10.1161/CIRCULATIONAHA.108.839274",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19470885/"
+    },
+    {
+      "candidate_id": "dailymed-cialis-label-2026-03",
+      "title": "DailyMed CIALIS prescribing information.",
+      "decision": "include",
+      "source_id": "dailymed-cialis-label-2026-03",
+      "url": "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcd8f8ab-81a2-4891-83db-24a0b0e25895",
+      "reason": "Existing safety-context source required for exertion, blood-pressure, nitrate, and interaction boundaries."
+    },
+    {
+      "candidate_id": "pmid-14642699",
+      "title": "Time course of the interaction between tadalafil and nitrates.",
+      "decision": "include",
+      "source_id": "kloner-tadalafil-nitrate-interaction-2003",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14642699/",
+      "reason": "Existing safety-context source required for exercise and nitrate hypotension boundaries."
+    },
+    {
+      "candidate_id": "pmid-15540759",
+      "title": "Interaction between tadalafil and alpha-blockers.",
+      "decision": "include",
+      "source_id": "kloner-alpha-blocker-interaction-2004",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15540759/",
+      "reason": "Existing safety-context source required for exertion plus alpha-blocker hypotension boundaries."
+    },
+    {
+      "candidate_id": "pmid-35099113",
+      "title": "Analysis of integrated clinical safety data of tadalafil in patients receiving antihypertensive medications.",
+      "decision": "include",
+      "source_id": "kloner-antihypertensive-safety-pooled-2022",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35099113/",
+      "reason": "Existing safety-context source required for antihypertensive co-use and blood-pressure-risk framing."
+    },
+    {
+      "candidate_id": "pmid-18559908",
+      "title": "The type 5 phosphodiesterase inhibitor tadalafil influences salivary cortisol, testosterone, and DHEAS responses to maximal exercise in healthy men.",
+      "decision": "maybe",
+      "doi": "10.1210/jc.2008-0847",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/18559908/",
+      "reason": "Relevant endocrine exercise signal but superseded for this baseline by the later 2012 HPA-axis exercise study."
+    },
+    {
+      "candidate_id": "pmid-22943271",
+      "title": "Tadalafil and acetazolamide versus acetazolamide for the prevention of severe high-altitude illness.",
+      "decision": "exclude",
+      "doi": "10.1111/j.1708-8305.2012.00636.x",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/22943271/",
+      "reason": "Combination altitude-illness prevention context; tadalafil monotherapy exercise-performance effect cannot be isolated."
+    },
+    {
+      "candidate_id": "pmid-15866997",
+      "title": "Tadalafil improved erectile function at twenty-four and thirty-six hours after dosing in men with erectile dysfunction.",
+      "decision": "exclude",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/15866997/",
+      "reason": "ED intercourse endpoint, not exercise or physical-function outcome."
+    }
+  ],
+  "source_ids": [
+    "diluigi-tadalafil-vo2max-athletes-2008",
+    "guidetti-tadalafil-anaerobic-athletes-2008",
+    "diluigi-tadalafil-hpa-exercise-2012",
+    "ceci-tadalafil-exercise-oxidative-damage-2015",
+    "duranti-tadalafil-redox-polyamines-athletes-2021",
+    "aversa-tadalafil-lean-mass-ed-luts-2017",
+    "martin-tadalafil-becker-muscle-ischemia-2012",
+    "victor-tadalafil-dmd-phase3-2017",
+    "maron-tadalafil-copd-ph-2022",
+    "patterson-tadalafil-cad-exercise-ischemia-2005",
+    "carter-sildenafil-hypoxia-exercise-review-2019",
+    "galie-tadalafil-pah-phirst-2009",
+    "dailymed-cialis-label-2026-03",
+    "kloner-tadalafil-nitrate-interaction-2003",
+    "kloner-alpha-blocker-interaction-2004",
+    "kloner-antihypertensive-safety-pooled-2022"
+  ],
+  "screening_summary": "Targeted baseline search identified direct tadalafil studies in healthy athletes/fit men, ED/LUTS body composition, muscular dystrophy, COPD-PH, CAD exertion safety, and PAH functional capacity, plus one sildenafil hypoxia systematic review as adjacent PDE5 class evidence. The direct healthy-performance evidence is small and mostly null; disease-specific evidence was retained to define transfer boundaries.",
+  "limitations": [
+    "Targeted baseline search rather than systematic review.",
+    "Mostly abstract-level extraction.",
+    "No full-text quantitative synthesis of athlete or recovery studies in this pass.",
+    "Sildenafil hypoxia evidence is adjacent and not tadalafil-specific."
+  ],
+  "population_band": [
+    "healthy_men_30_50",
+    "healthy_adults_mixed_sex",
+    "erectile_dysfunction_or_bph",
+    "pulmonary_hypertension",
+    "cardiovascular_or_metabolic_condition",
+    "mixed_or_unclear"
+  ],
+  "pde5_agent": [
+    "tadalafil",
+    "sildenafil"
+  ],
+  "agent_directness_to_tadalafil": "mixed_tadalafil_and_adjacent_pde5",
+  "study_design_class": [
+    "randomized_trial",
+    "crossover_trial",
+    "human_mechanistic",
+    "review_or_meta_analysis"
+  ],
+  "effect_domain": "exercise_physical_function"
+}

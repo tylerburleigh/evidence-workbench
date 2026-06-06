@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_category": "exercise_physical_function",
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "carter-sildenafil-hypoxia-performance-adjacent-finding-2019",
+  "name": "Sildenafil hypoxia review supports only adjacent and unreliable PDE5 exercise-performance transfer",
+  "source_id": "carter-sildenafil-hypoxia-exercise-review-2019",
+  "artifact_id": "carter-sildenafil-hypoxia-exercise-review-artifact-2019",
+  "direction": "adjacent_class_evidence_mixed_or_null_for_performance",
+  "evidence_tier": "systematic_review_meta_analysis",
+  "confidence": "moderate_for_sildenafil_hypoxia_low_for_tadalafil",
+  "statement": "A systematic review of sildenafil in healthy humans under hypoxia found pulmonary hemodynamic and oxygenation effects but concluded that sildenafil had no reliable effect on exercise performance; any relevance to tadalafil is adjacent class evidence only.",
+  "population_or_context": "Healthy humans in hypoxia studies using sildenafil.",
+  "time_horizon": "Acute hypoxia exercise studies through August 2018.",
+  "quantitative_note": "Fourteen studies included 210 subjects receiving sildenafil 40, 50, or 100 mg/day; effects were large for lowering pulmonary artery pressure, moderate/small for oxygenation and cardiac output, and no reliable performance effect overall.",
+  "source_locator": {
+    "section": "PubMed Abstract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/31191974/",
+    "quote_or_paraphrase_note": "Abstract reports systematic review eligibility, included trials, effect directions, subgroup notes, and conclusion.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Sildenafil rather than tadalafil.",
+    "Hypoxia/altitude context only.",
+    "Performance effects varied by altitude model."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Healthy mixed adults under hypoxia; low directness to tadalafil in normoxic healthy men.",
+  "tadalafil_exposure": "No tadalafil; sildenafil 40, 50, or 100 mg/day in included studies.",
+  "pde5_agent": "sildenafil",
+  "agent_directness_to_tadalafil": "adjacent_non_tadalafil_pde5",
+  "indication_context": "Adjacent PDE5 hypoxia-performance evidence.",
+  "comparator_context": "Placebo-controlled trials synthesized.",
+  "endpoint_measure": "Pulmonary artery pressure, cardiac output, SpO2, exercise performance under hypoxia.",
+  "effect_estimate": "No reliable performance improvement overall; possible larger SpO2/performance signal at terrestrial hypobaric altitude than normobaric hypoxia.",
+  "safety_findings": "Sildenafil safety not extracted in detail; class safety cannot be assumed identical to tadalafil due exposure differences.",
+  "directness_to_target_population": "Low to moderate for healthy hypoxia physiology, low for tadalafil and normoxic gym performance.",
+  "confounding_and_bias_limits": "Agent mismatch, heterogeneous altitude protocols, small trials, and performance-effect variability.",
+  "population_band": "healthy_adults_mixed_sex",
+  "study_design_class": "review_or_meta_analysis",
+  "class_transfer_limits": "Adjacent sildenafil evidence cannot establish tadalafil benefit; tadalafil-specific altitude/performance trials would be needed."
+}

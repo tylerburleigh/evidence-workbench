@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_category": "exercise_physical_function",
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "diluigi-tadalafil-hpa-exercise-mechanistic-finding-2012",
+  "name": "Tadalafil changed exercise stress-axis hormones without improving performance parameters",
+  "source_id": "diluigi-tadalafil-hpa-exercise-2012",
+  "artifact_id": "diluigi-tadalafil-hpa-exercise-artifact-2012",
+  "direction": "mechanistic_endocrine_signal_without_performance_benefit",
+  "evidence_tier": "randomized_crossover_trial",
+  "confidence": "moderate_for_endocrine_signal_low_for_benefit",
+  "statement": "Two tadalafil 20 mg doses reduced ACTH, cortisol, corticosterone, and free cortisol index responses to maximal exercise and increased beta-endorphin AUC and DHEAS-to-cortisol ratio during recovery, but did not influence cardiorespiratory or performance parameters.",
+  "population_or_context": "Healthy males undergoing maximal cycle exercise with serial endocrine sampling.",
+  "time_horizon": "Two doses over 36 hours and immediate exercise recovery.",
+  "quantitative_note": "Abstract reports lower ACTH, cortisol, corticosterone, and FCI responses and higher beta-endorphin AUC/DHEAS-to-cortisol ratio versus placebo, without performance/cardiorespiratory changes.",
+  "source_locator": {
+    "section": "PubMed Abstract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/22318947/",
+    "quote_or_paraphrase_note": "Abstract reports crossover design, endocrine outcomes, and no performance/cardiorespiratory effect.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Endocrine surrogate endpoints.",
+    "No validated recovery or performance benefit.",
+    "Small sample."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Healthy males; mechanistically relevant but not direct benefit evidence.",
+  "tadalafil_exposure": "Two tadalafil 20 mg doses with 36-hour interval.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Exercise endocrine physiology.",
+  "comparator_context": "Placebo crossover.",
+  "endpoint_measure": "ACTH, cortisol, corticosterone, free cortisol index, beta-endorphin, DHEAS-to-cortisol ratio, cardiorespiratory/performance parameters.",
+  "effect_estimate": "Endocrine stress-axis modulation without cardiorespiratory or performance improvement.",
+  "safety_findings": "Authors state further studies are needed to identify possible health risks and clinical uses.",
+  "directness_to_target_population": "Moderate for acute endocrine physiology in healthy males; low for performance, mood, recovery, or health claims.",
+  "confounding_and_bias_limits": "Small sample, surrogate endocrine endpoints, acute exposure, and no clinical performance benefit.",
+  "population_band": "healthy_men_30_50",
+  "study_design_class": "crossover_trial",
+  "class_transfer_limits": "Direct tadalafil evidence, but endocrine changes should not be transferred into ergogenic claims."
+}

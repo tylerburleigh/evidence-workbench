@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/17614028/"
+  ],
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T14:25:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17614028/",
+      "result": "PubMed abstract and metadata accessed via NCBI E-utilities.",
+      "notes": "Extraction uses abstract-level results for this baseline pass."
+    }
+  ],
+  "id": "diluigi-tadalafil-vo2max-athletes-2008",
+  "name": "The long-acting phosphodiesterase inhibitor tadalafil does not influence athletes' VO2max, aerobic, and anaerobic thresholds in normoxia.",
+  "source_type": "randomized_crossover_trial",
+  "authors": [
+    "Di Luigi L",
+    "Baldari C",
+    "Pigozzi F",
+    "Emerenziani GP",
+    "Gallotta MC",
+    "Iellamo F",
+    "Ciminelli E",
+    "Sgro P",
+    "Romanelli F",
+    "Lenzi A",
+    "Guidetti L"
+  ],
+  "venue": "International Journal of Sports Medicine",
+  "year": 2008,
+  "published_on": "2007-07-05",
+  "doi": "10.1055/s-2007-965131",
+  "pmid": "17614028",
+  "summary": "Double-blind crossover study in 14 healthy male athletes testing single-dose tadalafil 20 mg versus placebo during maximal cycle exercise in normoxia, with VO2max, ventilatory and anaerobic thresholds, blood pressure, heart rate, oxygen pulse, lactate, and perceived exertion outcomes."
+}

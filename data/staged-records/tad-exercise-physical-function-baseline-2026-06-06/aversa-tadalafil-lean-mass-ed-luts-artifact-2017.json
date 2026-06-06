@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "status": "complete",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "aversa-tadalafil-lean-mass-ed-luts-artifact-2017",
+  "name": "Aversa 2017 Tadalafil Lean Mass ED/LUTS Extract",
+  "artifact_type": "randomized_parallel_trial_extract",
+  "source_ids": [
+    "aversa-tadalafil-lean-mass-ed-luts-2017"
+  ],
+  "population_or_context": "Nonobese men with mild erectile dysfunction and/or lower urinary tract symptoms.",
+  "sample_size": "43 men randomized to tadalafil 5 mg once daily or 20 mg on demand.",
+  "methods": "Two-month randomized comparison of tadalafil dosing patterns, with DXA body composition primary outcome and in vitro skeletal muscle cell assays.",
+  "endpoint_categories": [
+    "body_composition",
+    "skeletal_muscle_mechanism",
+    "endothelial_function"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Men mean age 48.5 with mild ED and/or LUTS; adjacent to the target age band but selected for symptoms and not healthy athletes.",
+  "tadalafil_exposure": "Tadalafil 5 mg once daily versus 20 mg on demand for 2 months, followed by withdrawal observation.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "ED/LUTS clinical population with body-composition and cell-mechanism outcomes.",
+  "study_design": "Randomized comparison of once-daily versus on-demand tadalafil; no placebo arm reported in the abstract.",
+  "comparator_context": "On-demand tadalafil active comparison and post-withdrawal return to baseline.",
+  "safety_findings": "Abstract does not provide detailed adverse-event rates; endothelial and hormonal changes were measured.",
+  "directness_to_target_population": "Low to moderate for nonobese men near the age band, but low for healthy gym performance because participants had ED/LUTS and no strength or exercise-function endpoint.",
+  "confounding_and_bias_limits": "No placebo arm in abstract, symptom-selected population, short duration, body composition not function, and in vitro mechanistic extrapolation.",
+  "population_band": "erectile_dysfunction_or_bph",
+  "study_design_class": "randomized_trial",
+  "class_transfer_limits": "Direct tadalafil evidence, but body-composition and cell findings cannot be treated as proof of strength, hypertrophy, or exercise performance."
+}

@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "status": "complete",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "ceci-tadalafil-exercise-oxidative-damage-artifact-2015",
+  "name": "Ceci 2015 Tadalafil Exercise-Induced Damage Extract",
+  "artifact_type": "randomized_crossover_trial_extract",
+  "source_ids": [
+    "ceci-tadalafil-exercise-oxidative-damage-2015"
+  ],
+  "population_or_context": "Healthy males undergoing exhaustive exercise after tadalafil or placebo.",
+  "sample_size": "Healthy male crossover sample; abstract does not state the sample size.",
+  "methods": "Double-blind crossover trial measuring oxidative status, muscle damage markers, IL-6, and antioxidant capacity before and after exhaustive exercise.",
+  "endpoint_categories": [
+    "exercise_recovery",
+    "muscle_damage",
+    "oxidative_stress",
+    "safety"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Healthy males; directly relevant to recovery-risk hypotheses but not a performance trial.",
+  "tadalafil_exposure": "Two tadalafil 20 mg/day doses separated by 36 hours before exhaustive exercise.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Experimental exercise recovery and oxidative-stress physiology.",
+  "study_design": "Double-blind placebo-controlled crossover trial.",
+  "comparator_context": "Placebo within-person crossover comparison.",
+  "safety_findings": "Tadalafil decreased antioxidant capacity at rest and increased exercise-induced oxidative and muscle-damage marker responses versus placebo.",
+  "directness_to_target_population": "Moderate for acute exhaustive exercise biomarkers in healthy males, low for clinical injury, delayed-onset soreness, adaptation, or chronic low-dose users.",
+  "confounding_and_bias_limits": "Biomarker endpoints, small/unstated sample size in abstract, short time horizon, and no clinical performance or injury outcomes.",
+  "population_band": "healthy_men_30_50",
+  "study_design_class": "crossover_trial",
+  "class_transfer_limits": "Direct tadalafil evidence, but high acute exposure and biomarker outcomes limit transfer to daily 5 mg gym use or clinical recovery claims."
+}

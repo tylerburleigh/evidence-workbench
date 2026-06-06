@@ -1,0 +1,282 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "claim",
+  "id": "tad-exercise-physical-function-baseline-claim",
+  "name": "Tadalafil Exercise Capacity And Physical Function Baseline",
+  "subject_type": "taxonomy_node",
+  "subject_id": "tad-exercise-physical-function",
+  "current_stage": "claim_supported",
+  "momentum": "baseline_submitted",
+  "confidence": "low_to_moderate",
+  "summary": "A targeted exercise and physical-function baseline does not support tadalafil as an established ergogenic aid for mostly healthy men age 30 to 50. The most directly relevant healthy-male tadalafil trials are small acute or short-exposure studies in trained men: tadalafil 20 mg did not improve VO2max, ventilatory or anaerobic thresholds, exercise tolerance, or most Wingate anaerobic indices in normoxia. Tadalafil can change exercise-linked endocrine, blood-pressure, lactate, oxidative-stress, and muscle-damage biomarkers, but those signals are not validated as better performance or recovery, and some biomarker findings point toward possible recovery risk under exhaustive exercise. Tadalafil 40 mg clearly improves 6-minute walk distance in PAH, but COPD-PH and DMD trials did not improve their main physical-function endpoints, and Becker muscular dystrophy muscle-perfusion restoration is disease-mechanism-specific. Sildenafil hypoxia literature supports only adjacent PDE5 class plausibility and does not reliably show performance improvement, especially outside altitude/hypoxia contexts.",
+  "main_blockers": [
+    "No direct randomized evidence that tadalafil improves normoxic gym performance, strength, hypertrophy, endurance capacity, fatigue, or recovery in mostly healthy men age 30 to 50.",
+    "The healthy-athlete tadalafil studies are very small and mostly acute 20 mg exposure studies, not chronic 5 mg daily protocols.",
+    "Positive functional evidence is largely disease-specific, especially PAH 6-minute walk benefit at 40 mg daily.",
+    "Body-composition and skeletal-muscle biomarker findings are not validated exercise-performance or strength outcomes.",
+    "Vasodilation and blood-pressure lowering can become safety liabilities with nitrates, riociguat, alpha-blockers, antihypertensives, alcohol, dehydration, heat stress, or occult cardiovascular disease."
+  ],
+  "best_current_signals": [
+    "Direct healthy-athlete tadalafil evidence is mostly null for normoxic aerobic and anaerobic performance endpoints.",
+    "Exercise endocrine/HPA-axis modulation is plausible but has not translated into demonstrated performance benefit.",
+    "Exercise recovery biomarker studies raise caution rather than a clear benefit: tadalafil increased oxidative/muscle-damage markers in one crossover trial and increased CK/LDH after acute dosing in a small fit-men study.",
+    "A mild ED/LUTS study reported increased abdominal lean mass with daily tadalafil, but it did not measure strength, training adaptation, or exercise performance.",
+    "PAH PHIRST provides strong disease-specific exercise-capacity evidence for tadalafil 40 mg daily, but COPD-PH did not show 6MWD benefit and DMD did not slow ambulatory decline.",
+    "Sildenafil hypoxia evidence is mixed and adjacent; it cannot be generalized to tadalafil or normoxic gym performance."
+  ],
+  "interpretive_note": "This baseline supports a negative-to-insufficient conclusion for tadalafil as a healthy-user performance enhancer. It leaves room for narrow disease-specific physical-function uses and mechanistic hypotheses, while requiring dose, timing, altitude, training status, cardiovascular safety, and agent directness to remain explicit.",
+  "applicability": {
+    "applies_when": [
+      "Interpreting tadalafil or PDE5-inhibitor evidence about exercise capacity, sports performance, fatigue, physical function, muscle perfusion, body composition, or recovery.",
+      "Separating healthy-user gym/performance claims from PAH, COPD-PH, muscular dystrophy, CAD, ED/LUTS, or sildenafil hypoxia evidence.",
+      "Classifying sildenafil altitude/hypoxia data as adjacent class evidence under the PDE5 transfer framework."
+    ],
+    "does_not_apply_when": [
+      "Making individualized medical decisions for ED, BPH, PAH, COPD-PH, CAD, muscular dystrophy, altitude illness, or exercise clearance.",
+      "Claiming tadalafil improves strength, hypertrophy, endurance, recovery, fatigue, or athletic performance in healthy users.",
+      "Using PAH 6MWD efficacy as proof of healthy systemic exercise benefit."
+    ],
+    "unknown_or_unreviewed_contexts": [
+      "Chronic tadalafil 2.5-5 mg daily in healthy recreational lifters or endurance athletes.",
+      "Tadalafil combined with resistance training, creatine, citrulline/nitrates, stimulants, sauna/heat stress, dehydration, alcohol, or testosterone/anabolic regimens.",
+      "Altitude-specific tadalafil monotherapy performance trials in healthy adults.",
+      "Long-term training adaptation, injury risk, delayed-onset muscle soreness, sleep/recovery interaction, or validated fatigue outcomes."
+    ]
+  },
+  "limitations": [
+    "Targeted baseline review, not a systematic review.",
+    "Mostly abstract-level extraction for this pass.",
+    "Healthy-user evidence is small and acute; disease evidence is indirect for the target population.",
+    "Outcome domains are heterogeneous: VO2max, Wingate indices, endocrine biomarkers, oxidative markers, lean mass, 6MWD, dyspnea, ischemia safety, and sildenafil hypoxia performance.",
+    "Existing safety baseline remains required context for all exertion and vasodilation interpretations."
+  ],
+  "update_notes": [
+    "Retrieve full text for healthy-athlete tadalafil performance and recovery studies before any quantitative synthesis.",
+    "Do not merge sildenafil hypoxia evidence with tadalafil unless exposure, altitude model, timing, and endpoint transfer are explicitly justified.",
+    "Future work should check sports-medicine guidance and antidoping status separately if the public copy discusses athletic use."
+  ],
+  "supporting_finding_ids": [
+    "diluigi-tadalafil-vo2max-athletes-null-finding-2008",
+    "guidetti-tadalafil-anaerobic-athletes-null-finding-2008",
+    "diluigi-tadalafil-hpa-exercise-mechanistic-finding-2012",
+    "ceci-tadalafil-exercise-oxidative-damage-finding-2015",
+    "duranti-tadalafil-redox-polyamines-muscle-damage-finding-2021",
+    "aversa-tadalafil-lean-mass-ed-luts-finding-2017",
+    "martin-tadalafil-becker-muscle-ischemia-finding-2012",
+    "victor-tadalafil-dmd-6mwd-null-finding-2017",
+    "maron-tadalafil-copd-ph-6mwd-null-finding-2022",
+    "patterson-tadalafil-cad-exercise-ischemia-safety-finding-2005",
+    "carter-sildenafil-hypoxia-performance-adjacent-finding-2019",
+    "galie-tadalafil-pah-phirst-finding-2009",
+    "cialis-label-contraindications-interactions-finding-2026",
+    "tadalafil-nitrate-interaction-duration-finding-2003",
+    "tadalafil-alpha-blocker-interaction-finding-2004",
+    "tadalafil-antihypertensive-mace-hypotension-finding-2022"
+  ],
+  "supporting_source_ids": [
+    "diluigi-tadalafil-vo2max-athletes-2008",
+    "guidetti-tadalafil-anaerobic-athletes-2008",
+    "diluigi-tadalafil-hpa-exercise-2012",
+    "ceci-tadalafil-exercise-oxidative-damage-2015",
+    "duranti-tadalafil-redox-polyamines-athletes-2021",
+    "aversa-tadalafil-lean-mass-ed-luts-2017",
+    "martin-tadalafil-becker-muscle-ischemia-2012",
+    "victor-tadalafil-dmd-phase3-2017",
+    "maron-tadalafil-copd-ph-2022",
+    "patterson-tadalafil-cad-exercise-ischemia-2005",
+    "carter-sildenafil-hypoxia-exercise-review-2019",
+    "galie-tadalafil-pah-phirst-2009",
+    "dailymed-cialis-label-2026-03",
+    "kloner-tadalafil-nitrate-interaction-2003",
+    "kloner-alpha-blocker-interaction-2004",
+    "kloner-antihypertensive-safety-pooled-2022"
+  ],
+  "supporting_evidence": [
+    {
+      "label": "Healthy-athlete tadalafil performance studies are mostly null",
+      "claim_field": "best_current_signals",
+      "conclusion": "Two small crossover studies in trained healthy subjects did not show meaningful tadalafil benefit for normoxic VO2max/thresholds or most Wingate anaerobic indices.",
+      "support_role": "supports",
+      "rationale": "These are the most direct staged tadalafil studies for healthy exercise performance and they argue against a broad ergogenic claim.",
+      "finding_ids": [
+        "diluigi-tadalafil-vo2max-athletes-null-finding-2008",
+        "guidetti-tadalafil-anaerobic-athletes-null-finding-2008"
+      ],
+      "source_ids": [
+        "diluigi-tadalafil-vo2max-athletes-2008",
+        "guidetti-tadalafil-anaerobic-athletes-2008"
+      ],
+      "limitations": [
+        "Small samples.",
+        "Acute 20 mg dosing.",
+        "Trained subjects and normoxia only."
+      ]
+    },
+    {
+      "label": "Exercise endocrine modulation does not equal performance benefit",
+      "claim_field": "summary",
+      "conclusion": "Tadalafil altered exercise HPA-axis and recovery hormone responses but did not improve cardiorespiratory or performance parameters.",
+      "support_role": "qualifies",
+      "rationale": "Mechanistic plausibility should not be treated as a functional benefit.",
+      "finding_ids": [
+        "diluigi-tadalafil-hpa-exercise-mechanistic-finding-2012"
+      ],
+      "source_ids": [
+        "diluigi-tadalafil-hpa-exercise-2012"
+      ],
+      "limitations": [
+        "Small sample.",
+        "Surrogate hormones.",
+        "No validated recovery benefit."
+      ]
+    },
+    {
+      "label": "Recovery and muscle-damage biomarker evidence gives caution signals",
+      "claim_field": "best_current_signals",
+      "conclusion": "Two healthy-men tadalafil biomarker studies found oxidative/muscle-damage marker concerns rather than a clear antioxidant or recovery benefit.",
+      "support_role": "qualifies",
+      "rationale": "This directly addresses claims that tadalafil might improve workout recovery through blood flow or antioxidant pathways.",
+      "finding_ids": [
+        "ceci-tadalafil-exercise-oxidative-damage-finding-2015",
+        "duranti-tadalafil-redox-polyamines-muscle-damage-finding-2021"
+      ],
+      "source_ids": [
+        "ceci-tadalafil-exercise-oxidative-damage-2015",
+        "duranti-tadalafil-redox-polyamines-athletes-2021"
+      ],
+      "limitations": [
+        "Biomarkers only.",
+        "Short-term exposure.",
+        "Clinical injury and adaptation not measured."
+      ]
+    },
+    {
+      "label": "Lean mass signal is not a strength or performance endpoint",
+      "claim_field": "best_current_signals",
+      "conclusion": "Daily tadalafil increased abdominal lean mass in men with mild ED/LUTS, but the study did not establish improved strength, exercise capacity, or training adaptation.",
+      "support_role": "qualifies",
+      "rationale": "This is a common gym-related citation and needs explicit endpoint boundaries.",
+      "finding_ids": [
+        "aversa-tadalafil-lean-mass-ed-luts-finding-2017"
+      ],
+      "source_ids": [
+        "aversa-tadalafil-lean-mass-ed-luts-2017"
+      ],
+      "limitations": [
+        "ED/LUTS selection.",
+        "No placebo arm in abstract.",
+        "No functional endpoint."
+      ]
+    },
+    {
+      "label": "Muscular dystrophy evidence supports narrow mechanism but not healthy transfer",
+      "claim_field": "summary",
+      "conclusion": "Tadalafil restored exercising muscle blood-flow regulation in Becker muscular dystrophy but failed the phase 3 DMD ambulatory primary endpoint.",
+      "support_role": "boundary_condition",
+      "rationale": "The strongest skeletal-muscle mechanism evidence depends on dystrophin/nNOS pathology and does not establish healthy-user performance.",
+      "finding_ids": [
+        "martin-tadalafil-becker-muscle-ischemia-finding-2012",
+        "victor-tadalafil-dmd-6mwd-null-finding-2017"
+      ],
+      "source_ids": [
+        "martin-tadalafil-becker-muscle-ischemia-2012",
+        "victor-tadalafil-dmd-phase3-2017"
+      ],
+      "limitations": [
+        "Rare disease populations.",
+        "Pediatric DMD trial.",
+        "Mechanistic and disease endpoints."
+      ]
+    },
+    {
+      "label": "Pulmonary hypertension functional evidence is disease-specific",
+      "claim_field": "applicability",
+      "conclusion": "PHIRST showed tadalafil improves PAH 6MWD, while COPD-PH did not show 6MWD or hemodynamic benefit; neither transfers to healthy exercise performance.",
+      "support_role": "boundary_condition",
+      "rationale": "Six-minute walk benefit is real in PAH but must remain indication-bound.",
+      "finding_ids": [
+        "galie-tadalafil-pah-phirst-finding-2009",
+        "maron-tadalafil-copd-ph-6mwd-null-finding-2022"
+      ],
+      "source_ids": [
+        "galie-tadalafil-pah-phirst-2009",
+        "maron-tadalafil-copd-ph-2022"
+      ],
+      "limitations": [
+        "Disease populations.",
+        "High-dose 40 mg daily.",
+        "6MWD reflects disease limitation, not healthy performance."
+      ]
+    },
+    {
+      "label": "Exercise and CAD safety evidence reinforces blood-pressure and nitrate boundaries",
+      "claim_field": "safety_findings",
+      "conclusion": "Tadalafil did not improve exercise-induced ischemia time in stable CAD but lowered systolic blood pressure around exertion and increased nitroglycerin hypotension risk.",
+      "support_role": "boundary_condition",
+      "rationale": "Performance-oriented use should not separate exercise from cardiovascular and interaction safety.",
+      "finding_ids": [
+        "patterson-tadalafil-cad-exercise-ischemia-safety-finding-2005",
+        "cialis-label-contraindications-interactions-finding-2026",
+        "tadalafil-nitrate-interaction-duration-finding-2003",
+        "tadalafil-alpha-blocker-interaction-finding-2004",
+        "tadalafil-antihypertensive-mace-hypotension-finding-2022"
+      ],
+      "source_ids": [
+        "patterson-tadalafil-cad-exercise-ischemia-2005",
+        "dailymed-cialis-label-2026-03",
+        "kloner-tadalafil-nitrate-interaction-2003",
+        "kloner-alpha-blocker-interaction-2004",
+        "kloner-antihypertensive-safety-pooled-2022"
+      ],
+      "limitations": [
+        "CAD and label/interaction evidence are safety boundaries, not performance benefits."
+      ]
+    },
+    {
+      "label": "Sildenafil hypoxia evidence is adjacent and unreliable for tadalafil transfer",
+      "claim_field": "summary",
+      "conclusion": "Sildenafil reduces pulmonary artery pressure under hypoxia but does not reliably improve performance; it cannot establish tadalafil benefit in normoxia.",
+      "support_role": "adjacent_evidence",
+      "rationale": "This prevents broad PDE5 class extrapolation into tadalafil gym-performance claims.",
+      "finding_ids": [
+        "carter-sildenafil-hypoxia-performance-adjacent-finding-2019"
+      ],
+      "source_ids": [
+        "carter-sildenafil-hypoxia-exercise-review-2019"
+      ],
+      "limitations": [
+        "Non-tadalafil agent.",
+        "Hypoxia setting.",
+        "Heterogeneous small trials."
+      ]
+    }
+  ],
+  "last_updated": "2026-06-06",
+  "population_profile": "Primary target is mostly healthy men age 30 to 50, but staged evidence spans healthy male athletes, healthy fit men, ED/LUTS men, PAH, COPD-PH, Becker and Duchenne muscular dystrophy, CAD, and sildenafil hypoxia studies.",
+  "tadalafil_exposure": "Tadalafil exposures include acute 10-20 mg dosing, two 20 mg doses over 36 hours, 5 mg once daily for 2 months, 0.3 or 0.6 mg/kg/day for 48 weeks in DMD, and 40 mg/day in PAH or COPD-PH; adjacent evidence uses sildenafil 40-100 mg/day under hypoxia.",
+  "endpoint_domain": "exercise_physical_function",
+  "safety_findings": "Exercise-context safety framing should include tadalafil-related blood-pressure lowering, hard nitrate/riociguat contraindications, caution with alpha-blockers, antihypertensives, alcohol, dehydration, heat stress, renal/hepatic impairment, cardiovascular disease, and common adverse effects such as headache, flushing, dyspepsia, back pain, and myalgia. Exercise biomarker studies also raise caution around oxidative stress, CK, and LDH signals under acute or exhaustive-exercise conditions.",
+  "directness_to_target_population": "Low to moderate overall. Directness is moderate for acute tadalafil in healthy trained men in normoxia, but low for chronic daily 5 mg use, untrained men, strength/hypertrophy, recovery, altitude, or long-term physical function. Disease-specific functional evidence is low directness for healthy users.",
+  "confounding_and_bias_limits": "Small healthy-athlete samples, acute dosing, heterogeneous protocols, disease-population selection, surrogate biomarkers, no direct strength/hypertrophy endpoint, abstract-level extraction, and agent mismatch for sildenafil evidence limit inference.",
+  "population_band": [
+    "healthy_men_30_50",
+    "healthy_adults_mixed_sex",
+    "erectile_dysfunction_or_bph",
+    "pulmonary_hypertension",
+    "cardiovascular_or_metabolic_condition",
+    "mixed_or_unclear"
+  ],
+  "study_design_class": [
+    "randomized_trial",
+    "crossover_trial",
+    "human_mechanistic",
+    "review_or_meta_analysis"
+  ],
+  "effect_domain": "exercise_physical_function",
+  "pde5_agent": [
+    "tadalafil",
+    "sildenafil"
+  ],
+  "agent_directness_to_tadalafil": "mixed_tadalafil_and_adjacent_pde5",
+  "class_transfer_limits": "Direct tadalafil evidence controls the claim. Sildenafil hypoxia evidence is adjacent only, PAH/COPD-PH/DMD/BMD disease evidence is not healthy-user evidence, and body-composition or biomarker findings cannot be converted into exercise-performance benefit without validated functional endpoints."
+}

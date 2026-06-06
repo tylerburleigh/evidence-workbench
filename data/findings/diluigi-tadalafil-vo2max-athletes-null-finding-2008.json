@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_category": "exercise_physical_function",
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "diluigi-tadalafil-vo2max-athletes-null-finding-2008",
+  "name": "Acute tadalafil did not improve VO2max or exercise thresholds in healthy male athletes",
+  "source_id": "diluigi-tadalafil-vo2max-athletes-2008",
+  "artifact_id": "diluigi-tadalafil-vo2max-athletes-artifact-2008",
+  "direction": "null_for_normoxic_exercise_capacity",
+  "evidence_tier": "randomized_crossover_trial",
+  "confidence": "moderate_for_acute_normoxic_athlete_context",
+  "statement": "In 14 healthy male athletes exercising in normoxia, single-dose tadalafil 20 mg did not modify VO2max, individual ventilatory threshold, or individual anaerobic threshold compared with placebo, despite lowering systolic blood pressure before and after exercise.",
+  "population_or_context": "Healthy male athletes during maximal cycle ergometer testing in normoxia.",
+  "time_horizon": "Acute single-dose exercise test.",
+  "quantitative_note": "VO2/HR at individual ventilatory threshold was lower with tadalafil (13.3 +/- 1.8 vs 14.5 +/- 2.1 mL/beat; P=0.03); VO2max, IVT, and IAT were not modified; systolic BP was lower before and after exercise (P<0.05).",
+  "source_locator": {
+    "section": "PubMed Abstract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/17614028/",
+    "quote_or_paraphrase_note": "Abstract reports crossover design, outcomes, BP changes, and null VO2max/threshold findings.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Small trained-athlete sample.",
+    "Normoxia only.",
+    "Does not address chronic daily low-dose use or altitude."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Healthy trained male athletes; moderate directness for acute performance claims in healthy men, not for broader physical function.",
+  "tadalafil_exposure": "Single tadalafil 20 mg dose.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Healthy performance physiology.",
+  "comparator_context": "Placebo crossover.",
+  "endpoint_measure": "VO2max, ventilatory threshold, anaerobic threshold, oxygen pulse, blood pressure.",
+  "effect_estimate": "No change in VO2max, IVT, or IAT; VO2/HR lower at IVT and systolic BP lower before/after exercise.",
+  "safety_findings": "Lower systolic BP around exercise may matter in heat, dehydration, alcohol, antihypertensive, or nitrate contexts.",
+  "directness_to_target_population": "Moderate for acute normoxic exercise testing in healthy men; low for chronic daily use or untrained men.",
+  "confounding_and_bias_limits": "Small sample, crossover design, acute exposure, and exercise-test endpoints only.",
+  "population_band": "healthy_men_30_50",
+  "study_design_class": "crossover_trial",
+  "class_transfer_limits": "Direct tadalafil evidence; no class transfer required, but the acute 20 mg athlete setting is narrow."
+}

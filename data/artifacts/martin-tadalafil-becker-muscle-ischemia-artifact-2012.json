@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "status": "complete",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "martin-tadalafil-becker-muscle-ischemia-artifact-2012",
+  "name": "Martin 2012 Tadalafil Becker Muscular Dystrophy Muscle Ischemia Extract",
+  "artifact_type": "randomized_crossover_trial_extract",
+  "source_ids": [
+    "martin-tadalafil-becker-muscle-ischemia-2012"
+  ],
+  "population_or_context": "Men with Becker muscular dystrophy and dystrophin/nNOS-related exercise muscle ischemia.",
+  "sample_size": "Men with Becker muscular dystrophy; abstract notes restoration in nine of ten patients in linked figure text, but extraction here relies on abstract-level study description.",
+  "methods": "Randomized placebo-controlled crossover test of tadalafil on exercise-induced attenuation of reflex vasoconstriction and muscle oxygenation during exercise.",
+  "endpoint_categories": [
+    "skeletal_muscle_perfusion",
+    "exercise_muscle_ischemia",
+    "mechanism"
+  ],
+  "numeric_results_extracted": false,
+  "population_profile": "Men with Becker muscular dystrophy; disease-specific male evidence with low directness for healthy users.",
+  "tadalafil_exposure": "Single tadalafil dose; abstract does not specify dose in the extracted text.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Experimental muscular dystrophy pathophysiology and possible treatment target.",
+  "study_design": "Randomized placebo-controlled crossover trial.",
+  "comparator_context": "Placebo within-person crossover comparison.",
+  "safety_findings": "Abstract reports exercise-specific blood-flow restoration and says effects did not appear to involve systemic blood pressure in linked full text snippets; detailed adverse events not extracted.",
+  "directness_to_target_population": "Low for healthy men because the mechanism depends on dystrophin/nNOS mislocalization in Becker muscular dystrophy.",
+  "confounding_and_bias_limits": "Rare disease mechanism, small sample, physiologic muscle oxygenation endpoint, no healthy-user performance endpoint, and abstract-level extraction.",
+  "population_band": "mixed_or_unclear",
+  "study_design_class": "crossover_trial",
+  "class_transfer_limits": "Direct tadalafil evidence, but disease-specific nNOS/dystrophin biology limits transfer to healthy muscle performance."
+}

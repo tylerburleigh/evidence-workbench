@@ -1,0 +1,241 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "publication_event",
+  "id": "publish-tad-exercise-physical-function-baseline-2026-06-06-2026-06-06t14-45-19-142z",
+  "name": "Published Tadalafil Exercise Capacity And Physical Function Baseline Review",
+  "summary": "Stages the first baseline for tadalafil exercise and physical function: a targeted search protocol, direct tadalafil healthy-performance and disease-function sources, structured artifacts/findings, adjacent sildenafil hypoxia evidence, and one bounded baseline claim.",
+  "candidate_bundle_id": "tad-exercise-physical-function-baseline-2026-06-06",
+  "event_type": "publish",
+  "published_at": "2026-06-06T14:45:19.142Z",
+  "published_by": "local-curator",
+  "published_targets": [
+    {
+      "record_type": "search_protocol",
+      "record_id": "tad-exercise-physical-function-search-2026-06-06",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "diluigi-tadalafil-vo2max-athletes-2008",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "guidetti-tadalafil-anaerobic-athletes-2008",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "diluigi-tadalafil-hpa-exercise-2012",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "ceci-tadalafil-exercise-oxidative-damage-2015",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "duranti-tadalafil-redox-polyamines-athletes-2021",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "aversa-tadalafil-lean-mass-ed-luts-2017",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "martin-tadalafil-becker-muscle-ischemia-2012",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "victor-tadalafil-dmd-phase3-2017",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "maron-tadalafil-copd-ph-2022",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "patterson-tadalafil-cad-exercise-ischemia-2005",
+      "action": "created"
+    },
+    {
+      "record_type": "source",
+      "record_id": "carter-sildenafil-hypoxia-exercise-review-2019",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "diluigi-tadalafil-vo2max-athletes-artifact-2008",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "guidetti-tadalafil-anaerobic-athletes-artifact-2008",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "diluigi-tadalafil-hpa-exercise-artifact-2012",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "ceci-tadalafil-exercise-oxidative-damage-artifact-2015",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "duranti-tadalafil-redox-polyamines-athletes-artifact-2021",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "aversa-tadalafil-lean-mass-ed-luts-artifact-2017",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "martin-tadalafil-becker-muscle-ischemia-artifact-2012",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "victor-tadalafil-dmd-phase3-artifact-2017",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "maron-tadalafil-copd-ph-artifact-2022",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "patterson-tadalafil-cad-exercise-ischemia-artifact-2005",
+      "action": "created"
+    },
+    {
+      "record_type": "artifact",
+      "record_id": "carter-sildenafil-hypoxia-exercise-review-artifact-2019",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "diluigi-tadalafil-vo2max-athletes-null-finding-2008",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "guidetti-tadalafil-anaerobic-athletes-null-finding-2008",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "diluigi-tadalafil-hpa-exercise-mechanistic-finding-2012",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "ceci-tadalafil-exercise-oxidative-damage-finding-2015",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "duranti-tadalafil-redox-polyamines-muscle-damage-finding-2021",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "aversa-tadalafil-lean-mass-ed-luts-finding-2017",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "martin-tadalafil-becker-muscle-ischemia-finding-2012",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "victor-tadalafil-dmd-6mwd-null-finding-2017",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "maron-tadalafil-copd-ph-6mwd-null-finding-2022",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "patterson-tadalafil-cad-exercise-ischemia-safety-finding-2005",
+      "action": "created"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "carter-sildenafil-hypoxia-performance-adjacent-finding-2019",
+      "action": "created"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "tad-exercise-physical-function-baseline-claim",
+      "action": "created"
+    }
+  ],
+  "public_graph_delta": {
+    "total_targets": 35,
+    "by_record_type": {
+      "search_protocol": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      },
+      "source": {
+        "created": 11,
+        "updated": 0,
+        "total": 11
+      },
+      "artifact": {
+        "created": 11,
+        "updated": 0,
+        "total": 11
+      },
+      "finding": {
+        "created": 11,
+        "updated": 0,
+        "total": 11
+      },
+      "claim": {
+        "created": 1,
+        "updated": 0,
+        "total": 1
+      }
+    }
+  },
+  "affected_claim_ids": [
+    "tad-exercise-physical-function-baseline-claim"
+  ],
+  "approving_evidence_appraisal_ids": [
+    "evidence-appraisal-tad-exercise-physical-function-endpoint-validity-r1",
+    "evidence-appraisal-tad-exercise-physical-function-exposure-directness-r1",
+    "evidence-appraisal-tad-exercise-physical-function-population-directness-r1",
+    "evidence-appraisal-tad-exercise-physical-function-safety-risk-framing-r1",
+    "evidence-appraisal-tad-exercise-physical-function-source-fidelity-r1",
+    "evidence-appraisal-tad-exercise-physical-function-synthesis-overreach-r1"
+  ],
+  "appraisal_corrections_applied": [],
+  "appraisal_follow_up_actions": [
+    "endpoint_validity: No correction required; preserve endpoint-boundary wording in the claim and public copy.",
+    "exposure_directness: No correction required; retrieve full text before dose-specific synthesis and keep sildenafil as adjacent non-tadalafil evidence.",
+    "population_directness: No correction required; preserve disease-specific and symptom-selected population qualifiers in public summaries.",
+    "safety_risk_framing: No correction required; keep the dedicated safety baseline attached and avoid comparative AE synthesis without full trial reports.",
+    "source_fidelity: No correction required for baseline publication; retrieve full text before quantitative performance, recovery, or muscular-dystrophy synthesis.",
+    "synthesis_overreach: No correction required; preserve the negative-to-insufficient healthy-user conclusion in public summaries."
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "change_note": "Creates the first submitted baseline claim for tadalafil exercise capacity and physical function."
+}

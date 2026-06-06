@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "status": "complete",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "patterson-tadalafil-cad-exercise-ischemia-artifact-2005",
+  "name": "Patterson 2005 Tadalafil CAD Exercise Ischemia Extract",
+  "artifact_type": "randomized_crossover_trial_extract",
+  "source_ids": [
+    "patterson-tadalafil-cad-exercise-ischemia-2005"
+  ],
+  "population_or_context": "Older adults with stable coronary artery disease undergoing exercise treadmill testing.",
+  "sample_size": "23 subjects age 53 to 75 years.",
+  "methods": "Randomized double-blind two-period crossover trial of tadalafil 10 mg versus placebo on exercise treadmill-induced ischemia and nitroglycerin hemodynamics.",
+  "endpoint_categories": [
+    "exercise_safety",
+    "myocardial_ischemia",
+    "blood_pressure",
+    "drug_interaction"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Stable CAD adults older than the target population; safety-relevant for exertion and cardiovascular disease.",
+  "tadalafil_exposure": "Single tadalafil 10 mg dose before treadmill testing and nitroglycerin challenge.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Exercise safety and cardiovascular pharmacology in stable CAD.",
+  "study_design": "Randomized placebo-controlled double-blind crossover trial.",
+  "comparator_context": "Placebo within-person crossover comparison.",
+  "safety_findings": "Tadalafil lowered systolic blood pressure at rest and during/after exercise, and nitroglycerin produced greater hypotensive responses; nitrate coadministration is contraindicated.",
+  "directness_to_target_population": "Low for healthy performance, but important for men with occult or known CAD and exertion contexts.",
+  "confounding_and_bias_limits": "CAD sample, older age, small crossover design, ischemia safety endpoint rather than performance enhancement.",
+  "population_band": "cardiovascular_or_metabolic_condition",
+  "study_design_class": "crossover_trial",
+  "class_transfer_limits": "Direct tadalafil evidence for exertional CAD safety and nitrate boundary, not evidence of exercise enhancement."
+}

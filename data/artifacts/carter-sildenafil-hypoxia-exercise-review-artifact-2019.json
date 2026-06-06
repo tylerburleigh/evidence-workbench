@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "status": "complete",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "carter-sildenafil-hypoxia-exercise-review-artifact-2019",
+  "name": "Carter 2019 Sildenafil Hypoxia Exercise Systematic Review Extract",
+  "artifact_type": "systematic_review_extract",
+  "source_ids": [
+    "carter-sildenafil-hypoxia-exercise-review-2019"
+  ],
+  "population_or_context": "Healthy human participants in randomized sildenafil-placebo hypoxia studies.",
+  "sample_size": "14 studies; 210 subjects received sildenafil 40, 50, or 100 mg/day.",
+  "methods": "Systematic review and meta-analysis of randomized placebo-controlled crossover studies through August 2018.",
+  "endpoint_categories": [
+    "hypoxia",
+    "exercise_performance",
+    "pulmonary_hemodynamics",
+    "oxygen_saturation"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Healthy humans under hypoxia; relevant to altitude hypotheses but not tadalafil exposure.",
+  "tadalafil_exposure": "No tadalafil exposure; sildenafil 40, 50, or 100 mg/day in included studies.",
+  "pde5_agent": "sildenafil",
+  "agent_directness_to_tadalafil": "adjacent_non_tadalafil_pde5",
+  "indication_context": "Adjacent PDE5 exercise-performance evidence under hypoxia.",
+  "study_design": "Systematic review/meta-analysis of randomized crossover trials.",
+  "comparator_context": "Placebo.",
+  "safety_findings": "Detailed adverse-event synthesis not extracted for this baseline; sildenafil is a shorter-acting PDE5 inhibitor with its own safety profile.",
+  "directness_to_target_population": "Low to moderate for healthy hypoxia physiology, low for tadalafil because the agent is sildenafil and effects may depend on dose, timing, and altitude condition.",
+  "confounding_and_bias_limits": "Agent mismatch, heterogeneity in hypoxia type and dose, small trials, and limited transfer to normoxic gym use.",
+  "population_band": "healthy_adults_mixed_sex",
+  "study_design_class": "review_or_meta_analysis",
+  "class_transfer_limits": "Adjacent sildenafil evidence only; tadalafil's longer half-life, dose timing, and agent-specific pharmacology prevent direct transfer."
+}

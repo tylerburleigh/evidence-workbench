@@ -1,0 +1,472 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "tad-exercise-physical-function-baseline-2026-06-06",
+  "name": "Tadalafil Exercise Capacity And Physical Function Baseline Review",
+  "summary": "Stages the first baseline for tadalafil exercise and physical function: a targeted search protocol, direct tadalafil healthy-performance and disease-function sources, structured artifacts/findings, adjacent sildenafil hypoxia evidence, and one bounded baseline claim.",
+  "intake_mode": "baseline_review",
+  "lifecycle_status": "published",
+  "submitted_at": "2026-06-06T14:36:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "tadalafil-off-label",
+    "taxonomy_node_ids": [
+      "tad-exercise-physical-function"
+    ],
+    "research_question": "What is the current evidence landscape for tadalafil and PDE5 inhibitors on exercise capacity, physical performance, fatigue, recovery, and physical function, especially for mostly healthy men age 30 to 50?"
+  },
+  "source_ids": [
+    "diluigi-tadalafil-vo2max-athletes-2008",
+    "guidetti-tadalafil-anaerobic-athletes-2008",
+    "diluigi-tadalafil-hpa-exercise-2012",
+    "ceci-tadalafil-exercise-oxidative-damage-2015",
+    "duranti-tadalafil-redox-polyamines-athletes-2021",
+    "aversa-tadalafil-lean-mass-ed-luts-2017",
+    "martin-tadalafil-becker-muscle-ischemia-2012",
+    "victor-tadalafil-dmd-phase3-2017",
+    "maron-tadalafil-copd-ph-2022",
+    "patterson-tadalafil-cad-exercise-ischemia-2005",
+    "carter-sildenafil-hypoxia-exercise-review-2019",
+    "galie-tadalafil-pah-phirst-2009",
+    "dailymed-cialis-label-2026-03",
+    "kloner-tadalafil-nitrate-interaction-2003",
+    "kloner-alpha-blocker-interaction-2004",
+    "kloner-antihypertensive-safety-pooled-2022"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/17614028/",
+    "https://pubmed.ncbi.nlm.nih.gov/17586581/",
+    "https://pubmed.ncbi.nlm.nih.gov/22318947/",
+    "https://pubmed.ncbi.nlm.nih.gov/25381629/",
+    "https://pubmed.ncbi.nlm.nih.gov/34639267/",
+    "https://pubmed.ncbi.nlm.nih.gov/28133708/",
+    "https://pubmed.ncbi.nlm.nih.gov/23197572/",
+    "https://pubmed.ncbi.nlm.nih.gov/28972192/",
+    "https://pubmed.ncbi.nlm.nih.gov/35506072/",
+    "https://pubmed.ncbi.nlm.nih.gov/16236035/",
+    "https://pubmed.ncbi.nlm.nih.gov/31191974/",
+    "https://pubmed.ncbi.nlm.nih.gov/19470885/",
+    "https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=bcd8f8ab-81a2-4891-83db-24a0b0e25895",
+    "https://pubmed.ncbi.nlm.nih.gov/14642699/",
+    "https://pubmed.ncbi.nlm.nih.gov/15540759/",
+    "https://pubmed.ncbi.nlm.nih.gov/35099113/"
+  ],
+  "related_records": [
+    {
+      "record_type": "claim",
+      "record_id": "tad-safety-interactions-baseline-claim",
+      "relationship": "required_safety_context"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "pde5-class-transfer-framework-baseline-claim",
+      "relationship": "agent_directness_framework"
+    },
+    {
+      "record_type": "claim",
+      "record_id": "tad-cardiovascular-endothelial-bp-baseline-claim",
+      "relationship": "shared_vascular_and_blood_pressure_boundary"
+    },
+    {
+      "record_type": "finding",
+      "record_id": "galie-tadalafil-pah-phirst-finding-2009",
+      "relationship": "existing_pah_exercise_capacity_boundary"
+    }
+  ],
+  "proposed_changes": [
+    {
+      "change_id": "create-tad-exercise-search-protocol",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "tad-exercise-physical-function-search-2026-06-06",
+      "file_path": "data/search-protocols/tad-exercise-physical-function-search-2026-06-06.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/tad-exercise-physical-function-search-2026-06-06.json",
+      "summary": "Add targeted exercise and physical-function search protocol.",
+      "rationale": "The baseline needs transparent screening boundaries for healthy performance, disease-specific functional outcomes, and adjacent PDE5 evidence."
+    },
+    {
+      "change_id": "create-diluigi-tadalafil-vo2max-athletes",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "diluigi-tadalafil-vo2max-athletes-2008",
+      "file_path": "data/sources/diluigi-tadalafil-vo2max-athletes-2008.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/diluigi-tadalafil-vo2max-athletes-2008.json",
+      "summary": "Add source The long-acting phosphodiesterase inhibitor tadalafil does not influence athletes' VO2max, aerobic, and anaerobic thresholds in normoxia.",
+      "rationale": "The source is included in the first exercise and physical-function baseline evidence map."
+    },
+    {
+      "change_id": "create-guidetti-tadalafil-anaerobic-athletes",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "guidetti-tadalafil-anaerobic-athletes-2008",
+      "file_path": "data/sources/guidetti-tadalafil-anaerobic-athletes-2008.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/guidetti-tadalafil-anaerobic-athletes-2008.json",
+      "summary": "Add source Effect of tadalafil on anaerobic performance indices in healthy athletes.",
+      "rationale": "The source is included in the first exercise and physical-function baseline evidence map."
+    },
+    {
+      "change_id": "create-diluigi-tadalafil-hpa-exercise",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "diluigi-tadalafil-hpa-exercise-2012",
+      "file_path": "data/sources/diluigi-tadalafil-hpa-exercise-2012.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/diluigi-tadalafil-hpa-exercise-2012.json",
+      "summary": "Add source The phosphodiesterases type 5 inhibitor tadalafil reduces the activation of the hypothalamus-pituitary-adrenal axis in men during cycle ergometric exercise.",
+      "rationale": "The source is included in the first exercise and physical-function baseline evidence map."
+    },
+    {
+      "change_id": "create-ceci-tadalafil-exercise-oxidative-damage",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "ceci-tadalafil-exercise-oxidative-damage-2015",
+      "file_path": "data/sources/ceci-tadalafil-exercise-oxidative-damage-2015.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/ceci-tadalafil-exercise-oxidative-damage-2015.json",
+      "summary": "Add source Effects of tadalafil administration on plasma markers of exercise-induced muscle damage, IL6 and antioxidant status capacity.",
+      "rationale": "The source is included in the first exercise and physical-function baseline evidence map."
+    },
+    {
+      "change_id": "create-duranti-tadalafil-redox-polyamines-athletes",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "duranti-tadalafil-redox-polyamines-athletes-2021",
+      "file_path": "data/sources/duranti-tadalafil-redox-polyamines-athletes-2021.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/duranti-tadalafil-redox-polyamines-athletes-2021.json",
+      "summary": "Add source Effect of Tadalafil Administration on Redox Homeostasis and Polyamine Levels in Healthy Men with High Level of Physical Activity.",
+      "rationale": "The source is included in the first exercise and physical-function baseline evidence map."
+    },
+    {
+      "change_id": "create-aversa-tadalafil-lean-mass-ed-luts",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "aversa-tadalafil-lean-mass-ed-luts-2017",
+      "file_path": "data/sources/aversa-tadalafil-lean-mass-ed-luts-2017.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/aversa-tadalafil-lean-mass-ed-luts-2017.json",
+      "summary": "Add source Tadalafil improves lean mass and endothelial function in nonobese men with mild ED/LUTS: in vivo and in vitro characterization.",
+      "rationale": "The source is included in the first exercise and physical-function baseline evidence map."
+    },
+    {
+      "change_id": "create-martin-tadalafil-becker-muscle-ischemia",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "martin-tadalafil-becker-muscle-ischemia-2012",
+      "file_path": "data/sources/martin-tadalafil-becker-muscle-ischemia-2012.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/martin-tadalafil-becker-muscle-ischemia-2012.json",
+      "summary": "Add source Tadalafil alleviates muscle ischemia in patients with Becker muscular dystrophy.",
+      "rationale": "The source is included in the first exercise and physical-function baseline evidence map."
+    },
+    {
+      "change_id": "create-victor-tadalafil-dmd-phase3",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "victor-tadalafil-dmd-phase3-2017",
+      "file_path": "data/sources/victor-tadalafil-dmd-phase3-2017.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/victor-tadalafil-dmd-phase3-2017.json",
+      "summary": "Add source A phase 3 randomized placebo-controlled trial of tadalafil for Duchenne muscular dystrophy.",
+      "rationale": "The source is included in the first exercise and physical-function baseline evidence map."
+    },
+    {
+      "change_id": "create-maron-tadalafil-copd-ph",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "maron-tadalafil-copd-ph-2022",
+      "file_path": "data/sources/maron-tadalafil-copd-ph-2022.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/maron-tadalafil-copd-ph-2022.json",
+      "summary": "Add source Tadalafil for veterans with chronic obstructive pulmonary disease-pulmonary hypertension: A multicenter, placebo-controlled randomized trial.",
+      "rationale": "The source is included in the first exercise and physical-function baseline evidence map."
+    },
+    {
+      "change_id": "create-patterson-tadalafil-cad-exercise-ischemia",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "patterson-tadalafil-cad-exercise-ischemia-2005",
+      "file_path": "data/sources/patterson-tadalafil-cad-exercise-ischemia-2005.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/patterson-tadalafil-cad-exercise-ischemia-2005.json",
+      "summary": "Add source The effect of tadalafil on the time to exercise-induced myocardial ischaemia in subjects with coronary artery disease.",
+      "rationale": "The source is included in the first exercise and physical-function baseline evidence map."
+    },
+    {
+      "change_id": "create-carter-sildenafil-hypoxia-exercise-review",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "carter-sildenafil-hypoxia-exercise-review-2019",
+      "file_path": "data/sources/carter-sildenafil-hypoxia-exercise-review-2019.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/carter-sildenafil-hypoxia-exercise-review-2019.json",
+      "summary": "Add source Sildenafil does not reliably improve exercise performance in hypoxia: a systematic review.",
+      "rationale": "The source is included in the first exercise and physical-function baseline evidence map."
+    },
+    {
+      "change_id": "create-diluigi-tadalafil-vo2max-athletes-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "diluigi-tadalafil-vo2max-athletes-artifact-2008",
+      "file_path": "data/artifacts/diluigi-tadalafil-vo2max-athletes-artifact-2008.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/diluigi-tadalafil-vo2max-athletes-artifact-2008.json",
+      "summary": "Add structured extract Di Luigi 2008 Tadalafil VO2max Athletes Extract",
+      "rationale": "The baseline needs structured population, exposure, endpoint, safety, and transfer-limit extraction before synthesis."
+    },
+    {
+      "change_id": "create-guidetti-tadalafil-anaerobic-athletes-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "guidetti-tadalafil-anaerobic-athletes-artifact-2008",
+      "file_path": "data/artifacts/guidetti-tadalafil-anaerobic-athletes-artifact-2008.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/guidetti-tadalafil-anaerobic-athletes-artifact-2008.json",
+      "summary": "Add structured extract Guidetti 2008 Tadalafil Anaerobic Performance Athletes Extract",
+      "rationale": "The baseline needs structured population, exposure, endpoint, safety, and transfer-limit extraction before synthesis."
+    },
+    {
+      "change_id": "create-diluigi-tadalafil-hpa-exercise-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "diluigi-tadalafil-hpa-exercise-artifact-2012",
+      "file_path": "data/artifacts/diluigi-tadalafil-hpa-exercise-artifact-2012.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/diluigi-tadalafil-hpa-exercise-artifact-2012.json",
+      "summary": "Add structured extract Di Luigi 2012 Tadalafil Exercise HPA Axis Extract",
+      "rationale": "The baseline needs structured population, exposure, endpoint, safety, and transfer-limit extraction before synthesis."
+    },
+    {
+      "change_id": "create-ceci-tadalafil-exercise-oxidative-damage-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "ceci-tadalafil-exercise-oxidative-damage-artifact-2015",
+      "file_path": "data/artifacts/ceci-tadalafil-exercise-oxidative-damage-artifact-2015.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/ceci-tadalafil-exercise-oxidative-damage-artifact-2015.json",
+      "summary": "Add structured extract Ceci 2015 Tadalafil Exercise-Induced Damage Extract",
+      "rationale": "The baseline needs structured population, exposure, endpoint, safety, and transfer-limit extraction before synthesis."
+    },
+    {
+      "change_id": "create-duranti-tadalafil-redox-polyamines-athletes-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "duranti-tadalafil-redox-polyamines-athletes-artifact-2021",
+      "file_path": "data/artifacts/duranti-tadalafil-redox-polyamines-athletes-artifact-2021.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/duranti-tadalafil-redox-polyamines-athletes-artifact-2021.json",
+      "summary": "Add structured extract Duranti 2021 Acute Tadalafil Redox Polyamines Athletic Men Extract",
+      "rationale": "The baseline needs structured population, exposure, endpoint, safety, and transfer-limit extraction before synthesis."
+    },
+    {
+      "change_id": "create-aversa-tadalafil-lean-mass-ed-luts-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "aversa-tadalafil-lean-mass-ed-luts-artifact-2017",
+      "file_path": "data/artifacts/aversa-tadalafil-lean-mass-ed-luts-artifact-2017.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/aversa-tadalafil-lean-mass-ed-luts-artifact-2017.json",
+      "summary": "Add structured extract Aversa 2017 Tadalafil Lean Mass ED/LUTS Extract",
+      "rationale": "The baseline needs structured population, exposure, endpoint, safety, and transfer-limit extraction before synthesis."
+    },
+    {
+      "change_id": "create-martin-tadalafil-becker-muscle-ischemia-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "martin-tadalafil-becker-muscle-ischemia-artifact-2012",
+      "file_path": "data/artifacts/martin-tadalafil-becker-muscle-ischemia-artifact-2012.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/martin-tadalafil-becker-muscle-ischemia-artifact-2012.json",
+      "summary": "Add structured extract Martin 2012 Tadalafil Becker Muscular Dystrophy Muscle Ischemia Extract",
+      "rationale": "The baseline needs structured population, exposure, endpoint, safety, and transfer-limit extraction before synthesis."
+    },
+    {
+      "change_id": "create-victor-tadalafil-dmd-phase3-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "victor-tadalafil-dmd-phase3-artifact-2017",
+      "file_path": "data/artifacts/victor-tadalafil-dmd-phase3-artifact-2017.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/victor-tadalafil-dmd-phase3-artifact-2017.json",
+      "summary": "Add structured extract Victor 2017 Tadalafil Duchenne Muscular Dystrophy Phase 3 Extract",
+      "rationale": "The baseline needs structured population, exposure, endpoint, safety, and transfer-limit extraction before synthesis."
+    },
+    {
+      "change_id": "create-maron-tadalafil-copd-ph-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "maron-tadalafil-copd-ph-artifact-2022",
+      "file_path": "data/artifacts/maron-tadalafil-copd-ph-artifact-2022.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/maron-tadalafil-copd-ph-artifact-2022.json",
+      "summary": "Add structured extract Maron 2022 Tadalafil COPD-PH Veterans Exercise Capacity Extract",
+      "rationale": "The baseline needs structured population, exposure, endpoint, safety, and transfer-limit extraction before synthesis."
+    },
+    {
+      "change_id": "create-patterson-tadalafil-cad-exercise-ischemia-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "patterson-tadalafil-cad-exercise-ischemia-artifact-2005",
+      "file_path": "data/artifacts/patterson-tadalafil-cad-exercise-ischemia-artifact-2005.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/patterson-tadalafil-cad-exercise-ischemia-artifact-2005.json",
+      "summary": "Add structured extract Patterson 2005 Tadalafil CAD Exercise Ischemia Extract",
+      "rationale": "The baseline needs structured population, exposure, endpoint, safety, and transfer-limit extraction before synthesis."
+    },
+    {
+      "change_id": "create-carter-sildenafil-hypoxia-exercise-review-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "carter-sildenafil-hypoxia-exercise-review-artifact-2019",
+      "file_path": "data/artifacts/carter-sildenafil-hypoxia-exercise-review-artifact-2019.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/carter-sildenafil-hypoxia-exercise-review-artifact-2019.json",
+      "summary": "Add structured extract Carter 2019 Sildenafil Hypoxia Exercise Systematic Review Extract",
+      "rationale": "The baseline needs structured population, exposure, endpoint, safety, and transfer-limit extraction before synthesis."
+    },
+    {
+      "change_id": "create-diluigi-tadalafil-vo2max-athletes-null-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "diluigi-tadalafil-vo2max-athletes-null-finding-2008",
+      "file_path": "data/findings/diluigi-tadalafil-vo2max-athletes-null-finding-2008.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/diluigi-tadalafil-vo2max-athletes-null-finding-2008.json",
+      "summary": "Add finding Acute tadalafil did not improve VO2max or exercise thresholds in healthy male athletes",
+      "rationale": "The finding supports or bounds the exercise and physical-function baseline claim."
+    },
+    {
+      "change_id": "create-guidetti-tadalafil-anaerobic-athletes-null-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "guidetti-tadalafil-anaerobic-athletes-null-finding-2008",
+      "file_path": "data/findings/guidetti-tadalafil-anaerobic-athletes-null-finding-2008.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/guidetti-tadalafil-anaerobic-athletes-null-finding-2008.json",
+      "summary": "Add finding Acute tadalafil did not substantially improve Wingate anaerobic performance",
+      "rationale": "The finding supports or bounds the exercise and physical-function baseline claim."
+    },
+    {
+      "change_id": "create-diluigi-tadalafil-hpa-exercise-mechanistic-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "diluigi-tadalafil-hpa-exercise-mechanistic-finding-2012",
+      "file_path": "data/findings/diluigi-tadalafil-hpa-exercise-mechanistic-finding-2012.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/diluigi-tadalafil-hpa-exercise-mechanistic-finding-2012.json",
+      "summary": "Add finding Tadalafil changed exercise stress-axis hormones without improving performance parameters",
+      "rationale": "The finding supports or bounds the exercise and physical-function baseline claim."
+    },
+    {
+      "change_id": "create-ceci-tadalafil-exercise-oxidative-damage-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "ceci-tadalafil-exercise-oxidative-damage-finding-2015",
+      "file_path": "data/findings/ceci-tadalafil-exercise-oxidative-damage-finding-2015.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/ceci-tadalafil-exercise-oxidative-damage-finding-2015.json",
+      "summary": "Add finding Short tadalafil exposure worsened oxidative and muscle-damage markers after exhaustive exercise",
+      "rationale": "The finding supports or bounds the exercise and physical-function baseline claim."
+    },
+    {
+      "change_id": "create-duranti-tadalafil-redox-polyamines-muscle-damage-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "duranti-tadalafil-redox-polyamines-muscle-damage-finding-2021",
+      "file_path": "data/findings/duranti-tadalafil-redox-polyamines-muscle-damage-finding-2021.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/duranti-tadalafil-redox-polyamines-muscle-damage-finding-2021.json",
+      "summary": "Add finding Acute tadalafil increased muscle-damage markers without antioxidant benefit in fit men",
+      "rationale": "The finding supports or bounds the exercise and physical-function baseline claim."
+    },
+    {
+      "change_id": "create-aversa-tadalafil-lean-mass-ed-luts-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "aversa-tadalafil-lean-mass-ed-luts-finding-2017",
+      "file_path": "data/findings/aversa-tadalafil-lean-mass-ed-luts-finding-2017.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/aversa-tadalafil-lean-mass-ed-luts-finding-2017.json",
+      "summary": "Add finding Daily tadalafil increased abdominal lean mass in mild ED/LUTS but did not test strength or exercise performance",
+      "rationale": "The finding supports or bounds the exercise and physical-function baseline claim."
+    },
+    {
+      "change_id": "create-martin-tadalafil-becker-muscle-ischemia-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "martin-tadalafil-becker-muscle-ischemia-finding-2012",
+      "file_path": "data/findings/martin-tadalafil-becker-muscle-ischemia-finding-2012.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/martin-tadalafil-becker-muscle-ischemia-finding-2012.json",
+      "summary": "Add finding Tadalafil restored exercising muscle blood-flow regulation in Becker muscular dystrophy",
+      "rationale": "The finding supports or bounds the exercise and physical-function baseline claim."
+    },
+    {
+      "change_id": "create-victor-tadalafil-dmd-6mwd-null-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "victor-tadalafil-dmd-6mwd-null-finding-2017",
+      "file_path": "data/findings/victor-tadalafil-dmd-6mwd-null-finding-2017.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/victor-tadalafil-dmd-6mwd-null-finding-2017.json",
+      "summary": "Add finding Phase 3 DMD trial found tadalafil did not slow ambulatory decline",
+      "rationale": "The finding supports or bounds the exercise and physical-function baseline claim."
+    },
+    {
+      "change_id": "create-maron-tadalafil-copd-ph-6mwd-null-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "maron-tadalafil-copd-ph-6mwd-null-finding-2022",
+      "file_path": "data/findings/maron-tadalafil-copd-ph-6mwd-null-finding-2022.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/maron-tadalafil-copd-ph-6mwd-null-finding-2022.json",
+      "summary": "Add finding Tadalafil did not improve 6-minute walk distance in COPD-associated pulmonary hypertension",
+      "rationale": "The finding supports or bounds the exercise and physical-function baseline claim."
+    },
+    {
+      "change_id": "create-patterson-tadalafil-cad-exercise-ischemia-safety-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "patterson-tadalafil-cad-exercise-ischemia-safety-finding-2005",
+      "file_path": "data/findings/patterson-tadalafil-cad-exercise-ischemia-safety-finding-2005.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/patterson-tadalafil-cad-exercise-ischemia-safety-finding-2005.json",
+      "summary": "Add finding Tadalafil did not change exercise-induced ischemia time in CAD but lowered blood pressure and reinforced nitrate risk",
+      "rationale": "The finding supports or bounds the exercise and physical-function baseline claim."
+    },
+    {
+      "change_id": "create-carter-sildenafil-hypoxia-performance-adjacent-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "carter-sildenafil-hypoxia-performance-adjacent-finding-2019",
+      "file_path": "data/findings/carter-sildenafil-hypoxia-performance-adjacent-finding-2019.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/carter-sildenafil-hypoxia-performance-adjacent-finding-2019.json",
+      "summary": "Add finding Sildenafil hypoxia review supports only adjacent and unreliable PDE5 exercise-performance transfer",
+      "rationale": "The finding supports or bounds the exercise and physical-function baseline claim."
+    },
+    {
+      "change_id": "create-tad-exercise-baseline-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "tad-exercise-physical-function-baseline-claim",
+      "file_path": "data/claims/tad-exercise-physical-function-baseline-claim.json",
+      "staged_file_path": "data/staged-records/tad-exercise-physical-function-baseline-2026-06-06/tad-exercise-physical-function-baseline-claim.json",
+      "summary": "Add bounded baseline claim for tadalafil exercise and physical function.",
+      "rationale": "The first public baseline should state the insufficiency of healthy-user ergogenic evidence while preserving disease-specific signals and safety boundaries."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "tad-exercise-physical-function",
+      "note": "Creates the first submitted baseline claim for tadalafil exercise capacity and physical function."
+    }
+  ],
+  "required_appraisal_lanes": [
+    "source_fidelity",
+    "population_directness",
+    "exposure_directness",
+    "endpoint_validity",
+    "safety_risk_framing",
+    "synthesis_overreach"
+  ],
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-tad-exercise-physical-function-source-fidelity-r1",
+    "evidence-appraisal-tad-exercise-physical-function-population-directness-r1",
+    "evidence-appraisal-tad-exercise-physical-function-exposure-directness-r1",
+    "evidence-appraisal-tad-exercise-physical-function-endpoint-validity-r1",
+    "evidence-appraisal-tad-exercise-physical-function-safety-risk-framing-r1",
+    "evidence-appraisal-tad-exercise-physical-function-synthesis-overreach-r1"
+  ],
+  "editorial_comment_ids": [],
+  "publication_event_ids": [
+    "publish-tad-exercise-physical-function-baseline-2026-06-06-2026-06-06t14-45-19-142z"
+  ],
+  "source_access_follow_up_actions": [],
+  "extraction_follow_up_actions": [],
+  "next_actions": [
+    "Publication complete. Review downstream pages if this change affects shared surfaces.",
+    "endpoint_validity: No correction required; preserve endpoint-boundary wording in the claim and public copy.",
+    "exposure_directness: No correction required; retrieve full text before dose-specific synthesis and keep sildenafil as adjacent non-tadalafil evidence.",
+    "population_directness: No correction required; preserve disease-specific and symptom-selected population qualifiers in public summaries.",
+    "safety_risk_framing: No correction required; keep the dedicated safety baseline attached and avoid comparative AE synthesis without full trial reports.",
+    "source_fidelity: No correction required for baseline publication; retrieve full text before quantitative performance, recovery, or muscular-dystrophy synthesis.",
+    "synthesis_overreach: No correction required; preserve the negative-to-insufficient healthy-user conclusion in public summaries."
+  ]
+}

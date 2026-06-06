@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_category": "exercise_physical_function",
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "aversa-tadalafil-lean-mass-ed-luts-finding-2017",
+  "name": "Daily tadalafil increased abdominal lean mass in mild ED/LUTS but did not test strength or exercise performance",
+  "source_id": "aversa-tadalafil-lean-mass-ed-luts-2017",
+  "artifact_id": "aversa-tadalafil-lean-mass-ed-luts-artifact-2017",
+  "direction": "body_composition_signal_not_functional_performance",
+  "evidence_tier": "randomized_trial",
+  "confidence": "low_to_moderate_for_body_composition_low_for_function",
+  "statement": "In nonobese men with mild ED and/or LUTS, tadalafil 5 mg once daily for 2 months increased abdominal lean mass, which returned to baseline after withdrawal, but the study did not establish improved strength, hypertrophy from training, or exercise performance.",
+  "population_or_context": "Nonobese men with mild ED and/or LUTS, mean age about 48.5 years.",
+  "time_horizon": "Two months plus two-month withdrawal observation.",
+  "quantitative_note": "Once-daily tadalafil increased abdominal lean mass (P<0.01) and improved endothelial function (P<0.05); abstract reports return of lean mass to baseline after withdrawal.",
+  "source_locator": {
+    "section": "PubMed Abstract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28133708/",
+    "quote_or_paraphrase_note": "Abstract reports randomization, DXA body composition outcome, endothelial/hormone changes, and conclusion.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "ED/LUTS population.",
+    "No placebo arm reported in abstract.",
+    "Body composition is not strength or exercise capacity."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Nonobese symptomatic men near the target age band, not mostly healthy performance users.",
+  "tadalafil_exposure": "Tadalafil 5 mg once daily versus 20 mg on demand for 2 months.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "ED/LUTS clinical study with body-composition and mechanistic outcomes.",
+  "comparator_context": "On-demand tadalafil comparator and withdrawal baseline.",
+  "endpoint_measure": "DXA abdominal lean mass, ED/LUTS questionnaires, hormones, endothelial function, skeletal muscle cell myogenin/androgen receptor expression.",
+  "effect_estimate": "Abdominal lean mass increased with once-daily tadalafil but returned to baseline after withdrawal; functional performance was not measured.",
+  "safety_findings": "Detailed adverse events not extracted from abstract.",
+  "directness_to_target_population": "Low to moderate for men age 30 to 50 with mild ED/LUTS; low for healthy exercise performance or strength claims.",
+  "confounding_and_bias_limits": "Symptom-selected population, no placebo arm in abstract, active-dose comparison, and no functional endpoint.",
+  "population_band": "erectile_dysfunction_or_bph",
+  "study_design_class": "randomized_trial",
+  "class_transfer_limits": "Direct tadalafil evidence, but body-composition signals cannot be converted into performance or longevity claims."
+}

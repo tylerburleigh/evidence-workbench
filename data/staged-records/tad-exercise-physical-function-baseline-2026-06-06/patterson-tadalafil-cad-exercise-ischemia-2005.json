@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/16236035/"
+  ],
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T14:25:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/16236035/",
+      "result": "PubMed abstract and metadata accessed via NCBI E-utilities.",
+      "notes": "Extraction uses abstract-level results for this baseline pass."
+    }
+  ],
+  "id": "patterson-tadalafil-cad-exercise-ischemia-2005",
+  "name": "The effect of tadalafil on the time to exercise-induced myocardial ischaemia in subjects with coronary artery disease.",
+  "source_type": "randomized_crossover_trial",
+  "authors": [
+    "Patterson D",
+    "Kloner R",
+    "Effron M",
+    "Emmick J",
+    "Bedding A",
+    "Warner M",
+    "Mitchell M",
+    "Braat S",
+    "MacDonald T"
+  ],
+  "venue": "British Journal of Clinical Pharmacology",
+  "year": 2005,
+  "published_on": "2005-11-01",
+  "doi": "10.1111/j.1365-2125.2005.02479.x",
+  "pmid": "16236035",
+  "summary": "Randomized double-blind two-period crossover study in 23 subjects with stable coronary artery disease testing tadalafil 10 mg versus placebo on exercise treadmill time to ischemia and hemodynamic response to nitroglycerin before and after exercise."
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "status": "complete",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "victor-tadalafil-dmd-phase3-artifact-2017",
+  "name": "Victor 2017 Tadalafil Duchenne Muscular Dystrophy Phase 3 Extract",
+  "artifact_type": "randomized_parallel_trial_extract",
+  "source_ids": [
+    "victor-tadalafil-dmd-phase3-2017"
+  ],
+  "population_or_context": "Boys with Duchenne muscular dystrophy taking glucocorticoids.",
+  "sample_size": "331 participants age 7 to 14 years.",
+  "methods": "Phase 3 randomized placebo-controlled 48-week trial of tadalafil 0.3 or 0.6 mg/kg/day on 6-minute walk distance and ambulatory-function outcomes.",
+  "endpoint_categories": [
+    "physical_function",
+    "six_minute_walk",
+    "muscular_dystrophy"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Pediatric boys with DMD; low directness for adult healthy men but important for physical-function claims built on skeletal-muscle perfusion mechanisms.",
+  "tadalafil_exposure": "Tadalafil 0.3 or 0.6 mg/kg/day once daily for 48 weeks.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Experimental DMD disease-modifying physical-function trial.",
+  "study_design": "Phase 3 randomized placebo-controlled parallel trial.",
+  "comparator_context": "Placebo.",
+  "safety_findings": "Adverse events were consistent with known tadalafil safety profile and DMD disease state in the abstract.",
+  "directness_to_target_population": "Very low for healthy adult men; useful as a disease-specific negative translation boundary.",
+  "confounding_and_bias_limits": "Pediatric rare disease, glucocorticoid background therapy, disease progression endpoint, and limited transfer to healthy performance.",
+  "population_band": "mixed_or_unclear",
+  "study_design_class": "randomized_trial",
+  "class_transfer_limits": "Direct tadalafil evidence, but DMD disease biology and pediatric dosing do not transfer to healthy-user performance claims."
+}

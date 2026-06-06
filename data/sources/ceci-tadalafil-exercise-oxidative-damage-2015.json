@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/25381629/"
+  ],
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T14:25:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/25381629/",
+      "result": "PubMed abstract and metadata accessed via NCBI E-utilities.",
+      "notes": "Extraction uses abstract-level results for this baseline pass."
+    }
+  ],
+  "id": "ceci-tadalafil-exercise-oxidative-damage-2015",
+  "name": "Effects of tadalafil administration on plasma markers of exercise-induced muscle damage, IL6 and antioxidant status capacity.",
+  "source_type": "randomized_crossover_trial",
+  "authors": [
+    "Ceci R",
+    "Duranti G",
+    "Sgro P",
+    "Sansone M",
+    "Guidetti L",
+    "Baldari C",
+    "Sabatini S",
+    "Di Luigi L"
+  ],
+  "venue": "European Journal of Applied Physiology",
+  "year": 2015,
+  "published_on": "2014-11-08",
+  "doi": "10.1007/s00421-014-3040-5",
+  "pmid": "25381629",
+  "summary": "Double-blind crossover trial in healthy males testing tadalafil 20 mg/day given as two doses 36 hours apart before exhaustive exercise, assessing antioxidant status, oxidative damage, muscle damage markers, LDH, CK, MDA, protein carbonyls, and IL-6."
+}

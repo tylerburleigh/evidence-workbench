@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "status": "complete",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "diluigi-tadalafil-hpa-exercise-artifact-2012",
+  "name": "Di Luigi 2012 Tadalafil Exercise HPA Axis Extract",
+  "artifact_type": "randomized_crossover_trial_extract",
+  "source_ids": [
+    "diluigi-tadalafil-hpa-exercise-2012"
+  ],
+  "population_or_context": "Healthy males performing maximal cycle exercise.",
+  "sample_size": "14 healthy males.",
+  "methods": "Double-blind crossover trial with two tadalafil 20 mg doses separated by 36 hours before maximal cycle exercise and serial hormone sampling.",
+  "endpoint_categories": [
+    "exercise_capacity",
+    "endocrine_response",
+    "stress_axis"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Healthy males; relevant mechanistically to exercise-stress response but not direct evidence of improved performance.",
+  "tadalafil_exposure": "Two tadalafil 20 mg tablets with a 36-hour interval before maximal cycle exercise.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Experimental exercise endocrine physiology.",
+  "study_design": "Double-blind placebo-controlled crossover trial.",
+  "comparator_context": "Placebo within-person crossover comparison.",
+  "safety_findings": "Abstract calls for further study of possible health risks; no clinical adverse-event rates extracted.",
+  "directness_to_target_population": "Moderate for acute endocrine response in healthy males; low for functional improvement, recovery, hypertrophy, or long-term training adaptation.",
+  "confounding_and_bias_limits": "Small sample, endocrine surrogate outcomes, acute high-dose exposure, no validated functional benefit endpoint, and abstract-level extraction.",
+  "population_band": "healthy_men_30_50",
+  "study_design_class": "crossover_trial",
+  "class_transfer_limits": "Direct tadalafil evidence, but endocrine changes cannot be transferred into performance or well-being benefit without outcome trials."
+}

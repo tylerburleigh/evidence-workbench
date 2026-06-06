@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_category": "exercise_physical_function",
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "guidetti-tadalafil-anaerobic-athletes-null-finding-2008",
+  "name": "Acute tadalafil did not substantially improve Wingate anaerobic performance",
+  "source_id": "guidetti-tadalafil-anaerobic-athletes-2008",
+  "artifact_id": "guidetti-tadalafil-anaerobic-athletes-artifact-2008",
+  "direction": "mostly_null_for_anaerobic_performance",
+  "evidence_tier": "randomized_crossover_trial",
+  "confidence": "moderate_for_acute_anaerobic_athlete_context",
+  "statement": "In 12 well-trained subjects, tadalafil 20 mg did not substantially influence Wingate anaerobic performance indices versus placebo; only 3-minute recovery lactate increased and time to peak power decreased.",
+  "population_or_context": "Well-trained subjects performing a 30-second Wingate anaerobic power test.",
+  "time_horizon": "Acute single-dose exercise test.",
+  "quantitative_note": "Three-minute recovery lactate was higher with tadalafil (13.9 +/- 1.7 vs 12.8 +/- 1.3 mmol/L; P<0.05), time to peak power decreased (6.3 +/- 1.3 vs 5.7 +/- 1.5 s; P=0.05), and other parameters did not differ.",
+  "source_locator": {
+    "section": "PubMed Abstract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/17586581/",
+    "quote_or_paraphrase_note": "Abstract reports methods, Wingate outcomes, lactate, time-to-peak-power, and conclusion.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Small trained sample.",
+    "Single anaerobic test.",
+    "No chronic training or strength endpoint."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Healthy trained subjects; relevant to gym-performance claims but not broad physical function.",
+  "tadalafil_exposure": "Single tadalafil 20 mg dose the day before Wingate testing.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Healthy performance physiology.",
+  "comparator_context": "Placebo crossover.",
+  "endpoint_measure": "Wingate mean power, peak power, time to peak power, fatigue index, and blood lactate recovery.",
+  "effect_estimate": "No differences in most anaerobic performance parameters; lactate at 3 minutes and time to peak power changed.",
+  "safety_findings": "No adverse-event rates reported in abstract; lactate recovery changed.",
+  "directness_to_target_population": "Moderate for acute anaerobic performance in trained men; low for chronic daily tadalafil or hypertrophy claims.",
+  "confounding_and_bias_limits": "Small sample, acute exposure, limited outcomes, and abstract-level extraction.",
+  "population_band": "healthy_men_30_50",
+  "study_design_class": "crossover_trial",
+  "class_transfer_limits": "Direct tadalafil evidence but narrow to acute anaerobic testing."
+}

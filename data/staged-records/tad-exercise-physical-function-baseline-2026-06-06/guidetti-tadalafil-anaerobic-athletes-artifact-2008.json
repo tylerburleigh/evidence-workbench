@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "status": "complete",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "guidetti-tadalafil-anaerobic-athletes-artifact-2008",
+  "name": "Guidetti 2008 Tadalafil Anaerobic Performance Athletes Extract",
+  "artifact_type": "randomized_crossover_trial_extract",
+  "source_ids": [
+    "guidetti-tadalafil-anaerobic-athletes-2008"
+  ],
+  "population_or_context": "Well-trained subjects performing Wingate anaerobic testing.",
+  "sample_size": "12 well-trained subjects.",
+  "methods": "Double-blind crossover Wingate anaerobic power test after tadalafil 20 mg or placebo.",
+  "endpoint_categories": [
+    "anaerobic_performance",
+    "lactate_recovery",
+    "exercise_capacity"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Healthy well-trained male athlete-like sample; relevant to performance claims but small and not general-population men.",
+  "tadalafil_exposure": "Single tadalafil 20 mg dose the day before a 30-second Wingate anaerobic test.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Experimental healthy-athlete performance physiology.",
+  "study_design": "Double-blind randomized placebo-controlled crossover trial.",
+  "comparator_context": "Placebo within-person crossover comparison.",
+  "safety_findings": "Abstract did not report clinical adverse events; lactate at 3-minute recovery was higher with tadalafil.",
+  "directness_to_target_population": "Moderate for acute anaerobic performance in trained men, low for chronic low-dose tadalafil or strength/hypertrophy outcomes.",
+  "confounding_and_bias_limits": "Small sample, acute exposure, one anaerobic protocol, limited adverse-event reporting, and abstract-level extraction.",
+  "population_band": "healthy_men_30_50",
+  "study_design_class": "crossover_trial",
+  "class_transfer_limits": "Direct tadalafil evidence, but only single-dose anaerobic testing in trained subjects."
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_category": "exercise_physical_function",
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "patterson-tadalafil-cad-exercise-ischemia-safety-finding-2005",
+  "name": "Tadalafil did not change exercise-induced ischemia time in CAD but lowered blood pressure and reinforced nitrate risk",
+  "source_id": "patterson-tadalafil-cad-exercise-ischemia-2005",
+  "artifact_id": "patterson-tadalafil-cad-exercise-ischemia-artifact-2005",
+  "direction": "exercise_safety_boundary_not_performance_benefit",
+  "evidence_tier": "randomized_crossover_trial",
+  "confidence": "moderate_for_stable_cad_exertion_boundary",
+  "statement": "In stable CAD subjects, tadalafil 10 mg did not significantly alter time to exercise treadmill-induced ischemia versus placebo, but lowered systolic blood pressure at rest, during exercise, and after exercise, and potentiated nitroglycerin-related hypotension.",
+  "population_or_context": "Stable CAD adults age 53 to 75 years undergoing treadmill testing.",
+  "time_horizon": "Acute crossover treadmill and nitroglycerin challenge.",
+  "quantitative_note": "Time to ischemia was 13 min 31 s with tadalafil versus 13 min 36 s with placebo; SBP was lower at rest (-7 mmHg), during ETT (-10 mmHg), and after ETT (-13 mmHg); more subjects had SBP <85 mmHg after nitroglycerin with tadalafil.",
+  "source_locator": {
+    "section": "PubMed Abstract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/16236035/",
+    "quote_or_paraphrase_note": "Abstract reports time-to-ischemia, SBP effects, nitroglycerin hypotension, and nitrate contraindication.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Older stable CAD population.",
+    "Safety endpoint, not performance enhancement.",
+    "Nitrate interaction is a hard boundary."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Stable CAD adults older than target; safety-relevant for exercise and occult cardiovascular disease.",
+  "tadalafil_exposure": "Single tadalafil 10 mg dose.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "CAD exercise safety and drug-interaction physiology.",
+  "comparator_context": "Placebo crossover plus nitroglycerin challenge.",
+  "endpoint_measure": "Exercise treadmill time to ischemia, systolic blood pressure, nitroglycerin hemodynamic response.",
+  "effect_estimate": "No ischemia-time benefit; blood pressure reduced and nitrate hypotension risk increased.",
+  "safety_findings": "Concomitant nitrates and tadalafil are contraindicated due hypotension risk.",
+  "directness_to_target_population": "Low for healthy performance, high for safety boundary in exertion plus cardiovascular disease/nitrate context.",
+  "confounding_and_bias_limits": "Small CAD crossover study and no healthy performance outcome.",
+  "population_band": "cardiovascular_or_metabolic_condition",
+  "study_design_class": "crossover_trial",
+  "class_transfer_limits": "Direct tadalafil safety evidence; not an exercise-benefit claim."
+}

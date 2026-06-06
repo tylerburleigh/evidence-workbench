@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/34639267/"
+  ],
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T14:25:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/34639267/",
+      "result": "PubMed abstract and metadata accessed via NCBI E-utilities.",
+      "notes": "Extraction uses abstract-level results for this baseline pass."
+    }
+  ],
+  "id": "duranti-tadalafil-redox-polyamines-athletes-2021",
+  "name": "Effect of Tadalafil Administration on Redox Homeostasis and Polyamine Levels in Healthy Men with High Level of Physical Activity.",
+  "source_type": "human_mechanistic_study",
+  "authors": [
+    "Duranti G",
+    "Ceci R",
+    "Di Luigi L",
+    "Antinozzi C",
+    "Dimauro I",
+    "Sabatini S",
+    "Cervelli M",
+    "Sgro P"
+  ],
+  "venue": "International Journal of Environmental Research and Public Health",
+  "year": 2021,
+  "published_on": "2021-09-22",
+  "doi": "10.3390/ijerph18199962",
+  "pmid": "34639267",
+  "summary": "Human mechanistic study in 12 healthy men with high cardiorespiratory fitness evaluating plasma muscle-damage, redox-homeostasis, antioxidant-enzyme, oxidation-target, and polyamine markers before and 2, 6, and 24 hours after a single tadalafil 20 mg dose."
+}

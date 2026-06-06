@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "status": "complete",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "duranti-tadalafil-redox-polyamines-athletes-artifact-2021",
+  "name": "Duranti 2021 Acute Tadalafil Redox Polyamines Athletic Men Extract",
+  "artifact_type": "human_mechanistic_extract",
+  "source_ids": [
+    "duranti-tadalafil-redox-polyamines-athletes-2021"
+  ],
+  "population_or_context": "Healthy men with high cardiorespiratory fitness after acute tadalafil ingestion.",
+  "sample_size": "12 healthy male volunteers.",
+  "methods": "Pre-post biomarker study measuring plasma muscle-damage, redox, antioxidant enzyme, oxidative-target, and polyamine markers before and after tadalafil.",
+  "endpoint_categories": [
+    "exercise_recovery",
+    "muscle_damage",
+    "redox_homeostasis"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Healthy fit men; relevant to athlete safety/recovery hypotheses but not a randomized performance endpoint.",
+  "tadalafil_exposure": "Single tadalafil 20 mg dose with biomarker sampling before and 2, 6, and 24 hours afterward.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Experimental healthy-athlete redox and muscle-damage biomarker study.",
+  "study_design": "Uncontrolled acute pre-post human mechanistic study.",
+  "comparator_context": "Within-person baseline; no placebo comparator in abstract.",
+  "safety_findings": "CK and LDH increased 24 hours after tadalafil, with no antioxidant-status benefit observed.",
+  "directness_to_target_population": "Moderate for acute biomarker response in fit men, low for clinical injury, recovery, strength, hypertrophy, or chronic dosing.",
+  "confounding_and_bias_limits": "No placebo comparator, small sample, biomarker endpoints, single-dose exposure, and abstract-level extraction.",
+  "population_band": "healthy_men_30_50",
+  "study_design_class": "human_mechanistic",
+  "class_transfer_limits": "Direct tadalafil evidence, but uncontrolled biomarker changes cannot establish performance or recovery benefit."
+}

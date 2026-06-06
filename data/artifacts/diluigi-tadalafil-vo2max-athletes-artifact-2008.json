@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "status": "complete",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "diluigi-tadalafil-vo2max-athletes-artifact-2008",
+  "name": "Di Luigi 2008 Tadalafil VO2max Athletes Extract",
+  "artifact_type": "randomized_crossover_trial_extract",
+  "source_ids": [
+    "diluigi-tadalafil-vo2max-athletes-2008"
+  ],
+  "population_or_context": "Healthy male athletes exercising in normoxia.",
+  "sample_size": "14 healthy male athletes.",
+  "methods": "Double-blind crossover maximal cycle ergometer testing after tadalafil 20 mg or placebo.",
+  "endpoint_categories": [
+    "exercise_capacity",
+    "cardiopulmonary_response",
+    "blood_pressure"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Healthy trained male athletes; relevant to healthy men but younger/trained and small sample.",
+  "tadalafil_exposure": "Single therapeutic tadalafil 20 mg dose before maximal cycle exercise in normoxia.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Experimental healthy-athlete performance physiology; not ED/BPH/PAH treatment.",
+  "study_design": "Double-blind placebo-controlled crossover trial with maximal cycle ergometry.",
+  "comparator_context": "Placebo within-person crossover comparison.",
+  "safety_findings": "Systolic blood pressure was lower before and after exercise; no detailed adverse-event extraction in abstract.",
+  "directness_to_target_population": "Moderate for acute normoxic exercise performance in healthy men, low for chronic daily use, untrained users, resistance training, altitude, or long-term adaptation.",
+  "confounding_and_bias_limits": "Small trained-athlete sample, acute dosing, normoxia only, surrogate exercise test endpoints, and abstract-level extraction.",
+  "population_band": "healthy_men_30_50",
+  "study_design_class": "crossover_trial",
+  "class_transfer_limits": "Direct tadalafil evidence, but only acute 20 mg normoxic athlete testing; it does not address sildenafil-like altitude effects or chronic daily tadalafil."
+}

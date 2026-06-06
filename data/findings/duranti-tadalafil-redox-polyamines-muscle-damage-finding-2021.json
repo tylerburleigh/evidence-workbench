@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_category": "exercise_physical_function",
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "duranti-tadalafil-redox-polyamines-muscle-damage-finding-2021",
+  "name": "Acute tadalafil increased muscle-damage markers without antioxidant benefit in fit men",
+  "source_id": "duranti-tadalafil-redox-polyamines-athletes-2021",
+  "artifact_id": "duranti-tadalafil-redox-polyamines-athletes-artifact-2021",
+  "direction": "potential_muscle_damage_biomarker_signal",
+  "evidence_tier": "human_mechanistic",
+  "confidence": "low_to_moderate_for_biomarker_signal",
+  "statement": "In 12 healthy fit men, a single tadalafil 20 mg dose increased CK and LDH 24 hours after consumption without improving antioxidant status, oxidative target molecules, or polyamine levels.",
+  "population_or_context": "Healthy men with high cardiorespiratory fitness.",
+  "time_horizon": "Baseline to 24 hours after a single tadalafil dose.",
+  "quantitative_note": "VO2max range was 40.1-56.0 mL/kg/min; CK and LDH increased at 24 hours, while redox homeostasis, antioxidant enzyme activities, oxidation target molecules, and polyamines were unchanged.",
+  "source_locator": {
+    "section": "PubMed Abstract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/34639267/",
+    "quote_or_paraphrase_note": "Abstract reports sample, single-dose exposure, biomarkers, and conclusion.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "No placebo comparator in abstract.",
+    "Biomarker signal only.",
+    "No exercise performance endpoint."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Healthy fit men; relevant to active healthy users but not proof of clinical harm or benefit.",
+  "tadalafil_exposure": "Single tadalafil 20 mg dose.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Healthy athlete-like biomarker study.",
+  "comparator_context": "Within-person baseline without placebo comparator.",
+  "endpoint_measure": "CK, LDH, TAC, GSH/GSSG, free thiols, antioxidant enzymes, TBARs, protein carbonyls, spermine, spermidine.",
+  "effect_estimate": "CK and LDH increased 24 hours after tadalafil; antioxidant/redox/polyamine markers were not improved.",
+  "safety_findings": "Potential muscle-damage biomarker caution signal after acute tadalafil in fit men.",
+  "directness_to_target_population": "Moderate for fit healthy men, low for clinical injury or performance.",
+  "confounding_and_bias_limits": "Small uncontrolled pre-post design, biomarkers only, no exercise performance measure.",
+  "population_band": "healthy_men_30_50",
+  "study_design_class": "human_mechanistic",
+  "class_transfer_limits": "Direct tadalafil evidence, but uncontrolled biomarker data cannot establish ergogenic or recovery claims."
+}

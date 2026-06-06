@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_category": "exercise_physical_function",
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "maron-tadalafil-copd-ph-6mwd-null-finding-2022",
+  "name": "Tadalafil did not improve 6-minute walk distance in COPD-associated pulmonary hypertension",
+  "source_id": "maron-tadalafil-copd-ph-2022",
+  "artifact_id": "maron-tadalafil-copd-ph-artifact-2022",
+  "direction": "null_for_copd_ph_6mwd_with_dyspnea_signal",
+  "evidence_tier": "randomized_trial",
+  "confidence": "low_to_moderate_due_under_enrollment",
+  "statement": "In older male veterans with COPD-associated pulmonary hypertension, tadalafil 40 mg/day did not improve 6-minute walk distance, mean pulmonary artery pressure, or pulmonary vascular resistance versus placebo, although dyspnea questionnaire scores improved at 6 months.",
+  "population_or_context": "Male veterans with COPD-PH.",
+  "time_horizon": "12 months for 6MWD primary endpoint; 6 months for hemodynamics and dyspnea secondary endpoints.",
+  "quantitative_note": "The trial randomized 42 subjects, all male and 68 +/- 7.6 years old; no significant difference was observed for primary 6MWD change or mPAP/PVR change, with clinically meaningful UCSD shortness-of-breath score improvement.",
+  "source_locator": {
+    "section": "PubMed Abstract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/35506072/",
+    "quote_or_paraphrase_note": "Abstract reports design, sample imbalance, endpoints, null 6MWD/hemodynamic findings, dyspnea signal, safety, and limitations.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Under-enrolled and imbalanced randomization.",
+    "Older COPD-PH disease population.",
+    "Dyspnea signal was secondary."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Older male veterans with COPD-PH; low directness to healthy men age 30 to 50.",
+  "tadalafil_exposure": "Tadalafil 40 mg/day for 12 months.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Experimental COPD-PH therapy.",
+  "comparator_context": "Placebo.",
+  "endpoint_measure": "6-minute walk distance, pulmonary vascular resistance, mean pulmonary artery pressure, UCSD shortness-of-breath questionnaire, major adverse events.",
+  "effect_estimate": "No significant 6MWD or hemodynamic benefit; dyspnea questionnaire improved at 6 months.",
+  "safety_findings": "No significant difference in major adverse events; tadalafil was well tolerated overall in the abstract.",
+  "directness_to_target_population": "Low for healthy users because of older COPD-PH population and high-dose disease treatment.",
+  "confounding_and_bias_limits": "Under-enrollment, group imbalance, disease-specific endpoints, and limited generalizability.",
+  "population_band": "pulmonary_hypertension",
+  "study_design_class": "randomized_trial",
+  "class_transfer_limits": "Direct tadalafil evidence, but disease context prevents transfer to healthy exercise capacity."
+}

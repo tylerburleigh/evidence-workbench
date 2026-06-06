@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/23197572/"
+  ],
+  "access_status": "abstract_only_available",
+  "access_depth": "abstract_only",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-06T14:25:00Z",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23197572/",
+      "result": "PubMed abstract and metadata accessed via NCBI E-utilities.",
+      "notes": "Extraction uses abstract-level results for this baseline pass."
+    }
+  ],
+  "id": "martin-tadalafil-becker-muscle-ischemia-2012",
+  "name": "Tadalafil alleviates muscle ischemia in patients with Becker muscular dystrophy.",
+  "source_type": "randomized_crossover_trial",
+  "authors": [
+    "Martin EA",
+    "Barresi R",
+    "Byrne BJ",
+    "Tsimerinov EI",
+    "Scott BL",
+    "Walker AE",
+    "Gurudevan SV",
+    "Anene F",
+    "Elashoff RM",
+    "Thomas GD",
+    "Victor RG"
+  ],
+  "venue": "Science Translational Medicine",
+  "year": 2012,
+  "published_on": "2012-11-28",
+  "doi": "10.1126/scitranslmed.3004327",
+  "pmid": "23197572",
+  "summary": "Randomized placebo-controlled crossover study in men with Becker muscular dystrophy testing whether single-dose tadalafil restores nitric-oxide/cGMP-mediated regulation of exercising skeletal-muscle blood flow and alleviates functional muscle ischemia."
+}

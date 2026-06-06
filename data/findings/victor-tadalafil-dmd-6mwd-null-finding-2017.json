@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_category": "exercise_physical_function",
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "victor-tadalafil-dmd-6mwd-null-finding-2017",
+  "name": "Phase 3 DMD trial found tadalafil did not slow ambulatory decline",
+  "source_id": "victor-tadalafil-dmd-phase3-2017",
+  "artifact_id": "victor-tadalafil-dmd-phase3-artifact-2017",
+  "direction": "null_for_dmd_ambulatory_function",
+  "evidence_tier": "randomized_trial",
+  "confidence": "high_for_dmd_low_for_healthy_users",
+  "statement": "In 331 boys with Duchenne muscular dystrophy, once-daily tadalafil for 48 weeks did not lessen decline in 6-minute walk distance or secondary ambulatory outcomes versus placebo, despite hypothesis-generating upper-limb signals in boys older than 10 years.",
+  "population_or_context": "Glucocorticoid-treated boys age 7 to 14 years with DMD.",
+  "time_horizon": "48 weeks.",
+  "quantitative_note": "6MWD declined 51.0 +/- 9.3 m with placebo, 64.7 +/- 9.8 m with low-dose tadalafil (P=0.307 vs placebo), and 59.1 +/- 9.4 m with high-dose tadalafil (P=0.538 vs placebo).",
+  "source_locator": {
+    "section": "PubMed Abstract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/28972192/",
+    "quote_or_paraphrase_note": "Abstract reports trial size, doses, primary and secondary outcomes, PUL exploratory signal, safety, and classification of evidence.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Pediatric DMD population.",
+    "Disease-modifying endpoint, not healthy performance.",
+    "Upper-limb signal was exploratory."
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Pediatric boys with DMD; very low directness for healthy men.",
+  "tadalafil_exposure": "Tadalafil 0.3 or 0.6 mg/kg/day for 48 weeks.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Experimental DMD physical-function treatment.",
+  "comparator_context": "Placebo.",
+  "endpoint_measure": "6-minute walk distance, North Star Ambulatory Assessment, timed function tests, Performance of Upper Limb.",
+  "effect_estimate": "No significant benefit on 6MWD or secondary ambulatory outcomes.",
+  "safety_findings": "Adverse events were consistent with known tadalafil safety profile and DMD disease state.",
+  "directness_to_target_population": "Very low for healthy adult men, but important boundary against muscle-perfusion overreach.",
+  "confounding_and_bias_limits": "Pediatric rare disease, glucocorticoid background, disease progression, and no healthy-user performance endpoint.",
+  "population_band": "mixed_or_unclear",
+  "study_design_class": "randomized_trial",
+  "class_transfer_limits": "Direct tadalafil evidence, but DMD context does not transfer to healthy gym performance."
+}

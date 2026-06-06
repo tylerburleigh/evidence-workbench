@@ -1,0 +1,39 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "status": "complete",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "maron-tadalafil-copd-ph-artifact-2022",
+  "name": "Maron 2022 Tadalafil COPD-PH Veterans Exercise Capacity Extract",
+  "artifact_type": "randomized_parallel_trial_extract",
+  "source_ids": [
+    "maron-tadalafil-copd-ph-2022"
+  ],
+  "population_or_context": "Older male veterans with COPD-associated pulmonary hypertension.",
+  "sample_size": "42 randomized; placebo n=14, tadalafil n=28.",
+  "methods": "Multicenter placebo-controlled randomized trial of tadalafil 40 mg/day for 12 months with 6MWD primary endpoint and pulmonary hemodynamic/dyspnea secondary endpoints.",
+  "endpoint_categories": [
+    "six_minute_walk",
+    "dyspnea",
+    "pulmonary_hemodynamics",
+    "safety"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "Older male veterans with COPD-PH; disease-specific and older than the primary target population.",
+  "tadalafil_exposure": "Tadalafil 40 mg/day for 12 months.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Experimental COPD-associated pulmonary hypertension treatment.",
+  "study_design": "Multicenter placebo-controlled randomized trial with under-enrollment and imbalanced randomization.",
+  "comparator_context": "Placebo.",
+  "safety_findings": "No significant difference in major adverse events; tadalafil was reported as well tolerated overall.",
+  "directness_to_target_population": "Low for healthy men age 30 to 50; useful for disease-specific pulmonary exercise-capacity boundary.",
+  "confounding_and_bias_limits": "Under-enrollment, imbalanced randomization, older disease population, and limited power.",
+  "population_band": "pulmonary_hypertension",
+  "study_design_class": "randomized_trial",
+  "class_transfer_limits": "Direct tadalafil evidence, but COPD-PH pathophysiology and 40 mg daily exposure do not establish healthy-user exercise benefit."
+}

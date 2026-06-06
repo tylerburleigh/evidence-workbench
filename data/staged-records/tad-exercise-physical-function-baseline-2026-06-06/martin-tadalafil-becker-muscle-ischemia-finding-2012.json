@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "finding",
+  "taxonomy_node_ids": [
+    "tad-exercise-physical-function"
+  ],
+  "endpoint_category": "exercise_physical_function",
+  "endpoint_domain": "exercise_physical_function",
+  "effect_domain": "exercise_physical_function",
+  "id": "martin-tadalafil-becker-muscle-ischemia-finding-2012",
+  "name": "Tadalafil restored exercising muscle blood-flow regulation in Becker muscular dystrophy",
+  "source_id": "martin-tadalafil-becker-muscle-ischemia-2012",
+  "artifact_id": "martin-tadalafil-becker-muscle-ischemia-artifact-2012",
+  "direction": "disease_specific_muscle_perfusion_signal",
+  "evidence_tier": "randomized_crossover_trial",
+  "confidence": "moderate_for_bmd_mechanism_low_for_healthy_users",
+  "statement": "In men with Becker muscular dystrophy, single-dose tadalafil alleviated functional muscle ischemia and restored normal blood-flow regulation in exercising dystrophic muscle by boosting NO-cGMP signaling, but this disease-specific mechanism does not establish healthy-muscle performance benefit.",
+  "population_or_context": "Men with Becker muscular dystrophy and exercise-induced muscle ischemia.",
+  "time_horizon": "Acute crossover physiologic testing.",
+  "source_locator": {
+    "section": "PubMed Abstract",
+    "url": "https://pubmed.ncbi.nlm.nih.gov/23197572/",
+    "quote_or_paraphrase_note": "Abstract reports randomized crossover design and restoration of exercising muscle blood-flow regulation.",
+    "verification_status": "located"
+  },
+  "caveats": [
+    "Disease-specific dystrophin/nNOS mechanism.",
+    "Physiologic endpoint, not strength or endurance performance.",
+    "Small rare-disease study."
+  ],
+  "numeric_results_extracted": false,
+  "population_profile": "Men with Becker muscular dystrophy; low directness for mostly healthy men age 30 to 50.",
+  "tadalafil_exposure": "Single tadalafil dose; dose not specified in extracted abstract.",
+  "pde5_agent": "tadalafil",
+  "agent_directness_to_tadalafil": "direct_tadalafil",
+  "indication_context": "Experimental Becker muscular dystrophy muscle perfusion study.",
+  "comparator_context": "Placebo crossover.",
+  "endpoint_measure": "Exercise muscle oxygenation and attenuation of reflex sympathetic vasoconstriction.",
+  "effect_estimate": "Functional muscle ischemia alleviated and normal blood-flow regulation restored in BMD.",
+  "safety_findings": "Detailed adverse events not extracted from abstract.",
+  "directness_to_target_population": "Low due to rare muscular dystrophy pathophysiology.",
+  "confounding_and_bias_limits": "Rare disease, physiologic endpoint, small sample, and abstract-level extraction.",
+  "population_band": "mixed_or_unclear",
+  "study_design_class": "crossover_trial",
+  "class_transfer_limits": "Direct tadalafil evidence, but transfer requires dystrophin/nNOS biology that does not apply to healthy muscle."
+}
