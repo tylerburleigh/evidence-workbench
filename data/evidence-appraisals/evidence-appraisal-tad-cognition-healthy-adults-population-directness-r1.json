@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-cognition-healthy-adults-population-directness-r1",
+  "name": "Population Directness appraisal for tad-cognition-healthy-adults bundle",
+  "candidate_bundle_id": "tad-cognition-healthy-adults-baseline-2026-06-05",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "population_directness",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The staged artifacts, findings, and claim consistently mark the tadalafil-specific evidence as older SVD/CSVD disease-population evidence and the healthy-adult source as adjacent vardenafil rather than tadalafil. The public claim is framed as insufficient direct evidence for mostly healthy men age 30 to 50, not as a treatment or enhancement conclusion.",
+  "appraised_change_ids": [
+    "create-tad-cognition-search-protocol",
+    "create-pauls-pastis-source",
+    "create-pauls-pastis-artifact",
+    "create-pauls-pastis-finding",
+    "create-etlas2-main-source",
+    "create-etlas2-main-artifact",
+    "create-etlas2-main-finding",
+    "create-vardenafil-source",
+    "create-vardenafil-artifact",
+    "create-vardenafil-finding",
+    "create-tad-cognition-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "healthy-target-unrepresented-note",
+      "severity": "note",
+      "category": "uncertainty",
+      "claim_or_issue": "No staged source directly studies tadalafil cognitive effects in mostly healthy men age 30 to 50.",
+      "why_it_matters": "This is the central applicability boundary for the review question.",
+      "recommended_action": "Preserve the low-confidence, insufficient-direct-evidence framing unless a direct healthy-adult tadalafil study is added.",
+      "resolution_status": "open",
+      "applies_to_change_id": "create-tad-cognition-baseline-claim"
+    }
+  ],
+  "created_at": "2026-06-05T23:36:42.231Z",
+  "updated_at": "2026-06-05T23:36:42.231Z"
+}

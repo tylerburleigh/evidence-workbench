@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-cognition-healthy-adults-exposure-directness-r1",
+  "name": "Exposure Directness appraisal for tad-cognition-healthy-adults bundle",
+  "candidate_bundle_id": "tad-cognition-healthy-adults-baseline-2026-06-05",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "exposure_directness",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The bundle distinguishes single-dose tadalafil 20 mg, tadalafil 20 mg daily for 3 months, and non-tadalafil vardenafil 10-20 mg. The claim does not treat vardenafil as direct tadalafil evidence and does not generalize acute or higher-dose disease-population exposure to low-dose daily use in healthy adults.",
+  "appraised_change_ids": [
+    "create-tad-cognition-search-protocol",
+    "create-pauls-pastis-source",
+    "create-pauls-pastis-artifact",
+    "create-pauls-pastis-finding",
+    "create-etlas2-main-source",
+    "create-etlas2-main-artifact",
+    "create-etlas2-main-finding",
+    "create-vardenafil-source",
+    "create-vardenafil-artifact",
+    "create-vardenafil-finding",
+    "create-tad-cognition-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "no-low-dose-healthy-exposure-note",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "claim_or_issue": "No staged source tests common low-dose daily tadalafil regimens for cognition in healthy adults.",
+      "why_it_matters": "Dose and duration materially affect off-label interpretation and safety framing.",
+      "recommended_action": "Keep low-dose daily healthy-adult cognition in unknown_or_unreviewed_contexts unless direct evidence is added.",
+      "resolution_status": "open",
+      "applies_to_change_id": "create-tad-cognition-baseline-claim"
+    }
+  ],
+  "created_at": "2026-06-05T23:36:42.327Z",
+  "updated_at": "2026-06-05T23:36:42.327Z"
+}

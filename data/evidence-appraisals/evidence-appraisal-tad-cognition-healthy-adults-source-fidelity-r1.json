@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-cognition-healthy-adults-source-fidelity-r1",
+  "name": "Source Fidelity appraisal for tad-cognition-healthy-adults bundle",
+  "candidate_bundle_id": "tad-cognition-healthy-adults-baseline-2026-06-05",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "source_fidelity",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted after correcting the PASTIS trial registry ID. PubMed/E-utilities and available full-text metadata support the staged bibliographic records, tadalafil exposure details, PASTIS cognitive result, ETLAS-2 cognition/adverse-event result, and the abstract-only vardenafil adjacent finding. The vardenafil finding remains low-confidence adjacent evidence because full text was not checked.",
+  "appraised_change_ids": [
+    "create-tad-cognition-search-protocol",
+    "create-pauls-pastis-source",
+    "create-pauls-pastis-artifact",
+    "create-pauls-pastis-finding",
+    "create-etlas2-main-source",
+    "create-etlas2-main-artifact",
+    "create-etlas2-main-finding",
+    "create-vardenafil-source",
+    "create-vardenafil-artifact",
+    "create-vardenafil-finding",
+    "create-tad-cognition-baseline-claim"
+  ],
+  "corrections_applied": [
+    {
+      "change_id": "create-pauls-pastis-source",
+      "summary": "Corrected the PASTIS ClinicalTrials.gov registry ID from NCT02450253 to NCT00123456 to match the PubMed abstract and PMC article text."
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "pastis-registry-id-corrected",
+      "severity": "note",
+      "category": "source_mismatch",
+      "claim_or_issue": "The staged PASTIS source initially listed an incorrect ClinicalTrials.gov ID.",
+      "why_it_matters": "Trial registry IDs are source-fidelity metadata and must be accurate before publication.",
+      "recommended_action": "No further action required for this issue; the staged source now uses NCT00123456.",
+      "resolution_status": "addressed",
+      "applies_to_change_id": "create-pauls-pastis-source"
+    },
+    {
+      "finding_id": "vardenafil-abstract-only-boundary",
+      "severity": "minor",
+      "category": "uncertainty",
+      "claim_or_issue": "The vardenafil source is abstract-only in this bundle.",
+      "why_it_matters": "The finding is adjacent non-tadalafil evidence, so full methods and numeric task-level results would be needed before it carries more than low-confidence boundary weight.",
+      "recommended_action": "Keep the vardenafil evidence low confidence unless full text is retrieved in a later revision.",
+      "resolution_status": "open",
+      "applies_to_change_id": "create-vardenafil-finding"
+    }
+  ],
+  "created_at": "2026-06-05T23:36:42.139Z",
+  "updated_at": "2026-06-05T23:36:42.139Z"
+}

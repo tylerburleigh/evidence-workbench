@@ -1,0 +1,220 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "candidate_bundle",
+  "id": "tad-cognition-healthy-adults-baseline-2026-06-05",
+  "name": "Tadalafil Cognition In Healthy Adults Baseline Review",
+  "summary": "Stages the first baseline for tadalafil and cognition in healthy adults: a targeted search protocol, three sources, three study artifacts, three findings, and one bounded insufficient-evidence claim.",
+  "intake_mode": "baseline_review",
+  "lifecycle_status": "submitted",
+  "submitted_at": "2026-06-05T23:35:00Z",
+  "submitted_by": "codex-agent",
+  "revision_number": 1,
+  "scope": {
+    "domain_id": "tadalafil-off-label",
+    "taxonomy_node_ids": [
+      "tad-cognition-healthy-adults"
+    ],
+    "research_question": "What is the current evidence landscape for tadalafil and cognitive performance in healthy adults, especially mostly healthy men age 30 to 50?"
+  },
+  "source_ids": [
+    "pauls-pastis-cognition-2023",
+    "olmestig-etlas2-main-2025",
+    "reneerkens-vardenafil-healthy-adults-cognition-2013"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/37811523/",
+    "https://pubmed.ncbi.nlm.nih.gov/40718899/",
+    "https://pubmed.ncbi.nlm.nih.gov/23427190/"
+  ],
+  "related_records": [],
+  "proposed_changes": [
+    {
+      "change_id": "create-tad-cognition-search-protocol",
+      "change_type": "create_record",
+      "target_record_type": "search_protocol",
+      "target_record_id": "tad-cognition-healthy-adults-search-2026-06-05",
+      "file_path": "data/search-protocols/tad-cognition-healthy-adults-search-2026-06-05.json",
+      "staged_file_path": "data/staged-records/tad-cognition-healthy-adults-baseline-2026-06-05/tad-cognition-healthy-adults-search-2026-06-05.json",
+      "summary": "Stage targeted search and screening protocol for healthy-adult cognition baseline.",
+      "rationale": "The baseline claim depends on source discovery and screening boundaries, especially the absence of direct tadalafil healthy-adult evidence in this targeted pass."
+    },
+    {
+      "change_id": "create-pauls-pastis-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "pauls-pastis-cognition-2023",
+      "file_path": "data/sources/pauls-pastis-cognition-2023.json",
+      "staged_file_path": "data/staged-records/tad-cognition-healthy-adults-baseline-2026-06-05/pauls-pastis-cognition-2023.json",
+      "summary": "Add PASTIS tadalafil neuropsychological outcome source.",
+      "rationale": "This is the most directly relevant tadalafil-specific human cognitive outcome source identified in the targeted search."
+    },
+    {
+      "change_id": "create-pauls-pastis-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "pauls-pastis-cognition-artifact-2023",
+      "file_path": "data/artifacts/pauls-pastis-cognition-artifact-2023.json",
+      "staged_file_path": "data/staged-records/tad-cognition-healthy-adults-baseline-2026-06-05/pauls-pastis-cognition-artifact-2023.json",
+      "summary": "Add structured PASTIS cognitive trial artifact.",
+      "rationale": "The baseline needs population, exposure, endpoint, directness, and safety context extracted before any claim can use this source."
+    },
+    {
+      "change_id": "create-pauls-pastis-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "pauls-pastis-cognition-null-finding-2023",
+      "file_path": "data/findings/pauls-pastis-cognition-null-finding-2023.json",
+      "staged_file_path": "data/staged-records/tad-cognition-healthy-adults-baseline-2026-06-05/pauls-pastis-cognition-null-finding-2023.json",
+      "summary": "Add finding that single-dose tadalafil did not significantly improve PASTIS cognitive outcomes.",
+      "rationale": "This atomic finding supports a bounded insufficient-evidence baseline and population-directness caveat."
+    },
+    {
+      "change_id": "create-etlas2-main-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "olmestig-etlas2-main-2025",
+      "file_path": "data/sources/olmestig-etlas2-main-2025.json",
+      "staged_file_path": "data/staged-records/tad-cognition-healthy-adults-baseline-2026-06-05/olmestig-etlas2-main-2025.json",
+      "summary": "Add ETLAS-2 tadalafil CSVD randomized trial source.",
+      "rationale": "This source gives repeated tadalafil exposure and reports cognition plus tolerability boundaries, although the population is indirect."
+    },
+    {
+      "change_id": "create-etlas2-main-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "olmestig-etlas2-main-artifact-2025",
+      "file_path": "data/artifacts/olmestig-etlas2-main-artifact-2025.json",
+      "staged_file_path": "data/staged-records/tad-cognition-healthy-adults-baseline-2026-06-05/olmestig-etlas2-main-artifact-2025.json",
+      "summary": "Add structured ETLAS-2 main trial artifact.",
+      "rationale": "The baseline needs explicit extraction of dose, duration, population, comparator, cognitive endpoints, and adverse-event context."
+    },
+    {
+      "change_id": "create-etlas2-main-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "olmestig-etlas2-main-cognition-safety-finding-2025",
+      "file_path": "data/findings/olmestig-etlas2-main-cognition-safety-finding-2025.json",
+      "staged_file_path": "data/staged-records/tad-cognition-healthy-adults-baseline-2026-06-05/olmestig-etlas2-main-cognition-safety-finding-2025.json",
+      "summary": "Add ETLAS-2 cognition and adverse-event finding.",
+      "rationale": "This finding qualifies cognition claims with a repeated-dose null cognitive signal and safety/tolerability boundary."
+    },
+    {
+      "change_id": "create-vardenafil-source",
+      "change_type": "create_record",
+      "target_record_type": "source",
+      "target_record_id": "reneerkens-vardenafil-healthy-adults-cognition-2013",
+      "file_path": "data/sources/reneerkens-vardenafil-healthy-adults-cognition-2013.json",
+      "staged_file_path": "data/staged-records/tad-cognition-healthy-adults-baseline-2026-06-05/reneerkens-vardenafil-healthy-adults-cognition-2013.json",
+      "summary": "Add adjacent vardenafil healthy-adult cognition source.",
+      "rationale": "No direct tadalafil healthy-adult cognition source was identified in the targeted pass, so this adjacent source helps bound PDE5 class extrapolation."
+    },
+    {
+      "change_id": "create-vardenafil-artifact",
+      "change_type": "create_record",
+      "target_record_type": "artifact",
+      "target_record_id": "reneerkens-vardenafil-healthy-adults-artifact-2013",
+      "file_path": "data/artifacts/reneerkens-vardenafil-healthy-adults-artifact-2013.json",
+      "staged_file_path": "data/staged-records/tad-cognition-healthy-adults-baseline-2026-06-05/reneerkens-vardenafil-healthy-adults-artifact-2013.json",
+      "summary": "Add structured adjacent vardenafil cognition artifact.",
+      "rationale": "The source must be clearly marked as non-tadalafil before it can be used as adjacent evidence."
+    },
+    {
+      "change_id": "create-vardenafil-finding",
+      "change_type": "create_record",
+      "target_record_type": "finding",
+      "target_record_id": "reneerkens-vardenafil-healthy-adults-null-finding-2013",
+      "file_path": "data/findings/reneerkens-vardenafil-healthy-adults-null-finding-2013.json",
+      "staged_file_path": "data/staged-records/tad-cognition-healthy-adults-baseline-2026-06-05/reneerkens-vardenafil-healthy-adults-null-finding-2013.json",
+      "summary": "Add adjacent healthy-adult PDE5 cognition finding.",
+      "rationale": "This finding prevents overgeneralizing PDE5 mechanisms into a tadalafil cognitive-enhancement claim."
+    },
+    {
+      "change_id": "create-tad-cognition-baseline-claim",
+      "change_type": "create_record",
+      "target_record_type": "claim",
+      "target_record_id": "tad-cognition-healthy-adults-baseline-claim",
+      "file_path": "data/claims/tad-cognition-healthy-adults-baseline-claim.json",
+      "staged_file_path": "data/staged-records/tad-cognition-healthy-adults-baseline-2026-06-05/tad-cognition-healthy-adults-baseline-claim.json",
+      "summary": "Add bounded baseline claim for tadalafil and cognition in healthy adults.",
+      "rationale": "The first public baseline should emphasize insufficient direct evidence and directness limits, not efficacy."
+    }
+  ],
+  "proposed_claim_implications": [
+    {
+      "subject_type": "taxonomy_node",
+      "subject_id": "tad-cognition-healthy-adults",
+      "note": "Creates the first submitted baseline claim for tadalafil cognition in healthy adults."
+    }
+  ],
+  "required_appraisal_lanes": [
+    "source_fidelity",
+    "population_directness",
+    "exposure_directness",
+    "endpoint_validity",
+    "safety_risk_framing",
+    "synthesis_overreach"
+  ],
+  "appraisal_requirement": {
+    "min_complete_appraisals_per_lane": 1,
+    "block_on_open_critical_findings": true,
+    "block_on_open_major_findings": true
+  },
+  "evidence_appraisal_ids": [
+    "evidence-appraisal-tad-cognition-healthy-adults-source-fidelity-r1",
+    "evidence-appraisal-tad-cognition-healthy-adults-population-directness-r1",
+    "evidence-appraisal-tad-cognition-healthy-adults-exposure-directness-r1",
+    "evidence-appraisal-tad-cognition-healthy-adults-endpoint-validity-r1",
+    "evidence-appraisal-tad-cognition-healthy-adults-safety-risk-framing-r1",
+    "evidence-appraisal-tad-cognition-healthy-adults-synthesis-overreach-r1"
+  ],
+  "editorial_comment_ids": [],
+  "publication_event_ids": [],
+  "source_access_follow_up_actions": [
+    {
+      "action_id": "resolve-vardenafil-full-text-access",
+      "action_type": "source_access_resolution",
+      "status": "open",
+      "priority": "medium",
+      "target_record_type": "source",
+      "target_record_id": "reneerkens-vardenafil-healthy-adults-cognition-2013",
+      "source_ids": [
+        "reneerkens-vardenafil-healthy-adults-cognition-2013"
+      ],
+      "taxonomy_node_ids": [
+        "tad-cognition-healthy-adults"
+      ],
+      "access_status": "abstract_only_available",
+      "access_depth": "abstract_only",
+      "required_access_depth": "abstract_only",
+      "reason": "The adjacent vardenafil source is currently abstract-only in the staged extraction.",
+      "recommended_action": "Retrieve and appraise full text before using this adjacent finding for anything beyond low-confidence boundary evidence."
+    }
+  ],
+  "extraction_follow_up_actions": [
+    {
+      "action_id": "extract-vardenafil-numeric-results",
+      "action_type": "numeric_results_extraction",
+      "status": "open",
+      "priority": "medium",
+      "target_record_type": "finding",
+      "target_record_id": "reneerkens-vardenafil-healthy-adults-null-finding-2013",
+      "source_ids": [
+        "reneerkens-vardenafil-healthy-adults-cognition-2013"
+      ],
+      "taxonomy_node_ids": [
+        "tad-cognition-healthy-adults"
+      ],
+      "metric_fields_present": [
+        "effect_estimate"
+      ],
+      "finding_id": "reneerkens-vardenafil-healthy-adults-null-finding-2013",
+      "reason": "The abstract does not provide numeric effect sizes for the cognitive tasks.",
+      "recommended_action": "Use full text to extract sample size, task-level results, and adverse-event counts if this adjacent evidence remains in the support map."
+    }
+  ],
+  "next_actions": [
+    "Run evidence appraisal for source_fidelity, population_directness, exposure_directness, endpoint_validity, safety_risk_framing, and synthesis_overreach.",
+    "Consider adding the ETLAS-2 cognitive sub-study as a revision or as part of the MCI/cognitive-decline review.",
+    "Run a dedicated safety baseline before publishing broad off-label tadalafil benefit summaries."
+  ]
+}

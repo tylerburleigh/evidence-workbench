@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-cognition-healthy-adults-endpoint-validity-r1",
+  "name": "Endpoint Validity appraisal for tad-cognition-healthy-adults bundle",
+  "candidate_bundle_id": "tad-cognition-healthy-adults-baseline-2026-06-05",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "endpoint_validity",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The staged findings use cognitive or cognition-adjacent endpoints explicitly reported by the sources: PASTIS neuropsychological testing, ETLAS-2 MoCA/cognition and mental well-being secondary outcomes, and vardenafil memory/executive/reaction-time outcomes from the abstract. The claim does not convert cerebral blood-flow, white-matter, or mechanistic plausibility into a cognitive-enhancement claim.",
+  "appraised_change_ids": [
+    "create-tad-cognition-search-protocol",
+    "create-pauls-pastis-source",
+    "create-pauls-pastis-artifact",
+    "create-pauls-pastis-finding",
+    "create-etlas2-main-source",
+    "create-etlas2-main-artifact",
+    "create-etlas2-main-finding",
+    "create-vardenafil-source",
+    "create-vardenafil-artifact",
+    "create-vardenafil-finding",
+    "create-tad-cognition-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "etlas2-imaging-not-used-as-cognition",
+      "severity": "note",
+      "category": "endpoint_boundary",
+      "claim_or_issue": "ETLAS-2 reported an imaging trend, but the claim does not use it as cognitive benefit evidence.",
+      "why_it_matters": "Surrogate vascular or imaging endpoints should not be treated as cognitive improvement without direct cognitive support.",
+      "recommended_action": "Continue excluding imaging trends from cognition benefit wording unless a separate endpoint-specific support map is created.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-tad-cognition-baseline-claim"
+    }
+  ],
+  "created_at": "2026-06-05T23:36:42.420Z",
+  "updated_at": "2026-06-05T23:36:42.420Z"
+}

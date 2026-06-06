@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "artifact",
+  "id": "olmestig-etlas2-main-artifact-2025",
+  "name": "ETLAS-2 Main Trial Extract",
+  "artifact_type": "randomized_parallel_trial_extract",
+  "status": "complete",
+  "source_ids": [
+    "olmestig-etlas2-main-2025"
+  ],
+  "taxonomy_node_ids": [
+    "tad-cognition-healthy-adults"
+  ],
+  "population_or_context": "Patients with cerebral small vessel disease and prior stroke or transient ischemic attack; mean age about 68 years.",
+  "sample_size": "76 included; 71 initiated treatment.",
+  "methods": "Randomized placebo-controlled double-blind parallel phase II trial of tadalafil 20 mg daily for 3 months versus placebo, with feasibility as the primary outcome and cognition, imaging markers, blood pressure, and adverse events as secondary outcomes.",
+  "endpoint_categories": [
+    "cognition",
+    "safety_risk",
+    "cardiovascular"
+  ],
+  "numeric_results_extracted": true,
+  "population_profile": "CSVD patients with previous stroke or transient ischemic attack; mean age 68.0 years; not healthy adults and not the target population of mostly healthy men age 30 to 50.",
+  "tadalafil_exposure": "Tadalafil 20 mg daily for 3 months.",
+  "indication_context": "Experimental off-label CSVD disease-modification/vascular cognitive impairment trial.",
+  "study_design": "Randomized, placebo-controlled, double-blind, parallel phase II clinical trial.",
+  "comparator_context": "Daily placebo for 3 months.",
+  "endpoint_domain": "cognition",
+  "safety_findings": "Adverse events occurred more often with tadalafil than placebo in the trial abstract, and adherence to tadalafil was lower than placebo.",
+  "directness_to_target_population": "Indirect: tadalafil-specific and human with repeated dosing, but older post-stroke/CSVD population rather than healthy men age 30 to 50.",
+  "confounding_and_bias_limits": "Feasibility-primary phase II trial; indirect population; not designed to test healthy-adult cognitive enhancement.",
+  "population_band": "older_adults",
+  "study_design_class": "randomized_trial",
+  "effect_domain": "cognition"
+}

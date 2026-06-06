@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-cognition-healthy-adults-safety-risk-framing-r1",
+  "name": "Safety Risk Framing appraisal for tad-cognition-healthy-adults bundle",
+  "candidate_bundle_id": "tad-cognition-healthy-adults-baseline-2026-06-05",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "safety_risk_framing",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted for this bounded insufficient-evidence cognition baseline. The ETLAS-2 adverse-event signal is visible, the vardenafil abstract adverse effects remain low-confidence adjacent safety context, and the claim explicitly says a dedicated safety baseline is needed before broad off-label benefit summaries. Current DailyMed labeling boundaries were checked for the appraisal and support keeping contraindications and hypotension/interactions near any later benefit-oriented claim.",
+  "appraised_change_ids": [
+    "create-tad-cognition-search-protocol",
+    "create-pauls-pastis-source",
+    "create-pauls-pastis-artifact",
+    "create-pauls-pastis-finding",
+    "create-etlas2-main-source",
+    "create-etlas2-main-artifact",
+    "create-etlas2-main-finding",
+    "create-vardenafil-source",
+    "create-vardenafil-artifact",
+    "create-vardenafil-finding",
+    "create-tad-cognition-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "safety-baseline-still-needed",
+      "severity": "minor",
+      "category": "safety_limitation",
+      "claim_or_issue": "The cognition bundle does not itself constitute a complete tadalafil safety review.",
+      "why_it_matters": "Current labeling includes contraindications and interaction risks that must be near any off-label benefit claim.",
+      "recommended_action": "Complete the safety/interactions baseline before publishing broad benefit-oriented tadalafil summaries.",
+      "resolution_status": "open",
+      "applies_to_change_id": "create-tad-cognition-baseline-claim"
+    }
+  ],
+  "created_at": "2026-06-05T23:36:42.510Z",
+  "updated_at": "2026-06-05T23:36:42.510Z"
+}

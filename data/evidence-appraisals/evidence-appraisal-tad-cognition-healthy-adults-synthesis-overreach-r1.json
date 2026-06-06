@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "evidence_appraisal",
+  "id": "evidence-appraisal-tad-cognition-healthy-adults-synthesis-overreach-r1",
+  "name": "Synthesis Overreach appraisal for tad-cognition-healthy-adults bundle",
+  "candidate_bundle_id": "tad-cognition-healthy-adults-baseline-2026-06-05",
+  "bundle_revision_number": 1,
+  "appraisal_round": 1,
+  "appraisal_lane": "synthesis_overreach",
+  "appraiser_kind": "agent",
+  "skill_name": "evidence-appraisal",
+  "status": "complete",
+  "verdict": "accept",
+  "blocking": false,
+  "summary": "Accepted. The support map backs an insufficient-direct-evidence claim rather than a cognitive-benefit claim, assigns adjacent evidence an adjacent role, states low confidence, and keeps population, exposure, endpoint, and safety limitations near the conclusion. No staged wording implies off-label medical advice.",
+  "appraised_change_ids": [
+    "create-tad-cognition-search-protocol",
+    "create-pauls-pastis-source",
+    "create-pauls-pastis-artifact",
+    "create-pauls-pastis-finding",
+    "create-etlas2-main-source",
+    "create-etlas2-main-artifact",
+    "create-etlas2-main-finding",
+    "create-vardenafil-source",
+    "create-vardenafil-artifact",
+    "create-vardenafil-finding",
+    "create-tad-cognition-baseline-claim"
+  ],
+  "corrections_applied": [],
+  "findings": [
+    {
+      "finding_id": "claim-wording-stays-bounded",
+      "severity": "note",
+      "category": "claim_overreach",
+      "claim_or_issue": "The claim could become overbroad if later summarized without its low-directness caveats.",
+      "why_it_matters": "The staged evidence does not support tadalafil cognitive enhancement in healthy men age 30 to 50.",
+      "recommended_action": "Keep the claim summary and any public excerpt tied to insufficient direct evidence, not benefit or no-effect certainty.",
+      "resolution_status": "closed",
+      "applies_to_change_id": "create-tad-cognition-baseline-claim"
+    }
+  ],
+  "created_at": "2026-06-05T23:36:42.606Z",
+  "updated_at": "2026-06-05T23:36:42.606Z"
+}

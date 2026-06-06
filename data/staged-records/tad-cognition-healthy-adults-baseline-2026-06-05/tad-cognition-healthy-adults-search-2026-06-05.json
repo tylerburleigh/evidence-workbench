@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "search_protocol",
+  "id": "tad-cognition-healthy-adults-search-2026-06-05",
+  "name": "Tadalafil cognition in healthy adults targeted baseline search",
+  "domain_id": "tadalafil-off-label",
+  "taxonomy_node_ids": [
+    "tad-cognition-healthy-adults"
+  ],
+  "status": "complete",
+  "systematicity_level": "targeted_baseline_review",
+  "search_started_at": "2026-06-05T23:24:00Z",
+  "search_completed_at": "2026-06-05T23:34:00Z",
+  "databases": [
+    "PubMed",
+    "PubMed Central",
+    "ClinicalTrials.gov",
+    "Web search"
+  ],
+  "search_queries": [
+    {
+      "database": "Web search",
+      "query": "PubMed tadalafil cognition healthy adults randomized trial",
+      "searched_at": "2026-06-05T23:24:00Z",
+      "result_count": "targeted web result set"
+    },
+    {
+      "database": "Web search",
+      "query": "tadalafil cognition humans trial cerebral blood flow study",
+      "searched_at": "2026-06-05T23:24:00Z",
+      "result_count": "targeted web result set"
+    },
+    {
+      "database": "Web search",
+      "query": "\"tadalafil\" \"healthy volunteers\" \"cognition\"",
+      "searched_at": "2026-06-05T23:25:00Z",
+      "result_count": "targeted web result set"
+    },
+    {
+      "database": "PubMed",
+      "query": "\"Testing the cognitive effects of tadalafil\"",
+      "searched_at": "2026-06-05T23:26:00Z",
+      "result_count": 14
+    },
+    {
+      "database": "PubMed",
+      "query": "\"Cognitive outcomes after tadalafil treatment in patients with cerebral small vessel disease\"",
+      "searched_at": "2026-06-05T23:26:00Z",
+      "result_count": 3
+    },
+    {
+      "database": "PubMed",
+      "query": "\"The effect of phosphodiesterase-5 inhibitors on cerebral blood flow in humans\"",
+      "searched_at": "2026-06-05T23:26:00Z",
+      "result_count": 50
+    }
+  ],
+  "inclusion_criteria": [
+    "Human evidence addressing tadalafil, PDE5 inhibitors, cognition, cognitive tests, or brain perfusion relevant to cognition.",
+    "Prioritize tadalafil-specific randomized or controlled human studies.",
+    "Allow adjacent non-tadalafil PDE5 healthy-adult studies only when no direct tadalafil healthy-adult source is identified and the record clearly marks indirectness.",
+    "Include safety or tolerability data when reported in a cognition-relevant tadalafil source."
+  ],
+  "exclusion_criteria": [
+    "Animal or in vitro studies for this first healthy-adult cognition baseline.",
+    "Commercial, nootropic, or forum pages without inspectable primary source data.",
+    "Sources focused only on ED/BPH efficacy without cognitive or neurovascular outcomes.",
+    "Case reports or adverse-event sources reserved for the separate safety review unless directly relevant to the cognition baseline."
+  ],
+  "dedupe_method": "Manual deduplication by title, PMID/DOI, and trial name.",
+  "screening_counts": {
+    "records_identified": "targeted search, not exhaustively counted",
+    "records_screened": 7,
+    "full_text_reviewed": 3,
+    "sources_included": 3
+  },
+  "screening_decisions": [
+    {
+      "candidate_id": "pastis-cognition-2023",
+      "title": "Testing the cognitive effects of tadalafil. Neuropsychological secondary outcomes from the PASTIS trial.",
+      "decision": "include",
+      "reason": "Most directly relevant tadalafil-specific human cognitive outcome paper found for the baseline, though population is older SVD rather than healthy adults.",
+      "source_id": "pauls-pastis-cognition-2023",
+      "doi": "10.1016/j.cccb.2023.100187",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37811523/"
+    },
+    {
+      "candidate_id": "etlas2-main-2025",
+      "title": "Tadalafil Treatment in Patients With Cerebral Small Vessel Disease: The ETLAS-2 Randomized Clinical Trial.",
+      "decision": "include",
+      "reason": "Tadalafil-specific repeated dosing trial with cognition and adverse-event results; indirect older CSVD population.",
+      "source_id": "olmestig-etlas2-main-2025",
+      "doi": "10.1161/STROKEAHA.125.051602",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40718899/"
+    },
+    {
+      "candidate_id": "vardenafil-healthy-adults-2013",
+      "title": "The effects of the phosphodiesterase type 5 inhibitor vardenafil on cognitive performance in healthy adults: a behavioral-electroencephalography study.",
+      "decision": "include",
+      "reason": "Healthy-adult cognition evidence, but adjacent non-tadalafil PDE5 inhibitor; included only to bound class-level claims.",
+      "source_id": "reneerkens-vardenafil-healthy-adults-cognition-2013",
+      "doi": "10.1177/0269881113477747",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23427190/"
+    },
+    {
+      "candidate_id": "etlas2-cognitive-substudy-2025",
+      "title": "Cognitive outcomes after tadalafil treatment in patients with cerebral small vessel disease: ETLAS-2 sub-study.",
+      "decision": "maybe",
+      "reason": "Highly relevant follow-up extraction candidate for a fuller cognition or MCI/CSVD review; not staged in this first baseline because the main ETLAS-2 paper already supports the broader cognition and tolerability boundary.",
+      "doi": "10.1016/j.cccb.2025.100520",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/41332889/"
+    },
+    {
+      "candidate_id": "pde5-cbf-systematic-review-2018",
+      "title": "The effect of phosphodiesterase-5 inhibitors on cerebral blood flow in humans: A systematic review.",
+      "decision": "maybe",
+      "reason": "Useful background for neurovascular mechanism and cerebral blood-flow review, but not direct cognitive outcome evidence for tadalafil in healthy adults.",
+      "doi": "10.1177/0271678X17747177",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/29256324/"
+    },
+    {
+      "candidate_id": "tadalafil-induced-amnesia-2010",
+      "title": "Tadalafil-induced transient global amnesia.",
+      "decision": "maybe",
+      "reason": "Potential safety signal better handled in the dedicated safety/adverse-events review question.",
+      "doi": "10.1176/jnp.2010.22.3.352.e28",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/20686164/"
+    },
+    {
+      "candidate_id": "commercial-nootropic-pages",
+      "title": "Commercial or nootropic tadalafil cognition pages",
+      "decision": "exclude",
+      "reason": "Not primary evidence and often extrapolates from blood-flow mechanisms without source-backed cognitive outcomes."
+    }
+  ],
+  "source_ids": [
+    "pauls-pastis-cognition-2023",
+    "olmestig-etlas2-main-2025",
+    "reneerkens-vardenafil-healthy-adults-cognition-2013"
+  ],
+  "screening_summary": "Targeted searches found no direct human tadalafil cognitive-enhancement trial in healthy men age 30 to 50. The staged baseline therefore uses indirect tadalafil-specific CSVD/SVD trials with null overall cognitive findings plus one adjacent healthy-adult vardenafil study to bound PDE5 class extrapolation.",
+  "limitations": [
+    "Targeted baseline search rather than systematic review.",
+    "Web and PubMed queries were optimized for first-pass coverage and may miss unpublished, non-English, or non-indexed studies.",
+    "Full text was not checked for the adjacent vardenafil study.",
+    "Safety sources were triaged for a separate dedicated safety review."
+  ],
+  "population_band": [
+    "healthy_men_30_50",
+    "older_adults",
+    "healthy_adults_mixed_sex"
+  ],
+  "study_design_class": [
+    "randomized_trial",
+    "crossover_trial"
+  ],
+  "effect_domain": "cognition"
+}

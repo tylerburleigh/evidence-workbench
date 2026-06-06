@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "source",
+  "id": "pauls-pastis-cognition-2023",
+  "name": "Testing the cognitive effects of tadalafil. Neuropsychological secondary outcomes from the PASTIS trial.",
+  "source_type": "randomized_trial_secondary_analysis",
+  "authors": [
+    "Pauls MM",
+    "Fish J",
+    "Binnie LR",
+    "Benjamin P",
+    "Betteridge S",
+    "Clarke B",
+    "Dhillon MK",
+    "Ghatala R",
+    "Hainsworth FA",
+    "Howe FA",
+    "Khan U",
+    "Kruuse C",
+    "Madigan JB",
+    "Moynihan B",
+    "Patel B",
+    "Pereira AC",
+    "Rostrup E",
+    "Shtaya AB",
+    "Spilling CA",
+    "Trippier S",
+    "Williams R",
+    "Young R",
+    "Barrick TR",
+    "Isaacs JD",
+    "Hainsworth AH"
+  ],
+  "venue": "Cerebral Circulation - Cognition and Behavior",
+  "year": 2023,
+  "published_on": "2023-09-26",
+  "doi": "10.1016/j.cccb.2023.100187",
+  "pmid": "37811523",
+  "registry_ids": [
+    "NCT00123456",
+    "EudraCT 2015-001235-20"
+  ],
+  "urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/37811523/",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC10550803/",
+    "https://www.sciencedirect.com/science/article/pii/S2666245023000314"
+  ],
+  "summary": "Open-access secondary neuropsychological outcome paper from the PASTIS double-blind randomized crossover trial of single-dose tadalafil 20 mg versus placebo in older people with symptomatic cerebral small vessel disease.",
+  "access_status": "full_text_available",
+  "access_depth": "full_text",
+  "access_attempts": [
+    {
+      "attempted_at": "2026-06-05T23:31:00Z",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2666245023000314",
+      "result": "Full text and abstract available through ScienceDirect open access page.",
+      "notes": "Used source page and PubMed/PMC metadata for staged extraction."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "research_session",
+  "id": "tad-cognition-healthy-adults-baseline-2026-06-05",
+  "mode": "baseline_review",
+  "started_at": "2026-06-05T23:24:00Z",
+  "completed_at": "2026-06-05T23:35:00Z",
+  "scope": {
+    "domain_id": "tadalafil-off-label",
+    "taxonomy_node_ids": [
+      "tad-cognition-healthy-adults"
+    ],
+    "research_question": "What is the current evidence landscape for tadalafil and cognitive performance in healthy adults, especially mostly healthy men age 30 to 50?"
+  },
+  "selected_via": "priority_queue_rank_1",
+  "outcome": "candidate_bundle",
+  "summary": "Created a submitted baseline-review bundle for tadalafil cognition in healthy adults. Targeted searching found no direct tadalafil healthy-adult cognitive-enhancement source, so the staged claim is bounded to insufficient direct evidence and supported by indirect tadalafil CSVD/SVD trials plus one adjacent healthy-adult vardenafil source.",
+  "candidate_bundle_id": "tad-cognition-healthy-adults-baseline-2026-06-05",
+  "source_ids": [
+    "pauls-pastis-cognition-2023",
+    "olmestig-etlas2-main-2025",
+    "reneerkens-vardenafil-healthy-adults-cognition-2013"
+  ],
+  "source_urls": [
+    "https://pubmed.ncbi.nlm.nih.gov/37811523/",
+    "https://pubmed.ncbi.nlm.nih.gov/40718899/",
+    "https://pubmed.ncbi.nlm.nih.gov/23427190/"
+  ],
+  "next_recommended_mode": "baseline_review",
+  "next_actions": [
+    "Run evidence appraisal for the submitted cognition bundle.",
+    "Run a safety/interactions baseline review before publishing broad off-label tadalafil summaries.",
+    "Consider staging the ETLAS-2 cognitive sub-study in a revision or in the MCI/cognitive-decline review."
+  ]
+}
